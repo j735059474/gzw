@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module name="scapco">
+  <public>
+    <component singleton="true" tx="CMT" remote="true">
+		<interface>nc.scap.pub.baseservice.IUifPubService</interface>
+		<implementation>nc.scap.pub.baseservice.impl.UifPubServiceImpl</implementation>
+	</component>
+	<component singleton="true" tx="CMT" remote="true">
+		<interface>nc.scap.pub.print.ICpPopWordTemplateService</interface>
+		<implementation>nc.scap.pub.print.impl.CpPopWordTemplateServiceImpl</implementation>
+	</component>
+	<component singleton="true" tx="CMT" remote="true">
+		<interface>nc.scap.pub.sms.itf.ISmsManageService</interface>
+		<implementation>nc.scap.pub.sms.SmsManageService</implementation>
+	</component>
+	<component singleton="true" tx="CMT" remote="true">
+		<interface>uap.lfw.itf.security.IRSAService</interface>
+		<implementation>uap.lfw.ra.render.pc.impl.RSAService</implementation>
+	</component>
+   </public>
+   <private>
+   </private>
+</module>
+

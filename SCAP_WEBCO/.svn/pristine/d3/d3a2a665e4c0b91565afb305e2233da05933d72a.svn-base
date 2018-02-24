@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget caption="规则附件列表" id="attachrole" refId="attachrole" provider="nc.scap.pub.attlist.comp.AttachRoleCompProvider">
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+    </PlugoutDescs>
+    <PluginDescs>
+    </PluginDescs>
+    <Models>
+        <Datasets>
+        </Datasets>
+    </Models>
+    <Components>
+    </Components>
+    <Menus>
+    </Menus>
+</Widget>

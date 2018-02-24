@@ -1,0 +1,65 @@
+<style type="text/css">
+DIV.dragLayer{
+ border:1px solid #369;
+ background-color:#E3A100;
+ margin-bottom:10px;
+ position:absolute;
+ left:170px;
+ top:38px;
+ background:white;
+ display:none;
+ z-index:10000;
+}
+DIV.dragHeader{
+ width:100%; height:25px ; line-height:25px;color:#FFFFFF;
+ background-color:#048EDB;
+}
+DIV.content{
+	width:400px;;height:400px;}
+.closediv{
+	background-image: url("/lfw/frame/device_pc/themes/webclassic/ui/ctrl/dialog/images/off.png");
+    background-repeat: no-repeat;
+    cursor:pointer;font-family:Webdings;
+}
+.titlediv{float:left;font-family: 微软雅黑;font-size: 13px;font-weight: bold;padding-left:5px;"}
+</style>
+<table class="maintable">
+<tr>
+	<td class="head" rowspan=2>项目</td><td colspan=3 class="head">年度预算完成情况</td><td colspan=13 class="head">月度预算完成情况</td>
+</tr>
+<tr>
+	<td class="head">本年累计完成数</td><td class="head">本年预算数</td><td class="head">完成率(%)</td><td class="head">月平均预算数</td>
+	<td class="head">1月</td><td class="head">2月</td><td class="head">3月</td><td class="head">4月</td><td class="head">5月</td><td class="head">6月</td>
+	<td class="head">7月</td><td class="head">8月</td><td class="head">9月</td><td class="head">10月</td><td class="head">11月</td><td class="head">12月</td>
+</tr>
+<#if root??>
+	<#list 	root as monthdata>
+	<tr>
+		<td class="head" style="text-align:left;"><a href="javascript:createchart();"><#if monthdata??><#if monthdata.attr1??>${monthdata.attr1}<#else>--</#if></#if></a></td>
+		<td class="content"><#if monthdata??><#if monthdata.attr2??>${monthdata.attr2}<#else>--</#if></#if></td>
+		<td class="content"><#if monthdata??><#if monthdata.attr3??>${monthdata.attr3}<#else>--</#if></#if></td>
+		<td class="content"><#if monthdata??><#if monthdata.attr4??>${monthdata.attr4}<#else>--</#if></#if></td>
+		<td class="content"><#if monthdata??><#if monthdata.attr5??>${monthdata.attr5}<#else>--</#if></#if></td>
+		<td class="content"><#if monthdata??><#if monthdata.attr6??>${monthdata.attr6}<#else>--</#if></#if></td>
+		<td class="content"><#if monthdata??><#if monthdata.attr7??>${monthdata.attr7}<#else>--</#if></#if></td>
+		<td class="content"><#if monthdata??><#if monthdata.attr8??>${monthdata.attr8}<#else>--</#if></#if></td>
+		<td class="content"><#if monthdata??><#if monthdata.attr9??>${monthdata.attr9}<#else>--</#if></#if></td>
+		<td class="content"><#if monthdata??><#if monthdata.attr10??>${monthdata.attr10}<#else>--</#if></#if></td>
+		<td class="content"><#if monthdata??><#if monthdata.attr11??>${monthdata.attr11}<#else>--</#if></#if></td>
+		<td class="content"><#if monthdata??><#if monthdata.attr12??>${monthdata.attr12}<#else>--</#if></#if></td>
+		<td class="content"><#if monthdata??><#if monthdata.attr13??>${monthdata.attr13}<#else>--</#if></#if></td>
+		<td class="content"><#if monthdata??><#if monthdata.attr14??>${monthdata.attr14}<#else>--</#if></#if></td>
+		<td class="content"><#if monthdata??><#if monthdata.attr15??>${monthdata.attr15}<#else>--</#if></#if></td>
+		<td class="content"><#if monthdata??><#if monthdata.attr16??>${monthdata.attr16}<#else>--</#if></#if></td>
+		<td class="content"><#if monthdata??><#if monthdata.attr17??>${monthdata.attr17}<#else>--</#if></#if></td>
+	</tr>			 
+	</#list>
+</#if>
+</table>
+  <div class="dragLayer" id="popwindow" >
+  <div class="dragHeader">
+  <div class="titlediv">水平分析</div>
+  <div style="float:right;width:36px;height:25px;" class="closediv" onclick="hideDiv();" >&nbsp</div>
+  </div>
+  <div id="content" class="content" style="float:left;"></div><div id="content1" class="content" style="float:right;" ></div>
+ </div>

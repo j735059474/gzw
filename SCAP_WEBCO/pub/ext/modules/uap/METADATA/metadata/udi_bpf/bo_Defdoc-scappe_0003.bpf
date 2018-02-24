@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component conRouterType="手动" createIndustry="0"
+	createTime="2014-04-22 15:23:46" creator="" description=""
+	displayName="企业规模档案(自定义档案)业务操作" fromSourceBmf="true"
+	gencodestyle="NC传统样式" help="" id="0af98c36-c9ef-11e3-a7b5-97e9118ac44a"
+	industry="0" industryChanged="false" industryIncrease="false"
+	industryName="基础行业" isSource="false" isbizmodel="true" mainEntity=""
+	modifier="" modifyIndustry="0" modifyTime="2014-04-22 15:23:46"
+	name="bo_Defdoc-scappe_0003" namespace="uap" ownModule="uapbd"
+	preLoad="false" programcode="" resModuleName="bo_Defdoc-scappe_0003"
+	resid="" version="1" versionType="0">
+	<celllist>
+		<busioperation componentID="0af98c36-c9ef-11e3-a7b5-97e9118ac44a"
+			createIndustry="0" createTime="2014-04-22 15:23:46" creator=""
+			dataType="1001ZG10000000009GCA" dbtype="" description=""
+			displayName="修改" fullClassName="nc.vouap.bo_Defdoc-scappe_0003.edit"
+			height="100" help="" id="0af98c3a-c9ef-11e3-a7b5-97e9118ac44a"
+			industryChanged="false" isAuthorization="true" isBusiActivity="false"
+			isSource="false" logtype="MODIFY" modifier="" modifyIndustry="0"
+			modifyTime="2014-04-22 15:23:46" name="edit" needlog="true"
+			resid="2UC000-001103" typeDisplayName="企业规模档案(自定义档案)"
+			typeName="Defdoc-scappe_0003" version=""
+			versionType="0" visibility="public" width="80" x="150" y="120">
+			<refoperationlist />
+		</busioperation>
+		<busioperation componentID="0af98c36-c9ef-11e3-a7b5-97e9118ac44a"
+			createIndustry="0" createTime="2014-04-22 15:23:46" creator=""
+			dataType="1001ZG10000000009GCA" dbtype="" description=""
+			displayName="删除" fullClassName="nc.vouap.bo_Defdoc-scappe_0003.delete"
+			height="100" help="" id="0af98c38-c9ef-11e3-a7b5-97e9118ac44a"
+			industryChanged="false" isAuthorization="true" isBusiActivity="false"
+			isSource="false" logtype="DELETE" modifier="" modifyIndustry="0"
+			modifyTime="2014-04-22 15:23:46" name="delete" needlog="true"
+			resid="2UC000-001104" typeDisplayName="企业规模档案(自定义档案)"
+			typeName="Defdoc-scappe_0003" version=""
+			versionType="0" visibility="public" width="80" x="250" y="120">
+			<refoperationlist />
+		</busioperation>
+		<busioperation componentID="0af98c36-c9ef-11e3-a7b5-97e9118ac44a"
+			createIndustry="0" createTime="2014-04-22 15:23:46" creator=""
+			dataType="1001ZG10000000009GCA" dbtype="" description=""
+			displayName="启用" fullClassName="nc.vouap.bo_Defdoc-scappe_0003.enable"
+			height="100" help="" id="0af98c3b-c9ef-11e3-a7b5-97e9118ac44a"
+			industryChanged="false" isAuthorization="true" isBusiActivity="false"
+			isSource="false" logtype="MODIFY" modifier="" modifyIndustry="0"
+			modifyTime="2014-04-22 15:23:46" name="enable" needlog="true"
+			resid="2UC000-001105" typeDisplayName="企业规模档案(自定义档案)"
+			typeName="Defdoc-scappe_0003" version=""
+			versionType="0" visibility="public" width="80" x="350" y="120">
+			<refoperationlist />
+		</busioperation>
+		<busioperation componentID="0af98c36-c9ef-11e3-a7b5-97e9118ac44a"
+			createIndustry="0" createTime="2014-04-22 15:23:46" creator=""
+			dataType="1001ZG10000000009GCA" dbtype="" description=""
+			displayName="停用" fullClassName="nc.vouap.bo_Defdoc-scappe_0003.disable"
+			height="100" help="" id="0af98c39-c9ef-11e3-a7b5-97e9118ac44a"
+			industryChanged="false" isAuthorization="true" isBusiActivity="false"
+			isSource="false" logtype="MODIFY" modifier="" modifyIndustry="0"
+			modifyTime="2014-04-22 15:23:46" name="disable" needlog="true"
+			resid="2UC000-001106" typeDisplayName="企业规模档案(自定义档案)"
+			typeName="Defdoc-scappe_0003" version=""
+			versionType="0" visibility="public" width="80" x="450" y="120">
+			<refoperationlist />
+		</busioperation>
+		<busioperation componentID="0af98c36-c9ef-11e3-a7b5-97e9118ac44a"
+			createIndustry="0" createTime="2014-04-22 15:23:46" creator=""
+			dataType="1001ZG10000000009GCA" dbtype="" description=""
+			displayName="新增" fullClassName="nc.vouap.bo_Defdoc-scappe_0003.add"
+			height="100" help="" id="0af98c37-c9ef-11e3-a7b5-97e9118ac44a"
+			industryChanged="false" isAuthorization="true" isBusiActivity="false"
+			isSource="false" logtype="ADD" modifier="" modifyIndustry="0"
+			modifyTime="2014-04-22 15:23:46" name="add" needlog="true"
+			resid="2UC000-001114" typeDisplayName="企业规模档案(自定义档案)"
+			typeName="Defdoc-scappe_0003" version=""
+			versionType="0" visibility="public" width="80" x="50" y="120">
+			<refoperationlist />
+		</busioperation>
+	</celllist>
+	<connectlist />
+	<refdepends />
+	<refdependLoseIDs />
+	<cellRemoveLog />
+	<rulers>
+		<ruler isHorizontal="true" unit="0">
+			<guideList />
+		</ruler>
+		<ruler isHorizontal="false" unit="0">
+			<guideList />
+		</ruler>
+	</rulers>
+</component>

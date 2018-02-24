@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget caption="弹出记录面板" controllerClazz="nc.scap.pub.record.RecordWinMainVCtrl" id="pubview_record" refId="pubview_record" sourcePackage="pub/src/public/">
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+    </PlugoutDescs>
+    <PluginDescs>
+    </PluginDescs>
+    <Events>
+        <Event async="true" methodName="beforeShow" name="beforeShow" onserver="true">
+            <SubmitRule>
+            </SubmitRule>
+            <Params>
+                <Param>
+                    <Name>dialogEvent</Name>
+                    <Desc>                        <![CDATA[nc.uap.lfw.core.event.DialogEvent]]>
+                    </Desc>
+                </Param>
+            </Params>
+            <Action>
+            </Action>
+        </Event>
+    </Events>
+    <Models>
+        <Datasets>
+            <Dataset controlwidgetopeStatus="false" enabled="false" id="record_ds" lazyLoad="true" notNullBody="false">
+                <Fields>
+                    <Field dataType="String" id="record" nullAble="true" primaryKey="false" text="控制台">
+                    </Field>
+                </Fields>
+            </Dataset>
+        </Datasets>
+    </Models>
+    <Components>
+        <FormComp columnCount="2" dataset="record_ds" eleWidth="120" ellipsis="false" enabled="true" id="record_form" labelMinWidth="0" renderType="2" rowHeight="22" visible="true">
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="3" dataType="String" editable="true" editorType="TextArea" enabled="true" field="record" height="600" id="record" imageOnly="false" nextLine="false" nullAble="true" rowSpan="3" selectOnly="true" text="控制台" toolbarType="Custom" visible="true" width="600">
+            </Element>
+        </FormComp>
+    </Components>
+    <Menus>
+    </Menus>
+</Widget>

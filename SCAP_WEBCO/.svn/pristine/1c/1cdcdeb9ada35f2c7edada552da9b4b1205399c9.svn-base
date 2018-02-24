@@ -1,0 +1,1083 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+<items>
+
+<!--flag="0" 单独处理;flag="1" 查iufo表样;flag="2" 查事实表; 公式中"XX,2"表示XX公式计算后保留两位小数-->
+<item key="vyear" dimension="" name="年">
+  <source flag="1" code="QYBB" measure="month" row="" col="" id="$aa"/>
+  <formula>
+    '$aa'.substring(0,4)
+  </formula>
+</item>
+
+<item key="vmonth" dimension="" name="月份">
+  <source flag="1" code="QYBB" measure="month" row="" col="" id="$aa"/>
+  <formula>
+    '$aa'.substring(5,7)
+  </formula>
+</item>
+
+<item key="sys_org" dimension="" name="组织标志">
+  <source flag="0" code="QYBB" measure="sys_org" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sys_zdm" dimension="" name="外键">
+  <source flag="0" code="QYBB" measure="sys_zdm" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sys_fjd" dimension="" name="父节点">
+  <source flag="0" code="QYBB" measure="sys_fjd" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jq_level" dimension="" name="组织级别">
+  <source flag="0" code="QYBB" measure="level" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="type" dimension="" name="类型">
+  <source flag="0" code="QYBB" measure="type" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jygm" dimension="" name="经营规模">
+  <source flag="1" code="FMDM1" measure="yjgm" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zzsx" dimension="" name="组织形式">
+  <source flag="1" code="FMDM1" measure="zzxs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--问号进行判断，true=1，false=0-->
+<item key="yl" dimension="" name="是否盈利">
+  <source flag="1" code="QYBB" measure="13lrzebnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa>0?1:0
+  </formula>
+</item>
+
+<!--dimension="sq"-->
+<item key="lrze" dimension="sq" name="利润总额(上年同期)">
+  <source flag="1" code="QYBB" measure="13lrzesntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jlr" dimension="sq" name="净利润(上年同期)">
+  <source flag="1" code="QYBB" measure="14jlrsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gsyjlr" dimension="sq" name="归属于母公司所有者的净利润(上年同期)">
+  <source flag="1" code="QYBB" measure="qzgsymgssyzdjlrsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zcze" dimension="sq" name="资产总额(上年同期)">
+  <source flag="1" code="QYBB" measure="17zczesntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="fzze" dimension="sq" name="负债总额(上年同期)">
+  <source flag="1" code="QYBB" measure="18fzzesntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="syzqyze" dimension="sq" name="所有者权益总额(上年同期)">
+  <source flag="1" code="QYBB" measure="19syzqyzesntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gdzcze" dimension="sq" name="固定资产投资额(上年同期)">
+  <source flag="1" code="QYBB" measure="22gdzctzesntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ywcb" dimension="sq" name="营业成本(上年同期)">
+  <source flag="1" code="QYBB" measure="2yycbsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="lxzcje" dimension="sq" name="利息支出净额(上年同期)">
+  <source flag="1" code="QYBB" measure="qzlxzcjesntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ygxc" dimension="sq" name="职工薪酬(上年同期)">
+  <source flag="1" code="QYBB" measure="15zgxcsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zggzze" dimension="sq" name="在岗职工工资总额(上年同期)">
+  <source flag="1" code="QYBB" measure="qzzgzggzzesntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="flbxze" dimension="sq" name="福利及社会保险费用(上年同期)">
+  <source flag="1" code="QYBB" measure="fljshbxfysntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zgrs" dimension="sq" name="在岗职工人数（人）(上年同期)">
+  <source flag="1" code="QYBB" measure="16zgzgrsrsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ldzc" dimension="sq" name="流动资产(上年同期)">
+  <source flag="1" code="QYBB" measure="qzldzcsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="hbzj" dimension="sq" name="货币资金(上年同期)">
+  <source flag="1" code="QYBB" measure="qzhbzjsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jyxjrzc" dimension="sq" name="交易性金融资产(上年同期)">
+  <source flag="1" code="QYBB" measure="jyxjrzcsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yszkje" dimension="sq" name="应收账款净额(上年同期)">
+  <source flag="1" code="QYBB" measure="yszkjesntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ch" dimension="sq" name="存货(上年同期)">
+  <source flag="1" code="QYBB" measure="chsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ccp" dimension="sq" name="产成品(上年同期)">
+  <source flag="1" code="QYBB" measure="qzccpsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="cbfy" dimension="sq" name="成本费用（上年同期）">
+  <source flag="1" code="QYBB" measure="2yycbsntq" row="" col="" id="$aa"/>
+  <source flag="1" code="QYBB" measure="3yysjjfjsntq" row="" col="" id="$bb"/>
+  <source flag="1" code="QYBB" measure="4xsfysntq" row="" col="" id="$cc"/>
+  <source flag="1" code="QYBB" measure="5glfysntq" row="" col="" id="$dd"/>
+  <source flag="1" code="QYBB" measure="6cwfysntq" row="" col="" id="$ee"/>
+  <formula>
+    $aa+$bb+$cc+$dd+$ee
+  </formula>
+</item>
+
+<item key="yjsfze" dimension="sq" name="已交税费总额(上年同期)">
+  <source flag="1" code="QYBB" measure="21yjsfzesntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="dqjk" dimension="sq" name="短期借款(上年同期)">
+  <source flag="1" code="QYBB" measure="qzdqjksntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gsyqyze" dimension="sq" name="归属于母公司的所有者权益总额(上年同期)">
+  <source flag="1" code="QYBB" measure="qzgsymgsdsyzqyzesntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zjz" dimension="sq" name="增加值(上年同期)">
+  <source flag="1" code="QYBB" measure="23zjzsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gyzcz" dimension="sq" name="工业总产值(上年同期)">
+  <source flag="1" code="QYBB" measure="24gyzczsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gcxscz" dimension="sq" name="工业销售产值(上年同期)">
+  <source flag="1" code="QYBB" measure="25gyxsczsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ckcpxssr" dimension="sq" name="出口产品销售收入(上年同期)">
+  <source flag="1" code="QYBB" measure="26ckcpxssrsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jtzje" dimension="sq" name="计提折旧额(上年同期)">
+  <source flag="1" code="QYBB" measure="28jtzjesntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="hzzb" dimension="sq" name="坏账准备(上年同期)">
+  <source flag="1" code="QYBB" measure="29hzzbsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ldfz" dimension="sq" name="流动负债(上年同期)">
+  <source flag="1" code="QYBB" measure="qzldfzsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yhjk" dimension="sq" name="银行借款(上年同期)">
+  <source flag="1" code="QYBB" measure="yxjksntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yingjsfze" dimension="sq" name="应交税费总额(上年同期)">
+  <source flag="1" code="QYBB" measure="20yjsfzesntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="xcpcz" dimension="sq" name="新产品产值(上年同期)">
+  <source flag="1" code="QYBB" measure="27xcpczsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yyzsr" dimension="sq" name="营业总收入(上年同期)">
+  <source flag="1" code="QYBB" measure="1yysrsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zyywsr" dimension="sq" name="主营业务收入(上年同期)">
+  <source flag="1" code="QYBB" measure="qzzyywsrsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yyzcb" dimension="sq" name="营业总成本(上年同期)">
+  <source flag="1" code="QYBB" measure="2yycbsntq" row="" col="" id="$aa"/>
+  <source flag="1" code="QYBB" measure="3yysjjfjsntq" row="" col="" id="$bb"/>
+  <source flag="1" code="QYBB" measure="4xsfysntq" row="" col="" id="$cc"/>
+  <source flag="1" code="QYBB" measure="5glfysntq" row="" col="" id="$dd"/>
+  <source flag="1" code="QYBB" measure="6cwfysntq" row="" col="" id="$ee"/>
+  <source flag="1" code="QYBB" measure="7zcjzsssntq" row="" col="" id="$ff"/>
+  <formula>
+    $aa+$bb+$cc+$dd+$ee+$ff
+  </formula>
+</item>
+
+<item key="zyywcb" dimension="sq" name="主营业务成本(上年同期)">
+  <source flag="1" code="QYBB" measure="qzzyywcbsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yysj" dimension="sq" name="营业税金及附加(上年同期)">
+  <source flag="1" code="QYBB" measure="3yysjjfjsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="xsfy" dimension="sq" name="销售费用(上年同期)">
+  <source flag="1" code="QYBB" measure="4xsfysntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="glfy" dimension="sq" name="管理费用(上年同期)">
+  <source flag="1" code="QYBB" measure="5glfysntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="cwfy" dimension="sq" name="财务费用(上年同期)">
+  <source flag="1" code="QYBB" measure="6cwfysntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zcjzss" dimension="sq" name="资产减值损失(上年同期)">
+  <source flag="1" code="QYBB" measure="7zcjzsssntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gyjzbd" dimension="sq" name="公允价值变动收益(上年同期)">
+  <source flag="1" code="QYBB" measure="8gyjzbdsysntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="tzsy" dimension="sq" name="投资收益(上年同期)">
+  <source flag="1" code="QYBB" measure="9tzsysntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ywlr" dimension="sq" name="营业利润(上年同期)">
+  <source flag="1" code="QYBB" measure="10yylrsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ywwsr" dimension="sq" name="营业外收入(上年同期)">
+  <source flag="1" code="QYBB" measure="11yywsrsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ywwzc" dimension="sq" name="营业外支出(上年同期)">
+  <source flag="1" code="QYBB" measure="12yywzcsntq" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zy" dimension="sq" name="主业(上年同期)">
+  <source flag="1" code="GDZC" measure="1zysntqs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zyzj" dimension="sq" name="自有资金(上年同期)">
+  <source flag="1" code="GDZC" measure="yzyzjsntqs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--dimension="lj"-->
+<item key="lrze" dimension="lj" name="利润总额(累计完成数)">
+  <source flag="1" code="QYBB" measure="13lrzebnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jlr" dimension="lj" name="净利润(累计完成数)">
+  <source flag="1" code="QYBB" measure="14jlrbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gsyjlr" dimension="lj" name="归属于母公司所有者的净利润(累计完成数)">
+  <source flag="1" code="QYBB" measure="qzgsymgssyzdjlrbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zcze" dimension="lj" name="资产总额(累计完成数)">
+  <source flag="1" code="QYBB" measure="17zczebnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="fzze" dimension="lj" name="负债总额(累计完成数)">
+  <source flag="1" code="QYBB" measure="18fzzebnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="syzqyze" dimension="lj" name="所有者权益总额(累计完成数)">
+  <source flag="1" code="QYBB" measure="19syzqyzebnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gdzcze" dimension="lj" name="固定资产投资额(累计完成数)">
+  <source flag="1" code="QYBB" measure="22gdzctzebnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ywcb" dimension="lj" name="营业成本(累计完成数)">
+  <source flag="1" code="QYBB" measure="2yycbbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="lxzcje" dimension="lj" name="利息支出净额(累计完成数)">
+  <source flag="1" code="QYBB" measure="qzlxzcjebnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ygxc" dimension="lj" name="职工薪酬(累计完成数)">
+  <source flag="1" code="QYBB" measure="15zgxcbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zggzze" dimension="lj" name="在岗职工工资总额(累计完成数)">
+  <source flag="1" code="QYBB" measure="qzzgzggzzebnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="flbxze" dimension="lj" name="福利及社会保险费用(累计完成数)">
+  <source flag="1" code="QYBB" measure="fljshbxfybnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zgrs" dimension="lj" name="在岗职工人数（人）(累计完成数)">
+  <source flag="1" code="QYBB" measure="16zgzgrsrbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ldzc" dimension="lj" name="流动资产(累计完成数)">
+  <source flag="1" code="QYBB" measure="qzldzcbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="hbzj" dimension="lj" name="货币资金(累计完成数)">
+  <source flag="1" code="QYBB" measure="qzhbzjbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jyxjrzc" dimension="lj" name="交易性金融资产(累计完成数)">
+  <source flag="1" code="QYBB" measure="jyxjrzcbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yszkje" dimension="lj" name="应收账款净额(累计完成数)">
+  <source flag="1" code="QYBB" measure="yszkjebnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ch" dimension="lj" name="存货(累计完成数)">
+  <source flag="1" code="QYBB" measure="chbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ccp" dimension="lj" name="产成品(累计完成数)">
+  <source flag="1" code="QYBB" measure="qzccpbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="cbfy" dimension="lj" name="成本费用(累计完成数)">
+  <source flag="1" code="QYBB" measure="2yycbbnlj" row="" col="" id="$aa"/>
+  <source flag="1" code="QYBB" measure="3yysjjfjbnlj" row="" col="" id="$bb"/>
+  <source flag="1" code="QYBB" measure="4xsfybnlj" row="" col="" id="$cc"/>
+  <source flag="1" code="QYBB" measure="5glfybnlj" row="" col="" id="$dd"/>
+  <source flag="1" code="QYBB" measure="6cwfybnlj" row="" col="" id="$ee"/>
+  <formula>
+    $aa+$bb+$cc+$dd+$ee
+  </formula>
+</item>
+
+<item key="yjsfze" dimension="lj" name="已交税费总额(累计完成数)">
+  <source flag="1" code="QYBB" measure="21yjsfzebnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="dqjk" dimension="lj" name="短期借款(累计完成数)">
+  <source flag="1" code="QYBB" measure="qzdqjkbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gsyqyze" dimension="lj" name="归属于母公司的所有者权益总额(累计完成数)">
+  <source flag="1" code="QYBB" measure="qzgsymgsdsyzqyzebnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zjz" dimension="lj" name="增加值(累计完成数)">
+  <source flag="1" code="QYBB" measure="23zjzbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gyzcz" dimension="lj" name="工业总产值(累计完成数)">
+  <source flag="1" code="QYBB" measure="24gyzczbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gcxscz" dimension="lj" name="工业销售产值(累计完成数)">
+  <source flag="1" code="QYBB" measure="25gyxsczbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ckcpxssr" dimension="lj" name="出口产品销售收入(累计完成数)">
+  <source flag="1" code="QYBB" measure="26ckcpxssrbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jtzje" dimension="lj" name="计提折旧额(累计完成数)">
+  <source flag="1" code="QYBB" measure="28jtzjebnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="hzzb" dimension="lj" name="坏账准备(累计完成数)">
+  <source flag="1" code="QYBB" measure="29hzzbbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ldfz" dimension="lj" name="流动负债(累计完成数)">
+  <source flag="1" code="QYBB" measure="qzldfzbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yhjk" dimension="lj" name="银行借款(累计完成数)">
+  <source flag="1" code="QYBB" measure="yxjkbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yingjsfze" dimension="lj" name="应交税费总额(累计完成数)">
+  <source flag="1" code="QYBB" measure="20yjsfzebnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="xcpcz" dimension="lj" name="新产品产值(累计完成数)">
+  <source flag="1" code="QYBB" measure="27xcpczbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yyzsr" dimension="lj" name="营业总收入(累计完成数)">
+  <source flag="1" code="QYBB" measure="1yysrbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zyywsr" dimension="lj" name="主营业务收入(累计完成数)">
+  <source flag="1" code="QYBB" measure="qzzyywsrbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yyzcb" dimension="lj" name="营业总成本(累计完成数)">
+  <source flag="1" code="QYBB" measure="2yycbbnlj" row="" col="" id="$aa"/>
+  <source flag="1" code="QYBB" measure="3yysjjfjbnlj" row="" col="" id="$bb"/>
+  <source flag="1" code="QYBB" measure="4xsfybnlj" row="" col="" id="$cc"/>
+  <source flag="1" code="QYBB" measure="5glfybnlj" row="" col="" id="$dd"/>
+  <source flag="1" code="QYBB" measure="6cwfybnlj" row="" col="" id="$ee"/>
+  <source flag="1" code="QYBB" measure="7zcjzssbnlj" row="" col="" id="$ff"/>
+  <formula>
+    $aa+$bb+$cc+$dd+$ee+$ff
+  </formula>
+</item>
+
+<item key="zyywcb" dimension="lj" name="主营业务成本(累计完成数)">
+  <source flag="1" code="QYBB" measure="qzzyywcbbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yysj" dimension="lj" name="营业税金及附加(累计完成数)">
+  <source flag="1" code="QYBB" measure="3yysjjfjbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="xsfy" dimension="lj" name="销售费用(累计完成数)">
+  <source flag="1" code="QYBB" measure="4xsfybnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="glfy" dimension="lj" name="管理费用(累计完成数)">
+  <source flag="1" code="QYBB" measure="5glfybnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="cwfy" dimension="lj" name="财务费用(累计完成数)">
+  <source flag="1" code="QYBB" measure="6cwfybnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zcjzss" dimension="lj" name="资产减值损失(累计完成数)">
+  <source flag="1" code="QYBB" measure="7zcjzssbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gyjzbd" dimension="lj" name="公允价值变动收益(累计完成数)">
+  <source flag="1" code="QYBB" measure="8gyjzbdsybnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="tzsy" dimension="lj" name="投资收益(累计完成数)">
+  <source flag="1" code="QYBB" measure="9tzsybnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ywlr" dimension="lj" name="营业利润(累计完成数)">
+  <source flag="1" code="QYBB" measure="10yylrbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ywwsr" dimension="lj" name="营业外收入(累计完成数)">
+  <source flag="1" code="QYBB" measure="11yywsrbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ywwzc" dimension="lj" name="营业外支出(累计完成数)">
+  <source flag="1" code="QYBB" measure="12yywzcbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="lrzeyss" dimension="lj" name="利润总额预算数(累计完成数)">
+  <source flag="1" code="QYBB" measure="30lrzeyssbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jlryss" dimension="lj" name="净利润预算数(累计完成数)">
+  <source flag="1" code="QYBB" measure="31jlryssbnlj" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zy" dimension="lj" name="主业(累计完成数)">
+  <source flag="1" code="GDZC" measure="1zybnljs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zyzj" dimension="lj" name="自有资金(累计完成数)">
+  <source flag="1" code="GDZC" measure="yzyzjbnljs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--dimension="by"-->
+<item key="lrze" dimension="by" name="利润总额(本月数)">
+  <source flag="1" code="QYBB" measure="13lrzebys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jlr" dimension="by" name="净利润(本月数)">
+  <source flag="1" code="QYBB" measure="14jlrbys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gsyjlr" dimension="by" name="归属于母公司所有者的净利润(本月数)">
+  <source flag="1" code="QYBB" measure="qzgsymgssyzdjlrbys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gdzctze" dimension="by" name="固定资产投资额(本月数)">
+  <source flag="1" code="QYBB" measure="22gdzctzebys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yycb" dimension="by" name="营业成本(本月数)">
+  <source flag="1" code="QYBB" measure="2yycbbys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="lxzcje" dimension="by" name="利息支出净额(本月数)">
+  <source flag="1" code="QYBB" measure="qzlxzcjebys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zgxc" dimension="by" name="职工薪酬(本月数)">
+  <source flag="1" code="QYBB" measure="15zgxcbys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zgzggzce" dimension="by" name="在岗职工工资总额(本月数)">
+  <source flag="1" code="QYBB" measure="qzzgzggzzebys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="flshbxfy" dimension="by" name="福利及社会保险费用(本月数)">
+  <source flag="1" code="QYBB" measure="fljshbxfybys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+
+<item key="yjsfze" dimension="by" name="已交税费总额(本月数)">
+  <source flag="1" code="QYBB" measure="21yjsfzebys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="dqjk" dimension="by" name="短期借款(本月数)">
+  <source flag="1" code="QYBB" measure="qzdqjkbys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zjz" dimension="by" name="增加值(本月数)">
+  <source flag="1" code="QYBB" measure="23zjzbys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gyzcz" dimension="by" name="工业总产值(本月数)">
+  <source flag="1" code="QYBB" measure="24gyzczbys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="cpxssr" dimension="by" name="出口产品销售收入(本月数)">
+  <source flag="1" code="QYBB" measure="26ckcpxssrbys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="xcpcz" dimension="by" name="新产品产值(本月数)">
+  <source flag="1" code="QYBB" measure="27xcpczbys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jtzje" dimension="by" name="计提折旧额(本月数)">
+  <source flag="1" code="QYBB" measure="28jtzjebys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="hzzb" dimension="by" name="坏账准备(本月数)">
+  <source flag="1" code="QYBB" measure="29hzzbbys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="glfy" dimension="by" name="管理费用(本月数)">
+  <source flag="1" code="QYBB" measure="5glfybys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yhjk" dimension="by" name="银行借款(本月数)">
+  <source flag="1" code="QYBB" measure="yxjkbys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yingjsfze" dimension="by" name="应交税费总额(本月数)">
+  <source flag="1" code="QYBB" measure="20yjsfzebys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="cbfy" dimension="by" name="成本费用(本月数)">
+  <source flag="1" code="QYBB" measure="2yycbbys" row="" col="" id="$aa"/>
+  <source flag="1" code="QYBB" measure="3yysjjfjbys" row="" col="" id="$bb"/>
+  <source flag="1" code="QYBB" measure="4xsfybys" row="" col="" id="$cc"/>
+  <source flag="1" code="QYBB" measure="5glfybys" row="" col="" id="$dd"/>
+  <source flag="1" code="QYBB" measure="6cwfybys" row="" col="" id="$ee"/>
+  <formula>
+    $aa+$bb+$cc+$dd+$ee
+  </formula>
+</item>
+
+<item key="gyxscz" dimension="by" name="工业销售产值(本月数)">
+  <source flag="1" code="QYBB" measure="25gyxsczbys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+
+<item key="ywzsr" dimension="by" name="营业总收入(本月数)">
+  <source flag="1" code="QYBB" measure="1yysrbys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zyywsr" dimension="by" name="主营业务收入(本月数)">
+  <source flag="1" code="QYBB" measure="qzzyywsrbys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yyzcb" dimension="by" name="营业总成本(本月数)">
+  <source flag="1" code="QYBB" measure="2yycbbys" row="" col="" id="$aa"/>
+  <source flag="1" code="QYBB" measure="3yysjjfjbys" row="" col="" id="$bb"/>
+  <source flag="1" code="QYBB" measure="4xsfybys" row="" col="" id="$cc"/>
+  <source flag="1" code="QYBB" measure="5glfybys" row="" col="" id="$dd"/>
+  <source flag="1" code="QYBB" measure="6cwfybys" row="" col="" id="$ee"/>
+  <source flag="1" code="QYBB" measure="7zcjzssbys" row="" col="" id="$ff"/>
+  <formula>
+    $aa+$bb+$cc+$dd+$ee+$ff
+  </formula>
+</item>
+
+<item key="zyywcb" dimension="by" name="主营业务成本(本月数)">
+  <source flag="1" code="QYBB" measure="qzzyywcbbys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yysjjfj" dimension="by" name="营业税金及附加(本月数)">
+  <source flag="1" code="QYBB" measure="3yysjjfjbys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="xsfy" dimension="by" name="销售费用(本月数)">
+  <source flag="1" code="QYBB" measure="4xsfybys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="cwfy" dimension="by" name="财务费用(本月数)">
+  <source flag="1" code="QYBB" measure="6cwfybys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zcjzss" dimension="by" name="资产减值损失(本月数)">
+  <source flag="1" code="QYBB" measure="7zcjzssbys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gyjzbdsy" dimension="by" name="公允价值变动收益(本月数)">
+  <source flag="1" code="QYBB" measure="8gyjzbdsybys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="tzsy" dimension="by" name="投资收益(本月数)">
+  <source flag="1" code="QYBB" measure="9tzsybys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yylr" dimension="by" name="营业利润(本月数)">
+  <source flag="1" code="QYBB" measure="10yylrbys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yywsr" dimension="by" name="营业外收入(本月数)">
+  <source flag="1" code="QYBB" measure="11yywsrbys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yywzc" dimension="by" name="营业外支出(本月数)">
+  <source flag="1" code="QYBB" measure="12yywzcbys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="lrzeyss" dimension="by" name="利润总额预算数(本月数)">
+  <source flag="1" code="QYBB" measure="30lrzeyssbys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jlryss" dimension="by" name="净利润预算数(本月数)">
+  <source flag="1" code="QYBB" measure="31jlryssbys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zy" dimension="by" name="主业(本月数)">
+  <source flag="1" code="GDZC" measure="1zybys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zyzj" dimension="by" name="自有资金(本月数)">
+  <source flag="1" code="GDZC" measure="yzyzjbys" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+</items>
+</Root>

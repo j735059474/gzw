@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp">
+
+	<display-name>NC Portal</display-name>
+	<context-param>
+		<param-name>ctxPath</param-name>
+		<param-value>/portal</param-value>
+	</context-param>
+  
+	<context-param>
+		<param-name>modules</param-name>
+<param-value>psnm,plm,taip,pfm,mfmi,ppe,pub,bs,pbm,mio,adm,am,sq,da,fa,ipmpub,sys,dsm,jjpub,jjim,sms,month,quarter,year,sippub</param-value>
+	</context-param>
+ 	<listener>
+		<listener-class>uap.web.bd.pub.session.BDSessionListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>nc.uap.portal.servlet.listener.PortalContextLoaderListener</listener-class>
+	</listener>
+ 
+	<listener>
+		<listener-class>nc.uap.portal.servlet.listener.PortalSessionListener</listener-class>
+	</listener>
+ 
+	<filter>
+		<filter-name>Set Character Encoding</filter-name>
+		<filter-class>nc.uap.lfw.core.servlet.SetCharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>ignore</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	
+	<filter>
+		<filter-name>LogAroundFilter</filter-name>
+		<filter-class>
+			nc.uap.lfw.core.servlet.LogAroundFilter
+		</filter-class>
+	</filter>
+	
+	<!-- compress Filter -->
+	<filter>
+		<filter-name>CompressingFilter</filter-name>
+		<filter-class>
+			nc.uap.lfw.core.servlet.filter.compression.CompressingFilter
+		</filter-class>
+	</filter>
+	 <filter>
+		<filter-name>TempFileFilter</filter-name>
+		<filter-class>
+			 nc.uap.lfw.file.action.TempFileFilter
+		</filter-class>
+	</filter>
+	<filter>
+		<filter-name>HttpResponseFilter</filter-name>
+		<filter-class>
+			nc.uap.lfw.core.servlet.ResponseHeaderFilter
+		</filter-class>
+		<init-param>
+			<param-name>Cache-Control</param-name>
+			<param-value>max-age=3600</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>requestFilter</filter-name>
+		<filter-class>nc.uap.portal.servlet.listener.PortalRequestListener</filter-class>
+	</filter>
+	<filter>
+		<filter-name>gatefilter</filter-name>
+		<filter-class>nc.uap.portal.servlet.PortalLoginFilter</filter-class>
+			<init-param>
+				<param-name>login_path</param-name>
+				<param-value>/portal/login.jsp</param-value>
+			</init-param>
+	</filter>
+	<filter>
+		<filter-name>appFilter</filter-name>
+		<filter-class>nc.uap.portal.servlet.PortalAppFilter</filter-class>
+	</filter>
+	
+
+	<filter-mapping>
+		<filter-name>Set Character Encoding</filter-name>
+		<servlet-name>CoreServlet</servlet-name>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Set Character Encoding</filter-name>
+		<servlet-name>PortletServlet</servlet-name>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>LogAroundFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>TempFileFilter</filter-name>
+		<url-pattern>/office/filecache/*</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>CompressingFilter</filter-name>
+		<url-pattern>*.js</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>CompressingFilter</filter-name>
+		<url-pattern>*.css</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>CompressingFilter</filter-name>
+		<url-pattern>*.gif</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>CompressingFilter</filter-name>
+		<url-pattern>*.png</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>CompressingFilter</filter-name>
+		<url-pattern>*.jpg</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>CompressingFilter</filter-name>
+		<servlet-name>LfwDispatcherServlet</servlet-name>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>CompressingFilter</filter-name>
+		<url-pattern>/app/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>CompressingFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<!-- 
+		<filter-mapping>
+			<filter-name>CompressingFilter</filter-name>
+			<servlet-name>CoreServlet</servlet-name>
+		</filter-mapping> 
+	-->
+	 
+	<filter-mapping>
+		<filter-name>CompressingFilter</filter-name>
+		<servlet-name>PortletActServlet</servlet-name>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>HttpResponseFilter</filter-name>
+		<url-pattern>*.js</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>HttpResponseFilter</filter-name>
+		<url-pattern>*.css</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>HttpResponseFilter</filter-name>
+		<url-pattern>*.png</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>HttpResponseFilter</filter-name>
+		<url-pattern>*.swf</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>HttpResponseFilter</filter-name>
+		<url-pattern>*.jpg</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>HttpResponseFilter</filter-name>
+		<url-pattern>*.ico</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>requestFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> 
+	
+	<filter-mapping>
+		<filter-name>gatefilter</filter-name>
+		<servlet-name>CoreServlet</servlet-name>
+	</filter-mapping> 
+	<!-- 帆软权限过滤-->
+	<filter-mapping>
+		<filter-name>gatefilter</filter-name>
+		<servlet-name>ReportServer</servlet-name>
+	</filter-mapping> 
+	<!-- 帆软权限过滤-->
+	<filter-mapping>
+		<filter-name>gatefilter</filter-name>
+		<url-pattern>/securitycheck</url-pattern>
+	</filter-mapping> 
+	<filter-mapping>
+		<filter-name>gatefilter</filter-name>
+		<servlet-name>LfwDispatcherServlet</servlet-name>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>gatefilter</filter-name>
+		<servlet-name>PortletActServlet</servlet-name>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>gatefilter</filter-name>
+		<url-pattern>/app/*</url-pattern>
+	</filter-mapping>
+	
+
+	<servlet>
+		<servlet-name>CoreServlet</servlet-name>
+		<servlet-class>nc.uap.lfw.core.servlet.CoreServlet</servlet-class>
+		<init-param>
+			<param-name>actionfolder</param-name>
+			<param-value>nc.uap.lfw.file.action,nc.uap.portal.ctrl.office.action,nc.uap.wfm.action,nc.bs.oa.oapo.scheduler.action,nc.bs.oa.oapo.task.action,nc.bs.oa.oamt.action,nc.uap.ctrl.tpl.print.action,nc.bs.oa.oaco.im.action,nc.uap.portal.layoutdesign.action,nc.uap.smscode</param-value>
+		</init-param>
+	 
+		<init-param>
+			<param-name>urlprefix</param-name>
+			<param-value>/pt</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<filter-mapping>
+		<filter-name>appFilter</filter-name>
+		<url-pattern>/app/*</url-pattern>
+	</filter-mapping>
+  
+  	<servlet>
+		<servlet-name>WorkflowServlet</servlet-name>
+		<servlet-class>nc.uap.lfw.billtemplate.workflow.WorkflowPngServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WorkflowServlet</servlet-name>
+		<url-pattern>/wfimg</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DServlet</servlet-name>
+		<servlet-class>nc.uap.lfw.file.action.DocServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DServlet</servlet-name>
+		<url-pattern>/docctr/open/word.docx</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>LfwDispatcherServlet</servlet-name>
+		<servlet-class>nc.uap.lfw.core.servlet.LfwDispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>ctrlclass</param-name>
+			<param-value>nc.uap.portal.ctrl.PortalCoreController</param-value>
+		</init-param>
+		<init-param>
+			<param-name>ctxpath</param-name>
+			<param-value>/core</param-value>
+		</init-param>
+		<load-on-startup>4</load-on-startup>
+	</servlet>
+  
+	<servlet>
+		<servlet-name>PortletServlet</servlet-name>
+		<servlet-class>nc.uap.portal.servlet.PortletServlet</servlet-class>
+		<load-on-startup>5</load-on-startup>
+	</servlet>
+ 
+	<servlet>
+		<servlet-name>PortletActServlet</servlet-name>
+		<servlet-class>nc.uap.portal.servlet.PortletActServlet</servlet-class>
+		<load-on-startup>6</load-on-startup>
+	</servlet>
+  
+	<servlet>
+		<servlet-name>CodeServlet</servlet-name>
+		<servlet-class>nc.uap.lfw.core.servlet.CodeServlet</servlet-class>
+	</servlet>
+  
+	<servlet>
+		<servlet-name>RandomImageServlet</servlet-name>
+		<servlet-class>nc.uap.portal.servlet.RandomImageServlet</servlet-class>
+	</servlet>
+	 
+	<servlet>
+		<servlet-name>LfwSsoRegisterServlet</servlet-name>
+		<servlet-class>nc.uap.portal.login.action.LfwSsoRegisterServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>RiskOverviewHistoryHttpServlet</servlet-name>
+		<url-pattern>/RiskOverviewHistoryHttpServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>RiskOverviewHistoryHttpServlet</servlet-name>
+		<servlet-class>nc.scap.fa.risk.servlet.RiskOverviewHistoryHttpServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>authzCodeServlet</servlet-name>
+		<servlet-class>com.scap.pub.login.AuthzCodeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>authzCodeServlet</servlet-name>
+		<url-pattern>/AuthzCode</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>smsCodeServlet</servlet-name>
+		<servlet-class>com.scap.pub.login.SmsCodeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>smsCodeServlet</servlet-name>
+		<url-pattern>/SmsCode</url-pattern>
+	</servlet-mapping>
+	
+	<!--集成FineReport-->	
+	<servlet>  
+	    <servlet-name>ReportServer</servlet-name>  
+	    <servlet-class>com.fr.web.ReportServlet</servlet-class>  
+	    <load-on-startup>0</load-on-startup>  
+	</servlet>  
+
+	<servlet-mapping>  
+	    <servlet-name>ReportServer</servlet-name>  
+	    <url-pattern>/ReportServer</url-pattern>  
+	</servlet-mapping>  
+	<!--集成完成-->
+  	<servlet>
+		<servlet-name>FinereportServlet</servlet-name>
+		<servlet-class>nc.scap.da.servlet.FinereportServlet</servlet-class>
+		<load-on-startup>0</load-on-startup> 
+	</servlet>
+	<servlet-mapping>  
+		<servlet-name>FinereportServlet</servlet-name>  
+		<url-pattern>/FinereportServlet</url-pattern>  
+	</servlet-mapping> 
+	
+	<servlet>
+		<servlet-name>PubFinereportServlet</servlet-name>
+		<servlet-class>nc.scap.pub.servlet.PubFinereportServlet</servlet-class>
+		<load-on-startup>0</load-on-startup> 
+	</servlet>
+	<servlet-mapping>  
+		<servlet-name>PubFinereportServlet</servlet-name>  
+		<url-pattern>/PubFinereportServlet</url-pattern>  
+	</servlet-mapping> 
+	
+  	<servlet>
+		<servlet-name>MeetingreportServlet</servlet-name>
+		<servlet-class>nc.scap.abm.servlet.MeetingreportServlet</servlet-class>
+		<load-on-startup>0</load-on-startup> 
+	</servlet>
+	<servlet-mapping>  
+		<servlet-name>MeetingreportServlet</servlet-name>  
+		<url-pattern>/MeetingreportServlet</url-pattern>  
+	</servlet-mapping>  
+
+	<servlet-mapping>
+		<servlet-name>CoreServlet</servlet-name>
+		<url-pattern>/pt/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LfwDispatcherServlet</servlet-name>
+		<url-pattern>/core/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RandomImageServlet</servlet-name>
+		<url-pattern>/randimg</url-pattern>
+	</servlet-mapping>
+	 
+	<servlet-mapping>
+		<servlet-name>CodeServlet</servlet-name>
+		<url-pattern>/code/*</url-pattern>
+	</servlet-mapping>
+ 
+	<servlet-mapping>
+		<servlet-name>LfwSsoRegisterServlet</servlet-name>
+		<url-pattern>/registerServlet</url-pattern>
+	</servlet-mapping>
+  
+	<servlet-mapping>
+		<servlet-name>PortletServlet</servlet-name>
+		<url-pattern>*.pt</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>PortletActServlet</servlet-name>
+		<url-pattern>/ppt</url-pattern>
+	</servlet-mapping>
+ 
+	<servlet>
+		<servlet-name>ThirdPartyLoginServlet</servlet-name>
+		<servlet-class>nc.uap.portal.servlet.ThirdPartyLoginServlet</servlet-class>
+		<init-param>
+			<param-name>actionfolder</param-name>
+			<param-value>nc.uap.portal.action</param-value>
+		</init-param>
+	 
+		<init-param>
+			<param-name>urlprefix</param-name>
+			<param-value>/auth</param-value>
+		</init-param>
+		<load-on-startup>7</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ThirdPartyLoginServlet</servlet-name>
+		<url-pattern>/auth/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SimpleUploader</servlet-name>
+		<servlet-class>nc.uap.lfw.ckeditor.CKEditorUploadServlet</servlet-class>
+		<init-param>
+			<param-name>baseDir</param-name>
+			<param-value>/UserFiles/</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>false</param-value>
+		</init-param>
+		<init-param>
+			<param-name>enabled</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>AllowedExtensionsFile</param-name>
+			<param-value></param-value>
+		</init-param>
+		<init-param>
+			<param-name>DeniedExtensionsFile</param-name>
+			<param-value>
+				html|htm|php|php2|php3|php4|php5|phtml|pwml|inc|asp|aspx|ascx|jsp|cfm|cfc|pl|bat|exe|com|dll|vbs|js|reg|cgi|htaccess|asis|ftl
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>AllowedExtensionsImage</param-name>
+			<param-value>jpg|gif|jpeg|png|bmp</param-value>
+		</init-param>
+		<init-param>
+			<param-name>DeniedExtensionsImage</param-name>
+			<param-value></param-value>
+		</init-param>
+		<init-param>
+			<param-name>AllowedExtensionsFlash</param-name>
+			<param-value>swf|fla</param-value>
+		</init-param>
+		<init-param>
+			<param-name>DeniedExtensionsFlash</param-name>
+			<param-value></param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>SimpleUploader</servlet-name>
+		<url-pattern>/ckeditor/uploader</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>WatchLoggerServlet</servlet-name>
+		<servlet-class>nc.uap.lfw.core.servlet.WatchLoggerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WatchLoggerServlet</servlet-name>
+		<url-pattern>/watchlogger</url-pattern>
+	</servlet-mapping>
+	<!-- 人事管理照片显示Servlet -->
+	<servlet>
+		<servlet-name>PhotoServlet</servlet-name>
+		<servlet-class>nc.scap.psnm.fileupload.ComleaderPhotoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PhotoServlet</servlet-name>
+		<url-pattern>/photo</url-pattern>
+	</servlet-mapping>
+	<!-- 纪检监察领导人档案维护照片显示Servlet -->
+	<servlet>
+		<servlet-name>photoServlet</servlet-name>
+		<servlet-class>nc.scap.jjim.fileupload.ComleaderPhotoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>photoServlet</servlet-name>
+		<url-pattern>/jjphoto</url-pattern>
+	</servlet-mapping>
+	
+	<session-config>
+		<session-timeout>180</session-timeout> 
+	</session-config> 
+	<!--@EJBREF@-->
+
+	<error-page>   
+        <error-code>403</error-code>   
+        <location>/error.jsp</location>   
+    </error-page>   
+	<error-page>   
+        <error-code>404</error-code>   
+        <location>/error.jsp</location>   
+    </error-page>   
+     <error-page>   
+        <error-code>400</error-code>   
+        <location>/error.jsp</location>   
+    </error-page>   
+    <error-page>   
+        <error-code>500</error-code>   
+        <location>/exception.jsp</location>   
+	</error-page>   
+	<jsp-config>
+	</jsp-config>
+	<mime-mapping>
+    	<extension>esp</extension>
+		<mime-type>application/octet-stream</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+    	<extension>xlsx</extension>
+		<mime-type>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+    	<extension>xls</extension>
+		<mime-type>application/msexcel</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+    	<extension>bin</extension>
+		<mime-type>application/binary</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+    	<extension>exe</extension>
+		<mime-type>application/binary</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+    	<extension>rar</extension>
+		<mime-type>application/zip</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+    	<extension>msi</extension>
+		<mime-type>application/zip</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+    	<extension>swf</extension>
+		<mime-type>application/x-shockwave-flash</mime-type>
+	</mime-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<!--added by lht start-->
+	<servlet-mapping>
+		<servlet-name>rest</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>rest</servlet-name>
+		<servlet-class>nc.scap.fa.risk.servlet.RestServlet</servlet-class>
+	</servlet>
+	<!--added by lht end-->
+	<!--added by zhuguofeng-->
+	<servlet-mapping>
+		<servlet-name>riskview</servlet-name>
+		<url-pattern>/RiskAction</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>riskview</servlet-name>
+		<servlet-class>nc.scap.fa.risk.servlet.RiskViewHttpServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>QuotaAction</servlet-name>
+		<url-pattern>/QuotaAction</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>QuotaAction</servlet-name>
+		<servlet-class>nc.scap.fa.risk.servlet.QuotaInfoHttpServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RiskOverview1HttpServlet</servlet-name>
+		<url-pattern>/RiskOverview1HttpServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>RiskOverview1HttpServlet</servlet-name>
+		<servlet-class>nc.scap.fa.risk.servlet.RiskOverview1HttpServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RiskViewWinHttpServlet</servlet-name>
+		<url-pattern>/RiskViewWinHttpServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>RiskViewWinHttpServlet</servlet-name>
+		<servlet-class>nc.scap.fa.risk.servlet.RiskViewWinHttpServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>RiskOverviewHistoryHttpServlet</servlet-name>
+		<url-pattern>/RiskOverviewHistoryHttpServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>RiskOverviewHistoryHttpServlet</servlet-name>
+		<servlet-class>nc.scap.fa.risk.servlet.RiskOverviewHistoryHttpServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>LaborCostWarning4QuarterServlet</servlet-name>
+		<url-pattern>/LaborCostWarning4QuarterServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>LaborCostWarning4QuarterServlet</servlet-name>
+		<servlet-class>nc.scap.lcw.servlet.LaborCostWarning4QuarterServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LaborCostWarning4YearServlet</servlet-name>
+		<url-pattern>/LaborCostWarning4YearServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>LaborCostWarning4YearServlet</servlet-name>
+		<servlet-class>nc.scap.lcw.servlet.LaborCostWarning4YearServlet</servlet-class>
+	</servlet>
+</web-app>

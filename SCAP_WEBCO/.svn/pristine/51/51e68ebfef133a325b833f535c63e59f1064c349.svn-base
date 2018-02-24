@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE UIMeta PUBLIC "-//Yonyou Co., Ltd.//UAP LFW UIMeta 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_um_6_3.dtd">
+<UIMeta flowmode="true" id="attachlist_um" jquery="0" preferredHeight="" preferredWidth="">
+    <FlowvLayout id="flowvlayout6063" widgetId="attachlist">
+        <FlowvPanel bottomBorder="#" id="panelv16063" rightBorder="#" widgetId="attachlist">
+            <PanelLayout expand="true" id="panel6284" title="附件列表" widgetId="attachlist">
+                <PanelPanel bottomPadding="10" id="panelpanel6284" topPadding="20" widgetId="attachlist">
+	                <GridComp height="100%" id="attach_grid" left="0" position="relative" top="0" widgetId="attachlist" width="100%">
+	                </GridComp>
+                </PanelPanel>
+            </PanelLayout>
+        </FlowvPanel>
+    </FlowvLayout>
+</UIMeta>

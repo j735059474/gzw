@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+<items>
+
+<!--flag="0" 单独处理;flag="1" 查iufo表样;flag="2" 查事实表; 公式中"XX,2"表示XX公式计算后保留两位小数-->
+<item key="vyear" dimension="" name="年">
+  <source flag="2" code="scapfd_zc_base" measure="vyear" row="" col="" id="$aa"/>
+  <formula>
+    '$aa'.substring(0,4)
+  </formula>
+</item>
+
+<item key="sys_org" dimension="" name="组织标志">
+  <source flag="2" code="scapfd_zc_base" measure="sys_org" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--省属统计-->
+<item key="zcze" dimension="ss" name="资产总额（各省属企业的本年决算数）">
+  <source flag="2" code="scapfd_zc_base" measure="bn_zcze" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="fzze" dimension="ss" name="负债总额（各省属企业的本年决算数）">
+  <source flag="2" code="scapfd_zc_base" measure="bn_fzze" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="syzqyze" dimension="ss" name="所有者权益总额（各省属企业的本年决算数）">
+  <source flag="2" code="scapfd_zc_base" measure="bn_syzqyze" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gsymgsqyze" dimension="ss" name="归属于母公司的所有者权益总额（各省属企业的本年决算数）">
+  <source flag="2" code="scapfd_zc_base" measure="bn_gsmgsqyze" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yyzsr" dimension="ss" name="营业总收入（各省属企业的本年决算数）">
+  <source flag="2" code="scapfd_zc_base" measure="bn_yyzsr" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="lrze" dimension="ss" name="利润总额（各省属企业的本年决算数）">
+  <source flag="2" code="scapfd_zc_base" measure="bn_lrze" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jlr" dimension="ss" name="净利润（各省属企业的本年决算数）">
+  <source flag="2" code="scapfd_zc_base" measure="bn_jlr" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gsymgsjlr" dimension="ss" name="归属于母公司所有者的净利润（各省属企业的本年决算数）">
+  <source flag="2" code="scapfd_zc_base" measure="bn_gsymgsjlr" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+
+<item key="yjsfze" dimension="ss" name="应交税费总额（各省属企业的本年决算数）">
+  <source flag="2" code="scapfd_zc_base" measure="bn_yjseze" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sjjsfze" dimension="ss" name="实际上交税费总额（各省属企业的本年决算数）">
+  <source flag="2" code="scapfd_zc_base" measure="bn_sjsjsfze" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+
+
+<item key="gyzczl" dimension="ss" name="国有资产总量（各省属企业的本年决算数）">
+  <source flag="2" code="scapfd_zc_base" measure="bn_gyzczl" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="nmcyrs" dimension="ss" name="年末从业人员人数（各省属企业的本年决算数）">
+  <source flag="2" code="scapfd_zc_base" measure="bn_nmcyryrs" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qnpjcyrs" dimension="ss" name="全年平均从业人员人数（各省属企业的本年决算数）">
+  <source flag="2" code="scapfd_zc_base" measure="bn_qnpjcyzgrs" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+
+<item key="qnpjzgrs" dimension="ss" name="全年平均在岗职工人数（各省属企业的本年决算数）">
+  <source flag="2" code="scapfd_zc_base" measure="bn_qnpjzgzgrs" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+
+<item key="zgzggzze" dimension="ss" name="在岗职工工资总额（各省属企业的本年决算数）">
+  <source flag="2" code="scapfd_zc_base" measure="bn_zgzggzze" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<!--b-->
+<item key="bz_gcze" dimension="ss" name="资产总额(各省属企业的本年决算数占统计范围比重)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_zcze" row="" col="" id="($aa/$bb)*100" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_zcze" row="" col="" id="$bb" condition=" and v.vyear='2013' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    (($aa/$bb)*100/$bb)*100
+  </formula>
+</item>
+
+<item key="bz_fzze" dimension="ss" name="负债总额(各省属企业的本年决算数占统计范围比重)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_fzze" row="" col="" id="($aa/$bb)*100" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_fzze" row="" col="" id="$bb" condition=" and v.vyear='2013' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    ($aa/$bb)*100
+  </formula>
+</item>
+
+<item key="bz_syzqyze" dimension="ss" name="所有者权益总额(各省属企业的本年决算数占统计范围比重)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_syzqyze" row="" col="" id="($aa/$bb)*100" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_syzqyze" row="" col="" id="$bb" condition=" and v.vyear='2013' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    ($aa/$bb)*100
+  </formula>
+</item>
+
+<item key="bz_gsyqyze" dimension="ss" name="归属于母公司的所有者权益总额(各省属企业的本年决算数占统计范围比重)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_gsmgsqyze" row="" col="" id="($aa/$bb)*100" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_gsmgsqyze" row="" col="" id="$bb" condition=" and v.vyear='2013' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    ($aa/$bb)*100
+  </formula>
+</item>
+
+<item key="bz_yyzsr" dimension="ss" name="营业总收入(各省属企业的本年决算数占统计范围比重)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_yyzsr" row="" col="" id="($aa/$bb)*100" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_yyzsr" row="" col="" id="$bb" condition=" and v.vyear='2013' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    ($aa/$bb)*100
+  </formula>
+</item>
+
+<item key="bz_lrze" dimension="ss" name="利润总额(各省属企业的本年决算数占统计范围比重)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_lrze" row="" col="" id="($aa/$bb)*100" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_lrze" row="" col="" id="$bb" condition=" and v.vyear='2013' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    ($aa/$bb)*100
+  </formula>
+</item>
+
+<item key="bz_jlr" dimension="ss" name="净利润(各省属企业的本年决算数占统计范围比重)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_jlr" row="" col="" id="($aa/$bb)*100" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_jlr" row="" col="" id="$bb" condition=" and v.vyear='2013' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    ($aa/$bb)*100
+  </formula>
+</item>
+
+<item key="bz_gsyjlr" dimension="ss" name="归属于母公司所有者的净利润(各省属企业的本年决算数占统计范围比重)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_gsymgsjlr" row="" col="" id="($aa/$bb)*100" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_gsymgsjlr" row="" col="" id="$bb" condition=" and v.vyear='2013' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    ($aa/$bb)*100
+  </formula>
+</item>
+
+<item key="bz_yjsfze" dimension="ss" name="应交税费总额(各省属企业的本年决算数占统计范围比重)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_yjseze" row="" col="" id="($aa/$bb)*100" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_yjseze" row="" col="" id="$bb" condition=" and v.vyear='2013' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/> 
+ <formula>
+    ($aa/$bb)*100
+  </formula>
+</item>
+
+<item key="bz_sjjsfze" dimension="ss" name="实际上交税费总额(各省属企业的本年决算数占统计范围比重)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_sjsjsfze" row="" col="" id="($aa/$bb)*100" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_sjsjsfze" row="" col="" id="$bb" condition=" and v.vyear='2013' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    ($aa/$bb)*100
+  </formula>
+</item>
+
+<item key="bz_gyzcze" dimension="ss" name="国有资产总量(各省属企业的本年决算数占统计范围比重)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_gyzczl" row="" col="" id="($aa/$bb)*100" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_gyzczl" row="" col="" id="$bb" condition=" and v.vyear='2013' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    ($aa/$bb)*100
+  </formula>
+</item>
+
+<item key="bz_nmcyrs" dimension="ss" name="年末从业人员人数(各省属企业的本年决算数占统计范围比重)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_nmcyryrs" row="" col="" id="($aa/$bb)*100" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_nmcyryrs" row="" col="" id="$bb" condition=" and v.vyear='2013' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    ($aa/$bb)*100
+  </formula>
+</item>
+
+<item key="bz_qnpjcyrs" dimension="ss" name="全年平均从业人员人数(各省属企业的本年决算数占统计范围比重)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_qnpjcyzgrs" row="" col="" id="($aa/$bb)*100" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_qnpjcyzgrs" row="" col="" id="$bb" condition=" and v.vyear='2013' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    ($aa/$bb)*100
+  </formula>
+</item>
+
+<item key="bz_qnpjzgrs" dimension="ss" name="全年平均在岗职工人数(各省属企业的本年决算数占统计范围比重)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_qnpjzgzgrs" row="" col="" id="($aa/$bb)*100" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_qnpjzgzgrs" row="" col="" id="$bb" condition=" and v.vyear='2013' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    ($aa/$bb)*100
+  </formula>
+</item>
+
+<item key="bz_zggzgzze" dimension="ss" name="在岗职工工资总额(各省属企业的本年决算数占统计范围比重)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_zgzggzze" row="" col="" id="($aa/$bb)*100" condition=" and v.vyear='2014' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_zgzggzze" row="" col="" id="$bb" condition=" and v.vyear='2013' and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    ($aa/$bb)*100
+  </formula>
+</item>
+<!--b结束-->
+<!--tb-->
+<item key="zzl_zcze" dimension="ss" name="资产总额（各省属企业的本年决算数的年增长率）">
+  <source flag="2" code="scapfd_zc_tb" measure="tb_zcze" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_org in (select def12 from cp_orgs where pk_fatherorg = (select pk_org from cp_orgs where def12 = 'HZQYB0014') and def12 is not null) "/>
+  <formula>
+    $aa*100
+  </formula>
+</item>
+
+<item key="zzl_fzze" dimension="ss" name="负债总额（各省属企业的本年决算数的年增长率）">
+  <source flag="2" code="scapfd_zc_tb" measure="tb_fzze" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_org in (select def12 from cp_orgs where pk_fatherorg = (select pk_org from cp_orgs where def12 = 'HZQYB0014') and def12 is not null) "/>
+  <formula>
+    $aa*100
+  </formula>
+</item>
+
+<item key="zzl_syzqyze" dimension="ss" name="所有者权益总额（各省属企业的本年决算数的年增长率）">
+  <source flag="2" code="scapfd_zc_tb" measure="tb_syzqyze" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_org in (select def12 from cp_orgs where pk_fatherorg = (select pk_org from cp_orgs where def12 = 'HZQYB0014') and def12 is not null) "/>
+  <formula>
+    $aa*100
+  </formula>
+</item>
+
+<item key="zzl_gsyqyze" dimension="ss" name="归属于母公司的所有者权益总额（各省属企业的本年决算数的年增长率）">
+  <source flag="2" code="scapfd_zc_tb" measure="tb_gsmgsqyze" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_org in (select def12 from cp_orgs where pk_fatherorg = (select pk_org from cp_orgs where def12 = 'HZQYB0014') and def12 is not null) "/>
+  <formula>
+    $aa*100
+  </formula>
+</item>
+
+<item key="zzl_gsyqyze" dimension="ss" name="营业总收入（各省属企业的本年决算数的年增长率）">
+  <source flag="2" code="scapfd_zc_tb" measure="tb_yyzsr" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_org in (select def12 from cp_orgs where pk_fatherorg = (select pk_org from cp_orgs where def12 = 'HZQYB0014') and def12 is not null) "/>
+  <formula>
+    $aa*100
+  </formula>
+</item>
+
+<item key="zzl_lrze" dimension="ss" name="利润总额（各省属企业的本年决算数的年增长率）">
+  <source flag="2" code="scapfd_zc_tb" measure="tb_lrze" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_org in (select def12 from cp_orgs where pk_fatherorg = (select pk_org from cp_orgs where def12 = 'HZQYB0014') and def12 is not null) "/>
+  <formula>
+    $aa*100
+  </formula>
+</item>
+
+<item key="zzl_jlr" dimension="ss" name="净利润（各省属企业的本年决算数的年增长率）">
+  <source flag="2" code="scapfd_zc_tb" measure="tb_jlr" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_org in (select def12 from cp_orgs where pk_fatherorg = (select pk_org from cp_orgs where def12 = 'HZQYB0014') and def12 is not null) "/>
+  <formula>
+    $aa*100
+  </formula>
+</item>
+
+
+
+<item key="zzl_gsyjlr" dimension="ss" name="归属于母公司所有者的净利润（各省属企业的本年决算数的年增长率）">
+  <source flag="2" code="scapfd_zc_tb" measure="tb_gsmgsjlr" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_org in (select def12 from cp_orgs where pk_fatherorg = (select pk_org from cp_orgs where def12 = 'HZQYB0014') and def12 is not null) "/>
+  <formula>
+    $aa*100
+  </formula>
+</item>
+
+<item key="zzl_yjsfze" dimension="ss" name="应交税费总额（各省属企业的本年决算数的年增长率）">
+  <source flag="2" code="scapfd_zc_tb" measure="tb_yjsfze" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_org in (select def12 from cp_orgs where pk_fatherorg = (select pk_org from cp_orgs where def12 = 'HZQYB0014') and def12 is not null) "/>
+  <formula>
+    $aa*100
+  </formula>
+</item>
+
+
+
+<item key="zzl_sjjsfze" dimension="ss" name="实际上交税费总额（各省属企业的本年决算数的年增长率）">
+  <source flag="2" code="scapfd_zc_tb" measure="tb_sjsjsfze" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_org in (select def12 from cp_orgs where pk_fatherorg = (select pk_org from cp_orgs where def12 = 'HZQYB0014') and def12 is not null) "/>
+  <formula>
+    $aa*100
+  </formula>
+</item>
+
+<item key="zzl_gyzczl" dimension="ss" name="国有资产总量（各省属企业的本年决算数的年增长率）">
+  <source flag="2" code="scapfd_zc_tb" measure="tb_gyzczl" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_org in (select def12 from cp_orgs where pk_fatherorg = (select pk_org from cp_orgs where def12 = 'HZQYB0014') and def12 is not null) "/>
+  <formula>
+    $aa*100
+  </formula>
+</item>
+
+<item key="zzl_nmcyrs" dimension="ss" name="年末从业人员人数（各省属企业的本年决算数的年增长率）">
+  <source flag="2" code="scapfd_zc_tb" measure="tb_zmcyryrs" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_org in (select def12 from cp_orgs where pk_fatherorg = (select pk_org from cp_orgs where def12 = 'HZQYB0014') and def12 is not null) "/>
+  <formula>
+    $aa*100
+  </formula>
+</item>
+<item key="zzl_qnpjcyrs" dimension="ss" name="全年平均从业人员人数（各省属企业的本年决算数的年增长率）">
+  <source flag="2" code="scapfd_zc_tb" measure="tb_qnpjcyryrs" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_org in (select def12 from cp_orgs where pk_fatherorg = (select pk_org from cp_orgs where def12 = 'HZQYB0014') and def12 is not null) "/>
+  <formula>
+    $aa*100
+  </formula>
+</item>
+
+<item key="zzl_qnpjzgrs" dimension="ss" name="全年平均在岗职工人数（各省属企业的本年决算数的年增长率）">
+  <source flag="2" code="scapfd_zc_tb" measure="tb_qnpjzgzgrs" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_org in (select def12 from cp_orgs where pk_fatherorg = (select pk_org from cp_orgs where def12 = 'HZQYB0014') and def12 is not null) "/>
+  <formula>
+    $aa*100
+  </formula>
+</item>
+
+<item key="zzl_zgzggzze" dimension="ss" name="在岗职工工资总额（各省属企业的本年决算数的年增长率）">
+  <source flag="2" code="scapfd_zc_tb" measure="tb_zgzggzze" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.sys_org in (select def12 from cp_orgs where pk_fatherorg = (select pk_org from cp_orgs where def12 = 'HZQYB0014') and def12 is not null) "/>
+  <formula>
+    $aa*100
+  </formula>
+</item>
+
+<item key="type" dimension="" name="类型">
+  <source flag="2" code="scapfd_zc_base" measure="type" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+</items>
+</Root>

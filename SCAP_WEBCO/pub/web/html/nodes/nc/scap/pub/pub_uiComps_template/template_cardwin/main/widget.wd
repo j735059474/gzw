@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget controllerClazz="nc.scap.pub.template.TemplateCardWinMainViewCtrl" id="main" refId="main" sourcePackage="pub/src/public/">
+    <Attributes>
+        <Attribute>
+            <Key>$QueryTemplate</Key>
+            <Value>
+            </Value>
+        </Attribute>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+        <PlugoutDesc id="afterSavePlugout">
+        </PlugoutDesc>
+    </PlugoutDescs>
+    <PluginDescs>
+    </PluginDescs>
+    <Connectors>
+        <Connector connType="4" id="cardViewConnID" pluginId="proxyAfterSavePlugout" plugoutId="afterSavePlugout" source="main" sourceWindow="" target="popwin" targetWindow="">
+        </Connector>
+    </Connectors>
+    <Events>
+        <Event async="true" methodName="beforeShow" name="beforeShow" onserver="true">
+            <Action>
+            </Action>
+        </Event>
+    </Events>
+    <Models>
+        <Datasets>
+            <RefMdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_orgs" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_orgs" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="模版配置" controlwidgetopeStatus="false" enabled="false" id="scapco_template" lazyLoad="true" notNullBody="false" objMeta="scapco.scapco_template" pageSize="10" voMeta="nc.scap.pub.vos.TemplateVO">
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onDataLoad_scapco_template" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DataLoadEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+        </Datasets>
+        <ComboDatas>
+            <MDComboDataConf caption="模版是否启用" fullclassName="9f6d9c23-fbd9-4f71-8aa3-f6b3e22a6f40" id="combo_scapco_template_enablestate">
+            </MDComboDataConf>
+            <DynamicComboData caption="模版类型" className="nc.scap.pub.combo.TemplateTypeCombo" id="template_type">
+            </DynamicComboData>
+            <DynamicComboData className="nc.scap.pub.combo.TemplateTypeCombo" id="combo_scapco_template_templatetype">
+            </DynamicComboData>
+        </ComboDatas>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scapco_template_pk_group_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同集团(所有)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="模版配置_协同集团(所有)" usePower="false" writeDs="scapco_template" writeFields="pk_group,pk_group_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scapco_template_pk_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同全局+集团+业务单元(所有)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="模版配置_协同全局+集团+业务单元(所有)" usePower="false" writeDs="scapco_template" writeFields="pk_org,pk_org_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <FormComp caption="模版配置" columnCount="3" dataset="scapco_template" eleWidth="250" ellipsis="false" enabled="true" id="scapco_template_form" labelMinWidth="0" renderType="1" rowHeight="22" visible="true">
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="ComboBox" enabled="true" field="templatetype" height="" id="templatetype" imageOnly="false" langDir="pub_template" nextLine="false" nullAble="false" refComboData="combo_scapco_template_templatetype" rowSpan="1" selectOnly="true" text="模版类型" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="templatename" height="" id="templatename" imageOnly="false" langDir="pub_template" nextLine="false" nullAble="false" rowSpan="1" selectOnly="true" text="模版名称" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="templatecode" height="" id="templatecode" imageOnly="false" langDir="pub_template" nextLine="false" nullAble="false" rowSpan="1" selectOnly="true" text="模版编码" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="memo" height="" id="memo" imageOnly="false" langDir="pub_template" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="备注" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="appnode" height="" id="appnode" imageOnly="false" langDir="pub_template" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="应用节点" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def1" height="" id="def1" imageOnly="false" langDir="pub_template" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="def1" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def2" height="" id="def2" imageOnly="false" langDir="pub_template" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="def2" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def3" height="" id="def3" imageOnly="false" langDir="pub_template" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="def3" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def4" height="" id="def4" imageOnly="false" langDir="pub_template" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="def4" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def5" height="" id="def5" imageOnly="false" langDir="pub_template" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="def5" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="pk_group" height="" id="pk_group" imageOnly="false" langDir="pub_template" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="集团" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="Reference" enabled="true" field="pk_group_name" height="" id="pk_group_name" imageOnly="false" nextLine="false" nullAble="true" refNode="refnode_scapco_template_pk_group_name" rowSpan="1" selectOnly="true" text="集团" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="pk_org" height="" id="pk_org" imageOnly="false" langDir="pub_template" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="组织" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="Reference" enabled="true" field="pk_org_name" height="" id="pk_org_name" imageOnly="false" nextLine="false" nullAble="true" refNode="refnode_scapco_template_pk_org_name" rowSpan="1" selectOnly="true" text="组织" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="ComboBox" enabled="false" field="enablestate" height="" id="enablestate" imageOnly="false" langDir="pub_template" nextLine="false" nullAble="true" refComboData="combo_scapco_template_enablestate" rowSpan="1" selectOnly="true" text="是否启用" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="false" field="modifier" height="" id="modifier" imageOnly="false" langDir="pub_template" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="修改人" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="DateTimeText" enabled="false" field="modifiedtime" height="" id="modifiedtime" imageOnly="false" langDir="pub_template" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="修改时间" toolbarType="Custom" visible="true" width="">
+            </Element>
+        </FormComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar">
+            <MenuItem id="save" modifiers="2" showModel="1" text="保存">
+                <Events>
+                    <Event async="true" methodName="onSave" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="sep1" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="sep2" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="attachfile" modifiers="2" showModel="1" text="附件">
+                <Events>
+                    <Event async="true" methodName="onAttchFile" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="sep3" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="back" modifiers="2" showModel="1" text="返回">
+                <Events>
+                    <Event async="true" methodName="onBack" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

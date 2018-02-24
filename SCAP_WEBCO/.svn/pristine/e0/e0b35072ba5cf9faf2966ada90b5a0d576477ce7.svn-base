@@ -1,0 +1,185 @@
+nc.bs.framework.level=ERROR
+nc.bs.framework.pattern=$$callid=%X{serial} $$thread=[%t] $$host=%X{remoteAddr} $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$remotecall=[%A] $$debuglevel=%p  $$msg=%m %n
+nc.bs.framework.file=./nclogs/${server}/fw-log.log
+nc.bs.framework.size.maxSize=5MB
+nc.bs.framework.size.maxIndex=5
+
+iufo.level=ERROR
+iufo.pattern=$$thread=[%t] $$ts=%d{yyyy-MM-dd HH:mm:ss} $$debuglevel=%p  $$msg=%m %n
+iufo.file=./nclogs/${server}/iufo-log.log
+iufo.size.maxSize=8MB
+iufo.size.maxIndex=20
+
+uapadp.level=DEBUG
+uapadp.pattern=$$ts=%d{yyyy-MM-dd HH:mm:ss} $$msg=%m %n
+uapadp.file=./nclogs/${server}/uap-adp.log
+uapadp.size.maxSize=8MB
+uapadp.size.maxIndex=20
+
+com.ufida.eip.help.level=ERROR
+com.ufida.eip.help.pattern=$$ts=%d{yyyy-MM-dd HH:mm:ss} $$msg=%m %n
+com.ufida.eip.help.file=./nclogs/${server}/nchc-log.log
+com.ufida.eip.help.size.maxSize=8MB
+com.ufida.eip.help.size.maxIndex=20
+
+ncjca.level=ERROR
+ncjca.pattern=$$thread=[%t] $$ts=%d{yyyy-MM-dd HH:mm:ss} $$debuglevel=%p  $$msg=%m %n
+ncjca.file=./nclogs/${server}/ncjca-log.log
+ncjca.size.maxSize=5MB
+ncjca.size.maxIndex=5
+
+uapbdsearch.level=ERROR
+uapbdsearch.pattern=$$callid=%X{serial} $$thread=[%t] $$host=%X{remoteAddr} $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$remotecall=[%A] $$debuglevel=%p  $$msg=%m %n
+uapbdsearch.file=./nclogs/${server}/uapbdsearch-log.log
+uapbdsearch.size.maxSize=5MB
+uapbdsearch.size.maxIndex=5
+
+anonymous.level=ERROR
+anonymous.pattern=$$callid=%X{serial} $$thread=[%t] $$host=%X{remoteAddr} $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$remotecall=[%A] $$debuglevel=%p  $$msg=%m %n
+anonymous.file=./nclogs/${server}/anony-log.log
+anonymous.size.maxSize=5MB
+anonymous.size.maxIndex=20
+
+scheduleengine.level=ERROR
+scheduleengine.pattern=$$callid=%X{serial} $$thread=[%t] $$host=%X{remoteAddr} $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$remotecall=[%A] $$debuglevel=%p  $$msg=%m %n
+scheduleengine.file=./nclogs/${server}/schedule-log.log
+scheduleengine.size.maxSize=5MB
+scheduleengine.size.maxIndex=5
+
+nc.itf.uap.queryengine.level=ERROR
+nc.itf.uap.queryengine.pattern=$$callid=%X{serial} $$thread=[%t] $$host=%X{remoteAddr} $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$remotecall=[%A] $$debuglevel=%p  $$msg=%m %n
+nc.itf.uap.queryengine.file=./nclogs/${server}/qeddc-log.log
+nc.itf.uap.queryengine.size.maxSize=5MB
+nc.itf.uap.queryengine.size.maxIndex=5
+
+nclog.level=ERROR
+nclog.pattern=$$callid=%X{serial} $$thread=[%t] $$host=%X{remoteAddr} $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$remotecall=[%A] $$debuglevel=%p  $$msg=%m %n
+nclog.file=./nclogs/${server}/nc-log.log
+nclog.size.maxSize=5MB
+nclog.size.maxIndex=5
+
+nc.itf.uap.ddc.level=ERROR
+nc.itf.uap.ddc.pattern=$$callid=%X{serial} $$thread=[%t] $$host=%X{remoteAddr} $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$remotecall=[%A] $$debuglevel=%p  $$msg=%m %n
+nc.itf.uap.ddc.file=./nclogs/${server}/qeddc-log.log
+nc.itf.uap.ddc.size.maxSize=5MB
+nc.itf.uap.ddc.size.maxIndex=5
+
+pfxx.level=ERROR
+pfxx.pattern=$$callid=%X{serial} $$thread=[%t] $$host=%X{remoteAddr} $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$remotecall=[%A] $$debuglevel=%p  $$msg=%m %n
+pfxx.file=./nclogs/${server}/pfxx-log.log
+pfxx.size.maxSize=5MB
+pfxx.size.maxIndex=5
+
+iufoRepCalc.level=ERROR
+iufoRepCalc.pattern=$$thread=[%t] $$ts=%d{yyyy-MM-dd HH:mm:ss SSS} $$msg=%m %n
+iufoRepCalc.file=./nclogs/${server}/iufo-repcalc.log
+iufoRepCalc.size.maxSize=8MB
+iufoRepCalc.size.maxIndex=20
+
+nc.bs.framework.mx.thread.level=DEBUG
+nc.bs.framework.mx.thread.pattern=$$callid=%X{serial} $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$msg=%m %n
+nc.bs.framework.mx.thread.file=./nclogs/${server}/mwsummary-log.log
+nc.bs.framework.mx.thread.size.maxSize=5MB
+nc.bs.framework.mx.thread.size.maxIndex=40
+
+portal.level=ERROR
+portal.pattern=$$callid=%X{serial} $$thread=[%t] $$host=%X{remoteAddr} $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$remotecall=[%A] $$debuglevel=%p  $$msg=%m %n
+portal.file=./nclogs/${server}/portal-log.log
+portal.size.maxSize=5MB
+portal.size.maxIndex=5
+
+uapweb.level=ERROR
+uapweb.pattern=$$callid=%X{serial} $$thread=[%t] $$host=%X{remoteAddr} $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$remotecall=[%A] $$debuglevel=%p  $$msg=%m %n
+uapweb.file=./nclogs/${server}/uapweb-log.log
+uapweb.size.maxSize=5MB
+uapweb.size.maxIndex=5
+
+iufoRepCalcResult.level=ERROR
+iufoRepCalcResult.pattern=$$ts=%d{yyyy-MM-dd HH:mm:ss} $$msg=%m %n
+iufoRepCalcResult.file=./nclogs/${server}/iufo-repcalcrs.log
+iufoRepCalcResult.size.maxSize=8MB
+iufoRepCalcResult.size.maxIndex=20
+
+nc.bs.framework.codesync.level=OFF
+nc.bs.framework.codesync.pattern=$$callid=%X{serial} $$thread=[%t] $$host=%X{remoteAddr} $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$remotecall=[%A] $$debuglevel=%p  $$msg=%m %n
+nc.bs.framework.codesync.file=./nclogs/${server}/codesync-log.log
+nc.bs.framework.codesync.size.maxSize=5MB
+nc.bs.framework.codesync.size.maxIndex=5
+
+workflow.level=ERROR
+workflow.pattern=$$callid=%X{serial} $$thread=[%t] $$host=%X{remoteAddr} $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$remotecall=[%A] $$debuglevel=%p  $$msg=%m %n
+workflow.file=./nclogs/${server}/wf-log.log
+workflow.size.maxSize=5MB
+workflow.size.maxIndex=5
+
+threshold.level=ERROR
+threshold.pattern=$$callid=%X{serial} $$thread=[%t] $$host=%X{remoteAddr} $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$remotecall=[%A] $$debuglevel=%p  $$msg=%m %n
+threshold.file=./nclogs/${server}/sql-log.log
+threshold.size.maxSize=5MB
+threshold.size.maxIndex=5
+
+sysout.level=ERROR
+sysout.pattern=$$ts=%d{yyyy-MM-dd HH:mm:ss} $$msg=%m %n
+sysout.file=./nclogs/${server}/nchc-log.log
+sysout.size.maxSize=8MB
+sysout.size.maxIndex=20
+
+warningsql.level=ERROR
+warningsql.pattern=$$callid=%X{serial}  $$thread=[%t] $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$msg=%m %n
+warningsql.file=./nclogs/${server}/warningsql-log.log
+warningsql.size.maxSize=5MB
+warningsql.size.maxIndex=20
+
+prealert.level=ERROR
+prealert.pattern=$$callid=%X{serial} $$thread=[%t] $$host=%X{remoteAddr} $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$remotecall=[%A] $$debuglevel=%p  $$msg=%m %n
+prealert.file=./nclogs/${server}/pa-log.log
+prealert.size.maxSize=5MB
+prealert.size.maxIndex=5
+
+sql.level=ERROR
+sql.pattern=$$callid=%X{serial}  $$thread=[%t] $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$msg=%m %n
+sql.file=./nclogs/${server}/msql-log.log
+sql.size.maxSize=5MB
+sql.size.maxIndex=20
+
+uapcp.level=ERROR
+uapcp.pattern=$$callid=%X{serial} $$thread=[%t] $$host=%X{remoteAddr} $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$remotecall=[%A] $$debuglevel=%p  $$msg=%m %n
+uapcp.file=./nclogs/${server}/uapcp-log.log
+uapcp.size.maxSize=5MB
+uapcp.size.maxIndex=5
+
+webjob.level=ERROR
+webjob.pattern=$$callid=%X{serial} $$thread=[%t] $$host=%X{remoteAddr} $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$remotecall=[%A] $$debuglevel=%p  $$msg=%m %n
+webjob.file=./nclogs/${server}/webjob-log.log
+webjob.size.maxSize=5MB
+webjob.size.maxIndex=5
+
+cpwfm.level=ERROR
+cpwfm.pattern=$$callid=%X{serial} $$thread=[%t] $$host=%X{remoteAddr} $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$remotecall=[%A] $$debuglevel=%p  $$msg=%m %n
+cpwfm.file=./nclogs/${server}/cpwfm-log.log
+cpwfm.size.maxSize=5MB
+cpwfm.size.maxIndex=5
+
+accountmanage.level=ERROR
+accountmanage.pattern=$$callid=%X{serial} $$thread=[%t] $$host=%X{remoteAddr} $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$remotecall=[%A] $$debuglevel=%p  $$msg=%m %n
+accountmanage.file=./nclogs/${server}/am-log.log
+accountmanage.size.maxSize=5MB
+accountmanage.size.maxIndex=10
+
+nc.md.level=ERROR
+nc.md.pattern=$$callid=%X{serial} $$thread=[%t] $$host=%X{remoteAddr} $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$remotecall=[%A] $$debuglevel=%p  $$msg=%m %n
+nc.md.file=./nclogs/${server}/metadata.log
+nc.md.size.maxSize=5MB
+nc.md.size.maxIndex=5
+
+userpower.level=ERROR
+userpower.pattern=$$callid=%X{serial} $$thread=[%t] $$host=%X{remoteAddr} $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$remotecall=[%A] $$debuglevel=%p  $$msg=%m %n
+userpower.file=./nclogs/userpower-log.log
+userpower.size.maxSize=5MB
+userpower.size.maxIndex=5
+
+scap.level=ERROR
+scap.pattern=$$callid=%X{serial} $$thread=[%t] $$host=%X{remoteAddr} $$userid=%X{user} $$ts=%d{yyyy-MM-dd HH:mm:ss} $$remotecall=[%A] $$debuglevel=%p  $$msg=%m %n
+scap.file=./nclogs/${server}/scap-log.log
+scap.size.maxSize=5MB
+scap.size.maxIndex=5

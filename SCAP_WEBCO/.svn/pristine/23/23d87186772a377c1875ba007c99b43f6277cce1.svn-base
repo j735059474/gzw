@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE UIMeta PUBLIC "-//Yonyou Co., Ltd.//UAP LFW UIMeta 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_um_6_3.dtd">
+<UIMeta flowmode="true" id="DatatypeTree_um" jquery="0" preferredHeight="0" preferredWidth="0">
+    <FlowhLayout autoFill="false" id="flowhlayout6461" widgetId="DatatypeTree">
+        <FlowhPanel id="panelh06461" widgetId="DatatypeTree">
+            <TreeViewComp height="100%" id="datatypetree" left="0" position="relative" top="0" widgetId="DatatypeTree" width="100%">
+            </TreeViewComp>
+        </FlowhPanel>
+       
+    </FlowhLayout>
+</UIMeta>

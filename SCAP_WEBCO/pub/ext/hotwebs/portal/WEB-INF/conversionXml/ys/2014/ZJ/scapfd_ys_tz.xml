@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<ROOT>
+<items>
+
+<!--flag="0" 单独处理;flag="1" 查iufo表样;flag="2" 查事实表; 公式中"XX,2"表示XX公式计算后保留两位小数-->
+--<item key="vyear" dimension="" name="年">
+  <source flag="1" code="F05" measure="year" row="" col="" id="$aa"/>
+  <formula>
+    '$aa'.substring(0,4)
+  </formula>
+</item>
+
+<item key="sys_org" dimension="" name="组织标志">
+  <source flag="0" code="F05" measure="sys_org" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+
+<item key="type" dimension="" name="类型">
+  <source flag="0" code="F05" measure="type" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<!--dimension="sb"-->
+--<item key="yyzsr" dimension="sb" name="营业总收入(本年预报上报数)">
+  <source flag="1" code="F05" measure="yyysrbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zyywsr" dimension="sb" name="主营业务收入(本年预报上报数)">
+  <source flag="1" code="F05" measure="qzzyywsrbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="yyzcb" dimension="sb" name="营业总成本(本年预报上报数)">
+  <source flag="1" code="F05" measure="eyycbbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zyywcb" dimension="sb" name="主营业务成本(本年预报上报数)">
+  <source flag="1" code="F05" measure="qzzyywcbbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="yysjjfj" dimension="sb" name="营业税金及附加(本年预报上报数)">
+  <source flag="1" code="F05" measure="yysjjfjbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="xsfy" dimension="sb" name="销售费用(本年预报上报数)">
+  <source flag="1" code="F05" measure="xsfyyyfybnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="glfy" dimension="sb" name="管理费用(本年预报上报数)">
+  <source flag="1" code="F05" measure="glfybnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="cwfy" dimension="sb" name="财务费用(本年预报上报数)">
+  <source flag="1" code="F05" measure="cwfybnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zcjzss" dimension="sb" name="资产减值损失(本年预报上报数)">
+  <source flag="1" code="F05" measure="zcjzssbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="gyjzbdsy" dimension="sb" name="公允价值变动收益(本年预报上报数)">
+  <source flag="1" code="F05" measure="jgyjzbdsyssytlbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="dzsy" dimension="sb" name="投资收益(本年预报上报数)">
+  <source flag="1" code="F05" measure="tzsyksytlbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="yylr" dimension="sb" name="营业利润(本年预报上报数)">
+  <source flag="1" code="F05" measure="syylrbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="yywsr" dimension="sb" name="营业外收入(本年预报上报数)">
+  <source flag="1" code="F05" measure="jyywsrbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="yywzc" dimension="sb" name="营业外支出(本年预报上报数)">
+  <source flag="1" code="F05" measure="jyywzcbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="lrze" dimension="sb" name="利润总额(本年预报上报数)">
+  <source flag="1" code="F05" measure="slrzebnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="jlr" dimension="sb" name="净利润(本年预报上报数)">
+  <source flag="1" code="F05" measure="wjlrjksyhtlbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="gsymgsjlr" dimension="sb" name="归属于母公司所有者的净利润(本年预报上报数)">
+  <source flag="1" code="F05" measure="lgsymgssyzdjlrbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zcze" dimension="sb" name="资产总额(本年预报上报数)">
+  <source flag="1" code="F05" measure="qzczebnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="fzze" dimension="sb" name="负债总额(本年预报上报数)">
+  <source flag="1" code="F05" measure="bfzzebnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="syzqyze" dimension="sb" name="所有者权益总额(本年预报上报数)">
+  <source flag="1" code="F05" measure="jsyzqyzebnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="gdzctze" dimension="sb" name="固定资产投资额(本年预报上报数)">
+  <source flag="1" code="F05" measure="sgdzctzbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>-->
+
+
+<!--dimension="th"-->
+--<item key="zyywsr" dimension="th" name="主营业务收入(调整后预算数)">
+  <source flag="1" code="F05" measure="qzzyywsrdzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="yyzcb" dimension="th" name="营业总成本(调整后预算数)">
+  <source flag="1" code="F05" measure="eyycbdzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zyywcb" dimension="th" name="主营业务成本(调整后预算数)">
+  <source flag="1" code="F05" measure="qzzyywcbdzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="yysjjfj" dimension="th" name="营业税金及附加(调整后预算数)">
+  <source flag="1" code="F05" measure="yysjjfjdzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="xsfy" dimension="th" name="销售费用(调整后预算数)">
+  <source flag="1" code="F05" measure="xsfyyyfydzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="glfy" dimension="th" name="管理费用(调整后预算数)">
+  <source flag="1" code="F05" measure="glfydzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="cwfy" dimension="th" name="财务费用(调整后预算数)">
+  <source flag="1" code="F05" measure="cwfydzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zcjzss" dimension="th" name="资产减值损失(调整后预算数)">
+  <source flag="1" code="F05" measure="zcjzssdzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="gyjzbdsy" dimension="th" name="公允价值变动收益(调整后预算数)">
+  <source flag="1" code="F05" measure="jgyjzbdsyssytldzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="dzsy" dimension="th" name="投资收益(调整后预算数)">
+  <source flag="1" code="F05" measure="tzsyksytldzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="yylr" dimension="th" name="营业利润(调整后预算数)">
+  <source flag="1" code="F05" measure="syylrdzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="yywsr" dimension="th" name="营业外收入(调整后预算数)">
+  <source flag="1" code="F05" measure="jyywsrdzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="yywzc" dimension="th" name="营业外支出(调整后预算数)">
+  <source flag="1" code="F05" measure="jyywzcdzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="lrze" dimension="th" name="利润总额(调整后预算数)">
+  <source flag="1" code="F05" measure="slrzedzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="jlr" dimension="th" name="净利润(调整后预算数)">
+  <source flag="1" code="F05" measure="wjlrjksyhtldzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="gsymgsjlr" dimension="th" name="归属于母公司所有者的净利润(调整后预算数)">
+  <source flag="1" code="F05" measure="lgsymgssyzdjlrdzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zcze" dimension="th" name="资产总额(调整后预算数)">
+  <source flag="1" code="F05" measure="qzczedzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="fzze" dimension="th" name="负债总额(调整后预算数)">
+  <source flag="1" code="F05" measure="bfzzedzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="syzqyze" dimension="th" name="所有者权益总额(调整后预算数)">
+  <source flag="1" code="F05" measure="jsyzqyzedzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="gdzctze" dimension="th" name="固定资产投资额(调整后预算数)">
+  <source flag="1" code="F05" measure="sgdzctzdzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>-->
+
+<!--dimension="ts"-->
+<item key="yyzsr" dimension="ts" name="营业总收入(调整数)">
+  <source flag="1" code="F05" measure="yyysrdzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zyywsr" dimension="ts" name="主营业务收入(调整数)">
+  <source flag="1" code="F05" measure="qzzyywsrdzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="yyzcb" dimension="ts" name="营业总成本(调整数)">
+  <source flag="1" code="F05" measure="eyycbdzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zyywcb" dimension="ts" name="主营业务成本(调整数)">
+  <source flag="1" code="F05" measure="qzzyywcbdzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="yysjjfj" dimension="ts" name="营业税金及附加(调整数)">
+  <source flag="1" code="F05" measure="yysjjfjdzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="xsfy" dimension="ts" name="销售费用(调整数)">
+  <source flag="1" code="F05" measure="xsfyyyfydzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="glfy" dimension="ts" name="管理费用(调整数)">
+  <source flag="1" code="F05" measure="glfydzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="cwfy" dimension="ts" name="财务费用(调整数)">
+  <source flag="1" code="F05" measure="cwfydzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zcjzss" dimension="ts" name="资产减值损失(调整数)">
+  <source flag="1" code="F05" measure="zcjzssdzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="gyjzbdsy" dimension="ts" name="公允价值变动收益(调整数)">
+  <source flag="1" code="F05" measure="jgyjzbdsyssytldzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="dzsy" dimension="ts" name="投资收益(调整数)">
+  <source flag="1" code="F05" measure="tzsyksytldzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="yylr" dimension="ts" name="营业利润(调整数)">
+  <source flag="1" code="F05" measure="syylrdzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="yywsr" dimension="ts" name="营业外收入(调整数)">
+  <source flag="1" code="F05" measure="jyywsrdzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="yywzc" dimension="ts" name="营业外支出(调整数)">
+  <source flag="1" code="F05" measure="jyywzcdzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="lrze" dimension="ts" name="利润总额(调整数)">
+  <source flag="1" code="F05" measure="slrzedzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="jlr" dimension="ts" name="净利润(调整数)">
+  <source flag="1" code="F05" measure="wjlrjksyhtldzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="gsymgsjlr" dimension="ts" name="归属于母公司所有者的净利润(调整数)">
+  <source flag="1" code="F05" measure="lgsymgssyzdjlrdzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zcze" dimension="ts" name="资产总额(调整数)">
+  <source flag="1" code="F05" measure="qzczedzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="fzze" dimension="ts" name="负债总额(调整数)">
+  <source flag="1" code="F05" measure="bfzzedzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="syzqyze" dimension="ts" name="所有者权益总额(调整数)">
+  <source flag="1" code="F05" measure="jsyzqyzedzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="gdzctze" dimension="ts" name="固定资产投资额(调整数)">
+  <source flag="1" code="F05" measure="sgdzctzdzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>-->
+
+</items>
+</ROOT>

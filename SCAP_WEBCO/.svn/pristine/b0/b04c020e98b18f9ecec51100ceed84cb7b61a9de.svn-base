@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<ROOT>
+<items>
+
+<!--flag="0" 单独处理;flag="1" 查iufo表样;flag="2" 查事实表;flag="3" 默认值 公式中"XX,2"表示XX公式计算后保留两位小数-->
+<item key="vyear" dimension="" name="年">
+  <source flag="2" code="scapfd_kb_base" measure="vyear" row="" col="" id="$aa" />
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="vmonth" dimension="" name="月">
+  <source flag="2" code="scapfd_kb_base" measure="vmonth" row="" col="" id="$aa" />
+  <formula>
+    $aa
+  </formula>
+</item>
+
+
+<!--dimension="hs"-->
+<item key="yyzsr" dimension="hs" name="营业总收入（累计完成数）>100亿元的企业户数">
+  <source flag="2" code="scapfd_kb_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='$vyear' and v.vmonth='$vmonth' and v.lj_yyzsr > 1000000 and v.jq_level =1 "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="lrze" dimension="hs" name="利润总额（累计完成数）>1亿元的企业户数">
+  <source flag="2" code="scapfd_kb_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='$vyear' and v.vmonth='$vmonth' and v.lj_lrze > 10000 and v.jq_level = 1 "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ksqyhs" dimension="hs" name="亏损企业户数">
+  <source flag="2" code="scapfd_kb_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='$vyear' and v.vmonth='$vmonth' and 0 > v.lj_lrze and v.jq_level = 1"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zcze" dimension="hs" name="资产总额（累计完成数）>100亿元的企业户数">
+  <source flag="2" code="scapfd_kb_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='$vyear' and v.vmonth='$vmonth' and v.lj_zcze > 1000000 and v.jq_level = 1"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="kbqyzhs" dimension="hs" name="快报企业总户数">
+  <source flag="2" code="scapfd_kb_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='$vyear' and v.vmonth='$vmonth' and v.jq_level &lt;&gt; 0"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="kbylqyhs" dimension="hs" name="快报盈利企业户数">
+  <source flag="2" code="scapfd_kb_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='$vyear' and v.vmonth='$vmonth' and v.lj_lrze > 0 "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="kbylqyhszb" dimension="hs" name="快报盈利企业户数占比">
+  <source flag="2" code="scapfd_kb_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='$vyear' and v.vmonth='$vmonth' and v.lj_lrze > 0 "/>
+  <source flag="2" code="scapfd_kb_base" measure="count(*)" row="" col="" id="$bb" condition=" and v.vyear='$vyear' and v.vmonth='$vmonth' "/>
+  <formula>
+    $aa/$bb*100,1
+  </formula>
+</item>
+
+<item key="kbksqyhs" dimension="hs" name="快报亏损企业户数">
+  <source flag="2" code="scapfd_kb_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='$vyear' and v.vmonth='$vmonth' and 0 > v.lj_lrze and v.jq_level &lt;&gt; 0 "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="kbksqyhszb" dimension="hs" name="快报亏损企业户数占比">
+  <source flag="2" code="scapfd_kb_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='$vyear' and v.vmonth='$vmonth' and  0 > v.lj_lrze "/>
+  <source flag="2" code="scapfd_kb_base" measure="count(*)" row="" col="" id="$bb" condition=" and v.vyear='$vyear' and v.vmonth='$vmonth'"/>
+  <formula>
+    $aa/$bb*100,1
+  </formula>
+</item>
+
+<item key="tbzzqyhs" dimension="hs" name="快报利润总额同比增长的企业户数">
+  <source flag="2" code="scapfd_kb_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='$vyear' and v.vmonth='$vmonth' and (v.lj_zcze - nvl( (select b.lj_zcze from scapfd_kb_base b where b.vyear = v.vyear-1 and b.sys_org = v.sys_org and b.vmonth = v.vmonth ) , 0 ) )> 0 and v.jq_level = 1 "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="tvzzqyhszb" dimension="hs" name="快报利润总额同比增长的企业户数占比">
+  <source flag="2" code="scapfd_kb_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='$vyear' and v.vmonth='$vmonth' and (v.lj_zcze - nvl ( (select b.lj_zcze from scapfd_kb_base b where b.vyear = v.vyear - 1 and b.sys_org = v.sys_org and b.vmonth = v.vmonth ) , 0) ) > 0 and v.jq_level = 1 "/>
+  <source flag="2" code="scapfd_kb_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='$vyear' and v.vmonth='$vmonth' and v.jq_level = 1 "/>
+  <formula>
+    $aa/$bb*100,1
+  </formula>
+</item>
+
+<item key="qsjgqyhs" dimension="hs" name="全省监管企业户数">
+  <source flag="2" code="scapfd_kb_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='$vyear' and v.vmonth='$vmonth' and v.jq_level &lt;&gt; 0 "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ssyjqyhs" dimension="hs" name="省属一级企业户数">
+  <source flag="2" code="scapfd_kb_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='$vyear' and v.vmonth='$vmonth' and v.jq_level = 1 "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ssejqyhs" dimension="hs" name="省属二级企业户数">
+  <source flag="2" code="scapfd_kb_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='$vyear' and v.vmonth='$vmonth' and v.jq_level = 2 "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sssjqyhs" dimension="hs" name="省属三级企业户数">
+  <source flag="2" code="scapfd_kb_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='$vyear' and v.vmonth='$vmonth' and v.jq_level = 3"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--<item key="ssqyhs" dimension="hs" name="省属企业户数">
+  <source flag="2" code="scapfd_kb_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='$vyear' and v.vmonth='$vmonth' and v.lj_yyzsr > 1000000 and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014')"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qtjgqyhs" dimension="hs" name="其他监管企业户数">
+  <source flag="2" code="scapfd_kb_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='$vyear' and v.vmonth='$vmonth' and v.lj_yyzsr > 1000000 and v.sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014')"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+
+</items>
+</ROOT>

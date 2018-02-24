@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component conRouterType="手动" createIndustry="0"
+	createTime="2015-12-24 09:52:26" creator="" description=""
+	displayName="文化程度(自定义档案)业务操作" fromSourceBmf="true"
+	gencodestyle="NC传统样式" help="" id="fbe0cb92-a9e0-11e5-ac8f-3dc2749ac4fb"
+	industry="0" industryChanged="false" industryIncrease="false"
+	industryName="基础行业" isSource="false" isbizmodel="true" mainEntity=""
+	modifier="" modifyIndustry="0" modifyTime="2015-12-24 09:52:26"
+	name="bo_Defdoc-scapamn_0004" namespace="uap" ownModule="uapbd"
+	preLoad="false" programcode="" resModuleName="bo_Defdoc-scapamn_0004"
+	resid="" version="1" versionType="0">
+	<celllist>
+		<busioperation componentID="fbe0cb92-a9e0-11e5-ac8f-3dc2749ac4fb"
+			createIndustry="0" createTime="2015-12-24 09:52:26" creator=""
+			dataType="1001ZZ1000000000OSR5" dbtype="" description=""
+			displayName="修改" fullClassName="nc.vouap.bo_Defdoc-scapamn_0004.edit"
+			height="100" help="" id="fbe0cb96-a9e0-11e5-ac8f-3dc2749ac4fb"
+			industryChanged="false" isAuthorization="true" isBusiActivity="false"
+			isSource="false" logtype="MODIFY" modifier="" modifyIndustry="0"
+			modifyTime="2015-12-24 09:52:26" name="edit" needlog="true"
+			resid="2UC000-001103" typeDisplayName="文化程度(自定义档案)"
+			typeName="Defdoc-scapamn_0004" version=""
+			versionType="0" visibility="public" width="80" x="150" y="120">
+			<refoperationlist />
+		</busioperation>
+		<busioperation componentID="fbe0cb92-a9e0-11e5-ac8f-3dc2749ac4fb"
+			createIndustry="0" createTime="2015-12-24 09:52:26" creator=""
+			dataType="1001ZZ1000000000OSR5" dbtype="" description=""
+			displayName="删除" fullClassName="nc.vouap.bo_Defdoc-scapamn_0004.delete"
+			height="100" help="" id="fbe0cb94-a9e0-11e5-ac8f-3dc2749ac4fb"
+			industryChanged="false" isAuthorization="true" isBusiActivity="false"
+			isSource="false" logtype="DELETE" modifier="" modifyIndustry="0"
+			modifyTime="2015-12-24 09:52:26" name="delete" needlog="true"
+			resid="2UC000-001104" typeDisplayName="文化程度(自定义档案)"
+			typeName="Defdoc-scapamn_0004" version=""
+			versionType="0" visibility="public" width="80" x="250" y="120">
+			<refoperationlist />
+		</busioperation>
+		<busioperation componentID="fbe0cb92-a9e0-11e5-ac8f-3dc2749ac4fb"
+			createIndustry="0" createTime="2015-12-24 09:52:26" creator=""
+			dataType="1001ZZ1000000000OSR5" dbtype="" description=""
+			displayName="启用" fullClassName="nc.vouap.bo_Defdoc-scapamn_0004.enable"
+			height="100" help="" id="fbe0cb97-a9e0-11e5-ac8f-3dc2749ac4fb"
+			industryChanged="false" isAuthorization="true" isBusiActivity="false"
+			isSource="false" logtype="MODIFY" modifier="" modifyIndustry="0"
+			modifyTime="2015-12-24 09:52:26" name="enable" needlog="true"
+			resid="2UC000-001105" typeDisplayName="文化程度(自定义档案)"
+			typeName="Defdoc-scapamn_0004" version=""
+			versionType="0" visibility="public" width="80" x="350" y="120">
+			<refoperationlist />
+		</busioperation>
+		<busioperation componentID="fbe0cb92-a9e0-11e5-ac8f-3dc2749ac4fb"
+			createIndustry="0" createTime="2015-12-24 09:52:26" creator=""
+			dataType="1001ZZ1000000000OSR5" dbtype="" description=""
+			displayName="停用" fullClassName="nc.vouap.bo_Defdoc-scapamn_0004.disable"
+			height="100" help="" id="fbe0cb95-a9e0-11e5-ac8f-3dc2749ac4fb"
+			industryChanged="false" isAuthorization="true" isBusiActivity="false"
+			isSource="false" logtype="MODIFY" modifier="" modifyIndustry="0"
+			modifyTime="2015-12-24 09:52:26" name="disable" needlog="true"
+			resid="2UC000-001106" typeDisplayName="文化程度(自定义档案)"
+			typeName="Defdoc-scapamn_0004" version=""
+			versionType="0" visibility="public" width="80" x="450" y="120">
+			<refoperationlist />
+		</busioperation>
+		<busioperation componentID="fbe0cb92-a9e0-11e5-ac8f-3dc2749ac4fb"
+			createIndustry="0" createTime="2015-12-24 09:52:26" creator=""
+			dataType="1001ZZ1000000000OSR5" dbtype="" description=""
+			displayName="新增" fullClassName="nc.vouap.bo_Defdoc-scapamn_0004.add"
+			height="100" help="" id="fbe0cb93-a9e0-11e5-ac8f-3dc2749ac4fb"
+			industryChanged="false" isAuthorization="true" isBusiActivity="false"
+			isSource="false" logtype="ADD" modifier="" modifyIndustry="0"
+			modifyTime="2015-12-24 09:52:26" name="add" needlog="true"
+			resid="2UC000-001114" typeDisplayName="文化程度(自定义档案)"
+			typeName="Defdoc-scapamn_0004" version=""
+			versionType="0" visibility="public" width="80" x="50" y="120">
+			<refoperationlist />
+		</busioperation>
+	</celllist>
+	<connectlist />
+	<refdepends />
+	<refdependLoseIDs />
+	<cellRemoveLog />
+	<rulers>
+		<ruler isHorizontal="true" unit="0">
+			<guideList />
+		</ruler>
+		<ruler isHorizontal="false" unit="0">
+			<guideList />
+		</ruler>
+	</rulers>
+</component>

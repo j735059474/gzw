@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<ROOT>
+<items>
+
+<!--flag="0" 单独处理;flag="1" 查iufo表样;flag="2" 查事实表;flag="3" 默认值 公式中"XX,2"表示XX公式计算后保留两位小数-->
+<item key="vyear" dimension="" name="年">
+  <source flag="0" code="" measure="" row="" col="" id="" />
+  <formula>
+    2014
+  </formula>
+</item>
+
+<item key="sys_org" dimension="" name="组织标志">
+  <source flag="0" code="" measure="" row="" col="" id="" />
+  <formula>
+    HZQYB0014
+  </formula>
+</item>
+
+<!--dimension="xz"-->
+<item key="sjjgqyhs" dimension="xz" name="省级监管企业户数">
+  <source flag="2" code="scapfd_js_base" measure="count(*)" row="" col="" id="$aa" condition=" and def13 is not null and v.vyear='2014' "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sjjgdlfrdwhs" dimension="xz" name="省级监管独立法人单位总户数">
+  <source flag="2" code="scapfd_js_base" measure="count(distinct v.sys_org)" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.jq_level &lt;&gt; 0 "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sjjgejqyhs" dimension="xz" name="省级监管二级企业户数">
+  <source flag="2" code="scapfd_js_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.jq_level = 2  "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sjjgsjqyhs" dimension="xz" name="省级监管三级企业户数">
+  <source flag="2" code="scapfd_js_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.jq_level = 3 "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zczeqyhs1000" dimension="xz" name="资产总额>1000亿元企业户数">
+  <source flag="2" code="scapfd_js_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.bn_zcze > 100000000000 and def13 is not null "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zczeqyhs500" dimension="xz" name="资产总额>500亿元企业户数">
+  <source flag="2" code="scapfd_js_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='2014' and  v.jq_level = 1 and v.bn_zcze > 50000000000 "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zcfzlqyhs70" dimension="xz" name="资产负债率超过70%的企业户数">
+  <source flag="2" code="scapfd_js_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='2014' and  v.jq_level = 1 and (case when v.bn_zcze = 0 then 0 else round ( v.bn_fzze/v.bn_zcze*100,1) end) >= 70 "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zcfzlbz70" dimension="xz" name="资产负债率超过70%的企业户数点所有企业户数比重">
+  <source flag="2" code="scapfd_js_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='2014' and  v.jq_level = 1 and (case when v.bn_zcze = 0 then 0 else round ( v.bn_fzze/v.bn_zcze*100,1) end) >= 70"/>
+  <source flag="2" code="scapfd_js_base" measure="count(*)" row="" col="" id="$bb" condition=" and v.vyear='2014' and v.jq_level = 1 "/>
+  <formula>
+    $aa/$bb*100,1
+  </formula>
+</item>
+
+<item key="qyzhs100" dimension="xz" name="净资产总额>100亿元的各省属企业总户数">
+  <source flag="2" code="scapfd_js_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='2014' and  v.jq_level = 1 and v.bn_syzqyze > 10000000000 "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gyzbbzzzhs1" dimension="xz" name="本年实现国有资本保值增值户数">
+  <source flag="2" code="scapfd_js_other" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.xz_gyzbbzzzl>=0 and def13 is not null "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gyzbbzzzhs0" dimension="xz" name="本年未实现国有资本保值增值户数">
+  <source flag="2" code="scapfd_js_other" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='2014' and 0> v.xz_gyzbbzzzl and def13 is not null "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yyzslqyhs100" dimension="hs" name="营业总收入（本年完成数）>100亿元的企业户数">
+  <source flag="2" code="scapfd_js_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.bn_yyzsr > 10000000000 and v.jq_level = 1 "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ylqyhs10" dimension="hs" name="盈利超10亿元的企业户数">
+  <source flag="2" code="scapfd_js_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.bn_lrze > 1000000000 and v.jq_level = 1 "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jsylqyhs" dimension="yk" name="决算盈利企业户数">
+  <source flag="2" code="scapfd_js_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.bn_lrze > 0 and v.jq_level = 1 "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jsksqyhs" dimension="yk" name="决算亏损企业户数">
+  <source flag="2" code="scapfd_js_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.vyear='2014' and  0 > v.bn_lrze and v.jq_level = 1"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qyjzczezb100" dimension="xz" name="净资产总额>100亿元的各省属企业净资产总额占比">
+  <source flag="2" code="scapfd_js_base" measure="sum(v.bn_syzqyze)" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.bn_syzqyze > 10000000000 and v.jq_level = 1"/>
+  <source flag="2" code="scapfd_js_base" measure="bn_syzqyze" row="" col="" id="$bb" condition=" and v.vyear='2014' and v.sys_org like 'HZQYB0014'"/>
+  <formula>
+    $aa/$bb*100,1
+  </formula>
+</item>
+
+<item key="zczezb100" dimension="xz" name="资产总额>100亿元的各省属企业资产总额占比">
+  <source flag="2" code="scapfd_js_base" measure="sum(v.bn_zcze)" row="" col="" id="$aa" condition=" and v.vyear='2014' and v.bn_zcze > 10000000000 and v.jq_level = 1 "/>
+  <source flag="2" code="scapfd_js_base" measure="bn_zcze" row="" col="" id="$bb" condition=" and v.vyear='2014' and v.sys_org like 'HZQYB0014'"/>
+  <formula>
+    $aa/$bb*100,1
+  </formula>
+</item>
+
+</items>
+</ROOT>

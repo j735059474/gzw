@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<#--系统渲染组件 可继承或者重写-->
+<#import "/common/render.ftl" as render />
+<#--系统渲染组件 可继承或者重写-->
+<meta http-equiv="X-UA-Compatible" content="IE=8,9,10" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="/portal/ufida.ico"/>
+<@render.importConstant constants=ptconstants/>
+ <@lfwImporter></@lfwImporter>
+<#--引入常量-->
+  <title>${env().title}</title>
+  <base href="${env().ctx}" />
+<style>
+.headTable td{
+padding-right:15px;
+vertical-align:middle;
+text-valign:middle;
+height:24px;
+}
+.headText{
+padding-left:5px;
+color:#3990BD;
+}
+.headText:hover{
+color:red;
+}
+.headIco{
+vertical-align:middle;
+
+}
+</style>
+</head>
+<body>
+	 <div style="width:100%;max-width:1200px;min-width:1200px;margin-left:auto;margin-right:auto;">
+		<div tp="nagigation" style="position:relative;">
+			<!-- 顶部 -->
+			<div style="float:right;">
+				<table class="headTable">
+					<tr>
+						<td><img src="${env().web}/images/header/user_ico.gif"></td>
+						<td><img src="${env().web}/images/header/portal_cut_line.gif"></td>
+						<td><span class="headText">${USER_INFO.username} 您好！ 欢迎进入国资监管平台</span></td>
+						<td><img src="${env().web}/images/header/portal_cut_line.gif"></td>
+						<td onclick="openPublicPortlet('pint','MsgCenterPopupPortlet',800,580)" style="cursor:pointer;witdh:50px;">
+							<img  class="headIco" src="${env().web}/images/header/message.gif">
+							<span class="headText" id="msgCount"></div></span>
+						</td>
+						<td><img src="${env().web}/images/header/portal_cut_line.gif"></td>
+						<td><img  class="headIco" src="${env().web}/images/header/mainpage.gif"><span class="headText">首页</span></td>
+						<td><img src="${env().web}/images/header/portal_cut_line.gif"></td>
+						<td>
+						<a id="portal_setting" style="cursor: pointer;" ><span class="headText">更多
+						</span><img src="${RES_PATH}/homepage/personal/personal_dropdown.png" style="vertical-align:middle;padding-left: 8px;"></a>
+						</td>
+						<td><img src="${env().web}/images/header/portal_cut_line.gif"></td>
+						<td>
+						<a href="${env().web}/pt/home/logout">
+						<img  class="headIco" src="${env().web}/images/header/quit.gif"><span class="headText">退出</span></a>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div style="height:24px;background:url(${env().web}/images/header/portal_line.gif) repeat-x;"></div>
+			<div id="head_top" style="width:100%;height:60px;background:url(${env().web}/images/common/${env().proId}/banner.jpg);">
+			<img style="float:left;" src="${env().web}/images/common/${env().proId}/logo.png">
+			</div>
+			<!-- 导航栏 -->
+			<#import "/common/navigation.ftl" as nav>
+     		<@nav.menu currPage=page></@nav.menu>
+		</div>
+	    <!--布局开始-->
+	    <div style="background-color:#fff;border:1px solid #bec3c7;border-top:none;">
+	      <@render.layout pageLayout=page.layout page=page/>
+	    </div>
+	    <!--布局结束-->
+	    <!--页脚开始-->
+	    <div tp="foot">
+	    </div>
+	    <!--页脚结束-->
+	    <!--Portal工具条-->
+		<#include "/common/tipspanel.ftl">
+		<!--Portal设置-->
+		<#include "/common/popupsetting.ftl">
+	</div>
+</body>
+</html>

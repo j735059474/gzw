@@ -1,0 +1,261 @@
+package com.scap.pub.msg.provider.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.commons.lang.StringUtils;
+
+import nc.bs.framework.common.InvocationInfoProxy;
+import nc.bs.framework.common.NCLocator;
+import nc.jdbc.framework.processor.MapProcessor;
+import nc.message.itf.IMessageQueryService;
+import nc.message.vo.MessageVO;
+import nc.message.vo.NCMessage;
+import nc.uap.lfw.core.LfwRuntimeEnvironment;
+import nc.uap.lfw.core.cmd.base.FromWhereSQL;
+import nc.uap.lfw.core.ctx.AppLifeCycleContext;
+import nc.uap.lfw.core.data.PaginationInfo;
+import nc.uap.lfw.crud.itf.ILfwQueryService;
+import nc.uap.portal.log.PortalLogger;
+import nc.uap.portal.msg.model.Msg;
+import nc.uap.portal.msg.model.MsgBox;
+import nc.uap.portal.msg.model.MsgCategory;
+import nc.uap.portal.msg.model.MsgCmd;
+import nc.uap.portal.msg.provide.IMsgCmd;
+import nc.uap.portal.msg.provide.IMsgProvide;
+import nc.uap.portal.msg.provide.NcMsgAtomChain;
+import nc.uap.portal.msg.provide.impl.NcMsgProcessCycle;
+import nc.vo.pub.BusinessException;
+import nc.vo.pub.lang.UFDateTime;
+
+public class ScapamMsgProvider implements IMsgProvide {
+
+	@Override
+	public Msg[] query(String category, UFDateTime start, UFDateTime end,
+			MsgBox box, PaginationInfo pi, FromWhereSQL whereSql) {
+		NCMessage[] msgs = null;
+		try {
+			msgs = getNCMessage(category, box, start, end,
+					new String[] { "0" }, pi);
+		} catch (Exception e) {
+			PortalLogger.error(e.getMessage(), e);
+		}
+		if (msgs != null) {
+			return null;
+		}
+		return new Msg[0];
+	}
+
+	NCMessage[] getNCMessage(String syscode, MsgBox box, UFDateTime start,
+			UFDateTime end, String[] states, PaginationInfo pg)
+			throws Exception {
+		String destination = "inbox";
+		if (box != null)
+			destination = box.getId();
+		IMessageQueryService msq = (IMessageQueryService) NCLocator
+				.getInstance().lookup(IMessageQueryService.class.getName());
+		String receiver = InvocationInfoProxy.getInstance().getUserId();
+		ILfwQueryService qs = NCLocator.getInstance().lookup(
+				ILfwQueryService.class);
+		StringBuffer whereSB = new StringBuffer(" receiver = '" + receiver
+				+ "' and msgtype='nc' and destination = '" + destination + "' ");
+		if (syscode != null) {
+			whereSB.append(" and msgsourcetype in (select typecode from sm_msg_msgtype where displocation='"
+					+ syscode + "') ");
+		}
+		if (states != null) {
+			List<String> isReadArr = new ArrayList<String>();
+			List<String> isDelArr = new ArrayList<String>();
+			for (int i = 0; i < states.length; i++) {
+				if (StringUtils.equals(states[i], "0")) {
+					isReadArr.add("N");
+				}
+				if (StringUtils.equals(states[i], "1")) {
+					isReadArr.add("Y");
+				}
+				if (StringUtils.equals(states[i], "-1")) {
+					isDelArr.add("Y");
+				}
+			}
+			if (!isReadArr.isEmpty()) {// 未读且未处理
+				whereSB.append(" and ( ishandled = 'N' or ishandled is null) ");
+				whereSB.append("  and (isread in('"
+						+ StringUtils.join(isReadArr.iterator(), "','")
+						+ "') or isread is null) ");
+			}
+			if (!isDelArr.isEmpty())
+				whereSB.append(" and isdelete in('"
+						+ StringUtils.join(isReadArr.iterator(), "','") + "') ");
+			else
+				whereSB.append(" and isdelete = 'N' "); // modify by licza : add
+														// msgtype='nc' 只查询nc消息
+		}
+
+		MessageVO[] vos = qs.queryVOs(new MessageVO(), pg, whereSB.toString(),
+				null, " order by sendtime desc ");
+
+		Map obj = (Map) qs.queryVOs(
+				"select count(1) as c from (select pk_message from sm_msg_content where "
+						+ whereSB.toString() + ") as a", new MapProcessor());
+		if (obj != null && pg != null)
+			pg.setRecordsCount((Integer) obj.get("c"));
+		List<String> pks = new ArrayList<String>();
+		if (vos != null && vos.length > 0) {
+			for (MessageVO vo : vos) {
+				pks.add(vo.getPk_message());
+			}
+			return msq.queryNCMessages(
+					" pk_message in ('"
+							+ StringUtils.join(pks.toArray(new String[0]),
+									"','") + "') ",
+					new String[] { "sendtime desc" });
+		}
+		return null;
+	}
+
+	@Override
+	public List<MsgCategory> getCategory() {
+		List<MsgCategory> mclist = new ArrayList<MsgCategory>();
+		MsgCategory gobal = new MsgCategory();
+		gobal.setId("scapgobal");
+		gobal.setName("国资消息");
+		mclist.add(gobal);
+
+		MsgCategory mc = new MsgCategory();
+		mc.setId("scap");
+		mc.setPluginid(getPluginId());
+		mc.setOrdernum(Integer.valueOf(20));
+		mc.setName("国资审计");
+
+		MsgCategory mc1 = new MsgCategory();
+		mc1.setId("scapfdmsg");
+		mc1.setPluginid(getPluginId());
+		mc1.setOrdernum(Integer.valueOf(21));
+		mc1.setName("国资财务");
+
+		MsgBox mb = new MsgBox();
+		mb.setId("inbox1");
+		mb.setTitle("收件箱");
+
+		List<MsgCmd> msgcmd = new ArrayList<MsgCmd>();
+		MsgCmd cmd = new MsgCmd();
+		cmd.setId("markReaded");
+		cmd.setTitle("已读");
+		cmd.setGobal(true);
+		msgcmd.add(cmd);
+
+		mb.setMsgcmd(msgcmd);
+		mc.addMsgbox(mb);
+		gobal.addMsgCategoryList(mc);
+		gobal.addMsgCategoryList(mc1);
+
+		return mclist;
+	}
+
+	@Override
+	public Msg get(String id) {
+		IMessageQueryService msq = NCLocator.getInstance().lookup(
+				IMessageQueryService.class);
+
+		NCMessage nm = null;
+		try {
+			nm = msq.queryNCMessageByPk(id);
+		} catch (BusinessException e) {
+			PortalLogger.error(e.getMessage(), e);
+		}
+		;
+		NcMsgAtomChain chain = new NcMsgAtomChain();
+		chain.setCmd(id);
+		chain.setPluginid(getPluginId());
+		NcMsgProcessCycle.doProcess(nm, chain);
+		String content = chain.getMsgContent();
+		if (content != null)
+			nm.getMessage().setContent(chain.getMsgContent());
+		if (nm != null) {
+			String nccode = null;
+			return null;
+		}
+		return null;
+	}
+
+	@Override
+	public Integer getNewMessageCount(String category) {
+		try {
+			/**
+			 * 获得NC端数据源
+			 */
+
+			String receiver = LfwRuntimeEnvironment.getLfwSessionBean()
+					.getPk_user();
+
+			String nccode = null;
+			if (StringUtils.equals(category, "ncnotice")) {
+				nccode = "notice";
+			} else {
+				nccode = category;
+			}
+			ILfwQueryService qs = NCLocator.getInstance().lookup(
+					ILfwQueryService.class);
+			Map obj = (Map) qs
+					.queryVOs(
+							"select count(1) as c from (select pk_message from sm_msg_content where  ( isread = 'N' or isread is null ) and ( ishandled != 'Y' or ishandled is null) and  receiver = '"
+									+ receiver
+									+ "' "
+									+ (nccode != null ? " and msgsourcetype in (select typecode from sm_msg_msgtype where displocation='"
+											+ nccode + "')"
+											: "")
+									+ " and destination = 'inbox'  and isdelete = 'N' and msgtype='nc'  ) as a",
+							new MapProcessor());
+			if (obj != null)
+				return ((Integer) obj.get("c"));
+		} catch (Exception e) {
+			PortalLogger.error(e.getMessage(), e);
+		}
+		return 0;
+	}
+
+	@Override
+	public IMsgCmd getCmd(String id) {
+		if ("TITLE_CLICK".equals(id)) {
+			return new IMsgCmd() {
+
+				@Override
+				public void execute() {
+					String pk = AppLifeCycleContext.current()
+							.getParameter("pk");
+					NcMsgAtomChain chain = new NcMsgAtomChain();
+					chain.setCmd("id");
+					chain.setPluginid(getPluginId());
+					IMessageQueryService msq = NCLocator.getInstance().lookup(
+							IMessageQueryService.class);
+					NCMessage nm = null;
+					try {
+						nm = msq.queryNCMessageByPk(pk);
+					} catch (BusinessException e) {
+						PortalLogger.error(e.getMessage(), e);
+					}
+					;
+					NcMsgProcessCycle.doProcess(nm, chain);
+				}
+
+			};
+		}
+
+		return null;
+	}
+
+	@Override
+	public void beforeCategoryInit(MsgCategory currentCategory) {
+
+	}
+
+	@Override
+	public void afterCategoryInit(MsgCategory currentCategory) {
+
+	}
+
+	private String getPluginId() {
+		return "scapmsg";
+	}
+}

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget caption="查询组织体系类型" controllerClazz="nc.scap.pub.qry_orgs_listwin.QryorgstypeViewController" id="qryorgstype" refId="qryorgstype" sourcePackage="pub/src/public/">
+    <Attributes>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+    <PlugoutDesc id="afterSelectedPlugout">
+           <PlugoutDescItem clazztype="java.lang.String" name="OPERATE_ROW" source="qryorgstype_ds" type="Dataset.TYPE_DATASET_SEL_ROW">
+            </PlugoutDescItem>
+    </PlugoutDesc>
+    </PlugoutDescs>
+    <PluginDescs>
+    </PluginDescs>
+    <Models>
+        <Datasets>
+            <RefMdDataset caption="用户" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_user" lazyLoad="true" notNullBody="false" objMeta="uap.user" voMeta="nc.vo.sm.UserVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="组织_集团" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_group" lazyLoad="true" notNullBody="false" objMeta="uap.group" voMeta="nc.vo.org.GroupVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="自定义档案列表" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_defdoclist" lazyLoad="true" notNullBody="false" objMeta="uap.defdoclist" voMeta="nc.vo.bd.defdoc.DefdoclistVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="查询组织体系类型(自定义档案)" controlwidgetopeStatus="false" enabled="true" id="qryorgstype_ds" lazyLoad="false" notNullBody="false" objMeta="uap.Defdoc-scapco_0002" pageSize="-1" voMeta="nc.vo.bd.defdoc.DefdocVO">
+                <FieldRelations>
+                    <FieldRelation id="pk_defdoclist_rel" needProcess="true" refDataset="$refds_uap_defdoclist" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_defdoclist_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_defdoclist" value="pk_defdoclist">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_org_rel" needProcess="true" refDataset="$refds_uap_org" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_group_rel" needProcess="true" refDataset="$refds_uap_group" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_group_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_group" value="pk_group">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="creator_rel" needProcess="true" refDataset="$refds_uap_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="creator_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="creator">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="modifier_rel" needProcess="true" refDataset="$refds_uap_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="modifier_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="modifier">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad_qryorgstype_ds" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value></Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DataLoadEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DatasetEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <RefMdDataset caption="组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_org" lazyLoad="true" notNullBody="false" objMeta="uap.org" voMeta="nc.vo.org.OrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+        </Datasets>
+        <ComboDatas>
+            <MDComboDataConf caption="启用状态" fullclassName="6b533ffa-3e43-4147-8670-ba0f5471fd40" id="combo_qryorgstype_ds_enablestate">
+            </MDComboDataConf>
+            <MDComboDataConf caption="数据类型" fullclassName="ba3f1197-8584-445d-88a0-102e505f94e5" id="combo_qryorgstype_ds_datatype">
+            </MDComboDataConf>
+        </ComboDatas>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_qryorgstype_ds_creator_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="查询组织体系类型(自定义档案)_用户" usePower="false" writeDs="qryorgstype_ds" writeFields="creator,creator_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_qryorgstype_ds_modifier_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="查询组织体系类型(自定义档案)_用户" usePower="false" writeDs="qryorgstype_ds" writeFields="modifier,modifier_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_qryorgstype_ds_pk_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="查询组织体系类型(自定义档案)_业务单元" usePower="false" writeDs="qryorgstype_ds" writeFields="pk_org,pk_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_qryorgstype_ds_pk_defdoclist_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_defdoclist,name" refId="" refcode="自定义档案列表" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="查询组织体系类型(自定义档案)_自定义档案列表" usePower="false" writeDs="qryorgstype_ds" writeFields="pk_defdoclist,pk_defdoclist_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_qryorgstype_ds_pk_group_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_group,name" refId="" refcode="集团" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="查询组织体系类型(自定义档案)_集团" usePower="false" writeDs="qryorgstype_ds" writeFields="pk_group,pk_group_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <TreeViewComp canEdit="false" checkBoxModel="0" dragEnable="false" enabled="true" id="qryorgstype_tree" openLevel="-1" rootOpen="true" selectRoot="false" visible="true" withCheckBox="false" withRoot="true">
+            <SimpleTreeLevel dataset="qryorgstype_ds" id="一级" labelFields="name" masterKeyField="pk_defdoc">
+            </SimpleTreeLevel>
+        </TreeViewComp>
+    </Components>
+    <Menus>
+    </Menus>
+</Widget>

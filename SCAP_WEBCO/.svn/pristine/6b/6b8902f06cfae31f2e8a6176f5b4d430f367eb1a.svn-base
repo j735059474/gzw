@@ -1,0 +1,3 @@
+#模块名称
+module_name=scapco
+#<DIRMAP>[脚本类别-导出目录映射, 如:'pub_alerttype=alerttype', 其中'pub_alerttype'为主表名称, 'alerttype'为导出目录]

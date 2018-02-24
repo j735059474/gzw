@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget controllerClazz="nc.scap.pub.sms.comps.SmsManageCardWinMainViewCtrl" id="main" refId="main" sourcePackage="pub/src/public/">
+    <Attributes>
+        <Attribute>
+            <Key>$QueryTemplate</Key>
+            <Value>
+            </Value>
+        </Attribute>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+        <PlugoutDesc id="afterSavePlugout">
+            <PlugoutDescItem clazztype="java.lang.String" name="OPERATE_ROW" source="ScapSmsTaskVO" type="Dataset.TYPE_DATASET_SEL_ROW">
+            </PlugoutDescItem>
+        </PlugoutDesc>
+    </PlugoutDescs>
+    <PluginDescs>
+    </PluginDescs>
+    <Connectors>
+        <Connector connType="4" id="cardViewConnID" pluginId="proxyAfterSavePlugout" plugoutId="afterSavePlugout" source="main" sourceWindow="" target="popwin" targetWindow="">
+        </Connector>
+    </Connectors>
+    <Events>
+        <Event async="true" methodName="beforeShow" name="beforeShow" onserver="true">
+            <Action>
+            </Action>
+        </Event>
+    </Events>
+    <Models>
+        <Datasets>
+            <DatasetRelations>
+                <DatasetRelation detailDataset="ScapSmsVO" detailForeignKey="pk_task" id="scapco_sms_scapco_sms_task" masterDataset="ScapSmsTaskVO" masterKeyField="pk_task">
+                </DatasetRelation>
+            </DatasetRelations>
+            <MdDataset caption="短信" controlwidgetopeStatus="true" enabled="false" id="ScapSmsVO" lazyLoad="true" notNullBody="false" objMeta="scapco.ScapSmsVO" pageSize="15" voMeta="nc.scap.pub.vos.ScapSmsVO">
+                <Fields>
+                </Fields>
+            </MdDataset>
+            <MdDataset caption="任务" controlwidgetopeStatus="true" enabled="false" id="ScapSmsTaskVO" lazyLoad="true" notNullBody="false" objMeta="scapco.ScapSmsTaskVO" pageSize="15" voMeta="nc.scap.pub.vos.ScapSmsTaskVO">
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+        </Datasets>
+        <ComboDatas>
+            <MDComboDataConf caption="短信发送状态" fullclassName="1a51770c-a3d2-40bd-8b68-6b0f9e0cc42d" id="combo_ScapSmsVO_sendstatus">
+            </MDComboDataConf>
+            <MDComboDataConf caption="任务发送状态" fullclassName="9b183ce4-8c31-4a3b-84c4-63d323ba8968" id="combo_ScapSmsTaskVO_sendstatus">
+            </MDComboDataConf>
+        </ComboDatas>
+    </Models>
+    <Components>
+        <GridComp autoRowHeight="false" canCopy="true" caption="短信" checkBoxModel="1" dataset="ScapSmsVO" editable="true" enabled="true" expandTree="false" id="ScapSmsVO_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="true" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="false" editorType="StringText" field="address" fixedHeader="false" id="address" imageOnly="false" langDir="pub_sms" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="收件人" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="sendstatus" fixedHeader="false" id="sendstatus" imageOnly="false" langDir="pub_sms" nullAble="true" refComboData="combo_ScapSmsVO_sendstatus" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="发送状态" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Integer" editable="false" editorType="IntegerText" field="sendtimes" fixedHeader="false" id="sendtimes" imageOnly="false" langDir="pub_sms" nullAble="true" renderType="IntegerRender" showCheckBox="true" sortable="true" sumCol="false" text="发送次数" textAlign="right" visible="true" width="60">
+            </Column>
+            <Column autoExpand="false" dataType="UFDateTime" editable="false" editorType="DateTimeText" field="createtime" fixedHeader="false" id="createtime" imageOnly="false" langDir="pub_sms" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="创建日期" textAlign="left" visible="true" width="140">
+            </Column>
+            <Column autoExpand="false" dataType="UFDateTime" editable="false" editorType="DateTimeText" field="sendtime" fixedHeader="false" id="sendtime" imageOnly="false" langDir="pub_sms" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="发送日期" textAlign="left" visible="true" width="140">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_task" fixedHeader="false" id="pk_task" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上层单据主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <MenuBarComp id="ScapSmsVO_grid$MenuBar">
+                <MenuItem id="ScapSmsVO_grid$HeaderBtn_Send" langDir="lfwbuttons" modifiers="3" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="重发">
+                    <Events>
+                        <Event async="true" methodName="onGridSendClick" name="onclick" onserver="true">
+                            <SubmitRule>
+                            </SubmitRule>
+                            <Params>
+                                <Param>
+                                    <Name>mouseEvent</Name>
+                                    <Desc>                                        <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                    </Desc>
+                                </Param>
+                            </Params>
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+                <MenuItem i18nName="GridComp-000006" id="ScapSmsVO_grid$HeaderBtn_Edit" imgIcon="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/edit.png" imgIconDisable="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/edit_disable.png" imgIconOn="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/edit_higlight.png" langDir="bc" modifiers="2" showModel="1" text="编辑">
+                    <Events>
+                        <Event async="true" methodName="onGridEditClick" name="onclick" onserver="true">
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+            </MenuBarComp>
+        </GridComp>
+        <FormComp caption="ScapSmsTaskVO_form" columnCount="3" dataset="ScapSmsTaskVO" eleWidth="250" ellipsis="false" enabled="true" id="ScapSmsTaskVO_form" labelMinWidth="0" renderType="1" rowHeight="22" visible="true">
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="3" editMin="true" editSec="true" editable="true" editorType="TextArea" enabled="false" field="address" height="" id="address" imageOnly="false" langDir="pub_sms" needNullOption="false" nextLine="false" nullAble="false" rowSpan="3" selectOnly="true" showLabel="true" text="收件人" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="3" editMin="true" editSec="true" editable="true" editorType="TextArea" enabled="false" field="content" height="" id="content" imageOnly="false" langDir="pub_sms" needNullOption="false" nextLine="false" nullAble="false" rowSpan="3" selectOnly="true" showLabel="true" text="内容" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="ComboBox" enabled="true" field="sendstatus" height="" id="sendstatus" imageOnly="false" langDir="pub_sms" needNullOption="false" nextLine="false" nullAble="false" refComboData="combo_ScapSmsTaskVO_sendstatus" rowSpan="1" selectOnly="true" showLabel="true" text="发送状态" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="IntegerText" enabled="false" field="sendtimes" height="" id="sendtimes" imageOnly="false" langDir="pub_sms" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="发送次数" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DateTimeText" enabled="false" field="createtime" height="" id="createtime" imageOnly="false" langDir="pub_sms" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="创建日期" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DateTimeText" enabled="false" field="sendtime" height="" id="sendtime" imageOnly="false" langDir="pub_sms" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="发送日期" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="false" field="mdname" height="" id="mdname" imageOnly="false" langDir="pub_sms" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="来源模块名称" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="false" field="username" height="" id="username" imageOnly="false" langDir="pub_sms" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="来源用户名称" toolbarType="Custom" visible="true" width="">
+            </Element>
+        </FormComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar">
+            <MenuItem id="add" modifiers="2" showModel="1" text="新增">
+                <Events>
+                    <Event async="true" methodName="onAdd" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="del" modifiers="2" showModel="1" text="删除">
+                <Events>
+                    <Event async="true" methodName="onDelete" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="save" modifiers="2" showModel="1" text="保存">
+                <Events>
+                    <Event async="true" methodName="onSave" name="onclick" onserver="true">
+                        <SubmitRule>
+                            <Widget id="main">
+                                <Dataset id="ScapSmsVO" type="ds_all_line">
+                                </Dataset>
+                                <Dataset id="ScapSmsTaskVO" type="ds_current_line">
+                                </Dataset>
+                            </Widget>
+                        </SubmitRule>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="sep1" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="back" modifiers="2" showModel="1" text="返回">
+                <Events>
+                    <Event async="true" methodName="onBack" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget caption="选择用户" controllerClazz="nc.scap.jjpub.pubview.SelectUserbyOrgViewController" id="pubview_selectUserbyOrg" refId="pubview_selectUserbyOrg" sourcePackage="pub/src/public/">
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+        <PlugoutDesc id="afterOkplugout">
+            <PlugoutDescItem clazztype="java.lang.String" name="OPERATE_ROW" source="cp_userpsn" type="Dataset.TYPE_DATASET_MUTL_SEL_ROW">
+            </PlugoutDescItem>
+        </PlugoutDesc>
+    </PlugoutDescs>
+    <PluginDescs>
+    </PluginDescs>
+    <Events>
+        <Event async="true" methodName="beforeShow" name="beforeShow" onserver="true">
+            <SubmitRule>
+            </SubmitRule>
+            <Params>
+                <Param>
+                    <Name>dialogEvent</Name>
+                    <Value>
+                    </Value>
+                    <Desc>                        <![CDATA[nc.uap.lfw.core.event.DialogEvent]]>
+                    </Desc>
+                </Param>
+            </Params>
+            <Action>
+            </Action>
+        </Event>
+    </Events>
+    <Models>
+        <Datasets>
+            <DatasetRelations>
+                <DatasetRelation detailDataset="cp_userpsn" detailForeignKey="pk_org" id="cp_orgs_1_cp_userpsn" masterDataset="cp_orgs_1" masterKeyField="pk_org">
+                </DatasetRelation>
+            </DatasetRelations>
+            <RefMdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_orgs" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_orgs" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="协同用户" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_user" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_user" voMeta="nc.uap.cpb.org.vos.CpUserVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="cp_orgs_1" pageSize="-1" lazyLoad="false" notNullBody="false" objMeta="uapcp.cp_orgs" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <FieldRelations>
+                    <FieldRelation id="pk_fatherorg_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_fatherorg_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_fatherorg">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_orglevel1_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_orglevel1_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_orglevel1">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_orglevel2_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_orglevel2_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_orglevel2">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="creator_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="creator_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="creator">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="modifier_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="modifier_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="modifier">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad_orgs" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DataLoadEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onAfterRowSelect_orgs" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DatasetEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <MdDataset caption="视图用户人员信息" controlwidgetopeStatus="false" enabled="false" id="cp_userpsn" lazyLoad="true" notNullBody="false" objMeta="scapco.v_userpsn" pageSize="10" voMeta="nc.vo.scapjj.userpsn.V_userpsnVO">
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad_userpsn" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DataLoadEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+        </Datasets>
+        <ComboDatas>
+            <MDComboDataConf caption="协同组织级别类型" fullclassName="8558b518-d873-4452-ae2f-256dc516ee32" id="combo_cp_orgs_orglevel">
+            </MDComboDataConf>
+            <MDComboDataConf caption="启用状态" fullclassName="6b533ffa-3e43-4147-8670-ba0f5471fd40" id="combo_cp_orgs_1_enablestate">
+            </MDComboDataConf>
+            <MDComboDataConf caption="启用状态" fullclassName="6b533ffa-3e43-4147-8670-ba0f5471fd40" id="combo_cp_orgs_enablestate">
+            </MDComboDataConf>
+            <MDComboDataConf caption="协同组织级别类型" fullclassName="8558b518-d873-4452-ae2f-256dc516ee32" id="combo_cp_orgs_1_orglevel">
+            </MDComboDataConf>
+        </ComboDatas>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_cp_orgs_pk_fatherorg_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="cp_orgs" writeFields="pk_fatherorg,pk_fatherorg_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_cp_orgs_pk_orglevel1_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="cp_orgs" writeFields="pk_orglevel1,pk_orglevel1_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_cp_orgs_1_pk_fatherorg_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="cp_orgs_1" writeFields="pk_fatherorg,pk_fatherorg_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_cp_orgs_1_pk_orglevel2_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="cp_orgs_1" writeFields="pk_orglevel2,pk_orglevel2_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_cp_orgs_1_modifier_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="cp_orgs_1" writeFields="modifier,modifier_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_cp_orgs_1_pk_orglevel1_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="cp_orgs_1" writeFields="pk_orglevel1,pk_orglevel1_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_cp_orgs_modifier_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="cp_orgs" writeFields="modifier,modifier_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_cp_orgs_creator_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="cp_orgs" writeFields="creator,creator_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_cp_orgs_pk_orglevel2_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="cp_orgs" writeFields="pk_orglevel2,pk_orglevel2_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_cp_orgs_1_creator_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="cp_orgs_1" writeFields="creator,creator_user_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <ButtonComp enabled="true" id="btn_cancel" text="取消" visible="true">
+            <Events>
+                <Event async="true" methodName="onCancel" name="onclick" onserver="true">
+                    <SubmitRule>
+                    </SubmitRule>
+                    <Params>
+                        <Param>
+                            <Name>mouseEvent</Name>
+                            <Value>
+                            </Value>
+                            <Desc>                                <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                            </Desc>
+                        </Param>
+                    </Params>
+                    <Action>
+                    </Action>
+                </Event>
+            </Events>
+        </ButtonComp>
+        <ButtonComp enabled="true" id="btn_ok" text="确定" visible="true">
+            <Events>
+                <Event async="true" methodName="onOk" name="onclick" onserver="true">
+                    <SubmitRule>
+                    </SubmitRule>
+                    <Params>
+                        <Param>
+                            <Name>mouseEvent</Name>
+                            <Value>
+                            </Value>
+                            <Desc>                                <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                            </Desc>
+                        </Param>
+                    </Params>
+                    <Action>
+                    </Action>
+                </Event>
+            </Events>
+        </ButtonComp>
+        <TreeViewComp canEdit="false" checkBoxModel="0" dragEnable="false" enabled="true" id="tree_orgs" openLevel="-1" rootOpen="true" selectRoot="false" visible="true" withCheckBox="false" withRoot="true">
+            <RecursiveTreeLevel dataset="cp_orgs_1" id="一级" labelFields="code,name" loadField="" masterKeyField="pk_org" recursiveKeyField="pk_org" recursivePKeyField="pk_fatherorg">
+            </RecursiveTreeLevel>
+        </TreeViewComp>
+        <GridComp autoRowHeight="false" canCopy="true" caption="视图用户人员信息" checkBoxModel="1" dataset="cp_userpsn" editable="true" enabled="true" expandTree="false" id="grid_userpsn" multiSelect="true" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="cuserid" fixedHeader="false" id="cuserid" imageOnly="false" langDir="scapco_v_userpsn" nullAble="false" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="user_code" fixedHeader="false" id="user_code" imageOnly="false" langDir="scapco_v_userpsn" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="用户编码" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="user_name" fixedHeader="false" id="user_name" imageOnly="false" langDir="scapco_v_userpsn" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="用户名称" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="szdw" fixedHeader="false" id="szdw" imageOnly="false" langDir="scapco_v_userpsn" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="所在单位" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="sex" fixedHeader="false" id="sex" imageOnly="false" langDir="scapco_v_userpsn" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="性别" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="zw" fixedHeader="false" id="zw" imageOnly="false" langDir="scapco_v_userpsn" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="职务" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="zc" fixedHeader="false" id="zc" imageOnly="false" langDir="scapco_v_userpsn" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="职称" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="tel" fixedHeader="false" id="tel" imageOnly="false" langDir="scapco_v_userpsn" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="联系电话" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="mobile" fixedHeader="false" id="mobile" imageOnly="false" langDir="scapco_v_userpsn" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="手机" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="email" fixedHeader="false" id="email" imageOnly="false" langDir="scapco_v_userpsn" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="邮箱" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_org" fixedHeader="false" id="pk_org" imageOnly="false" langDir="scapco_v_userpsn" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="所在单位pk" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_zw" fixedHeader="false" id="pk_zw" imageOnly="false" langDir="scapco_v_userpsn" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="职务pk" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_zc" fixedHeader="false" id="pk_zc" imageOnly="false" langDir="scapco_v_userpsn" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="职称pk" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="deptname" fixedHeader="false" id="deptname" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="部门" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" field="pk_dept" fixedHeader="false" id="pk_dept" imageOnly="false" nullAble="true" showCheckBox="true" sortable="true" sumCol="false" text="部门PK" textAlign="left" visible="false" width="120">
+            </Column>
+        </GridComp>
+        <TextComp designModel="false" editorType="SearchText" enabled="true" focus="false" id="queryInput" nullable="true" text="定位" textAlign="left" textWidth="32" visible="true">
+            <Events>
+                <Event async="true" methodName="onEnterQuery" name="onEnter" onserver="true">
+                    <SubmitRule>
+                    </SubmitRule>
+                    <Params>
+                        <Param>
+                            <Name>keyEvent</Name>
+                            <Value>
+                            </Value>
+                            <Desc>                                <![CDATA[nc.uap.lfw.core.event.KeyEvent]]>
+                            </Desc>
+                        </Param>
+                    </Params>
+                    <Action>
+                    </Action>
+                </Event>
+            </Events>
+        </TextComp>
+    </Components>
+    <Menus>
+    </Menus>
+</Widget>

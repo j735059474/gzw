@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget controllerClazz="nc.scap.pub.urge_notice.Urge_noticeCardWinMainViewCtrl" id="main" refId="main" sourcePackage="pub/src/public/">
+    <Attributes>
+        <Attribute>
+            <Key>$QueryTemplate</Key>
+            <Value>
+            </Value>
+        </Attribute>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+        <PlugoutDesc id="afterSavePlugout">
+            <PlugoutDescItem clazztype="java.lang.String" name="OPERATE_ROW" source="urge_notice" type="Dataset.TYPE_DATASET_SEL_ROW">
+            </PlugoutDescItem>
+        </PlugoutDesc>
+    </PlugoutDescs>
+    <PluginDescs>
+    </PluginDescs>
+    <Connectors>
+        <Connector connType="4" id="cardViewConnID" pluginId="proxyAfterSavePlugout" plugoutId="afterSavePlugout" source="main" sourceWindow="" target="popwin" targetWindow="">
+        </Connector>
+    </Connectors>
+    <Events>
+        <Event async="true" methodName="beforeShow" name="beforeShow" onserver="true">
+            <Action>
+            </Action>
+        </Event>
+    </Events>
+    <Models>
+        <Datasets>
+            <RefMdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_orgs" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_orgs" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="催报通知" controlwidgetopeStatus="false" enabled="false" id="urge_notice" lazyLoad="true" notNullBody="false" objMeta="scapco.urge_notice" pageSize="10" voMeta="nc.vo.scapco.work_urge_notice.urge_notice">
+                <FieldRelations>
+                    <FieldRelation id="business_type_rel" needProcess="true" refDataset="$refds_uap_Defdoc_scapco_0003" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="business_type_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_defdoc" value="business_type">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="notice_type_rel" needProcess="true" refDataset="$refds_scapco_work_report_type" useCache="true">
+                        <MatchFields>
+                            <Field readField="report_type" writeField="notice_type_report_type">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_work_report_type" value="notice_type">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="urge_notice_org_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="urge_notice_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="urge_notice_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="urge_recept_man_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="urge_recept_man_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="urge_recept_man">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="urge_man_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="urge_man_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="urge_man">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="urge_org_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="urge_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="urge_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <RefMdDataset caption="协同用户" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_user" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_user" voMeta="nc.uap.cpb.org.vos.CpUserVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="工作报告类型" controlwidgetopeStatus="false" enabled="false" id="$refds_scapco_work_report_type" lazyLoad="true" notNullBody="false" objMeta="scapco.work_report_type" voMeta="nc.vo.scap.work_report_type.Work_report_type">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="报告业务类型(自定义档案)" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_Defdoc_scapco_0003" lazyLoad="true" notNullBody="false" objMeta="uap.Defdoc-scapco_0003" voMeta="nc.vo.bd.defdoc.DefdocVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+        </Datasets>
+        <ComboDatas>
+            <MDComboDataConf caption="信息发送方式" fullclassName="2690e7fd-6bcc-4218-8131-04fd00bb863f" id="combo_urge_notice_urge_info_trans_way">
+            </MDComboDataConf>
+        </ComboDatas>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_urge_notice_urge_recept_man_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="催报通知_协同用户" usePower="false" writeDs="urge_notice" writeFields="urge_recept_man,urge_recept_man_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_urge_notice_urge_man_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="催报通知_协同用户" usePower="false" writeDs="urge_notice" writeFields="urge_man,urge_man_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_urge_notice_business_type_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_defdoc,name" refId="" refcode="报告业务类型(自定义档案)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="催报通知_报告业务类型(自定义档案)" usePower="false" writeDs="urge_notice" writeFields="business_type,business_type_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_urge_notice_notice_type_report_type" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_work_report_type,report_type" refId="" refcode="报告类型" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="催报通知_报告类型" usePower="false" writeDs="urge_notice" writeFields="notice_type,notice_type_report_type">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_urge_notice_urge_notice_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="催报通知_协同当前集团+业务单元" usePower="false" writeDs="urge_notice" writeFields="urge_notice_org,urge_notice_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_urge_notice_urge_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="催报通知_协同当前集团+业务单元" usePower="false" writeDs="urge_notice" writeFields="urge_org,urge_org_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <FormComp caption="催报通知" columnCount="3" dataset="urge_notice" eleWidth="250" ellipsis="false" enabled="true" id="urge_notice_form" labelMinWidth="0" renderType="1" rowHeight="22" visible="true">
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="pk_urge_notice" height="" id="pk_urge_notice" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="false" nullAble="false" rowSpan="1" selectOnly="true" showLabel="true" text="主键" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="pk_notice" height="" id="pk_notice" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="通知主键" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="3" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="urge_notice_title" height="" id="urge_notice_title" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="催报通知标题" toolbarType="Custom" visible="true" width="920">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="business_type" height="" id="business_type" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="true" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="业务类型" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="business_type_name" height="" id="business_type_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_urge_notice_business_type_name" rowSpan="1" selectOnly="true" showLabel="true" text="业务类型" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="notice_type" height="" id="notice_type" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="报告类型" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="notice_type_report_type" height="" id="notice_type_report_type" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_urge_notice_notice_type_report_type" rowSpan="1" selectOnly="true" showLabel="true" text="报告类型" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="ComboBox" enabled="true" field="urge_info_trans_way" height="" id="urge_info_trans_way" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="false" nullAble="true" refComboData="combo_urge_notice_urge_info_trans_way" rowSpan="1" selectOnly="true" showLabel="true" text="催报方式" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="3" editMin="true" editSec="true" editable="true" editorType="TextArea" enabled="true" field="urge_content_qy" height="" id="urge_content_qy" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="false" nullAble="true" rowSpan="2" selectOnly="true" showLabel="true" text="催报内容" toolbarType="Custom" visible="true" width="920">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="urge_notice_org" height="" id="urge_notice_org" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="true" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="被催报单位" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="urge_notice_org_name" height="" id="urge_notice_org_name" imageOnly="false" needNullOption="false" nextLine="true" nullAble="true" refNode="refnode_urge_notice_urge_notice_org_name" rowSpan="1" selectOnly="true" showLabel="true" text="被催报单位" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="urge_recept_man" height="" id="urge_recept_man" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="接收人" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="urge_recept_man_user_name" height="" id="urge_recept_man_user_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_urge_notice_urge_recept_man_user_name" rowSpan="1" selectOnly="true" showLabel="true" text="接收人" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="urge_recept_addr" height="" id="urge_recept_addr" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="接收地址" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="urge_man" height="" id="urge_man" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="催报人" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="urge_man_user_name" height="" id="urge_man_user_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_urge_notice_urge_man_user_name" rowSpan="1" selectOnly="true" showLabel="true" text="催报人" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="urge_org" height="" id="urge_org" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="催报发送单位" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="urge_org_name" height="" id="urge_org_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_urge_notice_urge_org_name" rowSpan="1" selectOnly="true" showLabel="true" text="催报发送单位" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DateText" enabled="true" field="urge_time" height="" id="urge_time" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="催报时间" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="is_auto_urge" height="" id="is_auto_urge" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="是否自动催报" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="def1" height="" id="def1" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="备用字段1" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="def2" height="" id="def2" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="备用字段2" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="def3" height="" id="def3" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="备用字段3" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="def4" height="" id="def4" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="备用字段4" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="def5" height="" id="def5" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="备用字段5" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="def6" height="" id="def6" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="备用字段6" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="def7" height="" id="def7" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="备用字段7" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="def8" height="" id="def8" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="备用字段8" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="def9" height="" id="def9" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="备用字段9" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="def10" height="" id="def10" imageOnly="false" langDir="work_urge_notice" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="备用字段10" toolbarType="Custom" visible="false" width="">
+            </Element>
+        </FormComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar">
+            <MenuItem id="sep1" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="sep2" modifiers="3" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="sep3" modifiers="3" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="back" modifiers="2" showModel="1" text="返回">
+                <Events>
+                    <Event async="true" methodName="onBack" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

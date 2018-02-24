@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+	<id>core</id>
+	<fullname>ui.basic.BrowserSniffer,ui.basic.Logger,ui.basic.EventUtil,ui.basic.Listener,ui.basic.JsExtensions,ui.basic.ArgumentsUtil,ui.basic.HashMap,ui.basic.Singleton,ui.basic.Measures,ui.basic.BaseComponent,ui.basic.Boot,ui.basic.Cache,ui.basic.Dynamic,ui.masker.MaskerMeta,ui.masker.Maskers,ui.masker.MaskerUtil,ui.mvc.PageUtil,ui.mvc.Formula,ui.ctrl.loading.LoadingBarComp,ui.rpc.Ajax,ui.rpc.Json,ui.basic.Formater,ui.basic.scaputil</fullname>
+	<cssfullname>ui.basic.global,ui.basic.globalform</cssfullname>
+	<dependences></dependences>
+	<javaclazz></javaclazz>
+	<uijavaclazz></uijavaclazz>
+	<serializer></serializer>
+	<uiserializer></uiserializer>
+	<uirender></uirender>
+	<zone>view,window</zone>
+	<compressname></compressname>
+</plugin>

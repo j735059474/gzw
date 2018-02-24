@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+<items>
+
+<!--flag="0" 单独处理;flag="1" 查iufo表样;flag="2" 查事实表; 公式中"XX,2"表示XX公式计算后保留两位小数-->
+<item key="vyear" dimension="" name="年">
+  <source flag="1" code="国资企预01表_2014" measure="accyear" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="type" dimension="" name="类型">
+  <source flag="0" code="国资企预01表_2014" measure="type" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sys_org" dimension="" name="组织标志">
+  <source flag="0" code="国资企预01表_2014" measure="sys_org" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sys_zdm" dimension="" name="外键">
+  <source flag="0" code="国资企预01表_2014" measure="sys_zdm" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sys_fjd" dimension="" name="父节点">
+  <source flag="0" code="国资企预01表_2014" measure="sys_fjd" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--dimension="sn"-->
+<item key="gdzc" dimension="sn" name="固定资产上年数">
+  <source flag="1" code="国资企预01表_2014" measure="gdzcjzsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gsymgssyzdjlr" dimension="sn" name="归属于母公司所有者的净利润上年数">
+  <source flag="1" code="国资企预02表_2014" measure="gsymgssyzdjlrsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ldzchj" dimension="sn" name="流动资产合计上年数">
+  <source flag="1" code="国资企预01表_2014" measure="ldzchjsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qnpjzg" dimension="sn" name="全年平均职工人数上年数">
+  <source flag="1" code="国资企预13表_2014" measure="qnpjzgrssns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yszk" dimension="sn" name="应收账款上年数">
+  <source flag="1" code="国资企预01表_2014" measure="yszksns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yylr" dimension="sn" name="营业利润上年数">
+  <source flag="1" code="国资企预02表_2014" measure="yylrksyhtlsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zczj" dimension="sn" name="资产总计上年数">
+  <source flag="1" code="国资企预01表_2014" measure="zczjsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zyywsr" dimension="sn" name="主营业务收入(上年数)">
+  <source flag="1" code="国资企预02表_2014" measure="qzzyywsrsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--dimension="bn"-->
+<item key="cwfy" dimension="bn" name="财务费用本年预算数">
+  <source flag="1" code="国资企预02表_2014" measure="cwfybnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gdzc" dimension="bn" name="固定资产本年预算数">
+  <source flag="1" code="国资企预01表_2014" measure="gdzcjzbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="glfy" dimension="bn" name="管理费用本年预算数">
+  <source flag="1" code="国资企预02表_2014" measure="glfybnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gsymgssyzdjlr" dimension="bn" name="归属于母公司所有者的净利润本年预算数">
+  <source flag="1" code="国资企预02表_2014" measure="gsymgssyzdjlrbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gsymgssyzqyhj" dimension="bn" name="归属于母公司所有者权益合计本年预算数">
+  <source flag="1" code="国资企预01表_2014" measure="gsymgssyzqyhjbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jlr" dimension="bn" name="净利润本年预算数">
+  <source flag="1" code="国资企预02表_2014" measure="jlrjksyhtlbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="kjzc" dimension="bn" name="科技支出本年预算数">
+  <source flag="1" code="国资企预12表_2014" measure="kjzcbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ldfzhj" dimension="bn" name="流动负债合计本年预算数">
+  <source flag="1" code="国资企预01表_2014" measure="ldfzhjbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ldzchj" dimension="bn" name="流动资产合计本年预算数">
+  <source flag="1" code="国资企预01表_2014" measure="ldzchjbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="lrze" dimension="bn" name="利润总额本年预算数">
+  <source flag="1" code="国资企预02表_2014" measure="lrzekszeyhtlbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="lxzc" dimension="bn" name="利息支出本年预算数">
+  <source flag="1" code="国资企预12表_2014" measure="lxzczebnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="xsfy" dimension="bn" name="销售费用本年预算数">
+  <source flag="1" code="国资企预02表_2014" measure="xsfybnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qnpjzg" dimension="bn" name="全年平均职工人数本年预算数">
+  <source flag="1" code="国资企预13表_2014" measure="qnpjzgrsbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yszk" dimension="bn" name="应收账款本年预算数">
+  <source flag="1" code="国资企预01表_2014" measure="yszkbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yylr" dimension="bn" name="营业利润本年预算数">
+  <source flag="1" code="国资企预02表_2014" measure="yylrksyhtlbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yyzcb" dimension="bn" name="营业总成本本年预算数">
+  <source flag="1" code="国资企预02表_2014" measure="yyzcbbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yyzsr" dimension="bn" name="营业总收入本年预算数">
+  <source flag="1" code="国资企预02表_2014" measure="yyzsrbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zczj" dimension="bn" name="资产总计本年预算数">
+  <source flag="1" code="国资企预01表_2014" measure="zczjbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zyywsr" dimension="bn" name="主营业务收入(本年预算数)">
+  <source flag="1" code="国资企预02表_2014" measure="qzzyywsrbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="xssptglwsddxj" dimension="bn" name="销售商品、提供劳务收到的现金本年预算数">
+  <source flag="1" code="国资企预03表_2014" measure="xssptglwsddxjbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yyhdcsdxjllje" dimension="bn" name="经营活动产生的现金流量净额本年预算数">
+  <source flag="1" code="国资企预03表_2014" measure="jyhdcsdxjlljebnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+</items>
+</Root>

@@ -1,0 +1,91 @@
+<link href="/portal/scap/css/index/index.css" rel="stylesheet" type="text/css">
+<script src="/portal/scap/js/index/index.js" type="text/javascript"></script>
+
+<div class="gznews jjGcjs">
+	<div class="gzcontent">
+		<div class="gztitle">
+			<div class="gzicon"></div>
+			<span>工程建设失信行为</span>
+		</div>
+		<div class="gzbody">
+			<div class="gzgroup">
+				<div class="gzrow">
+					<div class="gzicon1 gzicon_select"></div>
+					<div class="gzcaption"></div>
+					<div class="gzdate"></div>
+					<div class="gzicon2 gzicon_calendar"></div>
+				</div>
+				<div class="gzrow">
+					<div class="gzicon1"></div>
+					<div class="gzcaption"></div>
+					<div class="gzdate"></div>
+					<div class="gzicon2"></div>
+				</div>
+			</div>
+			<div class="gzgroup">
+				<div class="gzrow">
+					<div class="gzicon1 gzicon_select"></div>
+					<div class="gzcaption"></div>
+					<div class="gzdate"></div>
+					<div class="gzicon2 gzicon_calendar"></div>
+				</div>
+				<div class="gzrow">
+					<div class="gzicon1"></div>
+					<div class="gzcaption"></div>
+					<div class="gzdate"></div>
+					<div class="gzicon2"></div>
+				</div>
+			</div>
+			<div class="gzgroup">
+				<div class="gzrow">
+					<div class="gzicon1 gzicon_select"></div>
+					<div class="gzcaption"></div>
+					<div class="gzdate"></div>
+					<div class="gzicon2 gzicon_calendar"></div>
+				</div>
+				<div class="gzrow">
+					<div class="gzicon1"></div>
+					<div class="gzcaption"></div>
+					<div class="gzdate"></div>
+					<div class="gzicon2"></div>
+				</div>
+			</div>
+			<div class="gzgroup gzgroup_last">
+				<div class="gzrow">
+					<div class="gzicon1 gzicon_select"></div>
+					<div class="gzcaption"></div>
+					<div class="gzdate"></div>
+					<div class="gzicon2 gzicon_calendar"></div>
+				</div>
+				<div class="gzrow">
+					<div class="gzicon1"></div>
+					<div class="gzcaption"></div>
+					<div class="gzdate"></div>
+					<div class="gzicon2"></div>
+				</div>
+				<div class="gzrow">
+					<div class="gzicon1"></div>
+					<div class="gzcaption"></div>
+					<div class="gzdate"></div>
+					<div class="gzicon2"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+$(document).ready(function() {
+  	<#if ARTICLE_LIST??>
+		<#list ARTICLE_LIST as arlist>
+		    var index = "${arlist_index}";
+		    $(".jjGcjs .gzrow").eq(index).attr("id", "${arlist.pk_news}").addClass("gzdata");
+		    $(".jjGcjs .gzcaption").eq(index).html("${arlist.title}");
+		    //$(".dszc .gzcaption").eq(index).attr("title", "${arlist.title}");
+		    $(".jjGcjs .gzdate").eq(index).html("${arlist.billmakedate}".substr(0,10));
+		</#list>
+	</#if>
+	
+	initGzRow('jjGcjs');
+});
+</script>

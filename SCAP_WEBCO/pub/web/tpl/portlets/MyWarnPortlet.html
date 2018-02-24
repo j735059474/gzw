@@ -1,0 +1,107 @@
+<link href="/portal/scap/css/index/index.css" rel="stylesheet" type="text/css">
+<script src="/portal/scap/js/index/index.js" type="text/javascript"></script>
+
+<div class="gzworks yjzx">
+	<div class="gzcontent">
+	
+		<div class="gztitle">
+			<div class="gzicon"></div>
+			<span>消息中心</span>
+			<div class="gztab">会议通知</div>
+			<div class="gztab">非正式公文</div>
+			<div class="gztab gztab_selected">预警消息</div>
+		</div>
+		
+		<div class="gzbody yjxx">
+			<#if WARN_LIST??>
+				<#list WARN_LIST as walist>
+					<div class="gzrow" id="${walist.pk_message}">
+						<div class="gzicon1 gzicon_select"></div>
+						<div class="gzcaption">
+							<#if walist.subject??>
+								${walist.subject}
+							</#if>
+						</div>
+						<div class="gzdate">${walist.sendtime}</div>
+						<div class="gzicon2 gzicon_calendar"></div>
+					</div>
+				</#list>
+			<#else>
+				<div class="nodata">暂无数据</div>
+			</#if>
+		</div>
+		
+		<div class="gzbody gwjh">
+			<#if OFFICIAL_LIST??>
+				<#list OFFICIAL_LIST as walist>
+					<div class="gzrow" id="${walist.pk_officialdoc}" state="${walist.state}">
+						<div class="gzicon1 gzicon_select"></div>
+						<div class="gzcaption">
+							<#if walist.title??>
+								${walist.title} 【${walist.state}】
+							</#if>
+						</div>
+						<div class="gzdate">${walist.senddocdate}</div>
+						<div class="gzicon2 gzicon_calendar"></div>
+					</div>
+				</#list>
+			<#else>
+				<div class="nodata">暂无数据</div>
+			</#if>
+		</div>
+		
+		<div class="gzbody hytz">
+			<#if MEETING_LIST??>
+				<#list MEETING_LIST as walist>
+					<div class="gzrow" id="${walist.pk_meeting}">
+						<div class="gzicon1 gzicon_select"></div>
+						<div class="gzcaption">
+							<#if walist.meetingname??>
+								${walist.meetingname}
+							</#if>
+						</div>
+						<div class="gzdate">${walist.meetingdate}</div>
+						<div class="gzicon2 gzicon_calendar"></div>
+					</div>
+				</#list>
+			<#else>
+				<div class="nodata">暂无数据</div>
+			</#if>
+		</div>
+		
+	</div>
+</div>
+
+<script>
+$(document).ready(function() {
+	initMyWarn();
+	
+	$(".yjzx .gztab").click(function() {
+		$(this).addClass("gztab_selected").siblings(".gztab_selected").removeClass("gztab_selected");
+		var index = 2 - $(".yjzx .gztab").index(this);
+		$(".yjzx .gzbody").eq(index).show().siblings(".gzbody").hide();
+	});
+});
+function initMyWarn() {
+	$(".yjxx .gzrow").click(function() {
+		popIndexWarnView($(this).attr("id"), $(this).find(".gzcaption").html());
+	});
+	$(".gwjh .gzrow").click(function() {
+		var pkid = $(this).attr("id");
+		var state = $(this).attr("state");
+		if(state == '无需反馈') {
+			showDialog("/portal/app/pub_officialdoc/nc.scap.pub.officialdoc.officialdoc_cardwin?openBillId=" + pkid + "&operate=showdetail", 
+				"编辑", '1200','100%', "nc.scap.pub.officialdoc.officialdoc_cardwin", '', {isConfirmClose:true,isShowLine:false});
+		}else {
+			showDialog("/portal/app/pub_officialdoc/nc.scap.pub.officialdoc.officialdoc_cardwin?openBillId=" + pkid + "&operate=FeedBack", 
+				"编辑", '1200','100%', "nc.scap.pub.officialdoc.officialdoc_cardwin", '', {isConfirmClose:true,isShowLine:false});
+		}
+		
+	});
+	$(".hytz .gzrow").click(function() {
+		var pkid = $(this).attr("id");
+		showDialog("/portal/app/meeting/nc.scap.pub.Meeting.meeting_cardwin?openBillId=" + pkid + "&operate=feedback", 
+			"编辑", '1200','100%', "nc.scap.pub.Meeting.meeting_cardwin", '', {isConfirmClose:true,isShowLine:false});
+	});
+}
+</script>

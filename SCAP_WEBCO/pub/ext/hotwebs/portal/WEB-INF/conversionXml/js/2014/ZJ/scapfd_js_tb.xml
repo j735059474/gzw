@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+<items>
+
+<!--flag="0" 单独处理;flag="1" 查iufo表样;flag="2" 查事实表; 公式中"XX,2"表示XX公式计算后保留两位小数-->
+<item key="vyear" dimension="" name="年">
+  <source flag="1" code="Z01" measure="year" row="" col="" id="$aa"/>
+  <formula>
+    '$aa'.substring(0,4)
+  </formula>
+</item>
+
+<item key="sys_org" dimension="" name="组织标志">
+  <source flag="0" code="Z01" measure="sys_org" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="type" dimension="" name="类型">
+  <source flag="0" code="Z01" measure="type" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<!--dimension="tb"-->
+<item key="jyxjrzc" dimension="tb" name="交易性金融资产(决算数同比增长率)">
+  <source flag="1" code="Z01" measure="jyxjrzcqmye" row="" col="" id="$aa"/>
+  <source flag="1" code="Z01" measure="jyxjrzcncye" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="yszkje" dimension="tb" name="应收账款净额(决算数同比增长率)">
+  <source flag="1" code="Z01" measure="yszkqmye" row="" col="" id="$aa"/>
+  <source flag="1" code="Z01" measure="yszkncye" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="ch" dimension="tb" name="存货(决算数同比增长率)">
+  <source flag="1" code="Z01" measure="chqmye" row="" col="" id="$aa"/>
+  <source flag="1" code="Z01" measure="chncye" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="ccp" dimension="tb" name="产成品(决算数同比增长率)">
+  <source flag="1" code="Z01" measure="kcspccpqmye" row="" col="" id="$aa"/>
+  <source flag="1" code="Z01" measure="kcspccpncye" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="dqjk" dimension="tb" name="短期借款(决算数同比增长率)">
+  <source flag="1" code="Z01" measure="dqjkqmye" row="" col="" id="$aa"/>
+  <source flag="1" code="Z01" measure="dqjkncye" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="gsmgsqyze" dimension="tb" name="归属于母公司的所有者权益总额(决算数同比增长率)">
+  <source flag="1" code="Z01" measure="gsymgssyzqyhjqmye" row="" col="" id="$aa"/>
+  <source flag="1" code="Z01" measure="gsymgssyzqyhjncye" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="zyzj" dimension="tb" name="自有资金(决算数同比增长率)">
+  <source flag="1" code="Z11" measure="hjzyzj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_js_base" measure="bn_zyzj" row="" col="" id="$bb" condition=" and v.vyear='2013'"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="zytz" dimension="tb" name="主业投资(决算数同比增长率)">
+  <source flag="1" code="Z11" measure="hjzy" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_js_base" measure="bn_zytz" row="" col="" id="$bb" condition=" and v.vyear='2013'"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="jzcsylhgd" dimension="tb" name="净资产收益率(含少数股东权益)(决算数同比增长率)">
+  <source flag="1" code="Z02" measure="wjlrjksyhtlbqje" row="" col="" id="$z02.c18"/>
+  <source flag="1" code="Z01" measure="syzqyhjqmye" row="" col="" id="$z01.c62"/>
+  <source flag="1" code="Z01" measure="syzqyhjncye" row="" col="" id="$z01.d62"/>
+  <source flag="2" code="scapfd_js_base" measure="bn_jzcsylhss" row="" col="" id="$bb" condition=" and v.vyear='2013'"/>
+  <formula>
+    (2*$z02.c18/($z01.c62+$z01.d62)*100-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="jzcsylbhgd" dimension="tb" name="净资产收益率(不含少数股东权益)(决算数同比增长率)">
+  <source flag="1" code="Z02" measure="gsymgssyzdjlrbqje" row="" col="" id="$z02.c19"/>
+  <source flag="1" code="Z01" measure="gsymgssyzqyhjqmye" row="" col="" id="$z01.c60"/>
+  <source flag="1" code="Z01" measure="gsymgssyzqyhjncye" row="" col="" id="$z01.d60"/>
+  <source flag="2" code="scapfd_js_base" measure="bn_jzcsylbhss" row="" col="" id="$bb" condition=" and v.vyear='2013'"/>
+  <formula>
+    (2*$z02.c19/($z01.c60+$z01.d60)*100-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="bngyzbjqyzjz" dimension="tb" name="本年国有资本及权益增加值(决算数同比增长率)">
+  <source flag="1" code="Z05" measure="ebngyzbjqyzjje" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_js_base" measure="bn_bngzqyzjz" row="" col="" id="$bb" condition=" and v.vyear='2013'"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="bnsjsjsfze" dimension="tb" name="本年实际上交税费总额(决算数同比增长率)">
+  <source flag="1" code="Z07" measure="ebnsjsjsfzeje" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_js_base" measure="bn_bnsjsjsf" row="" col="" id="$bb" condition=" and v.vyear='2013'"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="ssgdqy" dimension="tb" name="少数股东权益(决算数同比增长率)">
+  <source flag="1" code="Z01" measure="ssgdqyqmye" row="" col="" id="$aa"/>
+  <source flag="1" code="Z01" measure="ssgdqyncye" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="yyzsr" dimension="tb" name="营业总收入(决算数同比增长率)">
+  <source flag="1" code="Z02" measure="yyyzsrbqje" row="" col="" id="$aa"/>
+  <source flag="1" code="Z02" measure="yyyzsrsqje" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="zyywsr" dimension="tb" name="主营业务收入(决算数同比增长率)">
+  <source flag="1" code="Z02" measure="qzzyywsrbqje" row="" col="" id="$aa"/>
+  <source flag="1" code="Z02" measure="qzzyywsrsqje" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="yyzcb" dimension="tb" name="营业总成本(决算数同比增长率)">
+  <source flag="1" code="Z02" measure="eyyzcbbqje" row="" col="" id="$aa"/>
+  <source flag="1" code="Z02" measure="eyyzcbsqje" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+
+<item key="zyywcb" dimension="tb" name="主营业务成本(决算数同比增长率)">
+  <source flag="1" code="Z02" measure="qzzyywcbbqje" row="" col="" id="$aa"/>
+  <source flag="1" code="Z02" measure="qzzyywcbsqje" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="yyshhfj" dimension="tb" name="营业税金及附加(决算数同比增长率)">
+  <source flag="1" code="Z02" measure="yysjjfjbqje" row="" col="" id="$aa"/>
+  <source flag="1" code="Z02" measure="yysjjfjsqje" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="ssfy" dimension="tb" name="销售费用(决算数同比增长率)">
+  <source flag="1" code="Z02" measure="xsfybqje" row="" col="" id="$aa"/>
+  <source flag="1" code="Z02" measure="xsfysqje" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="glfy" dimension="tb" name="管理费用(决算数同比增长率)">
+  <source flag="1" code="Z02" measure="glfybqje" row="" col="" id="$aa"/>
+  <source flag="1" code="Z02" measure="glfysqje" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="cwft" dimension="tb" name="财务费用(决算数同比增长率)">
+  <source flag="1" code="Z02" measure="cwfybqje" row="" col="" id="$aa"/>
+  <source flag="1" code="Z02" measure="cwfysqje" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="zchzss" dimension="tb" name="资产减值损失(决算数同比增长率)">
+  <source flag="1" code="Z02" measure="zcjzssbqje" row="" col="" id="$aa"/>
+  <source flag="1" code="Z02" measure="zcjzsssqje" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="gyjzbdsy" dimension="tb" name="公允价值变动收益(决算数同比增长率)">
+  <source flag="1" code="Z02" measure="jgyjzbdsyssyhtlbqje" row="" col="" id="$aa"/>
+  <source flag="1" code="Z02" measure="jgyjzbdsyssyhtlsqje" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="tzsy" dimension="tb" name="投资收益(决算数同比增长率)">
+  <source flag="1" code="Z02" measure="tzsyssyhtlbqje" row="" col="" id="$aa"/>
+  <source flag="1" code="Z02" measure="tzsyssyhtlsqje" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="yylr" dimension="tb" name="营业利润(决算数同比增长率)">
+  <source flag="1" code="Z02" measure="syylrksyhtlbqje" row="" col="" id="$aa"/>
+  <source flag="1" code="Z02" measure="syylrksyhtlsqje" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="yywsr" dimension="tb" name="营业外收入(决算数同比增长率)">
+  <source flag="1" code="Z02" measure="jyywsrbqje" row="" col="" id="$aa"/>
+  <source flag="1" code="Z02" measure="jyywsrsqje" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="yywzc" dimension="tb" name="营业外支出(决算数同比增长率)">
+  <source flag="1" code="Z02" measure="jyywzcbqje" row="" col="" id="$aa"/>
+  <source flag="1" code="Z02" measure="jyywzcsqje" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="lrze" dimension="tb" name="利润总额(决算数同比增长率)">
+  <source flag="1" code="Z02" measure="slrzekszeyhtlbqje" row="" col="" id="$aa"/>
+  <source flag="1" code="Z02" measure="slrzekszeyhtlsqje" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="jlr" dimension="tb" name="净利润(决算数同比增长率)">
+  <source flag="1" code="Z02" measure="wjlrjksyhtlbqje" row="" col="" id="$aa"/>
+  <source flag="1" code="Z02" measure="wjlrjksyhtlsqje" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="gsmgszlr" dimension="tb" name="归属于母公司所有者的净利润(决算数同比增长率)">
+  <source flag="1" code="Z02" measure="gsymgssyzdjlrbqje" row="" col="" id="$aa"/>
+  <source flag="1" code="Z02" measure="gsymgssyzdjlrsqje" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="zcze" dimension="tb" name="资产总额(决算数同比增长率)">
+  <source flag="1" code="Z01" measure="zczjqmye" row="" col="" id="$aa"/>
+  <source flag="1" code="Z01" measure="zczjncye" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="fzze" dimension="tb" name="负债总额(决算数同比增长率)">
+  <source flag="1" code="Z01" measure="fzhjqmye" row="" col="" id="$aa"/>
+  <source flag="1" code="Z01" measure="fzhjncye" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="syzqyze" dimension="tb" name="所有者权益总额(决算数同比增长率)">
+  <source flag="1" code="Z01" measure="syzqyhjqmye" row="" col="" id="$aa"/>
+  <source flag="1" code="Z01" measure="syzqyhjncye" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="gdzctze" dimension="tb" name="固定资产投资额(决算数同比增长率)">
+  <source flag="1" code="Z08" measure="ebngdzctzebns" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_js_base" measure="bn_gdzctze" row="" col="" id="$bb" condition=" and v.vyear='2013'"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="hbzj" dimension="tb" name="货币资金(决算数同比增长率)">
+  <source flag="1" code="Z01" measure="hbzjqmye" row="" col="" id="$aa"/>
+  <source flag="1" code="Z01" measure="hbzjncye" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="yysr" dimension="tb" name="营业收入（决算数同比增长率）">
+  <source flag="1" code="Z02" measure="qzyysrbqje" row="" col="" id="$aa"/>
+  <source flag="1" code="Z02" measure="qzyysrsqje" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<!--<item key="jjzjz" dimension="tb" name="经济增加值（决算数同比增长率）">
+  <source flag="1" code="Z01" measure="yfzgxcqmye" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+
+<item key="ldzc" dimension="tb" name="流动资产(决算数同比增长率)">
+  <source flag="1" code="Z01" measure="ldzchjqmye" row="" col="" id="$aa"/>
+  <source flag="1" code="Z01" measure="ldzchjncye" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="ldfz" dimension="tb" name="流动负债(决算数同比增长率)">
+  <source flag="1" code="Z01" measure="ldfzhjqmye" row="" col="" id="$aa"/>
+  <source flag="1" code="Z01" measure="ldfzhjncye" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="qtywsr" dimension="tb" name="其他业务收入(决算数同比增长率)">
+  <source flag="1" code="Z02" measure="qtywsrbqje" row="" col="" id="$aa"/>
+  <source flag="1" code="Z02" measure="qtywsrsqje" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="qtywcb" dimension="tb" name="其他业务成本(决算数同比增长率)">
+  <source flag="1" code="Z02" measure="qtywcbbqje" row="" col="" id="$aa"/>
+  <source flag="1" code="Z02" measure="qtywcbsqje" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+<item key="zjz" dimension="tb" name="增加值(决算数同比增长率)">
+  <source flag="1" code="Z08" measure="sqtbns" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_js_base" measure="bn_zjz" row="" col="" id="$bb" condition=" and v.vyear='2013'"/>
+  <formula>
+    ($aa-$bb)*100/|$bb|,2
+  </formula>
+</item>
+
+</items>
+</Root>

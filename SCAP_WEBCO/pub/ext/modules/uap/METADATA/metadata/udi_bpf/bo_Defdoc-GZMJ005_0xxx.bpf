@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component conRouterType="手动" createIndustry="0"
+	createTime="2013-07-15 15:52:37" creator="" description=""
+	displayName="审核状态(自定义档案)业务操作" fromSourceBmf="true"
+	gencodestyle="NC传统样式" help="" id="cab04d6c-eab8-11e2-9a68-9dd3181da8fc"
+	industry="0" industryChanged="false" industryIncrease="false"
+	industryName="基础行业" isSource="false" isbizmodel="true" mainEntity=""
+	modifier="" modifyIndustry="0" modifyTime="2013-07-15 15:52:37"
+	name="bo_Defdoc-GZMJ005_0xxx" namespace="uap" ownModule="uapbd"
+	preLoad="false" programcode="" resModuleName="bo_Defdoc-GZMJ005_0xxx"
+	resid="" version="3" versionType="0">
+	<celllist>
+		<busioperation componentID="cab04d6c-eab8-11e2-9a68-9dd3181da8fc"
+			createIndustry="0" createTime="2013-07-15 15:52:37" creator=""
+			dataType="1001ZG100000000006BI" dbtype="" description=""
+			displayName="修改" fullClassName="nc.vouap.bo_Defdoc-GZMJ005_0xxx.edit"
+			height="100" help="" id="cab04d70-eab8-11e2-9a68-9dd3181da8fc"
+			industryChanged="false" isAuthorization="true" isBusiActivity="false"
+			isSource="false" logtype="MODIFY" modifier="" modifyIndustry="0"
+			modifyTime="2013-07-15 15:52:37" name="edit" needlog="true"
+			resid="2UC000-001103" typeDisplayName="审核状态(自定义档案)"
+			typeName="Defdoc-GZMJ005_0xxx" version=""
+			versionType="0" visibility="public" width="80" x="150" y="120">
+			<refoperationlist />
+		</busioperation>
+		<busioperation componentID="cab04d6c-eab8-11e2-9a68-9dd3181da8fc"
+			createIndustry="0" createTime="2013-07-15 15:52:37" creator=""
+			dataType="1001ZG100000000006BI" dbtype="" description=""
+			displayName="删除" fullClassName="nc.vouap.bo_Defdoc-GZMJ005_0xxx.delete"
+			height="100" help="" id="cab04d6e-eab8-11e2-9a68-9dd3181da8fc"
+			industryChanged="false" isAuthorization="true" isBusiActivity="false"
+			isSource="false" logtype="DELETE" modifier="" modifyIndustry="0"
+			modifyTime="2013-07-15 15:52:37" name="delete" needlog="true"
+			resid="2UC000-001104" typeDisplayName="审核状态(自定义档案)"
+			typeName="Defdoc-GZMJ005_0xxx" version=""
+			versionType="0" visibility="public" width="80" x="250" y="120">
+			<refoperationlist />
+		</busioperation>
+		<busioperation componentID="cab04d6c-eab8-11e2-9a68-9dd3181da8fc"
+			createIndustry="0" createTime="2013-07-15 15:52:37" creator=""
+			dataType="1001ZG100000000006BI" dbtype="" description=""
+			displayName="启用" fullClassName="nc.vouap.bo_Defdoc-GZMJ005_0xxx.enable"
+			height="100" help="" id="cab04d71-eab8-11e2-9a68-9dd3181da8fc"
+			industryChanged="false" isAuthorization="true" isBusiActivity="false"
+			isSource="false" logtype="MODIFY" modifier="" modifyIndustry="0"
+			modifyTime="2013-07-15 15:52:37" name="enable" needlog="true"
+			resid="2UC000-001105" typeDisplayName="审核状态(自定义档案)"
+			typeName="Defdoc-GZMJ005_0xxx" version=""
+			versionType="0" visibility="public" width="80" x="350" y="120">
+			<refoperationlist />
+		</busioperation>
+		<busioperation componentID="cab04d6c-eab8-11e2-9a68-9dd3181da8fc"
+			createIndustry="0" createTime="2013-07-15 15:52:37" creator=""
+			dataType="1001ZG100000000006BI" dbtype="" description=""
+			displayName="停用" fullClassName="nc.vouap.bo_Defdoc-GZMJ005_0xxx.disable"
+			height="100" help="" id="cab04d6f-eab8-11e2-9a68-9dd3181da8fc"
+			industryChanged="false" isAuthorization="true" isBusiActivity="false"
+			isSource="false" logtype="MODIFY" modifier="" modifyIndustry="0"
+			modifyTime="2013-07-15 15:52:37" name="disable" needlog="true"
+			resid="2UC000-001106" typeDisplayName="审核状态(自定义档案)"
+			typeName="Defdoc-GZMJ005_0xxx" version=""
+			versionType="0" visibility="public" width="80" x="450" y="120">
+			<refoperationlist />
+		</busioperation>
+		<busioperation componentID="cab04d6c-eab8-11e2-9a68-9dd3181da8fc"
+			createIndustry="0" createTime="2013-07-15 15:52:37" creator=""
+			dataType="1001ZG100000000006BI" dbtype="" description=""
+			displayName="新增" fullClassName="nc.vouap.bo_Defdoc-GZMJ005_0xxx.add"
+			height="100" help="" id="cab04d6d-eab8-11e2-9a68-9dd3181da8fc"
+			industryChanged="false" isAuthorization="true" isBusiActivity="false"
+			isSource="false" logtype="ADD" modifier="" modifyIndustry="0"
+			modifyTime="2013-07-15 15:52:37" name="add" needlog="true"
+			resid="2UC000-001114" typeDisplayName="审核状态(自定义档案)"
+			typeName="Defdoc-GZMJ005_0xxx" version=""
+			versionType="0" visibility="public" width="80" x="50" y="120">
+			<refoperationlist />
+		</busioperation>
+	</celllist>
+	<connectlist />
+	<refdepends />
+	<refdependLoseIDs />
+	<cellRemoveLog />
+	<rulers>
+		<ruler isHorizontal="true" unit="0">
+			<guideList />
+		</ruler>
+		<ruler isHorizontal="false" unit="0">
+			<guideList />
+		</ruler>
+	</rulers>
+</component>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget caption="资料类型" controllerClazz="nc.scap.dsm.material_listwin.DatatypeTreeViewController" id="DatatypeTree" refId="DatatypeTree" sourcePackage="pub/src/public/">
+    <Attributes>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+        <PlugoutDesc id="selectRowAfterPlugout">
+            <PlugoutDescItem clazztype="java.lang.String" name="OPERATE_ROW" source="scapjj_datatype_h" type="Dataset.TYPE_DATASET_SEL_ROW">
+            </PlugoutDescItem>
+        </PlugoutDesc>
+    </PlugoutDescs>
+    <PluginDescs>
+    </PluginDescs>
+    <Models>
+        <Datasets>
+            <RefMdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_orgs" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_orgs" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="协同用户" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_user" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_user" voMeta="nc.uap.cpb.org.vos.CpUserVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="资料类型" controlwidgetopeStatus="false" enabled="false" id="$refds_scapjj_datetype_h" lazyLoad="true" notNullBody="false" objMeta="scapco.datetype_h" voMeta="nc.vo.scapjj.dsm.Datetype_HVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="资料类型" controlwidgetopeStatus="false" enabled="false" id="scapjj_datatype_h" lazyLoad="false" notNullBody="false" objMeta="scapco.datetype_h" pageSize="-1" voMeta="nc.vo.scapjj.dsm.Datetype_HVO">
+                <FieldRelations>
+                    <FieldRelation id="pk_father_rel" needProcess="true" refDataset="$refds_scapjj_datetype_h" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_father_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_datetype_h" value="pk_father">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_org_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_group_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_group_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_group">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="creator_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="creator_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="creator">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="modifier_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="modifier_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="modifier">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="xgdw_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="xgdw_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="xgdw">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DataLoadEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DatasetEvent]]>
+                                </Desc>
+                            </Param>
+                            <Param>
+                                <Name>rowSelectEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+        </Datasets>
+        <ComboDatas>
+            <MDComboDataConf caption="是否" fullclassName="e2378d67-42aa-4ad3-b5c0-f185f504043d" id="combo_scapjj_datatype_h_enablestate">
+            </MDComboDataConf>
+        </ComboDatas>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scapjj_datatype_h_pk_group_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="资料类型_协同当前集团+业务单元" usePower="false" writeDs="scapjj_datatype_h" writeFields="pk_group,pk_group_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scapjj_datatype_h_creator_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="资料类型_协同用户" usePower="false" writeDs="scapjj_datatype_h" writeFields="creator,creator_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scapjj_datatype_h_pk_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="资料类型_协同当前集团+业务单元" usePower="false" writeDs="scapjj_datatype_h" writeFields="pk_org,pk_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scapjj_datatype_h_modifier_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="资料类型_协同用户" usePower="false" writeDs="scapjj_datatype_h" writeFields="modifier,modifier_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scapjj_datatype_h_xgdw_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="资料类型_协同当前集团+业务单元" usePower="false" writeDs="scapjj_datatype_h" writeFields="xgdw,xgdw_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <TreeViewComp canEdit="false" checkBoxModel="0" dragEnable="false" enabled="true" id="datatypetree" openLevel="2" rootOpen="true" selectRoot="false" text="全部" visible="true" withCheckBox="false" withRoot="true">
+            <RecursiveTreeLevel dataset="scapjj_datatype_h" id="一级" labelFields="code,name" loadField="" masterKeyField="pk_datetype_h" recursiveKeyField="pk_datetype_h" recursivePKeyField="pk_father">
+            </RecursiveTreeLevel>
+            <Events>
+                <Event async="true" methodName="onTreeNodeClick" name="onclick" onserver="true">
+                    <SubmitRule>
+                    </SubmitRule>
+                    <Params>
+                        <Param>
+                            <Name>treeNodeEvent</Name>
+                            <Desc>                                <![CDATA[nc.uap.lfw.core.event.TreeNodeEvent]]>
+                            </Desc>
+                        </Param>
+                    </Params>
+                    <Action>
+                    </Action>
+                </Event>
+            </Events>
+        </TreeViewComp>
+    </Components>
+    <Menus>
+    </Menus>
+</Widget>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget controllerClazz="com.scap.pub.defineChart.DefineChartCardWinMainViewCtrl" id="main" refId="main" sourcePackage="pub/src/public/">
+    <Attributes>
+        <Attribute>
+            <Key>$QueryTemplate</Key>
+            <Value>
+            </Value>
+        </Attribute>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+        <PlugoutDesc id="afterSavePlugout">
+        </PlugoutDesc>
+    </PlugoutDescs>
+    <PluginDescs>
+    </PluginDescs>
+    <Connectors>
+        <Connector connType="4" id="cardViewConnID" pluginId="proxyAfterSavePlugout" plugoutId="afterSavePlugout" source="main" sourceWindow="" target="popwin" targetWindow="">
+        </Connector>
+    </Connectors>
+    <Events>
+        <Event async="true" methodName="beforeShow" name="beforeShow" onserver="true">
+            <Action>
+            </Action>
+        </Event>
+    </Events>
+    <Models>
+        <Datasets>
+            <RefMdDataset caption="数据源" controlwidgetopeStatus="false" enabled="false" id="$refds_scapco_scap_chart_ds" lazyLoad="true" notNullBody="false" objMeta="scapco.scap_chart_ds" voMeta="nc.scap.pub.vos.ScapChartDsVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_orgs" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_orgs" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="图表" controlwidgetopeStatus="true" enabled="false" id="scap_chart" lazyLoad="true" notNullBody="false" objMeta="scapco.scap_chart" pageSize="15" voMeta="nc.scap.pub.vos.ScapChartVO">
+                <FieldRelations>
+                    <FieldRelation id="pk_group_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_group_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_group">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_org_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="chartds_rel" needProcess="true" refDataset="$refds_scapco_scap_chart_ds" useCache="true">
+                        <MatchFields>
+                            <Field iscontains="Y" ismatch="Y" readField="pk_chart_ds" writeField="pk_chart_ds">
+                            </Field>
+                            <Field readField="name" writeField="pk_chart_ds_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_chart_ds" value="pk_chart_ds">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                    <Field dataType="String" id="pk_chart_ds_name" nullAble="true" primaryKey="false" text="数据源">
+                    </Field>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+        </Datasets>
+        <ComboDatas>
+            <MDComboDataConf caption="是否显示" fullclassName="eec0adc4-8180-4d96-b880-e9cb1cacb6a0" id="combo_scap_chart_isshowbg">
+            </MDComboDataConf>
+            <MDComboDataConf caption="是否显示" fullclassName="eec0adc4-8180-4d96-b880-e9cb1cacb6a0" id="combo_scap_chart_showvalues">
+            </MDComboDataConf>
+            <MDComboDataConf caption="是否显示" fullclassName="eec0adc4-8180-4d96-b880-e9cb1cacb6a0" id="combo_scap_chart_showlabels">
+            </MDComboDataConf>
+            <MDComboDataConf caption="是否显示" fullclassName="eec0adc4-8180-4d96-b880-e9cb1cacb6a0" id="combo_scap_chart_showlegend">
+            </MDComboDataConf>
+            <MDComboDataConf caption="刻度显示方式" fullclassName="32755d90-527e-4494-a49a-7d30c2d4bbbd" id="combo_scap_chart_labeldisplay">
+            </MDComboDataConf>
+            <DynamicComboData caption="图表预置样式下拉" className="nc.scap.pub.combo.ChartPresetStyleCombo" id="chart_preset_style_combo">
+            </DynamicComboData>
+            <MDComboDataConf caption="是否显示" fullclassName="eec0adc4-8180-4d96-b880-e9cb1cacb6a0" id="combo_scap_chart_showpoint">
+            </MDComboDataConf>
+            <DynamicComboData caption="图表类型" className="nc.scap.pub.combo.ChartTypeCombo" id="chart_type_combo">
+            </DynamicComboData>
+            <MDComboDataConf caption="是否显示" fullclassName="eec0adc4-8180-4d96-b880-e9cb1cacb6a0" id="combo_scap_chart_isshowborder">
+            </MDComboDataConf>
+        </ComboDatas>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="scap_chart_ds_ref" langDir="" multiSel="false" orgs="false" pagemeta="" pagemodel="" read="false" readDs="masterDs" readFields="pk_chart_ds,name" refId="" refcode="财务分析数据源参照" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="图表_财务分析数据源参照" usePower="false" writeDs="scap_chart" writeFields="pk_chart_ds, pk_chart_ds_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scap_chart_pk_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同业务单元(当前集团)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="图表_协同业务单元(当前集团)" usePower="false" writeDs="scap_chart" writeFields="pk_org,pk_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scap_chart_pk_group_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同集团(所有)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="图表_协同集团(所有)" usePower="false" writeDs="scap_chart" writeFields="pk_group,pk_group_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <FormComp caption="图表" columnCount="3" dataset="scap_chart" eleWidth="250" ellipsis="false" enabled="true" id="scap_chart_form" labelMinWidth="0" renderType="1" rowHeight="22" visible="true">
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="pk_chart" height="" id="pk_chart" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="false" rowSpan="1" selectOnly="true" text="主键" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="code" height="" id="code" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="编码" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="name" height="" id="name" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="名称" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="caption" height="" id="caption" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="显示标题" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="ComboBox" enabled="true" field="type" height="" id="type" imageOnly="false" langDir="pub_chart" nextLine="true" nullAble="true" refComboData="chart_type_combo" rowSpan="1" selectOnly="true" text="类型" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="ComboBox" enabled="true" field="def1" height="" id="def1" imageOnly="false" nextLine="false" nullAble="true" refComboData="chart_preset_style_combo" rowSpan="1" selectOnly="true" text="预置样式" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="pk_chart_ds" height="" id="pk_chart_ds" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="数据源" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="Reference" enabled="true" field="pk_chart_ds_name" height="" id="pk_chart_ds_name" imageOnly="false" nextLine="true" nullAble="true" refNode="scap_chart_ds_ref" rowSpan="1" selectOnly="true" text="数据源" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="3" editable="true" editorType="StringText" enabled="true" field="controller" height="" id="controller" imageOnly="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="控制类" toolbarType="Custom" visible="true" width="600">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="groupname" height="" id="groupname" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="分组列显示名称" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="seriesname" height="" id="seriesname" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="统计列显示名称" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="xaxisname" height="" id="xaxisname" imageOnly="false" langDir="pub_chart" nextLine="true" nullAble="true" rowSpan="1" selectOnly="true" text="横轴显示文字" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="yaxisname" height="" id="yaxisname" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="纵轴显示文字" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="captionurl" height="" id="captionurl" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="标题链接" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="captionfunction" height="" id="captionfunction" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="标题函数" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="numberprefix" height="" id="numberprefix" imageOnly="false" langDir="pub_chart" nextLine="true" nullAble="true" rowSpan="1" selectOnly="true" text="统计结果数字前缀" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="numbersuffix" height="" id="numbersuffix" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="统计结果数字后缀" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="captionfont" height="" id="captionfont" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="标题字体" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="xaxisfont" height="" id="xaxisfont" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="横轴字体" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="xlabelfont" height="" id="xlabelfont" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="横轴刻度字体" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="yaxisfont" height="" id="yaxisfont" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="纵轴字体" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="ylabelfont" height="" id="ylabelfont" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="纵轴刻度字体" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="legendfont" height="" id="legendfont" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="图例字体" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="bgcolor" height="" id="bgcolor" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="背景色" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="ComboBox" enabled="true" field="labeldisplay" height="" id="labeldisplay" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" refComboData="combo_scap_chart_labeldisplay" rowSpan="1" selectOnly="true" text="刻度显示方式" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="ComboBox" enabled="true" field="showvalues" height="" id="showvalues" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" refComboData="combo_scap_chart_showvalues" rowSpan="1" selectOnly="true" text="是否显示数值" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="ComboBox" enabled="true" field="showlabels" height="" id="showlabels" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" refComboData="combo_scap_chart_showlabels" rowSpan="1" selectOnly="true" text="是否显示刻度" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="ComboBox" enabled="true" field="showlegend" height="" id="showlegend" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" refComboData="combo_scap_chart_showlegend" rowSpan="1" selectOnly="true" text="是否显示图例" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="yaxismaxvalue" height="" id="yaxismaxvalue" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="纵轴最大值" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="yaxisminvalue" height="" id="yaxisminvalue" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="纵轴最小值" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="ComboBox" enabled="true" field="isshowbg" height="" id="isshowbg" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" refComboData="combo_scap_chart_isshowbg" rowSpan="1" selectOnly="true" text="是否显示背景" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="ComboBox" enabled="true" field="isshowborder" height="" id="isshowborder" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" refComboData="combo_scap_chart_isshowborder" rowSpan="1" selectOnly="true" text="是否显示边框" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="majottmnumber" height="" id="majottmnumber" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="标记数字显示个数" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="ComboBox" enabled="true" field="showpoint" height="" id="showpoint" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" refComboData="combo_scap_chart_showpoint" rowSpan="1" selectOnly="true" text="是否显示关键点数字" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="rendertype" height="" id="rendertype" imageOnly="false" langDir="pub_chart" nextLine="true" nullAble="true" rowSpan="1" selectOnly="true" text="图形类型" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="pyaxis" height="" id="pyaxis" imageOnly="false" langDir="pub_chart" nextLine="true" nullAble="true" rowSpan="1" selectOnly="true" text="主Y轴统计列" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="syaxis" height="" id="syaxis" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="次Y轴统计列" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="rscale" height="" id="rscale" imageOnly="false" langDir="pub_chart" nextLine="true" nullAble="true" rowSpan="1" selectOnly="true" text="环比例" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="pk_group" height="" id="pk_group" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="集团" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="Reference" enabled="true" field="pk_group_name" height="" id="pk_group_name" imageOnly="false" nextLine="false" nullAble="true" refNode="refnode_scap_chart_pk_group_name" rowSpan="1" selectOnly="true" text="集团" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="pk_org" height="" id="pk_org" imageOnly="false" langDir="pub_chart" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="组织" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="Reference" enabled="true" field="pk_org_name" height="" id="pk_org_name" imageOnly="false" nextLine="false" nullAble="true" refNode="refnode_scap_chart_pk_org_name" rowSpan="1" selectOnly="true" text="组织" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="3" editable="true" editorType="TextArea" enabled="true" field="memo" height="200" id="memo" imageOnly="false" inputAssistant="使用&lt;br/&gt;标签换行" nextLine="false" nullAble="true" rowSpan="3" selectOnly="true" text="说明文字" toolbarType="Custom" visible="true" width="600">
+            </Element>
+        </FormComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar">
+            <MenuItem id="add" modifiers="2" showModel="1" text="新增">
+                <Events>
+                    <Event async="true" methodName="onAdd" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="del" modifiers="2" showModel="1" text="删除">
+                <Events>
+                    <Event async="true" methodName="onDelete" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="save" modifiers="2" showModel="1" text="保存">
+                <Events>
+                    <Event async="true" methodName="onSave" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="sep1" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="back" modifiers="2" showModel="1" text="返回">
+                <Events>
+                    <Event async="true" methodName="onBack" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

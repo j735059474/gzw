@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget controllerClazz="nc.scap.pub.choice.ChoiceListWinMainViewCtrl" id="main" refId="main" sourcePackage="pub/src/public/">
+    <Attributes>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+    </PlugoutDescs>
+    <PluginDescs>
+        <PluginDesc id="simpleQuery_plugin" methodName="doQueryChange">
+        </PluginDesc>
+        <PluginDesc id="org_plugin" methodName="doOrgChange">
+        </PluginDesc>
+        <PluginDesc id="refresh_plugin" methodName="doRefresh">
+            <PluginDescItem clazztype="java.lang.String" id="OPERATE_ROW">
+            </PluginDescItem>
+        </PluginDesc>
+    </PluginDescs>
+    <Connectors>
+        <Connector connType="6" id="listViewConnID" pluginId="refresh_plugin" plugoutId="proxyAfterSavePlugout" source="nc.scap.pub.choiceComps.choice_listwin" sourceWindow="" target="main" targetWindow="">
+        </Connector>
+    </Connectors>
+    <Models>
+        <Datasets>
+            <DatasetRelations>
+                <DatasetRelation detailDataset="choice_b" detailForeignKey="pk_choice_person" id="scapco_choice_b_scapco_choice" masterDataset="choice" masterKeyField="pk_choice_person">
+                </DatasetRelation>
+            </DatasetRelations>
+            <RefMdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_orgs" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_orgs" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="协同用户" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_user" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_user" voMeta="nc.uap.cpb.org.vos.CpUserVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="人员选择" controlwidgetopeStatus="true" enabled="false" id="choice" lazyLoad="true" notNullBody="false" objMeta="scapco.choice" pageSize="15" voMeta="nc.scap.pub.vos.ChoiceVO">
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <MdDataset caption="人员选择子表" controlwidgetopeStatus="false" enabled="false" id="choice_b" lazyLoad="true" notNullBody="false" objMeta="scapco.choice_b" pageSize="15" voMeta="nc.scap.pub.vos.ChoiceVBO">
+                <FieldRelations>
+                    <FieldRelation id="pk_user_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="pk_user_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="pk_user">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_org_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+            </MdDataset>
+        </Datasets>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_choice_b_pk_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同集团+业务单元(所有)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="choice_b" writeFields="pk_org,pk_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_choice_b_pk_user_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="choice_b" writeFields="pk_user,pk_user_user_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <GridComp autoRowHeight="false" canCopy="true" checkBoxModel="1" dataset="choice_b" editable="true" enabled="true" expandTree="false" id="choice_b_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_user" fixedHeader="false" id="pk_user" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="人员" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_user_user_name" fixedHeader="false" id="pk_user_user_name" imageOnly="false" nullAble="true" refNode="refnode_choice_b_pk_user_user_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="人员" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_org" fixedHeader="false" id="pk_org" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="组织" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_org_name" fixedHeader="false" id="pk_org_name" imageOnly="false" nullAble="true" refNode="refnode_choice_b_pk_org_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="组织" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="mark" fixedHeader="false" id="mark" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备注" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def10" fixedHeader="false" id="def10" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段10" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def9" fixedHeader="false" id="def9" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段9" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def8" fixedHeader="false" id="def8" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段8" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def7" fixedHeader="false" id="def7" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段7" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def6" fixedHeader="false" id="def6" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段6" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def5" fixedHeader="false" id="def5" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段5" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def4" fixedHeader="false" id="def4" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段4" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def3" fixedHeader="false" id="def3" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段3" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def1" fixedHeader="false" id="def1" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段1" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def2" fixedHeader="false" id="def2" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段2" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_choice_person" fixedHeader="false" id="pk_choice_person" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上层单据主键" textAlign="left" visible="true" width="120">
+            </Column>
+        </GridComp>
+        <GridComp autoRowHeight="false" canCopy="true" caption="choice_grid" checkBoxModel="1" dataset="choice" editable="true" enabled="true" expandTree="false" id="choice_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="name" fixedHeader="false" id="name" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="名称" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="code" fixedHeader="false" id="code" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="编码" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="explain" fixedHeader="false" id="explain" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="说明" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def10" fixedHeader="false" id="def10" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段10" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def9" fixedHeader="false" id="def9" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段9" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def8" fixedHeader="false" id="def8" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段8" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def7" fixedHeader="false" id="def7" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段7" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def6" fixedHeader="false" id="def6" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段6" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def5" fixedHeader="false" id="def5" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段5" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def4" fixedHeader="false" id="def4" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段4" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def3" fixedHeader="false" id="def3" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段3" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def1" fixedHeader="false" id="def1" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段1" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def2" fixedHeader="false" id="def2" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段2" textAlign="left" visible="true" width="120">
+            </Column>
+        </GridComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar">
+            <MenuItem id="add" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Init_Ss_Ms_StateManager" text="新增">
+                <Events>
+                    <Event async="true" methodName="onAdd" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="edit" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="修改">
+                <Events>
+                    <Event async="true" methodName="onEdit" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="del" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="删除">
+                <Events>
+                    <Event async="true" methodName="onDelete" name="onclick" onserver="true">
+                        <SubmitRule>
+                            <Widget id="main">
+                                <Dataset id="choice_b" type="ds_all_line">
+                                </Dataset>
+                            </Widget>
+                        </SubmitRule>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="sep1" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="startorstrop" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="启用/停用">
+                <MenuItem id="start" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.StartStopStateManager" text="启用">
+                    <Events>
+                        <Event async="true" methodName="onStart" name="onclick" onserver="true">
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+                <MenuItem id="stop" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.StartStopStateManager" text="停用">
+                    <Events>
+                        <Event async="true" methodName="onStop" name="onclick" onserver="true">
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem id="sep2" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="attachfile" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="附件">
+                <Events>
+                    <Event async="true" methodName="onAttchFile" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="print" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="打印">
+                <Events>
+                    <Event async="true" methodName="onPrint" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

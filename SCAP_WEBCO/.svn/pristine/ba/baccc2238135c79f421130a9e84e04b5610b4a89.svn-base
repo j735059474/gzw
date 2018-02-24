@@ -1,0 +1,768 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<ROOT>
+<items>
+
+<!--flag="0" 单独处理;flag="1" 查iufo表样;flag="2" 查事实表; 公式中"XX,2"表示XX公式计算后保留两位小数-->
+<item key="vyear" dimension="" name="年">
+  <source flag="1" code="国资企预03表" measure="accyear" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sys_org" dimension="" name="组织标志">
+  <source flag="0" code="国资企预03表" measure="sys_org" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sys_zdm" dimension="" name="外键">
+  <source flag="0" code="国资企预03表" measure="sys_zdm" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--dimension="sn"-->
+<!--<item key="jyhdcsxjll" dimension="sn" name="一、经营活动产生的现金流量：">
+  <source flag="1" code="国资企预03表" measure="lrzekszeyhtlsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+
+<item key="xsspttlw" dimension="sn" name="销售商品、提供劳务收到的现金">
+  <source flag="1" code="国资企预03表" measure="xssptglwsddxjsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qtxjlr" dimension="sn" name="其他经营活动产生的现金流入">
+  <source flag="1" code="国资企预03表" measure="qtjyhdcsdxjlrsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jyhdxjlrxj" dimension="sn" name="经营活动现金流入小计">
+  <source flag="1" code="国资企预03表" measure="jyhdxjlrxjsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gmspjslw" dimension="sn" name="购买商品、接受劳务支付的现金">
+  <source flag="1" code="国资企预03表" measure="gmspjslwzfdxjsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qtxjlc" dimension="sn" name="其他经营活动产生的现金流出">
+  <source flag="1" code="国资企预03表" measure="qtjyhdcsdxjlcsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jyhdxjlcxj" dimension="sn" name="经营活动现金流出小计">
+  <source flag="1" code="国资企预03表" measure="jyhdxjlcxjsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jyhdxjllje" dimension="sn" name="经营活动产生的现金流量净额">
+  <source flag="1" code="国资企预03表" measure="jyhdcsdxjlljesns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--<item key="tzhdcsxjll" dimension="sn" name="二、投资活动产生的现金流量：">
+  <source flag="1" code="国资企预03表" measure="qtywsrsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+
+<item key="shtzsddxj" dimension="sn" name="收回投资收到的现金">
+  <source flag="1" code="国资企预03表" measure="shtzsddxjsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="czzcshxjje" dimension="sn" name="处置固定资产、无形资产和其他长期资产收回的现金净额">
+  <source flag="1" code="国资企预03表" measure="czgdzcwxzchqtzqzcshdxjjesns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="czsddxjje" dimension="sn" name="处置子公司及其他营业单位收到的现金净额">
+  <source flag="1" code="国资企预03表" measure="czzgsjqtyydwsddxjjesns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qtcsdxjlr" dimension="sn" name="其他投资活动产生的现金流入">
+  <source flag="1" code="国资企预03表" measure="qttzhdcsdxjlrsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="tzhdxjlrxj" dimension="sn" name="投资活动现金流入小计">
+  <source flag="1" code="国资企预03表" measure="tzhdxjlrxjsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gjzcszfxj" dimension="sn" name="购建固定资产、无形资产和其他长期资产所支付的现金">
+  <source flag="1" code="国资企预03表" measure="gjgdzcwxzchqtzqzczfdxjsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="tzszfdxj" dimension="sn" name="投资所支付的现金">
+  <source flag="1" code="国资企预03表" measure="tzzfdxjsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qdzfdxjje" dimension="sn" name="取得子公司及其他营业单位支付的现金净额">
+  <source flag="1" code="国资企预03表" measure="qdzgsjqtyydwzfdxjjesns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zfygdxj" dimension="sn" name="支付的其他与投资活动有关的现金">
+  <source flag="1" code="国资企预03表" measure="zfdqtytzhdygdxjsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="tzhdxjlcxj" dimension="sn" name="投资活动现金流出小计">
+  <source flag="1" code="国资企预03表" measure="tzhdxjlcxjsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="tzhdxjllje" dimension="sn" name="投资活动产生的现金流量净额">
+  <source flag="1" code="国资企预03表" measure="tzhdcsdxjlljesns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--<item key="czhdxjll" dimension="sn" name="三、筹资活动产生的现金流量：">
+  <source flag="1" code="国资企预03表" measure="jyywzcsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+
+<item key="xstzsddxj" dimension="sn" name="吸收投资所收到的现金">
+  <source flag="1" code="国资企预03表" measure="xstzsddxjsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qdjksddxj" dimension="sn" name="取得借款收到的现金">
+  <source flag="1" code="国资企预03表" measure="qdjksddxjsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="fxzqsddxj" dimension="sn" name="发行债券收到的现金">
+  <source flag="1" code="国资企预03表" measure="fxzqsddxjsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sdczhdygxj" dimension="sn" name="收到其他与筹资活动有关的现金">
+  <source flag="1" code="国资企预03表" measure="sdqtyczhdygdxjsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="czhdxjlrxj" dimension="sn" name="筹资活动现金流入小计">
+  <source flag="1" code="国资企预03表" measure="czhdxjlrxjsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="chzwzfdxj" dimension="sn" name="偿还债务支付的现金">
+  <source flag="1" code="国资企预03表" measure="chzwzfdxjsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="fpchzfdxj" dimension="sn" name="分配股利、利润或偿付利息支付的现金">
+  <source flag="1" code="国资企预03表" measure="fpgllrhcflxzfdxjsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zfczhdygxj" dimension="sn" name="支付其他与筹资活动有关的现金">
+  <source flag="1" code="国资企预03表" measure="zfqtyczhdygdxjsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="czhdxjlcxj" dimension="sn" name="筹资活动现金流出小计">
+  <source flag="1" code="国资企预03表" measure="czhdxjlcxjsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="czhdxjllje" dimension="sn" name="筹资活动产生的现金流量净额">
+  <source flag="1" code="国资企预03表" measure="czhdcsdxjlljesns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="hlbdddjwyx" dimension="sn" name="四、汇率变动对现金及现金等价物的影响">
+  <source flag="1" code="国资企预03表" measure="hlbddxjjxjdjwdyxsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="xjjzje" dimension="sn" name="五、现金及现金等价物净增加额">
+  <source flag="1" code="国资企预03表" measure="xjjxjdjwjzjesns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qcdjwye" dimension="sn" name="加：期初现金及现金等价物余额">
+  <source flag="1" code="国资企预03表" measure="jqcxjjxjdjwyesns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qmdjwye" dimension="sn" name="六、期末现金及现金等价物余额">
+  <source flag="1" code="国资企预03表" measure="qmxjjxjdjwyesns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+
+<!--dimension="bn"-->
+<!--<item key="jyhdcsxjll" dimension="bn" name="一、经营活动产生的现金流量：">
+  <source flag="1" code="国资企预03表" measure="lrzekszeyhtlbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+
+<item key="xsspttlw" dimension="bn" name="销售商品、提供劳务收到的现金">
+  <source flag="1" code="国资企预03表" measure="xssptglwsddxjbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qtxjlr" dimension="bn" name="其他经营活动产生的现金流入">
+  <source flag="1" code="国资企预03表" measure="qtjyhdcsdxjlrbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jyhdxjlrxj" dimension="bn" name="经营活动现金流入小计">
+  <source flag="1" code="国资企预03表" measure="jyhdxjlrxjbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gmspjslw" dimension="bn" name="购买商品、接受劳务支付的现金">
+  <source flag="1" code="国资企预03表" measure="gmspjslwzfdxjbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qtxjlc" dimension="bn" name="其他经营活动产生的现金流出">
+  <source flag="1" code="国资企预03表" measure="qtjyhdcsdxjlcbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jyhdxjlcxj" dimension="bn" name="经营活动现金流出小计">
+  <source flag="1" code="国资企预03表" measure="jyhdxjlcxjbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jyhdxjllje" dimension="bn" name="经营活动产生的现金流量净额">
+  <source flag="1" code="国资企预03表" measure="jyhdcsdxjlljebnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--<item key="tzhdcsxjll" dimension="bn" name="二、投资活动产生的现金流量：">
+  <source flag="1" code="国资企预03表" measure="qtywsrbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+
+<item key="shtzsddxj" dimension="bn" name="收回投资收到的现金">
+  <source flag="1" code="国资企预03表" measure="shtzsddxjbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="czzcshxjje" dimension="bn" name="处置固定资产、无形资产和其他长期资产收回的现金净额">
+  <source flag="1" code="国资企预03表" measure="czgdzcwxzchqtzqzcshdxjjebnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="czsddxjje" dimension="bn" name="处置子公司及其他营业单位收到的现金净额">
+  <source flag="1" code="国资企预03表" measure="czzgsjqtyydwsddxjjebnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qtcsdxjlr" dimension="bn" name="其他投资活动产生的现金流入">
+  <source flag="1" code="国资企预03表" measure="qttzhdcsdxjlrbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="tzhdxjlrxj" dimension="bn" name="投资活动现金流入小计">
+  <source flag="1" code="国资企预03表" measure="tzhdxjlrxjbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gjzcszfxj" dimension="bn" name="购建固定资产、无形资产和其他长期资产所支付的现金">
+  <source flag="1" code="国资企预03表" measure="gjgdzcwxzchqtzqzczfdxjbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="tzszfdxj" dimension="bn" name="投资所支付的现金">
+  <source flag="1" code="国资企预03表" measure="tzzfdxjbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qdzfdxjje" dimension="bn" name="取得子公司及其他营业单位支付的现金净额">
+  <source flag="1" code="国资企预03表" measure="qdzgsjqtyydwzfdxjjebnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zfygdxj" dimension="bn" name="支付的其他与投资活动有关的现金">
+  <source flag="1" code="国资企预03表" measure="zfdqtytzhdygdxjbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="tzhdxjlcxj" dimension="bn" name="投资活动现金流出小计">
+  <source flag="1" code="国资企预03表" measure="tzhdxjlcxjbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="tzhdxjllje" dimension="bn" name="投资活动产生的现金流量净额">
+  <source flag="1" code="国资企预03表" measure="tzhdcsdxjlljebnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--<item key="czhdxjll" dimension="bn" name="三、筹资活动产生的现金流量：">
+  <source flag="1" code="国资企预03表" measure="jyywzcbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+
+<item key="xstzsddxj" dimension="bn" name="吸收投资所收到的现金">
+  <source flag="1" code="国资企预03表" measure="xstzsddxjbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qdjksddxj" dimension="bn" name="取得借款收到的现金">
+  <source flag="1" code="国资企预03表" measure="qdjksddxjbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="fxzqsddxj" dimension="bn" name="发行债券收到的现金">
+  <source flag="1" code="国资企预03表" measure="fxzqsddxjbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sdczhdygxj" dimension="bn" name="收到其他与筹资活动有关的现金">
+  <source flag="1" code="国资企预03表" measure="sdqtyczhdygdxjbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="czhdxjlrxj" dimension="bn" name="筹资活动现金流入小计">
+  <source flag="1" code="国资企预03表" measure="czhdxjlrxjbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="chzwzfdxj" dimension="bn" name="偿还债务支付的现金">
+  <source flag="1" code="国资企预03表" measure="chzwzfdxjbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="fpchzfdxj" dimension="bn" name="分配股利、利润或偿付利息支付的现金">
+  <source flag="1" code="国资企预03表" measure="fpgllrhcflxzfdxjbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zfczhdygxj" dimension="bn" name="支付其他与筹资活动有关的现金">
+  <source flag="1" code="国资企预03表" measure="zfqtyczhdygdxjbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="czhdxjlcxj" dimension="bn" name="筹资活动现金流出小计">
+  <source flag="1" code="国资企预03表" measure="czhdxjlcxjbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="czhdxjllje" dimension="bn" name="筹资活动产生的现金流量净额">
+  <source flag="1" code="国资企预03表" measure="czhdcsdxjlljebnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="hlbdddjwyx" dimension="bn" name="四、汇率变动对现金及现金等价物的影响">
+  <source flag="1" code="国资企预03表" measure="hlbddxjjxjdjwdyxbnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="xjjzje" dimension="bn" name="五、现金及现金等价物净增加额">
+  <source flag="1" code="国资企预03表" measure="xjjxjdjwjzjebnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qcdjwye" dimension="bn" name="加：期初现金及现金等价物余额">
+  <source flag="1" code="国资企预03表" measure="jqcxjjxjdjwyebnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qmdjwye" dimension="bn" name="六、期末现金及现金等价物余额">
+  <source flag="1" code="国资企预03表" measure="qmxjjxjdjwyebnyss"  row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--dimension="zjl"-->
+<!--<item key="jyhdcsxjll" dimension="zjl" name="一、经营活动产生的现金流量：(增减率)">
+  <source flag="1" code="国资企预03表" measure="lrzekszeyhtlzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+
+<item key="xsspttlw" dimension="zjl" name="销售商品、提供劳务收到的现金(增减率)">
+  <source flag="1" code="国资企预03表" measure="xssptglwsddxjzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qtxjlr" dimension="zjl" name="其他经营活动产生的现金流入(增减率)">
+  <source flag="1" code="国资企预03表" measure="qtjyhdcsdxjlrzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jyhdxjlrxj" dimension="zjl" name="经营活动现金流入小计(增减率)">
+  <source flag="1" code="国资企预03表" measure="jyhdxjlrxjzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gmspjslw" dimension="zjl" name="购买商品、接受劳务支付的现金(增减率)">
+  <source flag="1" code="国资企预03表" measure="gmspjslwzfdxjzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qtxjlc" dimension="zjl" name="其他经营活动产生的现金流出(增减率)">
+  <source flag="1" code="国资企预03表" measure="qtjyhdcsdxjlczjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jyhdxjlcxj" dimension="zjl" name="经营活动现金流出小计(增减率)">
+  <source flag="1" code="国资企预03表" measure="jyhdxjlcxjzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jyhdxjllje" dimension="zjl" name="经营活动产生的现金流量净额(增减率)">
+  <source flag="1" code="国资企预03表" measure="jyhdcsdxjlljezjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--<item key="tzhdcsxjll" dimension="zjl" name="二、投资活动产生的现金流量：(增减率)">
+  <source flag="1" code="国资企预03表" measure="qtywsrzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+
+<item key="shtzsddxj" dimension="zjl" name="收回投资收到的现金(增减率)">
+  <source flag="1" code="国资企预03表" measure="shtzsddxjzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="czzcshxjje" dimension="zjl" name="处置固定资产、无形资产和其他长期资产收回的现金净额(增减率)">
+  <source flag="1" code="国资企预03表" measure="czgdzcwxzchqtzqzcshdxjjezjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="czsddxjje" dimension="zjl" name="处置子公司及其他营业单位收到的现金净额(增减率)">
+  <source flag="1" code="国资企预03表" measure="czzgsjqtyydwsddxjjezjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qtcsdxjlr" dimension="zjl" name="其他投资活动产生的现金流入(增减率)">
+  <source flag="1" code="国资企预03表" measure="qttzhdcsdxjlrzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="tzhdxjlrxj" dimension="zjl" name="投资活动现金流入小计(增减率)">
+  <source flag="1" code="国资企预03表" measure="tzhdxjlrxjzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gjzcszfxj" dimension="zjl" name="购建固定资产、无形资产和其他长期资产所支付的现金(增减率)">
+  <source flag="1" code="国资企预03表" measure="gjgdzcwxzchqtzqzczfdxjzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="tzszfdxj" dimension="zjl" name="投资所支付的现金(增减率)">
+  <source flag="1" code="国资企预03表" measure="tzzfdxjzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qdzfdxjje" dimension="zjl" name="取得子公司及其他营业单位支付的现金净额(增减率)">
+  <source flag="1" code="国资企预03表" measure="qdzgsjqtyydwzfdxjjezjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zfygdxj" dimension="zjl" name="支付的其他与投资活动有关的现金(增减率)">
+  <source flag="1" code="国资企预03表" measure="zfdqtytzhdygdxjzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="tzhdxjlcxj" dimension="zjl" name="投资活动现金流出小计(增减率)">
+  <source flag="1" code="国资企预03表" measure="tzhdxjlcxjzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="tzhdxjllje" dimension="zjl" name="投资活动产生的现金流量净额(增减率)">
+  <source flag="1" code="国资企预03表" measure="tzhdcsdxjlljezjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--<item key="czhdxjll" dimension="zjl" name="三、筹资活动产生的现金流量：(增减率)">
+  <source flag="1" code="国资企预03表" measure="jyywzczjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+
+<item key="xstzsddxj" dimension="zjl" name="吸收投资所收到的现金(增减率)">
+  <source flag="1" code="国资企预03表" measure="xstzsddxjzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qdjksddxj" dimension="zjl" name="取得借款收到的现金(增减率)">
+  <source flag="1" code="国资企预03表" measure="qdjksddxjzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="fxzqsddxj" dimension="zjl" name="发行债券收到的现金(增减率)">
+  <source flag="1" code="国资企预03表" measure="fxzqsddxjzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sdczhdygxj" dimension="zjl" name="收到其他与筹资活动有关的现金(增减率)">
+  <source flag="1" code="国资企预03表" measure="sdqtyczhdygdxjzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="czhdxjlrxj" dimension="zjl" name="筹资活动现金流入小计(增减率)">
+  <source flag="1" code="国资企预03表" measure="czhdxjlrxjzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="chzwzfdxj" dimension="zjl" name="偿还债务支付的现金(增减率)">
+  <source flag="1" code="国资企预03表" measure="chzwzfdxjzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="fpchzfdxj" dimension="zjl" name="分配股利、利润或偿付利息支付的现金(增减率)">
+  <source flag="1" code="国资企预03表" measure="fpgllrhcflxzfdxjzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zfczhdygxj" dimension="zjl" name="支付其他与筹资活动有关的现金(增减率)">
+  <source flag="1" code="国资企预03表" measure="zfqtyczhdygdxjzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="czhdxjlcxj" dimension="zjl" name="筹资活动现金流出小计(增减率)">
+  <source flag="1" code="国资企预03表" measure="czhdxjlcxjzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="czhdxjllje" dimension="zjl" name="筹资活动产生的现金流量净额(增减率)">
+  <source flag="1" code="国资企预03表" measure="czhdcsdxjlljezjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="hlbdddjwyx" dimension="zjl" name="四、汇率变动对现金及现金等价物的影响(增减率)">
+  <source flag="1" code="国资企预03表" measure="hlbddxjjxjdjwdyxzjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="xjjzje" dimension="zjl" name="五、现金及现金等价物净增加额(增减率)">
+  <source flag="1" code="国资企预03表" measure="xjjxjdjwjzjezjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qcdjwye" dimension="zjl" name="加：期初现金及现金等价物余额(增减率)">
+  <source flag="1" code="国资企预03表" measure="jqcxjjxjdjwyezjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qmdjwye" dimension="zjl" name="六、期末现金及现金等价物余额(增减率)">
+  <source flag="1" code="国资企预03表" measure="qmxjjxjdjwyezjl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+
+</items>
+</ROOT>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+	<scapfd_testref>
+		<scapfd_testref.fdmonth uapDisplayName="x"/>
+	</scapfd_testref>
+	<scapfd_testref1>
+		<scapfd_testref1.yjqy uapDisplayName="冶金企业数据"/>
+	</scapfd_testref1>
+	<scapfd_testref2>
+		<scapfd_testref2.mtqy uapDisplayName="煤炭企业"/>
+	</scapfd_testref2>
+	<scapfd_testref3>
+		<scapfd_testref3.jcqy  uapDisplayName="建材企业"/>
+	</scapfd_testref3>
+	<scapfd_testref4>
+		<scapfd_testref4.tzqy uapDisplayName="投资企业"/>
+	</scapfd_testref4>
+	<scapfd_testref5>
+		<scapfd_testref5.jxqy uapDisplayName="机械企业"/>
+	</scapfd_testref5>
+	<scapfd_testref6>
+		<scapfd_testref6.jrqy uapDisplayName="金融企业"/>
+	</scapfd_testref6>		
+	<scapfd_testref7>
+		<scapfd_testref7.qtqy uapDisplayName="其他企业"/>
+	</scapfd_testref7>			
+	
+		
+</Root>

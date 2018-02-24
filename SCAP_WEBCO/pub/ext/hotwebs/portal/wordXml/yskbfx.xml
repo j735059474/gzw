@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+	<scapfd_testref>
+		<scapfd_testref.fdmonth uapDisplayName="1-x"/>
+		<scapfd_testref.yskbsjqz uapDisplayName="快报数据取值：快报指标表，合计值"/>
+		<scapfd_testref.ysyssjqz uapDisplayName="预算数据取值：预算指标表，合计值"/>		
+		<scapfd_testref.yswzrbcz  uapDisplayName="若无偏差较大的企业，则显示：无偏差较大的企业"/>
+		<scapfd_testref.ysyyzsrbys uapDisplayName="营业总收入(本月数)"/>		
+		<scapfd_testref.ysyyzsrljw uapDisplayName="营业总收入(累计完成数)"/>
+		<scapfd_testref.ysyyzsrndys uapDisplayName="营业总收入(年度预算完成率)"/>
+		<scapfd_testref.ysyyzcbbys uapDisplayName="营业总成本(本月数)"/>
+               	<scapfd_testref.ysyyzcbljwc uapDisplayName="营业总成本(累计完成数)"/>
+		<scapfd_testref.ysyyzccbndys uapDisplayName="营业总成本(年度预算完成率)"/>
+		<scapfd_testref.yslrzebys uapDisplayName="利润总额(本月数)"/>
+		<scapfd_testref.yslrzeljwcs uapDisplayName="利润总额(累计完成数)"/>
+		<scapfd_testref.yslrzendyswl uapDisplayName="利润总额(年度预算完成率)"/>
+		<scapfd_testref.yszczeljwc uapDisplayName="资产总额(累计完成数)"/>
+		<scapfd_testref.yszczendysl uapDisplayName="资产总额(年度预算完成率)"/>
+		<scapfd_testref.ysfzzeljwcs uapDisplayName="负债总额(累计完成数)"/>
+		<scapfd_testref.ysfzzendysl uapDisplayName="负债总额(年度预算完成率)"/>
+		<scapfd_testref.ysgszewcs uapDisplayName="归属于母公司的所有者权益总额(累计完成数)"/>
+		<scapfd_testref.ysgsmgswcl uapDisplayName="归属于母公司所有者的净利润(年度预算完成率)"/>
+		<scapfd_testref.srzyywsrbys uapDisplayName="主营业务收入(本月数)"/>
+		<scapfd_testref.srzyywsrljs uapDisplayName="主营业务收入(累计完成数)"/>
+		<scapfd_testref.srzyywrydl uapDisplayName="主营业务收入(年度预算完成率)"/>
+		<scapfd_testref.srzysrwcyss uapDisplayName="主营业务收入完成预算时间进度的户数"/>
+		<scapfd_testref.srzysrwcqk uapDisplayName="主营业务收入完成情况高于时间进度10%以上的企业户数"/>
+
+		<scapfd_testref.srzyywsrsjjd uapDisplayName="主营业务收入未完成预算时间进度的户数"/>
+		<scapfd_testref.srzyywsrdysj uapDisplayName="主营业务收入完成情况低于时间进度10%以上的企业户数"/>
+
+		<scapfd_testref.srtzjjrlzyy uapDisplayName="显示各项进度中有指标大于0.1的行业名称"/>
+		<scapfd_testref.srshfwlzysr uapDisplayName="显示各项进度中有指标小于0的行业名称"/>
+		<scapfd_testref.srmylzyywsjj uapDisplayName="显示各项进度中有指标小于-0.1的行业名称"/>
+		<scapfd_testref.srqzsmkb uapDisplayName="取值说明：快报指标表"/>
+		<scapfd_testref.srgylzyyy uapDisplayName="工业类主营业务收入占比"/>
+		<scapfd_testref.srjzlzyyy uapDisplayName="建筑类主营业务收入占比"/>
+		<scapfd_testref.srtzjjrlz uapDisplayName="投资及金融类主营业务收入占比"/>
+		<scapfd_testref.srnylzyyws uapDisplayName="农业类主营业务收入占比"/>
+		<scapfd_testref.srmylzyyws uapDisplayName="贸易类主营业务收入占比"/>
+		<scapfd_testref.srshfwlzyy uapDisplayName="社会服务类主营业务收入占比"/>		
+		<scapfd_testref.zycbzyywcbbys uapDisplayName="主营业务成本(本月数)"/>              
+		<scapfd_testref.zycbzyywcbljwcs uapDisplayName="主营业务成本(累计完成数)"/>               
+		<scapfd_testref.zycbzyywcbndyswcl uapDisplayName="主营业务成本(年度预算完成率)"/>               
+		<scapfd_testref.zycbzyywcbjddysr uapDisplayName="主营业务成本完成进度低于收入完成进度的企业户数"/> 
+              
+		<scapfd_testref.zycbzyywcbjdgysr uapDisplayName="主营业务成本完成进度高于收入完成进度的企业户数"/> 
+              
+		<scapfd_testref.zycbzyywcbqkdysj uapDisplayName="主营业务成本完成情况低于时间进度10%以上的企业户数"/>   
+            
+		<scapfd_testref.zycbzyywcbzbzdy uapDisplayName="各类型主营业务成本完成时间进度指标值大于0.1的行业名称"/>                
+		<scapfd_testref.zycbzyywcbzbzxy uapDisplayName="各类型主营业务成本完成时间进度指标值小于0的行业名称"/>        
+		<scapfd_testref.zycbqzsmkbzbb uapDisplayName="取值说明：快报指标表"/>                
+		<scapfd_testref.zycbgylzyywcb uapDisplayName="工业类主营业务成本占比"/>               
+		<scapfd_testref.zycbjzlzyywcb uapDisplayName="建筑类主营业务成本占比"/>               
+		<scapfd_testref.zycbtzjjrlzyywcb uapDisplayName="投资及金融类主营业务成本占比"/>              
+                <scapfd_testref.zycbnylzyywcb uapDisplayName="农业类主营业务成本占比"/>                
+		<scapfd_testref.zycbmylzyywcb uapDisplayName="贸易类主营业务成本占比"/>               
+		<scapfd_testref.zycbshfwlzyywcb uapDisplayName="社会服务类主营业务成本占比"/>                
+		<scapfd_testref.xsxsfybys uapDisplayName="销售费用(本月数)"/>               
+		<scapfd_testref.xsxsfyljwcs uapDisplayName="销售费用(累计完成数)"/>               
+		<scapfd_testref.xsxsfyndyswcl uapDisplayName="销售费用(年度预算完成率)"/>             
+		<scapfd_testref.xsxsfyjdgysr uapDisplayName="销售费用完成进度高于收入完成进度的企业户数"/>
+
+		<scapfd_testref.xsxsfyjdgysrbfzs uapDisplayName="销售费用完成进度高于收入完成进度10%的企业户数"/>
+
+		<scapfd_testref.xsxsfyqkdysj uapDisplayName="销售费用完成情况低于时间进度10%以上的企业户数"/>
+		
+		<scapfd_testref.glfybys uapDisplayName="管理费用(本月数)"/>
+		<scapfd_testref.glfyljwcs uapDisplayName="管理费用(累计完成数)"/>
+		<scapfd_testref.glfyndyswcl uapDisplayName="管理费用(年度预算完成率)"/>
+		<scapfd_testref.glfywcjdgyqyhsa uapDisplayName="管理费用完成进度高于收入完成进度的企业户数"/>
+
+		<scapfd_testref.glfywcjdgyqyhsb uapDisplayName="管理费用完成进度高于收入完成进度10%的企业户数"/>
+
+		<scapfd_testref.glfywcjddyqyhs uapDisplayName="管理费用完成情况低于时间进度10%以上的企业户数"/>
+
+		<scapfd_testref.cwfybys uapDisplayName="财务费用(本月数)"/>
+		<scapfd_testref.cwfyljwcs uapDisplayName="财务费用(累计完成数)"/>
+		<scapfd_testref.cwfyndyswcl uapDisplayName="财务费用(年度预算完成率)"/>
+		<scapfd_testref.cwfywcjdgyqyhsa uapDisplayName="财务费用完成进度高于收入完成进度的企业户数"/>
+
+		<scapfd_testref.cwfywcjdgyqyhsb uapDisplayName="财务费用完成进度高于收入完成进度10%的企业户数"/>
+
+
+		<scapfd_testref.cwfywcjddyqyhs uapDisplayName="财务费用完成情况低于时间进度10%以上的企业户数"/>	
+	
+		<scapfd_testref.lrze_bys uapDisplayName="利润总额(本月数)"/>			
+		<scapfd_testref.lrze_ljwcs uapDisplayName="利润总额(累计完成数)"/>
+		<scapfd_testref.lrze_ndyswcl uapDisplayName="利润总额(年度预算完成率)"/>
+		<scapfd_testref.lrzewcyssjjddhs uapDisplayName="利润总额完成预算时间进度的户数"/>
+		<scapfd_testref.lrzewcqk_g_qyhs uapDisplayName="利润总额完成情况高于时间进度10%以上的企业户数"/>
+
+
+		<scapfd_testref.lrzewwcyssjjddhs uapDisplayName="利润总额未完成预算时间进度的户数"/>
+
+		<scapfd_testref.lrzewcqk_d_qyhs uapDisplayName="利润总额完成情况低于时间进度10%以上的企业户数"/>
+
+		<scapfd_testref.xianshi_dy uapDisplayName="显示指标值大于0.1的行业名称"/> 
+
+		<scapfd_testref.xianshi_xy uapDisplayName="显示指标值小于0.1的行业名称"/>
+
+		<scapfd_testref.lrqzsm uapDisplayName="取值说明：快报指标表"/>
+		<scapfd_testref.gyllyzebz uapDisplayName="工业类利润总额占比"/>
+		<scapfd_testref.jzllyzebz uapDisplayName="建筑类利润总额占比"/>
+		<scapfd_testref.tzjjrllrzebz uapDisplayName="投资及金融类利润总额占比"/>
+		<scapfd_testref.nyllrzebz uapDisplayName="农业类利润总额占比"/>
+		<scapfd_testref.myllrzebz uapDisplayName="贸易类利润总额占比"/>
+
+		<scapfd_testref.shfwllrzebz uapDisplayName="社会服务类利润总额占比"/>
+
+
+		<scapfd_testref.gdzctze_bys uapDisplayName="固定资产投资额(本月数)"/>
+
+		<scapfd_testref.gdzctze_ljwcs uapDisplayName="固定资产投资额(累计完成数)"/>
+
+		<scapfd_testref.gdzctze_ndyswcl uapDisplayName="固定资产投资额(年度预算完成率)"/>
+
+		<scapfd_testref.gdzctzwcyssjjddhs uapDisplayName="固定资产投资完成预算时间进度的户数 "/>
+
+
+		<scapfd_testref.qygdzctzwcyssjjd_d uapDisplayName="依次列出“企业固定资产投资完成预算时间进度”小于-0.1的企业"/>
+		<scapfd_testref.fdyear_cl uapDisplayName="2013"/>
+
+		<scapfd_testref.mgjt_gc_cpcl_sntq uapDisplayName="产量表-马钢钢材-上年同期"/>
+		<scapfd_testref.mgjt_gc_cpcl_dykbs uapDisplayName="产量表-马钢钢材-当月快报"/>
+		<scapfd_testref.mgjt_gc_cpcl_ljkbs uapDisplayName="产量表-马钢钢材-累计快报"/>
+		<scapfd_testref.mgjt_gc_cpcl_yss uapDisplayName="马钢集团钢材产品产量预算数"/>
+		<scapfd_testref.mgjt_gc_cpcl_wcbl uapDisplayName="产量表-马钢钢材-完成比率"/>
+		<scapfd_testref.nyjt_swdl_cpcl_sntq uapDisplayName="产量表-能源上网-上年同期"/>
+		<scapfd_testref.nyjt_swdl_cpcl_dykbs uapDisplayName="产量表-能源上网-当月快报"/>
+		<scapfd_testref.nyjt_swdl_cpcl_ljkbs uapDisplayName="产量表-能源上网-累计快报"/>
+		<scapfd_testref.nyjt_swdl_cpcl_yss uapDisplayName="能源集团上网电量产品产量预算数"/>
+		<scapfd_testref.nyjt_swdl_cpcl_wcbl uapDisplayName="产量表-能源上网-完成比率"/>
+		<scapfd_testref.tlys_djt_cpcl_sntq uapDisplayName="产量表-铜陵电铜-上年同期"/>
+		<scapfd_testref.tlys_djt_cpcl_dykbs uapDisplayName="产量表-铜陵电铜-当月快报"/>
+		<scapfd_testref.tlys_djt_cpcl_ljkbs uapDisplayName="产量表-铜陵电铜-累计快报"/>
+		<scapfd_testref.tlys_djt_cpcl_yss uapDisplayName="铜陵有色电解铜产品产量预算数"/>
+		<scapfd_testref.tlys_djt_cpcl_wcbl uapDisplayName="产量表-铜陵电铜-完成比率"/>
+		<scapfd_testref.hljt_sn_cpcl_sntq uapDisplayName="产量表-海螺水泥-上年同期"/>
+		<scapfd_testref.hljt_sn_cpcl_dykbs uapDisplayName="产量表-海螺水泥-当月快报"/>
+		<scapfd_testref.hljt_sn_cpcl_ljkbs uapDisplayName="产量表-海螺水泥-累计快报"/>
+		<scapfd_testref.hljt_sn_cpcl_yss uapDisplayName="海螺集团水泥产品产量预算数"/>
+		<scapfd_testref.hljt_sn_cpcl_wcbl uapDisplayName="产量表-海螺水泥-完成比率"/>
+		<scapfd_testref.jqjt_zc_cpcl_sntq uapDisplayName="产量表-江汽整车-上年同期"/>
+		<scapfd_testref.jqjt_zc_cpcl_dykbs uapDisplayName="产量表-江汽整车-当月快报"/>
+		<scapfd_testref.jqjt_zc_cpcl_ljkbs uapDisplayName="产量表-江汽整车-累计快报"/>
+		<scapfd_testref.jqjt_zccp_cpcl_yss uapDisplayName="江汽集团整车产品产量预算数"/>
+		<scapfd_testref.jqjt_zc_cpcl_wcbl uapDisplayName="产量表-江汽整车-完成比率"/>
+		<scapfd_testref.jqjt_jc_cpcl_sntq uapDisplayName="产量表-江汽轿车-上年同期"/>
+		<scapfd_testref.jqjt_jc_cpcl_dykbs uapDisplayName="产量表-江汽轿车-当月快报"/>
+		<scapfd_testref.jqjt_jc_cpcl_ljkbs uapDisplayName="产量表-江汽轿车-累计快报"/>
+		<scapfd_testref.jqjt_jc_cpcl_yss uapDisplayName="江汽集团轿车产品产量预算数"/>
+		<scapfd_testref.jqjt_jc_cpcl_wcbl uapDisplayName="产量表-江汽轿车-完成比率"/>
+		<scapfd_testref.jqjt_qk_cpcl_sntq uapDisplayName="产量表-江汽轻卡-上年同期"/>
+		<scapfd_testref.jqjt_qk_cpcl_dykbs uapDisplayName="产量表-江汽轻卡-当月快报"/>
+		<scapfd_testref.jqjt_qk_cpcl_ljkbs uapDisplayName="产量表-江汽轻卡-累计快报"/>
+		<scapfd_testref.jqjt_qk_cpcl_yss uapDisplayName="江汽集团轻卡产品产量预算数"/>
+		<scapfd_testref.jqjt_qk_cpcl_wcbl uapDisplayName="产量表-江汽轻卡-完成比率"/>
+		<scapfd_testref.ywjt_pva_cpcl_sntq uapDisplayName="皖维集团PVA产品产量上年同期"/>
+		<scapfd_testref.ywjt_pva_cpcl_dykbs uapDisplayName="皖维集团PVA产品产量当月快报数"/>
+		<scapfd_testref.ywjt_pva_cpcl_ljkbs uapDisplayName="皖维集团PVA产品产量累计快报数"/>
+		<scapfd_testref.wwjt_pva_cpcl_yss uapDisplayName="皖维集团PVA产品产量预算数"/>
+		<scapfd_testref.ywjt_pva_cpcl_wcbl uapDisplayName="皖维集团PVA产品产量完成比率"/>
+		<scapfd_testref.ccjt_cc_sntq uapDisplayName="叉车集团叉车产品产量上年同期"/>
+		<scapfd_testref.ccjt_cc_dykbs uapDisplayName="叉车集团叉车产品产量当月快报数"/>
+		<scapfd_testref.ccjt_cc_ljkbs uapDisplayName="叉车集团叉车产品产量累计快报数"/>
+		<scapfd_testref.ccjt_cc_yss uapDisplayName="叉车集团叉车产品产量预算数"/>
+		<scapfd_testref.ccjt_cc_wcbl uapDisplayName="叉车集团叉车产品产量完成比率"/>
+		<scapfd_testref.hnky_ym_sntq uapDisplayName="淮南矿业原煤产品产量上年同期"/>
+		<scapfd_testref.hnky_ym_dykbs uapDisplayName="淮南矿业原煤产品产量当月快报数"/>
+		<scapfd_testref.hnky_ym_ljkbs uapDisplayName="淮南矿业原煤产品产量累计快报数"/>
+		<scapfd_testref.hnky_ym_yss uapDisplayName="淮南矿业原煤产品产量预算数"/>
+		<scapfd_testref.hnky_ym_wcbl uapDisplayName="淮南矿业原煤产品产量完成比率"/>
+		<scapfd_testref.hbky_ym_sntq uapDisplayName="淮北矿业原煤产品产量上年同期"/>
+		<scapfd_testref.hbky_ym_dykbs uapDisplayName="淮北矿业原煤产品产量当月快报数"/>
+		<scapfd_testref.hbky_ym_ljkbs uapDisplayName="淮北矿业原煤产品产量累计快报数"/>
+		<scapfd_testref.hbky_ym_yss uapDisplayName="淮北矿业原煤产品产量预算数"/>
+		<scapfd_testref.hbky_ym_wcbl uapDisplayName="淮北矿业原煤产品产量完成比率"/>
+		<scapfd_testref.hbky_jt_sntq uapDisplayName="淮北矿业焦炭产品产量上年同期"/>
+		<scapfd_testref.hbky_jt_dykbs uapDisplayName="淮北矿业焦炭产品产量当月快报数"/>
+		<scapfd_testref.hbky_jt_ljkbs uapDisplayName="淮北矿业焦炭产品产量累计快报数"/>
+		<scapfd_testref.hbky_jt_yss uapDisplayName="淮北矿业焦炭产品产量预算数"/>
+		<scapfd_testref.hbky_jt_wcbl uapDisplayName="淮北矿业焦炭产品产量完成比率"/>
+		<scapfd_testref.ybmd_ym_sntq uapDisplayName="皖北煤电原煤产品产量上年同期"/>
+		<scapfd_testref.ybmd_ym_dykbs uapDisplayName="皖北煤电原煤产品产量当月快报数"/>
+		<scapfd_testref.ybmd_ym_jkbs uapDisplayName="皖北煤电原煤产品产量累计快报数"/>
+		<scapfd_testref.wbmd_ym_yss uapDisplayName="皖北煤电原煤产品产量预算数"/>
+		<scapfd_testref.ybmd_ym_wcbl uapDisplayName="皖北煤电原煤产品产量完成比率"/>
+
+		<scapfd_testref.gc_pjxsjgy uapDisplayName="钢材平均销售价格-月度（本期）"/>
+		<scapfd_testref.gc_pjxsjgn uapDisplayName="钢材平均销售价格-全年累计（本期）"/>
+		<scapfd_testref.gc_luru uapDisplayName="录入"/>
+		<scapfd_testref.gc_pjxsjgwc uapDisplayName="钢材平均销售价格-全年累计（本期）÷预算价格*100%"/>
+
+		<scapfd_testref.djt_dyjg  uapDisplayName="电解铜当月价格"/>
+		<scapfd_testref.djt_ljzhjg  uapDisplayName="电解铜综合价格"/>
+		<scapfd_testref.djt_ysjg  uapDisplayName="电解铜预算价格"/>
+		<scapfd_testref.djt_wcbl  uapDisplayName="电解铜完成比率"/>
+
+		<scapfd_testref.pva_dyjg  uapDisplayName="pva当月价格"/>
+		<scapfd_testref.pva_ljzhjg  uapDisplayName="pva综合价格"/>
+		<scapfd_testref.pva_ysjg   uapDisplayName="pva预算价格"/>
+		<scapfd_testref.pva_wcbl  uapDisplayName="pva完成比率"/>
+
+		<scapfd_testref.sd_jjy uapDisplayName="售电均价（含税）-月度（本期）"/>
+		<scapfd_testref.sd_jjn uapDisplayName="售电均价（含税）-全年累计（本期）"/>
+		<scapfd_testref.sd_luru uapDisplayName="录入"/>
+		<scapfd_testref.sd_jjwc uapDisplayName="售电均价（含税）-全年累计（本期）÷预算价格*100%"/>
+
+		<scapfd_testref.sn_dyjg  uapDisplayName="水泥当月价格"/>
+		<scapfd_testref.sn_ljzhjg  uapDisplayName="水泥综合价格"/>
+		<scapfd_testref.sn_ysjg  uapDisplayName="水泥预算价格"/>
+		<scapfd_testref.sn_wcbl  uapDisplayName="水泥完成比率"/>
+
+		<scapfd_testref.mt_dyjg  uapDisplayName="煤炭当月价格"/>
+		<scapfd_testref.mt_ljzhjg  uapDisplayName="煤炭综合价格"/>
+		<scapfd_testref.mt_ysjg  uapDisplayName="煤炭预算价格"/>
+		<scapfd_testref.mt_wcbl  uapDisplayName="煤炭完成比率"/>
+
+		<scapfd_testref.sm_pjsjhbky uapDisplayName="商品煤平均售价"/>
+		<scapfd_testref.sm_pjsjhbkywc uapDisplayName="全年累计（本期）÷预算数*100%"/>
+		<scapfd_testref.sm_pjsjhnmt uapDisplayName="商品煤平均售价"/>
+		<scapfd_testref.sm_pjsjhnmtwc uapDisplayName="全年累计（本期）÷预算数*100%"/>
+		<scapfd_testref.sm_pjsjwbmt uapDisplayName="商品煤平均售价"/>
+		<scapfd_testref.sm_pjsjwbmtwc uapDisplayName="全年累计（本期）÷预算数*100%"/>
+		<scapfd_testref.jt_pjsjy uapDisplayName="焦炭平均售价-月度（本期）"/>
+		<scapfd_testref.jt_pjsjn uapDisplayName="焦炭平均售价-全年累计（本期）"/>
+		<scapfd_testref.jt_shouglr uapDisplayName="手工录入"/>
+		<scapfd_testref.jt_pjsjwc uapDisplayName="焦炭平均售价-全年累计（本期）÷预算价格*100%"/>
+		<scapfd_testref.fdyear_sj uapDisplayName="2013"/>
+               
+		<scapfd_testref.mggc_sntqsj uapDisplayName="马钢集团钢材上年同期销售价格"/>
+		<scapfd_testref.mggc_kbdysj uapDisplayName="马钢集团钢材快报当月数销售价格"/>
+		<scapfd_testref.mggc_kbljsj uapDisplayName="马钢集团钢材快报累计数销售价格"/>
+		<scapfd_testref.mggc_ysssj uapDisplayName="马钢集团钢材预算数销售价格"/>
+		<scapfd_testref.mggc_wcblsj uapDisplayName="马钢集团钢材完成比率销售价格"/>
+
+		<scapfd_testref.nydl_sntqsj uapDisplayName="能源集团电力上年同期销售价格"/>
+		<scapfd_testref.nydl_kbdysj uapDisplayName="能源集团电力快报当月数销售价格"/>
+		<scapfd_testref.nydl_kbljsj uapDisplayName="能源集团电力快报累计数销售价格"/>
+		<scapfd_testref.nydl_ysssj uapDisplayName="能源集团电力预算数销售价格"/>
+		<scapfd_testref.nydl_wcblsj uapDisplayName="能源集团电力完成比率销售价格"/>
+
+		<scapfd_testref.tldjt_sntqxsjg uapDisplayName="铜陵电解铜上年同期销售价格表"/>
+		<scapfd_testref.tldjt_kbdysxsjg uapDisplayName="铜陵电解铜快报当月数销售价格表"/>
+		<scapfd_testref.tldjt_kbljsxsjg uapDisplayName="铜陵电解铜快报累计数销售价格表"/>
+		<scapfd_testref.tldjt_ysxsjg uapDisplayName="铜陵电解铜预算数销售价格表"/>
+		<scapfd_testref.tldjt_wcblxsjg uapDisplayName="铜陵电解铜完成比率销售价格表"/>
+
+		<scapfd_testref.hlsn_sntqxsjg uapDisplayName="海螺水泥上年同期销售价格表"/>
+		<scapfd_testref.hlsn_kbdysxsjg uapDisplayName="海螺水泥快报当月数销售价格表"/>
+		<scapfd_testref.hlsn_kbljsxsjg uapDisplayName="海螺水泥快报累计数销售价格表"/>
+		<scapfd_testref.hlsn_ysxsjg uapDisplayName="海螺水泥预算数销售价格表"/>
+		<scapfd_testref.hlsn_wcblxsjg uapDisplayName="海螺水泥完成比率销售价格表"/>
+
+	        <scapfd_testref.wwpva_sntqsj uapDisplayName="皖维集团PVA上年同期售价"/>
+                <scapfd_testref.wwpva_dykbssj uapDisplayName="皖维集团PVA快报当月数售价"/>
+                <scapfd_testref.wwpva_ljkbssj uapDisplayName="皖维集团PVA快报累计数售价"/>
+                <scapfd_testref.wwpva_ysssj uapDisplayName="皖维集团PVA预算数售价"/>
+                <scapfd_testref.wwpva_wcblsj uapDisplayName="皖维集团PVA完成比率售价"/>
+
+		<scapfd_testref.hnmt_sntqsj uapDisplayName="淮南矿业煤炭上年同期售价"/>
+                <scapfd_testref.hnmt_dykbssj uapDisplayName="淮南矿业煤炭快报当月数售价"/>
+                <scapfd_testref.hnmt_ljkbssj uapDisplayName="淮南矿业煤炭快报累计数售价"/>
+                <scapfd_testref.hnmt_ysssj uapDisplayName="淮南矿业煤炭预算数售价"/>
+                <scapfd_testref.hnmt_wcblsj uapDisplayName="淮南矿业煤炭完成比率售价"/>
+
+		<scapfd_testref.hbkymt_sntq_sj uapDisplayName="淮北矿业煤炭上年同期销售价格　"/>
+		<scapfd_testref.hbkymt_kbdys_sj  uapDisplayName="淮北矿业煤炭快报当月数销售价格　"/>
+		<scapfd_testref.hbkymt_kbljs_sj  uapDisplayName="淮北矿业煤炭快报累计数销售价格　"/>
+		<scapfd_testref.hbkymt_yss_sj  uapDisplayName="淮北矿业煤炭预算数销售价格　"/>
+		<scapfd_testref.hbkymt_wcl_sj  uapDisplayName="淮北矿业煤炭完成比率销售价格　"/>
+
+		<scapfd_testref.hbkyjt_sntq_sj uapDisplayName="淮北矿业焦炭上年同期销售价格　"/>
+		<scapfd_testref.hbkyjt_kbdys_sj  uapDisplayName="淮北矿业焦炭快报当月数销售价格　"/>
+		<scapfd_testref.hbkyjt_kbljs_sj  uapDisplayName="淮北矿业焦炭快报累计数销售价格　"/>
+		<scapfd_testref.hbkyjt_yss_sj  uapDisplayName="淮北矿业焦炭预算数销售价格　"/>
+		<scapfd_testref.hbkyjt_wcl_sj  uapDisplayName="淮北矿业焦炭完成比率销售价格　"/>
+
+		<scapfd_testref.wbmdmt_sntq_sj uapDisplayName="皖北煤电煤炭上年同期销售价格　"/>
+		<scapfd_testref.wbmdmt_kbdys_sj  uapDisplayName="皖北煤电煤炭快报当月数销售价格　"/>
+		<scapfd_testref.wbmdmt_kbljs_sj  uapDisplayName="皖北煤电煤炭快报累计数销售价格　"/>
+		<scapfd_testref.wbmdmt_yss_sj  uapDisplayName="皖北煤电煤炭预算数销售价格　"/>
+		<scapfd_testref.wbmdmt_wcl_sj  uapDisplayName="皖北煤电煤炭完成比率销售价格　"/>
+
+		<scapfd_testref.yyzsrljwcs_yjmg uapDisplayName="营业总收入(累计完成数) "/>
+		<scapfd_testref.yyzsrndyswcl_yjmg uapDisplayName="营业总收入(年度预算完成率)"/>
+		<scapfd_testref.yyzcbljwcs_yjmg uapDisplayName="营业总成本(累计完成数)"/>
+		<scapfd_testref.yyzcbndyswcl_yjmg  uapDisplayName="营业总成本(年度预算完成率)"/>
+		<scapfd_testref.lrzeljwcs_yjmg uapDisplayName="利润总额(累计完成数)"/>
+		<scapfd_testref.lrzendyswcl_yjmg uapDisplayName="利润总额(年度预算完成率)"/>
+                <scapfd_testref.qzfwmgjtjd uapDisplayName="取值范围：“马钢集团”节点。"/>
+                <scapfd_testref.yyzsrljwcs_yjtl uapDisplayName="营业总收入(累计完成数) "/>
+		<scapfd_testref.yyzsrndyswcl_yjtl uapDisplayName="营业总收入(年度预算完成率)"/>
+		<scapfd_testref.yyzcbljwcs_yjtl uapDisplayName="营业总成本(累计完成数)"/>
+		<scapfd_testref.yyzcbndyswcl_yjtl  uapDisplayName="营业总成本(年度预算完成率)"/>
+		<scapfd_testref.lrzeljwcs_yjtl uapDisplayName="利润总额(累计完成数)"/>
+		<scapfd_testref.lrzendyswcl_yjtl uapDisplayName="利润总额(年度预算完成率)"/>
+                <scapfd_testref.qzfwtlysjd uapDisplayName="取值范围：“铜陵有色”节点。"/>
+		<scapfd_testref.yyzsrljwcs_jchl uapDisplayName="营业总收入(累计完成数) "/>
+		<scapfd_testref.yyzsrndyswcl_jchl uapDisplayName="营业总收入(年度预算完成率)"/>
+		<scapfd_testref.yyzcbljwcs_jchl uapDisplayName="营业总成本(累计完成数)"/>
+		<scapfd_testref.yyzcbndyswcl_jchl  uapDisplayName="营业总成本(年度预算完成率)"/>
+		<scapfd_testref.lrzeljwcs_jchl uapDisplayName="利润总额(累计完成数)"/>
+		<scapfd_testref.lrzendyswcl_jchl uapDisplayName="利润总额(年度预算完成率)"/>
+                <scapfd_testref.qzfwhljtjd uapDisplayName="取值范围：“海螺集团”节点。"/>
+		<scapfd_testref.yyzsrljwcs_jcww uapDisplayName="营业总收入(累计完成数) "/>
+		<scapfd_testref.yyzsrndyswcl_jcww uapDisplayName="营业总收入(年度预算完成率)"/>
+		<scapfd_testref.yyzcbljwcs_jcww uapDisplayName="营业总成本(累计完成数)"/>
+		<scapfd_testref.yyzcbndyswcl_jcww  uapDisplayName="营业总成本(年度预算完成率)"/>
+		<scapfd_testref.lrzeljwcs_jcww uapDisplayName="利润总额(累计完成数)"/>
+		<scapfd_testref.lrzendyswcl_jcww uapDisplayName="利润总额(年度预算完成率)"/>
+                <scapfd_testref.qzfwwwjtjd uapDisplayName="取值范围：“皖维集团”节点。"/>
+	
+		<scapfd_testref.hlky_spxslsjwc uapDisplayName="淮南矿业商品煤销量实际完成"/>
+		<scapfd_testref.hlky_spxslndyas uapDisplayName="淮南矿业商品煤销量年度预算"/>
+		<scapfd_testref.hlky_spxslwcbl uapDisplayName="淮南矿业商品煤销量完成比率"/>
+		<scapfd_testref.hlky_jgsjwc uapDisplayName="淮南矿业价格实际完成"/>
+		<scapfd_testref.hlky_jgndys uapDisplayName="淮南矿业价格年度预算"/>
+		<scapfd_testref.hlky_jgzj uapDisplayName="淮南矿业价格增减"/>
+		<scapfd_testref.hlky_srsjwc uapDisplayName="淮南矿业收入实际完成"/>
+		<scapfd_testref.hlky_srndys uapDisplayName="淮南矿业收入年度预算"/>
+		<scapfd_testref.hlky_srwcbl uapDisplayName="淮南矿业收入完成比率"/>
+		<scapfd_testref.hlky_lrzesjwc uapDisplayName="淮南矿业利润总额实际完成"/>
+		<scapfd_testref.hlky_lrzendys uapDisplayName="淮南矿业利润总额年度预算"/>
+		<scapfd_testref.hlky_lrzewcbl uapDisplayName="淮南矿业利润总额完成比率"/>
+		<scapfd_testref.hbky_spxslsjwc uapDisplayName="淮北矿业商品煤销量实际完成"/>
+		<scapfd_testref.hbky_spxslndyas uapDisplayName="淮北矿业商品煤销量年度预算"/>
+		<scapfd_testref.hbky_spxslwcbl uapDisplayName="淮北矿业商品煤销量完成比率"/>
+		<scapfd_testref.hbky_jgsjwc uapDisplayName="淮北矿业价格实际完成"/>
+		<scapfd_testref.hbky_jgndys uapDisplayName="淮北矿业价格年度预算"/>
+		<scapfd_testref.hbky_jgzj uapDisplayName="淮北矿业价格增减"/>
+		<scapfd_testref.hbky_srsjwc uapDisplayName="淮北矿业收入实际完成"/>
+		<scapfd_testref.hbky_srndys uapDisplayName="淮北矿业收入年度预算"/>
+		<scapfd_testref.hbky_srwcbl uapDisplayName="淮北矿业收入完成比率"/>
+		<scapfd_testref.hbky_lrzesjwc uapDisplayName="淮北矿业利润总额实际完成"/>
+		<scapfd_testref.hbky_lrzendys uapDisplayName="淮北矿业利润总额年度预算"/>
+		<scapfd_testref.hbky_lrzewcbl uapDisplayName="淮北矿业利润总额完成比率"/>
+		<scapfd_testref.wbmd_spxslsjwc uapDisplayName="皖北煤电商品煤销量实际完成"/>
+		<scapfd_testref.wbmd_spxslndyas uapDisplayName="皖北煤电商品煤销量年度预算"/>
+		<scapfd_testref.wbmd_spxslwcbl uapDisplayName="皖北煤电商品煤销量完成比率"/>
+		<scapfd_testref.wbmd_jgsjwc uapDisplayName="皖北煤电价格实际完成"/>
+		<scapfd_testref.wbmd_jgndys uapDisplayName="皖北煤电价格年度预算"/>
+		<scapfd_testref.wbmd_jgzj uapDisplayName="皖北煤电价格增减"/>
+		<scapfd_testref.wbmd_srsjwc uapDisplayName="皖北煤电收入实际完成"/>
+		<scapfd_testref.wbmd_srndys uapDisplayName="皖北煤电收入年度预算"/>
+		<scapfd_testref.wbmd_srwcbl uapDisplayName="皖北煤电收入完成比率"/>
+		<scapfd_testref.wbmd_lrzesjwc uapDisplayName="皖北煤电利润总额实际完成"/>
+		<scapfd_testref.wbmd_lrzendys uapDisplayName="皖北煤电利润总额年度预算"/>
+		<scapfd_testref.wbmd_lrzewcbl uapDisplayName="皖北煤电利润总额完成比率"/>
+		<scapfd_testref.hj_spxslsjwc uapDisplayName="合计商品煤销量实际完成"/>
+		<scapfd_testref.hj_spxslndyas uapDisplayName="合计商品煤销量年度预算"/>
+		<scapfd_testref.hj_spxslwcbl uapDisplayName="合计商品煤销量完成比率"/>
+		<scapfd_testref.hj_jgsjwc uapDisplayName="合计价格实际完成"/>
+		<scapfd_testref.hj_jgndys uapDisplayName="合计价格年度预算"/>
+		<scapfd_testref.hj_jgzj uapDisplayName="合计价格增减"/>
+		<scapfd_testref.hj_srsjwc uapDisplayName="合计收入实际完成"/>
+		<scapfd_testref.hj_srndys uapDisplayName="合计收入年度预算"/>
+		<scapfd_testref.hj_srwcbl uapDisplayName="合计收入完成比率"/>
+		<scapfd_testref.hj_lrzesjwc uapDisplayName="合计利润总额实际完成"/>
+		<scapfd_testref.hj_lrzendys uapDisplayName="合计利润总额年度预算"/>
+		<scapfd_testref.hj_lrzewcbl uapDisplayName="合计利润总额完成比率"/>
+
+		
+		<scapfd_testref.yyzsrndyswcl_mtny uapDisplayName="营业总收入(年度预算完成率)"/>
+		<scapfd_testref.nyjtjd uapDisplayName="“能源集团”节点。"/>
+		<scapfd_testref.qcxsl_jxjq uapDisplayName="汽车销售量"/>
+		<scapfd_testref.yyzsrljwcs_jxjq uapDisplayName="营业总收入(累计完成数)"/>
+		<scapfd_testref.lrzeljwcs_jxjq uapDisplayName="利润总额(累计完成数)"/>
+		<scapfd_testref.sgxr_jxjq uapDisplayName="手工写入"/>
+		<scapfd_testref.yyzsrndyswcl_jxjq uapDisplayName="营业总收入(年度预算完成率)"/>
+		<scapfd_testref.lrzendyswcl_jxjq uapDisplayName="利润总额(年度预算完成率)"/>
+		<scapfd_testref.jqjtjd uapDisplayName="“江汽集团”节点"/>
+		<scapfd_testref.lrzsrljwcs_jxcc uapDisplayName="营业总收入(累计完成数)"/>
+		<scapfd_testref.lrzeljwcs_jxcc uapDisplayName="利润总额(累计完成数)"/>
+		<scapfd_testref.yyzsrndyswcl_jxcc uapDisplayName="营业总收入(年度预算完成率)"/>
+		<scapfd_testref.lrzendyswcl_jxcc uapDisplayName="利润总额(年度预算完成率)"/>
+		<scapfd_testref.ccjtjd uapDisplayName="“叉车集团”节点"/>
+		<scapfd_testref.ccljxs uapDisplayName="累计销售"/>
+		<scapfd_testref.ccwcqnys uapDisplayName="“完成全年预算%"/>
+		<scapfd_testref.yyzsrljwcs_jzjg uapDisplayName="营业总收入(累计完成数)"/>
+                <scapfd_testref.lrzeljwcs_jzjg  uapDisplayName="利润总额(累计完成数)"/>		
+		<scapfd_testref.yyzsrndyswcl_jzjg  uapDisplayName="营业总收入(年度预算完成率)"/>	
+		<scapfd_testref.lrzendyswcl_jzjg  uapDisplayName="利润总额(年度预算完成率)"/>	
+		<scapfd_testref.qzfwjgjtjd_jzjg  uapDisplayName="取值范围：“建工集团”节点。"/>	
+		<scapfd_testref.yyzsrljwcs_jzzm uapDisplayName="营业总收入(累计完成数)"/>	
+		<scapfd_testref.yyzsrndyswcl_jzzm  uapDisplayName="营业总收入(年度预算完成率)"/>
+		<scapfd_testref.lrzeljwcs_jzzm  uapDisplayName="利润总额(累计完成数)"/>   
+                <scapfd_testref.lrzendyswcl_jzzm  uapDisplayName="利润总额(年度预算完成率)"/>		
+		<scapfd_testref.qzfwzmkjjd_jzzm  uapDisplayName="取值范围：“中煤矿建”节点。"/>
+                <scapfd_testref.yyzsrljwcs_smmy uapDisplayName="营业总收入(累计完成数)"/>	
+		<scapfd_testref.yyzsrndyswcl_smmy uapDisplayName="营业总收入(年度预算完成率)"/>        
+                <scapfd_testref.lrzeljwcs_smmy uapDisplayName="利润总额(累计完成数)"/>	
+		<scapfd_testref.lrzendyswcl_smmy uapDisplayName="利润总额(年度预算完成率)"/>	
+		<scapfd_testref.qzfwmyqyjd_smmy uapDisplayName="取值范围：“贸易企业”节点。"/>             
+                <scapfd_testref.yyzsrljwcs_tztz uapDisplayName="营业总收入(累计完成数)"/>
+                <scapfd_testref.lrzeljwcs_tztz uapDisplayName="利润总额(累计完成数)"/>		
+		<scapfd_testref.yyzsrndyswcl_tztz uapDisplayName="营业总收入(年度预算完成率)"/>             
+                <scapfd_testref.lrzendyswcl_tztz uapDisplayName="利润总额(年度预算完成率)"/>		
+		<scapfd_testref.qzfwtzjjrl_tztz uapDisplayName="取值范围：“投资及金融类”节点。"/>
+	</scapfd_testref>
+</Root>

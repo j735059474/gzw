@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE UIMeta PUBLIC "-//Yonyou Co., Ltd.//UAP LFW UIMeta 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_um_6_3.dtd">
+<UIMeta flowmode="true" id="userChoice_um" jquery="0" preferredHeight="" preferredWidth="">
+    <FlowvLayout id="flowvlayout0584" widgetId="userChoice">
+        <FlowvPanel id="panelv00584" widgetId="userChoice">
+            <Menubar height="100%" id="menubar" left="0" position="relative" top="0" widgetId="userChoice" width="100%">
+            </Menubar>
+        </FlowvPanel>
+        <FlowvPanel id="panelv10584" widgetId="userChoice">
+            <GridComp autoExpand="1" height="100%" id="userchoice_grid" left="0" position="relative" top="0" widgetId="userChoice" width="100%">
+            </GridComp>
+        </FlowvPanel>
+        <FlowvPanel id="panelv20584" widgetId="userChoice">
+            <PanelLayout className="" expand="true" id="panel7556" widgetId="userChoice">
+                <PanelPanel bottomPadding="10" id="panelpanel7556" topPadding="20" widgetId="userChoice">
+                    <GridComp autoExpand="1" height="100%" id="userchoice_b_grid" left="0" position="relative" top="0" widgetId="userChoice" width="100%">
+                    </GridComp>
+                </PanelPanel>
+            </PanelLayout>
+        </FlowvPanel>
+    </FlowvLayout>
+</UIMeta>

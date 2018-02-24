@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+    <scapfd_testref>
+    <scapfd_testref.gongsi1 uapDisplayName="XX公司">
+        </scapfd_testref.gongsi1>
+	    <scapfd_testref.bennian0 uapDisplayName="XXXX">
+        </scapfd_testref.bennian0>
+        <scapfd_testref.gongsi2 uapDisplayName="XX公司">
+        </scapfd_testref.gongsi2>
+        <scapfd_testref.juesuannian uapDisplayName="决算年">
+        </scapfd_testref.juesuannian>
+        <scapfd_testref.juesuannian1 uapDisplayName="决算年">
+        </scapfd_testref.juesuannian1>
+        <scapfd_testref.juesuannian2 uapDisplayName="决算年">
+        </scapfd_testref.juesuannian2>
+        <scapfd_testref.zbjsjyszqyhs uapDisplayName="总部及三级以上子企业户数">
+        </scapfd_testref.zbjsjyszqyhs>
+        
+        <scapfd_testref.sjjg uapDisplayName="审计机构">
+        </scapfd_testref.sjjg>
+        <scapfd_testref.sjyj uapDisplayName="审计意见">
+        </scapfd_testref.sjyj>
+        
+        <scapfd_testref.juesuannian3 uapDisplayName="决算年">
+        </scapfd_testref.juesuannian3>
+        <scapfd_testref.qyzcze uapDisplayName="企业资产总额（期末余额）">
+        </scapfd_testref.qyzcze>
+        <scapfd_testref.fzze uapDisplayName="负债总额（期末余额）">
+        </scapfd_testref.fzze>
+        <scapfd_testref.gsymgsdsyzqyhj uapDisplayName="归属于母公司的所有者权益合计（期末余额）">
+        </scapfd_testref.gsymgsdsyzqyhj>
+        
+        <scapfd_testref.sszb uapDisplayName="实收资本">
+        </scapfd_testref.sszb>
+        <scapfd_testref.zbgj uapDisplayName="资本公积">
+        </scapfd_testref.zbgj>
+        <scapfd_testref.zxcb uapDisplayName="专项储备">
+        </scapfd_testref.zxcb>
+        <scapfd_testref.yygj uapDisplayName="盈余公积">
+        </scapfd_testref.yygj>
+        <scapfd_testref.wfplr uapDisplayName="未分配利润">
+        </scapfd_testref.wfplr>
+        
+        
+        <scapfd_testref.ssgdqy uapDisplayName="少数股东权益（期末余额）">
+        </scapfd_testref.ssgdqy>
+        <scapfd_testref.qyzcfzl uapDisplayName="企业资产负债率（%）">
+        </scapfd_testref.qyzcfzl>
+        
+        
+        <scapfd_testref.juesuannian4 uapDisplayName="决算年">
+        </scapfd_testref.juesuannian4>
+        
+        <scapfd_testref.zyyzsr uapDisplayName="主营业务收入">
+        </scapfd_testref.zyyzsr>
+        <scapfd_testref.zyyzcb uapDisplayName="主营业务成本">
+        </scapfd_testref.zyyzcb>
+        
+        <scapfd_testref.qjfy uapDisplayName="期间费用">
+        </scapfd_testref.qjfy>
+        
+        <scapfd_testref.lrze uapDisplayName="利润总额（本期金额）">
+        </scapfd_testref.lrze>
+        
+        <scapfd_testref.qygsymgsdjlr uapDisplayName="企业归属于母公司的净利润（本期金额）">
+        </scapfd_testref.qygsymgsdjlr>
+        
+        <scapfd_testref.jzcsyl uapDisplayName="企业净资产收益率(不含少数股东权益)（%）">
+        </scapfd_testref.jzcsyl>
+        
+        <scapfd_testref.ncgzqyze uapDisplayName="企业年初国有资本及权益总额">
+        </scapfd_testref.ncgzqyze>
+        <scapfd_testref.nmgzqyze uapDisplayName="企业年末国有资本及权益总额">
+        </scapfd_testref.nmgzqyze>
+        <scapfd_testref.kgzjys uapDisplayName="客观增加因素">
+        </scapfd_testref.kgzjys>
+        <scapfd_testref.kgjsys uapDisplayName="客观减少因素">
+        </scapfd_testref.kgjsys>
+        
+        <scapfd_testref.juesuannian5 uapDisplayName="决算年">
+        </scapfd_testref.juesuannian5>
+        <scapfd_testref.gyzbbzzzl uapDisplayName="企业国有资本保值增值率（本年数）">
+        </scapfd_testref.gyzbbzzzl>
+        
+        <scapfd_testref.juesuannian6 uapDisplayName="决算年">
+        </scapfd_testref.juesuannian6>
+        <scapfd_testref.juesuannian7 uapDisplayName="决算年">
+        </scapfd_testref.juesuannian7>
+        <scapfd_testref.gongsi3 uapDisplayName="XX公司">
+        </scapfd_testref.gongsi3>
+        
+        <scapfd_testref.juesuannian8 uapDisplayName="决算年">
+        </scapfd_testref.juesuannian8>
+        <scapfd_testref.gongsi4 uapDisplayName="XX公司">
+        </scapfd_testref.gongsi4>
+	
+        <scapfd_testref.qyzcze1 uapDisplayName="企业资产总额（期末余额）">
+        </scapfd_testref.qyzcze1>
+        <scapfd_testref.fzze1 uapDisplayName="企业负债总额（期末余额）">
+        </scapfd_testref.fzze1>
+        <scapfd_testref.gsymgsdsyzqyhj1 uapDisplayName="企业归属于母公司的所有者权益合计（期末余额">
+        </scapfd_testref.gsymgsdsyzqyhj1>
+         <scapfd_testref.sszb1 uapDisplayName="实收资本">
+        </scapfd_testref.sszb1>
+        <scapfd_testref.zbgj1 uapDisplayName="资本公积">
+        </scapfd_testref.zbgj1>
+        <scapfd_testref.zxcb1 uapDisplayName="专项储备">
+        </scapfd_testref.zxcb1>
+        <scapfd_testref.yygj1 uapDisplayName="盈余公积">
+        </scapfd_testref.yygj1>
+        <scapfd_testref.wfplr1 uapDisplayName="未分配利润">
+        </scapfd_testref.wfplr1>
+        
+        <scapfd_testref.qyzcfzl1 uapDisplayName="企业资产负债率（%）">
+        </scapfd_testref.qyzcfzl1>
+        
+         <scapfd_testref.zyyzsr1 uapDisplayName="主营业务收入">
+        </scapfd_testref.zyyzsr1>
+        <scapfd_testref.zyyzcb1 uapDisplayName="主营业务成本">
+        </scapfd_testref.zyyzcb1>
+        <scapfd_testref.qjfy1 uapDisplayName="期间费用">
+        </scapfd_testref.qjfy1>
+        
+        
+        <scapfd_testref.lrze1 uapDisplayName="企业利润总额（本期金额）">
+        </scapfd_testref.lrze1>
+        
+        <scapfd_testref.qygsymgsdjlr1 uapDisplayName="企业归属于母公司的净利润（本期金额）">
+        </scapfd_testref.qygsymgsdjlr1>
+        
+        <scapfd_testref.jzcsyl1 uapDisplayName="企业净资产收益率(不含少数股东权益)（%）">
+        </scapfd_testref.jzcsyl1>
+        
+       <scapfd_testref.ncgzqyze1 uapDisplayName="企业年初国有资本及权益总额">
+        </scapfd_testref.ncgzqyze1>
+        <scapfd_testref.nmgzqyze1 uapDisplayName="企业年末国有资本及权益总额">
+        </scapfd_testref.nmgzqyze1>
+        <scapfd_testref.kgzjys1 uapDisplayName="客观增加因素">
+        </scapfd_testref.kgzjys1>
+        <scapfd_testref.kgjsys1 uapDisplayName="客观减少因素">
+        </scapfd_testref.kgjsys1>
+        
+        <scapfd_testref.gyzbbzzzl1 uapDisplayName="省属企业国有资本保值增值率（本年数）">
+        </scapfd_testref.gyzbbzzzl1>
+    </scapfd_testref>
+</Root>

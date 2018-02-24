@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE UIMeta PUBLIC "-//Yonyou Co., Ltd.//UAP LFW UIMeta 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_um_6_3.dtd">
+<UIMeta flowmode="true" id="container_um" jquery="0" preferredHeight="0" preferredWidth="0">
+    <FlowvLayout id="flowvlayout0468" widgetId="container">
+        <FlowvPanel id="panelv00467" widgetId="container">
+            <CanvasLayout className="rightcanvas" id="listmenubarCanvas" widgetId="container">
+                <CanvasPanel id="canvasp" widgetId="container">
+		            <Menubar height="100%" id="menubar" left="0" position="relative" top="0" widgetId="container" width="100%">
+		            </Menubar>
+                </CanvasPanel>
+            </CanvasLayout>
+        </FlowvPanel>
+        <FlowvPanel id="panelv10467" widgetId="container">
+            <FormComp height="100%" id="container_form" label_position="" left="0" position="relative" top="0" widgetId="container" width="100%">
+            </FormComp>
+        </FlowvPanel>
+    </FlowvLayout>
+</UIMeta>

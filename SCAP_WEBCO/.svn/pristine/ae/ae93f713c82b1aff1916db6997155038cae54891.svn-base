@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE UIMeta PUBLIC "-//Yonyou Co., Ltd.//UAP LFW UIMeta 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_um_6_3.dtd">
+<UIMeta flowmode="true" id="pubview_record_um" jquery="0" preferredHeight="" preferredWidth="">
+    <FlowvLayout id="flowvlayout1680" widgetId="pubview_record">
+        <FlowvPanel id="panelv01680" widgetId="pubview_record">
+        </FlowvPanel>
+        <FlowvPanel id="panelv11680" widgetId="pubview_record">
+            <FormComp height="100%" id="record_form" label_position="" left="0" position="relative" top="0" widgetId="pubview_record" width="100%">
+            </FormComp>
+        </FlowvPanel>
+        <FlowvPanel id="panelv21680" widgetId="pubview_record">
+        </FlowvPanel>
+    </FlowvLayout>
+</UIMeta>

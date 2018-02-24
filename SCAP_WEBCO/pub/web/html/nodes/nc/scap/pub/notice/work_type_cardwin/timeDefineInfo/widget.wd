@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget caption="报告截止日期设定方式说明" controllerClazz="nc.scap.pub.work_type_cardwin.TimeDefineInfoViewController" id="timeDefineInfo" refId="timeDefineInfo" sourcePackage="pub/src/public/">
+    <Attributes>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+    </PlugoutDescs>
+    <PluginDescs>
+    </PluginDescs>
+    <Events>
+        <Event async="true" methodName="beforeShow" name="beforeShow" onserver="true">
+            <SubmitRule>
+            </SubmitRule>
+            <Params>
+                <Param>
+                    <Name>dialogEvent</Name>
+                    <Desc>                        <![CDATA[nc.uap.lfw.core.event.DialogEvent]]>
+                    </Desc>
+                </Param>
+            </Params>
+            <Action>
+            </Action>
+        </Event>
+    </Events>
+    <Models>
+        <Datasets>
+            <Dataset controlwidgetopeStatus="false" enabled="false" id="timeDefineInfoDs" lazyLoad="true" notNullBody="false">
+                <Fields>
+                    <Field dataType="String" id="info1" nullAble="true" primaryKey="false" text="info1">
+                    </Field>
+                    <Field dataType="String" id="info2" nullAble="true" primaryKey="false" text="info2">
+                    </Field>
+                    <Field dataType="String" id="info3" nullAble="true" primaryKey="false" text="info3">
+                    </Field>
+                </Fields>
+            </Dataset>
+        </Datasets>
+    </Models>
+    <Components>
+        <FormComp columnCount="2" dataset="timeDefineInfoDs" eleWidth="120" ellipsis="false" enabled="true" id="timeDefineInfoView" labelMinWidth="0" renderType="2" rowHeight="22" visible="true">
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="3" editable="true" editorType="TextArea" enabled="true" field="info1" height="300" id="info1" imageOnly="false" nextLine="false" nullAble="true" rowSpan="2" selectOnly="true" text="约定" toolbarType="Custom" visible="true" width="100%">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="3" editable="true" editorType="TextArea" enabled="true" field="info2" height="300" id="info2" imageOnly="false" nextLine="false" nullAble="true" rowSpan="13" selectOnly="true" text="具体说明" toolbarType="Custom" visible="true" width="100%">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="3" editable="true" editorType="TextArea" enabled="true" field="info3" height="300" id="info3" imageOnly="false" nextLine="false" nullAble="true" rowSpan="9" selectOnly="true" text="例子" toolbarType="Custom" visible="true" width="100%">
+            </Element>
+        </FormComp>
+    </Components>
+    <Menus>
+    </Menus>
+</Widget>

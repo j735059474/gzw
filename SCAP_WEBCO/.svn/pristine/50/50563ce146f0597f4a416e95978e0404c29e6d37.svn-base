@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+	<scapipm_tzjh>
+		<scapipm_tzjh.vyear uapDisplayName="XXXX">
+		</scapipm_tzjh.vyear>
+		<scapipm_tzjh.bmonth uapDisplayName="bmonth">
+		</scapipm_tzjh.bmonth>	
+		<scapipm_tzjh.emonth uapDisplayName="emonth">
+		</scapipm_tzjh.emonth>
+		<scapipm_tzjh.vdate uapDisplayName="vdate">
+		</scapipm_tzjh.vdate>
+		<scapipm_tzjh.a1 uapDisplayName="a1">   </scapipm_tzjh.a1>
+		<scapipm_tzjh.a2 uapDisplayName="a2">   </scapipm_tzjh.a2>
+	  	<scapipm_tzjh.a3 uapDisplayName="a3">		</scapipm_tzjh.a3>
+		<scapipm_tzjh.a4 uapDisplayName="a4">		</scapipm_tzjh.a4>
+		<scapipm_tzjh.a5 uapDisplayName="a5">		</scapipm_tzjh.a5>
+		<scapipm_tzjh.a6 uapDisplayName="a6">		</scapipm_tzjh.a6>
+		<scapipm_tzjh.a7 uapDisplayName="a7">		</scapipm_tzjh.a7>
+		<scapipm_tzjh.a8 uapDisplayName="a8">		</scapipm_tzjh.a8>
+		<scapipm_tzjh.a9 uapDisplayName="a9">		</scapipm_tzjh.a9>
+		<scapipm_tzjh.a10 uapDisplayName="a10">		</scapipm_tzjh.a10>		
+		<scapipm_tzjh.a11 uapDisplayName="a11">		</scapipm_tzjh.a11>
+		<scapipm_tzjh.a12 uapDisplayName="a12">		</scapipm_tzjh.a12>
+		<scapipm_tzjh.a13 uapDisplayName="a13">		</scapipm_tzjh.a13>
+		<scapipm_tzjh.a14 uapDisplayName="a14">		</scapipm_tzjh.a14>
+		<scapipm_tzjh.a15 uapDisplayName="a15">		</scapipm_tzjh.a15>
+		<scapipm_tzjh.a16 uapDisplayName="a16">		</scapipm_tzjh.a16>
+		<scapipm_tzjh.a17 uapDisplayName="a17">		</scapipm_tzjh.a17>
+		<scapipm_tzjh.a18 uapDisplayName="a18">		</scapipm_tzjh.a18>
+		<scapipm_tzjh.a19 uapDisplayName="a19">		</scapipm_tzjh.a19>
+		<scapipm_tzjh.a20 uapDisplayName="a20">		</scapipm_tzjh.a20>
+		<scapipm_tzjh.a21 uapDisplayName="a21">		</scapipm_tzjh.a21>
+		<scapipm_tzjh.a22 uapDisplayName="a22">		</scapipm_tzjh.a22>
+		<scapipm_tzjh.a23 uapDisplayName="a23">		</scapipm_tzjh.a23>
+		<scapipm_tzjh.a24 uapDisplayName="a24">		</scapipm_tzjh.a24>
+		<scapipm_tzjh.a25 uapDisplayName="a25">		</scapipm_tzjh.a25>
+		<scapipm_tzjh.a26 uapDisplayName="a26">		</scapipm_tzjh.a26>
+		<scapipm_tzjh.a27 uapDisplayName="a27">		</scapipm_tzjh.a27>
+		<scapipm_tzjh.a28 uapDisplayName="a28">		</scapipm_tzjh.a28>
+		<scapipm_tzjh.a29 uapDisplayName="a29">		</scapipm_tzjh.a29>
+		<scapipm_tzjh.a30 uapDisplayName="a30">		</scapipm_tzjh.a30>
+		<scapipm_tzjh.a31 uapDisplayName="a31">		</scapipm_tzjh.a31>
+		<scapipm_tzjh.a32 uapDisplayName="a32">		</scapipm_tzjh.a32>
+		<scapipm_tzjh.a33 uapDisplayName="a33">		</scapipm_tzjh.a33>
+		<scapipm_tzjh.a34 uapDisplayName="a34">		</scapipm_tzjh.a34>
+		<scapipm_tzjh.a35 uapDisplayName="a35">		</scapipm_tzjh.a35>
+		<scapipm_tzjh.a36 uapDisplayName="a36">		</scapipm_tzjh.a36>
+		<scapipm_tzjh.a37 uapDisplayName="a37">		</scapipm_tzjh.a37>
+		<scapipm_tzjh.a38 uapDisplayName="a38">		</scapipm_tzjh.a38>
+		<scapipm_tzjh.a39 uapDisplayName="a39">		</scapipm_tzjh.a39>
+		<scapipm_tzjh.a40 uapDisplayName="a40">		</scapipm_tzjh.a40>
+		<scapipm_tzjh.a41 uapDisplayName="a41">		</scapipm_tzjh.a41>
+		<scapipm_tzjh.a42 uapDisplayName="a42">		</scapipm_tzjh.a42>
+		<scapipm_tzjh.a43 uapDisplayName="a43">		</scapipm_tzjh.a43>
+		<scapipm_tzjh.a44 uapDisplayName="a44">		</scapipm_tzjh.a44>
+		<scapipm_tzjh.a45 uapDisplayName="a45">		</scapipm_tzjh.a45>
+		<scapipm_tzjh.a46 uapDisplayName="a46">		</scapipm_tzjh.a46>
+		<scapipm_tzjh.a47 uapDisplayName="a47">		</scapipm_tzjh.a47>
+		<scapipm_tzjh.a48 uapDisplayName="a48">		</scapipm_tzjh.a48>
+		<scapipm_tzjh.a49 uapDisplayName="a49">		</scapipm_tzjh.a49>
+		<scapipm_tzjh.a50 uapDisplayName="a50">		</scapipm_tzjh.a50>
+		
+		
+		<scapipm_tzjh.b10 uapDisplayName="b10">		</scapipm_tzjh.b10>
+		<scapipm_tzjh.b11 uapDisplayName="b11">		</scapipm_tzjh.b11>
+		<scapipm_tzjh.b12 uapDisplayName="b12">		</scapipm_tzjh.b12>
+		<scapipm_tzjh.b13 uapDisplayName="b13">		</scapipm_tzjh.b13>
+		<scapipm_tzjh.b17 uapDisplayName="b17">		</scapipm_tzjh.b17>
+		<scapipm_tzjh.b18 uapDisplayName="b18">		</scapipm_tzjh.b18>
+		<scapipm_tzjh.b27 uapDisplayName="b27">		</scapipm_tzjh.b27>
+		<scapipm_tzjh.b31 uapDisplayName="b31">		</scapipm_tzjh.b31>
+		<scapipm_tzjh.b39 uapDisplayName="b39">		</scapipm_tzjh.b39>
+		<scapipm_tzjh.b40 uapDisplayName="b40">		</scapipm_tzjh.b40>
+		<scapipm_tzjh.b41 uapDisplayName="b41">		</scapipm_tzjh.b41>
+		<scapipm_tzjh.b42 uapDisplayName="b42">		</scapipm_tzjh.b42>
+	</scapipm_tzjh>	
+</Root>

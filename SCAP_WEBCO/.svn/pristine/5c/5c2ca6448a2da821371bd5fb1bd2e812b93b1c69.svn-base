@@ -1,0 +1,292 @@
+package nc.scap.portal.auth.ca.jit;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+
+import nc.scap.pub.util.ScapDAO;
+import nc.uap.cpb.org.vos.CpUserVO;
+import nc.uap.portal.log.ScapLogger;
+import nc.vo.bd.psn.PsndocVO;
+import nc.vo.pub.SuperVO;
+
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.HttpStatus;
+import org.apache.commons.httpclient.methods.PostMethod;
+import org.dom4j.Document;
+import org.dom4j.DocumentHelper;
+import org.dom4j.Element;
+import org.dom4j.io.XMLWriter;
+
+import sun.misc.BASE64Encoder;
+
+
+public class AuthenUtil {
+
+	/**
+	 * @param userId - 用户编码
+	 * @param authContent - 认证原文
+	 * @param authData - 认证原文
+	 * @param signedData - 签名数据
+	 * @param clientIp - request.getRemoteAddr()
+	 * @return 返回证书关联的userId
+	 */
+	public static String check(String authContent, String authData, String signedData, String clientIp) throws Exception {
+		
+		boolean isSuccess = true;
+		String errDesc = null, userId = null, subjectDN = null;
+		
+		if (!isNotNull(authContent) || !isNotNull(authData)) {
+			isSuccess = false;
+			errDesc = "证书认证数据不完整";
+		}
+		
+		if (!isNotNull(signedData)) {
+			isSuccess = false;
+			errDesc = "证书认证数据不完整";
+		}
+		
+		if (!authContent.equalsIgnoreCase(authData)) {
+			isSuccess = false;
+			errDesc = "客户端提供的认证原文与服务端的不一致";
+		}
+		
+		/*
+		 * 获取应用标识及网关认证地址
+		 */
+		String appId = getAppId();
+		String authURL = getAuthUrl();
+		
+		if (!isNotNull(appId) || !isNotNull(authURL)) {
+			isSuccess = false;
+			errDesc = "应用标识或网关认证地址不可为空";
+		}
+		
+		/*
+		 * 获取认证数据信息
+		 */
+		String respMessageXml = null;
+		if (isSuccess) {
+			try {
+				authData = new BASE64Encoder().encode(authData.getBytes());    // 随机密钥
+				byte[] messageXml = packupRequest(appId, authData, signedData, clientIp);
+				respMessageXml = sendRequest(authURL, messageXml);
+            } catch (Exception e) {
+	           isSuccess = false;
+	           errDesc = e.getMessage();
+            }
+		}
+		
+		/*
+		 * 处理网关返回的信息
+		 */
+		if (isSuccess) {
+			Document respDocument = DocumentHelper.parseText(respMessageXml);
+			Element headElement = respDocument.getRootElement().element(MsgConstant.MSG_HEAD);
+			Element bodyElement = respDocument.getRootElement().element(MsgConstant.MSG_BODY);
+			
+			if (headElement != null) {
+				boolean state = Boolean.valueOf(headElement.elementTextTrim(MsgConstant.MSG_MESSAGE_STATE)).booleanValue();
+				if (state) {
+					isSuccess = false;
+					errDesc = headElement.elementTextTrim(MsgConstant.MSG_MESSAGE_DESC);
+				}
+			}
+
+			if (isSuccess) {
+				Element authResult = bodyElement.element(MsgConstant.MSG_AUTH_RESULT_SET).element(MsgConstant.MSG_AUTH_RESULT);
+				isSuccess = Boolean.valueOf(authResult.attributeValue(MsgConstant.MSG_SUCCESS)).booleanValue();
+				if (!isSuccess) {
+					errDesc = authResult.elementTextTrim(MsgConstant.MSG_AUTH_MESSSAGE_DESC);
+				}
+			}
+			if (isSuccess) {
+				// 解析证书信息
+				try {
+	                Element attrsElement = bodyElement.element(MsgConstant.MSG_ATTRIBUTES);
+	                List<Element> attributeNodeList = attrsElement.elements(MsgConstant.MSG_ATTRIBUTE);
+	                for (Element userAttrNode : attributeNodeList) {
+	                	String name = userAttrNode.attributeValue(MsgConstant.MSG_NAME);
+	                	String value = userAttrNode.getTextTrim();
+	                	
+	                	if (MsgConstant.X509_SUBJECT_DN.equalsIgnoreCase(name)) {
+	                		isSuccess = true;
+	                		errDesc = null;
+	                		subjectDN = value;
+	                		break;
+	                	}
+	                }
+                } catch (Exception e) {
+                	isSuccess = false;
+    				errDesc = "解析证书信息过程出现异常。\n" + e.getMessage();
+                }
+			}
+		}
+		if (isSuccess) {
+			// 根据证书信息获取对应人员和用户
+			Map<String, String> subjectMap = splitSubjectDN(subjectDN);
+			String email = subjectMap.get("E");
+			if (email != null) {
+				
+				SuperVO[] psndocs = ScapDAO.retrieveByCondition(PsndocVO.class, "email='" + email + "'");
+				if (psndocs == null) {
+					isSuccess = false;
+					errDesc = "未找到相关人员";
+				}
+				if (isSuccess && psndocs.length > 1) {
+					isSuccess = false;
+					errDesc = "当前证书关联了多个用户";
+				}
+				if (isSuccess && psndocs.length == 1) {
+					PsndocVO psn = (PsndocVO) psndocs[0];
+					
+					SuperVO[] users = ScapDAO.retrieveByCondition(CpUserVO.class, "pk_base_doc='" + psn.getPk_psndoc() + "'");
+					if (users != null && users.length == 1) {
+						CpUserVO user = (CpUserVO) users[0];
+						userId = user.getUser_code();
+					} else {
+						isSuccess = false;
+						errDesc = "未找到关联用户";
+					}
+				}
+			} else {
+				isSuccess = false;
+				errDesc = "该证书没有登录相关信息";
+			}
+		}
+		
+		if (!isSuccess) {
+			ScapLogger.error("CA认证失败：" + errDesc);
+			throw new Exception("认证失败：" + errDesc);
+		}
+		return userId;
+	}
+	
+	private static Map<String, String> splitSubjectDN(String subjectDN) {
+		HashMap<String, String> map = new HashMap<String, String>();
+		
+		String[] subjects = subjectDN.split(",");
+		for (String subject : subjects) {
+	        String[] tuple = subject.trim().split("=");
+	        if (tuple.length == 2) {
+	        	map.put(tuple[0].trim(), tuple[1].trim());
+	        }
+        }
+		return map;
+	}
+
+	/**
+	 * 发送认证数据
+	 */
+	@SuppressWarnings("deprecation")
+    private static String sendRequest(String authURL, byte[] messageXml) throws Exception {
+		
+		HttpClient httpClient = new HttpClient();
+		PostMethod postMethod = new PostMethod(authURL);
+		
+		postMethod.setRequestHeader("Content-Type", "text/xml;charset=UTF-8");
+		postMethod.setRequestBody(new ByteArrayInputStream(messageXml));
+		
+		int statusCode = httpClient.executeMethod(postMethod);
+		
+		if (statusCode == HttpStatus.SC_OK) {
+			// 从头中取出转向的地址
+			byte[] inputstr = postMethod.getResponseBody();
+
+			ByteArrayInputStream ByteinputStream = new ByteArrayInputStream(inputstr);
+			ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+			int ch = 0;
+			while ((ch = ByteinputStream.read()) != -1) {
+				int upperCh = (char) ch;
+				outStream.write(upperCh);
+			}
+			return new String(outStream.toByteArray(), "UTF-8");
+		} else {
+			ScapLogger.error("CA网关通信异常，错误代码：" + statusCode);
+			throw new Exception("CA网关通信异常");
+		}
+    }
+
+	/**
+	 * 组装认证请求报文数据
+	 */
+	private static byte[] packupRequest(String appId, String authData, String signedData, String clientIp) throws IOException {
+		Document reqDocument = DocumentHelper.createDocument();
+		Element root = reqDocument.addElement(MsgConstant.MSG_ROOT);
+		Element requestHeadElement = root.addElement(MsgConstant.MSG_HEAD);
+		Element requestBodyElement = root.addElement(MsgConstant.MSG_BODY);
+		/* 组装报文头信息 */
+		requestHeadElement.addElement(MsgConstant.MSG_VSERSION).setText(MsgConstant.MSG_VSERSION_VALUE);
+		requestHeadElement.addElement(MsgConstant.MSG_SERVICE_TYPE).setText(MsgConstant.MSG_SERVICE_TYPE_VALUE);
+
+		/* 组装报文体信息 */
+
+		// 组装客户端信息
+		Element clientInfoElement = requestBodyElement.addElement(MsgConstant.MSG_CLIENT_INFO);
+		Element clientIPElement = clientInfoElement.addElement(MsgConstant.MSG_CLIENT_IP);
+		clientIPElement.setText(clientIp);
+
+		// 组装应用标识信息
+		requestBodyElement.addElement(MsgConstant.MSG_APPID).setText(appId);
+		Element authenElement = requestBodyElement.addElement(MsgConstant.MSG_AUTH);
+		Element authCredentialElement = authenElement.addElement(MsgConstant.MSG_AUTHCREDENTIAL);
+
+		// 组装证书认证信息
+		authCredentialElement.addAttribute(MsgConstant.MSG_AUTH_MODE, MsgConstant.MSG_AUTH_MODE_CERT_VALUE);
+		authCredentialElement.addElement(MsgConstant.MSG_DETACH).setText(signedData);
+		authCredentialElement.addElement(MsgConstant.MSG_ORIGINAL).setText(authData);
+		requestBodyElement.addElement(MsgConstant.MSG_ACCESS_CONTROL).setText(MsgConstant.MSG_ACCESS_CONTROL_FALSE);
+
+		// 组装属性查询列表信息
+		Element attributesElement = requestBodyElement.addElement(MsgConstant.MSG_ATTRIBUTES);
+		attributesElement.addAttribute(MsgConstant.MSG_ATTRIBUTE_TYPE, MsgConstant.MSG_ATTRIBUTE_TYPE_PORTION);
+		addAttribute(attributesElement, MsgConstant.X509_SUBJECT_DN, "http://www.jit.com.cn/cinas/ias/ns/saml/saml11/X.509");
+//		addAttribute(attributesElement, "UMS.UserID", "http://www.jit.com.cn/ums/ns/user");
+//		addAttribute(attributesElement, "机构字典", "http://www.jit.com.cn/ums/ns/user");
+
+		ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+		XMLWriter writer = new XMLWriter(outStream);
+		writer.write(reqDocument);
+		return outStream.toByteArray();
+    }
+	
+	private static void addAttribute(Element attributesElement, String name, String namespace) {
+		Element attr = attributesElement.addElement(MsgConstant.MSG_ATTRIBUTE);
+		attr.addAttribute(MsgConstant.MSG_NAME, name);
+		attr.addAttribute(MsgConstant.MSG_NAMESPACE, namespace);
+	}
+
+	private static boolean isNotNull(String str) {
+		return !(str == null || "".equals(str.trim()));
+    }
+
+	/**
+	 * 认证网关地址
+	 */
+	private static String getAuthUrl() {
+		Properties props = new Properties();
+		try {
+	        props.load(AuthenUtil.class.getResourceAsStream("message.properties"));
+        } catch (IOException e) {
+	        e.printStackTrace();
+        }
+		return props.getProperty("authURL");
+    }
+
+	/**
+	 * 网关appId
+	 */
+	private static String getAppId() {
+		Properties props = new Properties();
+		try {
+	        props.load(AuthenUtil.class.getResourceAsStream("message.properties"));
+        } catch (IOException e) {
+	        e.printStackTrace();
+        }
+		return props.getProperty("appId");
+    }
+}

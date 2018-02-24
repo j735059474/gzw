@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+<items>
+
+<!--flag="0" 单独处理;flag="1" 查iufo表样;flag="2" 查事实表; 公式中"XX,2"表示XX公式计算后保留两位小数-->
+<item key="vyear" dimension="" name="年">
+  <source flag="1" code="Z011" measure="year" row="" col="" id="$aa"/>
+  <formula>
+    '$aa'.substring(0,4)
+  </formula>
+</item>
+
+<item key="sys_org" dimension="" name="组织标志">
+  <source flag="0" code="Z011" measure="sys_org" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="type" dimension="" name="类型">
+  <source flag="0" code="Z011" measure="type" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ldbl" dimension="ld" name="流动比率(本年决算数)">
+  <source flag="1" code="Z011" measure="ldzchjqmye" row="" col="" id="$z01.a20"/>
+  <source flag="1" code="Z011" measure="ldfzhjqmye" row="" col="" id="$z01.c26"/>
+  <formula>
+    $z01.a20/$z01.c26
+  </formula>
+</item>
+
+<item key="ldblbsn" dimension="ld" name="流动比率比上年增加百分点">
+  <source flag="1" code="Z011" measure="ldzchjqmye" row="" col="" id="$z01.a20"/>
+  <source flag="1" code="Z011" measure="ldfzhjqmye" row="" col="" id="$z01.c26"/>
+  <source flag="2" code="scapfd_zc_bl" measure="ld_ldbl" row="" col="" id="$fxzb.b19" condition=" and v.vyear='$vyear'-1 "/>
+  <formula>
+    $z01.a20/$z01.c26-$fxzb.b19
+  </formula>
+</item>
+
+<item key="sdbl" dimension="sd" name="速动比率(本年决算数)">
+  <source flag="1" code="Z011" measure="chqmye" row="" col="" id="$z01.a15"/>
+  <source flag="1" code="Z011" measure="ldzchjqmye" row="" col="" id="$z01.a20"/>
+  <source flag="1" code="Z011" measure="ldfzhjqmye" row="" col="" id="$z01.c26"/>
+  <formula>
+    ($z01.a20-$z01.a15)/$z01.c26
+  </formula>
+</item>
+
+<item key="sdblbsn" dimension="sd" name="速动比率比上年增加百分点">
+  <source flag="1" code="Z011" measure="chqmye" row="" col="" id="$z01.a15"/>
+  <source flag="1" code="Z011" measure="ldzchjqmye" row="" col="" id="$z01.a20"/>
+  <source flag="1" code="Z011" measure="ldfzhjqmye" row="" col="" id="$z01.c26"/>
+  <source flag="2" code="scapfd_zc_bl" measure="sd_sdbl" row="" col="" id="$fxzb.b20" condition=" and v.vyear='$vyear'-1 "/>
+  <formula>
+    ($z01.a20-$z01.a15)/$z01.c26-$fxzb.b20
+  </formula>
+</item>
+
+<item key="jczsyl" dimension="sy" name="净资产收益率(本年决算数)">
+  <source flag="1" code="Z021" measure="wjlrjksyhtlbqje" row="" col="" id="$z02.c18"/>
+  <source flag="1" code="Z011" measure="syzqyhjqmye" row="" col="" id="$z01.c62"/>
+  <source flag="1" code="Z011" measure="syzqyhjncye" row="" col="" id="$z01.d62"/>
+  <formula>
+    2*$z02.c18/($z01.c62+$z01.d62)*100
+  </formula>
+</item>
+
+<item key="jczsylbsn" dimension="sy" name="净资产收益率比上年增加百分点">
+  <source flag="1" code="Z021" measure="wjlrjksyhtlbqje" row="" col="" id="$z02.c18"/>
+  <source flag="1" code="Z011" measure="syzqyhjqmye" row="" col="" id="$z01.c62"/>
+  <source flag="1" code="Z011" measure="syzqyhjncye" row="" col="" id="$z01.d62"/>
+  <source flag="2" code="scapfd_zc_bl" measure="sy_jczsyl" row="" col="" id="$fxzb.b03" condition=" and v.vyear='$vyear'-1 "/>
+  <formula>
+    2*$z02.c18/($z01.c62+$z01.d62)*100-$fxzb.b03
+  </formula>
+</item>
+
+<item key="zzcbcl" dimension="gv" name="总资产报酬率(本年决算数)">
+  <source flag="1" code="Z021" measure="slrzekszeyhtlbqje" row="" col="" id="$z02.c16"/>
+  <source flag="1" code="Z021" measure="qzlxzcbqje" row="" col="" id="$z02.a24"/>
+  <source flag="1" code="Z011" measure="zczjqmye" row="" col="" id="$z01.a63"/>
+  <source flag="1" code="Z011" measure="zczjncye" row="" col="" id="$z01.b63"/>
+  <formula>
+    2*($z02.c16+$z02.a24)/($z01.a63+$z01.b63)*100
+  </formula>
+</item>
+
+<item key="zzcbclbsn" dimension="gv" name="总资产报酬率比上年增加百分点">
+  <source flag="1" code="Z021" measure="slrzekszeyhtlbqje" row="" col="" id="$z02.c16"/>
+  <source flag="1" code="Z021" measure="qzlxzcbqje" row="" col="" id="$z02.a24"/>
+  <source flag="1" code="Z011" measure="zczjqmye" row="" col="" id="$z01.a63"/>
+  <source flag="1" code="Z011" measure="zczjncye" row="" col="" id="$z01.b63"/>
+  <source flag="2" code="scapfd_zc_bl" measure="gv_zzcbcl" row="" col="" id="$fxzb.b05" condition=" and v.vyear='$vyear'-1 "/>
+  <formula>
+    2*($z02.c16+$z02.a24)/($z01.a63+$z01.b63)*100-$fxzb.b05
+  </formula>
+</item>
+
+</items>
+</Root>

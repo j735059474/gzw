@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+<items>
+
+<!--flag="0" 单独处理;flag="1" 查iufo表样;flag="2" 查事实表; 公式中"XX,2"表示XX公式计算后保留两位小数-->
+<item key="vyear" dimension="" name="年">
+  <source flag="1" code="QYBB" measure="month" row="" col="" id="$aa"/>
+  <formula>
+    '$aa'.substring(0,4)
+  </formula>
+</item>
+
+<item key="vmonth" dimension="" name="月份">
+  <source flag="1" code="QYBB" measure="month" row="" col="" id="$aa"/>
+  <formula>
+    '$aa'.substring(5,7)
+  </formula>
+</item>
+
+<item key="sys_org" dimension="" name="组织标志">
+  <source flag="0" code="QYBB" measure="sys_org" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="type" dimension="" name="类型">
+  <source flag="0" code="QYBB" measure="type" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="jzcsyl" dimension="th" name="净资产收益率">
+  <source flag="2" code="scapfd_kb_base" measure="lj_jlr" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="lj_syzqyze" row="" col="" id="$bb"/>
+  <source flag="2" code="scapfd_js_base" measure="sn_syzqyze" row="" col="" id="$cc"/>
+  <formula>
+    100*$aa/(($bb+nvl($cc,0)/10000)/2),2
+  </formula>
+</item>
+
+<item key="scale" dimension="" name="经营规模">
+  <source flag="1" code="FMDM1" measure="yjgm" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zcfzl" dimension="th" name="资产负债率(累计完成数)">
+  <source flag="1" code="QYBB" measure="18fzzebnlj" row="" col="" id="$aa"/>
+  <source flag="1" code="QYBB" measure="17zczebnlj" row="" col="" id="$bb"/>
+  <formula>
+    $aa/$bb*100,2
+  </formula>
+</item>
+
+<item key="qycode" dimension="" name="本企业代码">
+  <source flag="1" code="FMDM1" measure="bqydm" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qyname" dimension="" name="企业名称">
+  <source flag="1" code="FMDM1" measure="qymc" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="industry" dimension="" name="所属行业">
+  <source flag="1" code="FMDM1" measure="ssxym" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="form" dimension="org" name="组织型形式">
+  <source flag="1" code="FMDM1" measure="zzxs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qylfzebz" dimension="hs" name="各企业利润总额（累计完成数）占统计范围内企业利润总额（累计完成数）合计值的比重">
+  <source flag="2" code="scapfd_kb_base" measure="lj_lrze" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="lj_lrze" row="" col="" id="$bb" condition=" and v.sys_org = 'HZQYB0014' and v.vyear='$vyear' and v.vmonth='$vmonth' "/>
+  <formula>
+    $aa/$bb*100,2
+  </formula>
+</item>
+
+
+</items>
+</Root>

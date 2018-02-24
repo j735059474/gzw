@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget controllerClazz="com.scap.pub.defineLayout.DefineLayoutCardWinMainViewCtrl" id="main" refId="main" sourcePackage="pub/src/public/">
+    <Attributes>
+        <Attribute>
+            <Key>$QueryTemplate</Key>
+            <Value>
+            </Value>
+        </Attribute>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+        <PlugoutDesc id="afterSavePlugout">
+        </PlugoutDesc>
+    </PlugoutDescs>
+    <PluginDescs>
+    </PluginDescs>
+    <Connectors>
+        <Connector connType="4" id="cardViewConnID" pluginId="proxyAfterSavePlugout" plugoutId="afterSavePlugout" source="main" sourceWindow="" target="popwin" targetWindow="">
+        </Connector>
+    </Connectors>
+    <Events>
+        <Event async="true" methodName="beforeShow" name="beforeShow" onserver="true">
+            <Action>
+            </Action>
+        </Event>
+    </Events>
+    <Models>
+        <Datasets>
+            <DatasetRelations>
+                <DatasetRelation detailDataset="scap_layout_container" detailForeignKey="layout_container" id="scap_layout_container_scap_layout" masterDataset="scap_layout" masterKeyField="pk_layout">
+                </DatasetRelation>
+            </DatasetRelations>
+            <RefMdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_orgs" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_orgs" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="分析主题容器" controlwidgetopeStatus="false" enabled="false" id="scap_layout_container" lazyLoad="true" notNullBody="false" objMeta="scapco.scap_layout_container" pageSize="15" voMeta="nc.scap.pub.vos.ScapLayoutContainerVO">
+                <Fields>
+                </Fields>
+            </MdDataset>
+            <RefMdDataset caption="图表" controlwidgetopeStatus="false" enabled="false" id="$refds_scapco_scap_chart" lazyLoad="true" notNullBody="false" objMeta="scapco.scap_chart" voMeta="nc.scap.pub.vos.ScapChartVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="分析主题" controlwidgetopeStatus="true" enabled="false" id="scap_layout" lazyLoad="true" notNullBody="false" objMeta="scapco.scap_layout" pageSize="15" voMeta="nc.scap.pub.vos.ScapLayoutVO">
+                <FieldRelations>
+                    <FieldRelation id="pk_group_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_group_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_group">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_org_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+        </Datasets>
+        <ComboDatas>
+            <MDComboDataConf caption="图元类型" fullclassName="71b88c8d-cadf-46d3-868c-c3cd1ae4a35e" id="combo_scap_layout_container_display_type">
+            </MDComboDataConf>
+            <MDComboDataConf caption="容器类型" fullclassName="a5015bd4-f718-4143-a96b-22fbe1659e1a" id="combo_scap_layout_container_container_type">
+            </MDComboDataConf>
+            <MDComboDataConf caption="是否支持钻取" fullclassName="98146b55-687c-40fd-9744-1636744a8ebe" id="combo_scap_layout_container_isdrill">
+            </MDComboDataConf>
+        </ComboDatas>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scap_layout_pk_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同业务单元(当前集团)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="分析主题_协同业务单元(当前集团)" usePower="false" writeDs="scap_layout" writeFields="pk_org,pk_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scap_layout_pk_group_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同集团(所有)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="分析主题_协同集团(所有)" usePower="false" writeDs="scap_layout" writeFields="pk_group,pk_group_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <FormComp caption="scap_layout_form" columnCount="3" dataset="scap_layout" eleWidth="250" ellipsis="false" enabled="true" id="scap_layout_form" labelMinWidth="0" renderType="1" rowHeight="22" visible="true">
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="pk_org" height="" id="pk_org" imageOnly="false" langDir="pub_chart_layout" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="组织" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="3" editable="true" editorType="Reference" enabled="false" field="pk_org_name" height="" id="pk_org_name" imageOnly="false" nextLine="false" nullAble="true" refNode="refnode_scap_layout_pk_org_name" rowSpan="1" selectOnly="true" text="组织" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="code" height="" id="code" imageOnly="false" langDir="pub_chart_layout" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="编码" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="name" height="" id="name" imageOnly="false" langDir="pub_chart_layout" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="名称" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="2" editable="true" editorType="StringText" enabled="true" field="controller" height="" id="controller" imageOnly="false" langDir="pub_chart_layout" nextLine="true" nullAble="true" rowSpan="1" selectOnly="true" text="控制类" toolbarType="Custom" visible="true" width="400">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="external_js" height="" id="external_js" imageOnly="false" nextLine="true" nullAble="true" rowSpan="1" selectOnly="true" text="引用js" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="pk_group" height="" id="pk_group" imageOnly="false" langDir="pub_chart_layout" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="集团" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="Reference" enabled="true" field="pk_group_name" height="" id="pk_group_name" imageOnly="false" nextLine="false" nullAble="true" refNode="refnode_scap_layout_pk_group_name" rowSpan="1" selectOnly="true" text="集团" toolbarType="Custom" visible="false" width="">
+            </Element>
+        </FormComp>
+        <GridComp autoRowHeight="false" canCopy="true" caption="分析主题容器" checkBoxModel="1" dataset="scap_layout_container" editable="true" enabled="true" expandTree="false" id="scap_layout_container_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="true" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="code" fixedHeader="false" id="code" imageOnly="false" langDir="pub_chart_layout" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="编码" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="name" fixedHeader="false" id="name" imageOnly="false" langDir="pub_chart_layout" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="名称" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="container_type" fixedHeader="false" id="container_type" imageOnly="false" langDir="pub_chart_layout" nullAble="true" refComboData="combo_scap_layout_container_container_type" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="容器类型" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="title" fixedHeader="false" id="title" imageOnly="false" langDir="pub_chart_layout" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="标题" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Integer" editable="true" editorType="IntegerText" field="height" fixedHeader="false" id="height" imageOnly="false" langDir="pub_chart_layout" nullAble="true" renderType="IntegerRender" showCheckBox="true" sortable="true" sumCol="false" text="高度" textAlign="right" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Integer" editable="true" editorType="IntegerText" field="width" fixedHeader="false" id="width" imageOnly="false" langDir="pub_chart_layout" nullAble="true" renderType="IntegerRender" showCheckBox="true" sortable="true" sumCol="false" text="宽度" textAlign="right" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="title_url" fixedHeader="false" id="title_url" imageOnly="false" langDir="pub_chart_layout" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="标题链接" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="display_type" fixedHeader="false" id="display_type" imageOnly="false" langDir="pub_chart_layout" nullAble="true" refComboData="combo_scap_layout_container_display_type" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="图元类型" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_chart" fixedHeader="false" id="pk_chart" imageOnly="false" langDir="pub_chart_layout" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="图表主键" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="isdrill" fixedHeader="false" id="isdrill" imageOnly="false" langDir="pub_chart_layout" nullAble="true" refComboData="combo_scap_layout_container_isdrill" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="是否钻取" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="drill_class" fixedHeader="false" id="drill_class" imageOnly="false" langDir="pub_chart_layout" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="钻取处理类" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="report_url" fixedHeader="false" id="report_url" imageOnly="false" langDir="pub_chart_layout" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="报表链接" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="layout_container" fixedHeader="false" id="layout_container" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上层单据主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <MenuBarComp id="scap_layout_container_grid$MenuBar">
+                <MenuItem i18nName="GridComp-000005" id="scap_layout_container_grid$HeaderBtn_Add" imgIcon="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/new_row.png" imgIconDisable="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/new_row_disable.png" imgIconOn="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/new_row_higlight.png" langDir="bc" modifiers="2" showModel="1" text="新建">
+                    <Events>
+                        <Event async="true" methodName="onGridAddClick" name="onclick" onserver="true">
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+                <MenuItem i18nName="GridComp-000006" id="scap_layout_container_grid$HeaderBtn_Edit" imgIcon="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/edit.png" imgIconDisable="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/edit_disable.png" imgIconOn="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/edit_higlight.png" langDir="bc" modifiers="2" showModel="1" text="编辑">
+                    <Events>
+                        <Event async="true" methodName="onGridEditClick" name="onclick" onserver="true">
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+                <MenuItem i18nName="GridComp-000007" id="scap_layout_container_grid$HeaderBtn_Delete" imgIcon="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/delete_row.png" imgIconDisable="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/delete_row_disable.png" imgIconOn="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/delete_row_higlight.png" langDir="bc" modifiers="2" showModel="1" text="删除">
+                    <Events>
+                        <Event async="true" methodName="onGridDeleteClick" name="onclick" onserver="true">
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+            </MenuBarComp>
+        </GridComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar">
+            <MenuItem id="add" modifiers="2" showModel="1" text="新增">
+                <Events>
+                    <Event async="true" methodName="onAdd" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="del" modifiers="2" showModel="1" text="删除">
+                <Events>
+                    <Event async="true" methodName="onDelete" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="save" modifiers="2" showModel="1" text="保存">
+                <Events>
+                    <Event async="true" methodName="onSave" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="sep1" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="back" modifiers="2" showModel="1" text="返回">
+                <Events>
+                    <Event async="true" methodName="onBack" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

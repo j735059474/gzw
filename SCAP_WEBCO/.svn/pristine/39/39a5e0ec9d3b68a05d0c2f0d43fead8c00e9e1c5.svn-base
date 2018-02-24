@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget controllerClazz="com.scap.pub.defineChart.DefineChartListWinMainViewCtrl" id="main" refId="main" sourcePackage="pub/src/public/">
+    <Attributes>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+    </PlugoutDescs>
+    <PluginDescs>
+        <PluginDesc id="simpleQuery_plugin" methodName="doQueryChange">
+        </PluginDesc>
+        <PluginDesc id="org_plugin" methodName="doOrgChange">
+        </PluginDesc>
+        <PluginDesc id="refresh_plugin" methodName="doRefresh">
+            <PluginDescItem clazztype="java.lang.String" id="row">
+            </PluginDescItem>
+        </PluginDesc>
+    </PluginDescs>
+    <Connectors>
+        <Connector connType="6" id="listViewConnID" pluginId="refresh_plugin" plugoutId="proxyAfterSavePlugout" source="com.scap.pub.chartComps.defineChart_listwin" sourceWindow="" target="main" targetWindow="">
+        </Connector>
+    </Connectors>
+    <Models>
+        <Datasets>
+            <RefMdDataset caption="数据源" controlwidgetopeStatus="false" enabled="false" id="$refds_scapco_scap_chart_ds" lazyLoad="true" notNullBody="false" objMeta="scapco.scap_chart_ds" voMeta="nc.scap.pub.vos.ScapChartDsVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_orgs" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_orgs" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="图表" controlwidgetopeStatus="false" enabled="false" id="scap_chart" lazyLoad="false" notNullBody="false" objMeta="scapco.scap_chart" pageSize="20" voMeta="nc.scap.pub.vos.ScapChartVO">
+                <FieldRelations>
+                    <FieldRelation id="pk_group_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_group_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_group">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_org_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="chartds_rel" needProcess="true" refDataset="$refds_scapco_scap_chart_ds" useCache="true">
+                        <MatchFields>
+                            <Field iscontains="Y" ismatch="Y" readField="pk_chart_ds" writeField="pk_chart_ds">
+                            </Field>
+                            <Field readField="name" writeField="pk_chart_ds_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_chart_ds" value="pk_chart_ds">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                    <Field dataType="String" id="pk_chart_ds_name" nullAble="true" primaryKey="false" text="数据源">
+                    </Field>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+        </Datasets>
+        <ComboDatas>
+            <MDComboDataConf caption="是否显示" fullclassName="eec0adc4-8180-4d96-b880-e9cb1cacb6a0" id="combo_scap_chart_isshowbg">
+            </MDComboDataConf>
+            <MDComboDataConf caption="是否显示" fullclassName="eec0adc4-8180-4d96-b880-e9cb1cacb6a0" id="combo_scap_chart_showvalues">
+            </MDComboDataConf>
+            <MDComboDataConf caption="是否显示" fullclassName="eec0adc4-8180-4d96-b880-e9cb1cacb6a0" id="combo_scap_chart_showlabels">
+            </MDComboDataConf>
+            <MDComboDataConf caption="是否显示" fullclassName="eec0adc4-8180-4d96-b880-e9cb1cacb6a0" id="combo_scap_chart_showlegend">
+            </MDComboDataConf>
+            <MDComboDataConf caption="刻度显示方式" fullclassName="32755d90-527e-4494-a49a-7d30c2d4bbbd" id="combo_scap_chart_labeldisplay">
+            </MDComboDataConf>
+            <DynamicComboData caption="图表预置样式下拉" className="nc.scap.pub.combo.ChartPresetStyleCombo" id="chart_preset_style_combo">
+            </DynamicComboData>
+            <MDComboDataConf caption="是否显示" fullclassName="eec0adc4-8180-4d96-b880-e9cb1cacb6a0" id="combo_scap_chart_showpoint">
+            </MDComboDataConf>
+            <DynamicComboData caption="图表类型" className="nc.scap.pub.combo.ChartTypeCombo" id="chart_type_combo">
+            </DynamicComboData>
+            <MDComboDataConf caption="是否显示" fullclassName="eec0adc4-8180-4d96-b880-e9cb1cacb6a0" id="combo_scap_chart_isshowborder">
+            </MDComboDataConf>
+        </ComboDatas>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="scap_chart_ds_ref" langDir="" multiSel="false" orgs="false" pagemeta="" pagemodel="" read="false" readDs="masterDs" readFields="pk_chart_ds,name" refId="" refcode="财务分析数据源参照" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="图表_财务分析数据源参照" usePower="false" writeDs="scap_chart" writeFields="pk_chart_ds, pk_chart_ds_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scap_chart_pk_group_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同集团(所有)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="图表_协同集团(所有)" usePower="false" writeDs="scap_chart" writeFields="pk_group,pk_group_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scap_chart_pk_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同业务单元(当前集团)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="图表_协同业务单元(当前集团)" usePower="false" writeDs="scap_chart" writeFields="pk_org,pk_org_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <GridComp autoRowHeight="false" canCopy="true" caption="图表" checkBoxModel="1" dataset="scap_chart" editable="true" enabled="true" expandTree="false" id="scap_chart_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_chart" fixedHeader="false" id="pk_chart" imageOnly="false" langDir="pub_chart" nullAble="false" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="code" fixedHeader="false" id="code" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="编码" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="name" fixedHeader="false" id="name" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="名称" textAlign="left" visible="true" width="200">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="caption" fixedHeader="false" id="caption" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="显示标题" textAlign="left" visible="true" width="200">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="type" fixedHeader="false" id="type" imageOnly="false" langDir="pub_chart" nullAble="true" refComboData="chart_type_combo" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="类型" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="def1" fixedHeader="false" id="def1" imageOnly="false" nullAble="true" refComboData="chart_preset_style_combo" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="预置样式" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_chart_ds" fixedHeader="false" id="pk_chart_ds" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="数据源" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_chart_ds_name" fixedHeader="false" id="pk_chart_ds_name" imageOnly="false" nullAble="true" refNode="scap_chart_ds_ref" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="数据源" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="groupname" fixedHeader="false" id="groupname" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="分组列显示名称" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="seriesname" fixedHeader="false" id="seriesname" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="统计列显示名称" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="xaxisname" fixedHeader="false" id="xaxisname" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="横轴显示文字" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="yaxisname" fixedHeader="false" id="yaxisname" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="纵轴显示文字" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="captionurl" fixedHeader="false" id="captionurl" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="标题链接" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="captionfunction" fixedHeader="false" id="captionfunction" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="标题函数" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="numberprefix" fixedHeader="false" id="numberprefix" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="统计结果数字前缀" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="numbersuffix" fixedHeader="false" id="numbersuffix" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="统计结果数字后缀" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="captionfont" fixedHeader="false" id="captionfont" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="标题字体" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="xaxisfont" fixedHeader="false" id="xaxisfont" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="横轴字体" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="xlabelfont" fixedHeader="false" id="xlabelfont" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="横轴刻度字体" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="yaxisfont" fixedHeader="false" id="yaxisfont" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="纵轴字体" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="ylabelfont" fixedHeader="false" id="ylabelfont" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="纵轴刻度字体" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="legendfont" fixedHeader="false" id="legendfont" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="图例字体" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="bgcolor" fixedHeader="false" id="bgcolor" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="背景色" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="labeldisplay" fixedHeader="false" id="labeldisplay" imageOnly="false" langDir="pub_chart" nullAble="true" refComboData="combo_scap_chart_labeldisplay" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="刻度显示方式" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="showvalues" fixedHeader="false" id="showvalues" imageOnly="false" langDir="pub_chart" nullAble="true" refComboData="combo_scap_chart_showvalues" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="是否显示数值" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="showlabels" fixedHeader="false" id="showlabels" imageOnly="false" langDir="pub_chart" nullAble="true" refComboData="combo_scap_chart_showlabels" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="是否显示刻度" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="showlegend" fixedHeader="false" id="showlegend" imageOnly="false" langDir="pub_chart" nullAble="true" refComboData="combo_scap_chart_showlegend" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="是否显示图例" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="yaxismaxvalue" fixedHeader="false" id="yaxismaxvalue" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="纵轴最大值" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="yaxisminvalue" fixedHeader="false" id="yaxisminvalue" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="纵轴最小值" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="isshowbg" fixedHeader="false" id="isshowbg" imageOnly="false" langDir="pub_chart" nullAble="true" refComboData="combo_scap_chart_isshowbg" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="是否显示背景" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="isshowborder" fixedHeader="false" id="isshowborder" imageOnly="false" langDir="pub_chart" nullAble="true" refComboData="combo_scap_chart_isshowborder" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="是否显示边框" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="majottmnumber" fixedHeader="false" id="majottmnumber" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="标记数字显示个数" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="showpoint" fixedHeader="false" id="showpoint" imageOnly="false" langDir="pub_chart" nullAble="true" refComboData="combo_scap_chart_showpoint" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="是否显示关键点数字" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="rendertype" fixedHeader="false" id="rendertype" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="图形类型" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pyaxis" fixedHeader="false" id="pyaxis" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="主Y轴统计列" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="syaxis" fixedHeader="false" id="syaxis" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="次Y轴统计列" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="rscale" fixedHeader="false" id="rscale" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="环比例" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_group" fixedHeader="false" id="pk_group" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="集团" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_group_name" fixedHeader="false" id="pk_group_name" imageOnly="false" nullAble="true" refNode="refnode_scap_chart_pk_group_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="集团" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_org" fixedHeader="false" id="pk_org" imageOnly="false" langDir="pub_chart" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="组织" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_org_name" fixedHeader="false" id="pk_org_name" imageOnly="false" nullAble="true" refNode="refnode_scap_chart_pk_org_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="组织" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="controller" fixedHeader="false" id="controller" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="控制类" visible="true" width="400">
+            </Column>
+        </GridComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar">
+            <MenuItem id="add" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Init_Ss_Ms_StateManager" text="新增">
+                <Events>
+                    <Event async="true" methodName="onAdd" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="edit" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="修改">
+                <Events>
+                    <Event async="true" methodName="onEdit" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="del" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="删除">
+                <Events>
+                    <Event async="true" methodName="onDelete" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

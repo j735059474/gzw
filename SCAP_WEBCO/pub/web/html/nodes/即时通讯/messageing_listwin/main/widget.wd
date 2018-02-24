@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget controllerClazz="nc.scap.pub.messageing.MessageingListWinMainViewCtrl" id="main" refId="main" sourcePackage="pub/src/public/">
+    <Attributes>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+    </PlugoutDescs>
+    <PluginDescs>
+        <PluginDesc id="simpleQuery_plugin" methodName="doQueryChange">
+        </PluginDesc>
+        <PluginDesc id="org_plugin" methodName="doOrgChange">
+        </PluginDesc>
+        <PluginDesc id="refresh_plugin" methodName="doRefresh">
+            <PluginDescItem clazztype="java.lang.String" id="row">
+            </PluginDescItem>
+        </PluginDesc>
+    </PluginDescs>
+    <Connectors>
+        <Connector connType="6" id="listViewConnID" pluginId="refresh_plugin" plugoutId="proxyAfterSavePlugout" source="即时通讯.messageing_listwin" sourceWindow="" target="main" targetWindow="">
+        </Connector>
+    </Connectors>
+    <Models>
+        <Datasets>
+            <MdDataset caption="数据源" controlwidgetopeStatus="true" enabled="false" id="dataSourceName" lazyLoad="true" notNullBody="false" objMeta="uap.dataSourceName" pageSize="15" voMeta="nc.vo.uap.datasource">
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+        </Datasets>
+    </Models>
+    <Components>
+        <LabelComp enabled="true" id="tb002" text="同步用户" visible="true">
+        </LabelComp>
+        <LabelComp color="red" enabled="true" id="tb003" text="同步时请先同步架构，再同步用户信息；同步数据时时间较长，请耐心等待..." visible="true">
+        </LabelComp>
+        <GridComp autoRowHeight="false" canCopy="true" caption="dataSourceName_grid" checkBoxModel="1" dataset="dataSourceName" editable="true" enabled="true" expandTree="false" id="dataSourceName_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="datasourcename" fixedHeader="false" id="datasourcename" imageOnly="false" langDir="datasource" nullAble="false" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="数据源名称" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="databasetype" fixedHeader="false" id="databasetype" imageOnly="false" langDir="datasource" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="数据库类型" textAlign="left" visible="true" width="120">
+            </Column>
+        </GridComp>
+        <LabelComp enabled="true" id="tb001" text="同步架构" visible="true">
+        </LabelComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar2">
+            <MenuItem i18nName="tbuser" id="tbuser" langDir="lfwbuttons" modifiers="2" showModel="1" text="同步">
+                <Events>
+                    <Event async="true" methodName="onTbUser" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+        <MenuBarComp id="menubar">
+            <MenuItem i18nName="tbjg" id="tbjg" langDir="lfwbuttons" modifiers="2" showModel="1" text="同步">
+                <Events>
+                    <Event async="true" methodName="onTbjg" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

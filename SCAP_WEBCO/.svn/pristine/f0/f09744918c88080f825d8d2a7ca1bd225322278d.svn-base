@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportServerParameter xmlVersion="20131111" releaseVersion="7.0.5">
+<ServerLogLevel>
+<![CDATA[WARNING]]></ServerLogLevel>
+<LOGCNG/>
+<FARRAY/>
+<Write serverCharacterEncoding="GBK"/>
+<GZip run="true"/>
+<Lic useLock="false"/>
+<ServletMapping pattern="ReportServer"/>
+<ChromeChart downLocal="false"/>
+<JbossWebappName name="WebReport"/>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.button.page.First">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n('ReportServerP-First')}]]></Text>
+<IconName>
+<![CDATA[first]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.page.Previous">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n('ReportServerP-Previous')}]]></Text>
+<IconName>
+<![CDATA[previous]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.page.PageNavi">
+<WidgetAttr/>
+</Widget>
+<Widget class="com.fr.report.web.button.page.Next">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n('ReportServerP-Next')}]]></Text>
+<IconName>
+<![CDATA[next]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.page.Last">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n('ReportServerP-Last')}]]></Text>
+<IconName>
+<![CDATA[last]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.Print">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n('Print')}]]></Text>
+<IconName>
+<![CDATA[print]]></IconName>
+<PrintButtons appletPrint="false"/>
+</Widget>
+<Widget class="com.fr.report.web.button.Export">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n('Export')}]]></Text>
+<IconName>
+<![CDATA[export]]></IconName>
+<Buttons pdf="true" excelP="true" excelO="true" excelS="false" word="true" image="false" html="true"/>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="true" isShowAsImage="false" isAutoScale="false" isTDHeavy="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars/>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars/>
+<SelectedColor/>
+<WebWrite isSheet="false"/>
+<UnloadCheck/>
+</WebWriteContent>
+</ReportWebAttr>
+<EmailManager mailHost="" password="___" user="" fromEmailAddress=""/>
+<Parameters>
+<Parameter>
+<Attributes name="qheight"/>
+<O t="I">
+<![CDATA[800]]></O>
+</Parameter>
+</Parameters>
+<Styles>
+<SAttr name="Title">
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="宋体" style="1" size="112"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</SAttr>
+<SAttr name="unitname">
+<Style horizontal_alignment="2" imageLayout="1" paddingLeft="6">
+<FRFont name="宋体" style="0" size="80"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</SAttr>
+<SAttr name="date">
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="宋体" style="0" size="80"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</SAttr>
+<SAttr name="moneyunit">
+<Style horizontal_alignment="4" imageLayout="1">
+<FRFont name="宋体" style="0" size="80"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</SAttr>
+<SAttr name="head">
+<Style horizontal_alignment="0" textStyle="2" imageLayout="1">
+<FRFont name="宋体" style="0" size="80"/>
+<Background name="ColorBackground" color="-4144960"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</SAttr>
+<SAttr name="columnBold">
+<Style horizontal_alignment="2" textStyle="2" imageLayout="1" paddingLeft="6">
+<FRFont name="宋体" style="1" size="80"/>
+<Background name="ColorBackground" color="-4144960"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</SAttr>
+<SAttr name="boldcenter">
+<Style horizontal_alignment="0" textStyle="2" imageLayout="1">
+<FRFont name="宋体" style="1" size="80"/>
+<Background name="ColorBackground" color="-4144960"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</SAttr>
+<SAttr name="column">
+<Style horizontal_alignment="2" textStyle="2" imageLayout="1" paddingLeft="6">
+<FRFont name="宋体" style="0" size="80"/>
+<Background name="ColorBackground" color="-4144960"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</SAttr>
+<SAttr name="content">
+<Style horizontal_alignment="4" textStyle="2" imageLayout="1" paddingRight="6">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[###,###,##0.0]]></Format>
+<FRFont name="SimSun" style="0" size="80"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</SAttr>
+<SAttr name="percent">
+<Style horizontal_alignment="4" textStyle="2" imageLayout="1" paddingRight="6">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="宋体" style="0" size="80"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</SAttr>
+</Styles>
+<SessionInfo checkTime="40000" heartBeat="true"/>
+<FlashPrint popupFlashPrintSetting="true" fitPaper="false"/>
+<PdfPrint popupPdfPrintSetting="true"/>
+<AppletPrint popupAppletPrintSetting="true"/>
+<writeShortCuts writeShortCuts="true"/>
+<CustomLocale>
+<Parameters/>
+<DSName>
+<![CDATA[]]></DSName>
+<ColumnNames>
+<![CDATA[]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[]]></ColumnTypes>
+</CustomLocale>
+</ReportServerParameter>

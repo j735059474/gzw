@@ -1,0 +1,720 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+<items>
+
+<!--flag="0" 单独处理;flag="1" 查iufo表样;flag="2" 查事实表; 公式中"XX,2"表示XX公式计算后保留两位小数-->
+<item key="vyear" dimension="" name="年">
+  <source flag="1" code="Z08" measure="year" row="" col="" id="$aa"/>
+  <formula>
+    '$aa'.substring(0,4)
+  </formula>
+</item>
+
+<item key="sys_org" dimension="" name="组织标志">
+  <source flag="0" code="Z08" measure="sys_org" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="type" dimension="" name="类型">
+  <source flag="0" code="Z08" measure="type" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="sys_zdm" dimension="" name="外键">
+  <source flag="0" code="Z08" measure="sys_zdm" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sys_fjd" dimension="" name="父节点">
+  <source flag="0" code="Z08" measure="sys_fjd" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<!--基本情况表-->
+
+<item key="nmcyryrs" dimension="nd" name="（一）年末从业人员人数">
+  <source flag="1" code="Z08" measure="ynmcyryrsbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="qnpjcyryrs" dimension="nd" name="（二）全年平均从业人员人数">
+  <source flag="1" code="Z08" measure="ebnpjcyryrsbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="nmzgrs" dimension="nd" name=" （三）年末职工人数">
+  <source flag="1" code="Z08" measure="snmzgrsbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="nmzgzgrs" dimension="nd" name="      其中：年末在岗职工人数">
+  <source flag="1" code="Z08" measure="qznmzgzgrsbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="qnpjzgrs" dimension="nd" name=" （四）全年平均职工人数">
+  <source flag="1" code="Z08" measure="sbnpjzgrsbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="qnpjzgzgrs" dimension="nd" name="       其中：全年平均在岗职工人数">
+  <source flag="1" code="Z08" measure="qzbnpjzgzgrsbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="nmlxrs" dimension="nd" name=" （五）年末离休人数">
+  <source flag="1" code="Z08" measure="wnmlxrsbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="nmtxrs" dimension="nd" name=" （六）年末退休人数">
+  <source flag="1" code="Z08" measure="lnmtxrsbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="lwpqtgdjyrs" dimension="nd" name="  （七）劳务派遣提供的就业人数">
+  <source flag="1" code="Z08" measure="qlwpqtgdjyrsbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="cjjbylbxzgrs" dimension="nd" name=" （八）参加基本养老保险职工人数">
+  <source flag="1" code="Z08" measure="bcjjbylbxdnmzgrsbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="cjbcylbxzgrs" dimension="nd" name="  （九）参加补充养老保险职工人数">
+  <source flag="1" code="Z08" measure="jcjbcylbxdnmzgrsbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="cjjbyilbxzgrs" dimension="nd" name="（十）参加基本医疗保险职工人数">
+  <source flag="1" code="Z08" measure="scjjbylbxdnmzgrsbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="cjbcyilbxzgrs" dimension="nd" name="（十一）参加补充医疗保险职工人数">
+  <source flag="1" code="Z08" measure="sycjbcylbxdnmzgrsbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="cjsybxzgrs" dimension="nd" name=" （十二）参加失业保险职工人数">
+  <source flag="1" code="Z08" measure="secjsybxdnmzgrsbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="cjgsbxzgrs" dimension="nd" name=" （十三）参加工伤保险职工人数">
+  <source flag="1" code="Z08" measure="sscjgsbxdnmzgrsbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="cjshybxagrs" dimension="nd" name="  （十四）参加生育保险职工人数">
+  <source flag="1" code="Z08" measure="sscjsybxdnmzgrsbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="sxgxggzgrs" dimension="nd" name="（十五）实行工效挂钩职工人数">
+  <source flag="1" code="Z08" measure="swsxgxggzgrsbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<!--<item key="qybzgwzgjldgxcl" dimension="nd" name=" 二、企业不在岗职工及劳动关系处理情况：">
+  <source flag="1" code="Z08" measure="yjgjzxpzhxje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+
+<item key="ncbzgwgrs" dimension="nd" name=" （一）年初不在岗职工人数（人）">
+  <source flag="1" code="Z08" measure="yncbzgzgrsrbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="ntrs_nc" dimension="nd" name="   其中：内退人数（人）">
+  <source flag="1" code="Z08" measure="qzntrsrbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="nmbzgwgrs" dimension="nd" name=" （二）年末不在岗职工人数（人）">
+  <source flag="1" code="Z08" measure="enmbzgzgrsrbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="ntrs_nm" dimension="nd" name="     其中：内退人数（人）">
+  <source flag="1" code="Z08" measure="qzntrsrbnsc27" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="bnljjcldgxrs" dimension="nd" name="  （三）本年累计解除劳动关系人数（人）">
+  <source flag="1" code="Z08" measure="sbnljjcldgxrsrbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="bnljzfjjbcje" dimension="nd" name="  （四）本年累计支付经济补偿金额">
+  <source flag="1" code="Z08" measure="sbnljzfjjbcjebns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<!--<item key="czfdbf" dimension="nd" name="       其中：财政负担部分 ">
+  <source flag="1" code="Z08" measure="byjffljsje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="gzjflqk" dimension="nd" name="  三、工资及福利情况：">
+  <source flag="1" code="Z08" measure="jqyagdysjlr" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+<item key="qnyfgzze" dimension="nd" name="  （一）全年应发工资总额">
+  <source flag="1" code="Z08" measure="ybnyfgzzebns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="qnsjffgzze" dimension="nd" name="  （二）全年实际发放工资总额">
+  <source flag="1" code="Z08" measure="ebnsjffgzzebns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="qnsjffzggzze" dimension="nd" name="        其中：全年实际发放职工工资总额">
+  <source flag="1" code="Z08" measure="qzbnsjffzggzzebns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="qnsjffzgzggzze" dimension="nd" name="         其中： 全年实际发放在岗职工工资总额">
+  <source flag="1" code="Z08" measure="qzbnsjffzgzggzzebns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="qytqdgzze" dimension="nd" name="（三）企业提取的工资总额">
+  <source flag="1" code="Z08" measure="sqytqdgzzebns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="fggqygzze" dimension="nd" name="     1、非工挂企业工资总额       ">
+  <source flag="1" code="Z08" measure="1fggqygzzebns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="ggqygzze" dimension="nd" name="     2、工挂企业工资总额       ">
+  <source flag="1" code="Z08" measure="2ggqygzzebns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="hddggqygzzejs" dimension="nd" name="           （1）核定的工挂企业工资总额基数       ">
+  <source flag="1" code="Z08" measure="1hddggqygzzejsbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="ggqytqdxzxygz" dimension="nd" name="          （2）工挂企业提取的新增效益工资       ">
+  <source flag="1" code="Z08" measure="2ggqytqdxzxygzbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="bnzfdltxryyljjflxbz" dimension="nd" name="     （四）本年支付的离退休人员养老金及福利性补助       ">
+  <source flag="1" code="Z08" measure="sbnzfdltxryyljjflxbzbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="bnzfdqyfzrxcze" dimension="nd" name="     （五）本年支付的企业负责人薪酬总额       ">
+  <source flag="1" code="Z08" measure="wbnzfdqyfzrxczebns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="qyfzrrs" dimension="nd" name="          企业负责人人数（人）       ">
+  <source flag="1" code="Z08" measure="qyfzrrsrbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="bnzfdzgflf" dimension="nd" name="     （六）本年支付的职工福利费       ">
+  <source flag="1" code="Z08" measure="lbnzfdzgflfbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="bnzfdyyf" dimension="nd" name="     （七）本年支付的医药费       ">
+  <source flag="1" code="Z08" measure="qbnzfdyyfbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="ltxryyyf" dimension="nd" name="           其中：离退休人员医药费       ">
+  <source flag="1" code="Z08" measure="qzltxryyyfbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="bnqyzfdzgzffy" dimension="nd" name="     （八）本年企业支付的职工住房费用       ">
+  <source flag="1" code="Z08" measure="bbnqyzfdzgzffybns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="bnayffdzfbt" dimension="nd" name="      其中：本年按月发放的住房补贴       ">
+  <source flag="1" code="Z08" measure="qzbnayffdzfbtbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="tqdzgpxfy" dimension="nd" name="     四、本年提取的职工培训费用       ">
+  <source flag="1" code="Z08" measure="sbntqdzgjypxjfbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="zfdzgpxfy" dimension="nd" name="     五、本年支付的职工培训费用       ">
+  <source flag="1" code="Z08" measure="wbnzfdzgjypxjfbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<!--
+<item key="bnzfldpqje" dimension="nd" name="     六、本年支付的劳务派遣金额       ">
+  <source flag="1" code="Z08" measure="lnmhjgyzczlje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="ywzdfzcqk" dimension="nd" name="     七、业务招待费支出情况       ">
+  <source flag="1" code="Z08" measure="lnmhjgyzczlje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+<item key="snzfdywzdf" dimension="nd" name="     （一）上年支付的业务招待费       ">
+  <source flag="1" code="Z08" measure="ysnzfdywzdfbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="bnzfdywzdf" dimension="nd" name="     （二）本年支付的业务招待费       ">
+  <source flag="1" code="Z08" measure="ebnzfdywzdfbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--
+<item key="cz" dimension="nd" name="     六、产值：（按现行价格计算）       ">
+  <source flag="1" code="Z08" measure="lczaxxjgjsbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+
+<item key="gyzcz" dimension="nd" name="     （一）工业总产值       ">
+  <source flag="1" code="Z08" measure="ygyzczbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="ldsczz" dimension="nd" name="     （二）劳动生产总值       ">
+  <source flag="1" code="Z08" measure="eldsczzbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="sddczxzj" dimension="nd" name="     九、本年收到的财政性资金       ">
+  <source flag="1" code="Z08" measure="jbnsddczxzjbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="jbjsxzj" dimension="nd" name="     （一）基本建设性资金       ">
+  <source flag="1" code="Z08" measure="yjbjsxzjbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="scfzxzj" dimension="nd" name="     （二）生产发展性资金       ">
+  <source flag="1" code="Z08" measure="escfzxzjbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="shbzxzj" dimension="nd" name="     （三）社会保障性资金       ">
+  <source flag="1" code="Z08" measure="sshbzxzjbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="qt" dimension="nd" name="     （四）其他       ">
+  <source flag="1" code="Z08" measure="sqtbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<!--
+<item key="kjzjlyjzcqk" dimension="nd" name="     十、本年科技资金来源及支出情况：       ">
+  <source flag="1" code="Z08" measure="lnmhjgyzczlje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+<item key="kjzjlyhj" dimension="nd" name="     （一）本年科技资金来源合计       ">
+  <source flag="1" code="Z08" measure="ybnkjzjlyhjbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="zfbk" dimension="nd" name="      其中：政府拨款       ">
+  <source flag="1" code="Z08" measure="qzzfbkbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="qyzc" dimension="nd" name="     企业自筹       ">
+  <source flag="1" code="Z08" measure="qyzcbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="qzqt" dimension="nd" name="      其他       ">
+  <source flag="1" code="Z08" measure="qtbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="kjzchj" dimension="nd" name="     （二）本年科技支出合计       ">
+  <source flag="1" code="Z08" measure="ebnkjzchjbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="yjkffyhj" dimension="nd" name="        1.研究开发费用合计       ">
+  <source flag="1" code="Z08" measure="1yjkffyhjbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="yjryrgzc" dimension="nd" name="     其中：研发人员人工支出       ">
+  <source flag="1" code="Z08" measure="qzyfryrgzcbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="yjkfxgdzczc" dimension="nd" name="     　 研究开发性固定资产支出       ">
+  <source flag="1" code="Z08" measure="yjkfxgdzczcbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="qtyjkfzc" dimension="nd" name="     其他研究开发支出       ">
+  <source flag="1" code="Z08" measure="qtyjkfzcbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="gmxjskysbdzc" dimension="nd" name="      2.购买新技术、科研设备等支出       ">
+  <source flag="1" code="Z08" measure="2gmxjskysbdzcbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="qtkjzc" dimension="nd" name="      3.其他科技支出       ">
+  <source flag="1" code="Z08" measure="3qtkjzcbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<!--
+<item key="zbgcqk" dimension="nd" name="     九、资本构成情况：（以汇总口径填列）       ">
+  <source flag="1" code="Z08" measure="lnmhjgyzczlje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+
+<item key="gyzb" dimension="nd" name="     （一）国有资本       ">
+  <source flag="1" code="Z08" measure="ygyzbbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="gyfrzb" dimension="nd" name="       其中：国有法人资本       ">
+  <source flag="1" code="Z08" measure="qzgyfrzbbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="jtzb" dimension="nd" name="     （二）集体资本       ">
+  <source flag="1" code="Z08" measure="ejtzbbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="syzb" dimension="nd" name="     （三）民营资本       ">
+  <source flag="1" code="Z08" measure="smyzbbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="gtzb" dimension="nd" name="          其中：个人资本       ">
+  <source flag="1" code="Z08" measure="qzgrzbbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<!--
+<item key="wszb" dimension="nd" name="     （四）外商资本       ">
+  <source flag="1" code="Z08" measure="lnmhjgyzczlje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gdzcqk" dimension="nd" name="     十、固定资产情况：       ">
+  <source flag="1" code="Z08" measure="lnmhjgyzczlje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="zylbgdzcqk" dimension="nd" name="     （一）主要类别固定资产情况       ">
+  <source flag="1" code="Z08" measure="lnmhjgyzczlje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+-->
+<item key="gdzcyjhj" dimension="nd" name="     1、固定资产原价合计       ">
+  <source flag="1" code="Z08" measure="1gdzcyjhjbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="gdzcyjhj_tdzc" dimension="nd" name="         其中：土地资产       ">
+  <source flag="1" code="Z08" measure="qztdzcbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="gdzcyjhj_fwjzw" dimension="nd" name="                  房屋、建筑物       ">
+  <source flag="1" code="Z08" measure="fwjzwbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="gdzcyjhj_jqsb" dimension="nd" name="              机器设备       ">
+  <source flag="1" code="Z08" measure="jqsbbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="gdzcyjhj_yssb" dimension="nd" name="             运输工具       ">
+  <source flag="1" code="Z08" measure="ysgjbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="dnjtdgdzczjze" dimension="nd" name="     2、当年计提的固定资产折旧总额       ">
+  <source flag="1" code="Z08" measure="2bnjtdgdzczjzebns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="dnjtdgdzczjze_fwjzw" dimension="nd" name="         其中：房屋、建筑物       ">
+  <source flag="1" code="Z08" measure="qzfwjzwbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="dnjtdgdzczjze_jqsb" dimension="nd" name="             机器设备       ">
+  <source flag="1" code="Z08" measure="jqsbbnsi17" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="dnjtdgdzczjze_yssb" dimension="nd" name="            运输工具       ">
+  <source flag="1" code="Z08" measure="ysgjbnsi18" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="dnjtzjdgdzcyj" dimension="nd" name="          3、当年计提折旧的固定资产原价       ">
+  <source flag="1" code="Z08" measure="3bnjtzjdgdzcyjbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="dngdzctze" dimension="nd" name="     （二）当年固定资产投资额       ">
+  <source flag="1" code="Z08" measure="ebngdzctzebns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="szgdzc" dimension="nd" name="        1、购置固定资产       ">
+  <source flag="1" code="Z08" measure="1gzgdzcbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="jjtz" dimension="nd" name="         2、基建投资       ">
+  <source flag="1" code="Z08" measure="2jjtzbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="qttz" dimension="nd" name="         3、其他投资       ">
+  <source flag="1" code="Z08" measure="3qttzbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="tzsy" dimension="nd" name="     十三、投资收益       ">
+  <source flag="1" code="Z08" measure="sstzsybns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="cqgqtz" dimension="nd" name="          其中：长期股权投资       ">
+  <source flag="1" code="Z08" measure="qzzqgqtzbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="jyxjrzc" dimension="nd" name="                交易性金融资产       ">
+  <source flag="1" code="Z08" measure="jyxjrzcbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="jyxjrfz" dimension="nd" name="                交易性金融负债       ">
+  <source flag="1" code="Z08" measure="jyxjrfzbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="cyzdqtz" dimension="nd" name="                持有至到期投资       ">
+  <source flag="1" code="Z08" measure="cyzdqtzbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="kgcsjrzc" dimension="nd" name="               可供出售金融资产       ">
+  <source flag="1" code="Z08" measure="kgcsjrzcbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="qtsyxm" dimension="nd" name="          其他收益项目       ">
+  <source flag="1" code="Z08" measure="qtsyxmbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="yyzscqzlsl" dimension="nd" name="     十四、拥有的自主知识产权专利数量（项）       ">
+  <source flag="1" code="Z08" measure="ssyydzzzscqzlslxbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="bndxzzlsl" dimension="nd" name="      其中：本年度新增专利数量（项）      ">
+  <source flag="1" code="Z08" measure="qzbndxzzlslxbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="dntqaqscfy" dimension="nd" name="    十五、当年企业提取的安全生产费用      ">
+  <source flag="1" code="Z08" measure="swbnqytqdaqscfybns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="dnzcaqscfy" dimension="nd" name="     十六、当年企业支出的安全生产费用       ">
+  <source flag="1" code="Z08" measure="slbnqyzcdaqscfybns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="dnzfhjstzc" dimension="nd" name="     十七、当年企业支付的环境保护及生态恢复支出       ">
+  <source flag="1" code="Z08" measure="sqbnqyzfdhjbhjsthfzcbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="sjzftcdzc" dimension="nd" name="       其中：（一）本年度上交政府统筹的支出      ">
+  <source flag="1" code="Z08" measure="qzybndsjzftcdzcbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="tqhjslzdzc" dimension="nd" name="           （二）本年度企业提取或据实列支的支出       ">
+  <source flag="1" code="Z08" measure="ebndqytqhjslzdzcbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="zcjnjpfy" dimension="nd" name="     十八、当年企业支出的节能减排费用       ">
+  <source flag="1" code="Z08" measure="sbbnqyzcdjnjpfybns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="ljxjwtze" dimension="nd" name="     十九、企业累计向境外投资额       ">
+  <source flag="1" code="Z08" measure="sjqyljxjwtzebns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="xzxjwtze" dimension="nd" name="        其中：企业当年新增向境外投资额       ">
+  <source flag="1" code="Z08" measure="qzqybnxzxjwtzebns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="shgxze" dimension="nd" name="  二十、社会贡献总额       ">
+  <source flag="1" code="Z08" measure="esshgxzebns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<!--
+<item key="hbgyzczl" dimension="nd" name="     十九、合并国有资产总量       ">
+  <source flag="1" code="Z08" measure="lnmhjgyzczlje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+
+</items>
+</Root>

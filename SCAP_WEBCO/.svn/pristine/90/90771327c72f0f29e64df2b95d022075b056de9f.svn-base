@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget controllerClazz="nc.scap.pub.visualOrganization.VisualOrganizationCardWinMainViewCtrl" id="main" refId="main" sourcePackage="pub/src/public/">
+    <Attributes>
+        <Attribute>
+            <Key>$QueryTemplate</Key>
+            <Value>
+            </Value>
+        </Attribute>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+        <PlugoutDesc id="afterSavePlugout">
+            <PlugoutDescItem clazztype="java.lang.String" name="OPERATE_ROW" source="pub_visualOrganization" type="Dataset.TYPE_DATASET_SEL_ROW">
+            </PlugoutDescItem>
+        </PlugoutDesc>
+    </PlugoutDescs>
+    <PluginDescs>
+        <PluginDesc id="SelectUserAfterPlugin" methodName="doSelectUser">
+        </PluginDesc>
+    </PluginDescs>
+    <Connectors>
+        <Connector connType="4" id="cardViewConnID" pluginId="proxyAfterSavePlugout" plugoutId="afterSavePlugout" source="main" sourceWindow="" target="popwin" targetWindow="">
+        </Connector>
+    </Connectors>
+    <Events>
+        <Event async="true" methodName="beforeShow" name="beforeShow" onserver="true">
+            <Action>
+            </Action>
+        </Event>
+    </Events>
+    <Models>
+        <Datasets>
+            <DatasetRelations>
+                <DatasetRelation detailDataset="visualUserInfo" detailForeignKey="pk_visualorg" id="scapco_visualuserinfo_scapco_visualorganization" masterDataset="pub_visualOrganization" masterKeyField="pk_visualorg">
+                </DatasetRelation>
+            </DatasetRelations>
+            <MdDataset caption="组织基本信息" controlwidgetopeStatus="false" enabled="false" id="pub_visualOrganization" lazyLoad="true" notNullBody="false" objMeta="scapco.pub_visualOrganization" pageSize="10" voMeta="nc.vo.scapco.pub_visualorganization.visualOrganization">
+                <FieldRelations>
+                    <FieldRelation id="pk_parent_rel" needProcess="true" refDataset="$refds_scapco_pub_visualOrganization" useCache="true">
+                        <MatchFields>
+                            <Field readField="visualorg_name" writeField="pk_parent_visualorg_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_visualorg" value="pk_parent">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="modifier_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="modifier_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="modifier">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_group_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_group_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_group">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_org_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="report_psn_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="report_psn_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="report_psn">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="report_org_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="report_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="report_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <RefMdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_orgs" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_orgs" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="组织人员信息" controlwidgetopeStatus="false" enabled="false" id="visualUserInfo" lazyLoad="true" notNullBody="false" objMeta="scapco.visualUserInfo" pageSize="10" voMeta="nc.vo.scapco.pub_visualorganization.visualUserInfo">
+                <FieldRelations>
+                    <FieldRelation id="pk_user_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="pk_user_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="pk_user">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_org_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+            </MdDataset>
+            <RefMdDataset caption="协同用户" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_user" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_user" voMeta="nc.uap.cpb.org.vos.CpUserVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="组织基本信息" controlwidgetopeStatus="false" enabled="false" id="$refds_scapco_pub_visualOrganization" lazyLoad="true" notNullBody="false" objMeta="scapco.pub_visualOrganization" voMeta="nc.vo.scapco.pub_visualorganization.visualOrganization">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+        </Datasets>
+        <ComboDatas>
+            <MDComboDataConf caption="启用状态" fullclassName="a556c96d-482a-46e1-879b-8c9d241b3403" id="combo_pub_visualOrganization_enablestate">
+            </MDComboDataConf>
+        </ComboDatas>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_visualUserInfo_pk_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="组织人员信息_协同当前集团+业务单元" usePower="false" writeDs="visualUserInfo" writeFields="pk_org,pk_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_pub_visualOrganization_report_psn_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="组织基本信息_协同用户" usePower="false" writeDs="pub_visualOrganization" writeFields="report_psn,report_psn_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_pub_visualOrganization_report_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="组织基本信息_协同当前集团+业务单元" usePower="false" writeDs="pub_visualOrganization" writeFields="report_org,report_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_pub_visualOrganization_modifier_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="组织基本信息_协同用户" usePower="false" writeDs="pub_visualOrganization" writeFields="modifier,modifier_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_visualUserInfo_pk_visualorg_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_visualorg,visualorg_name" refId="" refcode="组织维护" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="组织人员信息_组织维护" usePower="false" writeDs="visualUserInfo" writeFields="pk_visualorg,pk_visualorg_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_pub_visualOrganization_pk_parent_visualorg_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_visualorg,visualorg_name" refId="" refcode="组织维护" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="组织基本信息_组织维护" usePower="false" writeDs="pub_visualOrganization" writeFields="pk_parent,pk_parent_visualorg_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_pub_visualOrganization_pk_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="组织基本信息_协同当前集团+业务单元" usePower="false" writeDs="pub_visualOrganization" writeFields="pk_org,pk_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_visualUserInfo_pk_user_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="组织人员信息_协同用户" usePower="false" writeDs="visualUserInfo" writeFields="pk_user,pk_user_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_pub_visualOrganization_pk_group_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同集团(所有)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="组织基本信息_协同集团(所有)" usePower="false" writeDs="pub_visualOrganization" writeFields="pk_group,pk_group_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <FormComp caption="组织基本信息" columnCount="3" dataset="pub_visualOrganization" eleWidth="250" ellipsis="false" enabled="true" id="pub_visualOrganization_form" labelMinWidth="0" renderType="1" rowHeight="22" visible="true">
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="pk_visualorg" height="" id="pk_visualorg" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="false" rowSpan="1" selectOnly="true" text="组织主键" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="visualorg_name" height="" id="visualorg_name" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="组织名称" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="visualorg_code" height="" id="visualorg_code" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="组织编码" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="visualorg_type" height="" id="visualorg_type" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="组织类型" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="pk_parent" height="" id="pk_parent" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="上级组织" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="Reference" enabled="true" field="pk_parent_visualorg_name" height="" id="pk_parent_visualorg_name" imageOnly="false" nextLine="false" nullAble="true" refNode="refnode_pub_visualOrganization_pk_parent_visualorg_name" rowSpan="1" selectOnly="true" text="上级组织" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="parent_name" height="" id="parent_name" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="上级组织名称" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="ComboBox" enabled="false" field="enablestate" height="" id="enablestate" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" refComboData="combo_pub_visualOrganization_enablestate" rowSpan="1" selectOnly="true" text="是否启用" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="modifier" height="" id="modifier" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="修改人" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="Reference" enabled="true" field="modifier_user_name" height="" id="modifier_user_name" imageOnly="false" nextLine="false" nullAble="true" refNode="refnode_pub_visualOrganization_modifier_user_name" rowSpan="1" selectOnly="true" text="修改人" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="DateTimeText" enabled="true" field="modifiedtime" height="" id="modifiedtime" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="修改时间" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="pk_group" height="" id="pk_group" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="所属集团" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="Reference" enabled="true" field="pk_group_name" height="" id="pk_group_name" imageOnly="false" nextLine="false" nullAble="true" refNode="refnode_pub_visualOrganization_pk_group_name" rowSpan="1" selectOnly="true" text="所属集团" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="pk_org" height="" id="pk_org" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="所属组织" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="Reference" enabled="true" field="pk_org_name" height="" id="pk_org_name" imageOnly="false" nextLine="false" nullAble="true" refNode="refnode_pub_visualOrganization_pk_org_name" rowSpan="1" selectOnly="true" text="所属组织" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="report_psn" height="" id="report_psn" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="填表人" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="Reference" enabled="true" field="report_psn_user_name" height="" id="report_psn_user_name" imageOnly="false" nextLine="false" nullAble="true" refNode="refnode_pub_visualOrganization_report_psn_user_name" rowSpan="1" selectOnly="true" text="填表人" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="report_org" height="" id="report_org" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="填表单位" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="Reference" enabled="true" field="report_org_name" height="" id="report_org_name" imageOnly="false" nextLine="false" nullAble="true" refNode="refnode_pub_visualOrganization_report_org_name" rowSpan="1" selectOnly="true" text="填表单位" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="DateText" enabled="true" field="report_date" height="" id="report_date" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="填报时间" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="remark" height="" id="remark" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="备注" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def1" height="" id="def1" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="备用字段1" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def2" height="" id="def2" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="备用字段2" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def3" height="" id="def3" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="备用字段3" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def4" height="" id="def4" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="备用字段4" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def5" height="" id="def5" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="备用字段5" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def6" height="" id="def6" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="备用字段6" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def7" height="" id="def7" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="备用字段7" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def8" height="" id="def8" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="备用字段8" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def9" height="" id="def9" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="备用字段9" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def10" height="" id="def10" imageOnly="false" langDir="pub_visualOrganization" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="备用字段10" toolbarType="Custom" visible="false" width="">
+            </Element>
+        </FormComp>
+        <GridComp autoRowHeight="false" canCopy="true" caption="组织人员信息" checkBoxModel="1" dataset="visualUserInfo" editable="true" enabled="true" expandTree="false" id="visualUserInfo_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="true" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_visualuserinfo" fixedHeader="false" id="pk_visualuserinfo" imageOnly="false" langDir="pub_visualOrganization" nullAble="false" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="人员主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_visualorg_name" fixedHeader="false" id="pk_visualorg_name" imageOnly="false" nullAble="true" refNode="refnode_visualUserInfo_pk_visualorg_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="所属组织" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_user" fixedHeader="false" id="pk_user" imageOnly="false" langDir="pub_visualOrganization" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="用户" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_user_user_name" fixedHeader="false" id="pk_user_user_name" imageOnly="false" nullAble="true" refNode="refnode_visualUserInfo_pk_user_user_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="用户" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="user_name" fixedHeader="false" id="user_name" imageOnly="false" langDir="pub_visualOrganization" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="用户姓名" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_org" fixedHeader="false" id="pk_org" imageOnly="false" langDir="pub_visualOrganization" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="所属企业" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_org_name" fixedHeader="false" id="pk_org_name" imageOnly="false" nullAble="true" refNode="refnode_visualUserInfo_pk_org_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="所属企业" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="post" fixedHeader="false" id="post" imageOnly="false" langDir="pub_visualOrganization" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="职务" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="phone_no" fixedHeader="false" id="phone_no" imageOnly="false" langDir="pub_visualOrganization" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="手机号" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="email" fixedHeader="false" id="email" imageOnly="false" langDir="pub_visualOrganization" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="邮箱" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="qq_num" fixedHeader="false" id="qq_num" imageOnly="false" langDir="pub_visualOrganization" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="QQ" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="remark" fixedHeader="false" id="remark" imageOnly="false" langDir="pub_visualOrganization" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备注" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def1" fixedHeader="false" id="def1" imageOnly="false" langDir="pub_visualOrganization" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段1" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def2" fixedHeader="false" id="def2" imageOnly="false" langDir="pub_visualOrganization" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段2" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def3" fixedHeader="false" id="def3" imageOnly="false" langDir="pub_visualOrganization" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段3" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def4" fixedHeader="false" id="def4" imageOnly="false" langDir="pub_visualOrganization" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段4" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def5" fixedHeader="false" id="def5" imageOnly="false" langDir="pub_visualOrganization" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段5" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def6" fixedHeader="false" id="def6" imageOnly="false" langDir="pub_visualOrganization" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段6" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def7" fixedHeader="false" id="def7" imageOnly="false" langDir="pub_visualOrganization" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段7" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def8" fixedHeader="false" id="def8" imageOnly="false" langDir="pub_visualOrganization" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段8" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def9" fixedHeader="false" id="def9" imageOnly="false" langDir="pub_visualOrganization" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段9" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def10" fixedHeader="false" id="def10" imageOnly="false" langDir="pub_visualOrganization" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段10" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_visualorg" fixedHeader="false" id="pk_visualorg" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上层单据主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <MenuBarComp id="visualUserInfo_grid$MenuBar">
+                <MenuItem i18nName="GridComp-000005" id="visualUserInfo_grid$HeaderBtn_Add" imgIcon="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/new_row.png" imgIconDisable="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/new_row_disable.png" imgIconOn="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/new_row_higlight.png" langDir="bc" modifiers="2" showModel="1" text="新建">
+                    <Events>
+                        <Event async="true" methodName="onGridAddClick" name="onclick" onserver="true">
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+                <MenuItem i18nName="GridComp-000007" id="visualUserInfo_grid$HeaderBtn_Delete" imgIcon="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/delete_row.png" imgIconDisable="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/delete_row_disable.png" imgIconOn="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/delete_row_higlight.png" langDir="bc" modifiers="2" showModel="1" text="删除">
+                    <Events>
+                        <Event async="true" methodName="onGridDeleteClick" name="onclick" onserver="true">
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+            </MenuBarComp>
+        </GridComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar">
+            <MenuItem id="save" modifiers="2" showModel="1" text="保存">
+                <Events>
+                    <Event async="true" methodName="onSave" name="onclick" onserver="true">
+                        <SubmitRule>
+                            <Widget id="main">
+                                <Dataset id="pub_visualOrganization" type="ds_current_line">
+                                </Dataset>
+                                <Dataset id="visualUserInfo" type="ds_all_line">
+                                </Dataset>
+                            </Widget>
+                        </SubmitRule>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="sep1" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="sep2" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="sep3" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="back" modifiers="2" showModel="1" text="返回">
+                <Events>
+                    <Event async="true" methodName="onBack" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

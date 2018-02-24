@@ -1,0 +1,519 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+	<scapfd_testref>
+		<scapfd_testref.year uapDisplayName="2012"/>
+                
+		<scapfd_testref.kby uapDisplayName="快报月"/>
+                
+		<scapfd_testref.yearnian1 uapDisplayName="xxxx"/>
+                
+		<scapfd_testref.kby1 uapDisplayName="快报月"/>
+                
+		<scapfd_testref.qs_jgqyhs uapDisplayName="全省监管企业户数"/>
+        <scapfd_testref.qs_ssqyhs uapDisplayName="全省省属企业户数"/>        
+		<scapfd_testref.qs_syjqyhs uapDisplayName="全省属一级企业户数"/>
+                
+		<scapfd_testref.qs_sejqyhs uapDisplayName="全省属二级企业户数"/>
+                
+		<scapfd_testref.qs_ssjqyhs uapDisplayName="全省属三级企业户数"/>
+                
+		<scapfd_testref.qs_dsjdq uapDisplayName="全省地市级地区"/>
+                
+		<scapfd_testref.qs_dsjdqjgqyhs uapDisplayName="全省地市级地区监管企业户数"/>
+                
+		<scapfd_testref.hk_zdjgqyhs uapDisplayName="海口重点监管企业户数"/>
+                
+                <scapfd_testref.qtssqyhs uapDisplayName="其他市属企业户数"/>
+                
+		<scapfd_testref.sy_jgqyhs uapDisplayName="三亚监管企业户数"/>
+                
+		<scapfd_testref.zz_jgqyhs uapDisplayName="儋州监管企业户数"/>
+                
+		<scapfd_testref.yp_jgqyhs uapDisplayName="洋浦监管企业户数"/>
+                
+		<scapfd_testref.qs_qxjdq uapDisplayName="全省区县级地区"/>
+                
+		<scapfd_testref.qs_qxjdqjgqyhs uapDisplayName="全省区县级地区监管企业户数"/>
+                
+		<scapfd_testref.wc_jgqyhs uapDisplayName="文昌监管企业户数"/>
+
+		<scapfd_testref.cc_jgqyhs uapDisplayName="屯昌监管企业户数"/>
+
+		<scapfd_testref.wzs_jgqyhs uapDisplayName="五指山监管企业户数"/>
+
+		<scapfd_testref.ad_jgqyhs uapDisplayName="定安监管企业户数"/>
+
+		<scapfd_testref.ls_jgqyhs uapDisplayName="陵水监管企业户数"/>
+
+		<scapfd_testref.qz_jgqyhs uapDisplayName="琼中监管企业户数"/>
+
+		<scapfd_testref.lg_jgqyhs uapDisplayName="临高监管企业户数"/>
+
+		<scapfd_testref.bt_jgqyhs uapDisplayName="保亭监管企业户数"/>
+
+		<scapfd_testref.qh_jgqyhs uapDisplayName="琼海监管企业户数"/>
+
+		<scapfd_testref.df_jgqyhs uapDisplayName="东方监管企业户数"/>
+
+		<scapfd_testref.cw_jgqyhs uapDisplayName="澄迈监管企业户数"/>
+
+		<scapfd_testref.wn_jgqyhs uapDisplayName="万宁监管企业户数"/>
+
+		<scapfd_testref.bs_jgqyhs uapDisplayName="白沙监管企业户数"/>
+
+		<scapfd_testref.cj_jgqyhs uapDisplayName="昌江监管企业户数"/>
+
+		<scapfd_testref.ld_jgqyhs uapDisplayName="乐东监管企业户数"/>
+
+		<scapfd_testref.hks_qsqjgqyhs uapDisplayName="海口市琼山区监管企业户数"/>
+
+		<scapfd_testref.hks_mlqjgqyhs uapDisplayName="海口市美兰区监管企业户数"/>
+
+		<scapfd_testref.hks_qyqjgqyhs uapDisplayName="海口市秀英区监管企业户数"/>
+
+		<scapfd_testref.yearnian2 uapDisplayName="xxxx"/>
+                
+		<scapfd_testref.kby2 uapDisplayName="快报月"/>
+
+		<scapfd_testref.day_qxydzhyt uapDisplayName="x月的最后一天"/>
+
+		<scapfd_testref.qs_qyzcze_bnlj uapDisplayName="全省企业资产总额（本年累计）"/>
+		<scapfd_testref.upordown1 uapDisplayName="增长"/>
+
+		<scapfd_testref.qs_qyzcze_bnljtbzzl uapDisplayName="全省企业资产总额（本年累计）同比增长率"/>
+
+		
+
+		<scapfd_testref.qs_qyfzze_bnlj uapDisplayName="全省企业负债总额（本年累计）"/>
+
+		<scapfd_testref.upordown2 uapDisplayName="增长"/>
+
+		<scapfd_testref.qs_qyfzze_bnljtbzzl uapDisplayName="全省企业负债总额（本年累计）同比增长率"/>
+
+
+		<scapfd_testref.qs_qysyzcyze_bnlj uapDisplayName="全省企业所有者权益总额(本年累计)"/>
+
+		<scapfd_testref.upordown3 uapDisplayName="增长"/>
+
+		<scapfd_testref.qs_qysyzcyze_bnljtbzzl uapDisplayName="全省企业所有者权益总额（本年累计）同比增长率"/>
+
+
+		<scapfd_testref.qs_qyzcfzl uapDisplayName="全省企业资产负债率"/>
+
+		<scapfd_testref.upordown4 uapDisplayName="下降"/>
+
+		<scapfd_testref.qs_qyzcfzltbzcbfd uapDisplayName="全省企业资产负债率同比增长百分点"/>
+
+
+		<scapfd_testref.qsyjqy_ssqyzcze_bnlj uapDisplayName="省属企业资产总额（本年累计）"/>
+	<scapfd_testref.upordown5 uapDisplayName="增长"/>
+
+		<scapfd_testref.qsyjqy_ssqyzcze_bnljtbzzl uapDisplayName="省属企业资产总额（本年累计）同比增长率"/>
+
+	
+
+		<scapfd_testref.qsyjqy_ssqyfzze_bnlj uapDisplayName="省属企业负债总额（本年累计）"/>
+
+		<scapfd_testref.upordown6 uapDisplayName="增长"/>
+
+		<scapfd_testref.qsyjqy_ssqyfzze_bnljtbzzl uapDisplayName="省属企业负债总额（本年累计）同比增长率"/>
+
+
+		<scapfd_testref.qsyjqy_ssqysyzcyze_bnlj uapDisplayName="省属企业所有者权益总额(本年累计)"/>
+<scapfd_testref.upordown7 uapDisplayName="增长"/>
+
+		<scapfd_testref.qsyjqy_ssqysyzcyze_bnljtbzzl uapDisplayName="省属企业所有者权益总额（本年累计）同比增长率"/>
+
+		
+
+		<scapfd_testref.qsyjqy_ssqyzcfzl uapDisplayName="省属企业资产负债率"/>
+
+		<scapfd_testref.upordown8 uapDisplayName="下降"/>
+
+		<scapfd_testref.qsyjqy_ssqyzcfzltbzcbfd uapDisplayName="省属企业资产负债率同比增长百分点"/>
+
+
+		<scapfd_testref.yearnian3 uapDisplayName="xxxx"/>
+                
+		<scapfd_testref.kby3 uapDisplayName="快报月"/>
+
+		<scapfd_testref.qs_qyyysr_bnlj uapDisplayName="全省企业营业收入（本年累计）"/>
+
+		<scapfd_testref.upordown9 uapDisplayName="增长"/>
+
+		<scapfd_testref.qs_qyyysr_bnljtbzzl uapDisplayName="全省企业营业收入（本年累计）同比增长率"/>
+
+
+		<scapfd_testref.qs_qylrze_bnlj uapDisplayName="全省企业利润总额（本年累计）"/>
+
+		<scapfd_testref.upordown10 uapDisplayName="下降"/>
+
+		<scapfd_testref.qs_qylrze_bnljtbzzl uapDisplayName="全省企业利润总额（本年累计）同比增长率"/>
+
+
+		<scapfd_testref.qs_qysjsfze_bnlj uapDisplayName="全省企业上交税费总额（本年累计）"/>
+		<scapfd_testref.upordown11 uapDisplayName="增长"/>
+
+		<scapfd_testref.qs_qysjsfze_bnljtbzzl uapDisplayName="全省企业上交税费总额（本年累计）同比增长率"/>
+
+
+
+		<scapfd_testref.qsyjqy_ssqyyysr_bnlj uapDisplayName="省属企业营业收入（本年累计）"/>
+	<scapfd_testref.upordown12 uapDisplayName="增长"/>
+
+		<scapfd_testref.qsyjqy_ssqyyysr_bnljtbzzl uapDisplayName="省属企业营业收入（本年累计）同比增长率"/>
+
+	
+
+		<scapfd_testref.qsyjqy_ssqylrze_bnlj uapDisplayName="省属企业利润总额（本年累计）"/>
+<scapfd_testref.upordown13 uapDisplayName="增长"/>
+
+		<scapfd_testref.qsyjqy_ssqylrze_bnljtbzzl uapDisplayName="省属企业利润总额（本年累计）同比增长率"/>
+
+		
+
+		<scapfd_testref.qsyjqy_ssqysjsfze_bnlj uapDisplayName="省属企业上交税费总额（本年累计）"/>
+<scapfd_testref.upordown14 uapDisplayName="增长"/>
+
+		<scapfd_testref.qsyjqy_ssqysjsfze_bnljtbzzl uapDisplayName="省属企业上交税费总额（本年累计）同比增长率"/>
+
+		<scapfd_testref.upordown15 uapDisplayName="增长"/>
+
+		<scapfd_testref.qsyjqy_ssqycbfy_bnljtbzzl uapDisplayName="省属企业成本费用（本年累计）同比增长率"/>
+
+		
+
+		<scapfd_testref.kby4 uapDisplayName="快报月"/>
+
+		<scapfd_testref.ssqy_bnylqyhs uapDisplayName="省属企业本年盈利企业户数"/>
+
+		<scapfd_testref.ssqy_bnylm uapDisplayName="省属企业本年盈利面"/>
+
+		<scapfd_testref.ssqy_ljlrzetbzzdqyhs uapDisplayName="省属企业累计利润总额同比增长的企业户数"/>
+
+		<scapfd_testref.ssqy_ljlrzetbzzdqyhszb uapDisplayName="省属企业累计利润总额同比增长的企业户数占比"/>
+
+		<scapfd_testref.ssqy_bnksqyhs uapDisplayName="省属企业本年亏损企业户数"/>
+
+		<scapfd_testref.ssqy_bnksm uapDisplayName="省属企业本年亏损面"/>
+		<scapfd_testref.yclcyllrzebnljdyqy uapDisplayName="依次列出盈利（利润总额（本年累计）大于0）企业"/>
+		<scapfd_testref.ssqy_yyzk uapDisplayName="由盈转亏企业列表"/>
+		<scapfd_testref.ssqy_ykzy uapDisplayName="由亏转盈企业列表"/>
+		<scapfd_testref.yearnian4 uapDisplayName="xxxx"/>             
+		<scapfd_testref.kby5 uapDisplayName="快报月"/>
+		<scapfd_testref.hnfzkg_qydyysr uapDisplayName="企业的营业收入"/>
+		<scapfd_testref.hnfzkg_upordown1 uapDisplayName="增长"/>
+		<scapfd_testref.hnfzkg_qydyysrtbzzl uapDisplayName="企业的营业收入同比增长率"/>
+		<scapfd_testref.hnfzkg_qydlrzzbnlj uapDisplayName="企业的利润总额（本年累计）"/>
+		<scapfd_testref.hnfzkg_upordown2 uapDisplayName="增长"/>
+		<scapfd_testref.hnfzkg_qydlrzzbnljtbzzl uapDisplayName="企业的利润总额（本年累计）同比增长率"/>		
+		<scapfd_testref.hnfzkg_qydlrzzbnljwcndysqk uapDisplayName="企业的利润总额（本年累计）完成年度预算情况"/>
+		<scapfd_testref.zyyy_hnfzkg uapDisplayName="主要原因"/>
+		<scapfd_testref.yearnian5 uapDisplayName="xxxx"/>
+		<scapfd_testref.kby6 uapDisplayName="快报月"/>
+		<scapfd_testref.hnhgjt_qydyysr uapDisplayName="企业的营业收入"/>
+		<scapfd_testref.hnhgjt_upordown1 uapDisplayName="增长"/>
+		<scapfd_testref.hnhgjt_qydyysrtbzzl uapDisplayName="企业的营业收入同比增长率"/>
+		<scapfd_testref.hnhgjt_qydlrzzbnlj uapDisplayName="企业的利润总额（本年累计）"/>
+		<scapfd_testref.hnhgjt_upordown2 uapDisplayName="增长"/>
+		<scapfd_testref.hnhgjt_qydlrzzbnljtbzzl uapDisplayName="企业的利润总额（本年累计）同比增长率"/>		
+		<scapfd_testref.hnhgjt_qydlrzzbnljwcndysqk uapDisplayName="企业的利润总额（本年累计）完成年度预算情况"/>
+		<scapfd_testref.zyyy_hnhgjt uapDisplayName="主要原因"/>
+		<scapfd_testref.yearnian6 uapDisplayName="xxxx"/>                
+		<scapfd_testref.kby7 uapDisplayName="快报月"/>
+		<scapfd_testref.hnjsjt_qydyysr uapDisplayName="企业的营业收入"/>
+		<scapfd_testref.hnjsjt_upordown1 uapDisplayName="增长"/>
+		<scapfd_testref.hnjsjt_qydyysrtbzzl uapDisplayName="企业的营业收入同比增长率"/>
+		<scapfd_testref.hnjsjt_qydlrzzbnlj uapDisplayName="企业的利润总额（本年累计）"/>
+		<scapfd_testref.hnjsjt_upordown2 uapDisplayName="增长"/>
+		<scapfd_testref.hnjsjt_qydlrzzbnljtbzzl uapDisplayName="企业的利润总额（本年累计）同比增长率"/>		
+		<scapfd_testref.hnjsjt_qydlrzzbnljwcndysqk uapDisplayName="企业的利润总额（本年累计）完成年度预算情况"/>
+		<scapfd_testref.zyyy_hnjsjt uapDisplayName="主要原因"/>
+		<scapfd_testref.yearnian7 uapDisplayName="xxxx"/>                
+		<scapfd_testref.kby8 uapDisplayName="快报月"/>
+		<scapfd_testref.hngsglgf_qydyysr uapDisplayName="企业的营业收入"/>
+		<scapfd_testref.hngsglgf_upordown1 uapDisplayName="增长"/>
+		<scapfd_testref.hngsglgf_qydyysrtbzzl uapDisplayName="企业的营业收入同比增长率"/>
+		<scapfd_testref.hngsglgf_qydlrzzbnlj uapDisplayName="企业的利润总额（本年累计）"/>
+		<scapfd_testref.hngsglgf_upordown2 uapDisplayName="增长"/>
+		<scapfd_testref.hngsglgf_qydlrzzbnljtbzzl uapDisplayName="企业的利润总额（本年累计）同比增长率"/>	
+		<scapfd_testref.hngsglgf_qydlrzzbnljwcndysqk uapDisplayName="企业的利润总额（本年累计）完成年度预算情况"/>
+		<scapfd_testref.zyyy_hngsglgf uapDisplayName="主要原因"/>
+		<scapfd_testref.yearnian8 uapDisplayName="xxxx"/>         
+		<scapfd_testref.kby9 uapDisplayName="快报月"/>
+		<scapfd_testref.hnsldljt_ljfdl uapDisplayName="累计发电量"/>
+		<scapfd_testref.upordown24 uapDisplayName="增加"/>
+		<scapfd_testref.hnsldljt_ljfdltbzj uapDisplayName="累计发电量同比增加"/>
+		<scapfd_testref.upordown25 uapDisplayName="增长"/>
+		<scapfd_testref.hnsldljt_ljfdltbzzl uapDisplayName="累计发电量同比增长率"/>
+		<scapfd_testref.hnsldljt_ljsdl uapDisplayName="累计售电量"/>
+		<scapfd_testref.upordown26 uapDisplayName="增加"/>
+		<scapfd_testref.hnsldljt_ljsdltbzz uapDisplayName="累计售电量同比增加"/>
+		<scapfd_testref.upordown27 uapDisplayName="增长"/>
+		<scapfd_testref.hnsldljt_ljsdltbzzl uapDisplayName="累计售电量同比增长率"/>		
+		<scapfd_testref.hnsldljt_qydyysr uapDisplayName="企业的营业收入"/>
+		<scapfd_testref.hnsldljt_upordown1 uapDisplayName="增长"/>
+		<scapfd_testref.hnsldljt_qydyysrtbzzl uapDisplayName="企业的营业收入同比增长率"/>
+		<scapfd_testref.hnsldljt_qydlrzzbnlj uapDisplayName="企业的利润总额（本年累计）"/>
+		<scapfd_testref.hnsldljt_upordown2 uapDisplayName="增长"/>
+		<scapfd_testref.hnsldljt_qydlrzzbnljtbzzl uapDisplayName="企业的利润总额（本年累计）同比增长率"/>		
+		<scapfd_testref.hnsldljt_qydlrzzbnljwcndysqk uapDisplayName="企业的利润总额（本年累计）完成年度预算情况"/>
+		<scapfd_testref.zyyy_hnsldljt uapDisplayName="主要原因"/>
+		<scapfd_testref.yearnian9 uapDisplayName="xxxx"/>                
+		<scapfd_testref.kby10 uapDisplayName="快报月"/>
+		<scapfd_testref.hnlqtzjs_qydyysr uapDisplayName="企业的营业收入"/>
+		<scapfd_testref.hnlqtzjs_upordown1 uapDisplayName="增长"/>
+		<scapfd_testref.hnlqtzjs_qydyysrtbzzl uapDisplayName="企业的营业收入同比增长率"/>		
+		<scapfd_testref.hnlqtzjs_qydlrzzbnlj uapDisplayName="企业的利润总额（本年累计）"/>
+		<scapfd_testref.hnlqtzjs_upordown2 uapDisplayName="增长"/>
+		<scapfd_testref.hnlqtzjs_qydlrzzbnljtbzzl uapDisplayName="企业的利润总额（本年累计）同比增长率"/>
+		<scapfd_testref.hnlqtzjs_qydlrzzbnljwcndysqk uapDisplayName="企业的利润总额（本年累计）完成年度预算情况"/>
+		<scapfd_testref.zyyy_hnlqtzjs uapDisplayName="主要原因"/>
+		<scapfd_testref.yearnian10 uapDisplayName="xxxx"/>             
+		<scapfd_testref.kby11 uapDisplayName="快报月"/>
+		<scapfd_testref.hnhnjjfz_qydyysr uapDisplayName="企业的营业收入"/>
+		<scapfd_testref.hnhnjjfz_upordown1 uapDisplayName="增长"/>
+		<scapfd_testref.hnhnjjfz_qydyysrtbzzl uapDisplayName="企业的营业收入同比增长率"/>
+		<scapfd_testref.hnhnjjfz_qydlrzzbnlj uapDisplayName="企业的利润总额（本年累计）"/>
+		<scapfd_testref.hnhnjjfz_upordown2 uapDisplayName="增长"/>
+		<scapfd_testref.hnhnjjfz_qydlrzzbnljtbzzl uapDisplayName="企业的利润总额（本年累计）同比增长率"/>	
+		<scapfd_testref.hnhnjjfz_qydlrzzbnljwcndysqk uapDisplayName="企业的利润总额（本年累计）完成年度预算情况"/>
+		<scapfd_testref.zyyy_hnhnjjfz uapDisplayName="主要原因"/>
+
+		<scapfd_testref.year_hnlhzc  uapDisplayName="2012"/>
+		<scapfd_testref.month_hnlhzc  uapDisplayName="1-12"/>
+		<scapfd_testref.hnlhzc_qydyysr  uapDisplayName="累计实现营业收入"/>
+		<scapfd_testref.hnlhzc_upordown1  uapDisplayName="增长"/>
+		<scapfd_testref.hnlhzc_qydyysrtbzzl  uapDisplayName="同比增长"/>
+		<scapfd_testref.hnlhzc_qydlrzzbnlj  uapDisplayName="累计实现利润总额"/>
+		<scapfd_testref.hnlhzc_upordown2  uapDisplayName="增长"/>
+		<scapfd_testref.hnlhzc_qydlrzzbnljtbzzl  uapDisplayName="同比增长"/>
+		<scapfd_testref.hnlhzc_qydlrzzbnljwcndysqk  uapDisplayName="完成年度预算"/>
+		<scapfd_testref.zyyy_hnlhzc  uapDisplayName="主要原因"/>
+		<scapfd_testref.year_hnswhtz  uapDisplayName="2012"/>
+		<scapfd_testref.month_hnswhtz  uapDisplayName="1-12"/>
+		<scapfd_testref.hnswhtz_qydyysr   uapDisplayName="累计实现营业收入"/>
+		<scapfd_testref.hnswhtz_upordown1 uapDisplayName="增长"/>
+		<scapfd_testref.hnswhtz_qydyysrtbzzl  uapDisplayName="同比增长"/>
+		<scapfd_testref.hnswhtz_yk  uapDisplayName="盈亏"/>
+		<scapfd_testref.hnswhtz_qydlrzzbnlj  uapDisplayName="实现利润"/>
+		<scapfd_testref.year_hnswhtz_xhsd  uapDisplayName="2012"/>
+		<scapfd_testref.month_hnswhtz_xhsd   uapDisplayName="1-12"/>
+		<scapfd_testref.tzsy_hnswhtz_xhsd  uapDisplayName="投资收益"/>
+		<scapfd_testref.lrze_hnswhtz_xhsd  uapDisplayName="利润总额"/>
+		<scapfd_testref.upordown103  uapDisplayName="下降"/>
+		<scapfd_testref.tbxj_hnswhtz_xhsd  uapDisplayName="同比下降"/>
+
+		<scapfd_testref.hnswhtzwt_qydyysr   uapDisplayName="累计实现营业收入"/>
+		<scapfd_testref.hnswhtzwt_upordown1  uapDisplayName="增长"/>
+		<scapfd_testref.hnswhtzwt_qydyysrtbzzl  uapDisplayName="同比增长"/>
+		<scapfd_testref.hnswhtzwt_qydlrzzbnlj  uapDisplayName="累计实现利润总额"/>
+		<scapfd_testref.hnswhtzwt_upordown2  uapDisplayName="增长"/>
+		<scapfd_testref.hnswhtzwt_qydlrzzbnljtbzzl  uapDisplayName="同比增长"/>
+		<scapfd_testref.year_hnhytz  uapDisplayName="2012"/>
+		<scapfd_testref.month_hnhytz  uapDisplayName="1-12"/>
+		<scapfd_testref.hnhytz_qydyysr   uapDisplayName="累计实现营业收入"/>
+		<scapfd_testref.hnhytz_upordown1  uapDisplayName="增长"/>
+		<scapfd_testref.hnhytz_qydyysrtbzzl  uapDisplayName="同比增长"/>
+		<scapfd_testref.hnhytz_qydlrzzbnlj  uapDisplayName="累计实现利润总额"/>
+		<scapfd_testref.hnhytz_upordown2  uapDisplayName="增长"/>
+		<scapfd_testref.hnhytz_qydlrzzbnljtbzzl  uapDisplayName="同比增长"/>
+		<scapfd_testref.hnhytz_qydlrzzbnljwcndysqk  uapDisplayName="完成年度预算"/>
+		<scapfd_testref.zyyy_hnhytz  uapDisplayName="主要原因"/>
+		<scapfd_testref.year_hnsnhxdyy  uapDisplayName="2012"/>
+		<scapfd_testref.month_hnsnhxdyy   uapDisplayName="1-12"/>
+		<scapfd_testref.hnsnhxdyy_qydyysr    uapDisplayName="累计实现营业收入"/>
+		<scapfd_testref.hnsnhxdyy_upordown1  uapDisplayName="增长"/>
+		<scapfd_testref.hnsnhxdyy_qydyysrtbzzl   uapDisplayName="同比增长"/>
+		<scapfd_testref.hnsnhxdyy_qydlrzzbnlj   uapDisplayName="累计实现利润总额"/>
+		<scapfd_testref.hnsnhxdyy_upordown2  uapDisplayName="增长"/>
+		<scapfd_testref.hnsnhxdyy_qydlrzzbnljtbzzl   uapDisplayName="同比增长"/>
+		<scapfd_testref.hnsnhxdyy_qydlrzzbnljwcndysqk   uapDisplayName="完成年度预算"/>
+		<scapfd_testref.zyyy_hnsnhxdyy   uapDisplayName="主要原因"/>
+		<scapfd_testref.year_hncqjy  uapDisplayName="2012"/>
+		<scapfd_testref.month_hncqjy   uapDisplayName="1-12"/>
+		<scapfd_testref.ljwccqjy_hncqjy   uapDisplayName="累计完成产权交易业务"/>
+		<scapfd_testref.cjje_hncqjy   uapDisplayName="成交金额"/>
+		<scapfd_testref.jzcpgz_hncqjy   uapDisplayName="较资产评估值"/>
+		<scapfd_testref.upordown1010 uapDisplayName="增值"/>
+		<scapfd_testref.zz_hncqjy   uapDisplayName="增值"/>
+		<scapfd_testref.upordown1011  uapDisplayName="增值"/>
+		<scapfd_testref.zzl_hncqjy   uapDisplayName="增值率"/>
+		<scapfd_testref.qylzc_hncqjy   uapDisplayName="企业类资产"/>
+		<scapfd_testref.xzsydw_hncqjy   uapDisplayName="行政事业单位"/>
+		<scapfd_testref.jrzcxm_hncqjy   uapDisplayName="金融资产项目"/>
+		<scapfd_testref.myqylzz_hncqjy   uapDisplayName="民营企业类资产"/>
+		<scapfd_testref.hncqjy_qydyysr   uapDisplayName="累计实现营业收入"/>
+		<scapfd_testref.hncqjy_upordown1  uapDisplayName="增长"/>
+		<scapfd_testref.hncqjy_qydyysrtbzzl   uapDisplayName="同比增长"/>
+		<scapfd_testref.hncqjy_qydlrzzbnlj   uapDisplayName="累计实现利润总额"/>
+		<scapfd_testref.hncqjy_upordown2  uapDisplayName="增长"/>
+		<scapfd_testref.hncqjy_qydlrzzbnljtbzzl   uapDisplayName="同比增长"/>
+		<scapfd_testref.hncqjy_qydlrzzbnljwcndysqk   uapDisplayName="完成年度预算"/>
+		<scapfd_testref.zyyy_hncqjy   uapDisplayName="主要原因"/>
+		<scapfd_testref.year_hnxsmy  uapDisplayName="2012"/>
+		<scapfd_testref.month_hnxsmy   uapDisplayName="1-12"/>
+		<scapfd_testref.hnxsmy_qydyysr    uapDisplayName="累计实现营业收入"/>
+		<scapfd_testref.hnxsmy_upordown1  uapDisplayName="增长"/>
+		<scapfd_testref.hnxsmy_qydyysrtbzzl   uapDisplayName="同比增长"/>
+		<scapfd_testref.hnxsmy_qydlrzzbnlj   uapDisplayName="累计实现利润总额"/>
+		<scapfd_testref.hnxsmy_upordown2  uapDisplayName="增长"/>
+		<scapfd_testref.hnxsmy_qydlrzzbnljtbzzl   uapDisplayName="同比增长"/>
+		<scapfd_testref.hnxsmy_qydlrzzbnljwcndysqk   uapDisplayName="完成年度预算"/>
+		<scapfd_testref.zyyy_hnxsmy   uapDisplayName="主要原因"/>
+		<scapfd_testref.year_hnszltz  uapDisplayName="2012"/>
+		<scapfd_testref.month_hnszltz   uapDisplayName="1-12"/>
+		<scapfd_testref.hnszltz_qydyysr    uapDisplayName="累计实现营业收入"/>
+		<scapfd_testref.hnszltz_upordown1  uapDisplayName="增长"/>
+		<scapfd_testref.hnszltz_qydyysrtbzzl   uapDisplayName="同比增长"/>
+		<scapfd_testref.hnszltz_qydlrzzbnlj   uapDisplayName="累计实现利润总额"/>
+		<scapfd_testref.hnszltz_upordown2  uapDisplayName="增长"/>
+		<scapfd_testref.hnszltz_qydlrzzbnljtbzzl  uapDisplayName="同比增长"/>
+		<scapfd_testref.hnszltz_qydlrzzbnljwcndysqk   uapDisplayName="完成年度预算"/>
+		<scapfd_testref.zyyy_hnszltz   uapDisplayName="主要原因"/>
+		<scapfd_testref.year_hnhqtz  uapDisplayName="2012"/>
+		<scapfd_testref.month_hnhqtz   uapDisplayName="1-12"/>
+		<scapfd_testref.upordown1018  uapDisplayName="增长"/>
+		<scapfd_testref.kylzz_hnhqtz   uapDisplayName="客运量增长"/>
+		<scapfd_testref.upordown1019  uapDisplayName="增长"/>
+		<scapfd_testref.kyzzlzz_hnhqtz   uapDisplayName="客运周转量增长"/>
+		<scapfd_testref.hnhqtz_qydyysr    uapDisplayName="累计实现营业收入"/>
+		<scapfd_testref.hnhqtz_upordown1  uapDisplayName="增长"/>
+		<scapfd_testref.hnhqtz_qydyysrtbzzl   uapDisplayName="同比增长"/>
+		<scapfd_testref.hnhqtz_qydlrzzbnlj   uapDisplayName="累计实现利润总额"/>
+		<scapfd_testref.hnhqtz_upordown2  uapDisplayName="增长"/>
+		<scapfd_testref.hnhqtz_qydlrzzbnljtbzzl uapDisplayName="同比增长"/>
+		<scapfd_testref.hnhqtz_qydlrzzbnljwcndysqk   uapDisplayName="完成年度预算"/>
+		<scapfd_testref.zyyy_hnhqtz  uapDisplayName="主要原因"/>
+		<scapfd_testref.year_hnsjttz  uapDisplayName="2012"/>
+		<scapfd_testref.month_hnsjttz   uapDisplayName="1-12"/>
+		<scapfd_testref.hnsjttz_qydyysr    uapDisplayName="累计实现营业收入"/>
+		<scapfd_testref.hnsjttz_upordown1  uapDisplayName="增长"/>
+		<scapfd_testref.hnsjttz_qydyysrtbzzl   uapDisplayName="同比增长"/>
+		<scapfd_testref.hnsjttz_qydlrzzbnlj   uapDisplayName="累计实现利润总额"/>
+		<scapfd_testref.hnsjttz_upordown2  uapDisplayName="增长"/>
+		<scapfd_testref.hnsjttz_qydlrzzbnljtbzzl  uapDisplayName="同比增长"/>
+		<scapfd_testref.hnsjttz_qydlrzzbnljwcndysqk   uapDisplayName="完成年度预算"/>
+		<scapfd_testref.zyyy_hnsjttz   uapDisplayName="主要原因"/>
+		<scapfd_testref.year_hngjlyd  uapDisplayName="2012"/>
+		<scapfd_testref.month_hngjlyd  uapDisplayName="1-12"/>
+		<scapfd_testref.hngjlyd_qydyysr    uapDisplayName="累计实现营业收入"/>
+		<scapfd_testref.hngjlyd_upordown1  uapDisplayName="增长"/>
+		<scapfd_testref.hngjlyd_qydyysrtbzzl   uapDisplayName="同比增长"/>
+		<scapfd_testref.hngjlyd_qydlrzzbnlj   uapDisplayName="累计实现利润总额"/>
+		<scapfd_testref.hngjlyd_upordown2  uapDisplayName="增长"/>
+		<scapfd_testref.hngjlyd_qydlrzzbnljtbzzl uapDisplayName="同比增长"/>
+		<scapfd_testref.hngjlyd_qydlrzzbnljwcndysqk   uapDisplayName="完成年度预算"/>
+		<scapfd_testref.zyyy_hngjlyd  uapDisplayName="主要原因"/>
+
+		<scapfd_testref.yclcylxydqy  uapDisplayName="依次列出盈利（利润总额（本年累计）小于0）企业"/>
+		<scapfd_testref.qysl_hnslsxt  uapDisplayName="企业数量"/>
+		<scapfd_testref.year_hnslsxt  uapDisplayName="2013"/>
+		<scapfd_testref.month_hnslsxt  uapDisplayName="1-x"/>
+		<scapfd_testref.hnslsxt_qydyysr    uapDisplayName="累计实现营业收入"/>
+		<scapfd_testref.hnslsxt_updown1  uapDisplayName="增长"/>
+		<scapfd_testref.hnslsxt_qydyysrtbzzl   uapDisplayName="同比增长"/>
+		<scapfd_testref.hnslsxt_qydlrzzbnlj   uapDisplayName="累计亏损"/>
+		<scapfd_testref.yk1  uapDisplayName="盈利"/>
+		<scapfd_testref.yk2  uapDisplayName="盈利"/>
+		<scapfd_testref.yk3  uapDisplayName="盈利"/>
+		<scapfd_testref.yk4  uapDisplayName="盈利"/>
+		<scapfd_testref.hnslsxt_yk  uapDisplayName="盈亏"/>
+		<scapfd_testref.year_hnsyyyc  uapDisplayName="2013"/>
+		<scapfd_testref.month_hnsyyyc  uapDisplayName="1-2"/>
+		<scapfd_testref.hnsyyyc_qydyysr    uapDisplayName="累计实现营业收入"/>
+		<scapfd_testref.hnsyyyc_updown1  uapDisplayName="下降"/>
+		<scapfd_testref.hnsyyyc_qydyysrtbzzl   uapDisplayName="同比下降"/>
+		<scapfd_testref.hnsyyyc_qydlrzzbnlj    uapDisplayName="累计盈利"/>
+		<scapfd_testref.hnsyyyc_updown2  uapDisplayName="下降"/>
+		<scapfd_testref.hnsyyyc_qydlrzzbnljtbzzl   uapDisplayName="同比下降"/>
+		<scapfd_testref.year_hnsyyzgs  uapDisplayName="2013"/>
+		<scapfd_testref.month_hnsyyzgs  uapDisplayName="1-2"/>
+		<scapfd_testref.hnsyyzgs_qydyysr    uapDisplayName="累计实现营业收入"/>
+		<scapfd_testref.hnsyyzgs_updown1  uapDisplayName="增长"/>
+		<scapfd_testref.hnsyyzgs_qydyysrtbzzl   uapDisplayName="同比增长"/>
+		<scapfd_testref.hnsyyzgs_qydlrzzbnlj    uapDisplayName="累计盈利"/>
+		<scapfd_testref.hnsyyzgs_updown2  uapDisplayName="下降"/>
+		<scapfd_testref.hnsyyzgs_qydlrzzbnljtbzzl   uapDisplayName="同比下降"/>
+		<scapfd_testref.year_hnjyjt  uapDisplayName="2013"/>
+		<scapfd_testref.month_hnjyjt  uapDisplayName="1-2"/>
+		<scapfd_testref.hnjyjts_qydyysr    uapDisplayName="累计实现营业收入"/>
+		<scapfd_testref.hnjyjts_updown1  uapDisplayName="增长"/>
+		<scapfd_testref.hnjyjts_qydyysrtbzzl   uapDisplayName="同比增长"/>
+		<scapfd_testref.hnjyjts_qydlrzzbnlj    uapDisplayName="累计盈利"/>
+		<scapfd_testref.hnjyjts_updown2  uapDisplayName="下降"/>
+		<scapfd_testref.hnjyjts_qydlrzzbnljtbzzl   uapDisplayName="同比下降"/>
+		<scapfd_testref.qyhs_dsjjgqy   uapDisplayName="25（单位树型结构：“海口市政府国有资产监督管理委员会”节点下的企业户数）"/>
+		<scapfd_testref.year_dsjjgqy   uapDisplayName="2012"/>
+		<scapfd_testref.month_dsjjgqy   uapDisplayName="1-快报月"/>
+		<scapfd_testref.dsjjgqy_qydyysr    uapDisplayName="海口市国资委监管企业营业收入（本年累计）"/>
+		<scapfd_testref.dsjjgqy_updown1  uapDisplayName="增长"/>
+		<scapfd_testref.dsjjgqy_qydyysrtbzzl   uapDisplayName="海口市国资委监管企业营业收入（本年累计）同比增长率"/>
+		<scapfd_testref.dsjjgqy_qydlrzzbnlj   uapDisplayName="海口市国资委监管企业利润总额（本年累计）"/>
+		<scapfd_testref.dsjjgqy_updown2  uapDisplayName="增长"/>
+		<scapfd_testref.dsjjgqy_qydlrzzbnljtbzzl uapDisplayName="海口市国资委监管企业利润总额（本年累计）同比增长率"/>
+		<scapfd_testref.qihs_sysgz   uapDisplayName="企业户数"/>
+		<scapfd_testref.year_sysgz  uapDisplayName="2012"/>
+		<scapfd_testref.month_sysgz  uapDisplayName="1-12"/>
+		<scapfd_testref.sysgz_qydyysr    uapDisplayName="累计实现营业收入"/>
+		<scapfd_testref.sysgz_updown1  uapDisplayName="增长"/>
+		<scapfd_testref.sysgz_qydyysrtbzzl   uapDisplayName="同比增长"/>
+		<scapfd_testref.sysgz_qydlrzzbnlj    uapDisplayName="累计实现利润总额"/>
+		<scapfd_testref.sysgz_updown2  uapDisplayName="增长"/>
+		<scapfd_testref.sysgz_qydlrzzbnljtbzzl   uapDisplayName="同比增长"/>
+		<scapfd_testref.qihs_tzsgz   uapDisplayName="企业户数"/>
+		<scapfd_testref.year_tzsgz  uapDisplayName="2012"/>
+		<scapfd_testref.month_tzsgz  uapDisplayName="1-12"/>
+		<scapfd_testref.tzsgz_qydyysr    uapDisplayName="累计实现营业收入"/>
+		<scapfd_testref.tzsgz_updown1 uapDisplayName="增长"/>
+		<scapfd_testref.tzsgz_qydyysrtbzzl   uapDisplayName="同比增长"/>
+		<scapfd_testref.tzsgz_qydlrzzbnlj    uapDisplayName="累计实现利润总额"/>
+		<scapfd_testref.tzsgz_updown2  uapDisplayName="增长"/>
+		<scapfd_testref.tzsgz_qydlrzzbnljtbzzl   uapDisplayName="同比增长"/>
+		<scapfd_testref.qihs_ypgz   uapDisplayName="企业户数"/>
+		<scapfd_testref.year_ypgz  uapDisplayName="2012"/>
+		<scapfd_testref.month_ypgz  uapDisplayName="1-12"/>
+		<scapfd_testref.ypgz_qydyysr    uapDisplayName="累计实现营业收入"/>
+		<scapfd_testref.ypgz_updown1  uapDisplayName="增长"/>
+		<scapfd_testref.ypgz_qydyysrtbzzl   uapDisplayName="同比增长"/>
+		<scapfd_testref.ypgz_qydlrzzbnlj    uapDisplayName="累计实现利润总额"/>
+		<scapfd_testref.ypgz_updown2  uapDisplayName="增长"/>
+		<scapfd_testref.ypgz_qydlrzzbnljtbzzl   uapDisplayName="同比增长"/>
+		<scapfd_testref.qihs_qxjjg   uapDisplayName="企业户数"/>
+		<scapfd_testref.year_qxjjg  uapDisplayName="2012"/>
+		<scapfd_testref.month_qxjjg  uapDisplayName="1-12"/>
+		<scapfd_testref.qxjjg_qydyysr    uapDisplayName="累计实现营业收入"/>
+		<scapfd_testref.qxjjg_updown1  uapDisplayName="增长"/>
+		<scapfd_testref.qxjjg_qydyysrtbzzl   uapDisplayName="同比增长"/>
+		<scapfd_testref.qxjjg_qydlrzzbnlj    uapDisplayName="累计实现利润总额"/>
+		<scapfd_testref.qxjjg_updown2  uapDisplayName="增长"/>
+		<scapfd_testref.qxjjg_qydlrzzbnljtbzzl   uapDisplayName="同比增长"/>
+		
+		
+		<scapfd_testref.yearsfj2 uapDisplayName="xxxx"/>
+		<scapfd_testref.monthfj2 uapDisplayName="快报月"/>
+		<scapfd_testref.zczebnljs uapDisplayName="资产总额本年累计数"/>
+		<scapfd_testref.zczebcntbzzl uapDisplayName="资产总额比去年同比增长率"/>
+		<scapfd_testref.zczebsyhbzzl uapDisplayName="资产总额比上月环比增长率"/>		
+		<scapfd_testref.yysrbnljs uapDisplayName="营业收入本年累计数"/>
+		<scapfd_testref.yysrbcntbzzl uapDisplayName="营业收入比去年同比增长率"/>
+		<scapfd_testref.yysrbsyhbzzl uapDisplayName="营业收入比上月环比增长率"/>
+		<scapfd_testref.lrzebnljs uapDisplayName="利润总额本年累计数"/>
+		<scapfd_testref.lrzebcntbzzl uapDisplayName="利润总额比去年同比增长率"/>
+		<scapfd_testref.lrzebsyhbzzl uapDisplayName="利润总额比上月环比增长率"/>
+		<scapfd_testref.yjsfbnljs uapDisplayName="已缴税费本年累计数"/>
+		<scapfd_testref.yjsfbcntbzzl uapDisplayName="已缴税费比去年同比增长率"/>
+		<scapfd_testref.yjsfbsyhbzzl uapDisplayName="已缴税费比上月环比增长率"/>
+		<scapfd_testref.ylqygshsbfb uapDisplayName="盈利企业个数户数百分比"/>
+		<scapfd_testref.ylmhsbfb uapDisplayName="盈利面户数百分比"/>
+		<scapfd_testref.ksqygshsbfb uapDisplayName="亏损企业个数户数百分比"/>
+		<scapfd_testref.ksmhsbfb uapDisplayName="亏损面户数百分比"/>
+	</scapfd_testref>
+	<scapfd_testref_fj1>
+		<scapfd_testref_fj1.bm_ssqylrzeb   uapDisplayName="依次列出省属一级企业名称编码"/>
+		<scapfd_testref_fj1.qymc_ssqylrzeb   uapDisplayName="依次列出省属一级企业名称"/>
+		<scapfd_testref_fj1.bn_lrze_ssqylrzeb   uapDisplayName="企业的利润总额（本年累计）"/>
+		<scapfd_testref_fj1.sn_lrze_ssqylrzeb   uapDisplayName="企业的利润总额（上年同期）"/>
+		<scapfd_testref_fj1.lrzezzl_ssqylrzeb   uapDisplayName="企业的利润总额（本年累计）同比增长率"/>
+	</scapfd_testref_fj1>
+</Root>

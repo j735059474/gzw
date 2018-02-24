@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+    <scapfd_testref>
+	    <scapfd_testref.bennian0 uapDisplayName="XX">
+        </scapfd_testref.bennian0>
+        <scapfd_testref.juesuannian uapDisplayName="决算年">
+        </scapfd_testref.juesuannian>
+        <scapfd_testref.ssqyhs uapDisplayName="省属企业户数">
+        </scapfd_testref.ssqyhs>
+        <scapfd_testref.ssdlfrdwzhs uapDisplayName="省属独立法人单位总户数">
+        </scapfd_testref.ssdlfrdwzhs>
+        <scapfd_testref.ssejqyhs uapDisplayName="省属二级企业户数">
+        </scapfd_testref.ssejqyhs>
+        <scapfd_testref.sssjqyhs uapDisplayName="省属三级企业户数">
+        </scapfd_testref.sssjqyhs>
+        <scapfd_testref.ssqynmzgrs uapDisplayName="省属企业年末职工人数">
+        </scapfd_testref.ssqynmzgrs>
+        <scapfd_testref.ssqyzcze uapDisplayName="省属企业资产总额（期末余额）">
+        </scapfd_testref.ssqyzcze>
+        <scapfd_testref.zenz1 uapDisplayName="增长">
+        </scapfd_testref.zenz1>
+        <scapfd_testref.ssqyzzzenzzl uapDisplayName="省属企业资产总额年增长率（%）">
+        </scapfd_testref.ssqyzzzenzzl>
+        <scapfd_testref.fzze uapDisplayName="负债总额（期末余额）">
+        </scapfd_testref.fzze>
+        <scapfd_testref.zenz2 uapDisplayName="增长">
+        </scapfd_testref.zenz2>
+        <scapfd_testref.ssqyfzzenzzl uapDisplayName="省属企业负债总额年增长率（%）">
+        </scapfd_testref.ssqyfzzenzzl>
+        <scapfd_testref.ssqyjzcze uapDisplayName="省属企业净资产总额（期末余额）">
+        </scapfd_testref.ssqyjzcze>
+        <scapfd_testref.zenz3 uapDisplayName="增长">
+        </scapfd_testref.zenz3>
+        <scapfd_testref.ssqyjzczenzzl uapDisplayName="省属企业净资产总额年增长率（%）">
+        </scapfd_testref.ssqyjzczenzzl>
+        <scapfd_testref.gsymgsdsyzqyhj uapDisplayName="归属于母公司的所有者权益合计（期末余额）">
+        </scapfd_testref.gsymgsdsyzqyhj>
+        <scapfd_testref.ssgdqy uapDisplayName="少数股东权益（期末余额）">
+        </scapfd_testref.ssgdqy>
+        <scapfd_testref.ssqyzcfzl uapDisplayName="省属企业资产负债率（%）">
+        </scapfd_testref.ssqyzcfzl>
+        <scapfd_testref.ssqyyyzsr uapDisplayName="省属企业营业总收入（本期金额）">
+        </scapfd_testref.ssqyyyzsr>
+        <scapfd_testref.zenz4 uapDisplayName="增长">
+        </scapfd_testref.zenz4>
+        <scapfd_testref.ssqyyyzsrnzzl uapDisplayName="省属企业营业总收入年增长率（%）">
+        </scapfd_testref.ssqyyyzsrnzzl>
+        <scapfd_testref.ssqyjls uapDisplayName="省属企业净利润（本期金额）">
+        </scapfd_testref.ssqyjls>
+        <scapfd_testref.zenz5 uapDisplayName="增长">
+        </scapfd_testref.zenz5>
+        <scapfd_testref.ssqyjlsnzzl uapDisplayName="省属企业净利润年增长率（%）">
+        </scapfd_testref.ssqyjlsnzzl>
+        <scapfd_testref.ssqygsymgsdjlr uapDisplayName="省属企业归属于母公司的净利润（本期金额）">
+        </scapfd_testref.ssqygsymgsdjlr>
+        <scapfd_testref.zenz6 uapDisplayName="增长">
+        </scapfd_testref.zenz6>
+        <scapfd_testref.w1 uapDisplayName="省属企业归属于母公司的净利润年增长率（%）">
+        </scapfd_testref.w1>
+        <scapfd_testref.w2 uapDisplayName="省属企业本年国有资本及权益增加值">
+        </scapfd_testref.w2>
+        <scapfd_testref.zenz7 uapDisplayName="增长">
+        </scapfd_testref.zenz7>
+        <scapfd_testref.w3 uapDisplayName="省属企业本年国有资本及权益增加值年增长率（%）">
+        </scapfd_testref.w3>
+        <scapfd_testref.w4 uapDisplayName="省属企业上交税金总额">
+        </scapfd_testref.w4>
+        <scapfd_testref.zenz8 uapDisplayName="增长">
+        </scapfd_testref.zenz8>
+        <scapfd_testref.w5 uapDisplayName="省属企业上交税金总额年增长率（%）">
+        </scapfd_testref.w5>
+        <scapfd_testref.w6 uapDisplayName="省属企业国有资本保值增值率（本年数）">
+        </scapfd_testref.w6>
+        <scapfd_testref.w7 uapDisplayName="决算年">
+        </scapfd_testref.w7>
+        <scapfd_testref.w8 uapDisplayName="决算年">
+        </scapfd_testref.w8>
+        <scapfd_testref.w9 uapDisplayName="省属企业资产总额（期末余额）">
+        </scapfd_testref.w9>
+        <scapfd_testref.w10 uapDisplayName="资产总额>1000亿元企业户数">
+        </scapfd_testref.w10>
+        <scapfd_testref.x10 uapDisplayName="XXX1000">
+        </scapfd_testref.x10>
+        <scapfd_testref.w11 uapDisplayName="资产总额>500亿元企业户数">
+        </scapfd_testref.w11>
+        <scapfd_testref.x11 uapDisplayName="XXX500">
+        </scapfd_testref.x11>
+        <scapfd_testref.w12 uapDisplayName="列出“各省属企业资产总额（期末余额）排名”
+        前6名的企业名称和该企业的资产总额（指标：各省属企业的资产总额（期末余额）），
+        以 “、”分隔。举例：淮南矿业1027亿、马钢集团798亿、高速集团709亿、海螺集团664
+        亿、淮北矿业608亿、铜陵有色508亿。（本文中的其他排名均参照此规则显示，下文中不
+        再举例）。">
+        </scapfd_testref.w12>
+        <scapfd_testref.w13 uapDisplayName="资产总额>100亿元的省属企业户数">
+        </scapfd_testref.w13>
+        <scapfd_testref.w14 uapDisplayName="资产总额>100亿元的各省属企业资产总额占比（%）">
+        </scapfd_testref.w14>
+        <scapfd_testref.w15 uapDisplayName="净资产总额>100亿元的各省属企业总户数  ">
+        </scapfd_testref.w15>
+        <scapfd_testref.w16 uapDisplayName="净资产总额>100亿元的各省属企业净资产总额占比（%）">
+        </scapfd_testref.w16>
+        <scapfd_testref.w17 uapDisplayName="列出“各省属企业净资产总额（期末余额）排
+        名”前6名的企业名称和该企业的净资产总额（指标：各省属企业净资产总额（期末余额）），以 
+       “、”分隔。">
+        </scapfd_testref.w17>
+        <scapfd_testref.w18 uapDisplayName="省属企业资产负债率超过70%的企业户数">
+        </scapfd_testref.w18>
+        <scapfd_testref.w19 uapDisplayName="资产负债率超过70%的企业户数点所有企业户数比重">
+        </scapfd_testref.w19>
+		
+        <scapfd_testref.w20 uapDisplayName="决算年">
+        </scapfd_testref.w20>
+        <scapfd_testref.w21 uapDisplayName="省属企业存货存货（期末金额）">
+        </scapfd_testref.w21>
+        <scapfd_testref.w22 uapDisplayName="省属企业应收账款（年末金额）">
+        </scapfd_testref.w22>
+        <scapfd_testref.w23 uapDisplayName="省属企业存货周转率（本年数）">
+        </scapfd_testref.w23>
+        <scapfd_testref.w24 uapDisplayName="省属企业应收账款周转率（本年数）">
+        </scapfd_testref.w24>
+        <scapfd_testref.zenz9 uapDisplayName="增长">
+        </scapfd_testref.zenz9>
+        <scapfd_testref.w25 uapDisplayName="省属企业存货周转率比上年增长次数">
+        </scapfd_testref.w25>
+        <scapfd_testref.zenz10 uapDisplayName="增长">
+        </scapfd_testref.zenz10>
+        <scapfd_testref.w26 uapDisplayName="省属企业应收账款周转率比上年增长次数">
+        </scapfd_testref.w26>
+        <scapfd_testref.w27 uapDisplayName="决算年">
+        </scapfd_testref.w27>
+        <scapfd_testref.w28 uapDisplayName="省属企业营业总收入（本期金额）">
+        </scapfd_testref.w28>
+        <scapfd_testref.zenz101 uapDisplayName="增长">
+        </scapfd_testref.zenz101>
+        <scapfd_testref.w29 uapDisplayName="省属企业营业总收入年增长率（%）">
+        </scapfd_testref.w29>
+        <scapfd_testref.w30 uapDisplayName="营业总收入>100亿元的各省属企业总户数">
+        </scapfd_testref.w30>
+        <scapfd_testref.w31 uapDisplayName="列出“各省属企业营业总收入
+       （本期金额）排名”前6名的企业名称和该企业的营业收入（指标：各省属企业营业总
+        收入（本期金额）），以 “、”分隔">
+        </scapfd_testref.w31>
+        <scapfd_testref.w32 uapDisplayName="省属企业营业总成本（本期金额）">
+        </scapfd_testref.w32>
+        <scapfd_testref.zenz11 uapDisplayName="增长">
+        </scapfd_testref.zenz11>
+        <scapfd_testref.w33 uapDisplayName="省属企业营业总收入年增长率（%）">
+        </scapfd_testref.w33>
+        <scapfd_testref.w34 uapDisplayName="省属企业利润总额（本期金额）">
+        </scapfd_testref.w34>
+        <scapfd_testref.w35 uapDisplayName="省属企业盈利的户数">
+        </scapfd_testref.w35>
+        <scapfd_testref.w36 uapDisplayName="省属企业亏损的户数">
+        </scapfd_testref.w36>
+        <scapfd_testref.w37 uapDisplayName="省属企业盈利超10亿元的户数">
+        </scapfd_testref.w37>
+        <scapfd_testref.w130 uapDisplayName="按照各省属企业利润总额（本期金
+        额）排名依次列出利润总额大于10亿的企业名称及其利润总额（指标：各省属企业利润
+        总额（本期金额）），以 “、”分隔。">
+        </scapfd_testref.w130>
+        <scapfd_testref.w38 uapDisplayName="省属企业净资产收益率（%）">
+        </scapfd_testref.w38>
+		<scapfd_testref.zenz102 uapDisplayName="提高">
+        </scapfd_testref.zenz102>
+        <scapfd_testref.w39 uapDisplayName="省属企业净资产收益率比上年提高百分点">
+        </scapfd_testref.w39>
+        <scapfd_testref.w40 uapDisplayName="省属企业户数">
+        </scapfd_testref.w40>
+        <scapfd_testref.w41 uapDisplayName="省属企业上交税金总额">
+        </scapfd_testref.w41>
+		<scapfd_testref.zenz103 uapDisplayName="增长">
+        </scapfd_testref.zenz103>
+        <scapfd_testref.w42 uapDisplayName="省属企业上交税金总额年增长率（%）">
+        </scapfd_testref.w42>
+        <scapfd_testref.w43 uapDisplayName="省属企业人均上交税金">
+        </scapfd_testref.w43>
+		<scapfd_testref.zenz104 uapDisplayName="增加">
+        </scapfd_testref.zenz104>
+        <scapfd_testref.w44 uapDisplayName="省属企业本年国有资本及权益增加值">
+        </scapfd_testref.w44>
+		<scapfd_testref.zenz204 uapDisplayName="增加">
+        </scapfd_testref.zenz204>
+        <scapfd_testref.w45 uapDisplayName="省属企业本年国有资本及权益增加值比去年增加金额">
+        </scapfd_testref.w45>
+	    <scapfd_testref.zenz105 uapDisplayName="增长">
+        </scapfd_testref.zenz105>
+        <scapfd_testref.w46 uapDisplayName="省属企业本年国有资本及权益增加值年增长率（%）">
+        </scapfd_testref.w46>
+        <scapfd_testref.w47 uapDisplayName="省属企业年末从业人员人数">
+        </scapfd_testref.w47>
+        <scapfd_testref.w48 uapDisplayName="省属企业全年平均从业人员人数">
+        </scapfd_testref.w48>
+        <scapfd_testref.w49 uapDisplayName="省属企业从业人员人工成本总额">
+        </scapfd_testref.w49>
+        <scapfd_testref.w50 uapDisplayName="省属企业社会保险费用">
+        </scapfd_testref.w50>
+        <scapfd_testref.w51 uapDisplayName="决算年">
+        </scapfd_testref.w51>
+        <scapfd_testref.w52 uapDisplayName="省属企业户数">
+        </scapfd_testref.w52>
+        <scapfd_testref.w53 uapDisplayName="省属企业本年国有资本及权益增加值">
+        </scapfd_testref.w53>
+	    <scapfd_testref.zenz106 uapDisplayName="增加">
+        </scapfd_testref.zenz106>		
+        <scapfd_testref.w54 uapDisplayName="省属企业本年国有资本及权益增加值比去年增加金额 ">
+        </scapfd_testref.w54>
+	    <scapfd_testref.zenz107 uapDisplayName="增长">
+        </scapfd_testref.zenz107>
+        <scapfd_testref.w55 uapDisplayName="省属企业本年国有资本及权益增加值年增长率（%）">
+        </scapfd_testref.w55>
+        <scapfd_testref.w56 uapDisplayName="省属企业上交税金总额">
+        </scapfd_testref.w56>
+	    <scapfd_testref.zenz108 uapDisplayName="增长">
+        </scapfd_testref.zenz108>
+        <scapfd_testref.w57 uapDisplayName="省属企业上交税金总额年增长率（%）">
+        </scapfd_testref.w57>
+        <scapfd_testref.w58 uapDisplayName="省属企业人均上交税金">
+        </scapfd_testref.w58>
+        <scapfd_testref.w59 uapDisplayName="决算年">
+        </scapfd_testref.w59>
+        <scapfd_testref.w60 uapDisplayName="省属企业户数">
+        </scapfd_testref.w60>
+        <scapfd_testref.w61 uapDisplayName="省属企业年末国有资本及权益总额">
+        </scapfd_testref.w61>
+	    <scapfd_testref.zenz109 uapDisplayName="净增">
+        </scapfd_testref.zenz109>
+        <scapfd_testref.w62 uapDisplayName="省属企业国有资本及权益总额本年增长金额">
+        </scapfd_testref.w62>
+	    <scapfd_testref.zenz110 uapDisplayName="增长">
+        </scapfd_testref.zenz110>
+        <scapfd_testref.w63 uapDisplayName="省属企业国有资本及权益总额年增长率（%）">
+        </scapfd_testref.w63>
+        <scapfd_testref.w64 uapDisplayName="省属企业国有资本及权益占企业总资产的比重">
+        </scapfd_testref.w64>
+	    <scapfd_testref.zenz111 uapDisplayName="下降">
+        </scapfd_testref.zenz111>
+        <scapfd_testref.w65 uapDisplayName="省属企业国有资本及权益占企业总资产的比重比上年提高百分点">
+        </scapfd_testref.w65>
+	    <scapfd_testref.zenz112 uapDisplayName="增长">
+        </scapfd_testref.zenz112>
+        <scapfd_testref.w66 uapDisplayName="国有资本控制的总资产年增长率">
+        </scapfd_testref.w66>
+        <scapfd_testref.w67 uapDisplayName="决算年">
+        </scapfd_testref.w67>
+        <scapfd_testref.w68 uapDisplayName="省属企业国有资本保值增值率（本年数）">
+        </scapfd_testref.w68>
+	    <scapfd_testref.zenz113 uapDisplayName="增加">
+        </scapfd_testref.zenz113>
+        <scapfd_testref.w69 uapDisplayName="省属企业国有资本保值增值率比上年提高百分点">
+        </scapfd_testref.w69>
+        <scapfd_testref.w70 uapDisplayName="省属企业本年实现国有资本保值增值户数">
+        </scapfd_testref.w70>
+        <scapfd_testref.w71 uapDisplayName="省属企业本年未实现国有资本保值增值户数">
+        </scapfd_testref.w71>
+        <scapfd_testref.w72 uapDisplayName="决算年">
+        </scapfd_testref.w72>
+	    <scapfd_testref.zenz114 uapDisplayName="增长">
+        </scapfd_testref.zenz114>
+        <scapfd_testref.w73 uapDisplayName="省属企业资产总额年增长率（%）">
+        </scapfd_testref.w73>
+	    <scapfd_testref.zenz115 uapDisplayName="增加">
+        </scapfd_testref.zenz115>
+        <scapfd_testref.w74 uapDisplayName="省属企业应收账款增加额">
+        </scapfd_testref.w74>
+		<scapfd_testref.zenz116 uapDisplayName="增速">
+        </scapfd_testref.zenz116>
+        <scapfd_testref.w75 uapDisplayName="省属企业应收账款年增长率">
+        </scapfd_testref.w75>
+	    <scapfd_testref.zenz117 uapDisplayName="增幅">
+        </scapfd_testref.zenz117>
+        <scapfd_testref.w76 uapDisplayName="省属企业营业总收入年增长率（%）">
+        </scapfd_testref.w76>
+        <scapfd_testref.w77 uapDisplayName="总表，主要分析指标表，16行） 省属企业资产现金回收率">
+        </scapfd_testref.w77>
+	    <scapfd_testref.zenz118 uapDisplayName="增加">
+        </scapfd_testref.zenz118>
+        <scapfd_testref.w78 uapDisplayName="省属企业资产现金回收率比上年提高百分点">
+        </scapfd_testref.w78>
+	    <scapfd_testref.zenz119 uapDisplayName="增加">
+        </scapfd_testref.zenz119>
+        <scapfd_testref.w79 uapDisplayName="省属企业存货增加金额">
+        </scapfd_testref.w79>
+        <scapfd_testref.w80 uapDisplayName="省属企业存货增长率">
+        </scapfd_testref.w80>
+        <scapfd_testref.w81 uapDisplayName="决算年">
+        </scapfd_testref.w81>
+        <scapfd_testref.w82 uapDisplayName="省属企业资产负债率（%）">
+        </scapfd_testref.w82>
+        <scapfd_testref.w83 uapDisplayName="按各省属企业资产负债率（本年数）
+        排名列出排名第7的企业的本年资产负债率（指标：各省属企业的资产负债率（本年数））">
+        </scapfd_testref.w83>
+	    <scapfd_testref.zenz120 uapDisplayName="减少">
+        </scapfd_testref.zenz120>
+        <scapfd_testref.w84 uapDisplayName="省属企业年末货币资金余额同比增加金额">
+        </scapfd_testref.w84>
+        <scapfd_testref.w85 uapDisplayName="省属企业经营活动产生的现金流量净额（本期金额）">
+        </scapfd_testref.w85>
+	    <scapfd_testref.zenz121 uapDisplayName="远远低于">
+        </scapfd_testref.zenz121>
+        <scapfd_testref.w86 uapDisplayName="省属企业经营活动产生的现金流量净额（上期金额）">
+        </scapfd_testref.w86>
+        <scapfd_testref.w87 uapDisplayName="省属企业投资活动现金流出小计（本期金额）">
+        </scapfd_testref.w87>
+        <scapfd_testref.w88 uapDisplayName="省属企业户数">
+        </scapfd_testref.w88>
+        <scapfd_testref.w89 uapDisplayName="省属企业全年在岗职工人均工资（本年数）">
+        </scapfd_testref.w89>
+        <scapfd_testref.w90 uapDisplayName="决算年">
+        </scapfd_testref.w90>
+        <scapfd_testref.w91 uapDisplayName="省属企业资产总额（期末余额）">
+        </scapfd_testref.w91>
+        <scapfd_testref.w92 uapDisplayName="省属企业资产总额（年初余额）">
+        </scapfd_testref.w92>
+        <scapfd_testref.w93 uapDisplayName="省属企业资产总额年增长率（%）">
+        </scapfd_testref.w93>
+        <scapfd_testref.w94 uapDisplayName="省属企业负债总额（期末余额）">
+        </scapfd_testref.w94>
+        <scapfd_testref.w95 uapDisplayName="省属企业负债总额（年初余额）">
+        </scapfd_testref.w95>
+        <scapfd_testref.w96 uapDisplayName="省属企业负债总额年增长率（%）">
+        </scapfd_testref.w96>
+        <scapfd_testref.w97 uapDisplayName="省属企业净资产总额（期末余额）">
+        </scapfd_testref.w97>
+        <scapfd_testref.w98 uapDisplayName="省属企业净资产总额（年初余额）">
+        </scapfd_testref.w98>
+        <scapfd_testref.w99 uapDisplayName="省属企业净资产总额年增长率（%）">
+        </scapfd_testref.w99>
+        <scapfd_testref.w100 uapDisplayName="省属企业归属于母公司的所有者权益合计（期末余额">
+        </scapfd_testref.w100>
+        <scapfd_testref.w101 uapDisplayName="省属企业归属于母公司的所有者权益合计（年初余额）">
+        </scapfd_testref.w101>
+        <scapfd_testref.w102 uapDisplayName="省属企业归属于母公司的所有者权益合计年增长率（%）">
+        </scapfd_testref.w102>
+        <scapfd_testref.w103 uapDisplayName="少数股东权益（期末余额）">
+        </scapfd_testref.w103>
+        <scapfd_testref.w104 uapDisplayName="少数股东权益（年初余额）">
+        </scapfd_testref.w104>
+        <scapfd_testref.w105 uapDisplayName="少数股东权益年增长率（%）">
+        </scapfd_testref.w105>
+        <scapfd_testref.w106 uapDisplayName="省属企业营业总收入（本期金额）">
+        </scapfd_testref.w106>
+        <scapfd_testref.w107 uapDisplayName="省属企业营业总收入（上期金额）">
+        </scapfd_testref.w107>
+        <scapfd_testref.w108 uapDisplayName="省属企业营业总收入年增长率（%）">
+        </scapfd_testref.w108>
+        <scapfd_testref.w109 uapDisplayName="省属企业利润总额（本期金额）">
+        </scapfd_testref.w109>
+        <scapfd_testref.w110 uapDisplayName="省属企业利润总额（上期金额）">
+        </scapfd_testref.w110>
+        <scapfd_testref.w111 uapDisplayName="省属企业利润总额年增长率（%）">
+        </scapfd_testref.w111>
+        <scapfd_testref.w112 uapDisplayName="省属企业净利润（本期金额）">
+        </scapfd_testref.w112>
+        <scapfd_testref.w113 uapDisplayName="省属企业净利润（上期金额）">
+        </scapfd_testref.w113>
+        <scapfd_testref.w114 uapDisplayName="省属企业净利润年增长率（%）">
+        </scapfd_testref.w114>
+        <scapfd_testref.w115 uapDisplayName="省属企业归属于母公司的净利润（本期金额）">
+        </scapfd_testref.w115>
+        <scapfd_testref.w116 uapDisplayName="省属企业归属于母公司的净利润（上期金额）">
+        </scapfd_testref.w116>
+        <scapfd_testref.w117 uapDisplayName="省属企业归属于母公司的净利润年增长率（%）">
+        </scapfd_testref.w117>
+        <scapfd_testref.w118 uapDisplayName="经济增加值（本期金额）">
+        </scapfd_testref.w118>
+        <scapfd_testref.w119 uapDisplayName="经济增加值（上期金额）">
+        </scapfd_testref.w119>
+        <scapfd_testref.w120 uapDisplayName="经济增加值增长率（%）">
+        </scapfd_testref.w120>
+        <scapfd_testref.w121 uapDisplayName="省属企业国有资本保值增值率（本年数）">
+        </scapfd_testref.w121>
+        <scapfd_testref.w122 uapDisplayName="省属企业国有资本保值增值率（上年数）">
+        </scapfd_testref.w122>
+        <scapfd_testref.w123 uapDisplayName="省属企业国有资本保值增值率比上年提高百分点">
+        </scapfd_testref.w123>
+        <scapfd_testref.w124 uapDisplayName="决算年：
+省属企业上交税金总额
+">
+        </scapfd_testref.w124>
+        <scapfd_testref.w125 uapDisplayName="决算年-1：
+省属企业上交税金总额
+">
+        </scapfd_testref.w125>
+        <scapfd_testref.w126 uapDisplayName="省属企业上交税金总额年增长率（%）">
+        </scapfd_testref.w126>
+        <scapfd_testref.w127 uapDisplayName="决算年：
+省属企业本年国有资本及权益增加值
+">
+        </scapfd_testref.w127>
+        <scapfd_testref.w128 uapDisplayName="决算年-1：
+省属企业本年国有资本及权益增加值
+">
+        </scapfd_testref.w128>
+        <scapfd_testref.w129 uapDisplayName="省属企业本年国有资本及权益增加值年增长率（%）">
+        </scapfd_testref.w129>
+		<scapfd_testref.z1 uapDisplayName="增加">
+        </scapfd_testref.z1>
+		<scapfd_testref.z2 uapDisplayName="比上年增加户数">
+        </scapfd_testref.z2>
+		<scapfd_testref.z3 uapDisplayName="流动负债">
+        </scapfd_testref.z3>
+		<scapfd_testref.z4 uapDisplayName="占负债总额比例">
+        </scapfd_testref.z4>
+		<scapfd_testref.z14 uapDisplayName="超过(低于)">
+        </scapfd_testref.z14>
+		<scapfd_testref.z5 uapDisplayName="超过资产增速多少百分点">
+        </scapfd_testref.z5>
+		<scapfd_testref.z6 uapDisplayName="超过（低于）">
+        </scapfd_testref.z6>
+		<scapfd_testref.z7 uapDisplayName="超过营业收入增速多少百分点">
+        </scapfd_testref.z7>
+		<scapfd_testref.z8 uapDisplayName="增加（减少）">
+        </scapfd_testref.z8>
+		<scapfd_testref.z9 uapDisplayName="超过百亿的户数比上年增加">
+        </scapfd_testref.z9>
+		<scapfd_testref.z10 uapDisplayName="总资产报酬率">
+        </scapfd_testref.z10>
+		<scapfd_testref.z11 uapDisplayName="增加（减少）">
+        </scapfd_testref.z11>
+		<scapfd_testref.z12 uapDisplayName="总资产报酬率比上年增加百分点">
+        </scapfd_testref.z12>
+		<scapfd_testref.z13 uapDisplayName="逐一列出为实现国有资本保值增值户数的">
+        </scapfd_testref.z13>
+		<scapfd_testref.z15 uapDisplayName="全省财政收入占比">
+        </scapfd_testref.z15>
+    </scapfd_testref>
+</Root>

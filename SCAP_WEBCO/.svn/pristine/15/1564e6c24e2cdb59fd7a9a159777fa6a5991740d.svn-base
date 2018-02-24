@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE UIMeta PUBLIC "-//Yonyou Co., Ltd.//UAP LFW UIMeta 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_um_6_3.dtd">
+<UIMeta flowmode="true" id="main_um" jquery="0" preferredHeight="" preferredWidth="">
+    <FlowhLayout id="flowhLayout" autoFill="true" widgetId="main">
+    	<FlowhPanel id="flowhPanel1"  className="left_side_style" rightBorder="#"   width="220" widgetId="main">
+		 	<FlowvLayout id="flowvlayout8962" widgetId="main" autoFill="true" width="100%">
+			 	    <FlowvPanel id="panelv08962" widgetId="main" height="39">
+	                    <CanvasLayout className="leftcanvas" id="canvas0993" widgetId="main">
+	                        <CanvasPanel id="canvaspanel0993" widgetId="main">
+	                        </CanvasPanel>
+	                    </CanvasLayout>
+	                </FlowvPanel>
+	                <FlowvPanel id="panelv28962" widgetId="main" height="470" leftPadding="20" rightPadding="20">
+	                    <PanelLayout className="" expand="true" id="panel1521" title="组织树" widgetId="main">
+	                        <PanelPanel bottomPadding="10" id="panelpanel1521" topPadding="20" widgetId="main">
+	                          <TreeViewComp height="100%" id="visualOrganization" left="0" position="relative" top="0" widgetId="main" width="100%">
+	                          </TreeViewComp>
+	                        </PanelPanel>
+	                    </PanelLayout>
+	                </FlowvPanel>
+		            <FlowvPanel id="panelv27405" widgetId="main"  leftPadding="20" rightPadding="20">
+	                    <PanelLayout expand="true" id="leftSimplePanel" title="快速查询" widgetId="main">
+	                        <PanelPanel bottomPadding="10" id="simplePanel" topPadding="20" widgetId="main">
+	                            <Widget id="simplequery">
+	                            </Widget>
+	                        </PanelPanel>
+	                    </PanelLayout>
+	                </FlowvPanel>
+	            </FlowvLayout>
+		</FlowhPanel>
+		<FlowhPanel id="flowhPanel2" autoFill="true" widgetId="main">
+		    <FlowvLayout id="flowvLayout" widgetId="main">
+		        <FlowvPanel id="g_p_1" widgetId="main" >
+		            <CanvasLayout className="rightcanvas" id="listmenubarCanvas" widgetId="main">
+		                <CanvasPanel id="canvasp" widgetId="main">
+		                    <Menubar height="100%" id="menubar" left="0" position="relative" top="0" widgetId="main" width="100%">
+		                    </Menubar>
+		                </CanvasPanel>
+		            </CanvasLayout>
+		        </FlowvPanel>
+		        <FlowvPanel id="g_p_2" widgetId="main">
+                    <FormComp height="100%" id="pub_visualOrganization_form" label_position="" left="0" position="relative" top="0" widgetId="main" width="100%">
+                    </FormComp>
+		        </FlowvPanel>
+		        <FlowvPanel id="flowvpaneltab" widgetId="main">
+		            <TabLayout currentItem="0" id="tabLayout" oneTabHide="true" tabType="top" widgetId="main">
+		                <TabItems>
+		                    <TabItem active="0" i18nName="" id="tabitem_visualUserInfo" langDir="" showCloseIcon="false" text="组织人员信息">
+		                        <GridComp height="100%" id="visualUserInfo_grid" left="0" position="relative" top="0" width="100%">
+		                        </GridComp>
+		                    </TabItem>
+		                </TabItems>
+		            </TabLayout>
+		        </FlowvPanel>
+		    </FlowvLayout>
+		</FlowhPanel>
+    </FlowhLayout>
+</UIMeta>

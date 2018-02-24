@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget controllerClazz="nc.scap.pub.attlist.comp.manage.Attachrole_mgCardWinMainViewCtrl" id="main" refId="main" sourcePackage="pub/src/public/">
+    <Attributes>
+        <Attribute>
+            <Key>$QueryTemplate</Key>
+            <Value>
+            </Value>
+        </Attribute>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+        <PlugoutDesc id="afterSavePlugout">
+            <PlugoutDescItem clazztype="java.lang.String" name="OPERATE_ROW" source="AttachGroupVO" type="Dataset.TYPE_DATASET_SEL_ROW">
+            </PlugoutDescItem>
+        </PlugoutDesc>
+    </PlugoutDescs>
+    <PluginDescs>
+    </PluginDescs>
+    <Connectors>
+        <Connector connType="4" id="cardViewConnID" pluginId="proxyAfterSavePlugout" plugoutId="afterSavePlugout" source="main" sourceWindow="" target="popwin" targetWindow="">
+        </Connector>
+    </Connectors>
+    <Events>
+        <Event async="true" methodName="beforeShow" name="beforeShow" onserver="true">
+            <Action>
+            </Action>
+        </Event>
+    </Events>
+    <Models>
+        <Datasets>
+            <DatasetRelations>
+                <DatasetRelation detailDataset="AttachRoleVO" detailForeignKey="pk_attach_group" id="scap_attach_role_scap_attach_group" masterDataset="AttachGroupVO" masterKeyField="pk_attach_group">
+                </DatasetRelation>
+            </DatasetRelations>
+            <RefMdDataset caption="协同功能节点" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_appsnode" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_appsnode" voMeta="nc.uap.cpb.org.vos.CpAppsNodeVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="附件规则分类" controlwidgetopeStatus="true" enabled="false" id="AttachGroupVO" lazyLoad="true" notNullBody="false" objMeta="scapco.AttachGroupVO" pageSize="15" voMeta="nc.scap.pub.vos.AttachGroupVO">
+                <FieldRelations>
+                    <FieldRelation id="node_rel" needProcess="true" refDataset="$refds_uapcp_cp_appsnode" useCache="true">
+                        <MatchFields>
+                            <Field readField="title" writeField="node_title">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_appsnode" value="node">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <MdDataset caption="附件规则" controlwidgetopeStatus="false" enabled="false" id="AttachRoleVO" lazyLoad="true" notNullBody="false" objMeta="scapco.AttachRoleVO" pageSize="15" voMeta="nc.scap.pub.vos.AttachRoleVO">
+                <Fields>
+                </Fields>
+            </MdDataset>
+        </Datasets>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_AttachGroupVO_node_title" langDir="" multiSel="true" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_appsnode,title" refId="" refcode="功能节点" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="附件规则分类_功能节点" usePower="false" writeDs="AttachGroupVO" writeFields="node,node_title">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <GridComp autoRowHeight="false" canCopy="true" caption="附件规则" checkBoxModel="1" dataset="AttachRoleVO" editable="true" enabled="true" expandTree="false" id="AttachRoleVO_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="true" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="code" fixedHeader="false" id="code" imageOnly="false" langDir="pub_attachment" nullAble="false" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="编码" textAlign="left" visible="true" width="200">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="name" fixedHeader="false" id="name" imageOnly="false" langDir="pub_attachment" nullAble="false" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="名称" textAlign="left" visible="true" width="400">
+            </Column>
+            <Column autoExpand="false" dataType="Integer" editable="true" editorType="IntegerText" field="idx" fixedHeader="false" id="idx" imageOnly="false" langDir="pub_attachment" nullAble="true" renderType="IntegerRender" showCheckBox="true" sortable="true" sumCol="false" text="排序" textAlign="right" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Integer" editable="true" editorType="IntegerText" field="min_count" fixedHeader="false" id="min_count" imageOnly="false" langDir="pub_attachment" nullAble="false" renderType="IntegerRender" showCheckBox="true" sortable="true" sumCol="false" text="最少文件数量" textAlign="right" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Integer" editable="true" editorType="IntegerText" field="max_count" fixedHeader="false" id="max_count" imageOnly="false" langDir="pub_attachment" nullAble="false" renderType="IntegerRender" showCheckBox="true" sortable="true" sumCol="false" text="最大文件数量" textAlign="right" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_attach_group" fixedHeader="false" id="pk_attach_group" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上层单据主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <MenuBarComp id="AttachRoleVO_grid$MenuBar">
+                <MenuItem i18nName="GridComp-000005" id="AttachRoleVO_grid$HeaderBtn_Add" imgIcon="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/new_row.png" imgIconDisable="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/new_row_disable.png" imgIconOn="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/new_row_higlight.png" langDir="bc" modifiers="2" showModel="1" text="新建">
+                    <Events>
+                        <Event async="true" methodName="onGridAddClick" name="onclick" onserver="true">
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+                <MenuItem i18nName="GridComp-000006" id="AttachRoleVO_grid$HeaderBtn_Edit" imgIcon="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/edit.png" imgIconDisable="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/edit_disable.png" imgIconOn="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/edit_higlight.png" langDir="bc" modifiers="2" showModel="1" text="编辑">
+                    <Events>
+                        <Event async="true" methodName="onGridEditClick" name="onclick" onserver="true">
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+                <MenuItem i18nName="GridComp-000007" id="AttachRoleVO_grid$HeaderBtn_Delete" imgIcon="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/delete_row.png" imgIconDisable="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/delete_row_disable.png" imgIconOn="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/delete_row_higlight.png" langDir="bc" modifiers="2" showModel="1" text="删除">
+                    <Events>
+                        <Event async="true" methodName="onGridDeleteClick" name="onclick" onserver="true">
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+            </MenuBarComp>
+        </GridComp>
+        <FormComp caption="AttachGroupVO_form" columnCount="3" dataset="AttachGroupVO" eleWidth="250" ellipsis="false" enabled="true" id="AttachGroupVO_form" labelMinWidth="0" renderType="1" rowHeight="22" visible="true">
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="code" height="" id="code" imageOnly="false" langDir="pub_attachment" needNullOption="false" nextLine="false" nullAble="false" rowSpan="1" selectOnly="true" showLabel="true" text="编码" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="name" height="" id="name" imageOnly="false" langDir="pub_attachment" needNullOption="false" nextLine="false" nullAble="false" rowSpan="1" selectOnly="true" showLabel="true" text="名称" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="node" height="" id="node" imageOnly="false" langDir="pub_attachment" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="功能节点" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="node_title" height="" id="node_title" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_AttachGroupVO_node_title" rowSpan="1" selectOnly="true" showLabel="true" text="功能节点" toolbarType="Custom" visible="true" width="">
+            </Element>
+        </FormComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar">
+            <MenuItem id="add" modifiers="2" showModel="1" text="新增">
+                <Events>
+                    <Event async="true" methodName="onAdd" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="copy" modifiers="2" showModel="1" text="复制">
+                <Events>
+                    <Event async="true" methodName="onCopy" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="del" modifiers="2" showModel="1" text="删除">
+                <Events>
+                    <Event async="true" methodName="onDelete" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="save" modifiers="2" showModel="1" text="保存">
+                <Events>
+                    <Event async="true" methodName="onSave" name="onclick" onserver="true">
+                        <SubmitRule>
+                            <Widget id="main">
+                                <Dataset id="AttachGroupVO" type="ds_current_line">
+                                </Dataset>
+                                <Dataset id="AttachRoleVO" type="ds_all_line">
+                                </Dataset>
+                            </Widget>
+                        </SubmitRule>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="sep1" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="back" modifiers="2" showModel="1" text="返回">
+                <Events>
+                    <Event async="true" methodName="onBack" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

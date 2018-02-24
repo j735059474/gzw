@@ -1,0 +1,1379 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+    <scapfd_testref>
+        <scapfd_testref.vyear uapDisplayName="2013">
+        </scapfd_testref.vyear>
+        <scapfd_testref.vyear1 uapDisplayName="2013">
+        </scapfd_testref.vyear1>
+        <scapfd_testref.hs_qyzhs uapDisplayName="国有及国有控股企业总户数">
+        </scapfd_testref.hs_qyzhs>
+
+        <scapfd_testref.zj uapDisplayName="增加">
+        </scapfd_testref.zj>
+        <scapfd_testref.hs_qyhsbsn uapDisplayName="总户数比上年增加数量">
+        </scapfd_testref.hs_qyhsbsn>
+<!--资产-->
+
+        <scapfd_testref.bn_zcze uapDisplayName="（全省资产总额（期末余额））">
+        </scapfd_testref.bn_zcze>
+
+        <scapfd_testref.zj1 uapDisplayName="增加">
+        </scapfd_testref.zj1>
+
+        <scapfd_testref.bsn_zcze uapDisplayName="资产总额比上年增加">
+        </scapfd_testref.bsn_zcze>
+
+        <scapfd_testref.zj2 uapDisplayName="比增">
+        </scapfd_testref.zj2>
+
+        <scapfd_testref.tb_zcze uapDisplayName="资产总额年增长率">
+        </scapfd_testref.tb_zcze>
+<!--所有者权益-->
+        <scapfd_testref.bn_syzqyze uapDisplayName="所有者权益总额">
+        </scapfd_testref.bn_syzqyze>
+        
+        <scapfd_testref.zj3 uapDisplayName="增加">
+        </scapfd_testref.zj3>
+        
+        <scapfd_testref.bsn_syzqyze uapDisplayName="所有者权益比上年增加">
+        </scapfd_testref.bsn_syzqyze>
+        
+        <scapfd_testref.zj4 uapDisplayName="比增">
+        </scapfd_testref.zj4>
+        
+        <scapfd_testref.tb_syzqyze uapDisplayName="所有者权益总额年增长率">
+        </scapfd_testref.tb_syzqyze>
+<!--归属于母公司的所有者权益-->
+        <scapfd_testref.bn_gsmgsqyze uapDisplayName="归属于母公司的所有者权益">
+        </scapfd_testref.bn_gsmgsqyze>
+
+        <scapfd_testref.zj5 uapDisplayName="增加">
+        </scapfd_testref.zj5>
+
+        <scapfd_testref.bsn_gsmgsqyze uapDisplayName="归属于母公司的所有者权益比上年增加">
+        </scapfd_testref.bsn_gsmgsqyze>
+
+        <scapfd_testref.zj6 uapDisplayName="比增">
+        </scapfd_testref.zj6>
+
+        <scapfd_testref.tb_gsmgsqyze uapDisplayName="年增长率">
+        </scapfd_testref.tb_gsmgsqyze>
+
+        <scapfd_testref.vyear19 uapDisplayName="2013">
+        </scapfd_testref.vyear19>
+<!--营业收入-->
+   
+        <scapfd_testref.bn_yyzsr uapDisplayName="营业收入总额">
+        </scapfd_testref.bn_yyzsr>
+
+        <scapfd_testref.zj7 uapDisplayName="增加">
+        </scapfd_testref.zj7>
+
+        <scapfd_testref.bsn_yyzsr uapDisplayName="增加量">
+        </scapfd_testref.bsn_yyzsr>
+
+        <scapfd_testref.zj8 uapDisplayName="比增">
+        </scapfd_testref.zj8>
+
+        <scapfd_testref.tb_yyzsr uapDisplayName="年增长率">
+        </scapfd_testref.tb_yyzsr>
+<!--利润总额-->
+        <scapfd_testref.bn_lrze uapDisplayName="利润总额">
+        </scapfd_testref.bn_lrze>
+
+        <scapfd_testref.zj9 uapDisplayName="增加">
+        </scapfd_testref.zj9>
+
+        <scapfd_testref.bsn_lrze uapDisplayName="利润总额比上年增加量">
+        </scapfd_testref.bsn_lrze>
+
+        <scapfd_testref.zj10 uapDisplayName="比增">
+        </scapfd_testref.zj10>
+
+        <scapfd_testref.tb_lrze uapDisplayName="利润总额年增长率">
+        </scapfd_testref.tb_lrze>
+<!--净利润-->
+
+        <scapfd_testref.bn_jlr uapDisplayName="净利润">
+        </scapfd_testref.bn_jlr>
+
+        <scapfd_testref.zj11 uapDisplayName="增加">
+        </scapfd_testref.zj11>
+
+        <scapfd_testref.bsn_jlr uapDisplayName="净利润比上年增加量">
+        </scapfd_testref.bsn_jlr>
+
+        <scapfd_testref.zj12 uapDisplayName="比增">
+        </scapfd_testref.zj12>
+
+        <scapfd_testref.tb_jlr uapDisplayName="净利润年增长率">
+        </scapfd_testref.tb_jlr>
+<!--归属于母公司所有者的净利润-->
+
+        <scapfd_testref.bn_gsymgsjlr uapDisplayName="归属于母公司所有者的净利润">
+        </scapfd_testref.bn_gsymgsjlr>
+
+        <scapfd_testref.zj13 uapDisplayName="增加">
+        </scapfd_testref.zj13>
+
+        <scapfd_testref.bsn_gsymgsjlr uapDisplayName="比上年增加">
+        </scapfd_testref.bsn_gsymgsjlr>
+
+        <scapfd_testref.zj14 uapDisplayName="比增">
+        </scapfd_testref.zj14>
+
+        <scapfd_testref.tb_gsmgsjlr uapDisplayName="年增长率">
+        </scapfd_testref.tb_gsmgsjlr>
+<!--上交税费-->
+        <scapfd_testref.bn_sjsjsfze uapDisplayName="上交税费">
+        </scapfd_testref.bn_sjsjsfze>
+
+        <scapfd_testref.zj15 uapDisplayName="增加">
+        </scapfd_testref.zj15>
+
+        <scapfd_testref.bsn_sjsjsfzw uapDisplayName="上交税费比上年增加量">
+        </scapfd_testref.bsn_sjsjsfzw>
+
+        <scapfd_testref.zj16 uapDisplayName="比增">
+        </scapfd_testref.zj16>
+
+        <scapfd_testref.tb_sjsjsfze uapDisplayName="上交税费年增长率">
+        </scapfd_testref.tb_sjsjsfze>
+<!--劳动生产总值-->
+        <scapfd_testref.bn_ldsczz uapDisplayName="劳动生产总值">
+        </scapfd_testref.bn_ldsczz>
+
+        <scapfd_testref.zj17 uapDisplayName="增加">
+        </scapfd_testref.zj17>
+
+        <scapfd_testref.bsn_ldsczz uapDisplayName="劳动生产总值比上年增加量">
+        </scapfd_testref.bsn_ldsczz>
+
+        <scapfd_testref.zj18 uapDisplayName="比增">
+        </scapfd_testref.zj18>
+
+        <scapfd_testref.tb_ldsczz uapDisplayName="劳动生产总值年增长率">
+        </scapfd_testref.tb_ldsczz>
+<!--全年平均从业人数-->
+        <scapfd_testref.bn_qnpjcyzgrs uapDisplayName="全年平均从业人数">
+        </scapfd_testref.bn_qnpjcyzgrs>
+
+        <scapfd_testref.zj19 uapDisplayName="增加">
+        </scapfd_testref.zj19>
+
+        <scapfd_testref.bsn_qnpjcyzgrs uapDisplayName="全年平均从业人数比上年增加量">
+        </scapfd_testref.bsn_qnpjcyzgrs>
+
+        <scapfd_testref.zj20 uapDisplayName="比增">
+        </scapfd_testref.zj20>
+
+        <scapfd_testref.tb_qnpjcyryrs uapDisplayName="全年平均从业人数年增长率">
+        </scapfd_testref.tb_qnpjcyryrs>
+
+<!--（一）企业户数略有增加-->
+        <scapfd_testref.vyear2 uapDisplayName="2013">
+        </scapfd_testref.vyear2>
+
+        <scapfd_testref.hs_qyzhs1 uapDisplayName="全省总户数">
+        </scapfd_testref.hs_qyzhs1>
+
+        <scapfd_testref.zj21 uapDisplayName="增加">
+        </scapfd_testref.zj21>
+
+        <scapfd_testref.hs_qyhsbsn1 uapDisplayName="全省总户数比上年增加量">
+        </scapfd_testref.hs_qyhsbsn1>
+
+        <scapfd_testref.zj22 uapDisplayName="增长">
+        </scapfd_testref.zj22>
+
+
+        <scapfd_testref.hs_qyhsnzz uapDisplayName="总户数年增长率">
+        </scapfd_testref.hs_qyhsnzz>
+<!--省级监管企业-->
+        <scapfd_testref.hs_qyzhs_sjjg uapDisplayName="省级监管企业户数">
+        </scapfd_testref.hs_qyzhs_sjjg>
+
+        <scapfd_testref.zj23 uapDisplayName="增加">
+        </scapfd_testref.zj23>
+
+        <scapfd_testref.hs_qyhsbsn_sjjg uapDisplayName="省级监管企业户数比上年增加数">
+        </scapfd_testref.hs_qyhsbsn_sjjg>
+
+<!--省级非监管企业-->
+        <scapfd_testref.hs_qyzhs_sjfjg uapDisplayName="省级非监管企业">
+        </scapfd_testref.hs_qyzhs_sjfjg>
+
+        <scapfd_testref.zj24 uapDisplayName="增加">
+        </scapfd_testref.zj24>
+
+        <scapfd_testref.hs_qyhsbsn_sjfjg uapDisplayName="省级非监管企业比上年增加量">
+        </scapfd_testref.hs_qyhsbsn_sjfjg>
+        
+<!--地市国有企业-->
+        <scapfd_testref.hs_qyzhs_ds uapDisplayName="地市国有企业">
+        </scapfd_testref.hs_qyzhs_ds>
+
+        <scapfd_testref.zj25 uapDisplayName="增加">
+        </scapfd_testref.zj25>
+
+        <scapfd_testref.hs_qyhsbsn_ds uapDisplayName="地市国有企业比上年增加量">
+        </scapfd_testref.hs_qyhsbsn_ds>
+<!--全省国有企业户数变动情况表-->
+        <scapfd_testref.vyear3 uapDisplayName="2013">
+        </scapfd_testref.vyear3>
+<!--全省合计-->
+        <scapfd_testref.hs_qyzhs2 uapDisplayName="2012年全省户数">
+        </scapfd_testref.hs_qyzhs2>
+
+        <scapfd_testref.hs_qyzhs3 uapDisplayName="2013年全省户数">
+        </scapfd_testref.hs_qyzhs3>
+
+        <scapfd_testref.hs_qyhsbsn2 uapDisplayName="全省户数增减户数">
+        </scapfd_testref.hs_qyhsbsn2>
+
+        <scapfd_testref.hs_qyhsnzz1 uapDisplayName="全省户数增减率">
+        </scapfd_testref.hs_qyhsnzz1>
+<!--省属企业-->
+        <scapfd_testref.hs_qyzhs_ss uapDisplayName="2012年省属企业户数">
+        </scapfd_testref.hs_qyzhs_ss>
+
+        <scapfd_testref.hs_qyzhs_ss1 uapDisplayName="2013年省属企业户数">
+        </scapfd_testref.hs_qyzhs_ss1>
+
+        <scapfd_testref.hs_qyhsbsn_ss uapDisplayName="省属企业增减户数">
+        </scapfd_testref.hs_qyhsbsn_ss>
+
+        <scapfd_testref.hs_qyhsnzz_ss uapDisplayName="省属企业户数增减率">
+        </scapfd_testref.hs_qyhsnzz_ss>
+<!--省级监管企业-->
+        <scapfd_testref.hs_qyzhs_sjjg1 uapDisplayName="2012年省级监管企业户数">
+        </scapfd_testref.hs_qyzhs_sjjg1>
+
+        <scapfd_testref.hs_qyzhs_sjjg2 uapDisplayName="2013年省级监管企业户数">
+        </scapfd_testref.hs_qyzhs_sjjg2>
+
+        <scapfd_testref.hs_qyhsbsn_sjjg1 uapDisplayName="省级监管企业增减户数">
+        </scapfd_testref.hs_qyhsbsn_sjjg1>
+
+        <scapfd_testref.hs_qyhsnzz_sjjg uapDisplayName="省级监管企业户数增减率">
+        </scapfd_testref.hs_qyhsnzz_sjjg>
+<!--省级非监管企业-->
+        <scapfd_testref.hs_qyzhs_sjfjg1 uapDisplayName="2012年省级非监管企业户数">
+        </scapfd_testref.hs_qyzhs_sjfjg1>
+
+        <scapfd_testref.hs_qyzhs_sjfjg2 uapDisplayName="2013年省级非监管企业户数">
+        </scapfd_testref.hs_qyzhs_sjfjg2>
+
+        <scapfd_testref.hs_qyhsbsn_sjfjg1 uapDisplayName="省级非监管企业增减户数">
+        </scapfd_testref.hs_qyhsbsn_sjfjg1>
+
+        <scapfd_testref.hs_qyhsnzz_sjfjg uapDisplayName="省级非监管企业户数增减率">
+        </scapfd_testref.hs_qyhsnzz_sjfjg>
+        
+<!--地市企业-->
+        <scapfd_testref.hs_qyzhs_ds1 uapDisplayName="2012年地市企业户数">
+        </scapfd_testref.hs_qyzhs_ds1>
+
+        <scapfd_testref.hs_qyzhs_ds2 uapDisplayName="2013年地市企业户数">
+        </scapfd_testref.hs_qyzhs_ds2>
+
+        <scapfd_testref.hs_qyhsbsn_ds1 uapDisplayName="地市企业增减户数">
+        </scapfd_testref.hs_qyhsbsn_ds1>
+
+        <scapfd_testref.hs_qyhsnzz_ds uapDisplayName="地市企业户数增减率">
+        </scapfd_testref.hs_qyhsnzz_ds>
+<!--福州-->
+        <scapfd_testref.hs_qyzhs_fz uapDisplayName="2012年福州企业户数">
+        </scapfd_testref.hs_qyzhs_fz>
+
+        <scapfd_testref.hs_qyzhs_fz1 uapDisplayName="2013年福州企业户数">
+        </scapfd_testref.hs_qyzhs_fz1>
+
+        <scapfd_testref.hs_qyzhsbsn_fz uapDisplayName="福州企业增减户数">
+        </scapfd_testref.hs_qyzhsbsn_fz>
+
+        <scapfd_testref.hs_qyzhsnzz_fz uapDisplayName="福州企业户数增减率">
+        </scapfd_testref.hs_qyzhsnzz_fz>
+<!--厦门-->
+        <scapfd_testref.hs_qyzhs_xm uapDisplayName="2012年厦门企业户数">
+        </scapfd_testref.hs_qyzhs_xm>
+
+        <scapfd_testref.hs_qyzhs_xm1 uapDisplayName="2013年厦门企业户数">
+        </scapfd_testref.hs_qyzhs_xm1>
+
+        <scapfd_testref.hs_qyzhsbsn_xm uapDisplayName="厦门企业增减户数">
+        </scapfd_testref.hs_qyzhsbsn_xm>
+
+        <scapfd_testref.hs_qyzhsnzz_xm uapDisplayName="厦门企业户数增减率">
+        </scapfd_testref.hs_qyzhsnzz_xm>
+<!--漳州-->
+        <scapfd_testref.hs_qyzhs_zz uapDisplayName="2012年漳州企业户数">
+        </scapfd_testref.hs_qyzhs_zz>
+
+        <scapfd_testref.hs_qyzhs_zz1 uapDisplayName="2013年漳州企业户数">
+        </scapfd_testref.hs_qyzhs_zz1>
+
+        <scapfd_testref.hs_qyzhsbsn_zz uapDisplayName="漳州企业增减户数">
+        </scapfd_testref.hs_qyzhsbsn_zz>
+
+        <scapfd_testref.hs_qyzhsnzz_zz uapDisplayName="漳州户数增减率">
+        </scapfd_testref.hs_qyzhsnzz_zz>
+<!--泉州-->
+        <scapfd_testref.hs_qyzhs_qz uapDisplayName="2012年泉州企业户数">
+        </scapfd_testref.hs_qyzhs_qz>
+
+        <scapfd_testref.hs_qyzhs_qz1 uapDisplayName="2013年泉州企业户数">
+        </scapfd_testref.hs_qyzhs_qz1>
+
+        <scapfd_testref.hs_qyzhsbsn_qz uapDisplayName="泉州企业增减户数">
+        </scapfd_testref.hs_qyzhsbsn_qz>
+
+        <scapfd_testref.hs_qyzhsnzz_qz uapDisplayName="泉州企业户数增减率">
+        </scapfd_testref.hs_qyzhsnzz_qz>
+<!--三明-->
+        <scapfd_testref.hs_qyzhs_sm uapDisplayName="2012年三明企业户数">
+        </scapfd_testref.hs_qyzhs_sm>
+
+        <scapfd_testref.hs_qyzhs_sm1 uapDisplayName="2013年三明企业户数">
+        </scapfd_testref.hs_qyzhs_sm1>
+
+        <scapfd_testref.hs_qyzhsbsn_sm uapDisplayName="三明企业增减户数">
+        </scapfd_testref.hs_qyzhsbsn_sm>
+
+        <scapfd_testref.hs_qyzhsnzz_sm uapDisplayName="三明企业户数增减率">
+        </scapfd_testref.hs_qyzhsnzz_sm>
+<!--莆田-->
+        <scapfd_testref.hs_qyzhs_pt uapDisplayName="2012年莆田企业户数">
+        </scapfd_testref.hs_qyzhs_pt>
+
+        <scapfd_testref.hs_qyzhs_pt1 uapDisplayName="2013年莆田企业户数">
+        </scapfd_testref.hs_qyzhs_pt1>
+
+        <scapfd_testref.hs_qyzhsbsn_pt uapDisplayName="莆田企业增减户数">
+        </scapfd_testref.hs_qyzhsbsn_pt>
+
+        <scapfd_testref.hs_qyzhsnzz_pt uapDisplayName="莆田户数增减率">
+        </scapfd_testref.hs_qyzhsnzz_pt>
+
+<!--南平-->
+        <scapfd_testref.hs_qyzhs_np uapDisplayName="2012年南平企业户数">
+        </scapfd_testref.hs_qyzhs_np>
+
+        <scapfd_testref.hs_qyzhs_np1 uapDisplayName="2013年南平企业户数">
+        </scapfd_testref.hs_qyzhs_np1>
+
+        <scapfd_testref.hs_qyzhsbsn_np uapDisplayName="南平企业增减户数">
+        </scapfd_testref.hs_qyzhsbsn_np>
+
+        <scapfd_testref.hs_qyzhsnzz_np uapDisplayName="南平企业户数增减率">
+        </scapfd_testref.hs_qyzhsnzz_np>
+<!--龙岩-->
+        <scapfd_testref.hs_qyzhs_ly uapDisplayName="2012年龙岩企业户数">
+        </scapfd_testref.hs_qyzhs_ly>
+
+        <scapfd_testref.hs_qyzhs_ly1 uapDisplayName="2013年龙岩企业户数">
+        </scapfd_testref.hs_qyzhs_ly1>
+
+        <scapfd_testref.hs_qyzhsbsn_ly uapDisplayName="龙岩企业增减户数">
+        </scapfd_testref.hs_qyzhsbsn_ly>
+
+        <scapfd_testref.hs_qyzhsnzz_ly uapDisplayName="龙岩企业户数增减率">
+        </scapfd_testref.hs_qyzhsnzz_ly>
+<!--宁德-->
+        <scapfd_testref.hs_qyzhs_nd uapDisplayName="2012年宁德企业户数">
+        </scapfd_testref.hs_qyzhs_nd>
+
+        <scapfd_testref.hs_qyzhs_nd1 uapDisplayName="2013年宁德企业户数">
+        </scapfd_testref.hs_qyzhs_nd1>
+
+        <scapfd_testref.hs_qyzhsbsn_nd uapDisplayName="宁德企业增减户数">
+        </scapfd_testref.hs_qyzhsbsn_nd>
+
+        <scapfd_testref.hs_qyzhsnzz_nd uapDisplayName="宁德户数增减率">
+        </scapfd_testref.hs_qyzhsnzz_nd>
+<!--平潭-->
+        <scapfd_testref.hs_qyzhs_pz uapDisplayName="2012年平潭企业户数">
+        </scapfd_testref.hs_qyzhs_pz>
+
+        <scapfd_testref.hs_qyzhs_pz1 uapDisplayName="2013年平潭企业户数">
+        </scapfd_testref.hs_qyzhs_pz1>
+
+        <scapfd_testref.hs_qyzhsbsn_pz uapDisplayName="平潭企业增减户数">
+        </scapfd_testref.hs_qyzhsbsn_pz>
+
+        <scapfd_testref.hs_qyzhsnzz_pz uapDisplayName="平潭户数增减率">
+        </scapfd_testref.hs_qyzhsnzz_pz>
+<!--（二）资产分布相对集中-->
+<!--两级监管企业资产总额-->
+        <scapfd_testref.jg_zcze uapDisplayName="两级监管企业资产总额">
+        </scapfd_testref.jg_zcze>
+
+        <scapfd_testref.zb_zcze uapDisplayName="占全省比重">
+        </scapfd_testref.zb_zcze>
+<!--省级监管-->
+        <scapfd_testref.sjjg_zcze uapDisplayName="省级监管企业资产总额">
+        </scapfd_testref.sjjg_zcze>
+
+        <scapfd_testref.zb_zcze1 uapDisplayName="占全省比重">
+        </scapfd_testref.zb_zcze1>
+<!--地市监管-->
+        <scapfd_testref.dsjg_zcze uapDisplayName="地市监管企业资产总额">
+        </scapfd_testref.dsjg_zcze>
+
+        <scapfd_testref.zb_zcze2 uapDisplayName="占全省比重">
+        </scapfd_testref.zb_zcze2>
+
+<!--非监管企业资产总额-->
+        <scapfd_testref.fjg_zcze uapDisplayName="非监管企业资产总额">
+        </scapfd_testref.fjg_zcze>
+
+        <scapfd_testref.zb_zcze3 uapDisplayName="占全省比重">
+        </scapfd_testref.zb_zcze3>
+<!--省级非监管-->
+        <scapfd_testref.sjfjg_zcze uapDisplayName="省级非监管资产总额">
+        </scapfd_testref.sjfjg_zcze>
+        
+        <scapfd_testref.zb_zcze4 uapDisplayName="占全省比重">
+        </scapfd_testref.zb_zcze4>
+<!--地市非监管企业-->
+        <scapfd_testref.dsfjg_zcze uapDisplayName="地市非监管资产总额">
+        </scapfd_testref.dsfjg_zcze>
+        
+        <scapfd_testref.zb_zcze6 uapDisplayName="占全省比重">
+        </scapfd_testref.zb_zcze6>
+<!--地市国有企业资产总额-->
+        <scapfd_testref.dsgy_zcze1 uapDisplayName="地市国有企业资产总额">
+        </scapfd_testref.dsgy_zcze1>
+
+        <scapfd_testref.zb_zcze5 uapDisplayName="占全省比重">
+        </scapfd_testref.zb_zcze5>
+
+        <scapfd_testref.zcze_1000 uapDisplayName="资产总额超过1,000亿元的地市">
+        </scapfd_testref.zcze_1000>
+
+        <scapfd_testref.tb_zcze_max uapDisplayName="资产总额同比最快的地市">
+        </scapfd_testref.tb_zcze_max>
+
+        <scapfd_testref.tb_zcze_max1 uapDisplayName="同比增长额最大的地市">
+        </scapfd_testref.tb_zcze_max1>
+<!--各地市资产负债率-->
+        <scapfd_testref.pj_zcfzl uapDisplayName="平均资产负债率">
+        </scapfd_testref.pj_zcfzl>
+        
+        <scapfd_testref.min_zcfzl uapDisplayName="资产负债率最低">
+        </scapfd_testref.min_zcfzl>
+        
+        <scapfd_testref.max_zcfzl uapDisplayName="资产负债率最高">
+        </scapfd_testref.max_zcfzl>
+<!--各地市国有企业资产总额变动情况表-->        
+        <scapfd_testref.vyear4 uapDisplayName="2013">
+        </scapfd_testref.vyear4>
+
+        
+        <!--（三）归属于母公司的所有者权益稳步增长。-->
+        <scapfd_testref.vyear5 uapDisplayName="2013">
+        </scapfd_testref.vyear5>
+        
+        <scapfd_testref.bn_gsmgsqyze1 uapDisplayName="归属于母公司的所有者权益">
+        </scapfd_testref.bn_gsmgsqyze1>
+
+        <scapfd_testref.zj26 uapDisplayName="增加">
+        </scapfd_testref.zj26>
+
+        <scapfd_testref.bsn_gsmgsqyze1 uapDisplayName="归属于母公司的所有者权益比上年增加">
+        </scapfd_testref.bsn_gsmgsqyze1>
+
+        <scapfd_testref.zj27 uapDisplayName="比增">
+        </scapfd_testref.zj27>
+
+        <scapfd_testref.tb_gsmgsqyze1 uapDisplayName="年增长率">
+        </scapfd_testref.tb_gsmgsqyze1>
+<!--其中实收资本净额-->
+   
+        <scapfd_testref.qm_sszbje uapDisplayName="实收资本净额">
+        </scapfd_testref.qm_sszbje>
+
+        <scapfd_testref.zj55 uapDisplayName="增加">
+        </scapfd_testref.zj55>
+
+        <scapfd_testref.bsn_sszbje uapDisplayName="实收资本净额增加量">
+        </scapfd_testref.bsn_sszbje>
+
+        <scapfd_testref.zj56 uapDisplayName="比增">
+        </scapfd_testref.zj56>
+
+        <scapfd_testref.bz_sszbje uapDisplayName="实收资本净额年增长率">
+        </scapfd_testref.bz_sszbje>
+<!--资本公积-->
+        <scapfd_testref.qm_zbgj uapDisplayName="资本公积">
+        </scapfd_testref.qm_zbgj>
+
+        <scapfd_testref.zj57 uapDisplayName="增加">
+        </scapfd_testref.zj57>
+
+        <scapfd_testref.bsn_zbgj uapDisplayName="资本公积比上年增加量">
+        </scapfd_testref.bsn_zbgj>
+
+        <scapfd_testref.zj58 uapDisplayName="比增">
+        </scapfd_testref.zj58>
+
+        <scapfd_testref.bz_zbgj uapDisplayName="资本公积年增长率">
+        </scapfd_testref.bz_zbgj>
+<!--未分配利润-->
+
+        <scapfd_testref.qm_wfplr uapDisplayName="未分配利润">
+        </scapfd_testref.qm_wfplr>
+
+        <scapfd_testref.zj59 uapDisplayName="增加">
+        </scapfd_testref.zj59>
+
+        <scapfd_testref.bsn_wfplr uapDisplayName="未分配利润比上年增加量">
+        </scapfd_testref.bsn_wfplr>
+
+        <scapfd_testref.zj60 uapDisplayName="比增">
+        </scapfd_testref.zj60>
+
+        <scapfd_testref.bz_wfplr uapDisplayName="未分配利润年增长率">
+        </scapfd_testref.bz_wfplr>
+<!--两级监管企业-->
+
+        <scapfd_testref.jg_gsmgsqyze uapDisplayName="两级监管企业归属于母公司所有者权益">
+        </scapfd_testref.jg_gsmgsqyze>
+
+        <scapfd_testref.bz_gsmgsqyze_jg uapDisplayName="占全省比重">
+        </scapfd_testref.bz_gsmgsqyze_jg>
+<!--省级监管企业-->
+        <scapfd_testref.sjjg_gsmgsqyze uapDisplayName="省级监管企业归属于母公司所有者权益">
+        </scapfd_testref.sjjg_gsmgsqyze>
+
+        <scapfd_testref.bz_gsmgsqyze_sjjg uapDisplayName="省级监管占全省比重">
+        </scapfd_testref.bz_gsmgsqyze_sjjg>
+        
+        <scapfd_testref.gsmgsqyze_ysnbj uapDisplayName="与上年（67.0%）基本持平">
+        </scapfd_testref.gsmgsqyze_ysnbj>
+<!--地市监管企业-->
+        <scapfd_testref.dsjg_gsmgsqyze uapDisplayName="地市监管归属于母公司所有者权益">
+        </scapfd_testref.dsjg_gsmgsqyze>
+
+        <scapfd_testref.bz_gsmgsqyze_dsjg uapDisplayName="地市监管占全省比重">
+        </scapfd_testref.bz_gsmgsqyze_dsjg>
+<!--非监管企业-->
+        <scapfd_testref.fjg_gsmgsqyze uapDisplayName="非监管企业归属于母公司所有者权益">
+        </scapfd_testref.fjg_gsmgsqyze>
+
+        <scapfd_testref.zb_gsmgsqyze_fjg uapDisplayName="非监管占全省比重">
+        </scapfd_testref.zb_gsmgsqyze_fjg>
+<!--省级非监管-->
+        <scapfd_testref.sjfjg_gsmgsqyze uapDisplayName="省级非监管企业归属于母公司所有者权益">
+        </scapfd_testref.sjfjg_gsmgsqyze>
+
+        <scapfd_testref.zb_gsmgsqyze_sjfjg uapDisplayName="省级非监管占全省比重">
+        </scapfd_testref.zb_gsmgsqyze_sjfjg>
+<!--地市非监管企业-->
+        <scapfd_testref.dsfjg_gsmgsqyze uapDisplayName="地市非监管企业归属于母公司所有者权益">
+        </scapfd_testref.dsfjg_gsmgsqyze>
+        
+        <scapfd_testref.zb_gsmgsqyze_dsfjg uapDisplayName="地市非监管占全省比重">
+        </scapfd_testref.zb_gsmgsqyze_dsfjg>
+<!--从地区分布看-->
+        <scapfd_testref.dsgy_gsmgsqyze uapDisplayName="地市国有企业归属于母公司的所有者权益">
+        </scapfd_testref.dsgy_gsmgsqyze>
+
+        <scapfd_testref.zb_gsmgsqyze_dsgy uapDisplayName="地市国有占全省比重">
+        </scapfd_testref.zb_gsmgsqyze_dsgy>
+
+        <scapfd_testref.gsmgsqyze_500 uapDisplayName="归属于母公司的所有者权益超过500亿元">
+        </scapfd_testref.gsmgsqyze_500>
+
+        <scapfd_testref.tb_gsmgsqyze_max uapDisplayName="所有者权益同比增速最快">
+        </scapfd_testref.tb_gsmgsqyze_max>
+
+        <scapfd_testref.tb_gsmgsqyze_max1 uapDisplayName="同比增长额最大">
+        </scapfd_testref.tb_gsmgsqyze_max1>
+
+<!--各地市国有企业所有者权益变动情况表-->
+        <scapfd_testref.vyear6 uapDisplayName="2013">
+        </scapfd_testref.vyear6>
+
+<!--（四）营业收入增幅较大-->
+        <scapfd_testref.vyear7 uapDisplayName="2013">
+        </scapfd_testref.vyear7>
+
+        <scapfd_testref.bn_yyzsr1 uapDisplayName="全省国有企业营业收入">
+        </scapfd_testref.bn_yyzsr1>
+
+        <scapfd_testref.zj28 uapDisplayName="增加">
+        </scapfd_testref.zj28>
+
+        <scapfd_testref.bsn_yyzsr1 uapDisplayName="营业收入比上年增加">
+        </scapfd_testref.bsn_yyzsr1>
+
+        <scapfd_testref.zj29 uapDisplayName="比增">
+        </scapfd_testref.zj29>
+
+        <scapfd_testref.tb_yyzsr1 uapDisplayName="营业收入增长率">
+        </scapfd_testref.tb_yyzsr1>
+
+<!--其中主营业务收入-->
+        <scapfd_testref.bq_zyywsr uapDisplayName="主营业务收入">
+        </scapfd_testref.bq_zyywsr>
+
+        <scapfd_testref.zb_zyywsr uapDisplayName="主营业务收入占营业收入比重">
+        </scapfd_testref.zb_zyywsr>
+
+        <scapfd_testref.zj30 uapDisplayName="增加">
+        </scapfd_testref.zj30>
+        
+        <scapfd_testref.bsn_zyywsr uapDisplayName="主营业务收入比上年增加量">
+        </scapfd_testref.bsn_zyywsr>
+
+        <scapfd_testref.zj61 uapDisplayName="比增">
+        </scapfd_testref.zj61>
+        
+        <scapfd_testref.bz_zyywsr uapDisplayName="主营业务收入年增长率">
+        </scapfd_testref.bz_zyywsr>
+<!--其他业务收入-->
+        <scapfd_testref.bq_qtywsr uapDisplayName="其他业务收入">
+        </scapfd_testref.bq_qtywsr>
+
+        <scapfd_testref.zb_qtywsr uapDisplayName="其他业务收入占营业收入比重">
+        </scapfd_testref.zb_qtywsr>
+
+        <scapfd_testref.zj31 uapDisplayName="增加">
+        </scapfd_testref.zj31>
+        
+        <scapfd_testref.bsn_qtywsr uapDisplayName="其他业务收入比上年增加量">
+        </scapfd_testref.bsn_qtywsr>
+
+        <scapfd_testref.zj62 uapDisplayName="比增">
+        </scapfd_testref.zj62>
+        
+        <scapfd_testref.bz_qtywsr uapDisplayName="其他业务收入年增长率">
+        </scapfd_testref.bz_qtywsr>
+<!--两级监管企业-->
+
+        <scapfd_testref.jg_yyzsr uapDisplayName="两级监管企业营业收入">
+        </scapfd_testref.jg_yyzsr>
+
+        <scapfd_testref.bz_yyzsr_jg uapDisplayName="占全省比重">
+        </scapfd_testref.bz_yyzsr_jg>
+        
+        <scapfd_testref.yyzsr_ysnbj uapDisplayName="比上年（86.8%）略有增长">
+        </scapfd_testref.yyzsr_ysnbj>
+<!--省级监管企业-->
+        <scapfd_testref.sjjg_yyzsr uapDisplayName="省级监管企业营业收入">
+        </scapfd_testref.sjjg_yyzsr>
+
+        <scapfd_testref.bz_yyzsr_sjjg uapDisplayName="省级监管占全省比重">
+        </scapfd_testref.bz_yyzsr_sjjg>
+<!--地市监管企业-->
+        <scapfd_testref.dsjg_yyzsr uapDisplayName="地市监管营业收入">
+        </scapfd_testref.dsjg_yyzsr>
+
+        <scapfd_testref.bz_yyzsr_dsjg uapDisplayName="地市监管占全省比重">
+        </scapfd_testref.bz_yyzsr_dsjg>
+<!--非监管企业-->
+        <scapfd_testref.fjg_yyzsr uapDisplayName="非监管企业营业收入">
+        </scapfd_testref.fjg_yyzsr>
+
+        <scapfd_testref.zb_yyzsr_fjg uapDisplayName="非监管占全省比重">
+        </scapfd_testref.zb_yyzsr_fjg>
+<!--省级非监管-->
+        <scapfd_testref.sjfjg_yyzsr uapDisplayName="省级非监管企业营业收入">
+        </scapfd_testref.sjfjg_yyzsr>
+
+        <scapfd_testref.zb_yyzsr_sjfjg uapDisplayName="省级非监管占全省比重">
+        </scapfd_testref.zb_yyzsr_sjfjg>
+<!--地市非监管企业-->
+        <scapfd_testref.dsfjg_yyzsr uapDisplayName="地市非监管企业营业收入">
+        </scapfd_testref.dsfjg_yyzsr>
+        
+        <scapfd_testref.zb_yyzsr_dsfjg uapDisplayName="地市非监管占全省比重">
+        </scapfd_testref.zb_yyzsr_dsfjg>
+<!--从地区分布看-->
+        <scapfd_testref.dsgy_yyzsr uapDisplayName="地市国有企业营业收入">
+        </scapfd_testref.dsgy_yyzsr>
+
+        <scapfd_testref.zb_yyzsr_dsgy uapDisplayName="地市国有占全省比重">
+        </scapfd_testref.zb_yyzsr_dsgy>
+
+        <scapfd_testref.yyzsr_300 uapDisplayName="营业收入超过300亿元">
+        </scapfd_testref.yyzsr_300>
+
+        <scapfd_testref.tb_yyzsr_max uapDisplayName="营业收入同比增速最快">
+        </scapfd_testref.tb_yyzsr_max>
+
+        <scapfd_testref.tb_bn_yyzsr_max1 uapDisplayName="同比增长额最大">
+        </scapfd_testref.tb_bn_yyzsr_max1>
+
+<!--各地市国有企业营业收入变动情况表-->
+        <scapfd_testref.vyear8 uapDisplayName="2013">
+        </scapfd_testref.vyear8>
+
+        
+<!--（五）企业经济效益有所增长-->
+
+        <scapfd_testref.vyear9 uapDisplayName="2013">
+        </scapfd_testref.vyear9>
+
+        <scapfd_testref.bn_lrze1 uapDisplayName="全省国有企业利润总额">
+        </scapfd_testref.bn_lrze1>
+
+        <scapfd_testref.zj32 uapDisplayName="增加">
+        </scapfd_testref.zj32>
+
+        <scapfd_testref.bsn_lrze1 uapDisplayName="利润总额比上年增加">
+        </scapfd_testref.bsn_lrze1>
+
+        <scapfd_testref.zj33 uapDisplayName="比增">
+        </scapfd_testref.zj33>
+
+        <scapfd_testref.tb_lrze1 uapDisplayName="利润总额增长率">
+        </scapfd_testref.tb_lrze1>
+
+<!--净利润-->
+        <scapfd_testref.bn_jlr1 uapDisplayName="净利润">
+        </scapfd_testref.bn_jlr1>
+
+        <scapfd_testref.zj34 uapDisplayName="增加">
+        </scapfd_testref.zj34>
+        
+        <scapfd_testref.bsn_jlr1 uapDisplayName="净利润比上年增加量">
+        </scapfd_testref.bsn_jlr1>
+
+        <scapfd_testref.zj35 uapDisplayName="比增">
+        </scapfd_testref.zj35>
+        
+        <scapfd_testref.tb_jlr1 uapDisplayName="净利润年增长率">
+        </scapfd_testref.tb_jlr1>
+<!--归属于母公司所有者的净利润-->
+        <scapfd_testref.bn_gsymgsjlr uapDisplayName="归属于母公司所有者的净利润">
+        </scapfd_testref.bn_gsymgsjlr>
+
+        <scapfd_testref.zj36 uapDisplayName="增加">
+        </scapfd_testref.zj36>
+        
+        <scapfd_testref.bsn_gsymgsjlr1 uapDisplayName="归属于母公司所有者的净利润比上年增加量">
+        </scapfd_testref.bsn_gsymgsjlr1>
+
+        <scapfd_testref.zj37 uapDisplayName="比增">
+        </scapfd_testref.zj37>
+        
+        <scapfd_testref.tb_gsmgsjlr1 uapDisplayName="归属于母公司所有者的净利润年增长率">
+        </scapfd_testref.tb_gsmgsjlr1>
+        
+<!--盈利企业-->
+        <scapfd_testref.lyqy uapDisplayName="盈利企业户数">
+        </scapfd_testref.lyqy>
+        
+        <scapfd_testref.zb_lyqy uapDisplayName="盈利面">
+        </scapfd_testref.zb_lyqy>
+        
+        <scapfd_testref.lyqy_ysnbj uapDisplayName="与去年（60.3%）基本持平">
+        </scapfd_testref.lyqy_ysnbj>
+<!--营业利润-->
+         <scapfd_testref.bq_yylr uapDisplayName="营业利润">
+        </scapfd_testref.bq_yylr>
+        
+        <scapfd_testref.zb_yylr uapDisplayName="营业利润占利润总额比重">
+        </scapfd_testref.zb_yylr>
+<!--投资收益-->
+        <scapfd_testref.bq_tzsy uapDisplayName="投资收益">
+        </scapfd_testref.bq_tzsy>
+        
+        <scapfd_testref.zb_tzsy uapDisplayName="投资收益占利润总额比重">
+        </scapfd_testref.zb_tzsy>
+        
+        <scapfd_testref.zj73 uapDisplayName="增加">
+        </scapfd_testref.zj73>
+        
+        <scapfd_testref.zb_tzsy_bsn uapDisplayName="投资收益比重比上年">
+        </scapfd_testref.zb_tzsy_bsn>
+        
+<!--营业外利润-->
+         <scapfd_testref.yywlr uapDisplayName="营业外利润">
+        </scapfd_testref.yywlr>
+        
+        <scapfd_testref.zb_yywlr uapDisplayName="营业外利润占利润总额比重">
+        </scapfd_testref.zb_yywlr>
+        
+        <scapfd_testref.zj74 uapDisplayName="增加">
+        </scapfd_testref.zj74>
+        
+        <scapfd_testref.zb_yywlr_bsn uapDisplayName="营业外利润比重比上年">
+        </scapfd_testref.zb_yywlr_bsn>
+<!--两级监管企业-->
+
+        <scapfd_testref.jg_lrze uapDisplayName="两级监管企业利润总额">
+        </scapfd_testref.jg_lrze>
+
+        <scapfd_testref.bz_lrze_jg uapDisplayName="占全省比重">
+        </scapfd_testref.bz_lrze_jg>
+        
+        <scapfd_testref.lrze_ysnbj uapDisplayName="比上年（66.3%）有较大增长">
+        </scapfd_testref.lrze_ysnbj>
+<!--省级监管企业-->
+        <scapfd_testref.sjjg_lrze uapDisplayName="省级监管企业利润总额">
+        </scapfd_testref.sjjg_lrze>
+
+        <scapfd_testref.bz_lrze_sjjg uapDisplayName="省级监管占全省比重">
+        </scapfd_testref.bz_lrze_sjjg>
+<!--地市监管企业-->
+        <scapfd_testref.dsjg_lrze uapDisplayName="地市监管利润总额">
+        </scapfd_testref.dsjg_lrze>
+
+        <scapfd_testref.bz_lrze_dsjg uapDisplayName="地市监管占全省比重">
+        </scapfd_testref.bz_lrze_dsjg>
+<!--非监管企业-->
+        <scapfd_testref.fjg_lrze uapDisplayName="非监管企业利润总额">
+        </scapfd_testref.fjg_lrze>
+
+        <scapfd_testref.zb_lrze_fjg uapDisplayName="非监管占全省比重">
+        </scapfd_testref.zb_lrze_fjg>
+<!--省级非监管-->
+        <scapfd_testref.sjfjg_lrze uapDisplayName="省级非监管企业利润总额">
+        </scapfd_testref.sjfjg_lrze>
+
+        <scapfd_testref.zb_lrze_sjfjg uapDisplayName="省级非监管占全省比重">
+        </scapfd_testref.zb_lrze_sjfjg>
+<!--地市非监管企业-->
+        <scapfd_testref.dsfjg_lrze uapDisplayName="地市非监管企业利润总额">
+        </scapfd_testref.dsfjg_lrze>
+        
+        <scapfd_testref.zb_lrze_dsfjg uapDisplayName="地市非监管占全省比重">
+        </scapfd_testref.zb_lrze_dsfjg>
+        
+        <scapfd_testref.lrze_dsfjg_dhmax uapDisplayName="利润总额单户最高">
+        </scapfd_testref.lrze_dsfjg_dhmax>
+<!--从地区分布看-->
+        <scapfd_testref.dsgy_lrze uapDisplayName="地市国有企业利润总额">
+        </scapfd_testref.dsgy_lrze>
+
+        <scapfd_testref.zb_lrze_dsgy uapDisplayName="地市国有占全省比重">
+        </scapfd_testref.zb_lrze_dsgy>
+
+        <scapfd_testref.lrze_3 uapDisplayName="利润总额排名前三名">
+        </scapfd_testref.lrze_3>
+
+        <scapfd_testref.tb_lrze_max uapDisplayName="利润总额同比增速最快">
+        </scapfd_testref.tb_lrze_max>
+
+        <scapfd_testref.tb_bn_lrze_max1 uapDisplayName="同比增长额最大">
+        </scapfd_testref.tb_bn_lrze_max1>
+<!--地市资产收益率-->
+        <scapfd_testref.pj_jzcsyl uapDisplayName="十地市平均净资产收益率">
+        </scapfd_testref.pj_jzcsyl>
+
+        <scapfd_testref.jzcsyl_max uapDisplayName="净资产收益率较高的地市">
+        </scapfd_testref.jzcsyl_max>
+
+        <scapfd_testref.jzcsyl_min uapDisplayName="净资产收益率较低的地市">
+        </scapfd_testref.jzcsyl_min>
+<!--各地市国有企业利润总额变动情况表-->
+        <scapfd_testref.vyear10 uapDisplayName="2013">
+        </scapfd_testref.vyear10>
+
+        
+        
+<!--二、全省国有企业运营主要特点-->
+<!--（一）企业总体规模持续扩张，但平均规模仍然偏小。-->
+        <scapfd_testref.vyear20 uapDisplayName="2013">
+        </scapfd_testref.vyear20>
+        
+        <scapfd_testref.vyear21 uapDisplayName="2013">
+        </scapfd_testref.vyear21>
+<!--资产总额-->
+        <scapfd_testref.bn_zcze1 uapDisplayName="全省资产总额">
+        </scapfd_testref.bn_zcze1>
+
+        <scapfd_testref.zj38 uapDisplayName="比增">
+        </scapfd_testref.zj38>
+
+        <scapfd_testref.tb_zcze1 uapDisplayName="资产总额同比增长率">
+        </scapfd_testref.tb_zcze1>
+<!--所有者权益-->
+        <scapfd_testref.bn_syzqyze1 uapDisplayName="所有者权益">
+        </scapfd_testref.bn_syzqyze1>
+
+        <scapfd_testref.zj39 uapDisplayName="比增">
+        </scapfd_testref.zj39>
+
+        <scapfd_testref.tb_syzqyze1 uapDisplayName="所有者权益同比增长率">
+        </scapfd_testref.tb_syzqyze1>
+<!--归属于母公司的所有者权益-->
+        <scapfd_testref.bn_gsmgsqyze2 uapDisplayName="归属于母公司的所有者权益">
+        </scapfd_testref.bn_gsmgsqyze2>
+
+        <scapfd_testref.zj40 uapDisplayName="比增">
+        </scapfd_testref.zj40>
+
+        <scapfd_testref.tb_gsmgsqyze2 uapDisplayName="归属于母公司的所有者权益同比增长率">
+        </scapfd_testref.tb_gsmgsqyze2>
+<!--全省国有企业-->
+        <scapfd_testref.vyear22 uapDisplayName="2013">
+        </scapfd_testref.vyear22>
+        
+        <scapfd_testref.pj_zcze uapDisplayName="户均总资产">
+        </scapfd_testref.pj_zcze>
+
+        <scapfd_testref.pj_jzc uapDisplayName="户均净资产">
+        </scapfd_testref.pj_jzc>
+
+        <scapfd_testref.pj_yysr uapDisplayName="户均营业收入">
+        </scapfd_testref.pj_yysr>
+<!--省级监管企业-->
+        <scapfd_testref.pj_zcze_sj uapDisplayName="户均总资产">
+        </scapfd_testref.pj_zcze_sj>
+
+        <scapfd_testref.pj_jzc_sj uapDisplayName="户均净资产">
+        </scapfd_testref.pj_jzc_sj>
+
+        <scapfd_testref.pj_yysr_sj uapDisplayName="户均营业收入">
+        </scapfd_testref.pj_yysr_sj>
+<!--（二）企业经济效益有所提升，但盈利能力仍然不高-->
+        <scapfd_testref.vyear11 uapDisplayName="2013">
+        </scapfd_testref.vyear11>
+<!--利润总额-->
+        <scapfd_testref.bn_lrze2 uapDisplayName="利润总额">
+        </scapfd_testref.bn_lrze2>
+        
+        <scapfd_testref.zj41 uapDisplayName="比增">
+        </scapfd_testref.zj41>
+
+        <scapfd_testref.tb_lrze2 uapDisplayName="利润总额增长率">
+        </scapfd_testref.tb_lrze2>
+        
+        <scapfd_testref.zj42 uapDisplayName="增加">
+        </scapfd_testref.zj42>
+
+        <scapfd_testref.tbbsn_lrze uapDisplayName="利润总额增长率增幅">
+        </scapfd_testref.tbbsn_lrze>
+<!--净利润-->
+        <scapfd_testref.bn_jlr2 uapDisplayName="净利润">
+        </scapfd_testref.bn_jlr2>
+
+        <scapfd_testref.zj43 uapDisplayName="比增">
+        </scapfd_testref.zj43>
+
+        <scapfd_testref.tb_jlr2 uapDisplayName="净利润增长率">
+        </scapfd_testref.tb_jlr2>
+
+<!--归属于母公司所有者的净利润-->
+        <scapfd_testref.bn_gsymgsjlr1 uapDisplayName="归属于母公司所有者的净利润">
+        </scapfd_testref.bn_gsymgsjlr1>
+
+        <scapfd_testref.zj44 uapDisplayName="比增">
+        </scapfd_testref.zj44>
+
+        <scapfd_testref.tb_gsmgsjlr2 uapDisplayName="归属于母公司所有者的净利润增长率">
+        </scapfd_testref.tb_gsmgsjlr2>
+        
+        <scapfd_testref.vyear12 uapDisplayName="2013">
+        </scapfd_testref.vyear12>
+<!--营业利润率-->
+        <scapfd_testref.yylrl uapDisplayName="营业利润率">
+        </scapfd_testref.yylrl>
+
+        <scapfd_testref.cblyl uapDisplayName="成本费用利润率">
+        </scapfd_testref.cblyl>
+<!--净资产收益率（含少数股东权益）-->
+        <scapfd_testref.jzcsyl_hss uapDisplayName="净资产收益率（含少数股东权益）">
+        </scapfd_testref.jzcsyl_hss>
+
+        <scapfd_testref.zj45 uapDisplayName="上升">
+        </scapfd_testref.zj45>
+
+        <scapfd_testref.bsn_jzcsyl_hss uapDisplayName="净资产收益率（含少数股东权益）比上年">
+        </scapfd_testref.bsn_jzcsyl_hss>
+<!--总资产报酬率-->
+        <scapfd_testref.zzcbsl uapDisplayName="总资产报酬率">
+        </scapfd_testref.zzcbsl>
+
+        <scapfd_testref.zj46 uapDisplayName="上升">
+        </scapfd_testref.zj46>
+
+        <scapfd_testref.bsn_zzcbcl uapDisplayName="总资产报酬率比上年">
+        </scapfd_testref.bsn_zzcbcl>
+<!--（三）企业平均资产负债率偏高，短期偿债能力处于全国平均水平-->
+
+        <scapfd_testref.vyear13 uapDisplayName="2013">
+        </scapfd_testref.vyear13>
+<!--平均资产负债率 改 pj_zcfzl 改成 pj_zcfzl1-->
+        <scapfd_testref.pj_zcfzl1 uapDisplayName="平均资产负债率">
+        </scapfd_testref.pj_zcfzl1>
+        
+        <scapfd_testref.zj47 uapDisplayName="增加">
+        </scapfd_testref.zj47>
+
+        <scapfd_testref.bsn_zcfzl uapDisplayName="平均资产负债率比上年">
+        </scapfd_testref.bsn_zcfzl>
+<!--速动比率-->
+        <scapfd_testref.sd_sdbl uapDisplayName="速动比率">
+        </scapfd_testref.sd_sdbl>
+<!--现金流动负债比率-->
+        <scapfd_testref.xjldfzbl uapDisplayName="现金流动负债比率">
+        </scapfd_testref.xjldfzbl>
+<!--（四）企业社会贡献依然突出，但研发费用有所下降。-->
+
+        <scapfd_testref.vyear14 uapDisplayName="2013">
+        </scapfd_testref.vyear14>
+         
+        <scapfd_testref.vyear15 uapDisplayName="2013">
+        </scapfd_testref.vyear15>
+        
+<!--全年平均从业人数 改bn_qnpjcyzgrs 成 bn_qnpjcyzgrs1 -->
+        <scapfd_testref.bn_qnpjcyzgrs1 uapDisplayName="全年平均从业人数">
+        </scapfd_testref.bn_qnpjcyzgrs1>
+
+        <scapfd_testref.zj48 uapDisplayName="比增">
+        </scapfd_testref.zj48>
+
+        <scapfd_testref.tb_qnpjcyryrs1 uapDisplayName="全年平均从业人数增长率">
+        </scapfd_testref.tb_qnpjcyryrs1>
+<!--实际上交税费总额-->
+        <scapfd_testref.bn_sjsjsfze1 uapDisplayName="实际上交税费总额">
+        </scapfd_testref.bn_sjsjsfze1>
+        
+        <scapfd_testref.zj49 uapDisplayName="比增">
+        </scapfd_testref.zj49>
+
+        <scapfd_testref.tb_sjsjsfze1 uapDisplayName="实际上交税费总额增长率">
+        </scapfd_testref.tb_sjsjsfze1>
+<!--劳动生产总值-->
+        <scapfd_testref.bn_ldsczz1 uapDisplayName="劳动生产总值">
+        </scapfd_testref.bn_ldsczz1>
+
+        <scapfd_testref.zj50 uapDisplayName="比增">
+        </scapfd_testref.zj50>
+
+        <scapfd_testref.tb_ldsczz1 uapDisplayName="劳动生产总值增长率">
+        </scapfd_testref.tb_ldsczz1>
+<!--当年支出的安全生产费用-->
+        <scapfd_testref.nd_dnzcaqscfy uapDisplayName="当年支出的安全生产费用">
+        </scapfd_testref.nd_dnzcaqscfy>
+
+        <scapfd_testref.zj51 uapDisplayName="比增">
+        </scapfd_testref.zj51>
+
+        <scapfd_testref.bz_dnzcaqscfy uapDisplayName="当年支出的安全生产费用">
+        </scapfd_testref.bz_dnzcaqscfy>
+<!--全年研究开发费用-->
+        <scapfd_testref.nd_yjkffyhj uapDisplayName="全年研究开发费用">
+        </scapfd_testref.nd_yjkffyhj>
+        
+        <scapfd_testref.zj52 uapDisplayName="上升">
+        </scapfd_testref.zj52>
+
+        <scapfd_testref.bz_yjkffyhj uapDisplayName="全年研究开发费用增长率">
+        </scapfd_testref.bz_yjkffyhj>
+<!--当年新增专利数-->
+        <scapfd_testref.nd_bndxzzlsl uapDisplayName="当年新增专利数">
+        </scapfd_testref.nd_bndxzzlsl>
+        
+        <scapfd_testref.zj53 uapDisplayName="多">
+        </scapfd_testref.zj53>
+
+        <scapfd_testref.bsn_bndxzzlsl uapDisplayName="当年新增专利数比上年">
+        </scapfd_testref.bsn_bndxzzlsl>
+<!--当年支出的节能减排费用-->
+        <scapfd_testref.nd_zcjnjpfy uapDisplayName="当年支出的节能减排费用">
+        </scapfd_testref.nd_zcjnjpfy>
+        
+        <scapfd_testref.zj54 uapDisplayName="上升">
+        </scapfd_testref.zj54>
+
+        <scapfd_testref.bz_zcjnjpfy uapDisplayName="当年支出的节能减排费用增长率">
+        </scapfd_testref.bz_zcjnjpfy>
+<!--（五）资产营运水平低，“两金”占用高。-->
+        <scapfd_testref.vyear16 uapDisplayName="2013">
+        </scapfd_testref.vyear16>
+        
+        <scapfd_testref.ot_zzczzl uapDisplayName="总资产周转率">
+        </scapfd_testref.ot_zzczzl>
+
+        <scapfd_testref.vyear17 uapDisplayName="2013">
+        </scapfd_testref.vyear17>
+        
+        <scapfd_testref.ot_ldzczzl uapDisplayName="流动资产周转率">
+        </scapfd_testref.ot_ldzczzl>
+        
+        <scapfd_testref.vyear18 uapDisplayName="2013">
+        </scapfd_testref.vyear18>
+        
+<!--存货、各类应收债权-->
+        <scapfd_testref.ch_and_yszq uapDisplayName="存货、各类应收债权">
+        </scapfd_testref.ch_and_yszq>
+        
+        <scapfd_testref.ch_and_yszq_zb uapDisplayName="存货、各类应收债权占流动资产总额比重">
+        </scapfd_testref.ch_and_yszq_zb>
+
+<!--应收账款-->       
+        <scapfd_testref.bn_yszk uapDisplayName="应收账款">
+        </scapfd_testref.bn_yszk>
+        
+        <scapfd_testref.zj63 uapDisplayName="比增">
+        </scapfd_testref.zj63>
+        
+        <scapfd_testref.tb_yszk uapDisplayName="应收账款比上年增长率">
+        </scapfd_testref.tb_yszk>
+        
+<!--其他应收款-->       
+        <scapfd_testref.qt_yszk uapDisplayName="其他应收款">
+        </scapfd_testref.qt_yszk>
+        
+        <scapfd_testref.zj64 uapDisplayName="比增">
+        </scapfd_testref.zj64>
+        
+        <scapfd_testref.tb_qt_yszk uapDisplayName="其他应收款比上年增长率">
+        </scapfd_testref.tb_qt_yszk>
+
+<!--存货-->       
+        <scapfd_testref.bn_ch uapDisplayName="存货">
+        </scapfd_testref.bn_ch>
+        
+        <scapfd_testref.zj65 uapDisplayName="比增">
+        </scapfd_testref.zj65>
+        
+        <scapfd_testref.tb_ch uapDisplayName="存货比上年增长率">
+        </scapfd_testref.tb_ch>
+        
+<!--平均存货周转率-->
+        <scapfd_testref.pjchzzl uapDisplayName="平均存货周转率">
+        </scapfd_testref.pjchzzl>
+        
+<!--（六）固定资产投资同比下降，发展后劲有所弱化。-->
+        <scapfd_testref.vyear19 uapDisplayName="2013">
+        </scapfd_testref.vyear19>
+        
+        <scapfd_testref.gdzctze uapDisplayName="固定资产投资总额">
+        </scapfd_testref.gdzctze>
+        
+        <scapfd_testref.zj66 uapDisplayName="增加">
+        </scapfd_testref.zj66>
+        
+        <scapfd_testref.bsn_gdzctze uapDisplayName="固定资产投资总额比上年">
+        </scapfd_testref.bsn_gdzctze>
+        
+        <scapfd_testref.zj67 uapDisplayName="上升">
+        </scapfd_testref.zj67>
+        
+        <scapfd_testref.tb_gdzctze uapDisplayName="固定资产投资总额年增长率">
+        </scapfd_testref.tb_gdzctze>
+<!--购置固定资产-->
+        <scapfd_testref.gzgdzc uapDisplayName="购置固定资产">
+        </scapfd_testref.gzgdzc>
+        
+        <scapfd_testref.zj68 uapDisplayName="增加">
+        </scapfd_testref.zj68>
+        
+        <scapfd_testref.bsn_gzgdzc uapDisplayName="购置固定资产比上年">
+        </scapfd_testref.bsn_gzgdzc>
+        
+        <scapfd_testref.zj69 uapDisplayName="上升">
+        </scapfd_testref.zj69>
+        
+        <scapfd_testref.tb_gzgdzc uapDisplayName="购置固定资产年增长率">
+        </scapfd_testref.tb_gzgdzc>
+<!--基建投资-->
+        <scapfd_testref.jjtz uapDisplayName="基建投资">
+        </scapfd_testref.jjtz>
+        
+        <scapfd_testref.zj70 uapDisplayName="增加">
+        </scapfd_testref.zj70>
+        
+        <scapfd_testref.bsn_jjtz uapDisplayName="基建投资比上年">
+        </scapfd_testref.bsn_jjtz>
+        
+        <scapfd_testref.zj71 uapDisplayName="上升">
+        </scapfd_testref.zj71>
+        
+        <scapfd_testref.tb_jjtz uapDisplayName="基建投资年增长率">
+        </scapfd_testref.tb_jjtz>
+<!--固定资产投资占主营业务收入-->
+        <scapfd_testref.zb_gdzctz uapDisplayName="固定资产投资占主营业务收入">
+        </scapfd_testref.zb_gdzctz>
+        
+        <scapfd_testref.zj72 uapDisplayName="上升">
+        </scapfd_testref.zj72>
+        
+        <scapfd_testref.tb_gdzctz uapDisplayName="固定资产投资占主营业务收入年增长率">
+        </scapfd_testref.tb_gdzctz>
+
+<!--补充-->
+        <scapfd_testref.vyear23 uapDisplayName="2012">
+        </scapfd_testref.vyear23>
+        
+        <scapfd_testref.vyear24 uapDisplayName="2013">
+        </scapfd_testref.vyear24>
+        
+        <scapfd_testref.vyear25 uapDisplayName="2013">
+        </scapfd_testref.vyear25>
+        
+        <scapfd_testref.vyear26 uapDisplayName="2013">
+        </scapfd_testref.vyear26>
+        
+        <scapfd_testref.vyear27 uapDisplayName="2013">
+        </scapfd_testref.vyear27>
+        
+        <scapfd_testref.vyear28 uapDisplayName="2013">
+        </scapfd_testref.vyear28>
+        <!--资产总额的行业分布-->
+        <scapfd_testref.hy_zcze uapDisplayName="资产总额行业分布排名前三位">
+        </scapfd_testref.hy_zcze>
+        
+        <scapfd_testref.vyear29 uapDisplayName="2013">
+        </scapfd_testref.vyear29>
+        
+        <scapfd_testref.vyear30 uapDisplayName="2013">
+        </scapfd_testref.vyear30>
+        
+        <scapfd_testref.gy_zcze uapDisplayName="工业领域的资产总额">
+        </scapfd_testref.gy_zcze>
+        
+        <scapfd_testref.zb_gy_zcze uapDisplayName="工业领域的资产总额占全省比重">
+        </scapfd_testref.zb_gy_zcze>
+        
+        
+        <scapfd_testref.zs_zcze_max uapDisplayName="资产总额增速较快的">
+        </scapfd_testref.zs_zcze_max>
+        
+        <scapfd_testref.zj_zcze_max uapDisplayName="增加额最多">
+        </scapfd_testref.zj_zcze_max>
+        
+        <scapfd_testref.hy_gsymgssyzqyze uapDisplayName="归属于母公司的所有者权益分布较多的行业">
+        </scapfd_testref.hy_gsymgssyzqyze>
+        
+        <scapfd_testref.zs_gsymgssyzqyze_max uapDisplayName="所有者权益增长较快，均超过30%">
+        </scapfd_testref.zs_gsymgssyzqyze_max>
+        
+        <scapfd_testref.zj_syzqyze_max uapDisplayName="增加额最多">
+        </scapfd_testref.zj_syzqyze_max>
+        
+        <scapfd_testref.vyear31 uapDisplayName="2013">
+        </scapfd_testref.vyear31>
+        
+        <scapfd_testref.vyear32 uapDisplayName="2013">
+        </scapfd_testref.vyear32>
+        
+        
+        <scapfd_testref.hy_yyzsr uapDisplayName="营业收入分布较多的行业">
+        </scapfd_testref.hy_yyzsr>
+        
+        <scapfd_testref.zs_yyzsr_max uapDisplayName="增长情况较快">
+        </scapfd_testref.zs_yyzsr_max>
+        
+        <scapfd_testref.zj_yyzsr_max uapDisplayName="增加额最多">
+        </scapfd_testref.zj_yyzsr_max>
+        
+        <scapfd_testref.vyear33 uapDisplayName="2013">
+        </scapfd_testref.vyear33>
+        
+        <scapfd_testref.vyear34 uapDisplayName="2013">
+        </scapfd_testref.vyear34>
+        
+        
+        <scapfd_testref.hy_lrze uapDisplayName="利润总额较多的行业">
+        </scapfd_testref.hy_lrze>
+        
+        <scapfd_testref.zz_count uapDisplayName="有7个行业利润增长呈现增长">
+        </scapfd_testref.zz_count>
+        
+        <scapfd_testref.zs_lrze_max uapDisplayName="增速最快">
+        </scapfd_testref.zs_lrze_max>
+        
+        <scapfd_testref.zj_lrze_max uapDisplayName="保持了较大的利润增长">
+        </scapfd_testref.zj_lrze_max>
+        
+        <scapfd_testref.vyear35 uapDisplayName="2013">
+        </scapfd_testref.vyear35>
+        
+        <scapfd_testref.vyear36 uapDisplayName="2013">
+        </scapfd_testref.vyear36>
+        
+        <scapfd_testref.hy_zzczzl uapDisplayName="资产总额排名前三">
+        </scapfd_testref.hy_zzczzl>
+    </scapfd_testref>
+    
+    <scapfd_zcze>
+      <scapfd_zcze.dsmc uapDisplayName="地市名称">
+      </scapfd_zcze.dsmc>
+      <scapfd_zcze.zcze uapDisplayName="2013年资产总额">
+      </scapfd_zcze.zcze>
+      <scapfd_zcze.zb uapDisplayName="所占比重">
+      </scapfd_zcze.zb>
+      <scapfd_zcze.tb uapDisplayName="同比增长率">
+      </scapfd_zcze.tb>
+    </scapfd_zcze>
+     <scapfd_gsmgsqyze>
+      <scapfd_gsmgsqyze.dsmc uapDisplayName="地市名称">
+      </scapfd_gsmgsqyze.dsmc>
+      <scapfd_gsmgsqyze.gsmgsqyze uapDisplayName="所有者权益">
+      </scapfd_gsmgsqyze.gsmgsqyze>
+      <scapfd_gsmgsqyze.zb uapDisplayName="所占比重">
+      </scapfd_gsmgsqyze.zb>
+      <scapfd_gsmgsqyze.tb uapDisplayName="同比增长率">
+      </scapfd_gsmgsqyze.tb>
+    </scapfd_gsmgsqyze>
+    <scapfd_yysr>
+      <scapfd_yysr.qymc uapDisplayName="地市名称">
+      </scapfd_yysr.qymc>
+      <scapfd_yysr.yysr uapDisplayName="2013年营业收入">
+      </scapfd_yysr.yysr>
+      <scapfd_yysr.zb uapDisplayName="所占比重">
+      </scapfd_yysr.zb>
+      <scapfd_yysr.tb uapDisplayName="同比增长率">
+      </scapfd_yysr.tb>
+    </scapfd_yysr>
+    <scapfd_lrze>
+      <scapfd_lrze.qymc uapDisplayName="地市名称">
+      </scapfd_lrze.qymc>
+      <scapfd_lrze.lrze uapDisplayName="2013年利润总额">
+      </scapfd_lrze.lrze>
+      <scapfd_lrze.zb uapDisplayName="所占比重">
+      </scapfd_lrze.zb>
+      <scapfd_lrze.tb uapDisplayName="同比增长率">
+      </scapfd_lrze.tb>
+    </scapfd_lrze>
+    
+    
+    <scapfd_hyzcze>
+      <scapfd_hyzcze.hymc uapDisplayName="行业名称">
+      </scapfd_hyzcze.hymc>
+      <scapfd_hyzcze.zcze uapDisplayName="2013年资产总额">
+      </scapfd_hyzcze.zcze>
+      <scapfd_hyzcze.zb uapDisplayName="所占比重">
+      </scapfd_hyzcze.zb>
+      <scapfd_hyzcze.tb uapDisplayName="同比增长率">
+      </scapfd_hyzcze.tb>
+    </scapfd_hyzcze>
+     <scapfd_hygsmgsqyze>
+      <scapfd_hygsmgsqyze.hymc uapDisplayName="行业名称">
+      </scapfd_hygsmgsqyze.hymc>
+      <scapfd_hygsmgsqyze.gsmgsqyze uapDisplayName="所有者权益">
+      </scapfd_hygsmgsqyze.gsmgsqyze>
+      <scapfd_hygsmgsqyze.zb uapDisplayName="所占比重">
+      </scapfd_hygsmgsqyze.zb>
+      <scapfd_hygsmgsqyze.tb uapDisplayName="同比增长率">
+      </scapfd_hygsmgsqyze.tb>
+    </scapfd_hygsmgsqyze>
+    <scapfd_hyyysr>
+      <scapfd_hyyysr.hymc uapDisplayName="行业名称">
+      </scapfd_hyyysr.hymc>
+      <scapfd_hyyysr.yysr uapDisplayName="2013年营业收入">
+      </scapfd_hyyysr.yysr>
+      <scapfd_hyyysr.zb uapDisplayName="所占比重">
+      </scapfd_hyyysr.zb>
+      <scapfd_hyyysr.tb uapDisplayName="同比增长率">
+      </scapfd_hyyysr.tb>
+    </scapfd_hyyysr>
+    <scapfd_hylrze>
+      <scapfd_hylrze.hymc uapDisplayName="行业名称">
+      </scapfd_hylrze.hymc>
+      <scapfd_hylrze.lrze uapDisplayName="2013年利润总额">
+      </scapfd_hylrze.lrze>
+      <scapfd_hylrze.zb uapDisplayName="所占比重">
+      </scapfd_hylrze.zb>
+      <scapfd_hylrze.tb uapDisplayName="同比增长率">
+      </scapfd_hylrze.tb>
+    </scapfd_hylrze>
+</Root>

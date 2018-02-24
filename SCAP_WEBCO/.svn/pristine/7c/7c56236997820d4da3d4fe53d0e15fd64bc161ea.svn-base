@@ -1,0 +1,44 @@
+<link href="/portal/scap/css/scindex/scindex.css" rel="stylesheet" type="text/css">
+
+<style type="text/css">
+.b-main{float:left; width:100%; height:100%; background-color:#f0f0f0;}
+
+.b-picture-panel{float:left; width:96%; height:200px; margin:6px 2%;}
+.b-picture-panel img{width:100%; height:100%;}
+
+.b-bench-panel{float:left; width:100%; height:188px;}
+.b-bench-panel .line{width:100%; height:26px;}
+.b-bench-panel .line .text{float:left; width:auto; height:26px; line-height:26px;}
+.b-bench-panel .btn{width:40%; height:30px; line-height:30px; border:solid 1px #d9d9d9; background-color:white;}
+.b-bench-panel #edc{float:left; margin-left:5%;}
+.b-bench-panel #dc{float:right; margin-right:5%;}
+</style>
+
+<div class="b-main" id="bench">
+	<div class="b-picture-panel">
+		<img src="/portal/scap/image/scindex/bigimg.jpg" />
+	</div>
+	<div class="b-bench-panel">
+		<div class="line">
+			<span class="text marginLeft20">尊敬的 杨海亮 您好！</span>m
+		</div>
+		<div class="line" style="height:32px; margin:10px 0px;">
+			<div class="btn pointer font14" id="edc">企业数据中心</div>
+			<div class="btn pointer font14" id="dc">决策支持</div>
+		</div>
+		<div class="line">
+			<span class="text marginLeft20">您有待办事项</span><span class="text fontred bold">（17）</span>
+		</div>
+		<div class="line">
+			<span class="text marginLeft20">您有未读未涉密公文</span><span class="text fontred bold">（3）</span>
+		</div>
+		<div class="line">
+			<span class="text marginLeft20">您有通知</span><span class="text fontred bold">（56）</span>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+$(function(){
+});
+</script>

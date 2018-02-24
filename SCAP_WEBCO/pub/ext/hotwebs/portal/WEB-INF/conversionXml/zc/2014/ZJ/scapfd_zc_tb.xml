@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+<items>
+
+<!--flag="0" 单独处理;flag="1" 查iufo表样;flag="2" 查事实表; 公式中"XX,2"表示XX公式计算后保留两位小数-->
+<item key="vyear" dimension="" name="年">
+  <source flag="2" code="scapfd_zc_base" measure="vyear" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sys_org" dimension="" name="组织标志">
+  <source flag="2" code="scapfd_zc_base" measure="sys_org" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="type" dimension="" name="类型">
+  <source flag="2" code="scapfd_zc_base" measure="type" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--dimension="tb"-->
+<item key="ssgdqy" dimension="tb" name="少数股东权益(决算数同比增长率)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_ssgdqy" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_zc_base" measure="qc_ssgdqy" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="ldsczz" dimension="tb" name="劳动生产总值(决算数同比增长率)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_ldsczz" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_ldsczz" row="" col="" id="$bb" condition=" and v.vyear='$vyear'-1 "/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="zcze" dimension="tb" name="资产总额(决算数同比增长率)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_zcze" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_zc_base" measure="qc_zcze" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="syzqyze" dimension="tb" name="所有者权益总额(决算数同比增长率)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_syzqyze" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_zc_base" measure="qc_syzqyze" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="gsmgsqyze" dimension="tb" name="归属于母公司的所有者权益总额(决算数同比增长率)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_gsmgsqyze" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_zc_base" measure="qc_gsymgsqyze" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="yjsfze" dimension="tb" name="应交税费总额(决算数同比增长率)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_yjseze" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_yjseze" row="" col="" id="$bb" condition=" and v.vyear='$vyear'-1 "/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="sjsjsfze" dimension="tb" name="实际上交税费总额(决算数同比增长率)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_sjsjsfze" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_sjsjsfze" row="" col="" id="$bb" condition=" and v.vyear='$vyear'-1 "/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="gyzczl" dimension="tb" name="国有资产总量(决算数同比增长率)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_gyzczl" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_gyzczl" row="" col="" id="$bb" condition=" and v.vyear='$vyear'-1 "/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="zmcyryrs" dimension="tb" name="年末从业人员人数(决算数同比增长率)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_nmcyryrs" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_nmcyryrs" row="" col="" id="$bb" condition=" and v.vyear='$vyear'-1 "/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="qnpjcyryrs" dimension="tb" name="全年平均从业人员人数(决算数同比增长率)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_qnpjcyzgrs" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_qnpjcyzgrs" row="" col="" id="$bb" condition=" and v.vyear='$vyear'-1 "/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="qnpjzgzgrs" dimension="tb" name="全年平均在岗职工人数(决算数同比增长率)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_qnpjzgzgrs" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_qnpjzgzgrs" row="" col="" id="$bb" condition=" and v.vyear='$vyear'-1 "/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="zgzggzze" dimension="tb" name="在岗职工工资总额(决算数同比增长率)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_zgzggzze" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_zgzggzze" row="" col="" id="$bb" condition=" and v.vyear='$vyear'-1 "/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="yyzsr" dimension="tb" name="营业总收入(决算数同比增长率)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_yyzsr" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_zc_base" measure="qc_yyzsr" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="lrze" dimension="tb" name="利润总额(决算数同比增长率)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_lrze" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_zc_base" measure="qc_lrze" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="jlr" dimension="tb" name="净利润(决算数同比增长率)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_jlr" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_zc_base" measure="qc_jlr" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="gsmgsjlr" dimension="tb" name="归属于母公司所有者的净利润(决算数同比增长率)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_gsymgsjlr" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_zc_base" measure="qc_gsmgsjlr" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="qnzgzgrjgz" dimension="tb" name="全年在岗职工人均工资(决算数同比增长率)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_qnzgzgrjgz" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_qnzgzgrjgz" row="" col="" id="$bb" condition=" and v.vyear='$vyear'-1 "/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="fzze" dimension="tb" name="负债总额(决算数同比增长率)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_fzze" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_zc_base" measure="qc_fzze" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="bngyzbjqyzjz" dimension="tb" name="本年国有资本及权益增加值(决算数同比增长率)">
+  <source flag="2" code="scapfd_zc_base" measure="bngyzbjqyzjz" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_zc_base" measure="bngyzbjqyzjz" row="" col="" id="$bb" condition=" and v.vyear='$vyear'-1 "/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="yszk" dimension="tb" name="应收账款(决算数同比增长率)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_yszk" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_zc_base" measure="qc_yszk" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="chzzl" dimension="tb" name="存货增长率">
+  <source flag="2" code="scapfd_zc_base" measure="bn_chzzl" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yyzcb" dimension="tb" name="营业总成本(决算数同比增长率)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_yyzcb" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_zc_base" measure="qc_yyzcb" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="lxzc" dimension="tb" name="利息支出(决算同比增长率)">
+  <source flag="2" code="scapfd_zc_base" measure="bn_lxzc" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_lxzc" row="" col="" id="$bb" condition=" and v.vyear='$vyear'-1 "/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+</items>
+</Root>

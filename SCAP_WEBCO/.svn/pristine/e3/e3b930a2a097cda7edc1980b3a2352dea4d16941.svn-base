@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component conRouterType="曼哈顿直角" createIndustry="0" createTime="2015-03-08 15:05:55" creator="YONYOU NC" description="" displayName="pub_sms_mo" fromSourceBmf="true" gencodestyle="NC传统样式" help="" id="c3834d62-9ed7-401c-a325-1e3ae881a24f" industry="0" industryChanged="false" industryIncrease="false" industryName="" isSource="false" isbizmodel="false" mainEntity="3a096597-743f-4da8-be0e-f395fb0c1995" metaType="bmf" modifier="YONYOU NC" modifyIndustry="0" modifyTime="2015-03-08 15:11:56" name="pub_sms_mo" namespace="scapco" ownModule="scapco" preLoad="false" programcode="0" resModuleName="pub_sms_mo" resid="" version="3" versionType="0">
+    <celllist>
+        <entity accessorClassName="nc.md.model.access.javamap.POJOStyle" bizItfImpClassName="" componentID="c3834d62-9ed7-401c-a325-1e3ae881a24f" createIndustry="0" createTime="2015-03-08 15:06:00" creator="YONYOU NC" czlist="" description="" displayName="上行短信" fullClassName="nc.scap.pub.vos.ScapMoSmsVO" height="100" help="" id="3a096597-743f-4da8-be0e-f395fb0c1995" industryChanged="false" isAuthen="true" isCreateSQL="true" isExtendBean="false" isPrimary="true" isSource="true" keyAttributeId="06aea894-9aff-4602-b294-e0e66d6565f3" modInfoClassName="" modifier="YONYOU NC" modifyIndustry="0" modifyTime="2015-03-08 15:12:18" name="ScapMoSmsVO" resid="" stereoType="" tableName="scapco_sms_mo" userDefClassName="" versionType="0" visibility="public" width="100" x="35" y="28">
+            <attributelist>
+                <attribute accessStrategy="" accesspower="false" accesspowergroup="" calculation="false" classID="3a096597-743f-4da8-be0e-f395fb0c1995" createIndustry="0" dataType="BS000010000100001051" dataTypeStyle="SINGLE" dbtype="char" defaultValue="" description="" displayName="主键" dynamic="false" dynamicTable="" fieldName="pk_sms" fieldType="char" fixedLength="false" forLocale="false" help="" id="06aea894-9aff-4602-b294-e0e66d6565f3" industryChanged="false" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isFeature="false" isGlobalization="false" isHide="false" isKey="true" isNullable="false" isReadOnly="false" isShare="false" isSource="true" length="20" maxValue="" minValue="" modifyIndustry="0" name="pk_sms" notSerialize="false" precise="" refModelName="" resid="" sequence="0" typeDisplayName="UFID" typeName="UFID" versionType="0" visibility="public"/>
+                <attribute accessStrategy="" accesspower="false" accesspowergroup="" calculation="false" classID="3a096597-743f-4da8-be0e-f395fb0c1995" createIndustry="0" dataType="BS000010000100001001" dataTypeStyle="SINGLE" dbtype="varchar" defaultValue="" description="" displayName="外部扩展主键" dynamic="false" dynamicTable="" fieldName="pk_ext" fieldType="varchar" fixedLength="false" forLocale="false" help="" id="0e284079-1777-4c1b-9970-2eda072e4682" industryChanged="false" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isFeature="false" isGlobalization="false" isHide="false" isKey="false" isNullable="true" isReadOnly="false" isShare="false" isSource="true" length="50" maxValue="" minValue="" modifyIndustry="0" name="pk_ext" notSerialize="false" precise="" refModelName="" resid="" sequence="1" typeDisplayName="String" typeName="String" versionType="0" visibility="public"/>
+                <attribute accessStrategy="" accesspower="false" accesspowergroup="" calculation="false" classID="3a096597-743f-4da8-be0e-f395fb0c1995" createIndustry="0" dataType="BS000010000100001001" dataTypeStyle="SINGLE" dbtype="varchar" defaultValue="" description="" displayName="手机号码" dynamic="false" dynamicTable="" fieldName="address" fieldType="varchar" fixedLength="false" forLocale="false" help="" id="7b6fae60-0aa9-448b-b16b-c5048376f361" industryChanged="false" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isFeature="false" isGlobalization="false" isHide="false" isKey="false" isNullable="true" isReadOnly="false" isShare="false" isSource="true" length="50" maxValue="" minValue="" modifyIndustry="0" name="address" notSerialize="false" precise="" refModelName="" resid="" sequence="2" typeDisplayName="String" typeName="String" versionType="0" visibility="public"/>
+                <attribute accessStrategy="" accesspower="false" accesspowergroup="" calculation="false" classID="3a096597-743f-4da8-be0e-f395fb0c1995" createIndustry="0" dataType="BS000010000100001001" dataTypeStyle="SINGLE" dbtype="varchar" defaultValue="" description="" displayName="内容" dynamic="false" dynamicTable="" fieldName="content" fieldType="varchar" fixedLength="false" forLocale="false" help="" id="76e19982-de97-4d0c-bce2-416184466e4a" industryChanged="false" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isFeature="false" isGlobalization="false" isHide="false" isKey="false" isNullable="true" isReadOnly="false" isShare="false" isSource="true" length="500" maxValue="" minValue="" modifyIndustry="0" name="content" notSerialize="false" precise="" refModelName="" resid="" sequence="3" typeDisplayName="String" typeName="String" versionType="0" visibility="public"/>
+            </attributelist>
+            <operationlist/>
+            <busiitfs>
+                <itfid>6c8722b9-911a-489b-8d0d-18bd3734fcf6</itfid>
+            </busiitfs>
+            <busimaps>
+                <busimap attrid="06aea894-9aff-4602-b294-e0e66d6565f3" attrpath="" attrpathid="" busiitfattrid="5dd3c721-22ad-42b1-9c10-4351c236bc77" busiitfid="6c8722b9-911a-489b-8d0d-18bd3734fcf6" cellid="3a096597-743f-4da8-be0e-f395fb0c1995"/>
+                <busimap attrid="" attrpath="" attrpathid="" busiitfattrid="c8334364-7ab9-4266-8d4b-e74537935e46" busiitfid="6c8722b9-911a-489b-8d0d-18bd3734fcf6" cellid="3a096597-743f-4da8-be0e-f395fb0c1995"/>
+                <busimap attrid="" attrpath="" attrpathid="" busiitfattrid="ecf1b76a-6e44-42e2-a55e-87596504775b" busiitfid="6c8722b9-911a-489b-8d0d-18bd3734fcf6" cellid="3a096597-743f-4da8-be0e-f395fb0c1995"/>
+                <busimap attrid="" attrpath="" attrpathid="" busiitfattrid="d32cc17b-f415-415a-923f-0764443eb102" busiitfid="6c8722b9-911a-489b-8d0d-18bd3734fcf6" cellid="3a096597-743f-4da8-be0e-f395fb0c1995"/>
+                <busimap attrid="" attrpath="" attrpathid="" busiitfattrid="89578a97-42fe-439b-827c-8eabd9e3604c" busiitfid="6c8722b9-911a-489b-8d0d-18bd3734fcf6" cellid="3a096597-743f-4da8-be0e-f395fb0c1995"/>
+                <busimap attrid="" attrpath="" attrpathid="" busiitfattrid="a47e6cda-09e4-480b-923f-ec6f41e3e06c" busiitfid="6c8722b9-911a-489b-8d0d-18bd3734fcf6" cellid="3a096597-743f-4da8-be0e-f395fb0c1995"/>
+            </busimaps>
+            <canzhaolist/>
+            <accessor classFullname="nc.md.model.access.javamap.POJOStyle" displayName="POJO" name="pojo">
+                <properties/>
+            </accessor>
+        </entity>
+        <Reference componentID="c3834d62-9ed7-401c-a325-1e3ae881a24f" createIndustry="0" createTime="2015-03-08 15:11:56" creator="YONYOU NC" description="" displayName="引用：IBDObject" fullClassName="nc.vo.scapco.pub_sms_mo.reference" height="100" help="" id="859688f2-c196-44ac-9008-4685b79daae5" industryChanged="false" isSource="true" mdFilePath="\meta\general_interface.bmf" modifier="YONYOU NC" modifyIndustry="0" modifyTime="2015-03-08 15:12:05" moduleName="uap" name="reference" refId="6c8722b9-911a-489b-8d0d-18bd3734fcf6" resid="" versionType="0" visibility="public" width="100" x="35" y="199"/>
+    </celllist>
+    <connectlist>
+        <busiitfconnection bizItfImpClassName="" componentID="c3834d62-9ed7-401c-a325-1e3ae881a24f" createIndustry="0" createTime="2015-03-08 15:12:05" creator="" description="" displayName="" help="" id="5aee6199-8bee-443f-a59b-4463d72ab67b" industryChanged="false" isSource="false" modifier="YONYOU NC" modifyIndustry="0" modifyTime="2015-03-08 15:12:05" name="busiItf connection" realsource="3a096597-743f-4da8-be0e-f395fb0c1995" realtarget="6c8722b9-911a-489b-8d0d-18bd3734fcf6" source="3a096597-743f-4da8-be0e-f395fb0c1995" target="859688f2-c196-44ac-9008-4685b79daae5" versionType="0">
+            <points/>
+        </busiitfconnection>
+    </connectlist>
+    <refdepends>
+        <dependfile entityid="6c8722b9-911a-489b-8d0d-18bd3734fcf6"/>
+    </refdepends>
+    <refdependLoseIDs/>
+    <cellRemoveLog/>
+    <rulers>
+        <ruler isHorizontal="true" unit="0">
+            <guideList/>
+        </ruler>
+        <ruler isHorizontal="false" unit="0">
+            <guideList/>
+        </ruler>
+    </rulers>
+</component>

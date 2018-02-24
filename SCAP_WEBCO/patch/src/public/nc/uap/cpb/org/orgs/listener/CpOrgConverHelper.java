@@ -1,0 +1,160 @@
+package nc.uap.cpb.org.orgs.listener;
+
+import nc.itf.org.IOrgConst;
+import nc.uap.cpb.org.orgs.CpOrgVO;
+import nc.vo.org.OrgVO;
+
+/**
+ * 组织类型转换帮助类
+ * @author lisw
+ *
+ */
+public class CpOrgConverHelper {
+	/**
+	 * NULL	业务单元+部门	businessunitanddept
+NULL	业务单元+成本中心	orgunitandcostcenter
+NULL	业务单元+部门/成本中心	orgunitanddeptandcc
+	全局	global
+isbusinessunit	业务单元	businessunit
+orgtype1	集团	group
+orgtype10	物流	trafficorg
+orgtype11	质检	qccenter
+orgtype12	资产	assetorg
+orgtype13	报表	reportorg
+orgtype14	维修	maintainorg
+orgtype15	利润中心	liabilitycenter
+orgtype16	项目	itemorg
+orgtype17	预算	planbudget
+orgtype18	管控范围	controlarea
+orgtype19	成本域	costregion
+orgtype2	法人公司	corp
+orgtype20	信用控制域	creditctlregion
+orgtype21	资金管理体系	fundmanasystem
+orgtype22	报表组织体系	reportmanastru
+orgtype23	库存统计体系	stockstatstru
+orgtype24	业务汇报关系	busireportstru
+orgtype25	预算组织体系	budgetorgstru
+orgtype26	财务核算账簿	accountingbook
+orgtype27	责任核算账簿	liabilitybook
+orgtype28	采购计划体系	purplanstru
+orgtype29	行政	adminorg
+orgtype3	部门	dept
+orgtype30	分销补货体系	saleappendstru
+orgtype31	合并主体	conbineentity
+orgtype32	成本中心	resacostcenter
+orgtype33	工厂	factory
+orgtype34	计划中心	plancenter
+orgtype35	生产计划	produceplan
+orgtype36	库存/计划组织	stockplan
+orgtype37	报表合并体系	reportcombinestru
+orgtype4	人力资源	hrorg
+orgtype5	财务	financeorg
+orgtype6	资金	fundorg
+orgtype7	采购	purchaseorg
+orgtype8	销售	saleorg
+orgtype9	库存	stockorg
+	 * @param orgvo
+	 * @return
+	 */
+	public static CpOrgVO ConvertOrgVo2CP(OrgVO orgvo){
+		if(orgvo == null) return null;
+		CpOrgVO neworgvo =  new CpOrgVO();
+		
+		//主键
+		neworgvo.setPk_org(orgvo.getPk_org());
+		//编码
+		neworgvo.setCode(orgvo.getCode());
+		//名称
+		neworgvo.setName(orgvo.getName());
+		neworgvo.setName2(orgvo.getName2());
+		neworgvo.setName3(orgvo.getName3());
+		neworgvo.setName4(orgvo.getName4());
+		neworgvo.setName5(orgvo.getName5());
+		neworgvo.setName6(orgvo.getName6());
+		//父组织
+		neworgvo.setPk_fatherorg(orgvo.getPk_fatherorg());		
+		//启用状态
+		neworgvo.setEnablestate(orgvo.getEnablestate());
+		//组织级别
+		neworgvo.setOrglevel(getorgLevel(orgvo));
+		//一级组织
+		neworgvo.setPk_orglevel1(orgvo.getPk_group());
+		//二级组织
+		neworgvo.setPk_orglevel2(orgvo.getPk_corp());
+		//40个组织类型
+		neworgvo.setOrgtype1(orgvo.getOrgtype1());
+		neworgvo.setOrgtype2(orgvo.getOrgtype2());
+		neworgvo.setOrgtype3(orgvo.getOrgtype3());
+		neworgvo.setOrgtype4(orgvo.getOrgtype4());
+		neworgvo.setOrgtype5(orgvo.getOrgtype5());
+		neworgvo.setOrgtype6(orgvo.getOrgtype6());
+		neworgvo.setOrgtype7(orgvo.getOrgtype7());
+		neworgvo.setOrgtype8(orgvo.getOrgtype8());
+		neworgvo.setOrgtype9(orgvo.getOrgtype9());
+		neworgvo.setOrgtype10(orgvo.getOrgtype10());
+		neworgvo.setOrgtype11(orgvo.getOrgtype11());
+		neworgvo.setOrgtype12(orgvo.getOrgtype12());
+		neworgvo.setOrgtype13(orgvo.getOrgtype13());
+		neworgvo.setOrgtype14(orgvo.getOrgtype14());
+		neworgvo.setOrgtype15(orgvo.getOrgtype15());
+		neworgvo.setOrgtype16(orgvo.getOrgtype16());
+		neworgvo.setOrgtype17(orgvo.getOrgtype17());
+		neworgvo.setOrgtype18(orgvo.getOrgtype18());
+		neworgvo.setOrgtype19(orgvo.getOrgtype19());
+		neworgvo.setOrgtype20(orgvo.getOrgtype20());
+		neworgvo.setOrgtype21(orgvo.getOrgtype21());
+		neworgvo.setOrgtype22(orgvo.getOrgtype22());
+		neworgvo.setOrgtype23(orgvo.getOrgtype23());
+		neworgvo.setOrgtype24(orgvo.getOrgtype24());
+		neworgvo.setOrgtype25(orgvo.getOrgtype25());
+		neworgvo.setOrgtype26(orgvo.getOrgtype26());
+		neworgvo.setOrgtype27(orgvo.getOrgtype27());
+		neworgvo.setOrgtype28(orgvo.getOrgtype28());
+		neworgvo.setOrgtype29(orgvo.getOrgtype29());
+		neworgvo.setOrgtype30(orgvo.getOrgtype30());
+		neworgvo.setOrgtype31(orgvo.getOrgtype31());
+		neworgvo.setOrgtype32(orgvo.getOrgtype32());
+		neworgvo.setOrgtype33(orgvo.getOrgtype33());
+		neworgvo.setOrgtype34(orgvo.getOrgtype34());
+		neworgvo.setOrgtype35(orgvo.getOrgtype35());
+		neworgvo.setOrgtype36(orgvo.getOrgtype36());
+		neworgvo.setOrgtype37(orgvo.getOrgtype37());
+		neworgvo.setOrgtype38(orgvo.getOrgtype38());
+		neworgvo.setOrgtype39(orgvo.getOrgtype39());
+		neworgvo.setOrgtype40(orgvo.getOrgtype40());
+		//20个扩展项
+		neworgvo.setInnercode(orgvo.getInnercode());
+		
+		//add by jizhg 组织机构码和短名同步 
+		neworgvo.setDef11(orgvo.getShortname());
+		neworgvo.setDef12(orgvo.getOrganizationcode());
+		//实体属性 是公司的为省属监管企业
+		neworgvo.setDef13(orgvo.getEntitytype());
+		//省属监管企业排序号
+		neworgvo.setDef20(orgvo.getDef20());
+		//是否为中介机构
+		neworgvo.setDef14(orgvo.getDef14());
+		//助记码为与久其网络版同步用
+		neworgvo.setDef10(orgvo.getMnecode());
+		//增加启用状态同步 add by jizhg 2014-09-11
+		neworgvo.setEnablestate(orgvo.getEnablestate());
+		return neworgvo;
+	} 
+	/**
+	 * 获取组织级别
+	 * @param orgvo
+	 * @return
+	 */
+	public static String getorgLevel(OrgVO orgvo){
+		if(orgvo.getPk_org().equals(IOrgConst.GLOBEORG))//全局 
+			return "0";
+		if(orgvo.getOrgtype1().booleanValue()) //集团
+			return "1";
+		if(orgvo.getIsbusinessunit().booleanValue())//业务单元
+			return "2";
+		if(orgvo.getOrgtype3().booleanValue())//部门
+			return "3";
+		return "10";//虚拟组织（非组织结构内组织）
+		
+	}
+}

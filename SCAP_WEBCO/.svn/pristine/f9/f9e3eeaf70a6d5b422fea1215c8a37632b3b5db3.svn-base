@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget controllerClazz="com.scap.pub.defdoc.DefdocCardWinMainViewCtrl" id="main" refId="main" sourcePackage="pub/src/public/">
+    <Attributes>
+        <Attribute>
+            <Key>$QueryTemplate</Key>
+            <Value>
+            </Value>
+        </Attribute>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+        <PlugoutDesc id="afterSavePlugout">
+        </PlugoutDesc>
+    </PlugoutDescs>
+    <PluginDescs>
+    </PluginDescs>
+    <Connectors>
+        <Connector connType="4" id="cardViewConnID" pluginId="proxyAfterSavePlugout" plugoutId="afterSavePlugout" source="main" sourceWindow="" target="popwin" targetWindow="">
+        </Connector>
+    </Connectors>
+    <Events>
+        <Event async="true" methodName="beforeShow" name="beforeShow" onserver="true">
+            <Action>
+            </Action>
+        </Event>
+    </Events>
+    <Models>
+        <Datasets>
+            <RefMdDataset caption="用户" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_user" lazyLoad="true" notNullBody="false" objMeta="uap.user" voMeta="nc.vo.sm.UserVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="自定义档案列表" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_defdoclist" lazyLoad="true" notNullBody="false" objMeta="uap.defdoclist" voMeta="nc.vo.bd.defdoc.DefdoclistVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_org" lazyLoad="true" notNullBody="false" objMeta="uap.org" voMeta="nc.vo.org.OrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="组织_集团" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_group" lazyLoad="true" notNullBody="false" objMeta="uap.group" voMeta="nc.vo.org.GroupVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="自定义档案" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_defdoc" lazyLoad="true" notNullBody="false" objMeta="uap.defdoc" voMeta="nc.vo.bd.defdoc.DefdocVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="自定义档案" controlwidgetopeStatus="true" enabled="false" id="defdoc" lazyLoad="true" notNullBody="false" objMeta="uap.defdoc" pageSize="15" voMeta="nc.vo.bd.defdoc.DefdocVO">
+                <FieldRelations>
+                    <FieldRelation id="pk_defdoclist_rel" needProcess="true" refDataset="$refds_uap_defdoclist" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_defdoclist_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_defdoclist" value="pk_defdoclist">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_org_rel" needProcess="true" refDataset="$refds_uap_org" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_group_rel" needProcess="true" refDataset="$refds_uap_group" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_group_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_group" value="pk_group">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pid_rel" needProcess="true" refDataset="$refds_uap_defdoc" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pid_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_defdoc" value="pid">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="creator_rel" needProcess="true" refDataset="$refds_uap_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="creator_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="creator">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="modifier_rel" needProcess="true" refDataset="$refds_uap_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="modifier_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="modifier">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+        </Datasets>
+        <ComboDatas>
+            <MDComboDataConf caption="数据类型" fullclassName="ba3f1197-8584-445d-88a0-102e505f94e5" id="combo_defdoc_datatype">
+            </MDComboDataConf>
+            <MDComboDataConf caption="启用状态" fullclassName="6b533ffa-3e43-4147-8670-ba0f5471fd40" id="combo_defdoc_enablestate">
+            </MDComboDataConf>
+        </ComboDatas>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_defdoc_pk_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="defdoc" writeFields="pk_org,pk_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_defdoc_creator_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="defdoc" writeFields="creator,creator_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_defdoc_pk_group_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_group,name" refId="" refcode="集团" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="defdoc" writeFields="pk_group,pk_group_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_defdoc_pk_defdoclist_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_defdoclist,name" refId="" refcode="自定义档案列表" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="defdoc" writeFields="pk_defdoclist,pk_defdoclist_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_defdoc_modifier_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="defdoc" writeFields="modifier,modifier_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_defdoc_pid_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_defdoc,name" refId="" refcode="自定义档案" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="defdoc" writeFields="pid,pid_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <FormComp caption="defdoc_form" columnCount="3" dataset="defdoc" eleWidth="250" ellipsis="false" enabled="true" id="defdoc_form" labelMinWidth="0" renderType="1" rowHeight="22" visible="true">
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="pk_org" height="" i18nName="2UC000-000360" id="pk_org" imageOnly="false" langDir="10140uddb" nextLine="false" nullAble="false" rowSpan="1" selectOnly="true" text="所属组织" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="3" editable="true" editorType="Reference" enabled="false" field="pk_org_name" height="" i18nName="2UC000-000360" id="pk_org_name" imageOnly="false" nextLine="false" nullAble="true" refNode="refnode_defdoc_pk_org_name" rowSpan="1" selectOnly="true" text="所属组织" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="pk_defdoclist" height="" i18nName="2UC000-000748" id="pk_defdoclist" imageOnly="false" langDir="10140uddb" nextLine="false" nullAble="false" rowSpan="1" selectOnly="true" text="自定义档案列表主键" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="Reference" enabled="true" field="pk_defdoclist_name" height="" i18nName="2UC000-000748" id="pk_defdoclist_name" imageOnly="false" nextLine="false" nullAble="true" refNode="refnode_defdoc_pk_defdoclist_name" rowSpan="1" selectOnly="true" text="自定义档案列表主键" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="pk_group" height="" i18nName="2UC000-000367" id="pk_group" imageOnly="false" langDir="10140uddb" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="所属集团" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="Reference" enabled="true" field="pk_group_name" height="" i18nName="2UC000-000367" id="pk_group_name" imageOnly="false" nextLine="false" nullAble="true" refNode="refnode_defdoc_pk_group_name" rowSpan="1" selectOnly="true" text="所属集团" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="code" height="" i18nName="2UC000-000557" id="code" imageOnly="false" langDir="10140uddb" nextLine="false" nullAble="false" rowSpan="1" selectOnly="true" text="档案编码" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="name" height="" i18nName="2UC000-000556" id="name" imageOnly="false" langDir="10140uddb" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="档案名称" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="name2" height="" i18nName="2UC000-000556" id="name2" imageOnly="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="name" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="name3" height="" i18nName="2UC000-000556" id="name3" imageOnly="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="name" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="name4" height="" i18nName="2UC000-000556" id="name4" imageOnly="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="name" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="name5" height="" i18nName="2UC000-000556" id="name5" imageOnly="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="name" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="name6" height="" i18nName="2UC000-000556" id="name6" imageOnly="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="name" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="shortname" height="" i18nName="2UC000-000675" id="shortname" imageOnly="false" langDir="10140uddb" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="简称" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="shortname2" height="" i18nName="2UC000-000675" id="shortname2" imageOnly="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="shortname" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="shortname3" height="" i18nName="2UC000-000675" id="shortname3" imageOnly="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="shortname" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="shortname4" height="" i18nName="2UC000-000675" id="shortname4" imageOnly="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="shortname" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="shortname5" height="" i18nName="2UC000-000675" id="shortname5" imageOnly="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="shortname" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="shortname6" height="" i18nName="2UC000-000675" id="shortname6" imageOnly="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="shortname" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="mnecode" height="" i18nName="2UC000-000172" id="mnecode" imageOnly="false" langDir="10140uddb" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="助记码" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="pid" height="" i18nName="2UC000-000007" id="pid" imageOnly="false" langDir="10140uddb" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="上级档案" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="Reference" enabled="true" field="pid_name" height="" i18nName="2UC000-000007" id="pid_name" imageOnly="false" nextLine="false" nullAble="true" refNode="refnode_defdoc_pid_name" rowSpan="1" selectOnly="true" text="上级档案" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="memo" height="" i18nName="2UC000-000258" id="memo" imageOnly="false" langDir="10140uddb" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="备注" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="creator" height="" i18nName="2UC000-000155" id="creator" imageOnly="false" langDir="10140uddb" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="创建人" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="Reference" enabled="true" field="creator_user_name" height="" i18nName="2UC000-000155" id="creator_user_name" imageOnly="false" nextLine="false" nullAble="true" refNode="refnode_defdoc_creator_user_name" rowSpan="1" selectOnly="true" text="创建人" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="DateTimeText" enabled="true" field="creationtime" height="" i18nName="2UC000-000157" id="creationtime" imageOnly="false" langDir="10140uddb" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="创建时间" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="modifier" height="" i18nName="2UC000-000490" id="modifier" imageOnly="false" langDir="10140uddb" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="最后修改人" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="Reference" enabled="true" field="modifier_user_name" height="" i18nName="2UC000-000490" id="modifier_user_name" imageOnly="false" nextLine="false" nullAble="true" refNode="refnode_defdoc_modifier_user_name" rowSpan="1" selectOnly="true" text="最后修改人" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="DateTimeText" enabled="true" field="modifiedtime" height="" i18nName="2UC000-000491" id="modifiedtime" imageOnly="false" langDir="10140uddb" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="最后修改时间" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="innercode" height="" i18nName="2UC000-000136" id="innercode" imageOnly="false" langDir="10140uddb" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="内部编码" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="ComboBox" enabled="true" field="enablestate" height="" i18nName="2UC000-000249" id="enablestate" imageOnly="false" langDir="10140uddb" nextLine="false" nullAble="true" refComboData="combo_defdoc_enablestate" rowSpan="1" selectOnly="true" text="启用状态" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="IntegerText" enabled="true" field="dataoriginflag" height="" i18nName="2UC000-000151" id="dataoriginflag" imageOnly="false" langDir="10140uddb" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="分布式" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="ComboBox" enabled="true" field="datatype" height="" i18nName="2UC000-000458" id="datatype" imageOnly="false" langDir="10140uddb" nextLine="false" nullAble="true" refComboData="combo_defdoc_datatype" rowSpan="1" selectOnly="true" text="数据类型" toolbarType="Custom" visible="true" width="">
+            </Element>
+        </FormComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar">
+            <MenuItem id="add" modifiers="2" showModel="1" text="新增">
+                <Events>
+                    <Event async="true" methodName="onAdd" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="copy" modifiers="2" showModel="1" text="复制">
+                <Events>
+                    <Event async="true" methodName="onCopy" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="del" modifiers="2" showModel="1" text="删除">
+                <Events>
+                    <Event async="true" methodName="onDelete" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="save" modifiers="2" showModel="1" text="保存">
+                <Events>
+                    <Event async="true" methodName="onSave" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="sep1" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="startorstrop" modifiers="2" showModel="1" text="启用/停用">
+                <MenuItem id="start" modifiers="2" showModel="1" text="启用">
+                    <Events>
+                        <Event async="true" methodName="onStart" name="onclick" onserver="true">
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+                <MenuItem id="stop" modifiers="2" showModel="1" text="停用">
+                    <Events>
+                        <Event async="true" methodName="onStop" name="onclick" onserver="true">
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem id="sep2" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="attachfile" modifiers="2" showModel="1" text="附件">
+                <Events>
+                    <Event async="true" methodName="onAttchFile" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="print" modifiers="2" showModel="1" text="打印">
+                <Events>
+                    <Event async="true" methodName="onPrint" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="sep3" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="back" modifiers="2" showModel="1" text="返回">
+                <Events>
+                    <Event async="true" methodName="onBack" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

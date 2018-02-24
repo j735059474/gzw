@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE UIMeta PUBLIC "-//Yonyou Co., Ltd.//UAP LFW UIMeta 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_um_6_3.dtd">
+<UIMeta flowmode="true" id="qryorgstype_um" jquery="0" preferredHeight="" preferredWidth="0">
+    <FlowvLayout id="flowvLayout" widgetId="qryorgstype">
+        <FlowvPanel id="g_p_2" widgetId="qryorgstype">
+           <TreeViewComp height="100%" id="qryorgstype_tree" left="0" position="relative" top="0" widgetId="qryorgstype" width="100%">
+            </TreeViewComp>
+        </FlowvPanel>
+    </FlowvLayout>
+</UIMeta>

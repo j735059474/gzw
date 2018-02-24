@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+<items>
+
+<!--flag="0" 单独处理;flag="1" 查iufo表样;flag="2" 查事实表; 公式中"XX,2"表示XX公式计算后保留两位小数-->
+<item key="vyear" dimension="" name="年">
+  <source flag="1" code="Z011" measure="year" row="" col="" id="$aa"/>
+  <formula>
+    '$aa'.substring(0,4)
+  </formula>
+</item>
+
+<item key="sys_org" dimension="" name="组织标志">
+  <source flag="0" code="Z011" measure="sys_org" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="type" dimension="" name="类型">
+  <source flag="0" code="Z011" measure="type" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--dimension="ot"-->
+<item key="gzbzzzlbsn" dimension="ot" name="国有资本保值增值率比上年增加百分点">
+  <source flag="2" code="scapfd_zc_base" measure="bn_gyzbzzzl" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_zc_base" measure="bn_gyzbzzzl" row="" col="" id="$bb" condition=" and v.vyear='$vyear'-1 "/>
+  <formula>
+    $aa-$bb
+  </formula>
+</item>
+
+<item key="lxzcbnjze" dimension="ot" name="利息支出本年净增金额">
+  <source flag="1" code="Z021" measure="qzlxzcbqje" row="" col="" id="$aa"/>
+  <source flag="1" code="Z021" measure="qzlxzcsqje" row="" col="" id="$bb"/>
+  <formula>
+    $aa-$bb
+  </formula>
+</item>
+
+<item key="zzczzl" dimension="ot" name="总资产周转率（次）">
+  <source flag="1" code="Z021" measure="qzzyywsrbqje" row="" col="" id="$z02.a03"/>
+  <source flag="1" code="Z021" measure="lxsrbqje" row="" col="" id="$z02.a05"/>
+  <source flag="1" code="Z021" measure="yzbfbqje" row="" col="" id="$z02.a06"/>
+  <source flag="1" code="Z021" measure="sxfjyjsrbqje" row="" col="" id="$z02.a07"/>
+  <source flag="1" code="Z011" measure="zczjqmye" row="" col="" id="$z01.a63"/>
+  <source flag="1" code="Z011" measure="zczjncye" row="" col="" id="$z01.b63"/>
+  <formula>
+    2*($z02.a03+$z02.a05+$z02.a06+$z02.a07)/($z01.a63+$z01.b63)
+  </formula>
+</item>
+
+<item key="ldzczzl" dimension="ot" name="流动资产周转率（次）">
+  <source flag="1" code="Z021" measure="qzzyywsrbqje" row="" col="" id="$z02.a03"/>
+  <source flag="1" code="Z021" measure="lxsrbqje" row="" col="" id="$z02.a05"/>
+  <source flag="1" code="Z021" measure="yzbfbqje" row="" col="" id="$z02.a06"/>
+  <source flag="1" code="Z021" measure="sxfjyjsrbqje" row="" col="" id="$z02.a07"/>
+  <source flag="1" code="Z011" measure="ldzchjqmye" row="" col="" id="$z01.a20"/>
+  <source flag="1" code="Z011" measure="ldzchjncye" row="" col="" id="$z01.b20"/>
+  <formula>
+    2*($z02.a03+$z02.a05+$z02.a06+$z02.a07)/($z01.a20+$z01.b20)
+  </formula>
+</item>
+
+<item key="chzzl" dimension="ot" name="存货周转率（次）">
+  <source flag="1" code="Z021" measure="qzzyywcbbqje" row="" col="" id="$z02.a10"/>
+  <source flag="1" code="Z021" measure="lxzcbqje" row="" col="" id="$z02.a12"/>
+  <source flag="1" code="Z021" measure="sxfjyjzcbqje" row="" col="" id="$z02.a13"/>
+  <source flag="1" code="Z021" measure="tbjbqje" row="" col="" id="$z02.a14"/>
+  <source flag="1" code="Z021" measure="pfzcjebqje" row="" col="" id="$z02.a15"/>
+  <source flag="1" code="Z021" measure="tqbxhtzbjjebqje" row="" col="" id="$z02.a16"/>
+  <source flag="1" code="Z021" measure="bdhlzcbqje" row="" col="" id="$z02.a17"/>
+  <source flag="1" code="Z021" measure="fbfybqje" row="" col="" id="$z02.a18"/>
+  <source flag="1" code="Z011" measure="chqmye" row="" col="" id="$z01.a15"/>
+  <source flag="1" code="Z061" measure="echdjzbnczmye" row="" col="" id="$z06.a02"/>
+  <source flag="1" code="Z011" measure="chncye" row="" col="" id="$z01.b15"/>
+  <source flag="1" code="Z061" measure="echdjzbqmzmye" row="" col="" id="$z06.k02"/>
+  <formula>
+    2*($z02.a10+$z02.a12+$z02.a13+$z02.a14+$z02.a15+$z02.a16+$z02.a17+$z02.a18)/($z01.a15+$z06.a02+$z01.b15+$z06.k02)
+  </formula>
+</item>
+
+<!--<item key="gzbzzzlbsn_ss" dimension="ot" name="国有资本保值增值率比上年增加百分点(省属）">
+  <source flag="1" code="Z01" measure="syzqyhjncye" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="gzbzzzlbsn_jg" dimension="ot" name="国有资本保值增值率比上年增加百分点（监管）">
+  <source flag="1" code="Z01" measure="hbzjqmye" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="gzbzzzlbsn_fjg" dimension="ot" name="国有资本保值增值率比上年增加百分点（非监管）">
+  <source flag="1" code="Z01" measure="hbzjncye" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="gzbzzzlbsn_sx" dimension="ot" name="国有资本保值增值率比上年增加百分点（市县）">
+  <source flag="1" code="Z01" measure="jyxjrzcqmye" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+
+</items>
+</Root>

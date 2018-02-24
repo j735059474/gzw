@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+<items>
+
+<!--flag="0" 单独处理;flag="1" 查iufo表样;flag="2" 查事实表; 公式中"XX,2"表示XX公式计算后保留两位小数-->
+<item key="vyear" dimension="" name="年">
+  <source flag="2" code="scapfd_ys_year" measure="vyear" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="vmonth" dimension="" name="月">
+  <source flag="2" code="scapfd_ys_year" measure="vmonth" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sys_org" dimension="" name="组织标志">
+  <source flag="2" code="scapfd_ys_year" measure="sys_org" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--dimension="yd"38-->
+<item key="yyzsr" dimension="yd" name="营业总收入(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_yyzsr" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="zyywsr" dimension="yd" name="主营业务收入(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_zyywsr" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="yyzcb" dimension="yd" name="营业总成本(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_yyzcb" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="zyywcb" dimension="yd" name="主营业务成本(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_zyywcb" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="yyssjfj" dimension="yd" name="营业税金及附加(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_yysjjfj" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="xsfy" dimension="yd" name="销售费用(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_xsfy" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="glfy" dimension="yd" name="管理费用(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_glfy" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="cwfy" dimension="yd" name="财务费用(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_cwfy" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="zcjzss" dimension="yd" name="资产减值损失(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_zcjzss" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="cyjzbdsy" dimension="yd" name="公允价值变动收益(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_gyjzbdsy" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="tzsy" dimension="yd" name="投资收益(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_tzsy" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="yylr" dimension="yd" name="营业利润(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_yylr" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="yywsr" dimension="yd" name="营业外收入(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_yywsr" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="yywzc" dimension="yd" name="营业外支出(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_yywzc" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="lrze" dimension="yd" name="利润总额(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_lrze" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="jlr" dimension="yd" name="净利润(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_jlr" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="gmgsjlr" dimension="yd" name="归属于母公司所有者的净利润(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_gsymgsjlr" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="zcze" dimension="yd" name="资产总额(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_zcze" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="fzze" dimension="yd" name="负债总额(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_fzze" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="syzqyze" dimension="yd" name="所有者权益总额(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_syzqyze" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="gdzctzg" dimension="yd" name="固定资产投资额(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_gdzctz" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="yycb" dimension="yd" name="营业成本(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_yycb" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="lxzcje" dimension="yd" name="利息支出净额(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_lxzcje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="zgxc" dimension="yd" name="职工薪酬(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_zgxc" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="zgzggz" dimension="yd" name="在岗职工工资总额(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_zgzggzze" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="flfy" dimension="yd" name="福利及社会保险费用(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_fljshbxfy" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="zgzgrs" dimension="yd" name="在岗职工人数（人）(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_zgzgrs" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="ldzc" dimension="yd" name="流动资产(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_ldzc" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="hbzj" dimension="yd" name="货币资金(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_hbzj" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="jyxjrcc" dimension="yd" name="交易性金融资产(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_jyxjrzc" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="yszkje" dimension="yd" name="应收账款净额(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_yszkje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="ch" dimension="yd" name="存货(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_ch" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="ccp" dimension="yd" name="产成品(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_ccp" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="ldfz" dimension="yd" name="流动负债(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_ldfz" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="yhjd" dimension="yd" name="银行借款(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_yhjk" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="dqjd" dimension="yd" name="短期借款(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_dqjk" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="mgssyzqy" dimension="yd" name="归属于母公司的所有者权益总额(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_gsymgsqyze" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+<item key="yjsfze" dimension="yd" name="应交税费总额(月平均预算数)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_yjshze" row="" col="" id="$aa"/>
+  <formula>
+    $aa/12,1
+  </formula>
+</item>
+
+
+<!--dimension="wc"38-->
+<item key="yyzsr_yd" dimension="wc" name="营业总收入(月度预算完成率)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_yyzsr" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="by_ywzsr" row="" col="" id="$bb"/>
+  <formula>
+    $bb/($aa/12)*100,2
+  </formula>
+</item>
+
+<item key="zyywsr_yd" dimension="wc" name="主营业务收入(月度预算完成率)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_zyywsr" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="by_zyywsr" row="" col="" id="$bb"/>
+  <formula>
+    $bb/($aa/12)*100,2
+  </formula>
+</item>
+
+<item key="yycb_yd" dimension="wc" name="营业成本(月度预算完成率)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_yycb" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="by_yycb" row="" col="" id="$bb"/>
+  <formula>
+    $bb/($aa/12)*100,2
+  </formula>
+</item>
+
+<item key="zyywcb_yd" dimension="wc" name="主营业务成本(月度预算完成率)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_zyywcb" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="by_zyywcb" row="" col="" id="$bb"/>
+  <formula>
+    $bb/($aa/12)*100,2
+  </formula>
+</item>
+
+<item key="ywsjjfj_yd" dimension="wc" name="营业税金及附加(月度预算完成率)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_yysjjfj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="by_yysjjfj" row="" col="" id="$bb"/>
+  <formula>
+    $bb/($aa/12)*100,2
+  </formula>
+</item>
+
+<item key="xsfy_yd" dimension="wc" name="销售费用(月度预算完成率)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_xsfy" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="by_xsfy" row="" col="" id="$bb"/>
+  <formula>
+    $bb/($aa/12)*100,2
+  </formula>
+</item>
+
+<item key="glfy_yd" dimension="wc" name="管理费用(月度预算完成率)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_glfy" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="by_glfy" row="" col="" id="$bb"/>
+  <formula>
+    $bb/($aa/12)*100,2
+  </formula>
+</item>
+
+<item key="cwfy_yd" dimension="wc" name="财务费用(月度预算完成率)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_cwfy" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="by_cwfy" row="" col="" id="$bb"/>
+  <formula>
+    $bb/($aa/12)*100,2
+  </formula>
+</item>
+
+<item key="zcjzss_yd" dimension="wc" name="资产减值损失(月度预算完成率)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_zcjzss" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="by_zcjzss" row="" col="" id="$bb"/>
+  <formula>
+    $bb/($aa/12)*100,2
+  </formula>
+</item>
+
+<item key="zyjzbdsy_yd" dimension="wc" name="公允价值变动收益(月度预算完成率)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_gyjzbdsy" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="by_gyjzbdsy" row="" col="" id="$bb"/>
+  <formula>
+    $bb/($aa/12)*100,2
+  </formula>
+</item>
+
+<item key="tzsy_yd" dimension="wc" name="投资收益(月度预算完成率)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_tzsy" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="by_tzsy" row="" col="" id="$bb"/>
+  <formula>
+    $bb/($aa/12)*100,2
+  </formula>
+</item>
+
+<item key="yylr_yd" dimension="wc" name="营业利润(月度预算完成率)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_yylr" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="by_yylr" row="" col="" id="$bb"/>
+  <formula>
+    $bb/($aa/12)*100,2
+  </formula>
+</item>
+
+<item key="yywsr_yd" dimension="wc" name="营业外收入(月度预算完成率)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_yywsr" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="by_yywsr" row="" col="" id="$bb"/>
+  <formula>
+    $bb/($aa/12)*100,2
+  </formula>
+</item>
+
+<item key="yywzc_yd" dimension="wc" name="营业外支出(月度预算完成率)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_yywzc" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="by_yywzc" row="" col="" id="$bb"/>
+  <formula>
+    $bb/($aa/12)*100,2
+  </formula>
+</item>
+
+<item key="yrze_yd" dimension="wc" name="利润总额(月度预算完成率)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_lrze" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="by_lrze" row="" col="" id="$bb"/>
+  <formula>
+    $bb/($aa/12)*100,2
+  </formula>
+</item>
+
+<item key="jlr_yd" dimension="wc" name="净利润(月度预算完成率)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_jlr" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="by_jlr" row="" col="" id="$bb"/>
+  <formula>
+    $bb/($aa/12)*100,2
+  </formula>
+</item>
+
+<item key="mgsjlr_yd" dimension="wc" name="归属于母公司所有者的净利润(月度预算完成率)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_gsymgsjlr" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="by_gsyjlr" row="" col="" id="$bb"/>
+  <formula>
+    $bb/($aa/12)*100,2
+  </formula>
+</item>
+
+<item key="gdzctze_yd" dimension="wc" name="固定资产投资额(月度预算完成率)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_gdzctz" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="by_gdzctze" row="" col="" id="$bb"/>
+  <formula>
+    $bb/($aa/12)*100,2
+  </formula>
+</item>
+
+<item key="yyzcb_yd" dimension="wc" name="营业总成本(月度预算完成率)">
+  <source flag="2" code="scapfd_ys_year" measure="nd_yyzcb" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="by_yyzcb" row="" col="" id="$bb"/>
+  <formula>
+    $bb/($aa/12)*100,2
+  </formula>
+</item>
+
+</items>
+</Root>

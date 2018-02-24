@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<items docType="SDP_SCRIPT_ITEM">
+	<item>
+		<itemKey>0001</itemKey>
+		<itemName>功能分类</itemName>
+		<itemRule>cp_appscategory</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>id like 'E9A1%'</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0002</itemKey>
+		<itemName>功能节点</itemName>
+		<itemRule>cp_appsnode</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>pk_appscategory in(select pk_appscategory from cp_appscategory where id like 'E9A1%')</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0003</itemKey>
+		<itemName>菜单分类</itemName>
+		<itemRule>cp_menucategory</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>id = '0080'</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0004</itemKey>
+		<itemName>菜单项</itemName>
+		<itemRule>cp_menuitem</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>code like '0080%'</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0005</itemKey>
+		<itemName>项目模块</itemName>
+		<itemRule>cp_module</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>id='E9'</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0006</itemKey>
+		<itemName>查询模板</itemName>
+		<itemRule>cp_query_template</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>nodecode like 'E9A1%'</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0007</itemKey>
+		<itemName>查询条件</itemName>
+		<itemRule>cp_query_condition</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>pk_query_template in(select pk_query_template from cp_query_template where nodecode like 'E9A1%')</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0008</itemKey>
+		<itemName>打印模板</itemName>
+		<itemRule>cp_print_template</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>nodecode like 'E9A1%'</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0009</itemKey>
+		<itemName>打印条件</itemName>
+		<itemRule>cp_print_condition</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>pk_print_template in(select pk_print_template from cp_print_template where nodecode like 'E9A1%')</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0010</itemKey>
+		<itemName>参照</itemName>
+		<itemRule>bd_refinfo</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>modulename like 'scap%' or metadatatypename like 'Defdoc-scap%' or code ='610003scap' or modulename ='uap'</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0011</itemKey>
+		<itemName>自定义档案定义</itemName>
+		<itemRule>bd_defdoclist</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>doclevel = '0'</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0012</itemKey>
+		<itemName>自定义内容</itemName>
+		<itemRule>bd_defdoc</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>pk_defdoclist in (select pk_defdoclist from bd_defdoclist where doclevel = '0') and pk_defdoclist != '1001A11000000000E94C'</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0013</itemKey>
+		<itemName>参数</itemName>
+		<itemRule>cp_sysinittemp</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>domainflag like 'E9%'</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0014</itemKey>
+		<itemName>参数1</itemName>
+		<itemRule>cp_sysinit</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>sysinit in (select pk_sysinittemp from cp_sysinittemp where domainflag like 'E9%')</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0015</itemKey>
+		<itemName>扩展点</itemName>
+		<itemRule>pt_extension</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>module like 'scap%'</fixedWhere>
+	</item>
+		<item>
+		<itemKey>0016</itemKey>
+		<itemName>扩展点</itemName>
+		<itemRule>pt_extpoint</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>module like 'scap%'</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0017</itemKey>
+		<itemName>UAP模块</itemName>
+		<itemRule>dap_dapsystem</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>moduleid like 'E9%'</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0018</itemKey>
+		<itemName>资源管理</itemName>
+		<itemRule>cp_res</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>rescode like 'E9A1%'</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0019</itemKey>
+		<itemName>管控模式</itemName>
+		<itemRule>bd_mode_selected</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere> mdclassid in(select id from md_class where name like  'Defdoc-scap%' or name like 'Defdoc-GZ%' or name like 'Defdoc-PSNM%' or name like 'Defdoc-psnm%')</fixedWhere>
+	</item>
+			<item>
+		<itemKey>0020</itemKey>
+		<itemName>流程大类</itemName>
+		<itemRule>WFM_FLWCAT</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>DEVMODULE='scapco'</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0021</itemKey>
+		<itemName>流程类型</itemName>
+		<itemRule>WFM_FLWTYPE</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>PK_FLWCAT in (select W.PK_FLWCAT from WFM_FLWCAT w where W.DEVMODULE='scapco')</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0022</itemKey>
+		<itemName>报告类型</itemName>
+		<itemRule>scapco_work_reportType</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>1=1</fixedWhere>
+	</item>
+</items>

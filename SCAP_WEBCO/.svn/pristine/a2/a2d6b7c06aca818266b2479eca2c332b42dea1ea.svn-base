@@ -1,0 +1,2 @@
+actionfolder=nc.scap.pbm.review,nc.scap.am.standard,nc.scap.am.dataLibrary,nc.scap.pub.zip,nc.scap.ipm.imp,nc.scap.da.decisionAnalysis,nc.scap.da.chart.standardReport,nc.scap.dc.budgetExcelImpt,com.scap.pub.basechart.DecisionAnalysis.impl,nc.scap.pub.util,nc.scap.pub.index,nc.scap.da.chart.action,nc.scap.da.customReport.action,nc.scap.dc.dataCollect.excelImport.budgetExcelImport,nc.scap.da.enterpriseDataCentre.action,nc.scap.pub.scindex.action,nc.scap.erm.action
+ESCAPE_URL=/pt/loginHandler/changePassword

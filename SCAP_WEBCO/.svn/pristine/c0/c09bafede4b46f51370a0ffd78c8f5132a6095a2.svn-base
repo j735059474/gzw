@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<Widget controllerClazz="nc.uap.ctrl.filemgr.FileMgrController" dialog="false" id="main" refId="main" sourcePackage="ctrl/src/public/">
+    <Attributes>
+        <Attribute>
+            <Key>$QueryTemplate</Key>
+            <Value>
+            </Value>
+        </Attribute>
+    </Attributes>
+    <PlugoutDescs>
+        <PlugoutDesc id="main_scanview_plugout">
+            <PlugoutDescItem clazztype="java.lang.String" source="scan" type="MenuItem.onclick">
+            </PlugoutDescItem>
+        </PlugoutDesc>
+        <PlugoutDesc id="afterOperate_plugout">
+        </PlugoutDesc>
+    </PlugoutDescs>
+    <PluginDescs>
+        <PluginDesc id="main_plugin">
+            <PluginDescItem clazztype="java.lang.String" id="keys">
+            </PluginDescItem>
+        </PluginDesc>
+    </PluginDescs>
+    <Events>
+        <Event async="true" methodName="scanview_main_plugin" onserver="true">
+            <Params>
+                <Param>
+                    <Name>keys</Name>
+                    <Value>
+                    </Value>
+                    <Desc>                        <![CDATA[java.util.Map]]>
+                    </Desc>
+                </Param>
+            </Params>
+            <Action>
+            </Action>
+        </Event>
+        <Event async="true" jsEventClaszz="nc.uap.lfw.core.event.conf.DialogListener" methodName="onbeforeShow" name="beforeShow" onserver="true">
+            <SubmitRule cardSubmit="false" panelSubmit="false" tabSubmit="false">
+            </SubmitRule>
+            <Params>
+                <Param>
+                    <Name>dialogEvent</Name>
+                    <Value></Value>
+                    <Desc>                        <![CDATA[nc.uap.lfw.core.event.DialogEvent]]>
+                    </Desc>
+                </Param>
+            </Params>
+            <Action>
+            </Action>
+        </Event>
+    </Events>
+    <Models>
+        <Datasets>
+        	<RefMdDataset caption="协同用户" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_user" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_user" voMeta="nc.uap.cpb.org.vos.CpUserVO" i18nName="w_cp_menucategory-000036" langDir="bd_nodes">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <Dataset controlwidgetopeStatus="false" enabled="false" id="fileds" lazyLoad="false" notNullBody="false" pageSize="20">
+                 <FieldRelations>
+                    <FieldRelation id="creator_rel" refDataset="$refds_uapcp_cp_user">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="lastmodifiername">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="user_code" value="lastmodifier">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                    <Field i18nName="w_filemgr-000016" langDir="imp_nodes" dataType="String" field="id" id="id" nullAble="true" primaryKey="false" text="主键">
+                    </Field>
+                    <Field i18nName="w_filemgr-000017" langDir="imp_nodes" dataType="String" editFormular="size-%3Ehidef%28%22aaa%22%29" field="name" id="name" nullAble="true" primaryKey="false" text="名称">
+                    </Field>
+                    <Field i18nName="w_filemgr-000018" langDir="imp_nodes" dataType="String" editFormular="size-%3Ehidef%28%22aaa%22%29" field="type" id="type" nullAble="true" primaryKey="false" text="类型">
+                    </Field>
+                    <Field i18nName="w_filemgr-000019" langDir="imp_nodes" dataType="String" field="size" id="size" nullAble="true" primaryKey="false" text="文件大小">
+                    </Field>
+                    <Field i18nName="w_filemgr-000020" langDir="imp_nodes" dataType="UFDateTime" field="lastmodified" id="lastmodified" nullAble="true" primaryKey="false" text="最后修改时间">
+                    </Field>
+                    <Field i18nName="w_filemgr-000021" langDir="imp_nodes" dataType="String" field="lastmodifier" id="lastmodifier" nullAble="true" primaryKey="false" text="最后修改人">
+                    </Field>
+                    <Field i18nName="w_filemgr-000021" langDir="imp_nodes" dataType="String" field="lastmodifiername" id="lastmodifiername" nullAble="true" primaryKey="false" text="最后修改人">
+                    </Field>
+                    <Field dataType="String" field="filemanager" id="filemanager" nullAble="true" primaryKey="false" text="filemanager">
+                    </Field>
+                </Fields>
+                <Events>
+                    <Event async="true" jsEventClaszz="nc.uap.lfw.core.event.conf.DatasetListener" methodName="onDataLoad_fileds" name="onDataLoad" onserver="true">
+                        <SubmitRule cardSubmit="false" panelSubmit="false" tabSubmit="false">
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DataLoadEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                     <Event async="true" jsEventClaszz="nc.uap.lfw.core.event.conf.DatasetListener" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+				            <SubmitRule cardSubmit="false" panelSubmit="false" tabSubmit="false">
+				            </SubmitRule>
+				             <Params>
+				                   <Param>
+			                        <Name>dataLoadEvent</Name>
+			                        <Value>
+			                        </Value>
+			                        <Desc>                 <![CDATA[]]>
+			                        </Desc>
+			                </Param>
+            				 </Params>
+				             <Action>
+				             </Action>
+				     </Event> 
+                </Events>
+            </Dataset>
+        </Datasets>
+    </Models>
+    <Components>
+        <GridComp autoRowHeight="false" canCopy="true" dataset="fileds" editable="false" enabled="false" expandTree="false" id="filegrid" multiSelect="false" pageSize="10" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" sortable="true" visible="true">
+            <Column i18nName="w_filemgr-000016" langDir="imp_nodes" autoExpand="false" dataType="String" editable="true" editorType="StringText" field="id" fixedHeader="false" id="id" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column i18nName="w_filemgr-000017" langDir="imp_nodes" autoExpand="false" dataType="String" editable="false" editorType="StringText" field="name" fixedHeader="false" id="name" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="名称" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column i18nName="w_filemgr-000018" langDir="imp_nodes" autoExpand="false" dataType="String" editable="false" editorType="StringText" field="type" fixedHeader="false" id="type" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="类型" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column i18nName="w_filemgr-000019" langDir="imp_nodes" autoExpand="false" dataType="String" editable="false" editorType="StringText" field="size" fixedHeader="false" id="size" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="文件大小" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column i18nName="w_filemgr-000020" langDir="imp_nodes" autoExpand="false" dataType="String" editable="false" editorType="DateTimeText" field="lastmodified" fixedHeader="false" id="lastmodified" imageOnly="false" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="最后修改时间" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column i18nName="w_filemgr-000021" langDir="imp_nodes" autoExpand="true" dataType="String" editable="false" editorType="StringText" field="lastmodifier" fixedHeader="false" id="lastmodifier" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="最后修改人" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column i18nName="w_filemgr-000021" langDir="imp_nodes" autoExpand="true" dataType="String" editable="false" editorType="StringText" field="lastmodifiername" fixedHeader="false" id="lastmodifiername" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="最后修改人" textAlign="left" visible="true" width="120">
+            </Column>
+        </GridComp>
+        <ButtonComp i18nName="cancel" langDir="lfwbuttons" enabled="true" id="cancelbt" text="取消" visible="true">
+            <Events>
+                <Event async="true" jsEventClaszz="nc.uap.lfw.core.event.conf.MouseListener" methodName="btncancelonclick" name="onclick" onserver="true">
+                    <SubmitRule cardSubmit="false" panelSubmit="false" tabSubmit="false">
+                    </SubmitRule>
+                    <Params>
+                        <Param>
+                            <Name>mouseEvent</Name>
+                            <Value></Value>
+                            <Desc>                                <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                            </Desc>
+                        </Param>
+                    </Params>
+                    <Action>
+                    </Action>
+                </Event>
+            </Events>
+        </ButtonComp>
+        <ButtonComp i18nName="close" langDir="lfwbuttons" enabled="true" id="okbt" text="确定" visible="true">
+            <Events>
+                <Event async="true" jsEventClaszz="nc.uap.lfw.core.event.conf.MouseListener" methodName="btnokonclick" name="onclick" onserver="true">
+                    <SubmitRule cardSubmit="false" panelSubmit="false" tabSubmit="false">
+                    </SubmitRule>
+                    <Params>
+                        <Param>
+                            <Name>mouseEvent</Name>
+                            <Value></Value>
+                            <Desc>                                <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                            </Desc>
+                        </Param>
+                    </Params>
+                    <Action>
+                    </Action>
+                </Event>
+            </Events>
+        </ButtonComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="opemenu">
+            <MenuItem i18nName="upload" langDir="lfwbuttons" id="upload" modifiers="2" text="上传">
+                <Events>
+                    <Event async="true" jsEventClaszz="nc.uap.lfw.core.event.conf.MouseListener" methodName="onUpload" name="onclick" onserver="true">
+                        <SubmitRule cardSubmit="false" panelSubmit="false" tabSubmit="false">
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem i18nName="download" langDir="lfwbuttons" id="download" modifiers="2" text="下载">
+                <Events>
+                    <Event async="true" jsEventClaszz="nc.uap.lfw.core.event.conf.MouseListener" methodName="onDownload" name="onclick" onserver="true">
+                        <SubmitRule cardSubmit="false" panelSubmit="false" tabSubmit="false">
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem i18nName="delete" langDir="lfwbuttons" id="btn_delete" modifiers="2" text="删除">
+                <Events>
+                    <Event async="true" jsEventClaszz="nc.uap.lfw.core.event.conf.MouseListener" methodName="onDelete" name="onclick" onserver="true">
+                        <SubmitRule cardSubmit="false" panelSubmit="false" tabSubmit="false">
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem i18nName="edit" langDir="lfwbuttons" id="modify" modifiers="2" text="修改">
+                <Events>
+                    <Event async="true" jsEventClaszz="nc.uap.lfw.core.event.conf.MouseListener" methodName="onModify" name="onclick" onserver="false">
+                        <SubmitRule cardSubmit="false" panelSubmit="false" tabSubmit="false">
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>                            <![CDATA[ShowChangeName();]]>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem i18nName="look" langDir="lfwbuttons" id="view" modifiers="2" text="查看">
+                <Events>
+                    <Event async="true" jsEventClaszz="nc.uap.lfw.core.event.conf.MouseListener" methodName="onView" name="onclick" onserver="true">
+                        <SubmitRule cardSubmit="false" panelSubmit="false" tabSubmit="false">
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

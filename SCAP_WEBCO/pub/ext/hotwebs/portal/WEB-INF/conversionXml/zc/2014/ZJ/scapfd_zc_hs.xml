@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+<items>
+<item key="vyear" dimension="" name="年份">
+<source flag="2" code="scapfd_zc_base" measure="vyear" row="" col="" id="$aa"/>
+<formula>
+    '$aa'.substring(0,4)
+</formula>
+</item>
+<item key="qyhsbsn" dimension="hs" name="企业户数比上年增加数量">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd"/>
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$bb" condition=" and v.type in ('0', '2', '4', '5', '9') and vyear='2013' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa-$bb
+</formula>
+</item>
+<item key="qyhsnzz" dimension="hs" name="企业户数年增长率">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$bb" condition=" and v.type in ('0', '2', '4', '5', '9') and vyear='2013' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+($aa-$bb)/$bb*100,2
+</formula>
+</item>
+<item key="dzqyhszb" dimension="hs" name="大中型企业合计户数占企业总数量比重">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.jygm in('1','2')  START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$bb" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa/$bb*100,2
+</formula>
+</item>
+<!--
+<item key="dzqyhszbtg" dimension="hs" name="大中型企业合计户数占企业总数量比重比上年提高百分点">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.jygm in('1','2')  START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa
+</formula>
+</item>
+-->
+<item key="xwqyhszb" dimension="hs" name="小型及微型企业合计户数占企业总数量比重">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.jygm in('3','4')  START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$bb" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa/$bb*100,2
+</formula>
+</item>
+<!--
+<item key="xwqyhszbtg" dimension="hs" name="小型及微型企业合计户数占企业总数量比重较上年提高百分点">
+<source flag="2" code="" measure="" row="" col="" id="$aa"/>
+<formula>
+$aa
+</formula>
+</item>-->
+
+<item key="zczecyby" dimension="hs" name="资产总额（期末余额）>100亿的企业户数">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.bn_zcze &gt; 10000000000  START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa
+</formula>
+</item>
+<item key="zczecybyzz" dimension="hs" name="资产总额超过百亿的户数同比增加数量">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.bn_zcze &gt; 10000000000  START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<source flag="2" code="scapfd_zc_hs" measure="hs_zczecyby" row="" col="" id="$bb" condition=" and vyear='2013'"/>
+<formula>
+$aa-$bb
+</formula>
+</item>
+<item key="yyzsrcby" dimension="hs" name="营业总收入过百亿的企业户数">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.bn_yyzsr &gt; 10000000000  START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa
+</formula>
+</item>
+<item key="fzldyldq" dimension="hs" name="全省资产负债率（本年数 >0.7）的企业户数">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.bn_zcfzl &gt; 70  START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa
+</formula>
+</item>
+<item key="fzldyldqzb" dimension="hs" name="全省资产负债率（本年数 >0.7）的企业户数占比">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.bn_zcfzl &gt; 70  START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$bb" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa/$bb*100,2
+</formula>
+</item>
+<item key="fzldyydl" dimension="hs" name="全省资产负债率（本年数 >1.0）的企业户数">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.bn_zcfzl &gt; 100  START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa
+</formula>
+</item>
+<item key="fzldyydlzb" dimension="hs" name="全省资产负债率（本年数 >1.0）的企业户数占比">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.bn_zcfzl &gt; 100  START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$bb" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa/$bb*100,2
+</formula>
+</item>
+<item key="qyzhs" dimension="hs" name="企业总户数">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa
+</formula>
+</item>
+<item key="yqhs" dimension="hs" name="盈利企业户数">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.bn_lrze &gt; 0 START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa
+</formula>
+</item>
+<item key="yqhszb" dimension="hs" name="盈利企业户数占比">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.bn_lrze &gt; 0  START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$bb" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa/$bb*100,1
+</formula>
+</item>
+<item key="yqbsn" dimension="hs" name="盈利企业比上年增加户数">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.bn_lrze &gt; 0  START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<source flag="2" code="scapfd_zc_hs" measure="hs_yqbsn" row="" col="" id="$bb" condition=" and vyear='2013'"/>
+<formula>
+$aa-$bb
+</formula>
+</item>
+<!--
+<item key="yqhszbnzz" dimension="hs" name="盈利企业户数占比年增加百分点">
+<source flag="2" code="" measure="" row="" col="" id="$aa"/>
+<formula>
+$aa
+</formula>
+</item>
+-->
+<item key="kqhs" dimension="hs" name="亏损企业户数">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.bn_lrze &lt; 0 START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa
+</formula>
+</item>
+<item key="kqhszb" dimension="hs" name="亏损企业户数占比">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.bn_lrze &lt; 0  START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$bb" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa/$bb*100,1
+</formula>
+</item>
+<!--
+<item key="kqhszbnzz" dimension="hs" name="亏损企业户数占比年增加百分点">
+<source flag="2" code="" measure="" row="" col="" id="$aa"/>
+<formula>
+$aa
+</formula>
+</item>-->
+<item key="ylzje" dimension="hs" name="盈利总金额（本年决算数）">
+<source flag="2" code="scapfd_zc_base" measure="sum(v.bn_lrze)" row="" col="" id="$aa" condition=" and v.bn_lrze &gt; 0 and v.vyear='2014' and v.type in ('0','2','4','5','9')"/>
+<formula>
+$aa
+</formula>
+</item>
+<item key="kszje" dimension="hs" name="亏损总金额（本年决算数）">
+<source flag="2" code="scapfd_zc_base" measure="sum(v.bn_lrze)" row="" col="" id="$aa" condition=" and v.bn_lrze &lt; 0 and v.vyear='2014' and v.type in ('0','2','4','5','9')"/>
+<formula>
+$aa
+</formula>
+</item>
+<item key="qyzhs_ss" dimension="hs" name="企业总户数（省属）">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa
+</formula>
+</item>
+<!--
+<item key="qyzhs_jg" dimension="hs" name="企业总户数（监管）">
+<source flag="2" code="" measure="" row="" col="" id="$aa"/>
+<formula>
+$aa
+</formula>
+</item>
+<item key="qyzhs_fjg" dimension="hs" name="企业总户数（非监管）">
+<source flag="2" code="" measure="" row="" col="" id="$aa"/>
+<formula>
+$aa
+</formula>
+</item>
+<item key="qyzhs_sx" dimension="hs" name="企业总户数（市县）">
+<source flag="2" code="" measure="" row="" col="" id="$aa"/>
+<formula>
+$aa
+</formula>
+</item>
+-->
+<item key="qyzhs_dx" dimension="hs" name="企业总户数（大型）">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.jygm='1' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa
+</formula>
+</item>
+<item key="qyzhs_zx" dimension="hs" name="企业总户数（中型）">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.jygm='2' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa
+</formula>
+</item>
+<item key="qyzhs_xx" dimension="hs" name="企业总户数（小型）">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.jygm='3' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa
+</formula>
+</item>
+<item key="qyzhs_wx" dimension="hs" name="企业总户数（微型）">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.jygm='4' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa
+</formula>
+</item>
+<item key="qyhsbsn_ss" dimension="hs" name="企业户数比上年增加数量(省属)">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$bb" condition=" and v.type in ('0', '2', '4', '9') and vyear='2013' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa-$bb
+</formula>
+</item>
+<!--
+<item key="qyhsbsn_jg" dimension="hs" name="企业户数比上年增加数量（监管）">
+<source flag="2" code="" measure="" row="" col="" id="$aa"/>
+<formula>
+$aa
+</formula>
+</item>
+<item key="qyhsbsn_fjg" dimension="hs" name="企业户数比上年增加数量（非监管）">
+<source flag="2" code="" measure="" row="" col="" id="$aa"/>
+<formula>
+$aa
+</formula>
+</item>
+<item key="qyhsbsn_sx" dimension="hs" name="企业户数比上年增加数量（市县）">
+<source flag="2" code="" measure="" row="" col="" id="$aa"/>
+<formula>
+$aa
+</formula>
+</item>
+-->
+<item key="qyhsbsn_dx" dimension="hs" name="企业户数比上年增加数量（大型）">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.jygm='1' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$bb" condition=" and v.type in ('0', '2', '4', '9') and vyear='2013' and v.jygm='1' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa-$bb
+</formula>
+</item>
+<item key="qyhsbsn_zx" dimension="hs" name="企业户数比上年增加数量（中型）">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.jygm='2' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$bb" condition=" and v.type in ('0', '2', '4', '9') and vyear='2013' and v.jygm='2' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa-$bb
+</formula>
+</item>
+<item key="qyhsbsn_xx" dimension="hs" name="企业户数比上年增加数量（小型）">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.jygm='3' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$bb" condition=" and v.type in ('0', '2', '4', '9') and vyear='2013' and v.jygm='3' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa-$bb
+</formula>
+</item>
+<item key="qyhsbsn_wx" dimension="hs" name="企业户数比上年增加数量（微型）">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.jygm='4' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$bb" condition=" and v.type in ('0', '2', '4', '9') and vyear='2013' and v.jygm='4' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+$aa-$bb
+</formula>
+</item>
+<item key="qyhsnzz_ss" dimension="hs" name="企业户数年增长率(省属）">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$bb" condition=" and v.type in ('0', '2', '4', '9') and vyear='2013' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+($aa-$bb)/$bb
+</formula>
+</item>
+<!--
+<item key="qyhsnzz_jg" dimension="hs" name="企业户数年增长率（监管）">
+<source flag="2" code="" measure="" row="" col="" id="$aa"/>
+<formula>
+$aa
+</formula>
+</item>
+<item key="qyhsnzz_fjg" dimension="hs" name="企业户数年增长率（非监管）">
+<source flag="2" code="" measure="" row="" col="" id="$aa"/>
+<formula>
+$aa
+</formula>
+</item>
+<item key="qyhsnzz_sx" dimension="hs" name="企业户数年增长率（市县）">
+<source flag="2" code="" measure="" row="" col="" id="$aa"/>
+<formula>
+$aa
+</formula>
+</item>
+-->
+<item key="qyhsnzz_dx" dimension="hs" name="企业户数年增长率（大型）">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.jygm='1' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$bb" condition=" and v.type in ('0', '2', '4', '9') and vyear='2013' and v.jygm='1' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+($aa-$bb)/$bb
+</formula>
+</item>
+<item key="qyhsnzz_zx" dimension="hs" name="企业户数年增长率（中型）">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.jygm='2' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$bb" condition=" and v.type in ('0', '2', '4', '9') and vyear='2013' and v.jygm='2' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+($aa-$bb)/$bb
+</formula>
+</item>
+<item key="qyhsnzz_xx" dimension="hs" name="企业户数年增长率（小型）">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.jygm='3' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$bb" condition=" and v.type in ('0', '2', '4', '9') and vyear='2013' and v.jygm='3' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+($aa-$bb)/$bb
+</formula>
+</item>
+<item key="qyhsnzz_wx" dimension="hs" name="企业户数年增长率（微型）">
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$aa" condition=" and v.type in ('0', '2', '4', '9') and vyear='2014' and v.jygm='4' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<source flag="2" code="scapfd_zc_base" measure="count(*)" row="" col="" id="$bb" condition=" and v.type in ('0', '2', '4', '9') and vyear='2013' and v.jygm='4' START WITH v.SYS_ZDM = (select pk_org from cp_orgs where def12 = 'HZQYB0014') CONNECT BY PRIOR v.Sys_Zdm = v.Sys_Fjd "/>
+<formula>
+($aa-$bb)/$bb
+</formula>
+</item>
+</items>
+</Root>

@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget controllerClazz="nc.scap.pub.officialdoc.OfficialdocCardWinMainViewCtrl" id="main" refId="main" sourcePackage="pub/src/public/">
+    <Attributes>
+        <Attribute>
+            <Key>$QueryTemplate</Key>
+            <Value>
+            </Value>
+        </Attribute>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+        <PlugoutDesc id="afterSavePlugout">
+            <PlugoutDescItem clazztype="java.lang.String" name="OPERATE_ROW" source="scapco_officialdoc" type="Dataset.TYPE_DATASET_SEL_ROW">
+            </PlugoutDescItem>
+        </PlugoutDesc>
+    </PlugoutDescs>
+    <PluginDescs>
+        <PluginDesc id="userChoice" methodName="userChoice">
+            <SubmitRule>
+                <Widget id="main">
+                    <Dataset id="scapco_feedbackuser" type="ds_all_line">
+                    </Dataset>
+                </Widget>
+            </SubmitRule>
+        </PluginDesc>
+    </PluginDescs>
+    <Connectors>
+        <Connector connType="4" id="cardViewConnID" pluginId="proxyAfterSavePlugout" plugoutId="afterSavePlugout" source="main" sourceWindow="" target="popwin" targetWindow="">
+        </Connector>
+    </Connectors>
+    <Events>
+        <Event async="true" methodName="beforeShow" name="beforeShow" onserver="true">
+            <Action>
+            </Action>
+        </Event>
+    </Events>
+    <Models>
+        <Datasets>
+            <RefMdDataset caption="协同用户" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_user" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_user" voMeta="nc.uap.cpb.org.vos.CpUserVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="组织_集团" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_group" lazyLoad="true" notNullBody="false" objMeta="uap.group" voMeta="nc.vo.org.GroupVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_orgs" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_orgs" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_org" lazyLoad="true" notNullBody="false" objMeta="uap.org" voMeta="nc.vo.org.OrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="反馈人员" controlwidgetopeStatus="false" enabled="false" id="scapco_feedbackuser" lazyLoad="true" notNullBody="false" objMeta="scapco.scapco_feedbackuser" pageSize="10" voMeta="nc.scap.pub.vos.ScapFeedBackUserVO">
+                <FieldRelations>
+                    <FieldRelation id="staff_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="staff_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="staff">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_org_rel" needProcess="true" refDataset="$refds_uap_org" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_group_rel" needProcess="true" refDataset="$refds_uap_group" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_group_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_group" value="pk_group">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onAfterStaffRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DatasetEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <MdDataset caption="公文反馈" controlwidgetopeStatus="false" enabled="false" id="scapco_feedback" lazyLoad="true" notNullBody="false" objMeta="scapco.scapco_feedback" pageSize="10" voMeta="nc.scap.pub.vos.ScapFeedBackVO">
+                <FieldRelations>
+                    <FieldRelation id="feedbackorg_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="feedbackorg_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="feedbackorg">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+            </MdDataset>
+            <MdDataset caption="公文管理" controlwidgetopeStatus="false" enabled="false" id="scapco_officialdoc" lazyLoad="true" notNullBody="false" objMeta="scapco.scapco_officialdoc" pageSize="10" voMeta="nc.scap.pub.vos.ScapOfficialdocVO">
+                <FieldRelations>
+                    <FieldRelation id="pk_org_rel" needProcess="true" refDataset="$refds_uap_org" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_group_rel" needProcess="true" refDataset="$refds_uap_group" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_group_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_group" value="pk_group">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="senddocorg_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="senddocorg_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="senddocorg">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onDataLoad_scapco_officialdoc" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DataLoadEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+        </Datasets>
+        <ComboDatas>
+            <MDComboDataConf caption="文种" fullclassName="cf129fc6-1859-409c-9b7e-ce3310124933" id="combo_scapco_feedbackuser_doctype">
+            </MDComboDataConf>
+            <MDComboDataConf caption="是否发短信" fullclassName="8fb1c916-6f48-4895-8ee6-5ab4f12a3ea1" id="combo_scapco_officialdoc_ismessage">
+            </MDComboDataConf>
+            <MDComboDataConf caption="文种" fullclassName="cf129fc6-1859-409c-9b7e-ce3310124933" id="combo_scapco_officialdoc_doctype">
+            </MDComboDataConf>
+            <MDComboDataConf caption="是否发短信" fullclassName="8fb1c916-6f48-4895-8ee6-5ab4f12a3ea1" id="combo_scapco_feedbackuser_ismessage">
+            </MDComboDataConf>
+            <MDComboDataConf caption="缓急" fullclassName="3de81d89-6dde-4948-bce8-716a94c09837" id="combo_scapco_feedbackuser_urgency">
+            </MDComboDataConf>
+            <MDComboDataConf caption="是否反馈" fullclassName="3ea03871-ad8e-4f27-85c8-bc78c9159ab6" id="combo_scapco_officialdoc_isfeedback">
+            </MDComboDataConf>
+            <MDComboDataConf caption="缓急" fullclassName="3de81d89-6dde-4948-bce8-716a94c09837" id="combo_scapco_officialdoc_urgency">
+            </MDComboDataConf>
+            <MDComboDataConf caption="是否反馈" fullclassName="3ea03871-ad8e-4f27-85c8-bc78c9159ab6" id="combo_scapco_feedbackuser_isfeedback">
+            </MDComboDataConf>
+        </ComboDatas>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scapco_feedback_feedbackorg_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="公文反馈_协同当前集团+业务单元" usePower="false" writeDs="scapco_feedback" writeFields="feedbackorg,feedbackorg_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scapco_feedbackuser_senddocorg_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="反馈人员_协同当前集团+业务单元" usePower="false" writeDs="scapco_feedbackuser" writeFields="senddocorg,senddocorg_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scapco_feedbackuser_pk_group_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_group,name" refId="" refcode="集团(所有)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="反馈人员_集团(所有)" usePower="false" writeDs="scapco_feedbackuser" writeFields="pk_group,pk_group_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scapco_feedbackuser_pk_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="业务单元+集团" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="反馈人员_业务单元+集团" usePower="false" writeDs="scapco_feedbackuser" writeFields="pk_org,pk_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scapco_feedbackuser_staff_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="反馈人员_协同用户" usePower="false" writeDs="scapco_feedbackuser" writeFields="staff,staff_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scapco_officialdoc_pk_group_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_group,name" refId="" refcode="集团(所有)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="公文管理_集团(所有)" usePower="false" writeDs="scapco_officialdoc" writeFields="pk_group,pk_group_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scapco_officialdoc_pk_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="业务单元+集团" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="公文管理_业务单元+集团" usePower="false" writeDs="scapco_officialdoc" writeFields="pk_org,pk_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scapco_officialdoc_senddocorg_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="公文管理_协同当前集团+业务单元" usePower="false" writeDs="scapco_officialdoc" writeFields="senddocorg,senddocorg_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <FormComp caption="公文管理" columnCount="2" dataset="scapco_officialdoc" eleWidth="300" ellipsis="false" enabled="true" id="scapco_officialdoc_form" labelMinWidth="0" renderType="1" rowHeight="22" visible="true">
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="pk_officialdoc" height="" id="pk_officialdoc" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="false" rowSpan="1" selectOnly="true" showLabel="true" text="主键" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="pk_org" height="" id="pk_org" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="组织" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="pk_org_name" height="" id="pk_org_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_scapco_officialdoc_pk_org_name" rowSpan="1" selectOnly="true" showLabel="true" text="组织" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="pk_group" height="" id="pk_group" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="所属集团" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="pk_group_name" height="" id="pk_group_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_scapco_officialdoc_pk_group_name" rowSpan="1" selectOnly="true" showLabel="true" text="所属集团" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="3" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="title" height="" id="title" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="标题" toolbarType="Custom" visible="true" width="700">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="ComboBox" enabled="true" field="doctype" height="" id="doctype" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="true" nullAble="true" refComboData="combo_scapco_officialdoc_doctype" rowSpan="1" selectOnly="true" showLabel="true" text="文种" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="ComboBox" enabled="true" field="urgency" height="" id="urgency" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" refComboData="combo_scapco_officialdoc_urgency" rowSpan="1" selectOnly="true" showLabel="true" text="缓急" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="senddocorg" height="" id="senddocorg" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="发文机关" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="3" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="false" field="senddocorg_name" height="" id="senddocorg_name" imageOnly="false" needNullOption="false" nextLine="true" nullAble="true" refNode="refnode_scapco_officialdoc_senddocorg_name" rowSpan="1" selectOnly="true" showLabel="true" text="发文机关" toolbarType="Custom" visible="true" width="700">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="senddocno" height="" id="senddocno" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="true" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="发文字号" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DateTimeText" enabled="false" field="senddocdate" height="" id="senddocdate" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="发文日期" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="ComboBox" enabled="true" field="isfeedback" height="" id="isfeedback" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="true" nullAble="true" refComboData="combo_scapco_officialdoc_isfeedback" rowSpan="1" selectOnly="true" showLabel="true" text="是否反馈" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="ComboBox" enabled="true" field="ismessage" height="" id="ismessage" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" refComboData="combo_scapco_officialdoc_ismessage" rowSpan="1" selectOnly="true" showLabel="true" text="是否发短信" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="messagecc" height="" id="messagecc" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="短信抄送" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="3" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="message" height="" id="message" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="true" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="短信内容" toolbarType="Custom" visible="true" width="700">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="3" editMin="true" editSec="true" editable="true" editorType="TextArea" enabled="true" field="memo" height="150" id="memo" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="true" nullAble="true" rowSpan="5" selectOnly="true" showLabel="true" text="备注" toolbarType="Custom" visible="true" width="700">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="false" field="state" height="" id="state" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="true" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="状态" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vbdef1" height="" id="vbdef1" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项1" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vbdef2" height="" id="vbdef2" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项2" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vbdef3" height="" id="vbdef3" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项3" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vbdef4" height="" id="vbdef4" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项4" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vbdef5" height="" id="vbdef5" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项5" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vbdef6" height="" id="vbdef6" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项6" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vbdef7" height="" id="vbdef7" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项7" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vbdef8" height="" id="vbdef8" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项8" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DateTimeText" enabled="true" field="vbdef9" height="" id="vbdef9" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项9" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DateTimeText" enabled="true" field="vbdef10" height="" id="vbdef10" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项10" toolbarType="Custom" visible="false" width="">
+            </Element>
+        </FormComp>
+        <GridComp autoRowHeight="false" canCopy="true" caption="反馈人员" checkBoxModel="1" dataset="scapco_feedbackuser" editable="true" enabled="true" expandTree="false" id="scapco_feedbackuser_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_feedbackuser" fixedHeader="false" id="pk_feedbackuser" imageOnly="false" langDir="pub_officialdoc" nullAble="false" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="staff" fixedHeader="false" id="staff" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="人员" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="staff_user_name" fixedHeader="false" id="staff_user_name" imageOnly="false" nullAble="true" refNode="refnode_scapco_feedbackuser_staff_user_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="人员" textAlign="left" visible="true" width="200">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_org" fixedHeader="false" id="pk_org" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="组织" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_org_name" fixedHeader="false" id="pk_org_name" imageOnly="false" nullAble="true" refNode="refnode_scapco_feedbackuser_pk_org_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="组织" textAlign="left" visible="true" width="300">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_group" fixedHeader="false" id="pk_group" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="所属集团" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_group_name" fixedHeader="false" id="pk_group_name" imageOnly="false" nullAble="true" refNode="refnode_scapco_feedbackuser_pk_group_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="所属集团" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef1" fixedHeader="false" id="vbdef1" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项1" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef2" fixedHeader="false" id="vbdef2" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项2" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef3" fixedHeader="false" id="vbdef3" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项3" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef4" fixedHeader="false" id="vbdef4" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项4" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef5" fixedHeader="false" id="vbdef5" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项5" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef6" fixedHeader="false" id="vbdef6" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项6" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef7" fixedHeader="false" id="vbdef7" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项7" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef8" fixedHeader="false" id="vbdef8" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项8" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDateTime" editable="true" editorType="DateTimeText" field="vbdef9" fixedHeader="false" id="vbdef9" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项9" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDateTime" editable="true" editorType="DateTimeText" field="vbdef10" fixedHeader="false" id="vbdef10" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项10" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_officialdoc" fixedHeader="false" id="pk_officialdoc" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上层单据主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <MenuBarComp id="scapco_feedbackuser_grid$MenuBar">
+                <MenuItem i18nName="del" id="scapco_feedbackuser_grid$" langDir="lfwbuttons" modifiers="2" showModel="1" text="删除">
+                    <Events>
+                        <Event async="true" methodName="onDeleteUser" name="onclick" onserver="true">
+                            <SubmitRule>
+                            </SubmitRule>
+                            <Params>
+                                <Param>
+                                    <Name>mouseEvent</Name>
+                                    <Value>
+                                    </Value>
+                                    <Desc>                                        <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                    </Desc>
+                                </Param>
+                            </Params>
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+            </MenuBarComp>
+        </GridComp>
+        <FormComp caption="公文反馈" columnCount="2" dataset="scapco_feedback" eleWidth="120" ellipsis="false" enabled="true" id="scapco_feedback_form" labelMinWidth="0" renderType="2" rowHeight="22" visible="true">
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="pk_feedback" height="" id="pk_feedback" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="false" rowSpan="1" selectOnly="true" showLabel="true" text="主键" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="title" height="" id="title" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="标题" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="feedbackorg" height="" id="feedbackorg" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="反馈单位" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="feedbackorg_name" height="" id="feedbackorg_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_scapco_feedback_feedbackorg_name" rowSpan="1" selectOnly="true" showLabel="true" text="反馈单位" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="5" editMin="true" editSec="true" editable="true" editorType="TextArea" enabled="true" field="content" height="200" id="content" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="3" selectOnly="true" showLabel="true" text="内容" toolbarType="Custom" visible="true" width="100%">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DateTimeText" enabled="true" field="feedbackdate" height="" id="feedbackdate" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="true" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="反馈时间" toolbarType="Custom" visible="true" width="100%">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="feedbackno" height="" id="feedbackno" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="批示号" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="memo" height="" id="memo" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="备注" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="state" height="" id="state" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="状态" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vbdef1" height="" id="vbdef1" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项1" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vbdef2" height="" id="vbdef2" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项2" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vbdef3" height="" id="vbdef3" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项3" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vbdef4" height="" id="vbdef4" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项4" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vbdef5" height="" id="vbdef5" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项5" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vbdef6" height="" id="vbdef6" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项6" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vbdef7" height="" id="vbdef7" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项7" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vbdef8" height="" id="vbdef8" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项8" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DateTimeText" enabled="true" field="vbdef9" height="" id="vbdef9" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项9" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DateTimeText" enabled="true" field="vbdef10" height="" id="vbdef10" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项10" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="pk_officialdoc" height="" id="pk_officialdoc" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="上层单据主键" toolbarType="Custom" visible="false" width="">
+            </Element>
+        </FormComp>
+        <GridComp autoRowHeight="false" canCopy="true" caption="公文反馈" checkBoxModel="1" dataset="scapco_feedback" editable="true" enabled="true" expandTree="false" id="scapco_feedback_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_feedback" fixedHeader="false" id="pk_feedback" imageOnly="false" langDir="pub_officialdoc" nullAble="false" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="title" fixedHeader="false" id="title" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="标题" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="feedbackorg" fixedHeader="false" id="feedbackorg" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="反馈单位" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="feedbackorg_name" fixedHeader="false" id="feedbackorg_name" imageOnly="false" nullAble="true" refNode="refnode_scapco_feedback_feedbackorg_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="反馈单位" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="content" fixedHeader="false" id="content" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="内容" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDateTime" editable="true" editorType="DateTimeText" field="feedbackdate" fixedHeader="false" id="feedbackdate" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="反馈时间" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="feedbackno" fixedHeader="false" id="feedbackno" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="批示号" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="memo" fixedHeader="false" id="memo" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备注" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="state" fixedHeader="false" id="state" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="状态" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef1" fixedHeader="false" id="vbdef1" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项1" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef2" fixedHeader="false" id="vbdef2" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项2" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef3" fixedHeader="false" id="vbdef3" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项3" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef4" fixedHeader="false" id="vbdef4" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项4" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef5" fixedHeader="false" id="vbdef5" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项5" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef6" fixedHeader="false" id="vbdef6" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项6" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef7" fixedHeader="false" id="vbdef7" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项7" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef8" fixedHeader="false" id="vbdef8" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项8" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDateTime" editable="true" editorType="DateTimeText" field="vbdef9" fixedHeader="false" id="vbdef9" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项9" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDateTime" editable="true" editorType="DateTimeText" field="vbdef10" fixedHeader="false" id="vbdef10" imageOnly="false" langDir="pub_officialdoc" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项10" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_officialdoc" fixedHeader="false" id="pk_officialdoc" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上层单据主键" textAlign="left" visible="true" width="120">
+            </Column>
+        </GridComp>
+        <FormComp caption="反馈人员" columnCount="2" dataset="scapco_feedbackuser" eleWidth="120" ellipsis="false" enabled="true" id="scapco_feedbackuser_form" labelMinWidth="0" renderType="2" rowHeight="22" visible="true">
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="pk_feedbackuser" height="" id="pk_feedbackuser" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="false" rowSpan="1" selectOnly="true" showLabel="true" text="主键" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="staff" height="" id="staff" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="人员" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="staff_user_name" height="" id="staff_user_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_scapco_feedbackuser_staff_user_name" rowSpan="1" selectOnly="true" showLabel="true" text="人员" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="pk_org" height="" id="pk_org" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="组织" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="pk_org_name" height="" id="pk_org_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_scapco_feedbackuser_pk_org_name" rowSpan="1" selectOnly="true" showLabel="true" text="组织" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="pk_group" height="" id="pk_group" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="所属集团" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="pk_group_name" height="" id="pk_group_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_scapco_feedbackuser_pk_group_name" rowSpan="1" selectOnly="true" showLabel="true" text="所属集团" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="5" editMin="true" editSec="true" editable="true" editorType="TextArea" enabled="true" field="vbdef1" height="200" id="vbdef1" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="3" selectOnly="true" showLabel="true" text="内容" toolbarType="Custom" visible="true" width="100%">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="false" field="vbdef2" height="" id="vbdef2" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="反馈时间" toolbarType="Custom" visible="true" width="100%">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vbdef3" height="" id="vbdef3" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项3" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vbdef4" height="" id="vbdef4" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项4" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vbdef5" height="" id="vbdef5" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项5" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vbdef6" height="" id="vbdef6" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项6" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vbdef7" height="" id="vbdef7" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项7" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vbdef8" height="" id="vbdef8" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项8" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DateTimeText" enabled="true" field="vbdef9" height="" id="vbdef9" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项9" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DateTimeText" enabled="true" field="vbdef10" height="" id="vbdef10" imageOnly="false" langDir="pub_officialdoc" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义项10" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="pk_officialdoc" height="" id="pk_officialdoc" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="上层单据主键" toolbarType="Custom" visible="false" width="">
+            </Element>
+        </FormComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar">
+            <MenuItem id="add" modifiers="2" showModel="1" text="新增">
+                <Events>
+                    <Event async="true" methodName="onAdd" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="copy" modifiers="2" showModel="1" text="复制">
+                <Events>
+                    <Event async="true" methodName="onCopy" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="del" modifiers="2" showModel="1" text="删除">
+                <Events>
+                    <Event async="true" methodName="onDelete" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="save" modifiers="2" showModel="1" text="保存">
+                <Events>
+                    <Event async="true" methodName="onSave" name="onclick" onserver="true">
+                        <SubmitRule>
+                            <Widget id="main">
+                                <Dataset id="scapco_meetingstaff" type="ds_all_line">
+                                </Dataset>
+                                <Dataset id="scapco_meetingreport" type="ds_all_line">
+                                </Dataset>
+                                <Dataset id="scapco_meeting" type="ds_current_line">
+                                </Dataset>
+                                <Dataset id="scapco_meetinguser" type="ds_all_line">
+                                </Dataset>
+                                <Dataset id="scapco_feedbackuser" type="ds_all_line">
+                                </Dataset>
+                                <Dataset id="scapco_feedback" type="ds_all_line">
+                                </Dataset>
+                                <Dataset id="scapco_officialdoc" type="ds_current_line">
+                                </Dataset>
+                            </Widget>
+                        </SubmitRule>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem i18nName="userChoice" id="userChoice" langDir="lfwbuttons" modifiers="2" showModel="1" text="用户选择">
+                <Events>
+                    <Event async="true" methodName="onUserChoice" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="sep1" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="startorstrop" modifiers="2" showModel="1" text="启用/停用">
+                <MenuItem id="start" modifiers="2" showModel="1" text="启用">
+                    <Events>
+                        <Event async="true" methodName="onStart" name="onclick" onserver="true">
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+                <MenuItem id="stop" modifiers="2" showModel="1" text="停用">
+                    <Events>
+                        <Event async="true" methodName="onStop" name="onclick" onserver="true">
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem id="sep2" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="attachfile" modifiers="2" showModel="1" text="附件">
+                <Events>
+                    <Event async="true" methodName="onAttchFile" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="print" modifiers="2" showModel="1" text="打印">
+                <Events>
+                    <Event async="true" methodName="onPrint" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="sep3" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="back" modifiers="2" showModel="1" text="返回">
+                <Events>
+                    <Event async="true" methodName="onBack" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

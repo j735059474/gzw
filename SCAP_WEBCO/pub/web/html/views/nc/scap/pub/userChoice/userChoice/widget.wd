@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget caption="用户选择" controllerClazz="nc.scap.pub.userchoice.UserchoiceViewController" id="userChoice" refId="userChoice" sourcePackage="pub/src/public/">
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+        <PlugoutDesc id="doOk">
+        </PlugoutDesc>
+    </PlugoutDescs>
+    <PluginDescs>
+    </PluginDescs>
+    <Events>
+        <Event async="true" methodName="beforeShow" name="beforeShow" onserver="true">
+            <SubmitRule>
+            </SubmitRule>
+            <Params>
+                <Param>
+                    <Name>dialogEvent</Name>
+                    <Value>
+                    </Value>
+                    <Desc>                        <![CDATA[nc.uap.lfw.core.event.DialogEvent]]>
+                    </Desc>
+                </Param>
+            </Params>
+            <Action>
+            </Action>
+        </Event>
+    </Events>
+    <Models>
+        <Datasets>
+            <DatasetRelations>
+                <DatasetRelation detailDataset="userchoice_b_ds" detailForeignKey="pk_choice_person" id="userchoice_ds_userchoice_b_ds" masterDataset="userchoice_ds" masterKeyField="pk_choice_person">
+                </DatasetRelation>
+            </DatasetRelations>
+            <MdDataset caption="人员选择" controlwidgetopeStatus="true" enabled="false" id="userchoice_ds" lazyLoad="false" notNullBody="false" objMeta="scapco.userchoice" pageSize="10" voMeta="nc.scap.pub.vos.ScapUserChoiceVO">
+                <FieldRelations>
+                    <FieldRelation id="pk_user_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="pk_user_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="pk_user">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DataLoadEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DatasetEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <MdDataset caption="人员选择子表" controlwidgetopeStatus="false" enabled="false" id="userchoice_b_ds" lazyLoad="true" notNullBody="false" objMeta="scapco.userchoice_b" pageSize="10" voMeta="nc.scap.pub.vos.ScapUserChoiceBVO">
+                <FieldRelations>
+                    <FieldRelation id="pk_user_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="pk_user_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="pk_user">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                     <FieldRelation id="pk_org_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="remark_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="remark">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                    <Field dataType="String" id="remark_name" nullAble="true" primaryKey="false" text="所属组织">
+                    </Field>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onAfterRowSelect_B" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DatasetEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onAfterDataChange" name="onAfterDataChange" onserver="true">
+                        <SubmitRule>
+                            <Widget id="userChoice">
+                                <Dataset id="userchoice_ds" type="ds_current_line">
+                                </Dataset>
+                                <Dataset id="userchoice_b_ds" type="ds_all_line">
+                                </Dataset>
+                            </Widget>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetCellEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DatasetCellEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <RefMdDataset caption="协同用户" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_user" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_user" voMeta="nc.uap.cpb.org.vos.CpUserVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+             <RefMdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_orgs" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_orgs" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+        </Datasets>
+        <ComboDatas>
+            <MDComboDataConf caption="人员分组类型" fullclassName="7bcb2e07-28f3-4143-a78f-cae2f5e064be" id="combo_userchoice_ds_type">
+            </MDComboDataConf>
+        </ComboDatas>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_userchoice_b_ds_remark_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="userchoice_b_ds" writeFields="remark,remark_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="userchoice_userref" langDir="" multiSel="false" orgs="false" pagemeta="" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name,pk_org" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="userchoice_b_ds" writeFields="pk_user,pk_user_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_userchoice_b_ds_pk_user_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name,pk_org" refId="" refcode="协同组织用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="userchoice_b_ds" writeFields="pk_user,pk_user_user_name,remark">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_userchoice_ds_pk_user_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="userchoice_ds" writeFields="pk_user,pk_user_user_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <GridComp autoRowHeight="false" canCopy="true" caption="人员选择" checkBoxModel="1" dataset="userchoice_ds" editable="true" enabled="true" expandTree="false" id="userchoice_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_choice_person" fixedHeader="false" id="pk_choice_person" imageOnly="false" langDir="pub_choice" nullAble="false" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="code" fixedHeader="false" id="code" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="编码" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="name" fixedHeader="false" id="name" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="名称" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="type" fixedHeader="false" id="type" imageOnly="false" langDir="pub_choice" nullAble="true" refComboData="combo_userchoice_ds_type" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="类型" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="remark" fixedHeader="false" id="remark" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备注" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_user" fixedHeader="false" id="pk_user" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="用户" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_user_user_name" fixedHeader="false" id="pk_user_user_name" imageOnly="false" nullAble="true" refNode="refnode_userchoice_ds_pk_user_user_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="用户" textAlign="left" visible="false" width="120">
+            </Column>
+        </GridComp>
+        <GridComp autoRowHeight="false" canCopy="true" caption="人员选择子表" checkBoxModel="1" dataset="userchoice_b_ds" editable="true" enabled="true" expandTree="false" id="userchoice_b_grid" multiSelect="true" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="true" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_choice_person_b" fixedHeader="false" id="pk_choice_person_b" imageOnly="false" langDir="pub_choice" nullAble="false" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_user" fixedHeader="false" id="pk_user" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="人员" textAlign="left" visible="false" width="200">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_user_user_name" fixedHeader="false" id="pk_user_user_name" imageOnly="false" nullAble="true" refNode="refnode_userchoice_b_ds_pk_user_user_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="人员" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="false" editorType="StringText" field="remark" fixedHeader="false" id="remark" imageOnly="false" langDir="pub_choice" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="所属组织" textAlign="left" visible="false" width="300">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_choice_person" fixedHeader="false" id="pk_choice_person" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上层单据主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="remark_name" fixedHeader="false" id="remark_name" imageOnly="false" nullAble="true" refNode="refnode_userchoice_b_ds_remark_name"  renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="所属组织" textAlign="left" visible="true" width="300">
+            </Column>
+            <MenuBarComp id="userchoice_b_grid$menubar">
+                <MenuItem i18nName="add" id="userchoice_b_grid$add" langDir="lfwbuttons" modifiers="3" showModel="1" text="新增">
+                    <Events>
+                        <Event async="true" methodName="onUserAdd" name="onclick" onserver="true">
+                            <SubmitRule>
+                            </SubmitRule>
+                            <Params>
+                                <Param>
+                                    <Name>mouseEvent</Name>
+                                    <Value>
+                                    </Value>
+                                    <Desc>                                        <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                    </Desc>
+                                </Param>
+                            </Params>
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+                <MenuItem i18nName="del" id="userchoice_b_grid$del" langDir="lfwbuttons" modifiers="3" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_Ms_StateManager" text="删除">
+                    <Events>
+                        <Event async="true" methodName="onUserDel" name="onclick" onserver="true">
+                            <SubmitRule>
+                            </SubmitRule>
+                            <Params>
+                                <Param>
+                                    <Name>mouseEvent</Name>
+                                    <Value>
+                                    </Value>
+                                    <Desc>                                        <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                    </Desc>
+                                </Param>
+                            </Params>
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+            </MenuBarComp>
+        </GridComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar">
+            <MenuItem i18nName="add" id="add" langDir="lfwbuttons" modifiers="2" showModel="1" text="新增">
+                <Events>
+                    <Event async="true" methodName="onUserGroupAdd" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem i18nName="edit" id="edit" langDir="lfwbuttons" modifiers="3" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="修改">
+                <Events>
+                    <Event async="true" methodName="onUserGroupEdit" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem i18nName="del" id="del" langDir="lfwbuttons" modifiers="3" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_Ms_StateManager" text="删除">
+                <Events>
+                    <Event async="true" methodName="onUserGroupDel" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem i18nName="seq" id="seq" langDir="lfwbuttons" modifiers="3" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem i18nName="save" id="save" langDir="lfwbuttons" modifiers="3" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Edit_StateManager" text="保存">
+                <Events>
+                    <Event async="true" methodName="onSave" name="onclick" onserver="true">
+                        <SubmitRule>
+                            <Widget id="userChoice">
+                                <Dataset id="userchoice_b_ds" type="ds_all_line">
+                                </Dataset>
+                            </Widget>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem i18nName="cancel" id="cancel" langDir="lfwbuttons" modifiers="2" showModel="1" text="取消">
+                <Events>
+                    <Event async="true" methodName="onCancel" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="sep" langDir="lfwbuttons" modifiers="3" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem i18nName="ok" id="ok" langDir="lfwbuttons" modifiers="2" showModel="1" text="确定">
+                <Events>
+                    <Event async="true" methodName="onOkClick" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

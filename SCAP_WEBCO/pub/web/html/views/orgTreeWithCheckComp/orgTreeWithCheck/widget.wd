@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget caption="组织树选择" controllerClazz="nc.scap.pub.orgTreeWithCheck.OrgTreeWithCheckViewController" id="orgTreeWithCheck" refId="orgTreeWithCheck" sourcePackage="pub/src/public/">
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+        <PlugoutDesc id="afterOkPlugout">
+            <PlugoutDescItem clazztype="java.lang.String" name="MULTI_ROWS" source="org_ds" type="Dataset.TYPE_DATASET_MUTL_SEL_ROW">
+            </PlugoutDescItem>
+        </PlugoutDesc>
+    </PlugoutDescs>
+    <PluginDescs>
+    </PluginDescs>
+    <Events>
+        <Event async="true" methodName="onclose" name="onclose" onserver="true">
+            <SubmitRule>
+            </SubmitRule>
+            <Params>
+                <Param>
+                    <Name>dialogEvent</Name>
+                    <Value>
+                    </Value>
+                    <Desc>                        <![CDATA[nc.uap.lfw.core.event.DialogEvent]]>
+                    </Desc>
+                </Param>
+            </Params>
+            <Action>
+            </Action>
+        </Event>
+    </Events>
+    <Models>
+        <Datasets>
+            <RefMdDataset caption="实体属性" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_Defdoc_ORG001_0xx" lazyLoad="true" notNullBody="false" objMeta="uap.Defdoc-ORG001_0xx" voMeta="nc.vo.bd.defdoc.DefdocVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="责任会计_管控范围" controlwidgetopeStatus="false" enabled="false" id="$refds_resa_controlarea" lazyLoad="true" notNullBody="false" objMeta="resa.controlarea" voMeta="nc.vo.resa.controlarea.ControlAreaVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="协同用户" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_user" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_user" voMeta="nc.uap.cpb.org.vos.CpUserVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="组织_集团" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_group" lazyLoad="true" notNullBody="false" objMeta="uap.group" voMeta="nc.vo.org.GroupVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="组织_业务单元_公司" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_corp" lazyLoad="true" notNullBody="false" objMeta="uap.corp" voMeta="nc.vo.org.CorpVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_orgs" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_orgs" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="组织" controlwidgetopeStatus="false" enabled="false" id="org_ds" lazyLoad="false" notNullBody="false" objMeta="uap.org" pageSize="1000000" voMeta="nc.vo.org.OrgVO">
+                <FieldRelations>
+                    <FieldRelation id="pk_fatherorg_rel" needProcess="true" refDataset="$refds_uap_org" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_fatherorg_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_fatherorg">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_group_rel" needProcess="true" refDataset="$refds_uap_group" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_group_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_group" value="pk_group">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="creator_rel" needProcess="true" refDataset="$refds_uap_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="creator_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="creator">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="modifier_rel" needProcess="true" refDataset="$refds_uap_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="modifier_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="modifier">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="entitytype_rel" needProcess="true" refDataset="$refds_uap_Defdoc_ORG001_0xx" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="entitytype_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_defdoc" value="entitytype">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="principal_rel" needProcess="true" refDataset="$refds_uap_psndoc" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="principal_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_psndoc" value="principal">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="address_rel" needProcess="true" refDataset="$refds_uap_address" useCache="true">
+                        <MatchFields>
+                            <Field readField="pk_address" writeField="address_pk_address">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_address" value="address">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_corp_rel" needProcess="true" refDataset="$refds_uap_corp" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_corp_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_corp" value="pk_corp">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_vid_rel" needProcess="true" refDataset="$refds_uap_org_v" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_vid_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_vid" value="pk_vid">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_accperiodscheme_rel" needProcess="true" refDataset="$refds_uap_accperiodscheme" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_accperiodscheme_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_accperiodscheme" value="pk_accperiodscheme">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_currtype_rel" needProcess="true" refDataset="$refds_uap_currtype" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_currtype_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_currtype" value="pk_currtype">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_exratescheme_rel" needProcess="true" refDataset="$refds_uap_exratescheme" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_exratescheme_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_exratescheme" value="pk_exratescheme">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="workcalendar_rel" needProcess="true" refDataset="$refds_uap_workcalendar" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="workcalendar_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_workcalendar" value="workcalendar">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="countryzone_rel" needProcess="true" refDataset="$refds_uap_countryzone" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="countryzone_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_country" value="countryzone">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_format_rel" needProcess="true" refDataset="$refds_uap_formatdoc" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_format_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_formatdoc" value="pk_format">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_timezone_rel" needProcess="true" refDataset="$refds_uap_timezone" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_timezone_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_timezone" value="pk_timezone">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="ncindustry_rel" needProcess="true" refDataset="$refds_uap_industry" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="ncindustry_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_industry" value="ncindustry">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_controlarea_rel" needProcess="true" refDataset="$refds_resa_controlarea" useCache="true">
+                        <MatchFields>
+                            <Field readField="caname" writeField="pk_controlarea_caname">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_controlarea" value="pk_controlarea">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                    <Field dataType="String" field="组织级别" id="orglevel" nullAble="true" primaryKey="false" text="orglevel">
+                    </Field>
+                    <Field dataType="String" id="pk_organization" nullAble="true" primaryKey="false" text="pk_organization">
+                    </Field>
+                    <Field dataType="String" id="pk_fatherorganization" nullAble="true" primaryKey="false" text="pk_fatherorganization">
+                    </Field>
+                    <Field dataType="String" defaultValue="" id="loadstate" nullAble="true" primaryKey="false" text="loadstate">
+                    </Field>
+                    <Field dataType="String" id="mdmcode" nullAble="true" primaryKey="false" text="mdmcode">
+                    </Field>
+                    <Field dataType="Integer" defaultValue="0" id="mdm_version_max" nullAble="true" primaryKey="false" text="mdm_version_max">
+                    </Field>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad_org_ds" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DataLoadEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <RefMdDataset caption="工作日历" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_workcalendar" lazyLoad="true" notNullBody="false" objMeta="uap.workcalendar" voMeta="nc.vo.bd.workcalendar.WorkCalendarVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="组织_版本信息" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_org_v" lazyLoad="true" notNullBody="false" objMeta="uap.org_v" voMeta="nc.vo.vorg.OrgVersionVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="会计期间方案" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_accperiodscheme" lazyLoad="true" notNullBody="false" objMeta="uap.accperiodscheme" voMeta="nc.vo.bd.period.AccperiodschemeVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="行业目录" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_industry" lazyLoad="true" notNullBody="false" objMeta="uap.industry" voMeta="nc.vo.bd.industry.IndustryVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="外币汇率方案" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_exratescheme" lazyLoad="true" notNullBody="false" objMeta="uap.exratescheme" voMeta="nc.vo.bd.exratescheme.ExrateSchemeVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="数据格式" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_formatdoc" lazyLoad="true" notNullBody="false" objMeta="uap.formatdoc" voMeta="nc.vo.bd.format.FormatDocVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="用户" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_user" lazyLoad="true" notNullBody="false" objMeta="uap.user" voMeta="nc.vo.sm.UserVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="国家地区" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_countryzone" lazyLoad="true" notNullBody="false" objMeta="uap.countryzone" voMeta="nc.vo.bd.countryzone.CountryZoneVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="地址" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_address" lazyLoad="true" notNullBody="false" objMeta="uap.address" voMeta="nc.vo.bd.address.AddressVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="币种" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_currtype" lazyLoad="true" notNullBody="false" objMeta="uap.currtype" voMeta="nc.vo.bd.currtype.CurrtypeVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_org" lazyLoad="true" notNullBody="false" objMeta="uap.org" voMeta="nc.vo.org.OrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="时区" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_timezone" lazyLoad="true" notNullBody="false" objMeta="uap.timezone" voMeta="nc.vo.bd.timezone.TimezoneVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="人员基本信息" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_psndoc" lazyLoad="true" notNullBody="false" objMeta="uap.psndoc" voMeta="nc.vo.bd.psn.PsndocVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+        </Datasets>
+        <ComboDatas>
+            <MDComboDataConf caption="启用状态" fullclassName="6b533ffa-3e43-4147-8670-ba0f5471fd40" id="combo_org_ds_enablestate">
+            </MDComboDataConf>
+            <MDComboDataConf caption="数据来源" fullclassName="2e8fa516-2b27-4ac5-981b-264f7e34cb09" id="combo_org_ds_dataoriginflag">
+            </MDComboDataConf>
+            <MDComboDataConf caption="协同组织级别类型" fullclassName="8558b518-d873-4452-ae2f-256dc516ee32" id="combo_org_ds_orglevel">
+            </MDComboDataConf>
+        </ComboDatas>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_org_ds_modifier_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="org_ds" writeFields="modifier,modifier_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_org_ds_pk_controlarea_caname" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_controlarea,caname" refId="" refcode="管控范围" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="org_ds" writeFields="pk_controlarea,pk_controlarea_caname">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_org_ds_pk_orglevel1_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="org_ds" writeFields="pk_orglevel1,pk_orglevel1_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_org_ds_pk_corp_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_corp,name" refId="" refcode="公司(所有)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="org_ds" writeFields="pk_corp,pk_corp_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_org_ds_pk_vid_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_vid,name" refId="" refcode="业务单元版本(所有)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="org_ds" writeFields="pk_vid,pk_vid_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_org_ds_pk_orglevel2_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="org_ds" writeFields="pk_orglevel2,pk_orglevel2_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_org_ds_pk_format_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_formatdoc,name" refId="" refcode="数据格式" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="org_ds" writeFields="pk_format,pk_format_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_org_ds_entitytype_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_defdoc,name" refId="" refcode="实体属性(自定义档案)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="org_ds" writeFields="entitytype,entitytype_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_org_ds_creator_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="org_ds" writeFields="creator,creator_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_org_ds_workcalendar_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_workcalendar,name" refId="" refcode="工作日历" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="org_ds" writeFields="workcalendar,workcalendar_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_org_ds_ncindustry_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_industry,name" refId="" refcode="行业目录" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="org_ds" writeFields="ncindustry,ncindustry_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_org_ds_pk_timezone_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_timezone,name" refId="" refcode="时区" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="org_ds" writeFields="pk_timezone,pk_timezone_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_org_ds_pk_exratescheme_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_exratescheme,name" refId="" refcode="外币汇率方案" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="org_ds" writeFields="pk_exratescheme,pk_exratescheme_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_org_ds_countryzone_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_country,name" refId="" refcode="国家地区" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="org_ds" writeFields="countryzone,countryzone_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_org_ds_pk_group_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_group,name" refId="" refcode="集团(所有)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="org_ds" writeFields="pk_group,pk_group_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_org_ds_principal_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_psndoc,name" refId="" refcode="人员" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="org_ds" writeFields="principal,principal_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_org_ds_pk_fatherorg_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="业务单元(所有)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="org_ds" writeFields="pk_fatherorg,pk_fatherorg_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_org_ds_pk_currtype_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_currtype,name" refId="" refcode="币种档案" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="org_ds" writeFields="pk_currtype,pk_currtype_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_org_ds_address_pk_address" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_address,pk_address" refId="" refcode="地址簿" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="org_ds" writeFields="address,address_pk_address">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_org_ds_pk_accperiodscheme_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_accperiodscheme,name" refId="" refcode="会计期间方案" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="org_ds" writeFields="pk_accperiodscheme,pk_accperiodscheme_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <ButtonComp enabled="true" i18nName="取消" id="btn_cancel" text="取消" tip="取消" tipI18nName="取消" visible="true">
+            <Events>
+                <Event async="true" methodName="onCancel" name="onclick" onserver="true">
+                    <SubmitRule>
+                    </SubmitRule>
+                    <Params>
+                        <Param>
+                            <Name>mouseEvent</Name>
+                            <Value>
+                            </Value>
+                            <Desc>                                <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                            </Desc>
+                        </Param>
+                    </Params>
+                    <Action>
+                    </Action>
+                </Event>
+            </Events>
+        </ButtonComp>
+        <ButtonComp enabled="true" i18nName="确定" id="btn_ok" text="确定" tip="确定" tipI18nName="确定" visible="true">
+            <Events>
+                <Event async="true" methodName="onOk" name="onclick" onserver="true">
+                    <SubmitRule>
+                        <Widget id="orgTreeWithCheck">
+                            <Dataset id="org_ds" type="ds_all_line">
+                            </Dataset>
+                        </Widget>
+                    </SubmitRule>
+                    <Params>
+                        <Param>
+                            <Name>mouseEvent</Name>
+                            <Value>
+                            </Value>
+                            <Desc>                                <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                            </Desc>
+                        </Param>
+                    </Params>
+                    <Action>
+                    </Action>
+                </Event>
+            </Events>
+        </ButtonComp>
+        <TreeViewComp canEdit="false" checkBoxModel="0" dragEnable="false" enabled="true" id="org_tree" openLevel="3" rootOpen="true" selectRoot="false" visible="true" withCheckBox="true" withRoot="false">
+            <RecursiveTreeLevel dataset="org_ds" id="一级" labelDelims="," labelFields="code,name,loadstate" loadField="" masterKeyField="pk_org" recursiveKeyField="pk_org" recursivePKeyField="pk_fatherorg">
+            </RecursiveTreeLevel>
+        </TreeViewComp>
+        <CheckBoxComp checked="false" dataType="UFBoolean" editorType="CheckBox" enabled="true" focus="false" i18nName="是否包含下级" id="ifwithsub" text="是否包含下级" textAlign="left" textWidth="80" visible="true">
+            <Events>
+                <Event async="true" methodName="ifWithSubValueChanged" name="valueChanged" onserver="true">
+                    <SubmitRule>
+                    </SubmitRule>
+                    <Params>
+                        <Param>
+                            <Name>textEvent</Name>
+                            <Value>
+                            </Value>
+                            <Desc>                                <![CDATA[nc.uap.lfw.core.event.TextEvent]]>
+                            </Desc>
+                        </Param>
+                    </Params>
+                    <Action>
+                    </Action>
+                </Event>
+            </Events>
+        </CheckBoxComp>
+        <TextComp designModel="false" editorType="StringText" enabled="true" focus="false" id="queryInput" nullable="true" text="定位" textAlign="left" textWidth="32" visible="true">
+            <Events>
+                <Event async="true" methodName="onQueryEnter" name="onEnter" onserver="true">
+                    <SubmitRule>
+                    </SubmitRule>
+                    <Params>
+                        <Param>
+                            <Name>keyEvent</Name>
+                            <Value>
+                            </Value>
+                            <Desc>                                <![CDATA[nc.uap.lfw.core.event.KeyEvent]]>
+                            </Desc>
+                        </Param>
+                    </Params>
+                    <Action>
+                    </Action>
+                </Event>
+            </Events>
+        </TextComp>
+    </Components>
+    <Menus>
+    </Menus>
+</Widget>

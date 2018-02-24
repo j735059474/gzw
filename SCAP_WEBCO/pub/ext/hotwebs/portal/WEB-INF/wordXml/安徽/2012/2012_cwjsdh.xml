@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+<scapfd_testref>
+		<scapfd_testref.p1l1n1  uapDisplayName="20xx"/>
+		<scapfd_testref.p1l1n2  uapDisplayName="xx"/>
+		<scapfd_testref.p791n2  uapDisplayName="xx"/>
+		<scapfd_testref.p1l2n1  uapDisplayName="xx"/>
+		<scapfd_testref.p1l2n2  uapDisplayName="xx"/>
+		<scapfd_testref.p1l2n3  uapDisplayName="xx"/>
+		<scapfd_testref.p1l2n4  uapDisplayName="xxx"/>
+		<scapfd_testref.p1l3n1  uapDisplayName="20xx"/>
+		<scapfd_testref.p1l3n2  uapDisplayName="xx"/>
+		
+		<scapfd_testref.p1l4n1  uapDisplayName="20xx"/>
+		<scapfd_testref.p1l4n2  uapDisplayName="xx"/>
+		<scapfd_testref.p1l4n3  uapDisplayName="增长"/>
+		<scapfd_testref.p1l4n4  uapDisplayName="x"/>
+		<scapfd_testref.p1l4n5  uapDisplayName="xx"/>
+		
+		<scapfd_testref.p1l5n3zz  uapDisplayName="增长"/>
+		<scapfd_testref.p1l5n2  uapDisplayName="2"/>
+		<scapfd_testref.p1l5n3  uapDisplayName="xx"/>
+		<scapfd_testref.p1l5n4zz  uapDisplayName="增长"/>
+		<scapfd_testref.p1l5n5  uapDisplayName="2"/>
+		<scapfd_testref.p1l5n6  uapDisplayName="0"/>
+		
+		<scapfd_testref.p1l6n1  uapDisplayName="xx"/>
+		<scapfd_testref.p1l6n2  uapDisplayName="x"/>
+		<scapfd_testref.p1l6n3  uapDisplayName="20xx"/>
+		
+		<scapfd_testref.p1l7n1  uapDisplayName="xx"/>
+		<scapfd_testref.p1l7n2zz  uapDisplayName="增长"/>
+		<scapfd_testref.p1l7n3  uapDisplayName="2"/>
+		<scapfd_testref.p1l7n4  uapDisplayName="xx"/>
+		<scapfd_testref.p1l7n5zz  uapDisplayName="增长"/>
+		
+		<scapfd_testref.p1l8n1  uapDisplayName="2"/>
+		<scapfd_testref.p1l8n2  uapDisplayName="xx"/>
+		<scapfd_testref.p1l8n3zz  uapDisplayName="增长"/>
+		<scapfd_testref.p1l8n4  uapDisplayName="2"/>
+		<scapfd_testref.p1l8n5  uapDisplayName="x"/>
+		
+		<scapfd_testref.p1l9n1  uapDisplayName="同比增长"/>
+		<scapfd_testref.p1l9n3  uapDisplayName="XX"/>
+		<scapfd_testref.p1l9n2  uapDisplayName="国有资本保值增值率为XX"/>
+		<scapfd_testref.p45679n2  uapDisplayName="XX"/>
+		
+		<scapfd_testref.p1l10n1  uapDisplayName="20xx"/>
+		<scapfd_testref.p1l10n2  uapDisplayName="0"/>
+		<scapfd_testref.p1l21n1  uapDisplayName="20xx"/>
+		<scapfd_testref.p1l21n2  uapDisplayName="0"/>
+		<scapfd_testref.p1l21n3  uapDisplayName="0"/>
+		<scapfd_testref.p1l21n4  uapDisplayName="0"/>
+		<scapfd_testref.p1l31n1  uapDisplayName="0"/>
+		<scapfd_testref.p1l31n2  uapDisplayName="0"/>
+		<scapfd_testref.p1l31n3  uapDisplayName="0"/>
+		<scapfd_testref.p1l41n1  uapDisplayName="20xx"/>
+		<scapfd_testref.p1l51n1  uapDisplayName="0"/>
+		<scapfd_testref.p1l51n2  uapDisplayName="0"/>
+		<scapfd_testref.p1l51n3  uapDisplayName="0"/>
+		<scapfd_testref.p1l51n4  uapDisplayName="0"/>
+		<scapfd_testref.p1l61n1  uapDisplayName="0"/>
+		<scapfd_testref.p1l61n2  uapDisplayName="0"/>
+		<scapfd_testref.p1l61n3  uapDisplayName="0"/>
+		
+		<scapfd_testref.p1l71n1  uapDisplayName="20xx"/>
+		<scapfd_testref.p1l71n2  uapDisplayName="xx"/>
+		<scapfd_testref.p1l71n3  uapDisplayName="xx"/>
+		<scapfd_testref.p1181n1  uapDisplayName="xx"/>
+		<scapfd_testref.p1181n2zz uapDisplayName="增长"/>
+		<scapfd_testref.p1l81n3  uapDisplayName="x"/>
+		<scapfd_testref.p1l81n4  uapDisplayName="xx"/>
+		
+		<scapfd_testref.p2l11n1  uapDisplayName="0"/>
+		<scapfd_testref.p2l11n2  uapDisplayName="0"/>
+		<scapfd_testref.p2l11n3zz  uapDisplayName="增加"/>
+		<scapfd_testref.p2l11n4  uapDisplayName="0"/>
+		
+		<scapfd_testref.p2l21n1  uapDisplayName="20xx"/>
+		<scapfd_testref.p2l21n2  uapDisplayName="XX会计师事务所"/>
+		<scapfd_testref.p2l31n1  uapDisplayName="xx意见"/>
+		<scapfd_testref.p2l31n2  uapDisplayName="0"/>
+		<scapfd_testref.p2l41n1  uapDisplayName="0"/>
+		<scapfd_testref.p2l41n2  uapDisplayName="0"/>
+		
+		<scapfd_testref.p2l51n1  uapDisplayName="20xx"/>
+		<scapfd_testref.p2l51n2  uapDisplayName="0"/>
+		<scapfd_testref.p2l51n3jd  uapDisplayName="降低"/>
+		
+		<scapfd_testref.p2l61n1  uapDisplayName="0"/>
+		<scapfd_testref.p2l61n2  uapDisplayName="0"/>
+		<scapfd_testref.p2l61n3jd  uapDisplayName="降低"/>
+		<scapfd_testref.p2l61n4  uapDisplayName="0"/>
+		<scapfd_testref.p2l61n5  uapDisplayName="0"/>
+
+		<scapfd_testref.p2l71n1  uapDisplayName="0"/>
+		<scapfd_testref.p2l71n2  uapDisplayName="0"/>
+		<scapfd_testref.p2l71n3xj  uapDisplayName="下降"/>
+		<scapfd_testref.p2l71n4  uapDisplayName="0"/>
+
+		<scapfd_testref.p2l81n1  uapDisplayName="0"/>
+		<scapfd_testref.p2l81n2zz  uapDisplayName="增长"/>
+		<scapfd_testref.p2l81n3  uapDisplayName="0"/>
+		<scapfd_testref.p2l81n4  uapDisplayName="0"/>
+		<scapfd_testref.p2l81n5zz  uapDisplayName="增长"/>
+		<scapfd_testref.p2l81n6  uapDisplayName="0"/>
+		<scapfd_testref.p2l81n7  uapDisplayName="0"/>
+
+		
+		<scapfd_testref.year_jjxyzk uapDisplayName="20xx"/>
+		<scapfd_testref.zyywsr_jjxyzk uapDisplayName="主营业务收入"/>
+		<scapfd_testref.zz_jjxyzk uapDisplayName="增长"/>
+		<scapfd_testref.p3l81n7  uapDisplayName="0"/>
+		<scapfd_testref.p3l91n7  uapDisplayName="0"/>
+		<scapfd_testref.zzl1111 uapDisplayName="增长"/>
+		<scapfd_testref.p3l01n7  uapDisplayName="0"/>
+		<scapfd_testref.zzl_jjxyzk uapDisplayName="比上年增长率"/>
+		<scapfd_testref.p3201n7  uapDisplayName="0"/>
+		<scapfd_testref.sjsj_jjxyzk uapDisplayName="上缴税金"/>
+		<scapfd_testref.sjzz_jjxyzk uapDisplayName="增长"/>
+		<scapfd_testref.zzl3_jjxyzk uapDisplayName="比上年增长率"/>
+		<scapfd_testref.jzcsyl_jjxyzk uapDisplayName="净资产收益率"/>
+		<scapfd_testref.p6asdf uapDisplayName="上升"/>
+		<scapfd_testref.ssl4_jjxyzk uapDisplayName="比上年上升率"/>
+		<scapfd_testref.zzcbcl_jjxyzk uapDisplayName="总资产报酬率"/>
+		<scapfd_testref.zzxj_jjxyzk uapDisplayName="下降"/>
+		<scapfd_testref.xjl1_jjxyzk uapDisplayName="比上年下降率"/>
+		
+		<scapfd_testref.year_cbfyzk uapDisplayName="20XX"/>
+		<scapfd_testref.cbfyze_cbfyzk uapDisplayName="成本费用总额"/>
+		<scapfd_testref.cbjd_cbfyzk uapDisplayName="降低"/>
+		<scapfd_testref.down3_cbfyzk uapDisplayName="下降"/>
+		<scapfd_testref.dody_cbfyzk uapDisplayName="低于"/>
+		<scapfd_testref.xjl_cbfyzk uapDisplayName="下降率"/>
+		<scapfd_testref.up5_cbfyzk uapDisplayName="低于"/>
+		<scapfd_testref.arsffdgd uapDisplayName="0"/>
+		<scapfd_testref.cbfyzbz_cbfyzk uapDisplayName="成本费用总额占主营业务收入的比重"/>
+		<scapfd_testref.xjxj_cbfyzk uapDisplayName="下降"/>
+		<scapfd_testref.xjl4_cbfyzk uapDisplayName="下降率"/>
+		<scapfd_testref.zyywcb_cbfyzk uapDisplayName="主营业务成本"/>
+		<scapfd_testref.jdjd_cbfyzk uapDisplayName="降低"/>
+		<scapfd_testref.jdl5_cbfyzk uapDisplayName="降低率"/>
+		<scapfd_testref.sxqjfy_cbfyzk uapDisplayName="三项期间费用"/>
+		<scapfd_testref.jdjjd_cbfyzk uapDisplayName="降低"/>
+		<scapfd_testref.jdl6_cbfyzk uapDisplayName="降低率"/>
+		<scapfd_testref.p4l3n1 uapDisplayName="20XX "/>
+        <scapfd_testref.p4l3n2 uapDisplayName="经营活动产生现金流"/>
+        <scapfd_testref.p4l4n1 uapDisplayName="投资活动产生现金流"/>
+        <scapfd_testref.p4l4n2 uapDisplayName="筹资活动产生现金流量"/>
+        <scapfd_testref.p4l4n3 uapDisplayName="20xx"/>
+        <scapfd_testref.p4l5n1 uapDisplayName="xx"/>
+        <scapfd_testref.p4l5n2 uapDisplayName="资金余额"/>
+        <scapfd_testref.p4l5n3 uapDisplayName="盈余现金保障倍数"/>
+        <scapfd_testref.p4l5n4 uapDisplayName="现金流动负债比率"/>
+        <scapfd_testref.p4l8n1 uapDisplayName="20XX"/>
+        <scapfd_testref.p4l8n2 uapDisplayName="存货账面余额"/>
+        <scapfd_testref.p4l9n1 uapDisplayName="已计提跌价准备"/>
+        <scapfd_testref.p4l9n2 uapDisplayName="账面价值"/>
+        <scapfd_testref.p4l9n3 uapDisplayName="原材料"/>
+        <scapfd_testref.p4l10n1 uapDisplayName="计提跌价准备"/>
+        <scapfd_testref.p4l10n2 uapDisplayName="库存商品"/>
+        <scapfd_testref.p4l10n3 uapDisplayName="已计提跌价准备"/>
+        <scapfd_testref.p4l11n1 uapDisplayName="存货中非正常存货账面余额"/>
+        <scapfd_testref.p4l11n2 uapDisplayName="已计提跌价准备"/>
+        <scapfd_testref.p4l12n1 uapDisplayName="应收账款余额"/>
+        <scapfd_testref.p4l12n2 uapDisplayName="计提坏账准备"/>
+        <scapfd_testref.p4l12n3 uapDisplayName="账面价值"/>
+        <scapfd_testref.p4l12nzj uapDisplayName="增加"/>
+        <scapfd_testref.p4l12n4 uapDisplayName="同比增加"/>
+        <scapfd_testref.p4l13n1 uapDisplayName="20xx"/>
+        <scapfd_testref.p4l13n2 uapDisplayName="对外长期股权投资"/>
+        <scapfd_testref.p4l14nzj uapDisplayName="增加"/>
+        <scapfd_testref.p4l14n1 uapDisplayName="比上年增加"/>
+        <scapfd_testref.p4l15n1 uapDisplayName="20XX"/>
+        <scapfd_testref.p4l15n2 uapDisplayName="股票投资年末余额"/>
+        <scapfd_testref.p5l1n1 uapDisplayName="当年实际盈亏"/>
+        <scapfd_testref.p5l1n2 uapDisplayName="基金投资年末余额"/>
+        <scapfd_testref.p5l1n3 uapDisplayName="当年实际盈亏"/>
+        <scapfd_testref.p5l2n1 uapDisplayName="委托理财本金年末余额"/>
+        <scapfd_testref.p5l2n2 uapDisplayName="当年实际盈亏"/>
+        <scapfd_testref.p5l3n1 uapDisplayName="商品期货及衍生品年末持仓合约金额"/>
+        <scapfd_testref.p5l3n2 uapDisplayName="当年实际盈亏"/>
+</scapfd_testref>
+</Root>

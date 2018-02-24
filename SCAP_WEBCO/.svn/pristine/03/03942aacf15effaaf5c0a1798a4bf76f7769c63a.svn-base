@@ -1,0 +1,694 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+<items>
+
+<!--flag="0" 单独处理;flag="1" 查iufo表样;flag="2" 查事实表; 公式中"XX,2"表示XX公式计算后保留两位小数-->
+<item key="vyear" dimension="" name="年">
+  <source flag="1" code="快报01表" measure="month" row="" col="" id="$aa"/>
+  <formula>
+    '$aa'.substring(0,4)
+  </formula>
+</item>
+
+<item key="vmonth" dimension="" name="月份">
+  <source flag="1" code="快报01表" measure="month" row="" col="" id="$aa"/>
+  <formula>
+    '$aa'.substring(5,7)
+  </formula>
+</item>
+
+<item key="sys_org" dimension="" name="组织标志">
+  <source flag="0" code="快报01表" measure="sys_org" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="type" dimension="" name="类型">
+  <source flag="0" code="快报01表" measure="type" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<!--dimension="lj"-->
+<item key="lrze" dimension="lj" name="利润总额(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="16bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_lrze" row="" col="" id="$bb" condition=" and  vyear = '$vyear' and  vmonth ='$lastmonth' " />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="jlr" dimension="lj" name="净利润(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="17bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_jlr" row="" col="" id="$bb" condition=" and  vyear = '$vyear' and  vmonth ='$lastmonth' " />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="gsmgsjlr" dimension="lj" name="归属于母公司所有者的净利润(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="18bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_gsmgsjlr" row="" col="" id="$bb" condition=" and  vyear = '$vyear' and  vmonth ='$lastmonth' " />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="zgxc" dimension="lj" name="职工薪酬(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="19bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_zgxc" row="" col="" id="$bb" condition=" and  vyear = '$vyear' and  vmonth ='$lastmonth' " />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="zgzggzze" dimension="lj" name="在岗职工工资总额(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="20bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_zgzggzze" row="" col="" id="$bb" condition=" and  vyear = '$vyear' and  vmonth ='$lastmonth' " />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="fljshbx" dimension="lj" name="福利及社会保险费用(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="21bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_fljshbx" row="" col="" id="$bb" condition=" and  vyear = '$vyear' and  vmonth ='$lastmonth' " />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="zgzgrs" dimension="lj" name="在岗职工人数（人）(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="22bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_zgzgrs" row="" col="" id="$bb" condition=" and  vyear = '$vyear' and  vmonth ='$lastmonth' " />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="zcze" dimension="lj" name="资产总额(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="23bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_zcze" row="" col="" id="$bb" condition=" and  vyear = '$vyear' and  vmonth ='$lastmonth' " />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="ldzc" dimension="lj" name="流动资产(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="24bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_ldzc" row="" col="" id="$bb" condition=" and  vyear = '$vyear' and  vmonth ='$lastmonth' " />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="hbzj" dimension="lj" name="货币资金(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="25bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_hbzj" row="" col="" id="$bb" condition=" and  vyear = '$vyear' and  vmonth ='$lastmonth' " />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="jyxjrzc" dimension="lj" name="交易性金融资产(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="26bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_jyxjrzc" row="" col="" id="$bb" condition=" and  vyear = '$vyear' and  vmonth ='$lastmonth' " />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="yszkje" dimension="lj" name="应收账款净额(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="27bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_yszkje" row="" col="" id="$bb" condition=" and  vyear = '$vyear' and  vmonth ='$lastmonth' " />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="cunhuo" dimension="lj" name="存货(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="28bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_cunhuo" row="" col="" id="$bb" condition=" and  vyear = '$vyear' and  vmonth ='$lastmonth' " />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="ccp" dimension="lj" name="产成品(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="29bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_ccp" row="" col="" id="$bb" condition=" and  vyear = '$vyear' and  vmonth ='$lastmonth' " />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="fzze" dimension="lj" name="负债总额(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="30bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_fzze" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="ldfz" dimension="lj" name="流动负债(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="31bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_ldfz" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="yhjk" dimension="lj" name="银行借款(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="32bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_yhjk" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' " />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="dqjk" dimension="lj" name="短期借款(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="33bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_dqjk" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="syzqyze" dimension="lj" name="所有者权益总额(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="34bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_syzqyze" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="gsmgsqyze" dimension="lj" name="归属于母公司的所有者权益总额(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="35bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_gsmgsqyze" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="yinjsfze" dimension="lj" name="应交税费总额(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="36bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_yinjsfze" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="yijsfze" dimension="lj" name="已交税费总额(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="37bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_yijsfze" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="gdzctze" dimension="lj" name="固定资产投资额(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="38bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_gdzctze" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="zjz" dimension="lj" name="增加值(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="39bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_zjz" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="gyzcz" dimension="lj" name="工业总产值(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="40bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_gyzcz" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="gyxscz" dimension="lj" name="工业销售产值(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="41bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_gyxscz" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="ckcpxssr" dimension="lj" name="出口产品销售收入(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="42bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_ckcpxssr" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="xcpcz" dimension="lj" name="新产品产值(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="43bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_xcpcz" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="jtzje" dimension="lj" name="计提折旧额(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="44bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_jtzje" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="hzzb" dimension="lj" name="坏账准备(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="45bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_hzzb" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="zyywcb" dimension="lj" name="主营业务成本(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="4bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_zyywcb" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="yysjjfj" dimension="lj" name="营业税金及附加(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="5bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_yysjjfj" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' " />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="xsfy" dimension="lj" name="销售费用(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="6bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_xsfy" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="glfy" dimension="lj" name="管理费用(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="7bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_glfy" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="cwfy" dimension="lj" name="财务费用(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="8bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_cwfy" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="lxzcje" dimension="lj" name="利息支出净额(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="9bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_lxzcje" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="zcjzss" dimension="lj" name="资产减值损失(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="10bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_zcjzss" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="gyjzbdsy" dimension="lj" name="公允价值变动收益(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="11bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_gyjzbdsy" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="tzsy" dimension="lj" name="投资收益(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="12bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_tzsy" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="yylr" dimension="lj" name="营业利润(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="13bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_yylr" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="yywsr" dimension="lj" name="营业外收入(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="14bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_yywsr" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="yywzc" dimension="lj" name="营业外支出(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="15bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_yywzc" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="yyezsr" dimension="lj" name="营业总收入(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="1bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_yyezsr" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="zyywsr" dimension="lj" name="主营业务收入(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="2bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_zyywsr" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="yycb" dimension="lj" name="营业成本(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="3bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_yycb" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="jlryss" dimension="lj" name="净利润预算数(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="47bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_jlryss" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="lrzeyss" dimension="lj" name="利润总额预算数(比上月累计完成数环比增减率)">
+  <source flag="1" code="快报01表" measure="46bnlj" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="lj_lrzeyss" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<!--dimension="by"-->
+<item key="lrze" dimension="by" name="利润总额(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="16bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_lrze" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="jlr" dimension="by" name="净利润(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="17bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_jlr" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="gsmgsjlr" dimension="by" name="归属于母公司所有者的净利润(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="18bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_gsmgsjlr" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="gdzctze" dimension="by" name="固定资产投资额(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="38bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_gdzctze" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="yycb" dimension="by" name="营业成本(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="3bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_yycb" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="lxzcje" dimension="by" name="利息支出净额(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="9bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_lxzcje" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="zgxc" dimension="by" name="职工薪酬(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="19bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_zgxc" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="zgzggzze" dimension="by" name="在岗职工工资总额(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="20bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_zgzggzze" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="fljshbx" dimension="by" name="福利及社会保险费用(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="21bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_fljshbx" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+
+<item key="yijsfze" dimension="by" name="已交税费总额(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="37bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_yijsfze" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="dqjd" dimension="by" name="短期借款(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="33bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_dqjd" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="zjz" dimension="by" name="增加值(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="39bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_zjz" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="gyzcz" dimension="by" name="工业总产值(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="40bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_gyzcz" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="ckcpxssr" dimension="by" name="出口产品销售收入(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="42bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_ckcpxssr" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="xcpcz" dimension="by" name="新产品产值(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="43bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_xcpcz" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="jtzje" dimension="by" name="计提折旧额(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="44bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_jtzje" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="hzzb" dimension="by" name="坏账准备(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="45bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_hzzb" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="glfy" dimension="by" name="管理费用(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="7bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_glfy" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' " />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="yhjd" dimension="by" name="银行借款(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="32bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_yhjd" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="yinjsfze" dimension="by" name="应交税费总额(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="36bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_yinjsfze" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="gyxscz" dimension="by" name="工业销售产值(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="41bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_gyxscz" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+
+<item key="yyzsr" dimension="by" name="营业总收入(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="1bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_yyzsr" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="zyyzsr" dimension="by" name="主营业务收入(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="2bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_zyyzsr" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="zyywcb" dimension="by" name="主营业务成本(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="4bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_zyywcb" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="yysjjfj" dimension="by" name="营业税金及附加(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="5bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_yysjjfj" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="xsfy" dimension="by" name="销售费用(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="6bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_xsfy" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="cwfy" dimension="by" name="财务费用(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="7bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_cwfy" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="zcjzss" dimension="by" name="资产减值损失(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="10bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_zcjzss" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="gyjzbdsy" dimension="by" name="公允价值变动收益(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="11bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_gyjzbdsy" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="tzsy" dimension="by" name="投资收益(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="12bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_tzsy" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="yylr" dimension="by" name="营业利润(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="13bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_yylr" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="yywsr" dimension="by" name="营业外收入(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="14bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_yywsr" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="yywzc" dimension="by" name="营业外支出(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="15bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_yywzc" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="lrzeyss" dimension="by" name="利润总额预算数(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="46bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_lrzeyss" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' "  />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+<item key="jlryss" dimension="by" name="净利润预算数(本月数环比增减率)">
+  <source flag="1" code="快报01表" measure="47bys" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_hb" measure="by_jlryss" row="" col="" id="$bb" condition=" and vyear = '$vyear' and  vmonth='$lastmonth' " />
+  <formula>
+    100*($aa-($bb))/|$bb|,2
+  </formula>
+</item>
+
+
+</items>
+</Root>

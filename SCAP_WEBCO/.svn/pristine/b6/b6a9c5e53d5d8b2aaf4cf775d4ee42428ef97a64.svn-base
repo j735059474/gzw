@@ -1,0 +1,21 @@
+﻿.baseForm{
+cellspacing:0;
+cellpadding:0;
+border-left:1px solid #cccccc;
+border-top:1px solid #cccccc;
+border-bottom:1px solid #cccccc;
+width:100%;
+font:12px 宋体;
+color:#003366;
+}
+.baseForm td{
+border-right:1px solid #cccccc;
+padding-left:8px;padding-top:5px;
+padding-bottom:5px;
+padding-right:8px;
+text-align:right;
+} 
+.sRow{
+background-color:#ebf0f7;
+}
+.fontcnt {color:red}

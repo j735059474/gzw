@@ -1,0 +1,706 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+<items>
+
+<!--flag="0" 单独处理;flag="1" 查iufo表样;flag="2" 查事实表; 公式中"XX,2"表示XX公式计算后保留两位小数-->
+<item key="vyear" dimension="" name="年">
+  <source flag="1" code="Z02" measure="year" row="" col="" id="$aa"/>
+  <formula>
+    '$aa'.substring(0,4)
+  </formula>
+</item>
+
+<item key="sys_org" dimension="" name="组织标志">
+  <source flag="0" code="Z02" measure="sys_org" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="type" dimension="" name="类型">
+  <source flag="0" code="Z02" measure="type" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="sys_zdm" dimension="" name="外键">
+  <source flag="0" code="Z02" measure="sys_zdm" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sys_fjd" dimension="" name="父节点">
+  <source flag="0" code="Z02" measure="sys_fjd" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<!--利润表-->
+
+<item key="qt" dimension="bq" name="其他（本期金额）">
+  <source flag="1" code="Z02" measure="qtbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="gyjzbdsy" dimension="bq" name="加：公允价值变动收益（损失以“-”号填列）（本期金额）">
+  <source flag="1" code="Z02" measure="jgyjzbdsyssyhtlbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="tzsy" dimension="bq" name="   投资收益（损失以“-”号填列）（本期金额）">
+  <source flag="1" code="Z02" measure="tzsyssyhtlbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="qzdlyqy" dimension="bq" name=" 其中：对联营企业和合营企业的投资收益（本期金额）">
+  <source flag="1" code="Z02" measure="qzdlyqyhhyqydtzsybqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="hdsy" dimension="bq" name=" △汇兑收益（损失以“-”号填列）（本期金额）">
+  <source flag="1" code="Z02" measure="hdsyssyhtlbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="yylr" dimension="bq" name=" 三、营业利润（亏损以“－”号填列）（本期金额）">
+  <source flag="1" code="Z02" measure="syylrksyhtlbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="yywsr" dimension="bq" name="  加：营业外收入（本期金额）">
+  <source flag="1" code="Z02" measure="jyywsrbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="fldzcczld" dimension="bq" name="  其中：非流动资产处置利得（本期金额）">
+  <source flag="1" code="Z02" measure="qzfldzcczldbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="fhbxzcjhld" dimension="bq" name="   非货币性资产交换利得（本期金额） ">
+  <source flag="1" code="Z02" measure="fhbxzcjhldbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="zfbz" dimension="bq" name="  政府补助（本期金额）">
+  <source flag="1" code="Z02" measure="zfbzbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="zwczld" dimension="bq" name="   债务重组利得（本期金额）">
+  <source flag="1" code="Z02" measure="zwzzldbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="yywzc" dimension="bq" name="  减：营业外支出（本期金额）">
+  <source flag="1" code="Z02" measure="jyywzcbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="fldzcczss" dimension="bq" name="  其中：非流动资产处置损失（本期金额） ">
+  <source flag="1" code="Z02" measure="qzfldzcczssbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="fhbxzcjhss" dimension="bq" name="  非货币性资产交换损失（本期金额）  ">
+  <source flag="1" code="Z02" measure="fhbxzcjhssbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="zwczss" dimension="bq" name="  债务重组损失（本期金额）">
+  <source flag="1" code="Z02" measure="zwzzssbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="lrze" dimension="bq" name="  四、利润总额（亏损总额以“－”号填列）（本期金额） ">
+  <source flag="1" code="Z02" measure="slrzekszeyhtlbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="sdsfy" dimension="bq" name="减：所得税费用（本期金额）">
+  <source flag="1" code="Z02" measure="jsdsfybqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="jlr" dimension="bq" name=" 五、净利润（净亏损以“－”号填列）（本期金额） ">
+  <source flag="1" code="Z02" measure="wjlrjksyhtlbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="gsymgssyz" dimension="bq" name=" 归属于母公司所有者的净利润（本期金额）">
+  <source flag="1" code="Z02" measure="gsymgssyzdjlrbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="ssgdsy" dimension="bq" name=" 少数股东损益（本期金额）">
+  <source flag="1" code="Z02" measure="ssgdsybqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<!--
+<item key="mgsy" dimension="bq" name=" 六、每股收益：（本期金额）">
+  <source flag="1" code="Z02" measure="lmgsybqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+<item key="jbmgsy" dimension="bq" name="  基本每股收益（本期金额）">
+  <source flag="1" code="Z02" measure="jbmgsybqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="xsmgsy" dimension="bq" name="   稀释每股收益（本期金额）">
+  <source flag="1" code="Z02" measure="xsmgsybqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="qtzhsy" dimension="bq" name="  七、其他综合收益（本期金额）">
+  <source flag="1" code="Z02" measure="qqtzhsybqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="zhsyze" dimension="bq" name="  八、综合收益总额（本期金额） ">
+  <source flag="1" code="Z02" measure="bzhsyzebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="gsymgssyzdzhsyze" dimension="bq" name="   归属于母公司所有者的综合收益总额（本期金额） ">
+  <source flag="1" code="Z02" measure="gsymgssyzdzhsyzebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="gsyssgddzhsyze" dimension="bq" name="  归属于少数股东的综合收益总额（本期金额）	">
+  <source flag="1" code="Z02" measure="gsyssgddzhsyzebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="qt" dimension="sq" name="  其他（上期金额）">
+  <source flag="1" code="Z02" measure="qtsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="gyjzbdsy" dimension="sq" name="  加：公允价值变动收益（损失以“-”号填列）（上期金额）">
+  <source flag="1" code="Z02" measure="jgyjzbdsyssyhtlsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="tzsy" dimension="sq" name=" 投资收益（损失以“-”号填列）（上期金额）">
+  <source flag="1" code="Z02" measure="tzsyssyhtlsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="qzdlyqy" dimension="sq" name="其中：对联营企业和合营企业的投资收益（上期金额）">
+  <source flag="1" code="Z02" measure="qzdlyqyhhyqydtzsysqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="hdsy" dimension="sq" name="△汇兑收益（损失以“-”号填列）（上期金额）">
+  <source flag="1" code="Z02" measure="hdsyssyhtlsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="yylr" dimension="sq" name="三、营业利润（亏损以“－”号填列）（上期金额） ">
+  <source flag="1" code="Z02" measure="syylrksyhtlsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="yywsr" dimension="sq" name=" 加：营业外收入（上期金额）">
+  <source flag="1" code="Z02" measure="jyywsrsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="fldzcczld" dimension="sq" name=" 其中：非流动资产处置利得（上期金额）">
+  <source flag="1" code="Z02" measure="qzfldzcczldsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="fhbxzcjhld" dimension="sq" name="  非货币性资产交换利得（上期金额）">
+  <source flag="1" code="Z02" measure="fhbxzcjhldsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="zfbz" dimension="sq" name="  政府补助（上期金额）">
+  <source flag="1" code="Z02" measure="zfbzsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="zwczld" dimension="sq" name=" 债务重组利得（上期金额）">
+  <source flag="1" code="Z02" measure="zwzzldsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="yywzc" dimension="sq" name="减：营业外支出（上期金额）">
+  <source flag="1" code="Z02" measure="jyywsrsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="fldzcczss" dimension="sq" name=" 其中：非流动资产处置损失（上期金额）">
+  <source flag="1" code="Z02" measure="qzfldzcczsssqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="fhbxzcjhss" dimension="sq" name="  非货币性资产交换损失（上期金额） ">
+  <source flag="1" code="Z02" measure="fhbxzcjhsssqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="zwczss" dimension="sq" name="  债务重组损失（上期金额）">
+  <source flag="1" code="Z02" measure="zwzzsssqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="lrze" dimension="sq" name="四、利润总额（亏损总额以“－”号填列）（上期金额） ">
+  <source flag="1" code="Z02" measure="slrzekszeyhtlsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="sdsfy" dimension="sq" name="减：所得税费用（上期金额）">
+  <source flag="1" code="Z02" measure="jsdsfysqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="jlr" dimension="sq" name="五、净利润（净亏损以“－”号填列）（上期金额） ">
+  <source flag="1" code="Z02" measure="wjlrjksyhtlsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="gsymgssyz" dimension="sq" name="归属于母公司所有者的净利润（上期金额）">
+  <source flag="1" code="Z02" measure="gsymgssyzdjlrsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="ssgdsy" dimension="sq" name="少数股东损益（上期金额）">
+  <source flag="1" code="Z02" measure="ssgdsysqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<!--
+<item key="mgsy" dimension="sq" name="六、每股收益：（上期金额）">
+  <source flag="1" code="Z02" measure="lmgsysqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+<item key="jbmgsy" dimension="sq" name="基本每股收益（上期金额）  ">
+  <source flag="1" code="Z02" measure="jbmgsysqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="xsmgsy" dimension="sq" name="稀释每股收益（上期金额）">
+  <source flag="1" code="Z02" measure="xsmgsysqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="qtzhsy" dimension="sq" name="七、其他综合收益（上期金额）">
+  <source flag="1" code="Z02" measure="qqtzhsysqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="zhsyze" dimension="sq" name="八、综合收益总额（上期金额） ">
+  <source flag="1" code="Z02" measure="bzhsyzesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="gsymgssyzdzhsyze" dimension="sq" name=" 归属于母公司所有者的综合收益总额（上期金额）">
+  <source flag="1" code="Z02" measure="gsymgssyzdzhsyzesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="gsyssgddzhsyze" dimension="sq" name="归属于少数股东的综合收益总额（上期金额）">
+  <source flag="1" code="Z02" measure="gsyssgddzhsyzesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="yyzsr" dimension="bq" name="一、营业总收入">
+  <source flag="1" code="Z02" measure="yyyzsrbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="yysr" dimension="bq" name="其中：营业收入">
+  <source flag="1" code="Z02" measure="qzyysrbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="zyywsr" dimension="bq" name="其中：主营业务收入">
+  <source flag="1" code="Z02" measure="qzzyywsrbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="qtywsr" dimension="bq" name="其他业务收入">
+  <source flag="1" code="Z02" measure="qtywsrbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="lxsr" dimension="bq" name="利息收入">
+  <source flag="1" code="Z02" measure="lxsrbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="yzbf" dimension="bq" name="已赚保费">
+  <source flag="1" code="Z02" measure="yzbfbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="sxfjyjsr" dimension="bq" name="手续费及佣金收入">
+  <source flag="1" code="Z02" measure="sxfjyjsrbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="yyzcb" dimension="bq" name="二、营业总成本">
+  <source flag="1" code="Z02" measure="eyyzcbbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="yycb" dimension="bq" name="其中：营业成本">
+  <source flag="1" code="Z02" measure="qzyycbbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="zyywcb" dimension="bq" name="其中：主营业务成本">
+  <source flag="1" code="Z02" measure="qzzyywcbbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="qtywcb" dimension="bq" name="其他业务成本">
+  <source flag="1" code="Z02" measure="qtywcbbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="lxzc" dimension="bq" name="利息支出">
+  <source flag="1" code="Z02" measure="lxzcbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="sxfjyjzc" dimension="bq" name="手续费及佣金支出">
+  <source flag="1" code="Z02" measure="sxfjyjzcbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="tbj" dimension="bq" name="退保金">
+  <source flag="1" code="Z02" measure="tbjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="pfzcje" dimension="bq" name="赔付支出净额">
+  <source flag="1" code="Z02" measure="pfzcjebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="tqhtzbjje" dimension="bq" name="提取保险合同准备金净额">
+  <source flag="1" code="Z02" measure="tqbxhtzbjjebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="bdhlzc" dimension="bq" name="保单红利支出">
+  <source flag="1" code="Z02" measure="bdhlzcbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="fbfy" dimension="bq" name="分保费用">
+  <source flag="1" code="Z02" measure="fbfybqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="yysjjfj" dimension="bq" name="营业税金及附加">
+  <source flag="1" code="Z02" measure="yysjjfjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="xsfy" dimension="bq" name="销售费用">
+  <source flag="1" code="Z02" measure="xsfybqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="glfy" dimension="bq" name="管理费用">
+  <source flag="1" code="Z02" measure="glfybqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<!--
+<item key="ywzdf" dimension="bq" name="其中：业务招待费">
+  <source flag="1" code="Z02" measure="qzywzdfbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+<item key="yjykff" dimension="bq" name="研究与开发费">
+  <source flag="1" code="Z02" measure="qzyjykffbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="cwfy" dimension="bq" name="财务费用">
+  <source flag="1" code="Z02" measure="cwfybqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="qzlxzc" dimension="bq" name="其中：利息支出">
+  <source flag="1" code="Z02" measure="qzlxzcbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="hdjss" dimension="bq" name="汇兑净损失（净收益以“-”号填列）">
+  <source flag="1" code="Z02" measure="hdjssjsyyhtlbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="zcjzss" dimension="bq" name="资产减值损失">
+  <source flag="1" code="Z02" measure="zcjzssbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="yyzsr" dimension="sq" name="一、营业总收入">
+  <source flag="1" code="Z02" measure="yyyzsrsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="yysr" dimension="sq" name="其中：营业收入">
+  <source flag="1" code="Z02" measure="qzyysrsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="zyywsr" dimension="sq" name="其中：主营业务收入">
+  <source flag="1" code="Z02" measure="qzzyywsrsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="qtywsr" dimension="sq" name="其他业务收入">
+  <source flag="1" code="Z02" measure="qtywsrsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="lxsr" dimension="sq" name="利息收入">
+  <source flag="1" code="Z02" measure="lxsrsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="yzbf" dimension="sq" name="已赚保费">
+  <source flag="1" code="Z02" measure="yzbfsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="sxfjyjsr" dimension="sq" name="手续费及佣金收入">
+  <source flag="1" code="Z02" measure="sxfjyjsrsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="yyzcb" dimension="sq" name="二、营业总成本">
+  <source flag="1" code="Z02" measure="eyyzcbsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="yycb" dimension="sq" name="其中：营业成本">
+  <source flag="1" code="Z02" measure="qzyycbsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="zyywcb" dimension="sq" name="其中：主营业务成本">
+  <source flag="1" code="Z02" measure="qzzyywcbsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="qtywcb" dimension="sq" name="其他业务成本">
+  <source flag="1" code="Z02" measure="qtywcbsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="lxzc" dimension="sq" name="利息支出">
+  <source flag="1" code="Z02" measure="lxzcsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="sxfjyjzc" dimension="sq" name="手续费及佣金支出">
+  <source flag="1" code="Z02" measure="sxfjyjzcsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="tbj" dimension="sq" name="退保金">
+  <source flag="1" code="Z02" measure="tbjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="pfzcje" dimension="sq" name="赔付支出净额">
+  <source flag="1" code="Z02" measure="pfzcjesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="tqhtzbjje" dimension="sq" name="提取保险合同准备金净额">
+  <source flag="1" code="Z02" measure="tqbxhtzbjjesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="bdhlzc" dimension="sq" name="保单红利支出">
+  <source flag="1" code="Z02" measure="bdhlzcsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="fbfy" dimension="sq" name="分保费用">
+  <source flag="1" code="Z02" measure="fbfysqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="yysjjfj" dimension="sq" name="营业税金及附加">
+  <source flag="1" code="Z02" measure="yysjjfjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="xsfy" dimension="sq" name="销售费用">
+  <source flag="1" code="Z02" measure="xsfysqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="glfy" dimension="sq" name="管理费用">
+  <source flag="1" code="Z02" measure="glfysqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<!--
+<item key="ywzdf" dimension="sq" name="其中：业务招待费">
+  <source flag="1" code="Z02" measure="qzywzdfsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+-->
+<item key="yjykff" dimension="sq" name="研究与开发费">
+  <source flag="1" code="Z02" measure="qzyjykffsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="cwfy" dimension="sq" name="财务费用">
+  <source flag="1" code="Z02" measure="cwfysqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="qzlxzc" dimension="sq" name="其中：利息支出">
+  <source flag="1" code="Z02" measure="qzlxzcsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="hdjss" dimension="sq" name="汇兑净损失（净收益以“-”号填列）">
+  <source flag="1" code="Z02" measure="hdjssjsyyhtlsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="zcjzss" dimension="sq" name="资产减值损失">
+  <source flag="1" code="Z02" measure="zcjzsssqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="lxsr1" dimension="bq" name="利息收入1(本期)">
+  <source flag="1" code="Z02" measure="yyzcblxsrbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+<item key="lxsr1" dimension="sq" name="利息收入1(上期)">
+  <source flag="1" code="Z02" measure="yyzcblxsrsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+</items>
+</Root>

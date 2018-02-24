@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Manifest>
+  <BusinessComponet name="pub" dispname="公共组件">
+    <public/>
+    <client/>
+    <private/>
+    <test/>
+    <resource/>
+  </BusinessComponet>
+  <BusinessComponet name="sys" dispname="系统相关">
+    <public/>
+    <client/>
+    <private/>
+    <test/>
+    <resource/>
+  </BusinessComponet>
+  <BusinessComponet name="patch" dispname="系统补丁">
+    <public/>
+    <client/>
+    <private/>
+    <test/>
+    <resource/>
+  </BusinessComponet>
+</Manifest>

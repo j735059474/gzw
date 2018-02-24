@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget caption="企业选择" controllerClazz="nc.scap.pub.multiCompSelect.MultiCompSelectViewController" id="multiCompSelect" refId="multiCompSelect" sourcePackage="pub/src/public/">
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+        <PlugoutDesc id="afterOkplugout">
+            <PlugoutDescItem clazztype="java.lang.String" name="afterselected" source="multiCompSelect" type="Dataset.TYPE_DATASET_SEL_ROW">
+            </PlugoutDescItem>
+        </PlugoutDesc>
+    </PlugoutDescs>
+    <PluginDescs>
+    </PluginDescs>
+    <Models>
+        <Datasets>
+            <RefMdDataset caption="协同用户" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_user" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_user" voMeta="nc.uap.cpb.org.vos.CpUserVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_orgs" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_orgs" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="multiCompSelect" lazyLoad="false" notNullBody="false" objMeta="uapcp.cp_orgs" pageSize="10" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <FieldRelations>
+                    <FieldRelation id="pk_fatherorg_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_fatherorg_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_fatherorg">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_orglevel1_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_orglevel1_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_orglevel1">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_orglevel2_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_orglevel2_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_orglevel2">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="creator_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="creator_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="creator">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="modifier_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="modifier_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="modifier">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad_multiorgs" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DataLoadEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+        </Datasets>
+        <ComboDatas>
+            <MDComboDataConf caption="启用状态" fullclassName="6b533ffa-3e43-4147-8670-ba0f5471fd40" id="combo_multiCompSelect_enablestate">
+            </MDComboDataConf>
+            <MDComboDataConf caption="协同组织级别类型" fullclassName="8558b518-d873-4452-ae2f-256dc516ee32" id="combo_multiCompSelect_orglevel">
+            </MDComboDataConf>
+        </ComboDatas>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_multiCompSelect_pk_fatherorg_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="multiCompSelect" writeFields="pk_fatherorg,pk_fatherorg_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_multiCompSelect_pk_orglevel2_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="multiCompSelect" writeFields="pk_orglevel2,pk_orglevel2_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_multiCompSelect_creator_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="multiCompSelect" writeFields="creator,creator_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_multiCompSelect_pk_orglevel1_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="multiCompSelect" writeFields="pk_orglevel1,pk_orglevel1_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_multiCompSelect_modifier_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="multiCompSelect" writeFields="modifier,modifier_user_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <ButtonComp enabled="true" id="btn_cancel" text="取消" visible="true">
+            <Events>
+                <Event async="true" methodName="onCancel" name="onclick" onserver="true">
+                    <SubmitRule>
+                    </SubmitRule>
+                    <Params>
+                        <Param>
+                            <Name>mouseEvent</Name>
+                            <Value>
+                            </Value>
+                            <Desc>                                <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                            </Desc>
+                        </Param>
+                    </Params>
+                    <Action>
+                    </Action>
+                </Event>
+            </Events>
+        </ButtonComp>
+        <ButtonComp enabled="true" id="btn_ok" text="确定" visible="true">
+            <Events>
+                <Event async="true" methodName="onOk" name="onclick" onserver="true">
+                    <SubmitRule>
+                    </SubmitRule>
+                    <Params>
+                        <Param>
+                            <Name>mouseEvent</Name>
+                            <Value>
+                            </Value>
+                            <Desc>                                <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                            </Desc>
+                        </Param>
+                    </Params>
+                    <Action>
+                    </Action>
+                </Event>
+            </Events>
+        </ButtonComp>
+        <TextComp designModel="false" editorType="StringText" enabled="true" focus="false" id="queryInput" nullable="true" text="定位" textAlign="left" textWidth="32" visible="true">
+            <Events>
+                <Event async="true" methodName="onQueryEnter" name="onEnter" onserver="true">
+                    <SubmitRule>
+                    </SubmitRule>
+                    <Params>
+                        <Param>
+                            <Name>keyEvent</Name>
+                            <Value>
+                            </Value>
+                            <Desc>                                <![CDATA[nc.uap.lfw.core.event.KeyEvent]]>
+                            </Desc>
+                        </Param>
+                    </Params>
+                    <Action>
+                    </Action>
+                </Event>
+            </Events>
+        </TextComp>
+        <TreeViewComp canEdit="false" checkBoxModel="0" dragEnable="false" enabled="true" id="tree_org" openLevel="-1" rootOpen="true" selectRoot="false" visible="true" withCheckBox="true" withRoot="true">
+            <RecursiveTreeLevel dataset="multiCompSelect" id="一级" labelFields="code,name" loadField="" masterKeyField="pk_org" recursiveKeyField="pk_org" recursivePKeyField="pk_fatherorg">
+            </RecursiveTreeLevel>
+        </TreeViewComp>
+    </Components>
+    <Menus>
+    </Menus>
+</Widget>

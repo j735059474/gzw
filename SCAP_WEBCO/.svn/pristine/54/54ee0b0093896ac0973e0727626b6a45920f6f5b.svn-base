@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE UIMeta PUBLIC "-//Yonyou Co., Ltd.//UAP LFW UIMeta 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_um_6_3.dtd">
+<UIMeta flowmode="true" id="attachrole_um" preferredHeight="" preferredWidth="" uiprovider="nc.scap.pub.attlist.comp.AttachRoleCompUIProvider">
+</UIMeta>

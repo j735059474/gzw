@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget caption="container" controllerClazz="com.scap.pub.defineLayout.ContainerViewController" id="container" refId="container" sourcePackage="pub/src/public/">
+    <Attributes>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+    </PlugoutDescs>
+    <PluginDescs>
+    </PluginDescs>
+    <Events>
+        <Event async="true" methodName="beforeShow" name="beforeShow" onserver="true">
+            <SubmitRule>
+            </SubmitRule>
+            <Params>
+                <Param>
+                    <Name>dialogEvent</Name>
+                    <Value>
+                    </Value>
+                    <Desc>                        <![CDATA[nc.uap.lfw.core.event.DialogEvent]]>
+                    </Desc>
+                </Param>
+            </Params>
+            <Action>
+            </Action>
+        </Event>
+    </Events>
+    <Models>
+        <Datasets>
+            <RefMdDataset caption="图表" controlwidgetopeStatus="false" enabled="false" id="$refds_scapco_scap_chart" lazyLoad="true" notNullBody="false" objMeta="scapco.scap_chart" voMeta="nc.scap.pub.vos.ScapChartVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="分析主题容器" controlwidgetopeStatus="false" enabled="false" id="container_ds" lazyLoad="true" notNullBody="false" objMeta="scapco.scap_layout_container" pageSize="10" voMeta="nc.scap.pub.vos.ScapLayoutContainerVO">
+                <FieldRelations>
+                    <FieldRelation id="chart_rel" needProcess="true" refDataset="$refds_scapco_scap_chart" useCache="true">
+                        <MatchFields>
+                            <Field iscontains="Y" ismatch="Y" readField="pk_chart" writeField="pk_chart">
+                            </Field>
+                            <Field readField="name" writeField="pk_chart_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_chart" value="pk_chart">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                    <Field dataType="String" id="pk_chart_name" nullAble="true" primaryKey="false" text="图表">
+                    </Field>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onAfterDataChange" name="onAfterDataChange" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetCellEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DatasetCellEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+        </Datasets>
+        <ComboDatas>
+            <MDComboDataConf caption="是否支持钻取" fullclassName="98146b55-687c-40fd-9744-1636744a8ebe" id="combo_scap_layout_container_isdrill">
+            </MDComboDataConf>
+            <MDComboDataConf caption="容器类型" fullclassName="a5015bd4-f718-4143-a96b-22fbe1659e1a" id="combo_container_ds_container_type">
+            </MDComboDataConf>
+            <MDComboDataConf caption="是否支持钻取" fullclassName="98146b55-687c-40fd-9744-1636744a8ebe" id="combo_container_ds_isdrill">
+            </MDComboDataConf>
+            <MDComboDataConf caption="图元类型" fullclassName="71b88c8d-cadf-46d3-868c-c3cd1ae4a35e" id="combo_container_ds_display_type">
+            </MDComboDataConf>
+            <MDComboDataConf caption="图元类型" fullclassName="71b88c8d-cadf-46d3-868c-c3cd1ae4a35e" id="combo_scap_layout_container_display_type">
+            </MDComboDataConf>
+            <MDComboDataConf caption="容器类型" fullclassName="a5015bd4-f718-4143-a96b-22fbe1659e1a" id="combo_scap_layout_container_container_type">
+            </MDComboDataConf>
+        </ComboDatas>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="chart_ref" langDir="" multiSel="false" orgs="false" pagemeta="" pagemodel="" read="false" readDs="masterDs" readFields="pk_chart,name" refId="" refcode="财务分析图表参照" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="container_ds" writeFields="pk_chart,pk_chart_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <FormComp caption="分析主题容器" columnCount="2" dataset="container_ds" eleWidth="120" ellipsis="false" enabled="true" id="container_form" labelMinWidth="0" renderType="2" rowHeight="22" visible="true">
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" dataType="String" editable="true" editorType="StringText" enabled="true" field="pk_layout_container" height="" id="pk_layout_container" imageOnly="false" langDir="pub_chart_layout" nextLine="false" nullAble="false" rowSpan="1" selectOnly="true" text="主键" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" dataType="String" editable="true" editorType="StringText" enabled="true" field="parent_container" height="" id="parent_container" imageOnly="false" langDir="pub_chart_layout" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="父容器主键" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" dataType="String" editable="true" editorType="StringText" enabled="true" field="code" height="" id="code" imageOnly="false" langDir="pub_chart_layout" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="编码" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" dataType="String" editable="true" editorType="StringText" enabled="true" field="name" height="" id="name" imageOnly="false" langDir="pub_chart_layout" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="名称" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" dataType="String" editable="true" editorType="ComboBox" enabled="true" field="container_type" height="" id="container_type" imageOnly="false" langDir="pub_chart_layout" nextLine="false" nullAble="true" refComboData="combo_scap_layout_container_container_type" rowSpan="1" selectOnly="true" text="容器类型" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="IntegerText" enabled="true" field="sort" height="" id="sort" imageOnly="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="排序" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" dataType="String" editable="true" editorType="StringText" enabled="true" field="title" height="" id="title" imageOnly="false" langDir="pub_chart_layout" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="标题" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" dataType="Integer" editable="true" editorType="IntegerText" enabled="true" field="height" height="" id="height" imageOnly="false" langDir="pub_chart_layout" nextLine="true" nullAble="true" rowSpan="1" selectOnly="true" text="高度" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" dataType="Integer" editable="true" editorType="IntegerText" enabled="true" field="width" height="" id="width" imageOnly="false" langDir="pub_chart_layout" nextLine="true" nullAble="true" rowSpan="1" selectOnly="true" text="宽度" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" dataType="String" editable="true" editorType="StringText" enabled="true" field="title_url" height="" id="title_url" imageOnly="false" langDir="pub_chart_layout" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="标题链接" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" dataType="String" editable="true" editorType="ComboBox" enabled="true" field="display_type" height="" id="display_type" imageOnly="false" langDir="pub_chart_layout" nextLine="true" nullAble="true" refComboData="combo_scap_layout_container_display_type" rowSpan="1" selectOnly="true" text="图元类型" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" dataType="String" editable="true" editorType="StringText" enabled="false" field="pk_chart" height="" id="pk_chart" imageOnly="false" langDir="pub_chart_layout" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="图表主键" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" dataType="String" editable="true" editorType="Reference" enabled="true" field="pk_chart_name" height="" id="pk_chart_name" imageOnly="false" nextLine="false" nullAble="true" refNode="chart_ref" rowSpan="1" selectOnly="true" text="图表" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" dataType="String" editable="true" editorType="ComboBox" enabled="true" field="isdrill" height="" id="isdrill" imageOnly="false" langDir="pub_chart_layout" nextLine="false" nullAble="true" refComboData="combo_scap_layout_container_isdrill" rowSpan="1" selectOnly="true" text="是否钻取" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" dataType="String" editable="true" editorType="StringText" enabled="true" field="drill_class" height="" id="drill_class" imageOnly="false" langDir="pub_chart_layout" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="钻取处理类" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="3" dataType="String" editable="true" editorType="StringText" enabled="true" field="report_url" height="" id="report_url" imageOnly="false" langDir="pub_chart_layout" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="报表链接" toolbarType="Custom" visible="true" width="500">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" dataType="String" editable="true" editorType="StringText" enabled="false" field="layout_container" height="" id="layout_container" imageOnly="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="上层单据主键" toolbarType="Custom" visible="false" width="">
+            </Element>
+        </FormComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar">
+            <MenuItem i18nName="save" id="save" langDir="lfwbuttons" modifiers="2" showModel="1" text="保存">
+                <Events>
+                    <Event async="true" methodName="onSave" name="onclick" onserver="true">
+                        <SubmitRule>
+                            <Widget id="container">
+                                <Dataset id="container_ds" type="ds_current_line">
+                                </Dataset>
+                            </Widget>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem i18nName="back" id="back" langDir="lfwbuttons" modifiers="2" showModel="1" text="返回">
+                <Events>
+                    <Event async="true" methodName="onBack" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

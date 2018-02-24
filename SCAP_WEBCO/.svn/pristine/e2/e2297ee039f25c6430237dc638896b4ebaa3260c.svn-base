@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE UIMeta PUBLIC "-//Yonyou Co., Ltd.//UAP LFW UIMeta 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_um_6_3.dtd">
+<UIMeta flowmode="true" id="main_um" jquery="0" preferredHeight="" preferredWidth="">
+    <FlowvLayout id="mainFlowvLayout" widgetId="main">
+        <FlowvPanel id="g_p_1" widgetId="main">
+            <CanvasLayout className="rightcanvas" id="menubarcanvas" widgetId="main">
+                <CanvasPanel id="canvasp" widgetId="main">
+                    <FlowhLayout autoFill="false" id="mainFlowhLayout" widgetId="main">
+                        <FlowhPanel id="g_p_1" widgetId="main">
+                            <Menubar height="100%" id="menubar" left="0" position="relative" top="0" widgetId="main" width="100%">
+                            </Menubar>
+                        </FlowhPanel>
+                        <FlowhPanel id="g_p_2" widgetId="main">
+                            <Widget id="pubview_simpleexetask">
+                            </Widget>
+                        </FlowhPanel>
+                    </FlowhLayout>
+                </CanvasPanel>
+            </CanvasLayout>
+        </FlowvPanel>
+        <FlowvPanel id="g_p_2" leftPadding="20" rightPadding="20" widgetId="main">
+            <FlowvLayout id="flowvLayout01" expand="true" title="基本信息" widgetId="main">
+            	<FlowvPanel id="flowvPanel01" bottomPadding="5" topPadding="5" widgetId="main">
+            		<FlowhLayout id="flowhLayout01" expand="true" widgetId="main">
+            			<FlowhPanel id="flowhPanel01" bottomPadding = "5" topPadding="5" width="33%" widgetId="main">
+		            		<FormElement eleWidth="100%" form_id="NewsVO_form" id="title" left="0" position="relative" top="0" widgetId="main" width="85%">
+							</FormElement>
+            			</FlowhPanel>
+            			<FlowhPanel id="flowhPanel02" bottomPadding = "5" topPadding="5" width="33%" widgetId="main">
+		            		<FormElement eleWidth="100%" form_id="NewsVO_form" id="pk_org_name" left="0" position="relative" top="0" widgetId="main" width="85%">
+							</FormElement>
+            			</FlowhPanel>
+            			<FlowhPanel id="flowhPanel03" bottomPadding = "5" topPadding="5" width="33%" widgetId="main">
+		            		<FormElement eleWidth="100%" form_id="NewsVO_form" id="type" left="0" position="relative" top="0" widgetId="main" width="85%">
+							</FormElement>
+            			</FlowhPanel>
+            		</FlowhLayout>
+            	</FlowvPanel>
+            	<FlowvPanel id="flowvPanel03" bottomPadding="5" topPadding="5" widgetId="main">
+            		<FormElement eleWidth="100%" form_id="NewsVO_form" id="kyes" left="0" position="relative" top="0" widgetId="main" width="85%">
+					</FormElement>
+            	</FlowvPanel>
+                <FlowvPanel  id="flowvPanel02" bottomPadding="5" topPadding="5" widgetId="main">
+					<FormElement eleWidth="100%" form_id="NewsVO_form" id="content" left="0" position="relative" top="0" widgetId="main" height="350" width="100%">
+					</FormElement>
+                </FlowvPanel>
+                <FlowvPanel id="flowvPanel04" bottomPadding="5" topPadding="5" widgetId="main">
+            		<FlowhLayout id="flowhLayout03" expand="true" widgetId="main">
+            			<FlowhPanel id="flowhPanel11" bottomPadding = "5" topPadding="5" width="33%" widgetId="main">
+            				<FormElement eleWidth="40%" form_id="NewsVO_form" id="xiajia" left="0" position="relative" top="0" widgetId="main" width="85%">
+							</FormElement>
+            			</FlowhPanel>
+            			<FlowhPanel id="flowhPanel06" bottomPadding = "5" topPadding="5" width="33%" widgetId="main">
+		            		<FormElement eleWidth="40%" form_id="NewsVO_form" id="billmaker_user_name" left="0" position="relative" top="0" widgetId="main" width="85%">
+							</FormElement>
+            			</FlowhPanel>
+            			<FlowhPanel id="flowhPanel07" bottomPadding = "5" topPadding="5" width="33%" widgetId="main">
+		            		<FormElement eleWidth="40%" form_id="NewsVO_form" id="billmakedate" left="0" position="relative" top="0" widgetId="main" width="85%">
+							</FormElement>
+            			</FlowhPanel>
+            		</FlowhLayout>
+            	</FlowvPanel>
+            	<FlowvPanel id="flowvPanel05" bottomPadding="5" topPadding="5" widgetId="main">
+            		<FlowhLayout id="flowhLayout04" expand="true" widgetId="main">
+            			<FlowhPanel id="flowhPanel08" bottomPadding = "5" topPadding="5" width="33%" widgetId="main">
+		            		<FormElement eleWidth="100%" form_id="NewsVO_form" id="approver_user_name" left="0" position="relative" top="0" widgetId="main" width="85%">
+							</FormElement>
+            			</FlowhPanel>
+            			<FlowhPanel id="flowhPanel09" bottomPadding = "5" topPadding="5" width="33%" widgetId="main">
+		            		<FormElement eleWidth="100%" form_id="NewsVO_form" id="approvedate" left="0" position="relative" top="0" widgetId="main" width="85%">
+							</FormElement>
+            			</FlowhPanel>
+            			<FlowhPanel id="flowhPanel10" bottomPadding = "5" topPadding="5" width="33%" widgetId="main">
+		            		<FormElement eleWidth="100%" form_id="NewsVO_form" id="formstate" left="0" position="relative" top="0" widgetId="main" width="85%">
+							</FormElement>
+            			</FlowhPanel>
+            		</FlowhLayout>
+            	</FlowvPanel>
+            </FlowvLayout>
+        </FlowvPanel>
+    </FlowvLayout>
+</UIMeta>

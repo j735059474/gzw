@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+    <scapfd_testref>
+		<scapfd_testref.year1 uapDisplayName="2012">
+		</scapfd_testref.year1>
+		<scapfd_testref.year2 uapDisplayName="2012">
+		</scapfd_testref.year2>
+		<scapfd_testref.bzz uapDisplayName="《2013年度企业绩效评价标准值》">
+		</scapfd_testref.bzz>
+		<scapfd_testref.hs1 uapDisplayName="30">
+		</scapfd_testref.hs1>
+		<scapfd_testref.year3 uapDisplayName="2012">
+		</scapfd_testref.year3>
+		<scapfd_testref.year4 uapDisplayName="2012">
+		</scapfd_testref.year4>
+		<scapfd_testref.jxdf uapDisplayName="70.1">
+		</scapfd_testref.jxdf>
+		<scapfd_testref.dj uapDisplayName="B-">
+		</scapfd_testref.dj>
+		<scapfd_testref.sp1 uapDisplayName="良好">
+		</scapfd_testref.sp1>
+		<scapfd_testref.zhqk uapDisplayName="与上年情况基本一致">
+		</scapfd_testref.zhqk>
+		<scapfd_testref.sp2 uapDisplayName="优秀">
+		</scapfd_testref.sp2>
+		<scapfd_testref.sp3 uapDisplayName="平均">
+		</scapfd_testref.sp3>
+		<scapfd_testref.sp4 uapDisplayName="平均">
+		</scapfd_testref.sp4>
+		<scapfd_testref.sp5 uapDisplayName="平均">
+		</scapfd_testref.sp5>
+
+		<scapfd_testref.year5 uapDisplayName="2011">
+		</scapfd_testref.year5>
+		<scapfd_testref.year6 uapDisplayName="2012">
+		</scapfd_testref.year6>
+		
+		<scapfd_testref.df uapDisplayName="75.6">
+		</scapfd_testref.df>
+		<scapfd_testref.hysp uapDisplayName="良">
+		</scapfd_testref.hysp>
+		<scapfd_testref.pjjg uapDisplayName="B-">
+		</scapfd_testref.pjjg>
+		<scapfd_testref.df3 uapDisplayName="70.1">
+		</scapfd_testref.df3>
+		<scapfd_testref.hysp1 uapDisplayName="良">
+		</scapfd_testref.hysp1>
+		<scapfd_testref.pjjg1 uapDisplayName="B-">
+		</scapfd_testref.pjjg1>
+                
+                <scapfd_testref.yldf uapDisplayName="74.9">
+		</scapfd_testref.yldf> 
+                <scapfd_testref.ylhysp uapDisplayName="良">
+		</scapfd_testref.ylhysp>
+		<scapfd_testref.ylpjjg uapDisplayName="B-">
+		</scapfd_testref.ylpjjg>
+		<scapfd_testref.yldf3 uapDisplayName="66.1">
+		</scapfd_testref.yldf3>
+		<scapfd_testref.ylhysp1 uapDisplayName="良">
+		</scapfd_testref.ylhysp1>
+		<scapfd_testref.ylpjjg1 uapDisplayName="B-">
+		</scapfd_testref.ylpjjg1>
+                
+                <scapfd_testref.zcdf uapDisplayName="84.2">
+		</scapfd_testref.zcdf> 
+                <scapfd_testref.zchysp uapDisplayName="良">
+		</scapfd_testref.zchysp>
+		<scapfd_testref.zcpjjg uapDisplayName="B-">
+		</scapfd_testref.zcpjjg>
+		<scapfd_testref.zcdf3 uapDisplayName="91.1">
+		</scapfd_testref.zcdf3>
+		<scapfd_testref.zchysp1 uapDisplayName="优">
+		</scapfd_testref.zchysp1>
+		<scapfd_testref.zcpjjg1 uapDisplayName="-">
+		</scapfd_testref.zcpjjg1>
+              
+                <scapfd_testref.zwdf uapDisplayName="68.1">
+		</scapfd_testref.zwdf> 
+                <scapfd_testref.zwhysp uapDisplayName="良">
+		</scapfd_testref.zwhysp>
+		<scapfd_testref.zwpjjg uapDisplayName="B-">
+		</scapfd_testref.zwpjjg>
+		<scapfd_testref.zwdf3 uapDisplayName="65.7">
+		</scapfd_testref.zwdf3>
+		<scapfd_testref.zwhysp1 uapDisplayName="中">
+		</scapfd_testref.zwhysp1>
+		<scapfd_testref.zwpjjg1 uapDisplayName="B-">
+		</scapfd_testref.zwpjjg1>
+ 
+                <scapfd_testref.jydf uapDisplayName="75.7">
+		</scapfd_testref.jydf> 
+                <scapfd_testref.jyhysp uapDisplayName="良">
+		</scapfd_testref.jyhysp>
+		<scapfd_testref.jypjjg uapDisplayName="B-">
+		</scapfd_testref.jypjjg>
+		<scapfd_testref.jydf3 uapDisplayName="59.7">
+		</scapfd_testref.jydf3>
+		<scapfd_testref.jyhysp1 uapDisplayName="中">
+		</scapfd_testref.jyhysp1>
+		<scapfd_testref.jypjjg1 uapDisplayName="B-">
+		</scapfd_testref.jypjjg1>
+
+		<scapfd_testref.Agroup uapDisplayName="海螺集团和皖中集团">
+		</scapfd_testref.Agroup>
+		<scapfd_testref.Agrouphs uapDisplayName="22">
+		</scapfd_testref.Agrouphs>
+		<scapfd_testref.Bgroup uapDisplayName="盐业公司、淮海实业、煤炭设计院、叉车集团、国资运营、能源集团等">
+		</scapfd_testref.Bgroup>
+		<scapfd_testref.Bgrouphs1 uapDisplayName="11">
+		</scapfd_testref.Bgrouphs1>
+		<scapfd_testref.yll uapDisplayName="43.3%">
+		</scapfd_testref.yll>
+		<scapfd_testref.Cgroup uapDisplayName="华强集团等">
+		</scapfd_testref.Cgroup>
+		<scapfd_testref.Cgrouphs uapDisplayName="16">
+		</scapfd_testref.Cgrouphs>
+		<scapfd_testref.Egroup uapDisplayName="马钢集团">
+		</scapfd_testref.Egroup>
+
+		<scapfd_testref.ylzk uapDisplayName="平均">
+		</scapfd_testref.ylzk>
+		<scapfd_testref.yyzsr1 uapDisplayName="5797亿">
+		</scapfd_testref.yyzsr1>
+		<scapfd_testref.zj1 uapDisplayName="增长">
+		</scapfd_testref.zj1>
+		
+		<scapfd_testref.yyzslzzl uapDisplayName="5.7%">
+		</scapfd_testref.yyzslzzl>
+		<scapfd_testref.lr uapDisplayName="199亿">
+		</scapfd_testref.lr>
+		<scapfd_testref.zj2 uapDisplayName="降低">
+		</scapfd_testref.zj2>
+		<scapfd_testref.lrzzl uapDisplayName="37.9%">
+		</scapfd_testref.lrzzl>
+		<scapfd_testref.sjsj uapDisplayName="349亿">
+		</scapfd_testref.sjsj>
+		<scapfd_testref.jzcsyl uapDisplayName="4.5%">
+		</scapfd_testref.jzcsyl>
+		<scapfd_testref.zzcbcl uapDisplayName="4.2%">
+		</scapfd_testref.zzcbcl>
+		<scapfd_testref.ylnl uapDisplayName="马钢、皖北煤电等">
+		</scapfd_testref.ylnl>
+		<scapfd_testref.zhdf uapDisplayName="66.1">
+		</scapfd_testref.zhdf>
+		<scapfd_testref.qhysp uapDisplayName="平均">
+		</scapfd_testref.qhysp>
+		<scapfd_testref.zhs uapDisplayName="30">
+		</scapfd_testref.zhs>
+		<scapfd_testref.yl_yxsphs uapDisplayName="7">
+		</scapfd_testref.yl_yxsphs>
+		<scapfd_testref.yl_lhsphs uapDisplayName="9">
+		</scapfd_testref.yl_lhsphs>
+		<scapfd_testref.yl_pjsphs uapDisplayName="9">
+		</scapfd_testref.yl_pjsphs>
+		<scapfd_testref.yl_jdsphs uapDisplayName="3">
+		</scapfd_testref.yl_jdsphs>
+		<scapfd_testref.yl_jcsphs uapDisplayName="2">
+		</scapfd_testref.yl_jcsphs>
+
+		<scapfd_testref.zczlzk uapDisplayName="较好">
+		</scapfd_testref.zczlzk>
+		<scapfd_testref.year7 uapDisplayName="2012">
+		</scapfd_testref.year7>
+		<scapfd_testref.zcze uapDisplayName="9301亿">
+		</scapfd_testref.zcze>
+		<scapfd_testref.zj3 uapDisplayName="增长">
+		</scapfd_testref.zj3>
+		<scapfd_testref.zczezzl uapDisplayName="10.3%">
+		</scapfd_testref.zczezzl>
+		<scapfd_testref.jzc uapDisplayName="3144亿">
+		</scapfd_testref.jzc>
+		<scapfd_testref.zj4 uapDisplayName="增长">
+		</scapfd_testref.zj4>
+		<scapfd_testref.jzczzl uapDisplayName="6.1%">
+		</scapfd_testref.jzczzl>
+		<scapfd_testref.zzczzl uapDisplayName="0.61">
+		</scapfd_testref.zzczzl>
+		<scapfd_testref.ldzczzl uapDisplayName="1.6">
+		</scapfd_testref.ldzczzl>
+		<scapfd_testref.yszkzzl uapDisplayName="17.9">
+		</scapfd_testref.yszkzzl>
+		<scapfd_testref.chzzl uapDisplayName="5.2">
+		</scapfd_testref.chzzl>
+		<scapfd_testref.zczldf uapDisplayName="91.1">
+		</scapfd_testref.zczldf>
+		<scapfd_testref.zcqhysp uapDisplayName="优秀">
+		</scapfd_testref.zcqhysp>
+		<scapfd_testref.zc_zhs uapDisplayName="30">
+		</scapfd_testref.zc_zhs>
+		<scapfd_testref.zc_yxsphs uapDisplayName="6">
+		</scapfd_testref.zc_yxsphs>
+		<scapfd_testref.zc_lhsphs uapDisplayName="10">
+		</scapfd_testref.zc_lhsphs>
+		<scapfd_testref.zc_pjsphs uapDisplayName="5">
+		</scapfd_testref.zc_pjsphs>
+		<scapfd_testref.zc_jdsphs uapDisplayName="7">
+		</scapfd_testref.zc_jdsphs>
+		<scapfd_testref.zc_jcsphs uapDisplayName="1">
+		</scapfd_testref.zc_jcsphs>
+
+		<scapfd_testref.zwfx uapDisplayName="降低">
+		</scapfd_testref.zwfx>
+		<scapfd_testref.year8 uapDisplayName="2012">
+		</scapfd_testref.year8>
+		<scapfd_testref.fzze uapDisplayName="6158亿">
+		</scapfd_testref.fzze>
+		<scapfd_testref.zj5 uapDisplayName="增长">
+		</scapfd_testref.zj5>
+		<scapfd_testref.fzzezzl uapDisplayName="12.6%">
+		</scapfd_testref.fzzezzl>
+		<scapfd_testref.zcfzl uapDisplayName="66.2%">
+		</scapfd_testref.zcfzl>
+		<scapfd_testref.zj6 uapDisplayName="下降">
+		</scapfd_testref.zj6>
+		<scapfd_testref.zcfzlbfd uapDisplayName="1.3">
+		</scapfd_testref.zcfzlbfd>
+		<scapfd_testref.yhlxbs uapDisplayName="2.2">
+		</scapfd_testref.yhlxbs>
+		<scapfd_testref.zj7 uapDisplayName="下降">
+		</scapfd_testref.zj7> 
+		<scapfd_testref.yhlxbsbfd uapDisplayName="1.1">
+		</scapfd_testref.yhlxbsbfd> 
+		<scapfd_testref.zwfxsp uapDisplayName="平均">
+		</scapfd_testref.zwfxsp> 
+		<scapfd_testref.zw_zhs uapDisplayName="30">
+		</scapfd_testref.zw_zhs> 
+		<scapfd_testref.zw_yxsphs uapDisplayName="10">
+		</scapfd_testref.zw_yxsphs >
+		<scapfd_testref.zw_lhsphs uapDisplayName="3">
+		</scapfd_testref.zw_lhsphs> 
+		<scapfd_testref.zw_pjsphs uapDisplayName="11">
+		</scapfd_testref.zw_pjsphs> 
+		<scapfd_testref.zw_jdsphs uapDisplayName="3">
+		</scapfd_testref.zw_jdsphs >
+		<scapfd_testref.zw_jcsphs uapDisplayName="3">
+		</scapfd_testref.zw_jcsphs> 
+
+		<scapfd_testref.jyzk uapDisplayName="不理想">
+		</scapfd_testref.jyzk>
+		<scapfd_testref.year9 uapDisplayName="2012">
+		</scapfd_testref.year9 >
+		<scapfd_testref.yyzsr2 uapDisplayName="5797亿">
+		</scapfd_testref.yyzsr2 >
+		<scapfd_testref.zj8 uapDisplayName="增长">
+		</scapfd_testref.zj8> 
+		<scapfd_testref.zj1bfb uapDisplayName="6">
+		</scapfd_testref.zj1bfb>
+		<scapfd_testref.gd1 uapDisplayName="低于">
+		</scapfd_testref.gd1 >
+		<scapfd_testref.gyzbbzzzl uapDisplayName="103.8%">
+		</scapfd_testref.gyzbbzzzl >
+		<scapfd_testref.jyzksp uapDisplayName="平均">
+		</scapfd_testref.jyzksp >
+		<scapfd_testref.jy_zhs uapDisplayName="30">
+		</scapfd_testref.jy_zhs >
+		<scapfd_testref.jy_yxsphs uapDisplayName="6">
+		</scapfd_testref.jy_yxsphs >
+		<scapfd_testref.jy_lhsphs uapDisplayName="4">
+		</scapfd_testref.jy_lhsphs >
+		<scapfd_testref.jy_pjsphs uapDisplayName="11">
+		</scapfd_testref.jy_pjsphs >
+		<scapfd_testref.jy_jdsphs uapDisplayName="7">
+		</scapfd_testref.jy_jdsphs> 
+		<scapfd_testref.jy_jcsphs uapDisplayName="2">
+		</scapfd_testref.jy_jcsphs> 
+
+		<scapfd_testref.yynlsp uapDisplayName="不强">
+		</scapfd_testref.yynlsp> 
+		<scapfd_testref.reason uapDisplayName="受市场需求疲软影响，能源、原材料价格上涨，部分企业盈利能力下滑">
+		</scapfd_testref.reason> 
+		<scapfd_testref.jzcsyl_d uapDisplayName="12">
+		</scapfd_testref.jzcsyl_d >
+		<scapfd_testref.zzcbcl_d uapDisplayName="10">
+		</scapfd_testref.zzcbcl_d >
+		<scapfd_testref.cbfylrl_d uapDisplayName="12">
+		</scapfd_testref.cbfylrl_d >
+		<scapfd_testref.jzczzc_fu uapDisplayName="马钢集团、皖北煤电">
+		</scapfd_testref.jzczzc_fu >
+		<scapfd_testref.hypjz_d uapDisplayName="淮南矿业、皖维集团、旅游集团、江汽集团">
+		</scapfd_testref.hypjz_d >
+
+		<scapfd_testref.yyzzl_d uapDisplayName="海螺集团、能源集团、淮北集团、江汽集团、马钢集团、皖维集团、国贸集团等">
+		</scapfd_testref.yyzzl_d>
+          <scapfd_testref.yyzzl_dhs uapDisplayName="11">
+		</scapfd_testref.yyzzl_dhs >		
+		<scapfd_testref.yyzzlsp uapDisplayName="远低于">
+		</scapfd_testref.yyzzlsp >
+		<scapfd_testref.yyzzlpjsp uapDisplayName="6.6%">
+		</scapfd_testref.yyzzlpjsp >
+		<scapfd_testref.zyywlrzzl uapDisplayName="-10.3%">
+		</scapfd_testref.zyywlrzzl>
+		<scapfd_testref.gd2 uapDisplayName="低于">
+		</scapfd_testref.gd2 >
+		<scapfd_testref.zyywlrbfd uapDisplayName="5.8">
+		</scapfd_testref.zyywlrbfd> 
+		<scapfd_testref.gyzbbzzz_d uapDisplayName="皖维集团-54%、马钢集团-39%、海螺集团-32%、铜陵有色-22%。马钢集团、皖维集团、皖北煤电等">
+		</scapfd_testref.gyzbbzzz_d>
+		<scapfd_testref.gyzbbzzz_dhs uapDisplayName="3">
+		</scapfd_testref.gyzbbzzz_dhs>
+		<scapfd_testref.year10 uapDisplayName="2012">
+		</scapfd_testref.year10> 
+		<scapfd_testref.date uapDisplayName="二〇一三年五月">
+		</scapfd_testref.date> 
+    </scapfd_testref>
+</Root>

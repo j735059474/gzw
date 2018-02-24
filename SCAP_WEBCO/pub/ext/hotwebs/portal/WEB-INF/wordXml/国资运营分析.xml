@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+    <scapfd_testref>
+        <scapfd_testref.bennian0
+uapDisplayName="XX">
+        </scapfd_testref.bennian0>
+
+        <scapfd_testref.tongjinain
+uapDisplayName="统计年">
+        </scapfd_testref.tongjinain>
+
+  <scapfd_testref.quansheng
+uapDisplayName="全省国有企业总户数">
+        </scapfd_testref.quansheng>
+
+  <scapfd_testref.zengjia
+uapDisplayName="全省国有企业总户数比上年增加数量">
+        </scapfd_testref.zengjia>
+
+        <scapfd_testref.bennian
+uapDisplayName="本年">
+        </scapfd_testref.bennian>
+        <scapfd_testref.shagnnian
+uapDisplayName="上年">
+        </scapfd_testref.shagnnian>
+
+        <scapfd_testref.tongjinain1
+uapDisplayName="统计年">
+        </scapfd_testref.tongjinain1>
+
+        <scapfd_testref.tongjinain2
+uapDisplayName="统计年-1">
+        </scapfd_testref.tongjinain2>
+
+       <scapfd_testref.yognhu
+uapDisplayName="全省国有企业总户数">
+        </scapfd_testref.yognhu>
+
+       <scapfd_testref.yognhu1
+uapDisplayName="全省国有企业总户数">
+        </scapfd_testref.yognhu1>
+
+       <scapfd_testref.lv
+uapDisplayName="全省国有企业总户数年增长率">
+        </scapfd_testref.lv>
+
+        <scapfd_testref.tongjinain3
+uapDisplayName="统计年">
+        </scapfd_testref.tongjinain3>
+
+        <scapfd_testref.tongjinain4
+uapDisplayName="统计年-1">
+        </scapfd_testref.tongjinain4>
+
+        <scapfd_testref.tongjinain0
+uapDisplayName="省属国有企业户数">
+        </scapfd_testref.tongjinain0>
+
+        <scapfd_testref.tongjinain01
+uapDisplayName="省属国有企业户数">
+        </scapfd_testref.tongjinain01>
+
+       <scapfd_testref.tongjinain02
+uapDisplayName="省属国有企业户数年增长率">
+        </scapfd_testref.tongjinain02>
+
+       <scapfd_testref.tongjinain03
+uapDisplayName="统计年">
+        </scapfd_testref.tongjinain03>
+
+       <scapfd_testref.tongjinain04
+uapDisplayName="统计年-1">
+        </scapfd_testref.tongjinain04>
+
+      <scapfd_testref.tongjinain05
+uapDisplayName="省直单位企业户数">
+        </scapfd_testref.tongjinain05>
+
+      <scapfd_testref.tongjinain06
+uapDisplayName="省直单位企业户数">
+        </scapfd_testref.tongjinain06>
+
+
+      <scapfd_testref.tongjinain07
+uapDisplayName="省直单位企业户数年增长率">
+        </scapfd_testref.tongjinain07>
+
+      <scapfd_testref.tongjinain08
+uapDisplayName="统计年">
+        </scapfd_testref.tongjinain08>
+
+     <scapfd_testref.tongjinain09
+uapDisplayName="统计年-1">
+        </scapfd_testref.tongjinain09>
+
+
+     <scapfd_testref.tongjinain10
+uapDisplayName="市县国有企业户数">
+        </scapfd_testref.tongjinain10>
+
+     <scapfd_testref.tongjinain11
+uapDisplayName="市县国有企业户数">
+        </scapfd_testref.tongjinain11>
+
+     <scapfd_testref.tongjinain12
+uapDisplayName="市县国有企业户数年增长率">
+        </scapfd_testref.tongjinain12>
+
+
+     <scapfd_testref.tongjinain13
+uapDisplayName="（大中型企业合计户数）">
+        </scapfd_testref.tongjinain13>
+
+     <scapfd_testref.tongjinain14
+uapDisplayName="（大型企业户数）">
+        </scapfd_testref.tongjinain14>
+
+     <scapfd_testref.tongjinain15
+uapDisplayName="（中型企业户数）">
+        </scapfd_testref.tongjinain15>
+
+     <scapfd_testref.tongjinain16
+uapDisplayName="（大中型企业合计户数较上年增长数量）">
+        </scapfd_testref.tongjinain16>
+
+     <scapfd_testref.tongjinain17
+uapDisplayName="（大中型企业合计户数占企业总数量比重）">
+        </scapfd_testref.tongjinain17>
+
+     <scapfd_testref.tongjinain18
+uapDisplayName="（大中型企业合计户数占企业总数量比重比上年提高百分点）">
+        </scapfd_testref.tongjinain18>
+
+     <scapfd_testref.tongjinain19
+uapDisplayName="（小型及微型企业合计户数）">
+        </scapfd_testref.tongjinain19>
+
+    <scapfd_testref.tongjinain20
+uapDisplayName="（小型企业户数）">
+        </scapfd_testref.tongjinain20>
+
+    <scapfd_testref.tongjinain21
+uapDisplayName="（微型企业户数）">
+        </scapfd_testref.tongjinain21>
+
+    <scapfd_testref.tongjinain22
+uapDisplayName="（小型及微型企业合计户数较上年增长数量）">
+        </scapfd_testref.tongjinain22>
+
+
+    <scapfd_testref.tongjinain23
+uapDisplayName="（小型及微型企业合计户数占企业总数量比重）">
+        </scapfd_testref.tongjinain23>
+
+
+    <scapfd_testref.tongjinain24
+uapDisplayName="（小型及微型企业合计户数占企业总数量比重较上年提高百分点）">
+        </scapfd_testref.tongjinain24>
+
+    <scapfd_testref.tongjinain25
+uapDisplayName="（全省资产总额（期末余额））">
+        </scapfd_testref.tongjinain25>
+
+    <scapfd_testref.tongjinain26
+uapDisplayName="（全省资产总额年增长率（%））">
+        </scapfd_testref.tongjinain26>
+
+    <scapfd_testref.tongjinain27
+uapDisplayName="（全省所有者权益总额（期末余额））">
+        </scapfd_testref.tongjinain27>
+
+    <scapfd_testref.tongjinain28
+uapDisplayName="（全省所有者权益总额总额年增长率（%））">
+        </scapfd_testref.tongjinain28>
+
+   <scapfd_testref.tongjinain29
+uapDisplayName="（全省国有资产总量）">
+        </scapfd_testref.tongjinain29>
+
+   <scapfd_testref.tongjinain30
+uapDisplayName="（全省国有资产总量年增长率（%））">
+        </scapfd_testref.tongjinain30>
+
+
+   <scapfd_testref.tongjinain31
+uapDisplayName="资产总额（期末余额）>100亿的企业户数）">
+        </scapfd_testref.tongjinain31>
+
+   <scapfd_testref.tongjinain32
+uapDisplayName="资产总额超过百亿的户数同比增加数量）">
+        </scapfd_testref.tongjinain32>
+
+   <scapfd_testref.tongjinain33
+uapDisplayName="省属企业国有资产总量">
+        </scapfd_testref.tongjinain33>
+
+   <scapfd_testref.tongjinain34
+uapDisplayName="省属企业国有资产占比">
+        </scapfd_testref.tongjinain34>
+
+   <scapfd_testref.tongjinain35
+uapDisplayName="省直单位国有资产总量">
+        </scapfd_testref.tongjinain35>
+
+   <scapfd_testref.tongjinain36
+uapDisplayName="省直单位国有资产占比">
+        </scapfd_testref.tongjinain36>
+
+  <scapfd_testref.tongjinain37
+uapDisplayName="省直单位国有资产总量">
+        </scapfd_testref.tongjinain37>
+
+  <scapfd_testref.tongjinain38
+uapDisplayName="市县企业国有资产占比">
+        </scapfd_testref.tongjinain38>
+
+  <scapfd_testref.tongjinain39
+uapDisplayName="（全省营业总收入（本期金额））">
+        </scapfd_testref.tongjinain39>
+
+  <scapfd_testref.tongjinain40
+uapDisplayName="（盈利企业户数）">
+        </scapfd_testref.tongjinain40>
+
+  <scapfd_testref.tongjinain41
+uapDisplayName="（盈利企业比上年增加户数）">
+        </scapfd_testref.tongjinain41>
+
+
+  <scapfd_testref.tongjinain42
+uapDisplayName="（盈利企业户数占比）">
+        </scapfd_testref.tongjinain42>
+
+  <scapfd_testref.tongjinain43
+uapDisplayName="（盈利企业户数占比年增加百分点）">
+        </scapfd_testref.tongjinain43>
+
+ <scapfd_testref.tongjinain44
+uapDisplayName="（营业总收入过百亿的企业户数）">
+        </scapfd_testref.tongjinain44>
+
+ <scapfd_testref.tongjinain45
+uapDisplayName="全省营业总收入（本期金额）">
+        </scapfd_testref.tongjinain45>
+
+
+ <scapfd_testref.tongjinain46
+uapDisplayName="全省营业总收入年增长率">
+        </scapfd_testref.tongjinain46>
+
+ <scapfd_testref.tongjinain47
+uapDisplayName="全省利润总额（本期金额）">
+        </scapfd_testref.tongjinain47>
+
+ <scapfd_testref.tongjinain48
+uapDisplayName="全省利润总额年增长率">
+        </scapfd_testref.tongjinain48>
+
+ <scapfd_testref.tongjinain49
+uapDisplayName="全省净利润（本期金额）">
+        </scapfd_testref.tongjinain49>
+
+ <scapfd_testref.tongjinain50
+uapDisplayName="全省净利润年增长率">
+        </scapfd_testref.tongjinain50>
+
+ <scapfd_testref.tongjinain51
+uapDisplayName="全省归属于母公司所有者的净利润（本期金额）">
+        </scapfd_testref.tongjinain51>
+
+ <scapfd_testref.tongjinain52
+uapDisplayName="全省归属于母公司所有者的净利润年增长率">
+        </scapfd_testref.tongjinain52>
+
+
+ <scapfd_testref.tongjinain53
+uapDisplayName="全省企业本年国有资本及权益增加值">
+        </scapfd_testref.tongjinain53>
+
+ <scapfd_testref.tongjinain54
+uapDisplayName="全省企业本年国有资本及权益增加值年增长率">
+        </scapfd_testref.tongjinain54>
+
+ <scapfd_testref.tongjinain55
+uapDisplayName="（全省企业上交税金）">
+        </scapfd_testref.tongjinain55>
+
+ <scapfd_testref.tongjinain56
+uapDisplayName="全省企业上交税金年增长率">
+        </scapfd_testref.tongjinain56>
+
+ <scapfd_testref.tongjinain57
+uapDisplayName="XX.X%">
+        </scapfd_testref.tongjinain57>
+
+ <scapfd_testref.tongjinain58
+uapDisplayName="省属企业上交税金">
+        </scapfd_testref.tongjinain58>
+
+ <scapfd_testref.tongjinain59
+uapDisplayName="XX.X%">
+        </scapfd_testref.tongjinain59>
+
+ <scapfd_testref.tongjinain60
+uapDisplayName="省属企业本年国有资本及权益增加值">
+        </scapfd_testref.tongjinain60>
+
+ <scapfd_testref.tongjinain61
+uapDisplayName="省属企业本年国有资本及权益增加值年增长率">
+        </scapfd_testref.tongjinain61>
+
+ <scapfd_testref.tongjinain62
+uapDisplayName="省直单位本年国有资本及权益增加值">
+        </scapfd_testref.tongjinain62>
+
+ <scapfd_testref.tongjinain63
+uapDisplayName="省直单位本年国有资本及权益增加值年增长率">
+        </scapfd_testref.tongjinain63>
+
+
+ <scapfd_testref.tongjinain64
+uapDisplayName="市县企业本年国有资本及权益增加值">
+        </scapfd_testref.tongjinain64>
+
+<scapfd_testref.tongjinain65
+uapDisplayName="市县企业本年国有资本及权益增加值年增长率">
+        </scapfd_testref.tongjinain65>
+
+<scapfd_testref.tongjinain66
+uapDisplayName="省属企业上交税金">
+        </scapfd_testref.tongjinain66>
+
+<scapfd_testref.tongjinain67
+uapDisplayName="省属企业上交税金年增长率">
+        </scapfd_testref.tongjinain67>
+
+<scapfd_testref.tongjinain68
+uapDisplayName="省直单位上交税金">
+        </scapfd_testref.tongjinain68>
+
+
+<scapfd_testref.tongjinain70
+uapDisplayName="省直单位上交税金年增长率">
+        </scapfd_testref.tongjinain70>
+
+<scapfd_testref.tongjinain71
+uapDisplayName="市县企业上交税金">
+        </scapfd_testref.tongjinain71>
+
+
+<scapfd_testref.tongjinain72
+uapDisplayName="市县企业上交税金年增长率">
+        </scapfd_testref.tongjinain72>
+
+<scapfd_testref.tongjinain73
+uapDisplayName="全省企业国有资本保值增值率（本年数）">
+        </scapfd_testref.tongjinain73>
+
+<scapfd_testref.tongjinain74
+uapDisplayName="（全省企业国有资本保值增值率（本年数）年增加百分点）">
+        </scapfd_testref.tongjinain74>
+
+<scapfd_testref.tongjinain75
+uapDisplayName="省属企业国有资本保值增值率（本年数）">
+        </scapfd_testref.tongjinain75>
+
+<scapfd_testref.tongjinain76
+uapDisplayName="属企业国有资本保值增值率（本年数）年增加百分点">
+        </scapfd_testref.tongjinain76>
+
+<scapfd_testref.tongjinain77
+uapDisplayName="省直单位国有资本保值增值率（本年数）">
+        </scapfd_testref.tongjinain77>
+
+<scapfd_testref.tongjinain78
+uapDisplayName="省直单位国有资本保值增值率（本年数）年增加百分点">
+        </scapfd_testref.tongjinain78>
+
+<scapfd_testref.tongjinain79
+uapDisplayName="市县企业国有资本保值增值率（本年数）">
+        </scapfd_testref.tongjinain79>
+
+<scapfd_testref.tongjinain80
+uapDisplayName="市县企业国有资本保值增值率（本年数）年增加百分点">
+        </scapfd_testref.tongjinain80>
+
+
+<scapfd_testref.tongjinain81
+uapDisplayName="（全省企业应收账款（年末金额））">
+        </scapfd_testref.tongjinain81>
+
+<scapfd_testref.tongjinain82
+uapDisplayName="（企业应收账款年增长率）">
+        </scapfd_testref.tongjinain82>
+
+<scapfd_testref.tongjinain83
+uapDisplayName="（全省企业存货（期末金额））">
+        </scapfd_testref.tongjinain83>
+
+<scapfd_testref.tongjinain84
+uapDisplayName="全省企业存货增长率">
+        </scapfd_testref.tongjinain84>
+
+<scapfd_testref.tongjinain85
+uapDisplayName="（全省企业营业总收入年增长率（%））">
+        </scapfd_testref.tongjinain85>
+
+<scapfd_testref.tongjinain86
+uapDisplayName="（全省营业总收入年增长率）">
+        </scapfd_testref.tongjinain86>
+
+<scapfd_testref.tongjinain87
+uapDisplayName="（全省利息支出（本期金额））">
+        </scapfd_testref.tongjinain87>
+
+<scapfd_testref.tongjinain88
+uapDisplayName="（利息本年净增金额）">
+        </scapfd_testref.tongjinain88>
+
+<scapfd_testref.tongjinain89
+uapDisplayName="（全省企业利息支出年增长率）">
+        </scapfd_testref.tongjinain89>
+
+<scapfd_testref.tongjinain90
+uapDisplayName="全省企业总资产周转率（次）（本年数）">
+        </scapfd_testref.tongjinain90>
+
+<scapfd_testref.tongjinain91
+uapDisplayName="全省企业总流动资产周转率（次）（本年数）">
+        </scapfd_testref.tongjinain91>
+
+<scapfd_testref.tongjinain92
+uapDisplayName="全省企业存货周转率（次）（本年数）">
+        </scapfd_testref.tongjinain92>
+
+<scapfd_testref.tongjinain93
+uapDisplayName="（全省亏损企业户数）">
+        </scapfd_testref.tongjinain93>
+
+<scapfd_testref.tongjinain94
+uapDisplayName="（全省亏损企业户数占比）">
+        </scapfd_testref.tongjinain94>
+
+<scapfd_testref.tongjinain95
+uapDisplayName="（全省亏损企业户数占比年增加百分点）">
+        </scapfd_testref.tongjinain95>
+
+<scapfd_testref.tongjinain96
+uapDisplayName="（（全省资产负债率（本年数 >0.7）的企业户数）">
+        </scapfd_testref.tongjinain96>
+
+<scapfd_testref.tongjinain97
+uapDisplayName="（全省资产负债率（本年数 >0.7）的企业户数占比）">
+        </scapfd_testref.tongjinain97>
+
+<scapfd_testref.tongjinain98
+uapDisplayName="（全省资产负债率（本年数 >1.0）的企业户数）">
+        </scapfd_testref.tongjinain98>
+
+<scapfd_testref.tongjinain99
+uapDisplayName="（全省超过1的企业数/总企业数*100）">
+        </scapfd_testref.tongjinain99>
+
+
+    </scapfd_testref>
+</Root>

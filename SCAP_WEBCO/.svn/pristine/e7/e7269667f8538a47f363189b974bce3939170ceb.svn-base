@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget dialog="false" id="pubview_selfquery" caption="搜索" desc="简单查询的公共view" refId="pubview_selfquery" provider="nc.scap.pub.selfquery.SelfQueryWidgetProvider" i18nName="" langDir="">
+    <Attributes>
+        <Attribute>
+            <Key>$POOLWIDGE</Key>
+            <Value>$POOLWIDGE</Value>
+        </Attribute>
+    </Attributes>
+    <PlugoutDescs>
+    </PlugoutDescs>
+    <PluginDescs>
+    </PluginDescs>
+    <Models>
+        <Datasets>
+        </Datasets>
+    </Models>
+    <Components>
+    </Components>
+    <Containers>
+    </Containers>
+    <Menus>
+    </Menus>
+</Widget>

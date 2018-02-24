@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+<items>
+
+<!--flag="0" 单独处理;flag="1" 查iufo表样;flag="2" 查事实表; 公式中"XX,2"表示XX公式计算后保留两位小数-->
+<item key="vyear" dimension="" name="年">
+  <source flag="1" code="Z02" measure="year" row="" col="" id="$aa"/>
+  <formula>
+    '$aa'.substring(0,4)
+  </formula>
+</item>
+
+<item key="sys_org" dimension="" name="组织标志">
+  <source flag="0" code="Z02" measure="sys_org" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="type" dimension="" name="类型">
+  <source flag="0" code="Z02" measure="type" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="sys_zdm" dimension="" name="外键">
+  <source flag="0" code="Z02" measure="sys_zdm" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sys_fjd" dimension="" name="父节点">
+  <source flag="0" code="Z02" measure="sys_fjd" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<!--国有资产变动-->
+
+<item key="gyzcjqyze" dimension="nd" name="一、年初国有资本及权益总额">
+  <source flag="1" code="Z05" measure="yncgyzbjqyzeje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="gyzcjqyzj" dimension="nd" name="二、本年国有资本及权益增加">
+  <source flag="1" code="Z05" measure="ebngyzbjqyzjje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="gjgyzjhzjtz" dimension="nd" name=" （一）国家、国有单位直接或追加投资">
+  <source flag="1" code="Z05" measure="ygjgydwzjhzjtzje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="wchr" dimension="nd" name=" （二）无偿划入">
+  <source flag="1" code="Z05" measure="ewchrje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="zcpgzj" dimension="nd" name=" （三）资产评估增加">
+  <source flag="1" code="Z05" measure="szcpgzjje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="qchzzj" dimension="nd" name=" （四）清产核资增加">
+  <source flag="1" code="Z05" measure="sqchzzjje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="cqjdzj" dimension="nd" name=" （五）产权界定增加">
+  <source flag="1" code="Z05" measure="wcqjdzjje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="zbgbyj" dimension="nd" name=" （六）资本（股本）溢价">
+  <source flag="1" code="Z05" measure="lzbgbyjje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="jsjz" dimension="nd" name="  （七）接受捐赠">
+  <source flag="1" code="Z05" measure="qjsjzje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="zqzgq" dimension="nd" name=" （八）债权转股权">
+  <source flag="1" code="Z05" measure="bzqzgqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="ssfh" dimension="nd" name="  （九）税收返还">
+  <source flag="1" code="Z05" measure="jssfhje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="bcldzb" dimension="nd" name="  （十）补充流动资本">
+  <source flag="1" code="Z05" measure="sbcldzbje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="jzzbzh" dimension="nd" name=" （十一）减值准备转回">
+  <source flag="1" code="Z05" measure="syjzzbzhje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="kjtz" dimension="nd" name=" （十二）会计调整">
+  <source flag="1" code="Z05" measure="sehjdzje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="zydfzfqtys" dimension="nd" name=" （十三）中央和地方政府确定的其他因素">
+  <source flag="1" code="Z05" measure="sszyhdfzfqddqtysje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="jylj" dimension="nd" name="  （十四）经营积累">
+  <source flag="1" code="Z05" measure="ssjyjlje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="gyzbjqyjs" dimension="nd" name="三、本年国有资本及权益减少">
+  <source flag="1" code="Z05" measure="sbngyzbjqyjsje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="jgjzxpzhx" dimension="nd" name=" （一）经国家专项批准核销">
+  <source flag="1" code="Z05" measure="yjgjzxpzhxje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="wchc" dimension="nd" name=" （二）无偿划出">
+  <source flag="1" code="Z05" measure="ewchcje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="zcpgjs" dimension="nd" name=" （三）资产评估减少">
+  <source flag="1" code="Z05" measure="szcpgjsje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="qchzjs" dimension="nd" name=" （四）清产核资减少">
+  <source flag="1" code="Z05" measure="sqchzjsje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="cqjdjs" dimension="nd" name=" （五）产权界定减少">
+  <source flag="1" code="Z05" measure="wcqjdjsje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="xhyqndqkhgzjs" dimension="nd" name="  （六）消化以前年度潜亏和挂账而减少">
+  <source flag="1" code="Z05" measure="lxhyqndqkhgzejsje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="yzrzhdbkkjysjs" dimension="nd" name="  （七）因自然灾害等不可抗拒因素减少">
+  <source flag="1" code="Z05" measure="qyzrzhdbkkjysjsje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="yzffljs" dimension="nd" name="  （八）因主辅分离减少">
+  <source flag="1" code="Z05" measure="byzffljsje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="qyagdysjlr" dimension="nd" name="  （九）企业按规定已上缴利润">
+  <source flag="1" code="Z05" measure="jqyagdysjlrje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="zbzj" dimension="nd" name="  （十）资本（股本）折价">
+  <source flag="1" code="Z05" measure="szbgbzjje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="zyhdfzfqddqtys" dimension="nd" name="  （十一）中央和地方政府确定的其他因素">
+  <source flag="1" code="Z05" measure="syzyhdfzfqddqtysje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="jyjz" dimension="nd" name="  （十二）经营减值">
+  <source flag="1" code="Z05" measure="sejyjzje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="gyzbjqyze" dimension="nd" name="四、年末国有资本及权益总额">
+  <source flag="1" code="Z05" measure="snmgyzbjqyzeje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="qtgyzj" dimension="nd" name="五、年末其他国有资金">
+  <source flag="1" code="Z05" measure="wnmqtgyzjje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="hjgyzczl" dimension="nd" name="六、年末合计国有资产总量">
+  <source flag="1" code="Z05" measure="lnmhjgyzczlje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+</items>
+</Root>

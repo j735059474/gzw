@@ -1,0 +1,76 @@
+.new {font-size:10px;display:inline;color:red;margin:0 0 0 3px}
+
+.gznews{float:left; width:100%; height:307px; background-color:#cccccc;}
+.gznews .gzcontent{float:left; height:305px; margin:1px; background-color:#ffffff;}
+
+.gznews .gztitle{float:left; width:100%; height:40px; background-image:url('/portal/scap/image/index/index_title_background.gif'); background-repeat:repeat-x; background-position:left;}
+.gznews .gztitle .gzicon{float:left; width:40px; height:40px; background-image:url('/portal/scap/image/index/index_title_icon.gif'); background-repeat:no-repeat; background-position:top;}
+.gznews .gztitle span{float:left; width:200px; height:40px; line-height:40px; text-align:left; font-family:黑体; font-size:14px; font-weight:bold; color:#3f3f3e;}
+
+.gznews .gzbody{float:left; width:98%; height:265px; margin:4px 1%; background-color:f7f7f7;}
+.gznews .gzbody .gzgroup{float:left; width:100%; height:50px; margin:4px 0px;}
+.gznews .gzbody .gzgroup_last{height:75px; background-color:#ebeadd;}
+.gznews .gzbody .gzgroup_selected{background-color:#e3e2d0;}
+.gznews .gzbody .gzgroup .gzrow{float:left; width:100%; height:25px;}
+.gznews .gzbody .gzgroup .gzdata{cursor:pointer;}
+.gznews .gzbody .gzgroup .gzrow_selected{background-color:#e3e2d0;}
+.gznews .gzbody .gzgroup .gzrow .gzicon1{float:left; width:24px; height:100%; background-repeat:no-repeat; background-position:center;}
+.gznews .gzbody .gzgroup .gzrow .gzicon2{float:right; width:23px; height:100%;background-repeat:no-repeat; background-position:center;}
+.gznews .gzbody .gzgroup .gzrow .gzicon_select{}
+.gznews .gzbody .gzgroup .gzrow .gzicon_calendar{}
+.gznews .gzbody .gzgroup .gzrow .gzicon_selected{background-image:url('/portal/scap/image/index/gzicon_selected.gif');}
+.gznews .gzbody .gzgroup .gzrow .gzicon_calendar_selected{background-image:url('/portal/scap/image/index/gzicon_calendar_selected.gif');}
+.gznews .gzbody .gzgroup .gzrow .gzcaption{float:left; width:65%; height:100%; line-height:25px; text-align:left; margin-left:10px; font-family:宋体; font-size:12px; color:#3f3f3e; overflow:hidden;}
+.gznews .gzbody .gzgroup .gzrow .gzcaption .newicon{float:left; width:34px; height:100%; background-image:url('/portal/scap/image/index/gzicon_new.gif'); background-repeat:no-repeat; background-position:center left;}
+.gznews .gzbody .gzgroup .gzrow .gzdate{float:right; width:80px; height:100%; line-height:25px; font-family:宋体; font-size:11px; color:#3f3f3e;}
+.gznews .gzbody .gzgroup .gzrow .gzcaption_selected{text-decoration:underline; font-weight:bold; color:#339999;}
+.gznews .gzbody .gzgroup .gzrow .gzdate_selected{color:#339999;}
+
+.gzworks{float:left; width:100%; height:300px; background-color:#cccccc;}
+.gzworks .gzcontent{float:left; height:298px; margin:1px; background-color:#ffffff;}
+
+.gzworks .gztitle{float:left; width:100%; height:40px; background-image:url('/portal/scap/image/index/index_title_background.gif'); background-repeat:repeat-x; background-position:left;}
+.gzworks .gztitle .gzicon{float:left; width:40px; height:40px; background-image:url('/portal/scap/image/index/index_title_icon.gif'); background-repeat:no-repeat; background-position:top;}
+.gzworks .gztitle span{float:left; width:200px; height:40px; line-height:40px; text-align:left; font-family:黑体; font-size:14px; font-weight:bold; color:#3f3f3e;}
+.gzworks .gztitle .gztab{float:right; width:77px; height:40px; line-height:40px; text-align:center; background-repeat:no-repeat; background-position:center; cursor:pointer;}
+.gzworks .gztitle .gztab_selected{background-image:url('/portal/scap/image/index/index_tab_selected.gif');}
+
+.gzworks .gzbody{float:left; width:98%; height:258px; margin:4px 1%; background-color:f7f7f7;}
+.gzworks .gzbody .gzrow{float:left; width:100%; height:25px; cursor:pointer;}
+.gzworks .gzbody .gzrow_odd{background-color:#ebeadd;}
+.gzworks .gzbody .gzrow_selected{background-color:#e3e2d0;}
+.gzworks .gzbody .gzrow .gzicon1{float:left; width:24px; height:100%; background-repeat:no-repeat; background-position:center;}
+.gzworks .gzbody .gzrow .gzicon2{float:right; width:23px; height:100%;background-repeat:no-repeat; background-position:center;}
+.gzworks .gzbody .gzrow .gzicon_select{background-image:url('/portal/scap/image/index/gzicon_select.gif');}
+.gzworks .gzbody .gzrow .gzicon_calendar{background-image:url('/portal/scap/image/index/gzicon_calendar.gif');}
+.gzworks .gzbody .gzrow .gzicon_selected{background-image:url('/portal/scap/image/index/gzicon_selected.gif');}
+.gzworks .gzbody .gzrow .gzicon_calendar_selected{background-image:url('/portal/scap/image/index/gzicon_calendar_selected.gif');}
+.gzworks .gzbody .gzrow .gzcaption{float:left; width:50%; height:100%; line-height:25px; text-align:left; margin-left:10px; font-family:宋体; font-size:12px; color:#3f3f3e; overflow:hidden;}
+.gzworks .gzbody .gzrow .gzdate{float:right; width:120px; height:100%; line-height:25px; font-family:宋体; font-size:11px; color:#3f3f3e;}
+.gzworks .gzbody .gzrow .gzcaption_selected{text-decoration:underline; font-weight:bold; color:#339999;}
+.gzworks .gzbody .gzrow .gzdate_selected{color:#339999;}
+.gzworks .gzbody .nodata{width:100%; height:100%; text-align:center; line-height:258px; font-size:25px; font-family:宋体;}
+.gzworks .gzbody .gzdoc{float:left; width:100%; height:25px; line-height:25px; cursor:pointer;}
+.gzworks .gzbody .gzdoc .gzdoccaption{float:left; text-align:left; width:60%; margin-left:20px; font-family:宋体; font-size:12px; color:#3f3f3e; overflow:hidden;}
+.gzworks .gzbody .gzdoc .todo{float:right; width:80px; height:25px; line-height:25px; margin-right:20px;}
+.gzworks .gzbody .gzdoc_selected{background-color:#e3e2d0; }
+.gzworks .gzbody .gzdoc_selected .gzdoccaption{text-decoration:underline; color:#339999;}
+.gzworks .gzbody .gzdoc_t{background-color:#e3e2d0; }
+.gzworks .gzbody .gzdoc_t .gzdoccaption{color:#339999;}
+.gzworks .gzbody .gzdoclist{float:left; width:100%; height:175px; display:none; overflow-x:hidden; overflow:auto; border-top:solid 2px #666666; border-bottom:dashed 1px #666666;}
+.gzworks .gzbody .gzdoclist .gzdoclistrow{float:right; width:90%; height:25px;}
+.gzworks .gzbody .gzdoclist .gzdoclistrow .gzcaption{float:left; width:50%; height:25px; line-height:25px; text-align:left; font-family:宋体; font-size:12px; color:#3f3f3e;}
+.gzworks .gzbody .gzdoclist .gzdoclistrow .gzdate{float:right; width:120px; height:100%; margin-right:10px; line-height:25px; font-family:宋体; font-size:11px; color:#3f3f3e; text-align:right;}
+.gzworks .gzbody .gzdoclist .gzdoclistrow .gzcalendar{float:right; width:23px; height:100%; background-repeat:no-repeat; background-position:center; background-image:url('/portal/scap/image/index/gzicon_calendar_selected.gif');}
+
+.gzcopyright{float:left; width:100%; height:74px;}
+.gzcopyright .footer_sj{float:left; width:100%; height:7px; background-image:url('/portal/scap/image/index/index_footer_sj.gif'); background-repeat:repeat-x; background-position:left;}
+.gzcopyright .footer{float:left; width:100%; height:67px; background-image:url('/portal/scap/image/index/index_footer.gif'); background-repeat:repeat-x; background-position:left;}
+.gzcopyright .footer .copyrightinfo{float:left; width:100%; height:50px; line-height:25px; margin-top:8px; font-size:12px; color:white; text-align:center;}
+
+.indexPopFloor{width:100%; height:100%; z-index:5; position:fixed; left:0px; top:0px; background-color:gray; opacity:0.5; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);}
+.indexPop{width:80%; height:80%; left:10%; top:10%; z-index:10; position:fixed; background-color:white;}
+.indexPop .indexPop_head{width:100%; height:40px; line-height:40px; font-size:17px; color:white; font-family:黑体; font-weight:bold; background-color:#0487b8;}
+.indexPop .indexPop_head .close{float:right; width:36px; height:36px; margin:2px; line-height:36px; background-color:#bc1c48; font-size:36px; font-weight:bold; cursor:pointer;}
+.indexPop .indexPop_head .close_hover{margin:3px 1px 1px 3px;}
+.indexPop .indexPop_body{height:90%; padding:0px 10%; overflow:auto;}

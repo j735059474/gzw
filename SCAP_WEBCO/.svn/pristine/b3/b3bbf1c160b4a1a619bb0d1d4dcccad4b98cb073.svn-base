@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget controllerClazz="nc.scap.pub.work_type.Work_typeListWinMainViewCtrl" id="main" refId="main" sourcePackage="pub/src/public/">
+    <Attributes>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+    </PlugoutDescs>
+    <PluginDescs>
+        <PluginDesc id="simpleQuery_plugin" methodName="doQueryChange">
+        </PluginDesc>
+        <PluginDesc id="org_plugin" methodName="doOrgChange">
+        </PluginDesc>
+        <PluginDesc id="refresh_plugin" methodName="doRefresh">
+            <PluginDescItem clazztype="java.lang.String" id="OPERATE_ROW">
+            </PluginDescItem>
+        </PluginDesc>
+    </PluginDescs>
+    <Connectors>
+        <Connector connType="6" id="listViewConnID" pluginId="refresh_plugin" plugoutId="proxyAfterSavePlugout" source="nc.scap.pub.notice.work_type_listwin" sourceWindow="" target="main" targetWindow="">
+        </Connector>
+    </Connectors>
+    <Models>
+        <Datasets>
+            <DatasetRelations>
+                <DatasetRelation detailDataset="receive_org" detailForeignKey="pk_work_report_type" id="scapco_receive_org_type_scapco_work_reporttype" masterDataset="work_report_type" masterKeyField="pk_work_report_type">
+                </DatasetRelation>
+            </DatasetRelations>
+            <MdDataset caption="工作报告类型" controlwidgetopeStatus="false" enabled="false" id="work_report_type" lazyLoad="false" notNullBody="false" objMeta="scapco.work_report_type" voMeta="nc.vo.scap.work_report_type.Work_report_type">
+                <FieldRelations>
+                    <FieldRelation id="ye_type_rel" needProcess="true" refDataset="$refds_uap_Defdoc_scapco_0003" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="ye_type_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_defdoc" value="ye_type">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <RefMdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_orgs" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_orgs" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="接收范围" controlwidgetopeStatus="false" enabled="false" id="receive_org" lazyLoad="true" notNullBody="false" objMeta="scapco.receive_org" pageSize="15" voMeta="nc.vo.scapco.work_report_type.receive_org">
+                <FieldRelations>
+                    <FieldRelation id="notice_org_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="notice_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="notice_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="notice_visual_org_rel" needProcess="true" refDataset="$refds_scapco_pub_visualOrganization" useCache="true">
+                        <MatchFields>
+                            <Field readField="visualorg_name" writeField="notice_visual_org_visualorg_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_visualorg" value="notice_visual_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad_org" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <RefMdDataset caption="组织基本信息" controlwidgetopeStatus="false" enabled="false" id="$refds_scapco_pub_visualOrganization" lazyLoad="true" notNullBody="false" objMeta="scapco.pub_visualOrganization" voMeta="nc.vo.scapco.pub_visualorganization.visualOrganization">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="报告业务类型(自定义档案)" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_Defdoc_scapco_0003" lazyLoad="true" notNullBody="false" objMeta="uap.Defdoc-scapco_0003" voMeta="nc.vo.bd.defdoc.DefdocVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+        </Datasets>
+        <ComboDatas>
+            <MDComboDataConf caption="报告主体" fullclassName="8d2d85da-ce05-42f9-9189-8da159798144" id="combo_work_report_type_report_body">
+            </MDComboDataConf>
+            <MDComboDataConf caption="是否选项" fullclassName="1fca2d9d-4bae-40a7-950a-bb9e827b192c" id="combo_work_report_type_is_auto_urge">
+            </MDComboDataConf>
+            <MDComboDataConf caption="报送频率" fullclassName="5368e9de-131f-4398-81d9-15403863fe19" id="combo_work_report_type_attrname">
+            </MDComboDataConf>
+            <MDComboDataConf caption="报送方式" fullclassName="5175b6bd-9927-4c32-b70b-4562015099bb" id="combo_work_report_type_report_way">
+            </MDComboDataConf>
+            <MDComboDataConf caption="催报频率" fullclassName="0c01c374-55d6-42fa-82c1-176642a48552" id="combo_work_report_type_urge_frequency">
+            </MDComboDataConf>
+            <MDComboDataConf caption="信息发送方式" fullclassName="2690e7fd-6bcc-4218-8131-04fd00bb863f" id="combo_work_report_type_urge_info_trans_way">
+            </MDComboDataConf>
+            <MDComboDataConf caption="是否选项" fullclassName="1fca2d9d-4bae-40a7-950a-bb9e827b192c" id="combo_work_report_type_is_ass_noti">
+            </MDComboDataConf>
+            <MDComboDataConf caption="报告格式" fullclassName="01da526b-bf82-4f91-b283-dc3a8066727c" id="combo_work_report_type_report_pattern">
+            </MDComboDataConf>
+            <MDComboDataConf caption="是否选项" fullclassName="1fca2d9d-4bae-40a7-950a-bb9e827b192c" id="combo_work_report_type_enabled">
+            </MDComboDataConf>
+        </ComboDatas>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="nc.scap.pub.notice_manager.BusinessTypeGridRefCtrl" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_work_report_type_ye_type_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_defdoc,name" refId="" refcode="报告业务类型(自定义档案)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="工作报告类型_报告业务类型(自定义档案)" usePower="false" writeDs="work_report_type" writeFields="ye_type,ye_type_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_receive_org_notice_visual_org_visualorg_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_visualorg,visualorg_name" refId="" refcode="组织维护" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="接收范围_组织维护" usePower="false" writeDs="receive_org" writeFields="notice_visual_org,notice_visual_org_visualorg_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <GridComp autoRowHeight="false" canCopy="true" caption="工作报告类型" checkBoxModel="1" dataset="work_report_type" editable="true" enabled="true" expandTree="false" id="work_report_type_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_work_report_type" fixedHeader="false" id="pk_work_report_type" imageOnly="false" langDir="work_report_type" nullAble="false" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="工作报告类型主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="ye_type" fixedHeader="false" id="ye_type" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="业务类型" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="ye_type_name" fixedHeader="false" id="ye_type_name" imageOnly="false" nullAble="true" refNode="refnode_work_report_type_ye_type_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="业务类型" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="report_type" fixedHeader="false" id="report_type" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="报告类型" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="report_code" fixedHeader="false" id="report_code" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="报告编码" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="report_body" fixedHeader="false" id="report_body" imageOnly="false" langDir="work_report_type" nullAble="true" refComboData="combo_work_report_type_report_body" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="报告主体" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="report_way" fixedHeader="false" id="report_way" imageOnly="false" langDir="work_report_type" nullAble="true" refComboData="combo_work_report_type_report_way" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="报送方式" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="attrname" fixedHeader="false" id="attrname" imageOnly="false" langDir="work_report_type" nullAble="true" refComboData="combo_work_report_type_attrname" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="报送频率" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="report_pattern" fixedHeader="false" id="report_pattern" imageOnly="false" langDir="work_report_type" nullAble="true" refComboData="combo_work_report_type_report_pattern" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="报告格式" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="report_templet" fixedHeader="false" id="report_templet" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="报告模板" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="is_ass_noti" fixedHeader="false" id="is_ass_noti" imageOnly="false" langDir="work_report_type" nullAble="true" refComboData="combo_work_report_type_is_ass_noti" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="是否关联通知" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="is_auto_urge" fixedHeader="false" id="is_auto_urge" imageOnly="false" langDir="work_report_type" nullAble="true" refComboData="combo_work_report_type_is_auto_urge" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="是否自动催报" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="urge_time" fixedHeader="false" id="urge_time" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="催报提前天数(天)" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="urge_info_trans_way" fixedHeader="false" id="urge_info_trans_way" imageOnly="false" langDir="work_report_type" nullAble="true" refComboData="combo_work_report_type_urge_info_trans_way" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="催报信息发送方式" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="expiration_date" fixedHeader="false" id="expiration_date" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="报告截止日期" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="urge_content_gzw" fixedHeader="false" id="urge_content_gzw" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="报送统计内容格式（国资委用户）" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="urge_content_qy" fixedHeader="false" id="urge_content_qy" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="催报消息内容格式（企业用户）" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="urge_frequency" fixedHeader="false" id="urge_frequency" imageOnly="false" langDir="work_report_type" nullAble="true" refComboData="combo_work_report_type_urge_frequency" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="催报频率" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="enabled" fixedHeader="false" id="enabled" imageOnly="false" langDir="work_report_type" nullAble="true" refComboData="combo_work_report_type_enabled" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="是否启用" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="remark" fixedHeader="false" id="remark" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备注" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def1" fixedHeader="false" id="def1" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段1" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def2" fixedHeader="false" id="def2" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段2" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def3" fixedHeader="false" id="def3" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段3" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def4" fixedHeader="false" id="def4" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段4" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def5" fixedHeader="false" id="def5" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段5" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def6" fixedHeader="false" id="def6" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段6" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def7" fixedHeader="false" id="def7" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段7" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def8" fixedHeader="false" id="def8" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段8" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def9" fixedHeader="false" id="def9" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段9" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def10" fixedHeader="false" id="def10" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段10" textAlign="left" visible="false" width="120">
+            </Column>
+        </GridComp>
+        <GridComp autoRowHeight="false" canCopy="true" caption="接收范围" checkBoxModel="1" dataset="receive_org" editable="true" enabled="true" expandTree="false" id="receive_org_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="notice_org" fixedHeader="false" id="notice_org" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="接收企业" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="true" dataType="String" editable="true" editorType="Reference" field="notice_org_name" fixedHeader="false" id="notice_org_name" imageOnly="false" nullAble="true" refNode="refnode_receive_org_notice_org_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="接收企业" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="notice_visual_org" fixedHeader="false" id="notice_visual_org" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="接收组织" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="true" dataType="String" editable="true" editorType="Reference" field="notice_visual_org_visualorg_name" fixedHeader="false" id="notice_visual_org_visualorg_name" imageOnly="false" nullAble="true" refNode="refnode_receive_org_notice_visual_org_visualorg_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="接收组织" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def1" fixedHeader="false" id="def1" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段1" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def2" fixedHeader="false" id="def2" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段2" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def3" fixedHeader="false" id="def3" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段3" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def4" fixedHeader="false" id="def4" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段4" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def5" fixedHeader="false" id="def5" imageOnly="false" langDir="work_report_type" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段5" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_work_report_type" fixedHeader="false" id="pk_work_report_type" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上层单据主键" textAlign="left" visible="false" width="120">
+            </Column>
+        </GridComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar">
+            <MenuItem id="add" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Init_Ss_Ms_StateManager" text="新增">
+                <Events>
+                    <Event async="true" methodName="onAdd" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="edit" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="修改">
+                <Events>
+                    <Event async="true" methodName="onEdit" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="del" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="删除">
+                <Events>
+                    <Event async="true" methodName="onDelete" name="onclick" onserver="true">
+                        <SubmitRule>
+                            <Widget id="main">
+                            </Widget>
+                        </SubmitRule>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

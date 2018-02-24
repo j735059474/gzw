@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+    <scapfd_testref>
+		<scapfd_testref.fdmonth uapDisplayName="1-x">
+        </scapfd_testref.fdmonth>
+        <scapfd_testref.fdmonth0 uapDisplayName="1~快报月">
+        </scapfd_testref.fdmonth0>
+        <scapfd_testref.operatingReceipt uapDisplayName="省属企业营业收入（本年累计）">
+        </scapfd_testref.operatingReceipt>
+		<scapfd_testref.upOrdown0 uapDisplayName="增长">
+        </scapfd_testref.upOrdown0>
+		<scapfd_testref.operatingReceiptRise  uapDisplayName="省属企业营业收入（本年累计）同比增长率">
+        </scapfd_testref.operatingReceiptRise>
+        
+    <scapfd_testref.ls79 uapDisplayName="增长">
+        </scapfd_testref.ls79>
+    <scapfd_testref.ls24  uapDisplayName="省属企业营业收入（本年累计）同比增长金额">
+        </scapfd_testref.ls24>
+        
+		<scapfd_testref.totalProfit  uapDisplayName="省属企业利润总额（本年累计）">
+        </scapfd_testref.totalProfit>
+		<scapfd_testref.upOrdown1  uapDisplayName="增长">
+        </scapfd_testref.upOrdown1>
+		<scapfd_testref.totalProfitRise  uapDisplayName="省属企业利润总额（本年累计）同比增长率">
+        </scapfd_testref.totalProfitRise>
+       
+    <scapfd_testref.ls80 uapDisplayName="增长">
+        </scapfd_testref.ls80>
+    <scapfd_testref.ls25  uapDisplayName="省属企业利润总额（本年累计）同比增长金额">
+        </scapfd_testref.ls25>
+     
+    
+		<scapfd_testref.generalAssets  uapDisplayName="省属企业资产总额（本年累计）">
+        </scapfd_testref.generalAssets>
+		<scapfd_testref.upOrdown2  uapDisplayName="增长">
+        </scapfd_testref.upOrdown2>
+		<scapfd_testref.generalAssetsRise  uapDisplayName="省属企业资产总额（本年累计）同比增长率">
+        </scapfd_testref.generalAssetsRise>
+        
+    <scapfd_testref.ls81 uapDisplayName="增长">
+        </scapfd_testref.ls81>
+    <scapfd_testref.ls26  uapDisplayName="省属企业资产总额（本年累计）同比增长金额">
+        </scapfd_testref.ls26>
+        
+		<scapfd_testref.totalEquity  uapDisplayName="省属企业所有者权益总额(本年累计)">
+        </scapfd_testref.totalEquity>
+		<scapfd_testref.upOrdown3  uapDisplayName="增长">
+        </scapfd_testref.upOrdown3>
+		<scapfd_testref.totalEquityRise  uapDisplayName="省属企业所有者权益总额（本年累计）同比增长率">
+        </scapfd_testref.totalEquityRise>
+    <scapfd_testref.ls82 uapDisplayName="增长">
+        </scapfd_testref.ls82>
+    <scapfd_testref.ls27  uapDisplayName="省属企业所有者权益总额（本年累计）同比增长金额">
+        </scapfd_testref.ls27>
+        
+  
+    <scapfd_testref.ls28 uapDisplayName="快报月">
+        </scapfd_testref.ls28>
+		<scapfd_testref.ls29 uapDisplayName="省属企业营业收入（快报月）">
+        </scapfd_testref.ls29>
+    <scapfd_testref.ls30  uapDisplayName="增长">
+        </scapfd_testref.ls30>
+		<scapfd_testref.ls31 uapDisplayName="省属企业营业收入（快报月）比上月增长百分比">
+        </scapfd_testref.ls31>
+    <scapfd_testref.ls32  uapDisplayName="省属企业利润总额（快报月）">
+        </scapfd_testref.ls32>
+		<scapfd_testref.ls33  uapDisplayName="增长">
+        </scapfd_testref.ls33>
+		<scapfd_testref.ls34  uapDisplayName="省属企业利润总额（快报月）比上月增长百分比">
+        </scapfd_testref.ls34>
+        
+        
+        <scapfd_testref.fdmonth1 uapDisplayName="1~快报月">
+        </scapfd_testref.fdmonth1>
+		<scapfd_testref.industrialOutput  uapDisplayName="省属企业工业总产值（本年累计）">
+        </scapfd_testref.industrialOutput>
+		<scapfd_testref.upOrdown4  uapDisplayName="增长">
+        </scapfd_testref.upOrdown4>
+		<scapfd_testref.industrialOutputRise  uapDisplayName="省属企业工业总产值（本年累计）同比增长率">
+		</scapfd_testref.industrialOutputRise>
+		<scapfd_testref.salesValue  uapDisplayName="省属企业工业销售产值（本年累计）">
+		</scapfd_testref.salesValue>
+		<scapfd_testref.upOrdown5  uapDisplayName="增长">
+        </scapfd_testref.upOrdown5>
+		<scapfd_testref.salesValueRise  uapDisplayName="省属企业工业销售产值同比（本年累计）同比增长率">
+		</scapfd_testref.salesValueRise>
+		<scapfd_testref.valueAdded  uapDisplayName="省属企业增加值（本年累计）">
+		</scapfd_testref.valueAdded>
+		<scapfd_testref.upOrdown6  uapDisplayName="增长">
+        </scapfd_testref.upOrdown6>
+		<scapfd_testref.valueAddedRise  uapDisplayName="省属企业增加值同比（本年累计）同比增长率">
+		</scapfd_testref.valueAddedRise>
+		
+        <scapfd_testref.fdmonth3 uapDisplayName="1~快报月">
+        </scapfd_testref.fdmonth3>
+		<scapfd_testref.Revenues  uapDisplayName="省属企业营业收入（本年累计））">
+		</scapfd_testref.Revenues>
+		<scapfd_testref.upOrdown7  uapDisplayName="增长">
+        </scapfd_testref.upOrdown7>
+		<scapfd_testref.RevenuesRise  uapDisplayName="省属企业营业收入（本年累计）同比增长率">
+		</scapfd_testref.RevenuesRise>
+		<scapfd_testref.fdmonth4  uapDisplayName="1-前一快报月，如果是1月份，则没有此数字">
+		</scapfd_testref.fdmonth4>
+		<scapfd_testref.upOrdown8  uapDisplayName="增长">
+        </scapfd_testref.upOrdown8>
+		<scapfd_testref.RevenuesPoint  uapDisplayName="省属企业营业收入（本年累计）同比提高百分点">
+		</scapfd_testref.RevenuesPoint>
+		
+		<scapfd_testref.ls35 uapDisplayName="1~快报月">
+        </scapfd_testref.ls35>
+		
+		<scapfd_testref.fdmonth6  uapDisplayName="1~快报月">
+		</scapfd_testref.fdmonth6>
+		<scapfd_testref.totalProfit1  uapDisplayName="省属企业利润总额（本年累计）">
+		</scapfd_testref.totalProfit1>
+		<scapfd_testref.upOrdown9  uapDisplayName="增长">
+        </scapfd_testref.upOrdown9>
+		<scapfd_testref.totalProfit1Rise  uapDisplayName="省属企业利润总额（本年累计）同比增长金额">
+		</scapfd_testref.totalProfit1Rise>
+		<scapfd_testref.upOrdown10  uapDisplayName="增长">
+        </scapfd_testref.upOrdown10>
+		<scapfd_testref.totalProfitRise1  uapDisplayName="省属企业利润总额（本年累计）同比增长率">
+		</scapfd_testref.totalProfitRise1>
+		<scapfd_testref.fdmonth7  uapDisplayName="1~快报月-1，即从1到当前的上一个月，如果是1月份，则没有此数字">
+		</scapfd_testref.fdmonth7>
+		<scapfd_testref.totalProfitPoint  uapDisplayName="省属企业利润总额（本年累计）同比提高百分点">
+		</scapfd_testref.totalProfitPoint>
+		
+		<scapfd_testref.ls46 uapDisplayName="1~快报月">
+        </scapfd_testref.ls46>
+   
+		
+		<scapfd_testref.fdmonth9 uapDisplayName="快报月">
+		</scapfd_testref.fdmonth9>
+		<scapfd_testref.generalAssets1 uapDisplayName="省属企业资产总额（本年累计）">
+		</scapfd_testref.generalAssets1>
+		<scapfd_testref.totalEquity1 uapDisplayName="省属企业所有者权益总额(本年累计)">
+		</scapfd_testref.totalEquity1>
+		<scapfd_testref.upOrdown11  uapDisplayName="增长">
+        </scapfd_testref.upOrdown11>
+		<scapfd_testref.generalAssetsRise1  uapDisplayName="省属企业资产总额（本年累计）同比增长率">
+        </scapfd_testref.generalAssetsRise1>
+		<scapfd_testref.totalEquityRise1  uapDisplayName="省属企业所有者权益总额（本年累计）同比增长率">
+        </scapfd_testref.totalEquityRise1>
+		<scapfd_testref.leverage  uapDisplayName="省属企业资产负债率">
+        </scapfd_testref.leverage>
+        
+		<scapfd_testref.ls57 uapDisplayName="1~快报月">
+        </scapfd_testref.ls57>
+        <scapfd_testref.fdmonth10 uapDisplayName="1~快报月">
+		</scapfd_testref.fdmonth10>
+		<scapfd_testref.theTotalTax uapDisplayName="省属企业上交税费总额（本年累计）">
+		</scapfd_testref.theTotalTax>
+		<scapfd_testref.upOrdown12  uapDisplayName="增长">
+        </scapfd_testref.upOrdown12>
+		<scapfd_testref.theTotalTaxRise uapDisplayName="省属企业上交税费总额（本年累计）同比增长率">
+		</scapfd_testref.theTotalTaxRise>
+		<scapfd_testref.fdmonth11 uapDisplayName="1-~快报月-1，即从1到当前的上一个月，如果是1月份，则没有此数字">
+		</scapfd_testref.fdmonth11>
+		<scapfd_testref.upOrdown13  uapDisplayName="上升">
+        </scapfd_testref.upOrdown13>
+		<scapfd_testref.theTotalTaxPoint uapDisplayName="省属企业上交税费总额同比提高百分点">
+		</scapfd_testref.theTotalTaxPoint>
+		
+		<scapfd_testref.ls68 uapDisplayName="1~快报月">
+        </scapfd_testref.ls68>
+		<scapfd_testref.fdmonth13 uapDisplayName="当前月">
+        </scapfd_testref.fdmonth13>
+		<scapfd_testref.ls22 uapDisplayName="省属企业资产负债率">
+        </scapfd_testref.ls22>
+		<scapfd_testref.upOrdown28  uapDisplayName="上升">
+        </scapfd_testref.upOrdown28> 
+    <scapfd_testref.ls21 uapDisplayName="省属企业资产负债率环比提高百分点">
+        </scapfd_testref.ls21>   
+        
+    <scapfd_testref.ls20 uapDisplayName="1~快报月">
+        </scapfd_testref.ls20>
+    <scapfd_testref.upOrdown27  uapDisplayName="增长">
+        </scapfd_testref.upOrdown27>
+    <scapfd_testref.ls19 uapDisplayName="省属企业营业成本（本年累计）同比增长率">
+        </scapfd_testref.ls19>
+    <scapfd_testref.ls18 uapDisplayName="1~快报月-1">
+        </scapfd_testref.ls18>
+    <scapfd_testref.upOrdown26  uapDisplayName="上升">
+        </scapfd_testref.upOrdown26>
+    <scapfd_testref.ls17 uapDisplayName="省属企业营业成本（本年累计）同比增长率较上月同比增长率增长百分点">
+        </scapfd_testref.ls17>
+        
+    <scapfd_testref.upOrdown25  uapDisplayName="上升">
+        </scapfd_testref.upOrdown25>
+    <scapfd_testref.ls16 uapDisplayName="省属企业营业成本（本年累计）同比增长率高于营业收入（本年累计）同比增长率百分点">
+        </scapfd_testref.ls16>
+        
+    <scapfd_testref.ls15 uapDisplayName="快报月">
+        </scapfd_testref.ls15>
+    <scapfd_testref.ls14 uapDisplayName="省属企业应收账款（本年累计）金额">
+        </scapfd_testref.ls14>
+		<scapfd_testref.ls13 uapDisplayName="省属企业存货（本年累计）金额">
+        </scapfd_testref.ls13>
+    <scapfd_testref.ls12 uapDisplayName="1-上月">
+        </scapfd_testref.ls12>
+    <scapfd_testref.upOrdown24  uapDisplayName="上升">
+        </scapfd_testref.upOrdown24>
+    <scapfd_testref.ls11 uapDisplayName="省属企业应收账款（本年累计）环比上升百分点">
+        </scapfd_testref.ls11>
+    <scapfd_testref.upOrdown23  uapDisplayName="上升">
+        </scapfd_testref.upOrdown23>
+    <scapfd_testref.ls10 uapDisplayName="省属企业存货（本年累计）环比上升百分点">
+        </scapfd_testref.ls10>
+    <scapfd_testref.upOrdown22  uapDisplayName="增长">
+        </scapfd_testref.upOrdown22>
+    <scapfd_testref.ls09 uapDisplayName="省属企业应收账款本年累计同比增长率">
+        </scapfd_testref.ls09>
+    <scapfd_testref.upOrdown21  uapDisplayName="增长">
+        </scapfd_testref.upOrdown21>
+    <scapfd_testref.ls08 uapDisplayName="省属企业存货（本年累计）同比增长率">
+        </scapfd_testref.ls08>
+    <scapfd_testref.ls07 uapDisplayName="1~快报月-1">
+        </scapfd_testref.ls07>
+    <scapfd_testref.ls06 uapDisplayName="省属企业财务费用支出（本年累计）">
+        </scapfd_testref.ls06>
+    <scapfd_testref.upOrdown20  uapDisplayName="增长">
+        </scapfd_testref.upOrdown20>
+    <scapfd_testref.ls05 uapDisplayName="省属企业财务费用支出（本年累计）同比增长率">
+        </scapfd_testref.ls05>
+		<scapfd_testref.ls04 uapDisplayName="1~快报月-1">
+        </scapfd_testref.ls04>
+    <scapfd_testref.upOrdown19  uapDisplayName="上升">
+        </scapfd_testref.upOrdown19>
+    <scapfd_testref.ls03 uapDisplayName="省属企业财务费用支出（本年累计）环比上升百分点">
+        </scapfd_testref.ls03>
+    <scapfd_testref.ls02 uapDisplayName="省属企业利息支出净额（本年累计）">
+        </scapfd_testref.ls02>
+    <scapfd_testref.upOrdown18  uapDisplayName="增长">
+        </scapfd_testref.upOrdown18>
+		 <scapfd_testref.ls01 uapDisplayName="省属企业利息支出净额（本年累计）同比增长率">
+        </scapfd_testref.ls01>
+    </scapfd_testref>
+     <scapfd_srqk>
+      <scapfd_srqk.qymc uapDisplayName="企业名称">
+      </scapfd_srqk.qymc>
+      <scapfd_srqk.ljyysr uapDisplayName="累计营业收入（亿元）">
+      </scapfd_srqk.ljyysr>
+      <scapfd_srqk.tbzzl uapDisplayName="同比增长率">
+      </scapfd_srqk.tbzzl>
+    </scapfd_srqk>
+     <scapfd_lrsr>
+      <scapfd_lrsr.qymc uapDisplayName="企业名称">
+      </scapfd_lrsr.qymc>
+      <scapfd_lrsr.ljlrsr uapDisplayName="累计利润收入（亿元）">
+      </scapfd_lrsr.ljlrsr>
+      <scapfd_lrsr.tbzzl uapDisplayName="同比增长率">
+      </scapfd_lrsr.tbzzl>
+    </scapfd_lrsr>
+    <scapfd_zcsr>
+      <scapfd_zcsr.qymc uapDisplayName="企业名称">
+      </scapfd_zcsr.qymc>
+      <scapfd_zcsr.ljzcsr uapDisplayName="累计资产收入（亿元）">
+      </scapfd_zcsr.ljzcsr>
+      <scapfd_zcsr.tbzzl uapDisplayName="同比增长率">
+      </scapfd_zcsr.tbzzl>
+    </scapfd_zcsr>
+    <scapfd_yjsf>
+      <scapfd_yjsf.qymc uapDisplayName="企业名称">
+      </scapfd_yjsf.qymc>
+      <scapfd_yjsf.ljyjsf uapDisplayName="累计已交税费收入（亿元）">
+      </scapfd_yjsf.ljyjsf>
+      <scapfd_yjsf.tbzzl uapDisplayName="同比增长率">
+      </scapfd_yjsf.tbzzl>
+    </scapfd_yjsf>
+</Root>

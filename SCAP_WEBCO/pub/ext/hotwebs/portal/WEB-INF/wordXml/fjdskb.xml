@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+    <scapfd_dskbmb>
+		<scapfd_dskbmb.year0 uapDisplayName="年度">
+		</scapfd_dskbmb.year0>
+		<scapfd_dskbmb.month0 uapDisplayName="月度">
+		</scapfd_dskbmb.month0>
+		
+		<scapfd_dskbmb.year1 uapDisplayName="年度">
+		</scapfd_dskbmb.year1>
+		<scapfd_dskbmb.month1 uapDisplayName="月度">
+		</scapfd_dskbmb.month1>
+		<scapfd_dskbmb.zcze uapDisplayName="资产总额">
+		</scapfd_dskbmb.zcze>
+		<scapfd_dskbmb.zczetb uapDisplayName="资产总额同比增加">
+		</scapfd_dskbmb.zczetb>
+		<scapfd_dskbmb.zczetbl uapDisplayName="资产总额同比增加率">
+		</scapfd_dskbmb.zczetbl>
+		<scapfd_dskbmb.zczeqs uapDisplayName="资产总额排名前三位">
+		</scapfd_dskbmb.zczeqs>
+		<scapfd_dskbmb.zcze1 uapDisplayName="资产总额排名第一">
+		</scapfd_dskbmb.zcze1>
+		<scapfd_dskbmb.zcze1je uapDisplayName="资产总额排名第一金额">
+		</scapfd_dskbmb.zcze1je>
+		<scapfd_dskbmb.zcze2 uapDisplayName="资产总额排名第二">
+		</scapfd_dskbmb.zcze2>
+		<scapfd_dskbmb.zcze2je uapDisplayName="资产总额排名第二金额">
+		</scapfd_dskbmb.zcze2je>
+		<scapfd_dskbmb.zcze3 uapDisplayName="资产总额排名第三">
+		</scapfd_dskbmb.zcze3>
+		<scapfd_dskbmb.zcze3je uapDisplayName="资产总额排名第三金额">
+		</scapfd_dskbmb.zcze3je>
+		<scapfd_dskbmb.fzze uapDisplayName="负债总额">
+		</scapfd_dskbmb.fzze>
+		<scapfd_dskbmb.fzzetb uapDisplayName="负债总额同比">
+		</scapfd_dskbmb.fzzetb>
+		<scapfd_dskbmb.fzzetbl uapDisplayName="负债总额同比率">
+		</scapfd_dskbmb.fzzetbl>
+		<scapfd_dskbmb.gsymgsdsyzqy uapDisplayName="归属于母公司的所有者权益">
+		</scapfd_dskbmb.gsymgsdsyzqy>
+		<scapfd_dskbmb.gsymgsdsyzqytb uapDisplayName="归属于母公司的所有者权益同比">
+		</scapfd_dskbmb.gsymgsdsyzqytb>
+		<scapfd_dskbmb.gsymgsdsyzqytbl uapDisplayName="归属于母公司的所有者权益同比率">
+		</scapfd_dskbmb.gsymgsdsyzqytbl>
+		<scapfd_dskbmb.gsymgsdsyzqy200gs uapDisplayName="归属于母公司的所有者权益超过200亿元个数">
+		</scapfd_dskbmb.gsymgsdsyzqy200gs>
+		<scapfd_dskbmb.gsymgsdsyzqy2001 uapDisplayName="归属于母公司的所有者权益第一">
+		</scapfd_dskbmb.gsymgsdsyzqy2001>
+		<scapfd_dskbmb.gsymgsdsyzqy2001je uapDisplayName="归属于母公司的所有者权益第一金额">
+		</scapfd_dskbmb.gsymgsdsyzqy2001je>
+		<scapfd_dskbmb.gsymgsdsyzqy2002 uapDisplayName="归属于母公司的所有者权益第二">
+		</scapfd_dskbmb.gsymgsdsyzqy2002>
+		<scapfd_dskbmb.gsymgsdsyzqy2002je uapDisplayName="归属于母公司的所有者权益第二金额">
+		</scapfd_dskbmb.gsymgsdsyzqy2002je>
+		<scapfd_dskbmb.gsymgsdsyzqy2003 uapDisplayName="归属于母公司的所有者权益第三">
+		</scapfd_dskbmb.gsymgsdsyzqy2003>
+		<scapfd_dskbmb.gsymgsdsyzqy2003je uapDisplayName="归属于母公司的所有者权益第三金额">
+		</scapfd_dskbmb.gsymgsdsyzqy2003je>
+		<scapfd_dskbmb.gsymgsdsyzqy200qt uapDisplayName="归属于母公司的所有者权益其他超过200亿的地市">
+		</scapfd_dskbmb.gsymgsdsyzqy200qt>
+		<scapfd_dskbmb.pjzcfzl uapDisplayName="平均资产负债率">
+		</scapfd_dskbmb.pjzcfzl>
+		<scapfd_dskbmb.pjzcfzltbl uapDisplayName="平均资产负债率同比率">
+		</scapfd_dskbmb.pjzcfzltbl>
+		
+		<scapfd_dskbmb.month2 uapDisplayName="月度">
+		</scapfd_dskbmb.month2>
+		<scapfd_dskbmb.yysr uapDisplayName="营业收入">
+		</scapfd_dskbmb.yysr>
+		<scapfd_dskbmb.yysrtb uapDisplayName="营业收入同比">
+		</scapfd_dskbmb.yysrtb>
+		<scapfd_dskbmb.yysrtbl uapDisplayName="营业收入同比率">
+		</scapfd_dskbmb.yysrtbl>
+		<scapfd_dskbmb.lrze uapDisplayName="利润总额">
+		</scapfd_dskbmb.lrze>
+		<scapfd_dskbmb.lrzetb uapDisplayName="利润总额同比">
+		</scapfd_dskbmb.lrzetb>
+		<scapfd_dskbmb.lrzetbl uapDisplayName="利润总额同比率">
+		</scapfd_dskbmb.lrzetbl>
+		<scapfd_dskbmb.gsymgssyzdjlr uapDisplayName="归属于母公司所有者的净利润">
+		</scapfd_dskbmb.gsymgssyzdjlr>
+		<scapfd_dskbmb.gsymgssyzdjlrtb uapDisplayName="归属于母公司所有者的净利润同比">
+		</scapfd_dskbmb.gsymgssyzdjlrtb>
+		<scapfd_dskbmb.gsymgssyzdjlrtbl uapDisplayName="归属于母公司所有者的净利润同比率">
+		</scapfd_dskbmb.gsymgssyzdjlrtbl>
+		<scapfd_dskbmb.ylgs uapDisplayName="地市均实现盈利个数">
+		</scapfd_dskbmb.ylgs>
+		<scapfd_dskbmb.lrzeqe uapDisplayName="利润总额较多前二">
+		</scapfd_dskbmb.lrzeqe>
+		<scapfd_dskbmb.month22 uapDisplayName="月度">
+		</scapfd_dskbmb.month22>
+		<scapfd_dskbmb.sjsf uapDisplayName="上交税费">
+		</scapfd_dskbmb.sjsf>
+		<scapfd_dskbmb.sjsftb uapDisplayName="上交税费同比">
+		</scapfd_dskbmb.sjsftb>
+		<scapfd_dskbmb.sjsftbl uapDisplayName="上交税费同比率">
+		</scapfd_dskbmb.sjsftbl>	
+		
+		<scapfd_dskbmb.lastyear uapDisplayName="年度">
+		</scapfd_dskbmb.lastyear>	
+		<scapfd_dskbmb.lastmonth uapDisplayName="月度">
+		</scapfd_dskbmb.lastmonth>	
+		<scapfd_dskbmb.lastyear1 uapDisplayName="年度">
+		</scapfd_dskbmb.lastyear1>	
+		<scapfd_dskbmb.lastmonth1 uapDisplayName="月度">
+		</scapfd_dskbmb.lastmonth1>	
+
+	</scapfd_dskbmb>	
+	<data1>
+		<data1.zczefz uapDisplayName="福州市"/>
+		<data1.zczexm uapDisplayName="厦门"/>
+		<data1.zczezz uapDisplayName="漳州市"/>
+		<data1.zczeqz uapDisplayName="泉州市"/>
+		<data1.zczesm uapDisplayName="三明市"/>
+		<data1.zczept uapDisplayName="莆田市"/>
+		<data1.zczenp uapDisplayName="南平市"/>
+		<data1.zczely uapDisplayName="龙岩市"/>
+		<data1.zczend uapDisplayName="宁德市"/>
+		<data1.zczeptzh uapDisplayName="平潭综合实验区"/>
+		
+		<data1.zczefzs uapDisplayName="福州市"></data1.zczefzs>
+		<data1.zczexms uapDisplayName="厦门"></data1.zczexms>
+		<data1.zczezzs uapDisplayName="漳州市"></data1.zczezzs>
+		<data1.zczeqzs uapDisplayName="泉州市"></data1.zczeqzs>
+		<data1.zczesms uapDisplayName="三明市"></data1.zczesms>
+		<data1.zczepts uapDisplayName="莆田市"></data1.zczepts>
+		<data1.zczenps uapDisplayName="南平市"></data1.zczenps>
+		<data1.zczelys uapDisplayName="龙岩市"></data1.zczelys>
+		<data1.zczends uapDisplayName="宁德市"></data1.zczends>
+		<data1.zczeptzhs uapDisplayName="平潭综合实验区"></data1.zczeptzhs>
+		<data1.zczeg uapDisplayName="各区市国资委所出资企业资产总额构成"></data1.zczeg>
+		<data1.zczebt uapDisplayName="资产总额标题">各区市国资委所出资企业资产总额构成</data1.zczebt>
+	</data1>
+	<data2>
+		<data2.gsyqyzefz uapDisplayName="福州市"/>
+		<data2.gsyqyzexm uapDisplayName="厦门"/>
+		<data2.gsyqyzezz uapDisplayName="漳州市"/>
+		<data2.gsyqyzeqz uapDisplayName="泉州市"/>
+		<data2.gsyqyzesm uapDisplayName="三明市"/>
+		<data2.gsyqyzept uapDisplayName="莆田市"/>
+		<data2.gsyqyzenp uapDisplayName="南平市"/>
+		<data2.gsyqyzely uapDisplayName="龙岩市"/>
+		<data2.gsyqyzend uapDisplayName="宁德市"/>
+		<data2.gsyqyzeptzh uapDisplayName="平潭综合实验区"/>
+		
+		<data2.gsyqyzefzs uapDisplayName="福州市"></data2.gsyqyzefzs>
+		<data2.gsyqyzexms uapDisplayName="厦门"></data2.gsyqyzexms>
+		<data2.gsyqyzezzs uapDisplayName="漳州市"></data2.gsyqyzezzs>
+		<data2.gsyqyzeqzs uapDisplayName="泉州市"></data2.gsyqyzeqzs>
+		<data2.gsyqyzesms uapDisplayName="三明市"></data2.gsyqyzesms>
+		<data2.gsyqyzepts uapDisplayName="莆田市"></data2.gsyqyzepts>
+		<data2.gsyqyzenps uapDisplayName="南平市"></data2.gsyqyzenps>
+		<data2.gsyqyzelys uapDisplayName="龙岩市"></data2.gsyqyzelys>
+		<data2.gsyqyzends uapDisplayName="宁德市"></data2.gsyqyzends>
+		<data2.gsyqyzeptzhs uapDisplayName="平潭综合实验区"></data2.gsyqyzeptzhs>
+		<data2.gsyqyzeg uapDisplayName="各区市国资委所出资企业所有者权益总额构成"></data2.gsyqyzeg>
+		<data2.gsyqyzebt uapDisplayName="所有者权益总额标题">各区市国资委所出资企业所有者权益总额构成</data2.gsyqyzebt>
+	</data2>
+	<data3>
+		<data3.gsyqyzefz uapDisplayName="福州市"/>
+		<data3.gsyqyzexm uapDisplayName="厦门"/>
+		<data3.gsyqyzezz uapDisplayName="漳州市"/>
+		<data3.gsyqyzeqz uapDisplayName="泉州市"/>
+		<data3.gsyqyzesm uapDisplayName="三明市"/>
+		<data3.gsyqyzept uapDisplayName="莆田市"/>
+		<data3.gsyqyzenp uapDisplayName="南平市"/>
+		<data3.gsyqyzely uapDisplayName="龙岩市"/>
+		<data3.gsyqyzend uapDisplayName="宁德市"/>
+		<data3.gsyqyzeptzh uapDisplayName="平潭综合实验区"/>
+		
+		<data3.gsyqyzefz1 uapDisplayName="福州市1"/>
+		<data3.gsyqyzexm1 uapDisplayName="厦门1"/>
+		<data3.gsyqyzezz1 uapDisplayName="漳州市1"/>
+		<data3.gsyqyzeqz1 uapDisplayName="泉州市1"/>
+		<data3.gsyqyzesm1 uapDisplayName="三明市1"/>
+		<data3.gsyqyzept1 uapDisplayName="莆田市1"/>
+		<data3.gsyqyzenp1 uapDisplayName="南平市1"/>
+		<data3.gsyqyzely1 uapDisplayName="龙岩市1"/>
+		<data3.gsyqyzend1 uapDisplayName="宁德市1"/>
+		<data3.gsyqyzeptzh1 uapDisplayName="平潭综合实验区1"/>
+		
+		<data3.gsyqyzefzs uapDisplayName="福州市"></data3.gsyqyzefzs>
+		<data3.gsyqyzexms uapDisplayName="厦门"></data3.gsyqyzexms>
+		<data3.gsyqyzezzs uapDisplayName="漳州市"></data3.gsyqyzezzs>
+		<data3.gsyqyzeqzs uapDisplayName="泉州市"></data3.gsyqyzeqzs>
+		<data3.gsyqyzesms uapDisplayName="三明市"></data3.gsyqyzesms>
+		<data3.gsyqyzepts uapDisplayName="莆田市"></data3.gsyqyzepts>
+		<data3.gsyqyzenps uapDisplayName="南平市"></data3.gsyqyzenps>
+		<data3.gsyqyzelys uapDisplayName="龙岩市"></data3.gsyqyzelys>
+		<data3.gsyqyzends uapDisplayName="宁德市"></data3.gsyqyzends>
+		<data3.gsyqyzeptzhs uapDisplayName="平潭综合实验区"></data3.gsyqyzeptzhs>
+		<data3.gsyqyzeg uapDisplayName="本期所有者权益总额"></data3.gsyqyzeg>
+		<data3.gsyqyzeg1 uapDisplayName="上期所有者权益总额"></data3.gsyqyzeg1>
+		<data3.gsyqyzebt uapDisplayName="所有者权益总额标题"></data3.gsyqyzebt>
+		<data3.hzbt uapDisplayName="横轴标题"></data3.hzbt>
+		<data3.zzbt uapDisplayName="纵轴标题"></data3.zzbt>
+	</data3>
+</Root>

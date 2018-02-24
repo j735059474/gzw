@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE UIMeta PUBLIC "-//Yonyou Co., Ltd.//UAP LFW UIMeta 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_um_6_3.dtd">
+<UIMeta flowmode="true" id="visualOrganization_um" preferredHeight="" preferredWidth="">
+<FlowvLayout autoFill="0" id="user_141">
+    <FlowvPanel id="flowvpaneltab" widgetId="visualOrganization">
+        <TabLayout currentItem="0" id="tabLayout" oneTabHide="true" tabType="top" widgetId="visualOrganization">
+            <TabItems>
+                <TabItem active="0" i18nName="" id="tabitem_Org" langDir="" showCloseIcon="false" text="企业">
+                    <FlowvLayout id="flowvlayout33" widgetId="visualOrganization">
+                        <FlowvPanel id="panelv33" widgetId="visualOrganization">
+                            <FlowhLayout autoFill="false" id="flowhlayout33" widgetId="visualOrganization">
+                                <FlowhPanel id="panelh44" widgetId="visualOrganization"  width="100%">
+						          	<TreeViewComp id="cp_orgs_tree" widgetId="visualOrganization" width="100%" height="440">
+						          	</TreeViewComp>
+                                </FlowhPanel>    
+								<FlowhPanel id="panelh33" widgetId="visualOrganization"  width="100%">
+						            <TextField algin="Y" height="23" id="ifsubcomp" imgsrc="" left="0" position="relative" top="0" type="" widgetId="visualOrganization" width="240">
+						            </TextField>
+                                </FlowhPanel>
+								<FlowhPanel id="panelh55" widgetId="visualOrganization"  width="100%">
+						            <TextField algin="Y" height="23" id="ifallcomp" imgsrc="" left="0" position="relative" top="0" type="" widgetId="visualOrganization" width="240">
+						            </TextField>
+                                </FlowhPanel>
+                            </FlowhLayout>
+                        </FlowvPanel>
+                    </FlowvLayout>
+                </TabItem>
+                <TabItem active="0" i18nName="" id="tabitem_visualOrganization" langDir="" showCloseIcon="false" text="组织" topPadding="20" widgetId="visualOrganization">
+                    <FlowvLayout id="flowvlayout5254" widgetId="visualOrganization">
+                        <FlowvPanel id="panelv05254" widgetId="visualOrganization">
+                            <FlowhLayout autoFill="false" id="flowhlayout4796" widgetId="visualOrganization">
+                                <FlowhPanel id="panelh14799" widgetId="visualOrganization"  width="100%">
+						          	<TreeViewComp id="visualOrganization_tree" widgetId="visualOrganization" width="100%" height="440">
+						          	</TreeViewComp>
+                                </FlowhPanel>
+                                <FlowhPanel id="panelh14796" widgetId="visualOrganization"  width="100%">
+						            <TextField algin="Y" height="23" id="ifsubviscomp" imgsrc="" left="0" position="relative" top="0" type="" widgetId="visualOrganization" width="240">
+						            </TextField>
+                                </FlowhPanel>
+                                <FlowhPanel id="panelh14795" widgetId="visualOrganization"  width="100%">
+						            <TextField algin="Y" height="23" id="ifallviscomp" imgsrc="" left="0" position="relative" top="0" type="" widgetId="visualOrganization" width="240">
+						            </TextField>
+                                </FlowhPanel>
+                            </FlowhLayout>
+                        </FlowvPanel>
+                    </FlowvLayout>
+                </TabItem>
+            </TabItems>
+        </TabLayout>
+    </FlowvPanel>
+	<FlowvPanel  id="user_flowvpanel22" height="40">
+        <FlowhLayout id="user_flowhlayout12">
+        	<FlowhPanel id="panelh207351" widgetId="visualOrganization">
+            </FlowhPanel>
+            <FlowhPanel id="panelh20735" widgetId="visualOrganization" width="70">
+                <Button height="23" id="btn_ok" left="0" position="relative" top="10" widgetId="visualOrganization" width="70" className="blue_button_div">
+                </Button>
+            </FlowhPanel>
+            <FlowhPanel id="panelh30735" widgetId="visualOrganization" width="100">
+                <Button height="23" id="btn_cancel" left="10" position="relative" top="10" widgetId="visualOrganization" width="70">
+                </Button>
+            </FlowhPanel>
+        </FlowhLayout>
+   	 </FlowvPanel>
+</FlowvLayout>
+</UIMeta>

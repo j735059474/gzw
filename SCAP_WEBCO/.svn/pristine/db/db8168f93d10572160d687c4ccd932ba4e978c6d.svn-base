@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget caption="附件列表" controllerClazz="com.scap.pub.attlist.AttachViewCtrl" id="attachlist" refId="attachlist" sourcePackage="pub/src/public/">
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+        <PlugoutDesc id="attPlugOut">
+        </PlugoutDesc>
+    </PlugoutDescs>
+    <PluginDescs>
+        <PluginDesc id="loadAttach" methodName="loadAttach">
+        </PluginDesc>
+    </PluginDescs>
+    <Models>
+        <Datasets>
+            <Dataset caption="附件类型" controlwidgetopeStatus="false" enabled="false" id="attachtype_ds" lazyLoad="false" notNullBody="false">
+                <Fields>
+                    <Field dataType="String" id="id" nullAble="true" primaryKey="false" text="id">
+                    </Field>
+                    <Field dataType="String" id="value" nullAble="true" primaryKey="false" text="value">
+                    </Field>
+                    <Field dataType="String" id="name" nullAble="true" primaryKey="false" text="name">
+                    </Field>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onTypeLoad" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DataLoadEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onAfterTypeSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DatasetEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </Dataset>
+            <Dataset caption="附件列表" controlwidgetopeStatus="false" enabled="false" id="attach_ds" lazyLoad="true" notNullBody="false">
+                <Fields>
+                    <Field dataType="String" field="id" id="id" nullAble="true" primaryKey="false" text="主键">
+                    </Field>
+                    <Field dataType="String" field="name" id="name" nullAble="true" primaryKey="false" text="名称">
+                    </Field>
+                    <Field dataType="String" field="type" id="type" nullAble="true" primaryKey="false" text="类型">
+                    </Field>
+                    <Field dataType="String" field="size" id="size" nullAble="true" primaryKey="false" text="大小">
+                    </Field>
+                    <Field dataType="UFDateTime" field="lastmodified" id="lastmodified" nullAble="true" primaryKey="false" text="最后修改时间">
+                    </Field>
+                    <Field dataType="String" field="lastmodifier" id="lastmodifier" nullAble="true" primaryKey="false" text="最后修改人">
+                    </Field>
+                    <Field dataType="String" field="filemanager" id="filemanager" nullAble="true" primaryKey="false" text="文件处理类">
+                    </Field>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                            <Widget id="attachlist">
+                                <Dataset id="attach_ds" type="ds_current_line">
+                                </Dataset>
+                            </Widget>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DatasetEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </Dataset>
+        </Datasets>
+    </Models>
+    <Components>
+        <GridComp autoRowHeight="false" canCopy="true" caption="附件列表" checkBoxModel="1" dataset="attach_ds" editable="true" enabled="true" expandTree="false" id="attach_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="true" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="id" fixedHeader="false" id="id" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="true" dataType="String" editable="true" editorType="StringText" field="name" fixedHeader="false" id="name" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="附件名称" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="type" fixedHeader="false" id="type" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="类型" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="size" fixedHeader="false" id="size" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="大小" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDateTime" editable="true" editorType="DateTimeText" field="lastmodified" fixedHeader="false" id="lastmodified" imageOnly="false" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="上传时间" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="lastmodifier" fixedHeader="false" id="lastmodifier" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上传人" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="filemanager" fixedHeader="false" id="filemanager" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="文件处理类" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" fixedHeader="false" id="operate" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="操作" textAlign="left" visible="false" width="120">
+            </Column>
+            <MenuBarComp id="attach_grid$MenuBar">
+                <MenuItem i18nName="GridComp-000005" id="attach_grid$HeaderBtn_Upload" imgIcon="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/new_row.png" imgIconDisable="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/new_row_disable.png" imgIconOn="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/new_row_higlight.png" langDir="bc" modifiers="3" showModel="2" text="上传">
+                    <Events>
+                        <Event async="true" methodName="onUpload" name="onclick" onserver="true">
+                            <SubmitRule>
+                            </SubmitRule>
+                            <Params>
+                                <Param>
+                                    <Name>mouseEvent</Name>
+                                    <Value>
+                                    </Value>
+                                    <Desc>                                        <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                    </Desc>
+                                </Param>
+                            </Params>
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+                <MenuItem id="attach_grid$HeaderBtn_Download" imgIcon="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/copy-to-bottom.png" imgIconDisable="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/copy-to-bottom_disable.png" imgIconOn="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/copy-to-bottom_higlight.png" langDir="bc" modifiers="3" showModel="2" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="下载">
+                    <Events>
+                        <Event async="true" methodName="onDownload" name="onclick" onserver="true">
+                            <SubmitRule>
+                            </SubmitRule>
+                            <Params>
+                                <Param>
+                                    <Name>mouseEvent</Name>
+                                    <Desc>                                        <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                    </Desc>
+                                </Param>
+                            </Params>
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+                <MenuItem i18nName="GridComp-000007" id="attach_grid$HeaderBtn_Delete" imgIcon="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/delete_row.png" imgIconDisable="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/delete_row_disable.png" imgIconOn="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/delete_row_higlight.png" langDir="bc" modifiers="3" showModel="2" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="删除">
+                    <Events>
+                        <Event async="true" methodName="onDelete" name="onclick" onserver="true">
+                            <SubmitRule>
+                            </SubmitRule>
+                            <Params>
+                                <Param>
+                                    <Name>mouseEvent</Name>
+                                    <Value>
+                                    </Value>
+                                    <Desc>                                        <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                    </Desc>
+                                </Param>
+                            </Params>
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+            </MenuBarComp>
+        </GridComp>
+        <TreeViewComp canEdit="false" checkBoxModel="0" dragEnable="false" enabled="true" id="attachtype_tree" openLevel="-1" rootOpen="true" selectRoot="false" text="附件类型" visible="true" withCheckBox="false" withRoot="true">
+            <SimpleTreeLevel dataset="attachtype_ds" id="level1" labelFields="name" masterKeyField="id">
+            </SimpleTreeLevel>
+        </TreeViewComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="attachtype_menu">
+            <MenuItem i18nName="operate$funcnode1" id="operate" langDir="lfwbuttons" modifiers="2" showModel="1" text="类型维护">
+                <Events>
+                    <Event async="true" methodName="onclickB" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value></Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+                <MenuItem i18nName="add" id="add" langDir="lfwbuttons" modifiers="2" showModel="1" text="新增">
+                    <Events>
+                        <Event async="true" methodName="onTypeAdd" name="onclick" onserver="true">
+                            <SubmitRule>
+                            </SubmitRule>
+                            <Params>
+                                <Param>
+                                    <Name>mouseEvent</Name>
+                                    <Value>
+                                    </Value>
+                                    <Desc>                                        <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                    </Desc>
+                                </Param>
+                            </Params>
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+                <MenuItem i18nName="edit" id="edit" langDir="lfwbuttons" modifiers="2" showModel="1" text="修改">
+                    <Events>
+                        <Event async="true" methodName="onTypeEdit" name="onclick" onserver="true">
+                            <SubmitRule>
+                            </SubmitRule>
+                            <Params>
+                                <Param>
+                                    <Name>mouseEvent</Name>
+                                    <Value>
+                                    </Value>
+                                    <Desc>                                        <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                    </Desc>
+                                </Param>
+                            </Params>
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+                <MenuItem i18nName="del" id="del" langDir="lfwbuttons" modifiers="2" showModel="1" text="删除">
+                    <Events>
+                        <Event async="true" methodName="onTypeDel" name="onclick" onserver="true">
+                            <SubmitRule>
+                            </SubmitRule>
+                            <Params>
+                                <Param>
+                                    <Name>mouseEvent</Name>
+                                    <Value>
+                                    </Value>
+                                    <Desc>                                        <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                    </Desc>
+                                </Param>
+                            </Params>
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

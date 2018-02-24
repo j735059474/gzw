@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE UIMeta PUBLIC "-//Yonyou Co., Ltd.//UAP LFW UIMeta 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_um_6_3.dtd">
+<UIMeta flowmode="true" id="listwin_um" preferredHeight="0" preferredWidth="0">
+    <FlowhLayout autoFill="true" id="winFlowhLayout">
+        <FlowhPanel className="left_side_style" id="winFlowhLeftPanel" rightBorder="#" width="196">
+            <FlowvLayout id="leftFlowvLayout">
+                <FlowvPanel height="39" id="g_p_1">
+                    <CanvasLayout className="leftcanvas" id="leftTitleCanvas">
+                        <CanvasPanel id="canvasp">
+                        </CanvasPanel>
+                    </CanvasLayout>
+                </FlowvPanel>
+                <FlowvPanel id="g_p_2" leftPadding="20" rightPadding="20">
+                    <PanelLayout expand="true" id="leftDatatypeTreePanel" title="资源类型树">
+                        <PanelPanel bottomPadding="10" id="datatypeTreePanel" topPadding="20">
+                            <Widget id="DatatypeTree">
+                            </Widget>
+                        </PanelPanel>
+                    </PanelLayout>
+                </FlowvPanel>
+                <FlowvPanel id="g_p_3" leftPadding="20" rightPadding="20">
+                    <PanelLayout expand="true" id="leftSimplePanel" title="快速查询">
+                        <PanelPanel bottomPadding="10" id="simplePanel" topPadding="20">
+                            <Widget id="simplequery">
+                            </Widget>
+                        </PanelPanel>
+                    </PanelLayout>
+                </FlowvPanel>
+            </FlowvLayout>
+        </FlowhPanel>
+        <FlowhPanel id="g_p_1">
+            <Widget id="main">
+            </Widget>
+        </FlowhPanel>
+    </FlowhLayout>
+</UIMeta>

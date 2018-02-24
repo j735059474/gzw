@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE UIMeta PUBLIC "-//Yonyou Co., Ltd.//UAP LFW UIMeta 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_um_6_3.dtd">
+<UIMeta flowmode="true" id="main_um" jquery="0" preferredHeight="" preferredWidth="">
+    <FlowvLayout id="flowvLayout" widgetId="main">
+        <FlowvPanel id="g_p_1" widgetId="main">
+            <CanvasLayout className="rightcanvas" id="listmenubarCanvas" widgetId="main">
+                <CanvasPanel id="canvasp" widgetId="main">
+                </CanvasPanel>
+            </CanvasLayout>
+        </FlowvPanel>
+        <FlowvPanel id="flowvpanel_6133" widgetId="main">
+           <GridLayout border="2" colcount="6" id="gridlayout8014" textAlign="center" rowcount="5" widgetId="main">
+                <GridRowPanel id="row08014Panel" widgetId="main">
+                    <GridRow id="row08014" widgetId="main">
+                        <GridPanel colHeight="30" colIndex="0" colWidth="200" id="cell008014" rowIndex="0" widgetId="main">
+                            <Label cssStyle="" family="" height="23" id="tb001" left="0" position="relative" size="12" style="" textAlign="center" top="0" weight="" widgetId="main" width="100%">
+                            </Label>
+                        </GridPanel>
+                        <GridPanel colHeight="30" colIndex="1" colWidth="200" id="cell018014" rowIndex="0" widgetId="main">
+                            <Menubar height="100%" id="menubar" left="0" position="relative" top="0" widgetId="main" width="100%">
+                    		</Menubar>
+                        </GridPanel>
+                    </GridRow>
+                </GridRowPanel>
+                 <GridRowPanel id="row08014Panel" widgetId="main">
+                    <GridRow id="row08014" widgetId="main">
+                        <GridPanel colHeight="30" colIndex="0" colWidth="200" id="cell008014" rowIndex="0" widgetId="main">
+                            <Label cssStyle="" family="" height="23" id="tb002" left="0" position="relative" size="12" style="" textAlign="center" top="0" weight="" widgetId="main" width="100%">
+                            </Label>
+                        </GridPanel>
+                        <GridPanel colHeight="30" colIndex="1" colWidth="200" id="cell018014" rowIndex="0" widgetId="main">
+                           <Menubar height="100%" id="menubar2" left="0" position="relative" top="0" widgetId="main" width="100%">
+                   			</Menubar>
+                        </GridPanel>
+                    </GridRow>
+                </GridRowPanel>
+            </GridLayout>
+        </FlowvPanel>
+        <FlowvPanel id="flowvpanel_6134" >
+        	<GridLayout border="0" colcount="6" id="gridlayout8015" textAlign="center" rowcount="5" widgetId="main">
+             	 <GridRowPanel id="row08015Panel" widgetId="main">
+             	 	<GridRow id="row08014" widgetId="main">
+                        <GridPanel colHeight="30" colIndex="0" colWidth="400" id="cell008014" rowIndex="0" widgetId="main">
+		             	 	<Label cssStyle="" family="" height="23" id="tb003" left="0" position="relative" size="12" style="" textAlign="center" top="0" weight="" widgetId="main" width="100%">
+		                    </Label>
+	                    </GridPanel>
+                    </GridRow>
+             	 </GridRowPanel>
+             </GridLayout>
+        </FlowvPanel>
+    </FlowvLayout>
+</UIMeta>

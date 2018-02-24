@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget controllerClazz="nc.scap.pub.notice_manager.Notice_managerListWinMainViewCtrl" id="main" refId="main" sourcePackage="pub/src/public/">
+    <Attributes>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+    </PlugoutDescs>
+    <PluginDescs>
+        <PluginDesc id="simpleQuery_plugin" methodName="doQueryChange">
+        </PluginDesc>
+        <PluginDesc id="org_plugin" methodName="doOrgChange">
+        </PluginDesc>
+        <PluginDesc id="refresh_plugin" methodName="doRefresh">
+            <PluginDescItem clazztype="java.lang.String" id="OPERATE_ROW">
+            </PluginDescItem>
+        </PluginDesc>
+    </PluginDescs>
+    <Connectors>
+        <Connector connType="6" id="listViewConnID" pluginId="refresh_plugin" plugoutId="proxyAfterSavePlugout" source="nc.scap.pub.notice.notice_manager_listwin" sourceWindow="" target="main" targetWindow="">
+        </Connector>
+    </Connectors>
+    <Models>
+        <Datasets>
+            <DatasetRelations>
+                <DatasetRelation detailDataset="receive_man" detailForeignKey="pk_notice" id="scapco_receive_man_scapco_notice_manager" masterDataset="notice_manager" masterKeyField="pk_notice">
+                </DatasetRelation>
+                <DatasetRelation detailDataset="receive_notice" detailForeignKey="pk_notice" id="scapco_receive_notice_scapco_notice_manager" masterDataset="notice_manager" masterKeyField="pk_notice">
+                </DatasetRelation>
+            </DatasetRelations>
+            <MdDataset caption="接收范围" controlwidgetopeStatus="false" enabled="false" id="receive_notice" lazyLoad="true" notNullBody="false" objMeta="scapco.receive_notice" pageSize="10" voMeta="nc.vo.scapco.work_notice_manager.Receive_notice">
+                <FieldRelations>
+                    <FieldRelation id="notice_org_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="notice_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="notice_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="notice_visual_org_rel" needProcess="true" refDataset="$refds_scapco_pub_visualOrganization" useCache="true">
+                        <MatchFields>
+                            <Field readField="visualorg_name" writeField="notice_visual_org_visualorg_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_visualorg" value="notice_visual_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="receive_man_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="receive_man_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="receive_man">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad_org" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <MdDataset caption="通知接收人" controlwidgetopeStatus="false" enabled="false" id="receive_man" lazyLoad="true" notNullBody="false" objMeta="scapco.receive_man" pageSize="10" voMeta="nc.vo.scapco.work_notice_manager.Receive_man">
+                <FieldRelations>
+                    <FieldRelation id="receive_org_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="receive_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="receive_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="receive_visual_org_rel" needProcess="true" refDataset="$refds_scapco_pub_visualOrganization" useCache="true">
+                        <MatchFields>
+                            <Field readField="visualorg_name" writeField="receive_visual_org_visualorg_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_visualorg" value="receive_visual_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="receive_man_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="receive_man_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="receive_man">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad_user" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <RefMdDataset caption="工作报告类型" controlwidgetopeStatus="false" enabled="false" id="$refds_scapco_work_report_type" lazyLoad="true" notNullBody="false" objMeta="scapco.work_report_type" voMeta="nc.vo.scap.work_report_type.Work_report_type">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="协同用户" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_user" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_user" voMeta="nc.uap.cpb.org.vos.CpUserVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="报告业务类型(自定义档案)" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_Defdoc_scapco_0003" lazyLoad="true" notNullBody="false" objMeta="uap.Defdoc-scapco_0003" voMeta="nc.vo.bd.defdoc.DefdocVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="组织基本信息" controlwidgetopeStatus="false" enabled="false" id="$refds_scapco_pub_visualOrganization" lazyLoad="true" notNullBody="false" objMeta="scapco.pub_visualOrganization" voMeta="nc.vo.scapco.pub_visualorganization.visualOrganization">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="资料类型" controlwidgetopeStatus="false" enabled="false" id="$refds_scapco_datetype_h" lazyLoad="true" notNullBody="false" objMeta="scapco.datetype_h" voMeta="nc.vo.scapjj.dsm.Datetype_HVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_orgs" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_orgs" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="统一通知管理" controlwidgetopeStatus="false" enabled="false" id="notice_manager" lazyLoad="false" notNullBody="false" objMeta="scapco.notice_manager" pageSize="10" voMeta="nc.vo.scapco.work_notice_manager.Notice_manager">
+                <FieldRelations>
+                    <FieldRelation id="business_type_rel" needProcess="true" refDataset="$refds_uap_Defdoc_scapco_0003" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="business_type_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_defdoc" value="business_type">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="notice_type_rel" needProcess="true" refDataset="$refds_scapco_work_report_type" useCache="true">
+                        <MatchFields>
+                            <Field readField="report_type" writeField="notice_type_report_type">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_work_report_type" value="notice_type">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="data_type_rel" needProcess="true" refDataset="$refds_scapco_datetype_h" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="data_type_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_datetype_h" value="data_type">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="notice_psn_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="notice_psn_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="notice_psn">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="notice_send_org_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="notice_send_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="notice_send_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="receive_man_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="receive_man_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="receive_man">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+        </Datasets>
+        <ComboDatas>
+            <MDComboDataConf caption="通知状态" fullclassName="5a0f25fa-16c4-48fe-9e3e-4c0ad3b4e0df" id="combo_notice_manager_notice_status">
+            </MDComboDataConf>
+            <MDComboDataConf caption="确认已读" fullclassName="e30d4288-cd1c-421b-b319-3fc4facfb161" id="combo_receive_man_receive_status">
+            </MDComboDataConf>
+            <MDComboDataConf caption="填报状态" fullclassName="5285a827-d82b-4106-81cf-ccdba1c225d0" id="combo_receive_man_report_status">
+            </MDComboDataConf>
+            <MDComboDataConf caption="填报状态" fullclassName="5285a827-d82b-4106-81cf-ccdba1c225d0" id="combo_receive_notice_report_status">
+            </MDComboDataConf>
+            <MDComboDataConf caption="催报频率" fullclassName="0c01c374-55d6-42fa-82c1-176642a48552" id="combo_notice_manager_urge_frequency">
+            </MDComboDataConf>
+            <MDComboDataConf caption="确认已读" fullclassName="e30d4288-cd1c-421b-b319-3fc4facfb161" id="combo_receive_notice_receive_status">
+            </MDComboDataConf>
+            <MDComboDataConf caption="通知类型" fullclassName="fda1b81a-2ccb-407d-9073-258fc0df4a4f" id="combo_notice_manager_notice_style">
+            </MDComboDataConf>
+            <MDComboDataConf caption="是否选项" fullclassName="ed1a9d2f-9f6c-4ec8-9f71-28bbdb354393" id="combo_notice_manager_is_remind">
+            </MDComboDataConf>
+            <MDComboDataConf caption="信息发送方式" fullclassName="2690e7fd-6bcc-4218-8131-04fd00bb863f" id="combo_notice_manager_urge_info_trans_way">
+            </MDComboDataConf>
+            <MDComboDataConf caption="是否选项" fullclassName="ed1a9d2f-9f6c-4ec8-9f71-28bbdb354393" id="combo_notice_manager_is_auto_urge">
+            </MDComboDataConf>
+            <MDComboDataConf caption="提醒方式" fullclassName="6af716d5-69db-4f4e-bac6-3ccc4039367c" id="combo_notice_manager_remind_way">
+            </MDComboDataConf>
+            <DynamicComboData caption="消息类型" className="nc.scap.pub.notice_manager.MessageTypeNoticeEnum" id="combo_scapco_notice_messagetype">
+            </DynamicComboData>
+        </ComboDatas>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_receive_notice_receive_man_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="接收范围_协同用户" usePower="false" writeDs="receive_notice" writeFields="receive_man,receive_man_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_receive_notice_notice_visual_org_visualorg_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_visualorg,visualorg_name" refId="" refcode="组织维护" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="接收范围_组织维护" usePower="false" writeDs="receive_notice" writeFields="notice_visual_org,notice_visual_org_visualorg_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_receive_notice_notice_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="接收范围_协同当前集团+业务单元" usePower="false" writeDs="receive_notice" writeFields="notice_org,notice_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_receive_man_receive_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="通知接收人_协同当前集团+业务单元" usePower="false" writeDs="receive_man" writeFields="receive_org,receive_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_notice_manager_notice_type_report_type" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_work_report_type,report_type" refId="" refcode="报告类型" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="统一通知管理_报告类型" usePower="false" writeDs="notice_manager" writeFields="notice_type,notice_type_report_type">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_receive_man_receive_man_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="通知接收人_协同用户" usePower="false" writeDs="receive_man" writeFields="receive_man,receive_man_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_notice_manager_notice_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="统一通知管理_协同当前集团+业务单元" usePower="false" writeDs="notice_manager" writeFields="notice_org,notice_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_receive_man_receive_visual_org_visualorg_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_visualorg,visualorg_name" refId="" refcode="组织维护" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="通知接收人_组织维护" usePower="false" writeDs="receive_man" writeFields="receive_visual_org,receive_visual_org_visualorg_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_notice_manager_business_type_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_defdoc,name" refId="" refcode="报告业务类型(自定义档案)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="统一通知管理_报告业务类型(自定义档案)" usePower="false" writeDs="notice_manager" writeFields="business_type,business_type_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_notice_manager_notice_send_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="统一通知管理_协同当前集团+业务单元" usePower="false" writeDs="notice_manager" writeFields="notice_send_org,notice_send_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_notice_manager_data_type_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_datetype_h,name" refId="" refcode="资料类型权限" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="统一通知管理_资料类型权限" usePower="false" writeDs="notice_manager" writeFields="data_type,data_type_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_notice_manager_notice_psn_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="统一通知管理_协同用户" usePower="false" writeDs="notice_manager" writeFields="notice_psn,notice_psn_user_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <GridComp autoRowHeight="false" canCopy="true" caption="通知接收人" checkBoxModel="1" dataset="receive_man" editable="true" enabled="true" expandTree="false" id="receive_man_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_receive_man" fixedHeader="false" id="pk_receive_man" imageOnly="false" langDir="work_notice_manager" nullAble="false" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="receive_org" fixedHeader="false" id="receive_org" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="接收单位" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="receive_org_name" fixedHeader="false" id="receive_org_name" imageOnly="false" nullAble="true" refNode="refnode_receive_man_receive_org_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="接收单位" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="receive_visual_org" fixedHeader="false" id="receive_visual_org" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="接收组织" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="receive_visual_org_visualorg_name" fixedHeader="false" id="receive_visual_org_visualorg_name" imageOnly="false" nullAble="true" refNode="refnode_receive_man_receive_visual_org_visualorg_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="接收组织" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="receive_man" fixedHeader="false" id="receive_man" imageOnly="false" langDir="work_notice_manager" nullAble="false" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="接收人" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="receive_man_user_name" fixedHeader="false" id="receive_man_user_name" imageOnly="false" nullAble="true" refNode="refnode_receive_man_receive_man_user_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="接收人" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="sex" fixedHeader="false" id="sex" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="性别" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="telephone" fixedHeader="false" id="telephone" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="联系电话" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="email" fixedHeader="false" id="email" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="Email" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDate" editable="true" editorType="DateText" field="receive_time" fixedHeader="false" id="receive_time" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DateRender" showCheckBox="true" sortable="true" sumCol="false" text="查看时间" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="receive_status" fixedHeader="false" id="receive_status" imageOnly="false" langDir="work_notice_manager" nullAble="true" refComboData="combo_receive_man_receive_status" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="查看状态" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="report_status" fixedHeader="false" id="report_status" imageOnly="false" langDir="work_notice_manager" nullAble="true" refComboData="combo_receive_man_report_status" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="上报状态" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDate" editable="true" editorType="DateText" field="report_time" fixedHeader="false" id="report_time" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DateRender" showCheckBox="true" sortable="true" sumCol="false" text="上报时间" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def1" fixedHeader="false" id="def1" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段1" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def2" fixedHeader="false" id="def2" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段2" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def3" fixedHeader="false" id="def3" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段3" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def4" fixedHeader="false" id="def4" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段4" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def5" fixedHeader="false" id="def5" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段5" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_notice" fixedHeader="false" id="pk_notice" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上层单据主键" textAlign="left" visible="false" width="120">
+            </Column>
+        </GridComp>
+        <GridComp autoRowHeight="false" canCopy="true" caption="接收范围" checkBoxModel="1" dataset="receive_notice" editable="true" enabled="true" expandTree="false" id="receive_notice_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_notice_org" fixedHeader="false" id="pk_notice_org" imageOnly="false" langDir="work_notice_manager" nullAble="false" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="notice_org" fixedHeader="false" id="notice_org" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="接收企业" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="notice_org_name" fixedHeader="false" id="notice_org_name" imageOnly="false" nullAble="true" refNode="refnode_receive_notice_notice_org_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="接收企业" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="notice_visual_org" fixedHeader="false" id="notice_visual_org" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="接收组织" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="notice_visual_org_visualorg_name" fixedHeader="false" id="notice_visual_org_visualorg_name" imageOnly="false" nullAble="true" refNode="refnode_receive_notice_notice_visual_org_visualorg_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="接收组织" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="receive_status" fixedHeader="false" id="receive_status" imageOnly="false" langDir="work_notice_manager" nullAble="true" refComboData="combo_receive_notice_receive_status" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="查看状态" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="receive_man" fixedHeader="false" id="receive_man" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="查看确认人" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="receive_man_user_name" fixedHeader="false" id="receive_man_user_name" imageOnly="false" nullAble="true" refNode="refnode_receive_notice_receive_man_user_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="查看确认人" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDate" editable="true" editorType="DateText" field="receive_time" fixedHeader="false" id="receive_time" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DateRender" showCheckBox="true" sortable="true" sumCol="false" text="查看确认时间" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="report_status" fixedHeader="false" id="report_status" imageOnly="false" langDir="work_notice_manager" nullAble="true" refComboData="combo_receive_notice_report_status" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="上报状态" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDate" editable="true" editorType="DateText" field="report_time" fixedHeader="false" id="report_time" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DateRender" showCheckBox="true" sortable="true" sumCol="false" text="上报时间" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def1" fixedHeader="false" id="def1" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段1" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def2" fixedHeader="false" id="def2" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段2" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def3" fixedHeader="false" id="def3" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段3" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def4" fixedHeader="false" id="def4" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段4" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def5" fixedHeader="false" id="def5" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段5" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_notice" fixedHeader="false" id="pk_notice" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上层单据主键" textAlign="left" visible="false" width="120">
+            </Column>
+        </GridComp>
+        <GridComp autoRowHeight="false" canCopy="true" caption="统一通知管理" checkBoxModel="1" dataset="notice_manager" editable="true" enabled="true" expandTree="false" id="notice_manager_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_notice" fixedHeader="false" id="pk_notice" imageOnly="false" langDir="work_notice_manager" nullAble="false" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="notice_no" fixedHeader="false" id="notice_no" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="通知编号" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="notice_title" fixedHeader="false" id="notice_title" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="通知标题" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="notice_style" fixedHeader="false" id="notice_style" imageOnly="false" langDir="work_notice_manager" nullAble="true" refComboData="combo_notice_manager_notice_style" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="通知类型" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="business_type" fixedHeader="false" id="business_type" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="业务类型" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="business_type_name" fixedHeader="false" id="business_type_name" imageOnly="false" nullAble="true" refNode="refnode_notice_manager_business_type_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="业务类型" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="notice_type" fixedHeader="false" id="notice_type" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="报告类型" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="notice_type_report_type" fixedHeader="false" id="notice_type_report_type" imageOnly="false" nullAble="true" refNode="refnode_notice_manager_notice_type_report_type" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="报告类型" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="def4" fixedHeader="false" id="def4" imageOnly="false" langDir="work_notice_manager" nullAble="true" refComboData="combo_scapco_notice_messagetype" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="消息类型" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDate" editable="true" editorType="DateText" field="notice_date" fixedHeader="false" id="notice_date" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DateRender" showCheckBox="true" sortable="true" sumCol="false" text="通知日期" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Integer" editable="true" editorType="IntegerText" field="day_num" fixedHeader="false" id="day_num" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="IntegerRender" showCheckBox="true" sortable="true" sumCol="false" text="提前催报天数" textAlign="right" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDate" editable="true" editorType="DateText" field="expiration_date" fixedHeader="false" id="expiration_date" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DateRender" showCheckBox="true" sortable="true" sumCol="false" text="上报截止日期" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="notice_content" fixedHeader="false" id="notice_content" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="通知内容" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="is_remind" fixedHeader="false" id="is_remind" imageOnly="false" langDir="work_notice_manager" nullAble="true" refComboData="combo_notice_manager_is_remind" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="是否发送提醒" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="remind_way" fixedHeader="false" id="remind_way" imageOnly="false" langDir="work_notice_manager" nullAble="true" refComboData="combo_notice_manager_remind_way" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="提醒方式" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="remind_info" fixedHeader="false" id="remind_info" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="提醒内容" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="data_type" fixedHeader="false" id="data_type" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="资料类型" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="data_type_name" fixedHeader="false" id="data_type_name" imageOnly="false" nullAble="true" refNode="refnode_notice_manager_data_type_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="资料类型" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="notice_psn" fixedHeader="false" id="notice_psn" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="通知发送人" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="notice_psn_user_name" fixedHeader="false" id="notice_psn_user_name" imageOnly="false" nullAble="true" refNode="refnode_notice_manager_notice_psn_user_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="通知发送人" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="notice_send_org" fixedHeader="false" id="notice_send_org" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="通知发送单位" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="notice_send_org_name" fixedHeader="false" id="notice_send_org_name" imageOnly="false" nullAble="true" refNode="refnode_notice_manager_notice_send_org_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="通知发送单位" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="notice_status" fixedHeader="false" id="notice_status" imageOnly="false" langDir="work_notice_manager" nullAble="true" refComboData="combo_notice_manager_notice_status" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="通知下发状态" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="is_auto_urge" fixedHeader="false" id="is_auto_urge" imageOnly="false" langDir="work_notice_manager" nullAble="true" refComboData="combo_notice_manager_is_auto_urge" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="是否自动催报" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="urge_start_time" fixedHeader="false" id="urge_start_time" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="催报开始时间" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="urge_info_trans_way" fixedHeader="false" id="urge_info_trans_way" imageOnly="false" langDir="work_notice_manager" nullAble="true" refComboData="combo_notice_manager_urge_info_trans_way" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="催报信息发送方式" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="urge_content_gzw" fixedHeader="false" id="urge_content_gzw" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="报送统计内容格式（国资委用户）" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="urge_content_qy" fixedHeader="false" id="urge_content_qy" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="催报消息内容格式（企业用户）" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="urge_frequency" fixedHeader="false" id="urge_frequency" imageOnly="false" langDir="work_notice_manager" nullAble="true" refComboData="combo_notice_manager_urge_frequency" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="催报频率" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="remark" fixedHeader="false" id="remark" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备注" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def1" fixedHeader="false" id="def1" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段1" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def2" fixedHeader="false" id="def2" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段2" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def3" fixedHeader="false" id="def3" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段3" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def5" fixedHeader="false" id="def5" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段4" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def6" fixedHeader="false" id="def6" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段6" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def7" fixedHeader="false" id="def7" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段7" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def8" fixedHeader="false" id="def8" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段8" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def9" fixedHeader="false" id="def9" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段9" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def10" fixedHeader="false" id="def10" imageOnly="false" langDir="work_notice_manager" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段10" textAlign="left" visible="false" width="120">
+            </Column>
+        </GridComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar">
+            <MenuItem id="add" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Init_Ss_Ms_StateManager" text="新增">
+                <Events>
+                    <Event async="true" methodName="onAdd" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="edit" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="修改">
+                <Events>
+                    <Event async="true" methodName="onEdit" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="del" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="删除">
+                <Events>
+                    <Event async="true" methodName="onDelete" name="onclick" onserver="true">
+                        <SubmitRule>
+                            <Widget id="main">
+                                <Dataset id="receive_notice" type="ds_all_line">
+                                </Dataset>
+                                <Dataset id="receive_man" type="ds_all_line">
+                                </Dataset>
+                            </Widget>
+                        </SubmitRule>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="sep1" modifiers="3" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="sep2" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem i18nName="look" id="look" langDir="lfwbuttons" modifiers="2" showModel="1" text="查看">
+                <Events>
+                    <Event async="true" methodName="onLookClick" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem i18nName="noticeIssue" id="noticeIssue" langDir="lfwbuttons" modifiers="2" showModel="1" text="通知下发">
+                <Events>
+                    <Event async="true" methodName="onNoticeIssueclick" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem i18nName="urge" id="urge" langDir="lfwbuttons" modifiers="2" showModel="1" text="催报">
+                <Events>
+                    <Event async="true" methodName="onUrgeClick" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

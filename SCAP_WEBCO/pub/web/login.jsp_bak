@@ -1,0 +1,210 @@
+﻿<%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" language="java" import="java.io.*"  isErrorPage="true"%>   
+<%@ page import="nc.uap.lfw.util.LanguageUtil" %>
+<%--<%@ taglib uri="http://www.ufida.com/multilang" prefix="ml" %>--%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<% 
+		nc.uap.cpb.org.itf.ICpSysinitQry sysInitQry = nc.uap.portal.service.PortalServiceUtil.getCpSysinitQry();
+		//获取省份ID、平台Title等参数
+		String title="国资监管信息系统";	
+		String proId = "PRODUCT";
+		try {
+			title = sysInitQry.getSysinitValueByCodeAndPkorg("SYSTEM_TITLE",null);	
+			proId = sysInitQry.getSysinitValueByCodeAndPkorg("provinceId",null);	
+			if(proId != null)
+				proId = proId.toLowerCase();
+		} catch (Exception e) {
+			 nc.uap.portal.log.PortalLogger.error(e.getMessage(), e);
+		}
+		pageContext.setAttribute("title", title);
+		pageContext.setAttribute("proId", proId);
+%>
+<html>
+<head>
+<link rel = "Shortcut Icon" href="<%=request.getContextPath()%>/images/login/address.ico"> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+	<meta HTTP-EQUIV="Expires" CONTENT="0"> 
+<script src="/portal/scap/js/jquery-1.8.3.min.js"></script> 
+<title>${title}</title>
+<style type="text/css">
+<!--
+*{margin:0px; padding:0px;}
+a {color:#ffffff; text-decoration:none;}
+a:hover {color:#ffffff; text-decoration:none;}
+
+body,td,th {font-size: 12px;color: #FFFFFF;}
+
+body {width:100%; height:100%; overflow:hidden; background-color:#94e0fa;}
+
+.bg_table {width:100%; height:650px; background:url('<%=request.getContextPath()%>/images/login/bg.jpg') repeat-x;}
+.bg_table td {text-align:center;}
+.login_table {width:1150px; height:650px; margin:0px auto; background:url('<%=request.getContextPath()%>/images/login/login_bg.jpg') center no-repeat;}
+
+.login_title {height:180px; text-align:center; vertical-align:bottom; }
+.login_title img {width:830px; height:78px;}
+
+.login_inputs {height:150px; text-align:center; vertical-align:middle;}
+.login_inputs_table {width:380px; height:150px; text-align:center; margin:0px auto;}
+.input_user {float:left; width:43px; height:32px; margin-left:8px; border:0px;}
+.input_password {float:left; width:43px; height:32px; margin-left:8px; border:0px;}
+.input_center {
+	float:left; width: 150px; height:32px; line-height:32px; border:0px;
+	background:url("<%=request.getContextPath()%>/images/login/login_input_center.gif") repeat-x; 
+	font-family:Verdana, "??"; font-size: 14px; font-weight: bold;color:#666699;
+}
+.input_right {float:left; width:6px; height:32px; border:0px;}
+
+.login_foot {height:320px; text-align:center; vertical-align:middle;}
+-->
+</style>
+<script language="JavaScript" type="text/javascript">
+var uid;
+var upwd;
+
+document.onkeydown=function(e){//网页内按下回车触发,只有在焦点不在用户名上的时候触发
+	if(document.activeElement.id != 'username'){
+		switch ((window.event)?event.keyCode:e.which){
+			case 13:
+				doLogin();
+				return false;
+				break;
+			default:
+				break;
+		}
+	}
+}
+
+function changeImg(){
+	var A = document.getElementById("imgVerify");
+	var B = document.getElementById("imgCode");
+	A.src="${base}/AuthCode?code="+Math.random();
+	B.focus();
+	B.select();
+}
+
+function doLogin(){
+	
+	uid = document.getElementById("username");
+	upwd = document.getElementById("password");
+	if(trim(uid.value).length == 0){
+    	document.getElementById('showErrorInfo').innerHTML = '用户名不能为空';
+	  	uid.focus();
+	  	return false;
+	} 
+	if(trim(upwd.value).length == 0){
+  		document.getElementById('showErrorInfo').innerHTML = '密码不能为空';
+ 		upwd.focus();
+ 		return false;
+	} 
+	document.loginForm.action = "/portal/pt/home/index";
+	document.getElementById("loginForm").submit();
+}
+/**
+* 删除左右两端的空格
+*/
+function trim(str)
+{
+	return str.replace(/(^\s*)(\s*$)/g, '');
+}
+</SCRIPT>
+</head>
+
+<body>
+<div id="outerDiv" style="height:100%;">
+<form id="loginForm" name="loginForm" action="/portal/pt/home/index" method="post" autocomplete="off">
+	<input type="hidden" name="isFirst" value="false"/>
+	
+	<table class="bg_table" cellpadding="0" cellspacing="0">
+		<tr>
+			<td width="10%">&nbsp;</td>
+			<td>
+				<table class="login_table" cellpadding="0" cellspacing="0">
+					<tr>
+				 		<td class="login_title">
+				 	  		<img src="<%=request.getContextPath()%>/images/login/login_${proId}.gif" />
+				 	  </td>
+					</tr>
+			  		<tr>
+						<td class="login_inputs">
+							<table class="login_inputs_table" cellspacing="0" cellpadding="0">
+				            	<tr>
+					      			<td align="center" width="80" height="74">&nbsp;</td>
+					           		<td width="220" id="showErrorInfo" style="padding-left:11px;padding-top:12px;color:red">
+					             		<c:if test="${not empty isFirst}"><c:if test="${not empty errmsg}">${errmsg}</c:if></c:if>
+					           		</td>
+					      			<td align="center" width="80">&nbsp;</td>
+					        	</tr>
+					          	<tr>
+					            	<td align="right" height="38" nowrap="nowrap">
+					            		<img src="<%=request.getContextPath()%>/images/login/login_user.gif" border="0"/>
+					            	</td>
+					            	<td align="left">
+					            		<img src="<%=request.getContextPath()%>/images/login/login_u_left.png" class="input_user" />
+					            		<input id="username" name="uid" tabindex="1" type="text" value="<c:if test="${not empty userId}">${userId}</c:if>" class="input_center" maxlength="20" autocomplete="off"/>
+					            		<img src="<%=request.getContextPath()%>/images/login/login_input_right.png" class="input_right"/>
+				            		</td>
+				         			<td align="left" rowspan="2" >
+				         				<div style="cursor:pointer;" onClick="doLogin()"; tabindex="3">
+				         					<img src="<%=request.getContextPath()%>/images/login/botton_.png" width="80" height="73" border="0px" />
+				         				</div>
+				      				</td>
+				        		</tr>
+				          		<tr>
+					            	<td align="right" height="38" nowrap="nowrap">
+					            		<img src="<%=request.getContextPath()%>/images/login/login_password.gif" border="0"/>
+					            	</td>
+					            	<td>
+					            		<img src="<%=request.getContextPath()%>/images/login/login_c_left.png" class="input_user" />
+					            		<input id="password" name="upwd" tabindex="2" type="password" class="input_center" maxlength="20" />
+					            		<img src="<%=request.getContextPath()%>/images/login/login_input_right.png" class="input_right" />
+					            	</td>
+				          		</tr>
+			    			</table>
+			       		</td>
+			    	</tr>
+			   		<tr>
+			 			<td class="login_foot">&nbsp;</td>
+			  		</tr>
+				</table>
+			</td>
+			<td width="10%" align="right" valign="top">
+				<!--
+					<a href="/portal/IE8-WindowsXP-x86-CHS.exe" style="hover:none; margin-top:20px; display:inline-block; text-align:left; cursor:pointer;">IE8下载</a> |          
+					<a href="/portal/jdk-6u33-windows-i586.exe" style="hover:none; margin-top:20px; display:inline-block; text-align:left; cursor:pointer;">JDK下载</a> |
+				-->
+					<a onclick="javascript:window.open('/portal/activexlist.jsp','','height=600,width=700');" style="margin-top:2px; display: inline-block; text-align:left; cursor:pointer;">插件管理</a> 	
+			</td>
+		</tr>
+	</table>
+</form>
+</div>
+<script>
+<c:if test="${not empty userId}">
+	document.loginForm.upwd.focus();
+</c:if>
+<c:if test="${empty userId}">
+	document.loginForm.uid.focus();
+</c:if>
+$(document).ready(function () {
+debugger;
+    var p_userId= decodeURIComponent(getCookie('p_userId'));
+    var p_userPwd = decodeURIComponent(getCookie('p_userPwd'));
+   $('#username').attr('value', p_userId); 
+   $('#password').attr('value', p_userPwd); 
+    });
+    
+function getCookie(sName) {
+	var sRE = "(?:; )?" + sName + "=([^;]*);?";
+	var oRE = new RegExp(sRE);
+
+	if (oRE.test(document.cookie)) {
+		return decodeURIComponent(RegExp["$1"]);
+	} else
+		return null;
+};    
+</script>
+</body>
+</html>

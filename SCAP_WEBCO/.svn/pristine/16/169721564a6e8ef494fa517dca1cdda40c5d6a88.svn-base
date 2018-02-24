@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component conRouterType="手动" createIndustry="0"
+	createTime="2015-01-29 13:49:29" creator="" description=""
+	displayName="事项分类(自定义档案)业务操作" fromSourceBmf="true"
+	gencodestyle="NC传统样式" help="" id="6486297b-a77a-11e4-a83d-3ba16190bfa8"
+	industry="0" industryChanged="false" industryIncrease="false"
+	industryName="基础行业" isSource="false" isbizmodel="true" mainEntity=""
+	modifier="" modifyIndustry="0" modifyTime="2015-01-29 13:49:29"
+	name="bo_Defdoc-scapco_0006" namespace="uap" ownModule="uapbd"
+	preLoad="false" programcode="" resModuleName="bo_Defdoc-scapco_0006"
+	resid="" version="2" versionType="0">
+	<celllist>
+		<busioperation componentID="6486297b-a77a-11e4-a83d-3ba16190bfa8"
+			createIndustry="0" createTime="2015-01-29 13:49:29" creator=""
+			dataType="1001ZZ1000000000MM2O" dbtype="" description=""
+			displayName="修改" fullClassName="nc.vouap.bo_Defdoc-scapco_0006.edit"
+			height="100" help="" id="6486297f-a77a-11e4-a83d-3ba16190bfa8"
+			industryChanged="false" isAuthorization="true" isBusiActivity="false"
+			isSource="false" logtype="MODIFY" modifier="" modifyIndustry="0"
+			modifyTime="2015-01-29 13:49:29" name="edit" needlog="true"
+			resid="2UC000-001103" typeDisplayName="事项分类(自定义档案)"
+			typeName="Defdoc-scapco_0006" version=""
+			versionType="0" visibility="public" width="80" x="150" y="120">
+			<refoperationlist />
+		</busioperation>
+		<busioperation componentID="6486297b-a77a-11e4-a83d-3ba16190bfa8"
+			createIndustry="0" createTime="2015-01-29 13:49:29" creator=""
+			dataType="1001ZZ1000000000MM2O" dbtype="" description=""
+			displayName="删除" fullClassName="nc.vouap.bo_Defdoc-scapco_0006.delete"
+			height="100" help="" id="6486297d-a77a-11e4-a83d-3ba16190bfa8"
+			industryChanged="false" isAuthorization="true" isBusiActivity="false"
+			isSource="false" logtype="DELETE" modifier="" modifyIndustry="0"
+			modifyTime="2015-01-29 13:49:29" name="delete" needlog="true"
+			resid="2UC000-001104" typeDisplayName="事项分类(自定义档案)"
+			typeName="Defdoc-scapco_0006" version=""
+			versionType="0" visibility="public" width="80" x="250" y="120">
+			<refoperationlist />
+		</busioperation>
+		<busioperation componentID="6486297b-a77a-11e4-a83d-3ba16190bfa8"
+			createIndustry="0" createTime="2015-01-29 13:49:29" creator=""
+			dataType="1001ZZ1000000000MM2O" dbtype="" description=""
+			displayName="启用" fullClassName="nc.vouap.bo_Defdoc-scapco_0006.enable"
+			height="100" help="" id="64862980-a77a-11e4-a83d-3ba16190bfa8"
+			industryChanged="false" isAuthorization="true" isBusiActivity="false"
+			isSource="false" logtype="MODIFY" modifier="" modifyIndustry="0"
+			modifyTime="2015-01-29 13:49:29" name="enable" needlog="true"
+			resid="2UC000-001105" typeDisplayName="事项分类(自定义档案)"
+			typeName="Defdoc-scapco_0006" version=""
+			versionType="0" visibility="public" width="80" x="350" y="120">
+			<refoperationlist />
+		</busioperation>
+		<busioperation componentID="6486297b-a77a-11e4-a83d-3ba16190bfa8"
+			createIndustry="0" createTime="2015-01-29 13:49:29" creator=""
+			dataType="1001ZZ1000000000MM2O" dbtype="" description=""
+			displayName="停用" fullClassName="nc.vouap.bo_Defdoc-scapco_0006.disable"
+			height="100" help="" id="6486297e-a77a-11e4-a83d-3ba16190bfa8"
+			industryChanged="false" isAuthorization="true" isBusiActivity="false"
+			isSource="false" logtype="MODIFY" modifier="" modifyIndustry="0"
+			modifyTime="2015-01-29 13:49:29" name="disable" needlog="true"
+			resid="2UC000-001106" typeDisplayName="事项分类(自定义档案)"
+			typeName="Defdoc-scapco_0006" version=""
+			versionType="0" visibility="public" width="80" x="450" y="120">
+			<refoperationlist />
+		</busioperation>
+		<busioperation componentID="6486297b-a77a-11e4-a83d-3ba16190bfa8"
+			createIndustry="0" createTime="2015-01-29 13:49:29" creator=""
+			dataType="1001ZZ1000000000MM2O" dbtype="" description=""
+			displayName="新增" fullClassName="nc.vouap.bo_Defdoc-scapco_0006.add"
+			height="100" help="" id="6486297c-a77a-11e4-a83d-3ba16190bfa8"
+			industryChanged="false" isAuthorization="true" isBusiActivity="false"
+			isSource="false" logtype="ADD" modifier="" modifyIndustry="0"
+			modifyTime="2015-01-29 13:49:29" name="add" needlog="true"
+			resid="2UC000-001114" typeDisplayName="事项分类(自定义档案)"
+			typeName="Defdoc-scapco_0006" version=""
+			versionType="0" visibility="public" width="80" x="50" y="120">
+			<refoperationlist />
+		</busioperation>
+	</celllist>
+	<connectlist />
+	<refdepends />
+	<refdependLoseIDs />
+	<cellRemoveLog />
+	<rulers>
+		<ruler isHorizontal="true" unit="0">
+			<guideList />
+		</ruler>
+		<ruler isHorizontal="false" unit="0">
+			<guideList />
+		</ruler>
+	</rulers>
+</component>

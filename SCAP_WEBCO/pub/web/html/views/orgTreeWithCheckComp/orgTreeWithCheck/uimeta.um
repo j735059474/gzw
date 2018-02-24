@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE UIMeta PUBLIC "-//Yonyou Co., Ltd.//UAP LFW UIMeta 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_um_6_3.dtd">
+<UIMeta flowmode="true" id="orgTreeWithCheck_um" preferredHeight="" preferredWidth="">
+<FlowvLayout id="flowvlayout0" widgetId="orgTreeWithCheck">
+<FlowvPanel id="orgTreeWithCheck_flowvpanel0" >
+    <FlowvLayout id="flowvlayout1" widgetId="orgTreeWithCheck">
+		<FlowvPanel id="orgTreeWithCheck_flowvpanel1"  height="38">
+            <FlowhLayout id="flowhlayout1">
+                <FlowhPanel id="panel1" leftBorder="1px solid #D1DFE4">
+					<TextField height="23" id="queryInput" type="text" widgetId="orgTreeWithCheck" width="250" top="10" left="10">
+					</TextField>
+				</FlowhPanel>
+            </FlowhLayout>
+		</FlowvPanel>
+		<FlowvPanel id="orgTreeWithCheck_flowvpanel211" height="1" topBorder="1px solid #D1DFE4">
+		</FlowvPanel>
+		<FlowvPanel id="orgTreeWithCheck_flowvpanel21" height="440">
+		    <FlowhLayout id="0user_flowhlayout011">
+		        <FlowhPanel id="0orgTreeWithCheck_flowhpane0111" width="100%">
+		          	<TreeViewComp id="org_tree" widgetId="orgTreeWithCheck" width="100%" height="440">
+		          	</TreeViewComp>
+		        </FlowhPanel>
+			</FlowhLayout>
+		</FlowvPanel>
+		<FlowvPanel id="orgTreeWithCheck_panelv33" widgetId="orgTreeWithCheck" height="38">
+            <FlowhLayout autoFill="false" id="orgTreeWithCheck_flowhlayout33" widgetId="orgTreeWithCheck">
+			    <FlowhPanel id="panelh33" widgetId="orgTreeWithCheck"  width="100%">
+				    <TextField algin="Y" height="23" id="ifwithsub" imgsrc="" left="0" position="relative" top="0" type="" widgetId="orgTreeWithCheck" width="240">
+				    </TextField>
+                </FlowhPanel>
+            </FlowhLayout>
+        </FlowvPanel>
+    </FlowvLayout>
+    </FlowvPanel>
+    <FlowvPanel id="orgTreeWithCheck_flowvpanel00" >
+    <FlowvLayout id="flowvlayout2" widgetId="orgTreeWithCheck">
+		<FlowvPanel  id="orgTreeWithCheck_flowvpanel22" height="40">
+            <FlowhLayout id="orgTreeWithCheck_flowhlayout12">
+                <FlowhPanel id="panelh207351" widgetId="orgTreeWithCheck">
+                </FlowhPanel>
+                <FlowhPanel id="panelh20735" widgetId="orgTreeWithCheck" width="70">
+                    <Button height="23" id="btn_ok" left="0" position="relative" top="10" widgetId="orgTreeWithCheck" width="70" className="blue_button_div">
+                    </Button>
+                </FlowhPanel>
+                <FlowhPanel id="panelh30735" widgetId="orgTreeWithCheck" width="100">
+                    <Button height="23" id="btn_cancel" left="10" position="relative" top="10" widgetId="orgTreeWithCheck" width="70">
+                    </Button>
+                </FlowhPanel>
+            </FlowhLayout>
+        </FlowvPanel>
+    </FlowvLayout>
+    </FlowvPanel>
+    </FlowvLayout>
+</UIMeta>

@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+<items>
+
+<!--flag="0" 单独处理;flag="1" 查iufo表样;flag="2" 查事实表; 公式中"XX,2"表示XX公式计算后保留两位小数-->
+<item key="vyear" dimension="" name="年">
+  <source flag="1" code="国资企预12表" measure="accyear" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sys_org" dimension="" name="组织标志">
+  <source flag="0" code="国资企预12表" measure="sys_org" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+
+<!--dimension="ot"18-->
+<item key="cbfy" dimension="ot" name="成本费用（上报数）">
+  <source flag="1" code="国资企预12表" measure="cbfyzebnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="cbfy_zjl" dimension="ot" name="成本费用（预算数比上年完成数增减率）">
+  <source flag="1" code="国资企预12表" measure="cbfyzebnyss" row="" col="" id="$aa"/>
+  <source flag="1" code="国资企预12表" measure="cbfyzesns" row="" col="" id="$bb"/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="xdyysrzzqs" dimension="ot" name="成本费用相对营业收入增长趋势">
+  <source flag="1" code="国资企预12表" measure="cbfyzebnyss" row="" col="" id="$aa"/>
+  <source flag="1" code="国资企预12表" measure="cbfyzesns" row="" col="" id="$bb"/>
+  <source flag="1" code="国资企预02表" measure="yyzsrbnyss" row="" col="" id="$cc"/>
+  <source flag="1" code="国资企预02表" measure="yyzsrsns" row="" col="" id="$dd"/>
+  <formula>
+    (($aa-$bb)/$bb-($cc-$dd)/$dd)*100,2
+  </formula>
+</item>
+
+<item key="zcfzl" dimension="ot" name="资产负债率（%）（上报数）">
+  <source flag="1" code="国资企预01表" measure="fzhjbnyss" row="" col="" id="$aa"/>
+  <source flag="1" code="国资企预01表" measure="zczjbnyss" row="" col="" id="$bb"/>
+  <formula>
+    ($aa/|$bb|)*100,2
+  </formula>
+</item>
+
+<item key="zcfzl_tgbfd" dimension="ot" name="资产负债率（%）比上年提高百分点">
+  <source flag="1" code="国资企预01表" measure="fzhjbnyss" row="" col="" id="$aa"/>
+  <source flag="1" code="国资企预01表" measure="fzhjsns" row="" col="" id="$bb"/>
+  <source flag="1" code="国资企预01表" measure="zczjbnyss" row="" col="" id="$cc"/>
+  <formula>
+    ($aa-$bb)/|$cc|*100,2
+  </formula>
+</item>
+
+<item key="yhlxbs" dimension="ot" name="已获利息倍数（上报数）">
+  <source flag="1" code="国资企预02表" measure="lrzekszeyhtlbnyss" row="" col="" id="$aa"/>
+  <source flag="1" code="国资企预12表" measure="qz1lxzcbnyss" row="" col="" id="$bb"/>
+  <formula>
+    ($aa+$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="ldbl" dimension="ot" name="流动比率（上报数）">
+  <source flag="1" code="国资企预01表" measure="ldzchjbnyss" row="" col="" id="$aa"/>
+  <source flag="1" code="国资企预01表" measure="ldfzhjbnyss" row="" col="" id="$bb"/>
+  <formula>
+    $aa/|$bb|*100,2
+  </formula>
+</item>
+
+<item key="zzcbcl" dimension="ot" name="总资产报酬率（上报数）">
+  <source flag="1" code="国资企预01表" measure="zczjbnyss" row="" col="" id="$aa"/>
+  <source flag="1" code="国资企预01表" measure="zczjsns" row="" col="" id="$bb"/>
+  <source flag="1" code="国资企预02表" measure="lrzekszeyhtlbnyss" row="" col="" id="$cc"/>
+  <source flag="1" code="国资企预12表" measure="qz1lxzcbnyss" row="" col="" id="$dd"/>
+  <formula>
+    2*($cc+$dd)/|$aa+$bb|*100,2
+  </formula>
+</item>
+
+<item key="zyysrbl" dimension="ot" name="成本费用占营业总收入的比率">
+  <source flag="1" code="国资企预12表" measure="cbfyzebnyss" row="" col="" id="$aa"/>
+  <source flag="1" code="国资企预12表" measure="cbfyzesns" row="" col="" id="$bb"/>
+  <source flag="1" code="国资企预02表" measure="yyzsrbnyss" row="" col="" id="$cc"/>
+  <source flag="1" code="国资企预02表" measure="yyzsrsns" row="" col="" id="$dd"/>
+  <formula>
+    (($aa-$bb)/$bb)/(($cc-$dd)/$dd)*100,2
+  </formula>
+</item>
+
+<!--<item key="cyrgcbze_sbs" dimension="ot" name="从业人员人工成本总额（上报数）">
+  <source flag="1" code="国资企预13表" measure="zqgqtzsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+
+<!--<item key="cyrgcbze_sns" dimension="ot" name="从业人员人工成本总额（上年数）">
+  <source flag="1" code="国资企预01表" measure="tzxfdcsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+
+<!--<item key="cyrgcbze_zjl" dimension="ot" name="从业人员人工成本总额（预算数比上年完成数增减率）">
+  <source flag="1" code="国资企预01表" measure="gdzcyjsns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+
+<item key="zgrgcb_sbs" dimension="ot" name="在岗职工人工成本总额（上报数）">
+  <source flag="1" code="国资企预13表" measure="zgzgrgcbzebnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zgrgcb_sns" dimension="ot" name="在岗职工人工成本总额（上年数）">
+  <source flag="1" code="国资企预13表" measure="zgzgrgcbzesns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zgrgcb_zjl" dimension="ot" name="在岗职工人工成本总额（预算数比上年完成数增减率）">
+  <source flag="1" code="国资企预13表" measure="zgzgrgcbzebnyss" row="" col="" id="$aa"/>
+  <source flag="1" code="国资企预13表" measure="zgzgrgcbzesns" row="" col="" id="$bb"/>
+  <formula>
+    ($bb-$aa)/$aa*100,2
+  </formula>
+</item>
+
+<item key="yyzsrzb" dimension="ot" name="各企业预算营业总收入比上年12月快报数增减率（%）">
+  <source flag="2" code="scapfd_ys_base" measure="sb_yyzsr" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="lj_yyzsr" row="" col="" id="$bb" condition=" and v.vyear = '2013' and v.vmonth ='12'"/>
+  <formula>
+    ($aa-$bb)/$bb,2
+  </formula>
+</item>
+
+<item key="lrzezb" dimension="ot" name="各企业预算利润总额比上年12月快报数增减率（%）">
+  <source flag="2" code="scapfd_ys_base" measure="sb_lrze" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="lj_lrze" row="" col="" id="$bb" condition=" and v.vyear = '2013' and v.vmonth ='12'"/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+<item key="cbfyzb" dimension="ot" name="各企业预算成本费用比上年12月快报数增减率（%）">
+  <source flag="1" code="国资企预12表" measure="cbfyzebnyss" row="" col="" id="$aa"/>
+  <source flag="2" code="scapfd_kb_base" measure="lj_cbfy" row="" col="" id="$bb" condition=" and v.vyear = '2013' and v.vmonth ='12'"/>
+  <formula>
+    ($aa-$bb)/$bb*100,2
+  </formula>
+</item>
+
+</items>
+</Root>

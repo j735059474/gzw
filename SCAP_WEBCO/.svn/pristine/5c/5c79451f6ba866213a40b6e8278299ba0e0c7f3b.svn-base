@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+    <scapfd_testref>
+		<scapfd_testref.org_name uapDisplayName="**集团">
+        </scapfd_testref.org_name>
+        <scapfd_testref.xb_time uapDisplayName="**年**月**旬">
+        </scapfd_testref.xb_time>
+
+       <scapfd_testref.hyqkfx uapDisplayName="行业情况分析">
+        </scapfd_testref.hyqkfx>
+		<scapfd_testref.hyyyzs uapDisplayName="行业运行走势">
+        </scapfd_testref.hyyyzs>
+
+		<scapfd_testref.xsjgbh uapDisplayName="销售价格变化">
+        </scapfd_testref.xsjgbh>
+        
+		<scapfd_testref.jtcs uapDisplayName="具体措施">
+        </scapfd_testref.jtcs>
+		<scapfd_testref.bzxx uapDisplayName="备注信息">
+        </scapfd_testref.bzxx>
+
+    <scapfd_testref.xmjs uapDisplayName="项目建设">
+        </scapfd_testref.xmjs>    
+    <scapfd_testref.xyw uapDisplayName="新业务">
+        </scapfd_testref.xyw>    
+                                          
+    </scapfd_testref>
+    
+    <scapfd_testref_fj1>
+    
+        <scapfd_testref_fj1.cp_name uapDisplayName="产品">                
+            </scapfd_testref_fj1.cp_name>                               
+        <scapfd_testref_fj1.unit uapDisplayName="产量单位">                 
+            </scapfd_testref_fj1.unit>                                  
+        <scapfd_testref_fj1.xun uapDisplayName="旬(产量)">                 
+            </scapfd_testref_fj1.xun>                                   
+        <scapfd_testref_fj1.bylj uapDisplayName="本月累计">                 
+            </scapfd_testref_fj1.bylj>                                  
+         <scapfd_testref_fj1.wcbycljh uapDisplayName="完成本月产量计划">        
+             </scapfd_testref_fj1.wcbycljh>                             
+         <scapfd_testref_fj1.xldw uapDisplayName="销量单位">                
+             </scapfd_testref_fj1.xldw>                                 
+         <scapfd_testref_fj1.xunxs uapDisplayName="旬(销量)">              
+             </scapfd_testref_fj1.xunxs>                                
+    
+    </scapfd_testref_fj1>
+    
+    
+        <scapfd_testref_fj2>                                                   
+                                                                               
+            <scapfd_testref_fj2.cp_name uapDisplayName="产品">                   
+                </scapfd_testref_fj2.cp_name>                                  
+            <scapfd_testref_fj2.bylj uapDisplayName="本月累计">                    
+                </scapfd_testref_fj2.bylj>                                     
+            <scapfd_testref_fj2.wcbyxljh uapDisplayName="完成本月销量计划">                    
+                </scapfd_testref_fj2.wcbyxljh>                                      
+            <scapfd_testref_fj2.kcdw uapDisplayName="库存单位">                    
+                </scapfd_testref_fj2.kcdw>                                     
+             <scapfd_testref_fj2.bxkc uapDisplayName="本旬库存">           
+                 </scapfd_testref_fj2.bxkc>                                
+             <scapfd_testref_fj2.xldw uapDisplayName="销量单位">                   
+                 </scapfd_testref_fj2.xldw>                                    
+             <scapfd_testref_fj2.bxjj uapDisplayName="本月均价">                 
+                 </scapfd_testref_fj2.bxjj>                                   
+                                                                               
+        </scapfd_testref_fj2>                                                  
+    
+         
+         
+             <scapfd_testref_fj3>                                                  
+                                                                                   
+                 <scapfd_testref_fj3.sywc1 uapDisplayName="上月完成">                  
+                     </scapfd_testref_fj3.sywc1>                                 
+                 <scapfd_testref_fj3.yjbywc1 uapDisplayName="预计本月完成">                   
+                     </scapfd_testref_fj3.yjbywc1>                                    
+                 <scapfd_testref_fj3.hb1 uapDisplayName="环比">           
+                     </scapfd_testref_fj3.hb1>                                
+                 <scapfd_testref_fj3.sywc2 uapDisplayName="上月完成">                  
+                     </scapfd_testref_fj3.sywc2>                                 
+                 <scapfd_testref_fj3.yjbywc2 uapDisplayName="预计本月完成">                   
+                     </scapfd_testref_fj3.yjbywc2>                                    
+                 <scapfd_testref_fj3.hb2 uapDisplayName="环比">           
+                     </scapfd_testref_fj3.hb2>                   
+                 <scapfd_testref_fj3.sywc3 uapDisplayName="上月完成">                  
+                     </scapfd_testref_fj3.sywc3>                                 
+                 <scapfd_testref_fj3.yjbywc3 uapDisplayName="预计本月完成">                   
+                     </scapfd_testref_fj3.yjbywc3>                                    
+                 <scapfd_testref_fj3.hb3 uapDisplayName="环比">           
+                     </scapfd_testref_fj3.hb3>                   
+                 <scapfd_testref_fj3.sywc4 uapDisplayName="上月完成">                  
+                     </scapfd_testref_fj3.sywc4>                                 
+                 <scapfd_testref_fj3.yjbywc4 uapDisplayName="预计本月完成">                   
+                     </scapfd_testref_fj3.yjbywc4>                                    
+                 <scapfd_testref_fj3.hb4 uapDisplayName="环比">           
+                     </scapfd_testref_fj3.hb4>                   
+                 <scapfd_testref_fj3.sywc5 uapDisplayName="上月完成">                  
+                     </scapfd_testref_fj3.sywc5>                                 
+                 <scapfd_testref_fj3.yjbywc5 uapDisplayName="预计本月完成">                   
+                     </scapfd_testref_fj3.yjbywc5>                                    
+                 <scapfd_testref_fj3.hb5 uapDisplayName="环比">           
+                     </scapfd_testref_fj3.hb5>                               
+                                                                  
+             </scapfd_testref_fj3>                                                 
+    
+    
+    
+</Root>

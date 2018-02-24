@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="sys/src/public"/>
+	<classpathentry kind="src" path="sys/src/client"/>
+	<classpathentry kind="src" path="sys/src/private"/>
+	<classpathentry kind="src" path="sys/src/test"/>
+	<classpathentry kind="src" path="sys/src/portalspec"/>
+	<classpathentry kind="src" path="sys/resources"/>
+	<classpathentry kind="src" path="pub/src/public"/>
+	<classpathentry kind="src" path="pub/src/client"/>
+	<classpathentry kind="src" path="pub/src/private"/>
+	<classpathentry kind="src" path="pub/src/test"/>
+	<classpathentry kind="src" path="pub/src/portalspec"/>
+	<classpathentry kind="src" path="pub/resources"/>
+	<classpathentry kind="src" path="patch/src/public"/>
+	<classpathentry kind="src" path="patch/src/client"/>
+	<classpathentry kind="src" path="patch/src/private"/>
+	<classpathentry kind="src" path="patch/src/test"/>
+	<classpathentry kind="src" path="patch/src/portalspec"/>
+	<classpathentry kind="src" path="patch/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="nc.uap.lfw.library.container/Ant_Library"/>
+	<classpathentry kind="con" path="nc.uap.lfw.library.container/Product_LIB_Library"/>
+	<classpathentry kind="con" path="nc.uap.lfw.library.container/Product_Common_Library"/>
+	<classpathentry kind="con" path="nc.uap.lfw.library.container/Middleware_Library"/>
+	<classpathentry kind="con" path="nc.uap.lfw.library.container/Framework_Library"/>
+	<classpathentry kind="con" path="nc.uap.lfw.library.container/Module_Public_Library"/>
+	<classpathentry kind="con" path="nc.uap.lfw.library.container/Module_Client_Library"/>
+	<classpathentry kind="con" path="nc.uap.lfw.library.container/Module_Private_Library"/>
+	<classpathentry kind="con" path="nc.uap.lfw.library.container/Module_Lang_Library"/>
+	<classpathentry kind="lib" path="D:/yonyou/Gzw/GZtesthome/external/lib/bcprov-jdk15-132.jar"/>
+	<classpathentry kind="lib" path="D:/yonyou/Gzw/GZtesthome/external/lib/commons-codec.jar"/>
+	<classpathentry kind="lib" path="D:/yonyou/Gzw/GZtesthome/external/lib/excelutil.jar"/>
+	<classpathentry kind="lib" path="D:/yonyou/Gzw/GZtesthome/external/lib/mas-api3.3.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

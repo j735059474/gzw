@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+    <scapfd_testref>
+		<scapfd_testref.fdmonth uapDisplayName="1-x">
+        </scapfd_testref.fdmonth>
+        <scapfd_testref.fdmonth0 uapDisplayName="1~快报月">
+        </scapfd_testref.fdmonth0>
+
+       <scapfd_testref.tb_yyzsr uapDisplayName="同比增长营业总收入">
+        </scapfd_testref.tb_yyzsr>
+		<scapfd_testref.tb_yyzsrtitle uapDisplayName="增长">
+        </scapfd_testref.tb_yyzsrtitle>
+
+		<scapfd_testref.tb_llze uapDisplayName="利润总额">
+        </scapfd_testref.tb_llze>
+		<scapfd_testref.tb_llzetitle uapDisplayName="增长">
+        </scapfd_testref.tb_llzetitle>
+
+		<scapfd_testref.tb_zcze uapDisplayName="资产总额">
+        </scapfd_testref.tb_zcze>
+		<scapfd_testref.tb_zczetitle uapDisplayName="增长">
+        </scapfd_testref.tb_zczetitle>
+
+		<scapfd_testref.tb_syzqyze uapDisplayName="所有者权益总额">
+        </scapfd_testref.tb_syzqyze>
+		<scapfd_testref.tb_syzqyzetitle uapDisplayName="增长">
+        </scapfd_testref.tb_syzqyzetitle>
+
+		<scapfd_testref.by_yyzsr uapDisplayName="营业收入">
+        </scapfd_testref.by_yyzsr>
+		<scapfd_testref.tb_month_yyzsr uapDisplayName="比上月增长">
+        </scapfd_testref.tb_month_yyzsr>
+		<scapfd_testref.tb_month_yyzsrtitle uapDisplayName="增长">
+        </scapfd_testref.tb_month_yyzsrtitle>
+
+		<scapfd_testref.by_lrze uapDisplayName="利润总额">
+        </scapfd_testref.by_lrze>
+		<scapfd_testref.hb_lrze uapDisplayName="比上月增长">
+        </scapfd_testref.hb_lrze>
+		<scapfd_testref.tb_month_lrzetitle uapDisplayName="增长">
+        </scapfd_testref.tb_month_lrzetitle>
+
+		 <scapfd_testref.ls23 uapDisplayName="当前月">
+        </scapfd_testref.ls23>
+
+        <scapfd_testref.operatingReceipt uapDisplayName="省属企业营业收入（本年累计）">
+        </scapfd_testref.operatingReceipt>
+		<scapfd_testref.upOrdown0 uapDisplayName="增长">
+        </scapfd_testref.upOrdown0>
+		<scapfd_testref.operatingReceiptRise  uapDisplayName="省属企业营业收入（本年累计）同比增长率">
+        </scapfd_testref.operatingReceiptRise>
+		<scapfd_testref.totalProfit  uapDisplayName="省属企业利润总额（本年累计）">
+        </scapfd_testref.totalProfit>
+		<scapfd_testref.upOrdown1  uapDisplayName="增长">
+        </scapfd_testref.upOrdown1>
+		<scapfd_testref.totalProfitRise  uapDisplayName="省属企业利润总额（本年累计）同比增长率">
+        </scapfd_testref.totalProfitRise>
+		<scapfd_testref.generalAssets  uapDisplayName="省属企业资产总额（本年累计）">
+        </scapfd_testref.generalAssets>
+		<scapfd_testref.upOrdown2  uapDisplayName="增长">
+        </scapfd_testref.upOrdown2>
+		<scapfd_testref.generalAssetsRise  uapDisplayName="省属企业资产总额（本年累计）同比增长率">
+        </scapfd_testref.generalAssetsRise>
+		<scapfd_testref.totalEquity  uapDisplayName="省属企业所有者权益总额(本年累计)">
+        </scapfd_testref.totalEquity>
+		<scapfd_testref.upOrdown3  uapDisplayName="增长">
+        </scapfd_testref.upOrdown3>
+		<scapfd_testref.totalEquityRise  uapDisplayName="省属企业所有者权益总额（本年累计）同比增长率">
+        </scapfd_testref.totalEquityRise>
+        <scapfd_testref.fdmonth1 uapDisplayName="1~快报月">
+        </scapfd_testref.fdmonth1>
+		<scapfd_testref.industrialOutput  uapDisplayName="省属企业工业总产值（本年累计）">
+        </scapfd_testref.industrialOutput>
+		<scapfd_testref.upOrdown4  uapDisplayName="增长">
+        </scapfd_testref.upOrdown4>
+		<scapfd_testref.industrialOutputRise  uapDisplayName="省属企业工业总产值（本年累计）同比增长率">
+		</scapfd_testref.industrialOutputRise>
+		<scapfd_testref.salesValue  uapDisplayName="省属企业工业销售产值（本年累计）">
+		</scapfd_testref.salesValue>
+		<scapfd_testref.upOrdown5  uapDisplayName="增长">
+        </scapfd_testref.upOrdown5>
+		<scapfd_testref.salesValueRise  uapDisplayName="省属企业工业销售产值同比（本年累计）同比增长率">
+		</scapfd_testref.salesValueRise>
+		<scapfd_testref.valueAdded  uapDisplayName="省属企业增加值（本年累计）">
+		</scapfd_testref.valueAdded>
+		<scapfd_testref.upOrdown6  uapDisplayName="增长">
+        </scapfd_testref.upOrdown6>
+		<scapfd_testref.valueAddedRise  uapDisplayName="省属企业增加值同比（本年累计）同比增长率">
+		</scapfd_testref.valueAddedRise>
+		<scapfd_testref.title0  uapDisplayName="行业表指标待定">
+        </scapfd_testref.title0>
+        <scapfd_testref.fdmonth2 uapDisplayName="1~快报月">
+        </scapfd_testref.fdmonth2>
+		<scapfd_testref.MG1  uapDisplayName="马钢集团-钢铁行业表，第4行，全年累计-本期量">
+		</scapfd_testref.MG1>
+		<scapfd_testref.MG1Rise  uapDisplayName="马钢集团-钢铁行业表，第4行，全年累计-增长（%）">
+		</scapfd_testref.MG1Rise>
+		<scapfd_testref.MG2  uapDisplayName="马钢集团-钢铁行业表，第3行，全年累计-本期量">
+		</scapfd_testref.MG2>
+		<scapfd_testref.MG2Rise  uapDisplayName="马钢集团-钢铁行业表，第3行，全年累计-增长（%）">
+		</scapfd_testref.MG2Rise>
+		<scapfd_testref.MG3  uapDisplayName="马钢集团-钢铁行业表，第2行，全年累计-本期量">
+		</scapfd_testref.MG3>
+		<scapfd_testref.MG3Rise  uapDisplayName="马钢集团-钢铁行业表，第2行，全年累计-增长（%）">
+		</scapfd_testref.MG3Rise>
+		<scapfd_testref.JQ  uapDisplayName="江汽集团-汽车行业表，第1行，全年累计-本期量，由辆换算为万辆">
+		</scapfd_testref.JQ>
+		<scapfd_testref.JQRise  uapDisplayName="江汽集团-汽车行业表，第1行，全年累计-增长（%）">
+		</scapfd_testref.JQRise>
+		<scapfd_testref.NY  uapDisplayName="省能源集团-电力行业表，第3行，全年累计-本期量，由万换算为亿">
+		</scapfd_testref.NY>
+		<scapfd_testref.NYRise  uapDisplayName="省能源集团-电力行业表，第3行，全年累计-增长（%）">
+		</scapfd_testref.NYRise>
+		<scapfd_testref.TRDJT  uapDisplayName="铜陵电解铜">
+		</scapfd_testref.TRDJT>
+		<scapfd_testref.TRDJTRise  uapDisplayName="铜陵电解铜增长">
+		</scapfd_testref.TRDJTRise>
+		<scapfd_testref.TRLS  uapDisplayName="铜陵硫酸">
+		</scapfd_testref.TRLS>
+		<scapfd_testref.TRLSRise  uapDisplayName="铜陵硫酸增长">
+		</scapfd_testref.TRLSRise>
+		<scapfd_testref.YM  uapDisplayName="总表-煤炭行业表，第1行，全年累计-本期量">
+		</scapfd_testref.YM>
+		<scapfd_testref.YMRise  uapDisplayName="总表-煤炭行业表，第1行，全年累计-增长（%）">
+		</scapfd_testref.YMRise>
+		<scapfd_testref.HLSN  uapDisplayName="海螺水泥">
+		</scapfd_testref.HLSN >
+		<scapfd_testref.HLSNRise  uapDisplayName="海螺水泥增长">
+		</scapfd_testref.HLSNRise>
+		<scapfd_testref.HLSL  uapDisplayName="海螺熟料">
+		</scapfd_testref.HLSL>
+		<scapfd_testref.HLSLRise  uapDisplayName="海螺熟料增长">
+		</scapfd_testref.HLSLRise>
+        <scapfd_testref.fdmonth3 uapDisplayName="1~快报月">
+        </scapfd_testref.fdmonth3>
+		<scapfd_testref.Revenues  uapDisplayName="省属企业营业收入（本年累计））">
+		</scapfd_testref.Revenues>
+		<scapfd_testref.upOrdown7  uapDisplayName="增长">
+        </scapfd_testref.upOrdown7>
+		<scapfd_testref.RevenuesRise  uapDisplayName="省属企业营业收入（本年累计）同比增长率">
+		</scapfd_testref.RevenuesRise>
+		<scapfd_testref.fdmonth4  uapDisplayName="1-前一快报月，如果是1月份，则没有此数字">
+		</scapfd_testref.fdmonth4>
+		<scapfd_testref.upOrdown8  uapDisplayName="增长">
+        </scapfd_testref.upOrdown8>
+		<scapfd_testref.RevenuesPoint  uapDisplayName="省属企业营业收入（本年累计）同比提高百分点">
+		</scapfd_testref.RevenuesPoint>
+		<scapfd_testref.sixOfRevenues  uapDisplayName="按省属企业营业收入（本年累计）同比增长率排名，依次列出排名前6的企业名称">
+		</scapfd_testref.sixOfRevenues>
+		<scapfd_testref.sixOfRevenuesRise  uapDisplayName="排名第6的企业的同比增长率（指标：各省属企业营业收入（本年累计）同比增长率">
+		</scapfd_testref.sixOfRevenuesRise>
+		<scapfd_testref.numOfCom  uapDisplayName="省属企业营业总收入（本年累计）>100亿元的企业户数)">
+		</scapfd_testref.numOfCom>
+		<scapfd_testref.nameandvalue  uapDisplayName="按照省属企业营业收入（本年累计）排名，依次列出营业收入>100亿元的企业名称和其营业收入本年累计值（指标：各省属企业营业收入（本年累计））">
+		</scapfd_testref.nameandvalue>
+		<scapfd_testref.grid0  uapDisplayName="插入一个表格：">
+		</scapfd_testref.grid0>
+		<scapfd_testref.fdmonth5  uapDisplayName="时间维度：1~快报月">
+		</scapfd_testref.fdmonth5>
+		<scapfd_testref.zhuPicture0  uapDisplayName="柱状图——各月的省属企业营业收入（本月数）">
+		</scapfd_testref.zhuPicture0>
+		<scapfd_testref.zhePicture0  uapDisplayName="折线图——各月的省属企业营业收入（本年累计）同比增长率">
+		</scapfd_testref.zhePicture0>
+		<scapfd_testref.fdmonth6  uapDisplayName="1~快报月">
+		</scapfd_testref.fdmonth6>
+		<scapfd_testref.totalProfit1  uapDisplayName="省属企业利润总额（本年累计）">
+		</scapfd_testref.totalProfit1>
+		<scapfd_testref.upOrdown9  uapDisplayName="增长">
+        </scapfd_testref.upOrdown9>
+		<scapfd_testref.totalProfit1Rise  uapDisplayName="省属企业利润总额（本年累计）同比增长金额">
+		</scapfd_testref.totalProfit1Rise>
+		<scapfd_testref.upOrdown10  uapDisplayName="增长">
+        </scapfd_testref.upOrdown10>
+		<scapfd_testref.totalProfitRise1  uapDisplayName="省属企业利润总额（本年累计）同比增长率">
+		</scapfd_testref.totalProfitRise1>
+		<scapfd_testref.fdmonth7  uapDisplayName="1~快报月-1，即从1到当前的上一个月，如果是1月份，则没有此数字">
+		</scapfd_testref.fdmonth7>
+		<scapfd_testref.totalProfitPoint  uapDisplayName="省属企业利润总额（本年累计）同比提高百分点">
+		</scapfd_testref.totalProfitPoint>
+		<scapfd_testref.numOfcom2  uapDisplayName="省属企业利润总额（本年累计）>1亿元的企业户数">
+		</scapfd_testref.numOfcom2>
+		<scapfd_testref.fdmonth8 uapDisplayName="1~快报月-1，即从1到当前的上一个月，如果是1月份，则没有此数字">
+		</scapfd_testref.fdmonth8>
+		<scapfd_testref.numOfcom3 uapDisplayName="省属企业利润总额（本年累计）>1亿元的企业户数较上月增加数">
+		</scapfd_testref.numOfcom3>
+		<scapfd_testref.nameAndvalue1 uapDisplayName="按照省属企业利润总额（本年累计）排名，依次列出前6名企业的名称、利润总额（指标：各省属企业利润总额（本年累计））">
+		</scapfd_testref.nameAndvalue1>
+		<scapfd_testref.numOfKS uapDisplayName="省属企业亏损企业户数，如无亏损企业则不显示此段">
+		</scapfd_testref.numOfKS>
+		<scapfd_testref.BestOfCom uapDisplayName="按照省属企业利润总额（本年累计）排名，列出亏损最多的企业">
+		</scapfd_testref.BestOfCom>
+		<scapfd_testref.BestOfComMoney uapDisplayName="该家企业的亏损额（指标：各省属企业利润总额（本年累计））">
+		</scapfd_testref.BestOfComMoney>
+		<scapfd_testref.grid1  uapDisplayName="插入一个表格：">
+		</scapfd_testref.grid1>
+		<scapfd_testref.allCom  uapDisplayName="企业：按照省属企业利润总额（本年累计）排名，列出排名前6的企业、其他企业。其他企业=剩余企业。">
+		</scapfd_testref.allCom>
+		<scapfd_testref.binPicture1  uapDisplayName="饼状图，共7块，前6块为前6家企业的“各省属企业利润总额（本年累计）占省属企业利润总额（本年累计）比重”，剩余比重做为“其他企业”的值。">
+		</scapfd_testref.binPicture1>
+		<scapfd_testref.fdmonth9 uapDisplayName="快报月">
+		</scapfd_testref.fdmonth9>
+		<scapfd_testref.generalAssets1 uapDisplayName="省属企业资产总额（本年累计）">
+		</scapfd_testref.generalAssets1>
+		<scapfd_testref.totalEquity1 uapDisplayName="省属企业所有者权益总额(本年累计)">
+		</scapfd_testref.totalEquity1>
+		<scapfd_testref.upOrdown11  uapDisplayName="增长">
+        </scapfd_testref.upOrdown11>
+		<scapfd_testref.generalAssetsRise1  uapDisplayName="省属企业资产总额（本年累计）同比增长率">
+        </scapfd_testref.generalAssetsRise1>
+		<scapfd_testref.totalEquityRise1  uapDisplayName="省属企业所有者权益总额（本年累计）同比增长率">
+        </scapfd_testref.totalEquityRise1>
+		<scapfd_testref.leverage  uapDisplayName="省属企业资产负债率">
+        </scapfd_testref.leverage>
+		<scapfd_testref.numOfcom100  uapDisplayName="省属企业资产总额>100亿元企业户数">
+        </scapfd_testref.numOfcom100>
+		<scapfd_testref.sixOfcom100  uapDisplayName="按照省属企业资产总额（本年累计）排名，列出前6户企业的名称">
+        </scapfd_testref.sixOfcom100>
+		<scapfd_testref.thesixOfcom100  uapDisplayName="第6名企业的本年累计资产额(指标：各省属企业资产总额（本年累计）)">
+        </scapfd_testref.thesixOfcom100>
+		<scapfd_testref.theoneOfcom100  uapDisplayName="第1名企业的企业名称、本年累计资产额(指标：各省属企业资产总额（本年累计）">
+        </scapfd_testref.theoneOfcom100>
+        <scapfd_testref.fdmonth10 uapDisplayName="1~快报月">
+		</scapfd_testref.fdmonth10>
+		<scapfd_testref.theTotalTax uapDisplayName="省属企业上交税费总额（本年累计）">
+		</scapfd_testref.theTotalTax>
+		<scapfd_testref.theNull uapDisplayName="此数值置空">
+		</scapfd_testref.theNull>
+		<scapfd_testref.upOrdown12  uapDisplayName="增长">
+        </scapfd_testref.upOrdown12>
+		<scapfd_testref.theTotalTaxRise uapDisplayName="省属企业上交税费总额（本年累计）同比增长率">
+		</scapfd_testref.theTotalTaxRise>
+		<scapfd_testref.fdmonth11 uapDisplayName="1-~快报月-1，即从1到当前的上一个月，如果是1月份，则没有此数字">
+		</scapfd_testref.fdmonth11>
+		<scapfd_testref.upOrdown121  uapDisplayName="上升">
+        </scapfd_testref.upOrdown121>
+		<scapfd_testref.theTotalTaxPoint uapDisplayName="省属企业上交税费总额同比提高百分点">
+		</scapfd_testref.theTotalTaxPoint>
+		<scapfd_testref.thetotalOfsix uapDisplayName="按省属企业已交税费总额（本年累计）排名，列出第6名企业的本年累计已交税费总额（指标：各省属企业已交税费总额（本年累计）">
+		</scapfd_testref.thetotalOfsix>
+		<scapfd_testref.nameandvalueOftheSix uapDisplayName="按省属企业已交税费总额（本年累计）排名，列出排名前6的企业名称、本年累计已交税费总额（指标：各省属企业已交税费总额（本年累计）">
+		</scapfd_testref.nameandvalueOftheSix>
+		<scapfd_testref.grid2  uapDisplayName="插入一个表格：">
+		</scapfd_testref.grid2>
+		<scapfd_testref.zhuPicture1  uapDisplayName="柱状图，省属企业汇总的“本年累计”与“上年同期”的数值对比：">
+		</scapfd_testref.zhuPicture1>
+		<scapfd_testref.value1  uapDisplayName="资产总额——省属企业资产总额（本年累计）、省属企业资产总额（上年同期）">
+		</scapfd_testref.value1>
+		<scapfd_testref.value2  uapDisplayName="所有者权益总额——省属企业所有者权益总额(本年累计)、省属企业所有者权益总额(上年同期)">
+		</scapfd_testref.value2>
+		<scapfd_testref.value3  uapDisplayName="归属母公司所有者权益——归属于母公司的所有者权益总额(本年累计)、归属于母公司的所有者权益总额(上年同期)">
+		</scapfd_testref.value3>
+		<scapfd_testref.title2  uapDisplayName="行业表指标待定">
+		</scapfd_testref.title2>
+		<scapfd_testref.MGJT2  uapDisplayName="取数范围：马钢集团）">
+		</scapfd_testref.MGJT2>
+		<scapfd_testref.fdmonth12 uapDisplayName="1-当前月">
+		</scapfd_testref.fdmonth12>
+		<scapfd_testref.MG2money uapDisplayName="马钢集团，钢铁行业表，第17行，全年累计-本期">
+		</scapfd_testref.MG2money>
+		<scapfd_testref.upOrdown13  uapDisplayName="增长/下降，这段文字将根据其随后的数值而改变，大于等于0，则为增长，小于0则为下降">
+		</scapfd_testref.upOrdown13>
+		<scapfd_testref.MG3money  uapDisplayName="马钢集团，钢铁行业表，第17行，全年累计本期量-全年累计上年同期量，取绝对值">
+		</scapfd_testref.MG3money>
+		<scapfd_testref.MG4ALL  uapDisplayName="该企业1-本月，实现的收入（企业表，第1行的“本年累计数”，由万元折算为亿元），同比增长（企业表，第1行的“比上年同期增减%”）；利润（企业表，第16行的“本年累计数”，由万元折算为亿元），同比增长（企业表，第1行的“比上年同期增减%”）">
+		</scapfd_testref.MG4ALL>
+		<scapfd_testref.MT2  uapDisplayName="取数范围：淮南矿业、淮北矿业、皖北煤电">
+		</scapfd_testref.MT2>
+		<scapfd_testref.fdmonth13 uapDisplayName="当前月">
+		</scapfd_testref.fdmonth13>
+		<scapfd_testref.upOrdown15  uapDisplayName="下跌/上涨/涨跌不一的现象，根据这三家分析行业表，自动填写">
+		</scapfd_testref.upOrdown15>
+		<scapfd_testref.threeOfJG  uapDisplayName="列举出这3户企业——环比增长/下降的价格，企业+价格差，价格差=本月价格-上月价格，其结果大于等于0，为增长；小于0为下跌">
+		</scapfd_testref.threeOfJG>
+		<scapfd_testref.threeOfXL  uapDisplayName="列举出这3户企业——环比增长/下降的销量，企业+销量差，销量差=本月销量-上月销量，其结果大于等于0，为增长；小于0为下跌">
+		</scapfd_testref.threeOfXL>
+		<scapfd_testref.fdmonth14 uapDisplayName="当前月">
+		</scapfd_testref.fdmonth14>
+		<scapfd_testref.threeOfLR  uapDisplayName="列举出这3户企业——环比增长/下降的利润比例，企业+利润差比例，利润差比例=（本月利润-上月利润）/上月利润。取数：企业表，第16行的“本月数”。大于等于0为增长；小于0为下跌">
+		</scapfd_testref.threeOfLR>
+		<scapfd_testref.threeOfZJ  uapDisplayName="列举出这3户企业——利润同比增长/下降的情况，企业+1-上个月，和1-本月，的利润同比增长情况。取数：企业表，第16行的“比上年同期增减（%）”。大于等于0为增长；小于0为下跌">
+		</scapfd_testref.threeOfZJ>
+		<scapfd_testref.JCHG2  uapDisplayName="取数范围：海螺集团">
+		</scapfd_testref.JCHG2>
+		<scapfd_testref.JCHG2All  uapDisplayName="该企业1-本月，实现的收入（企业表，第1行的“本年累计数”，由万元折算为亿元），同比增长（企业表，第1行的“比上年同期增减%”）；利润（企业表，第16行的“本年累计数”，由万元折算为亿元），同比增长（企业表，第1行的“比上年同期增减%”）">
+		</scapfd_testref.JCHG2All>
+		<scapfd_testref.JX2  uapDisplayName="取数范围：江汽集团、叉车集团">
+		</scapfd_testref.JX2>
+		<scapfd_testref.fdmonth15 uapDisplayName="1-本月">
+		</scapfd_testref.fdmonth15>
+		<scapfd_testref.upOrdown16  uapDisplayName="该企业1-本月，实现的汽车销量（企业表，第1行的“本年累计数”），同比增长/下降，">
+		</scapfd_testref.upOrdown16>
+		<scapfd_testref.JX2All  uapDisplayName="该企业1-本月，实现的汽车销量（企业表，第1行的“本年累计数”），同比增长/下降，）实现（该企业1-本月，实现的收入（企业表，第1行的“本年累计数”，由万元折算为亿元），同比增长（企业表，第1行的“比上年同期增减%”）；利润（企业表，第16行的“本年累计数”，由万元折算为亿元），同比增长（企业表，第1行的“比上年同期增减%”）">
+		</scapfd_testref.JX2All>
+		<scapfd_testref.upOrdown161  uapDisplayName="该企业1-本月，实现的汽车销量（企业表，第1行的“本年累计数”），同比增长/下降，">
+		</scapfd_testref.upOrdown161>
+		<scapfd_testref.CC2All  uapDisplayName="该企业1-本月，实现的收入（企业表，第1行的“本年累计数”，由万元折算为亿元），同比增长（企业表，第1行的“比上年同期增减%”）；利润（企业表，第16行的“本年累计数”，由万元折算为亿元），同比增长（企业表，第1行的“比上年同期增减%”）">
+		</scapfd_testref.CC2All>
+		<scapfd_testref.JZ2  uapDisplayName="取数范围：建工集团、中煤矿建集团">
+		</scapfd_testref.JZ2>
+		<scapfd_testref.fdmonth16 uapDisplayName="1-本月">
+		</scapfd_testref.fdmonth16>
+		<scapfd_testref.JZ2JGAll  uapDisplayName="该企业1-本月，实现的收入（企业表，第1行的“本年累计数”，由万元折算为亿元），同比增长（企业表，第1行的“比上年同期增减%”）；利润（企业表，第16行的“本年累计数”，由万元折算为亿元），同比增长（企业表，第1行的“比上年同期增减%”）">
+		</scapfd_testref.JZ2JGAll>
+		<scapfd_testref.fdmonth17 uapDisplayName="1-本月">
+		</scapfd_testref.fdmonth17>
+		<scapfd_testref.JZ2ZMKJAll  uapDisplayName="该企业1-本月，实现的收入（企业表，第1行的“本年累计数”，由万元折算为亿元），同比增长（企业表，第1行的“比上年同期增减%”）；利润（企业表，第16行的“本年累计数”，由万元折算为亿元），同比增长（企业表，第1行的“比上年同期增减%”）">
+		</scapfd_testref.JZ2ZMKJAll>
+		 <scapfd_testref.ls01
+ uapDisplayName="省属企业利息支出净额（本年累计）同比增长率">
+        </scapfd_testref.ls01>
+		<scapfd_testref.upOrdown18  uapDisplayName="增长">
+        </scapfd_testref.upOrdown18>
+        <scapfd_testref.ls02
+ uapDisplayName="省属企业利息支出净额（本年累计）">
+        </scapfd_testref.ls02>
+
+        <scapfd_testref.ls03
+ uapDisplayName="省属企业财务费用支出（本年累计）环比上升百分点">
+        </scapfd_testref.ls03>
+		<scapfd_testref.upOrdown19  uapDisplayName="上升">
+        </scapfd_testref.upOrdown19>
+        <scapfd_testref.ls04
+ uapDisplayName="1~快报月-1">
+        </scapfd_testref.ls04>
+		<scapfd_testref.upOrdown191  uapDisplayName="增幅">
+        </scapfd_testref.upOrdown191>       
+		<scapfd_testref.ls05
+ uapDisplayName="省属企业财务费用支出（本年累计）同比增长率">
+        </scapfd_testref.ls05>
+		<scapfd_testref.upOrdown20  uapDisplayName="增长">
+        </scapfd_testref.upOrdown20>
+        <scapfd_testref.ls06
+ uapDisplayName="省属企业财务费用支出（本年累计）">
+        </scapfd_testref.ls06>
+
+        <scapfd_testref.ls07
+ uapDisplayName="1~快报月">
+        </scapfd_testref.ls07>
+
+
+        <scapfd_testref.ls08
+ uapDisplayName="省属企业存货（本年累计）同比增长率">
+        </scapfd_testref.ls08>
+		<scapfd_testref.upOrdown21  uapDisplayName="增长">
+        </scapfd_testref.upOrdown21>
+        <scapfd_testref.ls09
+ uapDisplayName="省属企业应收账款本年累计同比增长率">
+        </scapfd_testref.ls09>
+		<scapfd_testref.upOrdown22  uapDisplayName="增长">
+        </scapfd_testref.upOrdown22>
+       <scapfd_testref.ls10
+ uapDisplayName="省属企业存货（本年累计）环比上升百分点">
+        </scapfd_testref.ls10>
+		<scapfd_testref.upOrdown23  uapDisplayName="上升">
+        </scapfd_testref.upOrdown23>
+
+       <scapfd_testref.ls11
+ uapDisplayName="省属企业应收账款（本年累计）环比上升百分点">
+        </scapfd_testref.ls11>
+		<scapfd_testref.upOrdown24  uapDisplayName="上升">
+        </scapfd_testref.upOrdown24>
+       <scapfd_testref.ls12
+ uapDisplayName="1-上月">
+        </scapfd_testref.ls12>
+
+       <scapfd_testref.ls13
+ uapDisplayName="省属企业存货（本年累计）金额">
+        </scapfd_testref.ls13>
+
+       <scapfd_testref.ls14
+ uapDisplayName="省属企业应收账款（本年累计）金额">
+        </scapfd_testref.ls14>
+
+       <scapfd_testref.ls15
+ uapDisplayName="快报月">
+        </scapfd_testref.ls15>
+
+       <scapfd_testref.ls16
+ uapDisplayName="省属企业营业成本（本年累计）同比增长率高于营业收入（本年累计）同比增长率百分点">
+        </scapfd_testref.ls16>
+		<scapfd_testref.upOrdown25  uapDisplayName="高于">
+        </scapfd_testref.upOrdown25>
+
+       <scapfd_testref.ls17
+ uapDisplayName="省属企业营业成本（本年累计）同比增长率较上月同比增长率增长百分点">
+        </scapfd_testref.ls17>
+		<scapfd_testref.upOrdown26  uapDisplayName="上升">
+        </scapfd_testref.upOrdown26>
+       <scapfd_testref.ls18
+ uapDisplayName="1~快报月-1">
+        </scapfd_testref.ls18>
+
+       <scapfd_testref.ls19
+ uapDisplayName="省属企业营业成本（本年累计）同比增长率">
+        </scapfd_testref.ls19>
+		<scapfd_testref.upOrdown27  uapDisplayName="增长">
+        </scapfd_testref.upOrdown27>
+       <scapfd_testref.ls20
+ uapDisplayName="1~快报月">
+        </scapfd_testref.ls20>
+
+       <scapfd_testref.ls21
+ uapDisplayName="省属企业资产负债率环比提高百分点">
+        </scapfd_testref.ls21>
+		<scapfd_testref.upOrdown28  uapDisplayName="上升">
+        </scapfd_testref.upOrdown28>
+      <scapfd_testref.ls22
+ uapDisplayName="省属企业资产负债率">
+        </scapfd_testref.ls22>
+
+      <scapfd_testref.ls23
+ uapDisplayName="快报月">
+        </scapfd_testref.ls23>
+
+      <scapfd_testref.ls24
+ uapDisplayName="该企业1-本月，实现的收入（企业表，第1行的“本年累计数”，由万元折算为亿元，汇总数），同比增长（企业表，第1行的“本年累计数的汇总”-第1行的“上年同期的汇总”，然后再除以“上年同期的汇总”，最后乘以100%）；利润（企业表，第16行的“本年累计数”，由万元折算为亿元，汇总数），同比增长（企业表，第16行的“本年累计数的汇总”-第16行的“上年同期的汇总”，然后再除以“上年同期的汇总”，最后乘以100%）">
+        </scapfd_testref.ls24>
+
+      <scapfd_testref.ls25
+ uapDisplayName="1-本月">
+        </scapfd_testref.ls25>
+
+      <scapfd_testref.ls26
+ uapDisplayName="取数范围：所有归属商贸类的企业">
+        </scapfd_testref.ls26>
+
+
+      <scapfd_testref.ls27
+ uapDisplayName="该企业1-本月，实现的收入（企业表，第1行的“本年累计数”，由万元折算为亿元，汇总数），同比增长（企业表，第1行的“本年累计数的汇总”-第1行的“上年同期的汇总”，然后再除以“上年同期的汇总”，最后乘以100%）；利润（企业表，第16行的“本年累计数”，由万元折算为亿元，汇总数），同比增长（企业表，第16行的“本年累计数的汇总”-第16行的“上年同期的汇总”，然后再除以“上年同期的汇总”，最后乘以100%）">
+        </scapfd_testref.ls27>
+
+      <scapfd_testref.ls28
+ uapDisplayName="1-本月">
+        </scapfd_testref.ls28>
+
+
+      <scapfd_testref.ls29
+ uapDisplayName="取数范围：所有归属投资及金融类的企业">
+        </scapfd_testref.ls29>
+      <scapfd_testref.z1  uapDisplayName="x">
+        </scapfd_testref.z1>	
+      <scapfd_testref.z2  uapDisplayName="营业收入">
+        </scapfd_testref.z2>
+		<scapfd_testref.z3  uapDisplayName="增加（减少）">
+        </scapfd_testref.z3>
+		<scapfd_testref.z4  uapDisplayName="营业收入环比">
+        </scapfd_testref.z4>
+
+        <scapfd_testref.z5  uapDisplayName="x">
+        </scapfd_testref.z5>	
+        <scapfd_testref.z6  uapDisplayName="利润总额">
+        </scapfd_testref.z6>
+		<scapfd_testref.z7  uapDisplayName="增加（减少）">
+        </scapfd_testref.z7>
+		<scapfd_testref.z8  uapDisplayName="利润总额环比">
+        </scapfd_testref.z8>
+
+		<scapfd_testref.z9  uapDisplayName="增加（减少）">
+        </scapfd_testref.z9>
+		<scapfd_testref.z10  uapDisplayName="资产总额环比累计">
+        </scapfd_testref.z10>
+
+		<scapfd_testref.z11  uapDisplayName="增加（减少）">
+        </scapfd_testref.z11>
+		<scapfd_testref.z12  uapDisplayName="所有者权益总额环比累计">
+        </scapfd_testref.z12>
+
+      <scapfd_testref.z13  uapDisplayName="资产总额超过500亿的企业有…家">
+        </scapfd_testref.z13>	
+      <scapfd_testref.z14  uapDisplayName="分别是——单独列出，列出具体的数值">
+        </scapfd_testref.z14>
+		<scapfd_testref.z15  uapDisplayName="总额超过1亿元的企业户数">
+        </scapfd_testref.z15>
+
+		<scapfd_testref.z16  uapDisplayName="x">
+        </scapfd_testref.z16>
+        <scapfd_testref.z17  uapDisplayName="钢材均价">
+        </scapfd_testref.z17>	
+		<scapfd_testref.z18  uapDisplayName="增加（减少）">
+        </scapfd_testref.z18>
+		<scapfd_testref.z19  uapDisplayName="钢材均价环比">
+        </scapfd_testref.z19>
+		<scapfd_testref.z20  uapDisplayName="x">
+        </scapfd_testref.z20>
+        <scapfd_testref.z21  uapDisplayName="利润">
+        </scapfd_testref.z21>	
+		<scapfd_testref.z22  uapDisplayName="增加（减少）">
+        </scapfd_testref.z22>
+		<scapfd_testref.z23  uapDisplayName="利润环比">
+        </scapfd_testref.z23>
+		<scapfd_testref.z33  uapDisplayName="销售汽车">
+        </scapfd_testref.z33>	
+		<scapfd_testref.z34  uapDisplayName="增加（减少）">
+        </scapfd_testref.z34>
+		<scapfd_testref.z35  uapDisplayName="销售汽车环比">
+        </scapfd_testref.z35>
+		<scapfd_testref.z36  uapDisplayName="销售汽车累计">
+        </scapfd_testref.z36>	
+		<scapfd_testref.z37  uapDisplayName="增加（减少）">
+        </scapfd_testref.z37>
+		<scapfd_testref.z38  uapDisplayName="销售汽车累计环比">
+        </scapfd_testref.z38>
+
+		<scapfd_testref.z45  uapDisplayName="销售汽车"/>	
+		<scapfd_testref.z46  uapDisplayName="增加（减少）"/>
+		<scapfd_testref.z47  uapDisplayName="销售汽车环比"/>
+		<scapfd_testref.z48  uapDisplayName="销售汽车累计"/>
+		<scapfd_testref.z49  uapDisplayName="增加（减少）"/>
+		<scapfd_testref.z50  uapDisplayName="销售汽车累计环比"/>
+		<scapfd_testref.z51  uapDisplayName="收入"/>
+		<scapfd_testref.z52  uapDisplayName="增加（减少）"/>
+		<scapfd_testref.z53  uapDisplayName="收入环比"/>
+		<scapfd_testref.z54  uapDisplayName="利润"/>	
+		<scapfd_testref.z55  uapDisplayName="增加（减少）"/>
+		<scapfd_testref.z56  uapDisplayName="利润环比"/>
+
+		<scapfd_testref.z81  uapDisplayName="逐一列出资产负债率大于等于80%的企业，企业名称+实际的资产负债率；由高往低排列"/>
+		<scapfd_testref.z82  uapDisplayName="省属企业营业成本"/>
+
+
+		<scapfd_testref.z83  uapDisplayName="累计销售费用支出"/>
+		<scapfd_testref.z84  uapDisplayName="上升（下降）"/>
+		<scapfd_testref.z85  uapDisplayName="累计销售费用支出同比"/>
+		<scapfd_testref.z86  uapDisplayName="上升（下降）"/>
+		<scapfd_testref.z87  uapDisplayName="累计销售费用支出环比"/>
+		<scapfd_testref.z88  uapDisplayName="利息支出净额"/>
+		<scapfd_testref.z89  uapDisplayName="增长（下降）"/>
+		<scapfd_testref.z90  uapDisplayName="利息支出净额同比"/>
+
+
+		<scapfd_testref.z91  uapDisplayName="累计管理费用支出"/>
+		<scapfd_testref.z92  uapDisplayName="上升（下降）"/>
+		<scapfd_testref.z93  uapDisplayName="累计管理费用支出同比"/>
+		<scapfd_testref.z94  uapDisplayName="上升（下降）"/>
+		<scapfd_testref.z95  uapDisplayName="累计管理费用支出环比"/>
+		<scapfd_testref.z96  uapDisplayName="利息支出净额"/>
+		<scapfd_testref.z97  uapDisplayName="增长（下降）"/>
+		<scapfd_testref.z98  uapDisplayName="利息支出净额同比"/>
+    </scapfd_testref>
+</Root>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gb2312"?>
+<plugin>
+	<id>chart</id>
+	<fullname>
+	ui.ctrl.chart.fusionchart.FusionCharts,ui.ctrl.chart.ChartModel,ui.ctrl.chart.ChartModelUtil,ui.ctrl.chart.ChartConvertor,ui.ctrl.chart.ChartComp
+	</fullname>
+	<cssfullname>ui.ctrl.chart.chart</cssfullname>
+	<dependences></dependences>
+	<javaclazz>nc.uap.lfw.core.comp.ChartComp</javaclazz>
+	<uijavaclazz>nc.uap.lfw.jsp.uimeta.UIChartComp</uijavaclazz>
+	<serializer>nc.uap.lfw.core.ctrlfrm.seria.ChartSerializer</serializer>
+	<uiserializer>nc.uap.lfw.core.ctrlfrm.uiseria.UIChartSerializer</uiserializer>
+	<uirender>nc.uap.lfw.ra.render.pc.factory.PCChartCompRenderFactory</uirender>
+	<zone>view</zone>
+	<compress>false</compress>
+	<compressname></compressname>
+	<compressdyn>true</compressdyn>
+	<name>chart</name>
+	<info></info>
+	<databinding>false</databinding>
+	<langDir>pa</langDir>
+	<i18nname>PaPalletDsListener-000031</i18nname>
+</plugin>

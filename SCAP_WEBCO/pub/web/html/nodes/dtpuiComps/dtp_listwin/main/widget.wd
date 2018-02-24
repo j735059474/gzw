@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget controllerClazz="nc.scap.dsm.dtp.ctrl.DtpListWinMainViewCtrl" id="main" refId="main" sourcePackage="pub/src/public/">
+    <Attributes>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+        <PlugoutDesc id="datatypeChangePlugout">
+            <PlugoutDescItem clazztype="java.lang.String" name="OPERATE_ROW" source="datetype_h" type="Dataset.TYPE_DATASET_SEL_ROW">
+            </PlugoutDescItem>
+        </PlugoutDesc>
+    </PlugoutDescs>
+    <PluginDescs>
+        <PluginDesc id="simpleQuery_plugin" methodName="doQueryChange">
+        </PluginDesc>
+        <PluginDesc id="org_plugin" methodName="doOrgChange">
+        </PluginDesc>
+        <PluginDesc id="refresh_plugin" methodName="doRefresh">
+            <PluginDescItem clazztype="java.lang.String" id="OPERATE_ROW">
+            </PluginDescItem>
+        </PluginDesc>
+        <PluginDesc id="selectDataType_plugin" methodName="doSelectDataTypeRow">
+            <PluginDescItem clazztype="java.lang.String" id="OPERATE_ROW">
+            </PluginDescItem>
+        </PluginDesc>
+    </PluginDescs>
+    <Connectors>
+        <Connector connType="6" id="listViewConnID" pluginId="refresh_plugin" plugoutId="proxyAfterSavePlugout" source="dtpuiComps.dtp_listwin" sourceWindow="" target="main" targetWindow="">
+        </Connector>
+    </Connectors>
+    <Models>
+        <Datasets>
+            <DatasetRelations>
+                <DatasetRelation detailDataset="powerrole" detailForeignKey="pk_datetype_h" id="scapjj_powerrole_b_scapjj_datetype_h" masterDataset="datetype_h" masterKeyField="pk_datetype_h">
+                </DatasetRelation>
+                <DatasetRelation detailDataset="poweruser" detailForeignKey="pk_datetype_h" id="scapjj_poweruser_b_scapjj_datetype_h" masterDataset="datetype_h" masterKeyField="pk_datetype_h">
+                </DatasetRelation>
+            </DatasetRelations>
+            <MdDataset caption="资料类型" controlwidgetopeStatus="true" enabled="false" id="datetype_h" lazyLoad="false" notNullBody="false" objMeta="scapco.datetype_h" pageSize="-1" voMeta="nc.vo.scapjj.dsm.Datetype_HVO">
+                <FieldRelations>
+                    <FieldRelation id="pk_father_rel" needProcess="true" refDataset="$refds_scapjj_datetype_h" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_father_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_datetype_h" value="pk_father">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_org_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_group_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_group_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_group">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="creator_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="creator_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="creator">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="modifier_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="modifier_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="modifier">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="xgdw_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="xgdw_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="xgdw">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                    <ModifyField id="pk_father_name" text="上级资料类型">
+                    </ModifyField>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                            <Param>
+                                <Name>rowSelectEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onDataLoad_datatype" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DataLoadEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onAfterRowUnSelect" name="onAfterRowUnSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DatasetEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <RefMdDataset caption="协同用户" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_user" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_user" voMeta="nc.uap.cpb.org.vos.CpUserVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="权限-角色" controlwidgetopeStatus="false" enabled="false" id="powerrole" lazyLoad="true" notNullBody="false" objMeta="scapco.powerrole" pageSize="10" voMeta="nc.vo.scapjj.dsm.PowerRole_BVO">
+                <FieldRelations>
+                    <FieldRelation id="jsmx_rel" needProcess="true" refDataset="$refds_uapcp_cp_role" useCache="true">
+                        <MatchFields>
+                            <Field readField="rolename" writeField="jsmx_rolename">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_role" value="jsmx">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad_powerrole" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DataLoadEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <RefMdDataset caption="视图用户人员信息" controlwidgetopeStatus="false" enabled="false" id="$refds_scapjj_v_userpsn" lazyLoad="true" notNullBody="false" objMeta="scapco.v_userpsn" voMeta="nc.vo.scapjj.userpsn.V_userpsnVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="权限-用户" controlwidgetopeStatus="false" enabled="false" id="poweruser" lazyLoad="true" notNullBody="false" objMeta="scapco.poweruser" pageSize="10" voMeta="nc.vo.scapjj.dsm.PowerUser_BVO">
+                <FieldRelations>
+                    <FieldRelation id="yh_rel" needProcess="true" refDataset="$refds_scapjj_v_userpsn" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="yh_user_name">
+                            </Field>
+                            <Field readField="szdw" writeField="szdw">
+                            </Field>
+                            <Field readField="sex" writeField="sex">
+                            </Field>
+                            <Field readField="zw" writeField="zw">
+                            </Field>
+                            <Field readField="zc" writeField="zc">
+                            </Field>
+                            <Field readField="tel" writeField="tel">
+                            </Field>
+                            <Field readField="mobile" writeField="mobile">
+                            </Field>
+                            <Field readField="email" writeField="email">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="yh">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                    <Field dataType="String" id="szdw" nullAble="true" primaryKey="false" text="所在单位">
+                    </Field>
+                    <Field dataType="String" id="sex" nullAble="true" primaryKey="false" text="性别">
+                    </Field>
+                    <Field dataType="String" id="zw" nullAble="true" primaryKey="false" text="职务">
+                    </Field>
+                    <Field dataType="String" id="zc" nullAble="true" primaryKey="false" text="职称">
+                    </Field>
+                    <Field dataType="String" id="tel" nullAble="true" primaryKey="false" text="联系电话">
+                    </Field>
+                    <Field dataType="String" id="mobile" nullAble="true" primaryKey="false" text="手机">
+                    </Field>
+                    <Field dataType="String" id="email" nullAble="true" primaryKey="false" text="电子邮箱">
+                    </Field>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad_poweruser" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DataLoadEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <RefMdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_orgs" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_orgs" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="协同角色" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_role" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_role" voMeta="nc.uap.cpb.org.vos.CpRoleVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="资料类型" controlwidgetopeStatus="false" enabled="false" id="$refds_scapjj_datetype_h" lazyLoad="true" notNullBody="false" objMeta="scapco.datetype_h" voMeta="nc.vo.scapjj.dsm.Datetype_HVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+        </Datasets>
+        <ComboDatas>
+            <MDComboDataConf caption="是否" fullclassName="e2378d67-42aa-4ad3-b5c0-f185f504043d" id="combo_powerrole_sfqy">
+            </MDComboDataConf>
+            <MDComboDataConf caption="是否" fullclassName="e2378d67-42aa-4ad3-b5c0-f185f504043d" id="combo_datetype_h_enablestate">
+            </MDComboDataConf>
+            <MDComboDataConf caption="是否" fullclassName="e2378d67-42aa-4ad3-b5c0-f185f504043d" id="combo_poweruser_sfqy">
+            </MDComboDataConf>
+            <MDComboDataConf caption="权限类型" fullclassName="30036c69-3811-4eec-b127-e4a75a734b70" id="combo_powerrole_qxlx">
+            </MDComboDataConf>
+            <MDComboDataConf caption="权限类型" fullclassName="30036c69-3811-4eec-b127-e4a75a734b70" id="combo_poweruser_qxlx">
+            </MDComboDataConf>
+        </ComboDatas>
+        <RefNodes>
+            <LfwRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" i18nName="" id="refnode_userpdn" langDir="" lfwRefCode="用户人员信息" multiSel="false" multiSelResult="true" multiSelTree="false" orgs="false" pageSelResult="false" read="false" readDs="masterDs" readFields="cuserid,user_name,szdw,sex,zw,zc,tel,mobile,email" refnodeDelegator="" relationRefNodeId="refnode_grid" selLeafOnly="false" showSelResult="true" text="用户人员信息" writeDs="poweruser" writeFields="yh,yh_user_name,szdw,sex,zw,zc,tel,mobile,email">
+            </LfwRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_powerrole_qxlx_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_defdoc,name" refId="" refcode="权限类型(自定义档案)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="权限-角色_权限类型(自定义档案)" usePower="false" writeDs="powerrole" writeFields="qxlx,qxlx_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_powerrole_jsmx_rolename" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_role,rolename" refId="" refcode="协同角色" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="权限-角色_协同角色" usePower="false" writeDs="powerrole" writeFields="jsmx,jsmx_rolename">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_datetype_h_name" langDir="" multiSel="false" orgs="false" pagemeta="" pagemodel="" read="false" readDs="masterDs" readFields="pk_datetype_h,name" refId="" refcode="资料类型权限" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="资料类型权限" usePower="false" writeDs="datetype_h" writeFields="pk_father,pk_father_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_datetype_h_pk_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="资料类型_协同当前集团+业务单元" usePower="false" writeDs="datetype_h" writeFields="pk_org,pk_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_datetype_h_xgdw_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="资料类型_协同当前集团+业务单元" usePower="false" writeDs="datetype_h" writeFields="xgdw,xgdw_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_datetype_h_creator_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="资料类型_协同用户" usePower="false" writeDs="datetype_h" writeFields="creator,creator_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_datetype_h_modifier_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="资料类型_协同用户" usePower="false" writeDs="datetype_h" writeFields="modifier,modifier_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_poweruser_yh_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="权限-用户_协同用户" usePower="false" writeDs="poweruser" writeFields="yh,yh_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_datetype_h_pk_group_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="资料类型_协同当前集团+业务单元" usePower="false" writeDs="datetype_h" writeFields="pk_group,pk_group_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_poweruser_qxlx_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_defdoc,name" refId="" refcode="权限类型(自定义档案)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="权限-用户_权限类型(自定义档案)" usePower="false" writeDs="poweruser" writeFields="qxlx,qxlx_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <FormComp caption="资料类型" columnCount="3" dataset="datetype_h" eleWidth="210" ellipsis="false" enabled="true" id="datatype_h_form" labelMinWidth="0" renderType="1" rowHeight="22" visible="true">
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="pk_datetype_h" height="" id="pk_datetype_h" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="false" nullAble="false" rowSpan="1" selectOnly="true" text="主键" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="pk_father" height="" id="pk_father" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="上级PK" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="code" height="" id="code" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="编码" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="name" height="" id="name" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="名称" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="Reference" enabled="true" field="pk_father_name" height="" id="pk_father_name" imageOnly="false" nextLine="false" nullAble="true" refNode="refnode_datetype_h_name" rowSpan="1" selectOnly="true" text="上级资料类型" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="RadioGroup" enabled="true" field="enablestate" height="" id="enablestate" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="false" nullAble="true" refComboData="combo_poweruser_sfqy" rowSpan="1" selectOnly="true" text="是否启用" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="tel" height="" id="tel" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="联系电话" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="vnote" height="" id="vnote" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="备注" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="pk_org" height="" id="pk_org" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="true" nullAble="true" rowSpan="1" selectOnly="true" text="组织" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="Reference" enabled="true" field="pk_org_name" height="" id="pk_org_name" imageOnly="false" nextLine="true" nullAble="true" refNode="refnode_datetype_h_pk_org_name" rowSpan="1" selectOnly="true" text="创建单位" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="pk_group" height="" id="pk_group" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="所属集团" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="Reference" enabled="true" field="pk_group_name" height="" id="pk_group_name" imageOnly="false" nextLine="false" nullAble="true" refNode="refnode_datetype_h_pk_group_name" rowSpan="1" selectOnly="true" text="所属集团" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="creator" height="" id="creator" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="false" nullAble="false" rowSpan="1" selectOnly="true" text="创建人" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="Reference" enabled="true" field="creator_user_name" height="" id="creator_user_name" imageOnly="false" nextLine="false" nullAble="true" refNode="refnode_datetype_h_creator_user_name" rowSpan="1" selectOnly="true" text="创建人" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="DateTimeText" enabled="true" field="creationtime" height="" id="creationtime" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="创建时间" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="Reference" enabled="true" field="xgdw_name" height="" id="xgdw_name" imageOnly="false" nextLine="false" nullAble="true" refNode="refnode_datetype_h_xgdw_name" rowSpan="1" selectOnly="true" text="修改单位" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="modifier" height="" id="modifier" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="修改人" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="Reference" enabled="true" field="modifier_user_name" height="" id="modifier_user_name" imageOnly="false" nextLine="false" nullAble="true" refNode="refnode_datetype_h_modifier_user_name" rowSpan="1" selectOnly="true" text="修改人" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="DateTimeText" enabled="true" field="modifiedtime" height="" id="modifiedtime" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="修改时间" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="xgdw" height="" id="xgdw" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="修改单位" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def1" height="" id="def1" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="def1" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def2" height="" id="def2" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="def2" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def3" height="" id="def3" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="def3" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def4" height="" id="def4" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="def4" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def5" height="" id="def5" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="def5" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def6" height="" id="def6" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="def6" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def7" height="" id="def7" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="def7" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def8" height="" id="def8" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="def8" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def9" height="" id="def9" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="def9" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editable="true" editorType="StringText" enabled="true" field="def10" height="" id="def10" imageOnly="false" langDir="scapco_dsm_dtp" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" text="def10" toolbarType="Custom" visible="false" width="">
+            </Element>
+        </FormComp>
+        <TreeViewComp canEdit="false" checkBoxModel="0" dragEnable="false" enabled="true" id="dateTypeTree" openLevel="2" rootOpen="true" selectRoot="false" text="全部" visible="true" withCheckBox="false" withRoot="false">
+            <RecursiveTreeLevel dataset="datetype_h" id="一级" labelFields="code,name" loadField="" masterKeyField="pk_datetype_h" recursiveKeyField="pk_datetype_h" recursivePKeyField="pk_father">
+            </RecursiveTreeLevel>
+        </TreeViewComp>
+        <GridComp autoRowHeight="false" canCopy="true" caption="datetype_h_grid" checkBoxModel="1" dataset="datetype_h" editable="false" enabled="true" expandTree="false" id="datetype_h_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="true" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_org" fixedHeader="false" id="pk_org" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="组织" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_org_name" fixedHeader="false" id="pk_org_name" imageOnly="false" nullAble="true" refNode="refnode_datetype_h_pk_org_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="组织" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_father" fixedHeader="false" id="pk_father" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上级PK" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_father" fixedHeader="false" id="pk_father_name" imageOnly="false" nullAble="true" refNode="refnode_datetype_h_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上级资料类型" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="code" fixedHeader="false" id="code" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="编码" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="name" fixedHeader="false" id="name" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="名称" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="tel" fixedHeader="false" id="tel" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="联系电话" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="enablestate" fixedHeader="false" id="enablestate" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" refComboData="combo_datetype_h_enablestate" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="是否启用" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vnote" fixedHeader="false" id="vnote" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备注" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_group" fixedHeader="false" id="pk_group" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="所属集团" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_group_name" fixedHeader="false" id="pk_group_name" imageOnly="false" nullAble="true" refNode="refnode_datetype_h_pk_group_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="所属集团" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="creator" fixedHeader="false" id="creator" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="false" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="创建人" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="creator_user_name" fixedHeader="false" id="creator_user_name" imageOnly="false" nullAble="true" refNode="refnode_datetype_h_creator_user_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="创建人" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDateTime" editable="true" editorType="DateTimeText" field="creationtime" fixedHeader="false" id="creationtime" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="创建时间" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="modifier" fixedHeader="false" id="modifier" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="修改人" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="modifier_user_name" fixedHeader="false" id="modifier_user_name" imageOnly="false" nullAble="true" refNode="refnode_datetype_h_modifier_user_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="修改人" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDateTime" editable="true" editorType="DateTimeText" field="modifiedtime" fixedHeader="false" id="modifiedtime" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="修改时间" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="xgdw" fixedHeader="false" id="xgdw" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="修改单位" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="xgdw_name" fixedHeader="false" id="xgdw_name" imageOnly="false" nullAble="true" refNode="refnode_datetype_h_xgdw_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="修改单位" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def1" fixedHeader="false" id="def1" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def1" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def2" fixedHeader="false" id="def2" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def2" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def3" fixedHeader="false" id="def3" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def3" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def4" fixedHeader="false" id="def4" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def4" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def5" fixedHeader="false" id="def5" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def5" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def6" fixedHeader="false" id="def6" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def6" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def7" fixedHeader="false" id="def7" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def7" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def8" fixedHeader="false" id="def8" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def8" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def9" fixedHeader="false" id="def9" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def9" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def10" fixedHeader="false" id="def10" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def10" textAlign="left" visible="false" width="120">
+            </Column>
+        </GridComp>
+        <GridComp autoRowHeight="false" canCopy="true" caption="权限-角色" checkBoxModel="1" dataset="powerrole" editable="true" enabled="true" expandTree="false" id="powerrole_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="true" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="qxlx" fixedHeader="false" id="qxlx" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" refComboData="combo_powerrole_qxlx" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="权限类型" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="jsmx" fixedHeader="false" id="jsmx" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="角色名称" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="jsmx_rolename" fixedHeader="false" id="jsmx_rolename" imageOnly="false" nullAble="true" refNode="refnode_powerrole_jsmx_rolename" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="角色名称" textAlign="left" visible="true" width="240">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="sfqy" fixedHeader="false" id="sfqy" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" refComboData="combo_powerrole_sfqy" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="是否启用" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vnote" fixedHeader="false" id="vnote" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备注" textAlign="left" visible="true" width="300">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def1" fixedHeader="false" id="def1" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def1" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def2" fixedHeader="false" id="def2" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def2" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def3" fixedHeader="false" id="def3" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def3" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def4" fixedHeader="false" id="def4" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def4" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def5" fixedHeader="false" id="def5" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def5" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def6" fixedHeader="false" id="def6" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def6" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def7" fixedHeader="false" id="def7" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def7" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def8" fixedHeader="false" id="def8" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def8" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def9" fixedHeader="false" id="def9" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def9" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def10" fixedHeader="false" id="def10" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def10" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_datetype_h" fixedHeader="false" id="pk_datetype_h" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上层单据主键" textAlign="left" visible="false" width="120">
+            </Column>
+        </GridComp>
+        <GridComp autoRowHeight="false" canCopy="true" caption="权限-用户" checkBoxModel="1" dataset="poweruser" editable="true" enabled="true" expandTree="false" id="poweruser_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="true" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="qxlx" fixedHeader="false" id="qxlx" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" refComboData="combo_poweruser_qxlx" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="权限类型" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def1" fixedHeader="false" id="def1" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="用户编码" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="yh" fixedHeader="false" id="yh" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="用户姓名" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="yh_user_name" fixedHeader="false" id="yh_user_name" imageOnly="false" nullAble="true" refNode="refnode_userpdn" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="用户名称" textAlign="left" visible="true" width="200">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="sfqy" fixedHeader="false" id="sfqy" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" refComboData="combo_poweruser_sfqy" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="是否启用" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vnote" fixedHeader="false" id="vnote" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备注" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def2" fixedHeader="false" id="def2" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def2" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def3" fixedHeader="false" id="def3" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def3" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def4" fixedHeader="false" id="def4" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def4" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def5" fixedHeader="false" id="def5" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def5" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def6" fixedHeader="false" id="def6" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def6" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def7" fixedHeader="false" id="def7" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def7" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def8" fixedHeader="false" id="def8" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def8" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def9" fixedHeader="false" id="def9" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def9" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def10" fixedHeader="false" id="def10" imageOnly="false" langDir="scapco_dsm_dtp" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="def10" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_datetype_h" fixedHeader="false" id="pk_datetype_h" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上层单据主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="szdw" fixedHeader="false" id="szdw" imageOnly="false" nullAble="true" refNode="refnode_userpdn" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="所在单位" textAlign="left" visible="true" width="240">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="sex" fixedHeader="false" id="sex" imageOnly="false" nullAble="true" refNode="refnode_userpdn" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="性别" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="zw" fixedHeader="false" id="zw" imageOnly="false" nullAble="true" refNode="refnode_userpdn" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="职务" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="zc" fixedHeader="false" id="zc" imageOnly="false" nullAble="true" refNode="refnode_userpdn" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="职称" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="tel" fixedHeader="false" id="tel" imageOnly="false" nullAble="true" refNode="refnode_userpdn" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="联系电话" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="mobile" fixedHeader="false" id="mobile" imageOnly="false" nullAble="true" refNode="refnode_userpdn" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="手机号" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="email" fixedHeader="false" id="email" imageOnly="false" nullAble="true" refNode="refnode_userpdn" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="电子邮箱" textAlign="left" visible="true" width="120">
+            </Column>
+        </GridComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar">
+            <MenuItem id="add" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Init_Ss_Ms_StateManager" text="新增">
+                <Events>
+                    <Event async="true" methodName="onAdd" name="onclick" onserver="true">
+                        <SubmitRule>
+                            <Widget id="main">
+                                <Dataset id="datetype_h" type="ds_current_line">
+                                </Dataset>
+                                <Dataset id="$refds_uapcp_cp_user" type="ds_current_line">
+                                </Dataset>
+                                <Dataset id="powerrole" type="ds_current_line">
+                                </Dataset>
+                                <Dataset id="$refds_scapjj_v_userpsn" type="ds_current_line">
+                                </Dataset>
+                                <Dataset id="poweruser" type="ds_current_line">
+                                </Dataset>
+                                <Dataset id="$refds_uapcp_cp_orgs" type="ds_current_line">
+                                </Dataset>
+                                <Dataset id="$refds_uapcp_cp_role" type="ds_current_line">
+                                </Dataset>
+                                <Dataset id="$refds_scapjj_datetype_h" type="ds_current_line">
+                                </Dataset>
+                            </Widget>
+                        </SubmitRule>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="edit" modifiers="3" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="修改">
+                <Events>
+                    <Event async="true" methodName="onEdit" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="del" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="删除">
+                <Events>
+                    <Event async="true" methodName="onDelete" name="onclick" onserver="true">
+                        <SubmitRule>
+                            <Widget id="main">
+                                <Dataset id="powerrole" type="ds_all_line">
+                                </Dataset>
+                                <Dataset id="poweruser" type="ds_all_line">
+                                </Dataset>
+                            </Widget>
+                        </SubmitRule>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="sep1" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem i18nName="refresh" id="refresh" langDir="lfwbuttons" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="刷新">
+                <Events>
+                    <Event async="true" methodName="onRefresh" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem i18nName="scan" id="scan" langDir="lfwbuttons" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="查看">
+                <Events>
+                    <Event async="true" methodName="onScan" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

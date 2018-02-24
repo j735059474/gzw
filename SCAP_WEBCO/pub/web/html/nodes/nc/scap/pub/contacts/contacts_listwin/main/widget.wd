@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget controllerClazz="nc.scap.pub.contacts.ContactsListWinMainViewCtrl" id="main" refId="main" sourcePackage="pub/src/public/">
+    <Attributes>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+    </PlugoutDescs>
+    <PluginDescs>
+        <PluginDesc id="simpleQuery_plugin" methodName="doQueryChange">
+        </PluginDesc>
+        <PluginDesc id="org_plugin" methodName="doOrgChange">
+        </PluginDesc>
+        <PluginDesc id="refresh_plugin" methodName="doRefresh">
+            <PluginDescItem clazztype="java.lang.String" id="OPERATE_ROW">
+            </PluginDescItem>
+        </PluginDesc>
+    </PluginDescs>
+    <Connectors>
+        <Connector connType="6" id="listViewConnID" pluginId="refresh_plugin" plugoutId="proxyAfterSavePlugout" source="nc.scap.pub.contacts.contacts_listwin" sourceWindow="" target="main" targetWindow="">
+        </Connector>
+    </Connectors>
+    <Models>
+        <Datasets>
+            <DatasetRelations>
+                <DatasetRelation detailDataset="notice_contact_info" detailForeignKey="pk_contact_type" id="scapco_notice_contact_info_scapco_notice_contact_type" masterDataset="notice_contact_type" masterKeyField="pk_contact_type">
+                </DatasetRelation>
+            </DatasetRelations>
+            <RefMdDataset caption="协同用户" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_user" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_user" voMeta="nc.uap.cpb.org.vos.CpUserVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="工作报告类型" controlwidgetopeStatus="false" enabled="false" id="$refds_scapco_work_report_type" lazyLoad="true" notNullBody="false" objMeta="scapco.work_report_type" voMeta="nc.vo.scap.work_report_type.Work_report_type">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="组织基本信息" controlwidgetopeStatus="false" enabled="false" id="$refds_scapco_pub_visualOrganization" lazyLoad="true" notNullBody="false" objMeta="scapco.pub_visualOrganization" voMeta="nc.vo.scapco.pub_visualorganization.visualOrganization">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="报告业务类型(自定义档案)" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_Defdoc_scapco_0003" lazyLoad="true" notNullBody="false" objMeta="uap.Defdoc-scapco_0003" voMeta="nc.vo.bd.defdoc.DefdocVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="资料类型" controlwidgetopeStatus="false" enabled="false" id="$refds_scapco_datetype_h" lazyLoad="true" notNullBody="false" objMeta="scapco.datetype_h" voMeta="nc.vo.scapjj.dsm.Datetype_HVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_orgs" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_orgs" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="联系人详细信息" controlwidgetopeStatus="false" enabled="false" id="notice_contact_info" lazyLoad="true" notNullBody="false" objMeta="scapco.notice_contact_info" voMeta="nc.vo.scapco.work_notice_contacts.notice_contact_info">
+                <FieldRelations>
+                    <FieldRelation id="pk_org_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_visualorg_rel" needProcess="true" refDataset="$refds_scapco_pub_visualOrganization" useCache="true">
+                        <MatchFields>
+                            <Field readField="visualorg_name" writeField="pk_visualorg_visualorg_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_visualorg" value="pk_visualorg">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_user_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="pk_user_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="pk_user">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad_user" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <MdDataset caption="联系人类别" controlwidgetopeStatus="false" enabled="false" id="notice_contact_type" lazyLoad="false" notNullBody="false" objMeta="scapco.notice_contact_type" voMeta="nc.vo.scapco.work_notice_contacts.notice_contact_type">
+                <FieldRelations>
+                    <FieldRelation id="ye_type_rel" needProcess="true" refDataset="$refds_uap_Defdoc_scapco_0003" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="ye_type_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_defdoc" value="ye_type">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="report_type_rel" needProcess="true" refDataset="$refds_scapco_work_report_type" useCache="true">
+                        <MatchFields>
+                            <Field readField="report_type" writeField="report_type_report_type">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_work_report_type" value="report_type">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="data_type_rel" needProcess="true" refDataset="$refds_scapco_datetype_h" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="data_type_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_datetype_h" value="data_type">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="report_psn_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="report_psn_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="report_psn">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="report_org_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="report_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="report_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="report_visualorg_rel" needProcess="true" refDataset="$refds_scapco_pub_visualOrganization" useCache="true">
+                        <MatchFields>
+                            <Field readField="visualorg_name" writeField="report_visualorg_visualorg_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_visualorg" value="report_visualorg">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="modifier_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="modifier_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="modifier">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+        </Datasets>
+        <ComboDatas>
+            <MDComboDataConf caption="联系人类型" fullclassName="84ab62cb-caf5-47f7-90ef-41ffe0e76302" id="combo_notice_contact_info_contacts_type">
+            </MDComboDataConf>
+            <MDComboDataConf caption="启用状态" fullclassName="c1eca789-6921-407c-b764-cdcbaa215cd7" id="combo_notice_contact_type_enablestate">
+            </MDComboDataConf>
+            <MDComboDataConf caption="通知类型" fullclassName="fda1b81a-2ccb-407d-9073-258fc0df4a4f" id="combo_notice_contact_type_notice_style">
+            </MDComboDataConf>
+            <DynamicComboData caption="消息类型" className="nc.scap.pub.contacts.MessageTypeContactsEnum" id="combo_scapco_contact_messagetype">
+            </DynamicComboData>
+        </ComboDatas>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_notice_contact_info_pk_user_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="联系人详细信息_协同用户" usePower="false" writeDs="notice_contact_info" writeFields="pk_user,pk_user_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_notice_contact_type_data_type_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_datetype_h,name" refId="" refcode="资料类型权限" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="联系人类别_资料类型权限" usePower="false" writeDs="notice_contact_type" writeFields="data_type,data_type_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_notice_contact_type_report_psn_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="联系人类别_协同用户" usePower="false" writeDs="notice_contact_type" writeFields="report_psn,report_psn_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_notice_contact_info_pk_visualorg_visualorg_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_visualorg,visualorg_name" refId="" refcode="组织维护" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="联系人详细信息_组织维护" usePower="false" writeDs="notice_contact_info" writeFields="pk_visualorg,pk_visualorg_visualorg_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_notice_contact_type_report_visualorg_visualorg_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_visualorg,visualorg_name" refId="" refcode="组织维护" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="联系人类别_组织维护" usePower="false" writeDs="notice_contact_type" writeFields="report_visualorg,report_visualorg_visualorg_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_notice_contact_type_report_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="联系人类别_协同当前集团+业务单元" usePower="false" writeDs="notice_contact_type" writeFields="report_org,report_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_notice_contact_info_pk_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="联系人详细信息_协同当前集团+业务单元" usePower="false" writeDs="notice_contact_info" writeFields="pk_org,pk_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_notice_contact_type_modifier_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="联系人类别_协同用户" usePower="false" writeDs="notice_contact_type" writeFields="modifier,modifier_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_notice_contact_type_ye_type_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_defdoc,name" refId="" refcode="报告业务类型(自定义档案)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="联系人类别_报告业务类型(自定义档案)" usePower="false" writeDs="notice_contact_type" writeFields="ye_type,ye_type_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_notice_contact_type_report_type_report_type" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_work_report_type,report_type" refId="" refcode="报告类型" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="联系人类别_报告类型" usePower="false" writeDs="notice_contact_type" writeFields="report_type,report_type_report_type">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <GridComp autoRowHeight="false" canCopy="true" caption="联系人详细信息" checkBoxModel="1" dataset="notice_contact_info" editable="true" enabled="true" expandTree="false" id="notice_contact_info_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_notice_contact_info" fixedHeader="false" id="pk_notice_contact_info" imageOnly="false" langDir="work_notice_contacts" nullAble="false" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_org" fixedHeader="false" id="pk_org" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="所属企业" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_org_name" fixedHeader="false" id="pk_org_name" imageOnly="false" nullAble="true" refNode="refnode_notice_contact_info_pk_org_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="所属企业" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_visualorg" fixedHeader="false" id="pk_visualorg" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="所属组织" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_visualorg_visualorg_name" fixedHeader="false" id="pk_visualorg_visualorg_name" imageOnly="false" nullAble="true" refNode="refnode_notice_contact_info_pk_visualorg_visualorg_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="所属组织" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="contacts_name" fixedHeader="false" id="contacts_name" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="联系人姓名" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_user" fixedHeader="false" id="pk_user" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="系统用户" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_user_user_name" fixedHeader="false" id="pk_user_user_name" imageOnly="false" nullAble="true" refNode="refnode_notice_contact_info_pk_user_user_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="系统用户" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="sex" fixedHeader="false" id="sex" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="性别" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="post" fixedHeader="false" id="post" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="职务" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="phone_no" fixedHeader="false" id="phone_no" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="手机号" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="email" fixedHeader="false" id="email" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="邮箱" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="qq_num" fixedHeader="false" id="qq_num" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="QQ" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="contacts_type" fixedHeader="false" id="contacts_type" imageOnly="false" langDir="work_notice_contacts" nullAble="true" refComboData="combo_notice_contact_info_contacts_type" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="联系人类型" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="remark" fixedHeader="false" id="remark" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备注" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def1" fixedHeader="false" id="def1" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段1" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def2" fixedHeader="false" id="def2" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段2" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def3" fixedHeader="false" id="def3" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段3" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def4" fixedHeader="false" id="def4" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段4" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def5" fixedHeader="false" id="def5" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段5" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def6" fixedHeader="false" id="def6" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段6" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def7" fixedHeader="false" id="def7" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段7" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def8" fixedHeader="false" id="def8" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段8" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def9" fixedHeader="false" id="def9" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段9" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def10" fixedHeader="false" id="def10" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段10" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_contact_type" fixedHeader="false" id="pk_contact_type" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上层单据主键" textAlign="left" visible="false" width="120">
+            </Column>
+        </GridComp>
+        <GridComp autoRowHeight="false" canCopy="true" caption="联系人类别" checkBoxModel="1" dataset="notice_contact_type" editable="true" enabled="true" expandTree="false" id="notice_contact_type_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_contact_type" fixedHeader="false" id="pk_contact_type" imageOnly="false" langDir="work_notice_contacts" nullAble="false" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="联系人类别主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="notice_style" fixedHeader="false" id="notice_style" imageOnly="false" langDir="work_notice_contacts" nullAble="true" refComboData="combo_notice_contact_type_notice_style" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="通知类型" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="ye_type" fixedHeader="false" id="ye_type" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="业务类型" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="ye_type_name" fixedHeader="false" id="ye_type_name" imageOnly="false" nullAble="true" refNode="refnode_notice_contact_type_ye_type_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="业务类型" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="report_type" fixedHeader="false" id="report_type" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="报告类型" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="report_type_report_type" fixedHeader="false" id="report_type_report_type" imageOnly="false" nullAble="true" refNode="refnode_notice_contact_type_report_type_report_type" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="报告类型" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="data_type" fixedHeader="false" id="data_type" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="资料类型" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="data_type_name" fixedHeader="false" id="data_type_name" imageOnly="false" nullAble="true" refNode="refnode_notice_contact_type_data_type_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="资料类型" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="vdef1" fixedHeader="false" id="vdef1" imageOnly="false" langDir="work_notice_contacts" nullAble="true" refComboData="combo_scapco_contact_messagetype" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="消息类型" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="report_psn" fixedHeader="false" id="report_psn" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="填表人" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="report_psn_user_name" fixedHeader="false" id="report_psn_user_name" imageOnly="false" nullAble="true" refNode="refnode_notice_contact_type_report_psn_user_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="填表人" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="report_org" fixedHeader="false" id="report_org" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="填表单位" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="report_org_name" fixedHeader="false" id="report_org_name" imageOnly="false" nullAble="true" refNode="refnode_notice_contact_type_report_org_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="填表单位" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="report_visualorg" fixedHeader="false" id="report_visualorg" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="填表组织" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="report_visualorg_visualorg_name" fixedHeader="false" id="report_visualorg_visualorg_name" imageOnly="false" nullAble="true" refNode="refnode_notice_contact_type_report_visualorg_visualorg_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="填表组织" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDate" editable="true" editorType="DateText" field="report_date" fixedHeader="false" id="report_date" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DateRender" showCheckBox="true" sortable="true" sumCol="false" text="填报时间" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="remark" fixedHeader="false" id="remark" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备注" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Integer" editable="true" editorType="ComboBox" field="enablestate" fixedHeader="false" id="enablestate" imageOnly="false" langDir="work_notice_contacts" nullAble="true" refComboData="combo_notice_contact_type_enablestate" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="是否启用" textAlign="right" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="modifier" fixedHeader="false" id="modifier" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="修改人" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="modifier_user_name" fixedHeader="false" id="modifier_user_name" imageOnly="false" nullAble="true" refNode="refnode_notice_contact_type_modifier_user_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="修改人" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDateTime" editable="true" editorType="DateTimeText" field="modifiedtime" fixedHeader="false" id="modifiedtime" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="修改时间" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="SelfDefine" editable="true" editorType="StringText" field="vdef2" fixedHeader="false" id="vdef2" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段2" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="SelfDefine" editable="true" editorType="StringText" field="vdef3" fixedHeader="false" id="vdef3" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段3" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="SelfDefine" editable="true" editorType="StringText" field="vdef4" fixedHeader="false" id="vdef4" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段4" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="SelfDefine" editable="true" editorType="StringText" field="vdef5" fixedHeader="false" id="vdef5" imageOnly="false" langDir="work_notice_contacts" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备用字段5" textAlign="left" visible="false" width="120">
+            </Column>
+        </GridComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar">
+            <MenuItem id="add" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Init_Ss_Ms_StateManager" text="新增">
+                <Events>
+                    <Event async="true" methodName="onAdd" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="edit" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="修改">
+                <Events>
+                    <Event async="true" methodName="onEdit" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="del" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="删除">
+                <Events>
+                    <Event async="true" methodName="onDelete" name="onclick" onserver="true">
+                        <SubmitRule>
+                            <Widget id="main">
+                                <Dataset id="notice_contact_info" type="ds_all_line">
+                                </Dataset>
+                            </Widget>
+                        </SubmitRule>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="sep1" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="startorstrop" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="启用/停用">
+                <MenuItem id="start" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.StartStopStateManager" text="启用">
+                    <Events>
+                        <Event async="true" methodName="onStart" name="onclick" onserver="true">
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+                <MenuItem id="stop" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.StartStopStateManager" text="停用">
+                    <Events>
+                        <Event async="true" methodName="onStop" name="onclick" onserver="true">
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem id="sep2" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

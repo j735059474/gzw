@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE UIMeta PUBLIC "-//Yonyou Co., Ltd.//UAP LFW UIMeta 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_um_6_3.dtd">
+<UIMeta flowmode="true" id="timeDefineInfo_um" preferredHeight="0" preferredWidth="0">
+    <FlowvLayout id="mainFlowvLayout" widgetId="timeDefineInfo">
+        <FlowvPanel id="g_p_2" leftPadding="20" rightPadding="20" widgetId="timeDefineInfo">
+            <PanelLayout expand="true" id="" title="报告截止日期设定方式说明" widgetId="timeDefineInfo">
+                <PanelPanel bottomPadding="10" id="panel" topPadding="20" widgetId="timeDefineInfo">
+                    <FormComp height="100%" id="timeDefineInfoView" label_position="" left="0" position="relative" top="0" widgetId="timeDefineInfo" width="100%">
+                    </FormComp>
+                </PanelPanel>
+            </PanelLayout>
+        </FlowvPanel>
+    </FlowvLayout>
+</UIMeta>

@@ -1,0 +1,460 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<ROOT>
+<items>
+
+<!--flag="0" 单独处理;flag="1" 查iufo表样;flag="2" 查事实表; 公式中"XX,2"表示XX公式计算后保留两位小数-->
+<item key="vyear" dimension="" name="年">
+  <source flag="1" code="国资企预补03表" measure="accyear" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sys_org" dimension="" name="组织标志">
+  <source flag="0" code="国资企预补03表" measure="sys_org" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+
+<!--dimension="sb"-->
+<item key="yyzsr" dimension="sb" name="营业总收入(本年预报上报数)">
+  <source flag="1" code="国资企预补03表" measure="yyzsrbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zyywsr" dimension="sb" name="主营业务收入(本年预报上报数)">
+  <source flag="1" code="国资企预补03表" measure="qz1zyywsrbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yyzcb" dimension="sb" name="营业总成本(本年预报上报数)">
+  <source flag="1" code="国资企预补03表" measure="yyzcbbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zyywcb" dimension="sb" name="主营业务成本(本年预报上报数)">
+  <source flag="1" code="国资企预补03表" measure="qz1zyywcbbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yysjjfj" dimension="sb" name="营业税金及附加(本年预报上报数)">
+  <source flag="1" code="国资企预补03表" measure="yysjjfjbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="xsfy" dimension="sb" name="销售费用(本年预报上报数)">
+  <source flag="1" code="国资企预补03表" measure="xsfybnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="glfy" dimension="sb" name="管理费用(本年预报上报数)">
+  <source flag="1" code="国资企预补03表" measure="glfybnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="cwfy" dimension="sb" name="财务费用(本年预报上报数)">
+  <source flag="1" code="国资企预补03表" measure="cwfybnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zcjzss" dimension="sb" name="资产减值损失(本年预报上报数)">
+  <source flag="1" code="国资企预补03表" measure="zcjzssbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gyjzbdsy" dimension="sb" name="公允价值变动收益(本年预报上报数)">
+  <source flag="1" code="国资企预补03表" measure="jgyjzbdsyssyhtlbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="dzsy" dimension="sb" name="投资收益(本年预报上报数)">
+  <source flag="1" code="国资企预补03表" measure="dzsybnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yylr" dimension="sb" name="营业利润(本年预报上报数)">
+  <source flag="1" code="国资企预补03表" measure="yylrbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yywsr" dimension="sb" name="营业外收入(本年预报上报数)">
+  <source flag="1" code="国资企预补03表" measure="jyywsrbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yywzc" dimension="sb" name="营业外支出(本年预报上报数)">
+  <source flag="1" code="国资企预补03表" measure="jyywzcbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="lrze" dimension="sb" name="利润总额(本年预报上报数)">
+  <source flag="1" code="国资企预补03表" measure="lrzebnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jlr" dimension="sb" name="净利润(本年预报上报数)">
+  <source flag="1" code="国资企预补03表" measure="jlrjksyhtlbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gsymgsjlr" dimension="sb" name="归属于母公司所有者的净利润(本年预报上报数)">
+  <source flag="1" code="国资企预补03表" measure="gsymgssyzdjlrbnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zcze" dimension="sb" name="资产总额(本年预报上报数)">
+  <source flag="1" code="国资企预补03表" measure="nmzczebnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="fzze" dimension="sb" name="负债总额(本年预报上报数)">
+  <source flag="1" code="国资企预补03表" measure="fzzebnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="syzqyze" dimension="sb" name="所有者权益总额(本年预报上报数)">
+  <source flag="1" code="国资企预补03表" measure="syzqyzebnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gdzctze" dimension="sb" name="固定资产投资额(本年预报上报数)">
+  <source flag="1" code="国资企预补03表" measure="sgdzcbnjhtzebnyssbs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+
+<!--dimension="th"-->
+<item key="zyywsr" dimension="th" name="主营业务收入(调整后预算数)">
+  <source flag="1" code="国资企预补03表" measure="qz1zyywsrdzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yyzcb" dimension="th" name="营业总成本(调整后预算数)">
+  <source flag="1" code="国资企预补03表" measure="yyzcbdzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zyywcb" dimension="th" name="主营业务成本(调整后预算数)">
+  <source flag="1" code="国资企预补03表" measure="qz1zyywcbdzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yysjjfj" dimension="th" name="营业税金及附加(调整后预算数)">
+  <source flag="1" code="国资企预补03表" measure="yysjjfjdzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="xsfy" dimension="th" name="销售费用(调整后预算数)">
+  <source flag="1" code="国资企预补03表" measure="xsfydzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="glfy" dimension="th" name="管理费用(调整后预算数)">
+  <source flag="1" code="国资企预补03表" measure="glfydzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="cwfy" dimension="th" name="财务费用(调整后预算数)">
+  <source flag="1" code="国资企预补03表" measure="cwfydzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zcjzss" dimension="th" name="资产减值损失(调整后预算数)">
+  <source flag="1" code="国资企预补03表" measure="zcjzssdzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gyjzbdsy" dimension="th" name="公允价值变动收益(调整后预算数)">
+  <source flag="1" code="国资企预补03表" measure="jgyjzbdsyssyhtldzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="dzsy" dimension="th" name="投资收益(调整后预算数)">
+  <source flag="1" code="国资企预补03表" measure="dzsydzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yylr" dimension="th" name="营业利润(调整后预算数)">
+  <source flag="1" code="国资企预补03表" measure="yylrdzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yywsr" dimension="th" name="营业外收入(调整后预算数)">
+  <source flag="1" code="国资企预补03表" measure="jyywsrdzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yywzc" dimension="th" name="营业外支出(调整后预算数)">
+  <source flag="1" code="国资企预补03表" measure="jyywzcdzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="lrze" dimension="th" name="利润总额(调整后预算数)">
+  <source flag="1" code="国资企预补03表" measure="lrzedzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jlr" dimension="th" name="净利润(调整后预算数)">
+  <source flag="1" code="国资企预补03表" measure="jlrjksyhtldzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gsymgsjlr" dimension="th" name="归属于母公司所有者的净利润(调整后预算数)">
+  <source flag="1" code="国资企预补03表" measure="gsymgssyzdjlrdzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zcze" dimension="th" name="资产总额(调整后预算数)">
+  <source flag="1" code="国资企预补03表" measure="nmzczedzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="fzze" dimension="th" name="负债总额(调整后预算数)">
+  <source flag="1" code="国资企预补03表" measure="fzzedzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="syzqyze" dimension="th" name="所有者权益总额(调整后预算数)">
+  <source flag="1" code="国资企预补03表" measure="syzqyzedzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gdzctze" dimension="th" name="固定资产投资额(调整后预算数)">
+  <source flag="1" code="国资企预补03表" measure="sgdzcbnjhtzedzhbnyss" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--dimension="ts"-->
+<item key="yyzsr" dimension="ts" name="营业总收入(调整数)">
+  <source flag="1" code="国资企预补03表" measure="yyzsrdzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zyywsr" dimension="ts" name="主营业务收入(调整数)">
+  <source flag="1" code="国资企预补03表" measure="qz1zyywsrdzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yyzcb" dimension="ts" name="营业总成本(调整数)">
+  <source flag="1" code="国资企预补03表" measure="yyzcbdzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zyywcb" dimension="ts" name="主营业务成本(调整数)">
+  <source flag="1" code="国资企预补03表" measure="qz1zyywcbdzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yysjjfj" dimension="ts" name="营业税金及附加(调整数)">
+  <source flag="1" code="国资企预补03表" measure="yysjjfjdzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="xsfy" dimension="ts" name="销售费用(调整数)">
+  <source flag="1" code="国资企预补03表" measure="xsfydzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="glfy" dimension="ts" name="管理费用(调整数)">
+  <source flag="1" code="国资企预补03表" measure="glfydzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="cwfy" dimension="ts" name="财务费用(调整数)">
+  <source flag="1" code="国资企预补03表" measure="cwfydzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zcjzss" dimension="ts" name="资产减值损失(调整数)">
+  <source flag="1" code="国资企预补03表" measure="zcjzssdzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gyjzbdsy" dimension="ts" name="公允价值变动收益(调整数)">
+  <source flag="1" code="国资企预补03表" measure="jgyjzbdsyssyhtldzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="dzsy" dimension="ts" name="投资收益(调整数)">
+  <source flag="1" code="国资企预补03表" measure="dzsydzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yylr" dimension="ts" name="营业利润(调整数)">
+  <source flag="1" code="国资企预补03表" measure="yylrdzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yywsr" dimension="ts" name="营业外收入(调整数)">
+  <source flag="1" code="国资企预补03表" measure="jyywsrdzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yywzc" dimension="ts" name="营业外支出(调整数)">
+  <source flag="1" code="国资企预补03表" measure="jyywzcdzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="lrze" dimension="ts" name="利润总额(调整数)">
+  <source flag="1" code="国资企预补03表" measure="lrzedzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jlr" dimension="ts" name="净利润(调整数)">
+  <source flag="1" code="国资企预补03表" measure="jlrjksyhtldzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gsymgsjlr" dimension="ts" name="归属于母公司所有者的净利润(调整数)">
+  <source flag="1" code="国资企预补03表" measure="gsymgssyzdjlrdzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zcze" dimension="ts" name="资产总额(调整数)">
+  <source flag="1" code="国资企预补03表" measure="nmzczedzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="fzze" dimension="ts" name="负债总额(调整数)">
+  <source flag="1" code="国资企预补03表" measure="fzzedzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="syzqyze" dimension="ts" name="所有者权益总额(调整数)">
+  <source flag="1" code="国资企预补03表" measure="syzqyzedzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gdzctze" dimension="ts" name="固定资产投资额(调整数)">
+  <source flag="1" code="国资企预补03表" measure="sgdzcbnjhtzedzs" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+</items>
+</ROOT>

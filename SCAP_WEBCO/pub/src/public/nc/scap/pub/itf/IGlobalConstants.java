@@ -1,0 +1,600 @@
+package nc.scap.pub.itf;
+
+public interface IGlobalConstants {
+
+	// 请各位按照各自模块所属将静态常量写在各模块对应的代码块中，常量名大写
+	// 各常量用双斜杠“//”注释，尽量不要用多行注释
+
+	/**
+	 * 通用模块SCAP_WEBCO静态常量定义开始
+	 */
+	public static final String PROJECT_NAME = "国资委信息化系统";
+	public static final String LICENSE_NAME = "licensegz.lic";//授权文件名称
+	public static final String MD5_KEY ="md5Str";//加密密钥
+	public static final String NODE_KEY ="node";//加密节点
+	public static final String DATE_KEY = "date";//加密到期日期
+	// 按钮名称
+	public static final String BTN_ADD = "add";// 新增按钮
+	public static final String BTN_EDIT = "edit";// 编辑按钮
+	public static final String BTN_DEL = "del";// 删除按钮
+	public static final String BTN_ATTACHFILE = "attachfile";// 附件按钮
+	public static final String BTN_COPY = "copy"; // 复制按钮
+	public static final String BTN_SAVE = "save"; // 保存按钮
+	public static final String BTN_STOP = "stop"; // 打印按钮
+	public static final String BTN_BACK = "back"; // 返回按钮
+	public static final String BTN_AUDIT = "audit"; // 审核按钮
+	public static final String BTN_RECALL = "recall"; // 收回按钮
+	public static final String BTN_APPROVE = "approve"; // 审核按钮
+	public static final String BTN_WF = "wf"; // 流程按钮
+	public static final String BTN_SYNCHRO = "synchro";// 同步按钮
+	public static final String BTN_CANCLE = "cancle";// 撤销按钮
+	public static final String BTN_LOOK = "look";// 查看按钮
+	public static final String BTN_PRINT = "print";// 打印按钮
+	public static final String BTN_STARTORSTROP = "startorstrop";// 启用停用按钮
+	// public static final String BTN_EDITAPPLY="editapply";//
+	public static final String BTN_APPLYEDIT = "applyedit";// 修订修改
+	public static final String BTN_SUBMITDOUBLE = "submitdouble";// 二次提交
+	public static final String BTN_HISTORY = "history"; // 历史版本
+	public static final String BTN_SUBMIT = "submit"; // 提交
+	public static final String BTN_DETAIL = "detail"; // 详细信息
+	public static final String BTN_WRITE = "write";
+	public static final String BTN_ASSIGN = "assign";//分配按钮
+	public static final String AUDIT_FLAG = "audit_flag"; // 是否审核flag
+
+	// 界面参数
+	public static String MENUBAR = "menubar";
+	public static String MAIN = "main";
+	public final static String OPERATIONCMD = "operation";
+	public final static String GZWMANAGER = "gzwmanager"; // 国资委管理
+	public final static String GZWLOOK = "gzwlook";// 国资委查看
+	public final static String GZWAPPROVE = "gzwapprove";// 国资委审核
+	public final static String QYMANAGER = "qymanager";// 企业管理
+
+	public final static String MODULE_CODE = "module";// 模块编码
+	public final static String SCAP_GZW = "gzw";// 通知管理节点
+	public final static String SCAP_QY = "qy";// 通知管理节点
+
+	// 模板配置 上传 下载
+	public static final String NDXS_TEMPLATE = "scapfop01";// 难度系数方案模板
+	public static final String YJKH_TEMPLATE = "scapfop02";// 业绩考核方案模板
+	// 附件
+	public static final String ATTACH_PARAM = "attach_param";
+	public static final String ATTACH_BILL_ID = "attach_bill_id";
+	public static final String ATTACH_BILL_TYPE = "attach_bill_type";
+	public static final String ATTACH_CAN_UPLOAD = "attach_can_upload";
+	public static final String ATTACH_CAN_DOWNLOAD = "attach_can_download";
+	public static final String ATTACH_CAN_EDIT = "attach_can_edit";
+	public static final String ATTACH_CAN_DEL = "attach_can_del";
+
+	// 信息合成面板窗口ID和名称
+	public static final String INFO_COMPOSE_WIN_ID = "com.scap.pub.infoCompose.infoCompose_win";
+	public static final String INFO_COMPOSE_WIN_NAME = "信息合成面板";
+	public static final String MAIN_BILL_ID = "main_bill_id";
+
+	// 集中维护面板参数
+	public static final String CENTRALLY_MAINTAINED_WIN_ID = "com.scap.pub.centrallyMaintained.centrallyMaintained_listwin";
+	public static final String CENTRALLY_MAINTAINED_WIN_NAME = "集中维护面板";
+	public static final String MAIN_BILL_IDS = "main_bill_ids";
+	public static final String CURRENT＿DATASET_ID = "current_dataset_id";
+	public static final String[][] MAINTAINED_TYPE_ARR = {
+			{ "psndoc", "人员基本信息" }, { "psndoc_spetech", "专业人才信息" },
+			{ "psndoc_abroad", "出国境情况" }, { "psndoc_family", "家庭及社会关系" },
+			{ "psndoc_training", "培训情况" }, { "psndoc_reserve", "后备干部任用情况" },
+			{ "psndoc_work", "工作经历" }, { "psndoc_edu", "学历学位" },
+			{ "psndoc_enc", "奖惩情况" }, { "psndoc_ass", "年度考核结果" },
+			{ "psndoc_duty", "任免情况" }, { "psndoc_part", "兼职情况" },
+			{ "psndoc_letter", "信访情况" } }; // [datasetId, gridId, 显示名称]
+	public static final String IS_DEFDOCLIST_SELECTED = "is_defdoclist_selected";
+	public static final String XML_VALUE = "xml_value";
+
+	/** 即时通讯专用变量 */
+
+	public static final String DOMAIN_NAME = "国资集团";
+	public static final String ROOT_PK_ORG = "0001GZ10000000000IQY"; // 根部门pk(默认为国资委)
+	/**
+	 * 通用模块SCAP_WEBCO静态常量定义结束
+	 */
+
+	/**
+	 * 人事管理模块SCAP_WEBPM静态常量定义开始
+	 */
+	public static final String DELAULT_PHOTO_PATH = "/portal/touxiang.jpg";// 默认头像路径
+	public static final String PHOTO_PATH = "/portal/sync/scappm/psnm/html/photo";// 图片存放路径
+	public static final String JJPHOTO_PATH = "/portal/sync/scapjj/jjim/html/photo";// 纪检监察领导人档案图片存放路径
+	public static final String PSNTYPE_ZGRY = "9"; // 人员类别:政工人员
+	public static final String PSNTYPE_QTRY = "8"; // 人员类别:其他重要人员
+	public static final String PSNTYPE_WBDS = "7"; // 人员类别:外部董事
+	public static final String PSNTYPE_JGGB = "6"; // 人员类别:机关干部
+	public static final String PSNTYPE_QYLD = "5"; // 人员类别:企业领导人
+	public static final String PSNTYPE_HBGB = "4"; // 人员类别:后备干部
+	public static final String PSNTYPE_QYPTRY = "3";// 人员类别:企业人才(普通人员)
+	public static final String PSNTYPE_TXGB = "2"; // 人员类别:退休干部
+	public static final String PSNTYPE_QT = "1"; // 人员类别:其他
+
+	public static final String PSNOUTDIRECTORS_YES = "Y";// 外部董事
+	public static final String PSNOUTDIRECTORS_NO = "N";// 非外部董事
+
+	// 报表功能常量
+	public static final String OPEN_REPORT_CONDITION = "'xx',' left=0,top=0,width='+ (screen.availWidth - 10) +',height='+ (screen.availHeight-50) +',scrollbars=no,resizable=no,toolbar=no,location=no'"; // 打开报表JS
+	// 带流程的审批状态
+	final static String SCAPPM_APPROVESTATE_ADD = "1";// 新增
+	final static String SCAPPM_APPROVESTATE_APPROVING = "2";// 审批中
+	final static String SCAPPM_APPROVESTATE_APPROVED = "3";// 已审批
+	final static String SCAPPM_APPROVESTATE_CANCELLATION = "4";// 作废
+	// 不带流程的审批状态
+	final static String SCAPPM_NOAPPROVESTATE_ADD = "1";// 新增
+	final static String SCAPPM_APPROVESTATE_SAVED = "2";// 已保存
+	final static String SCAPPM_APPROVESTATE_SUBMIT = "3";// 已提交
+	final static String SCAPPM_NOAPPROVESTATE_APPROVED = "4";// 已审批
+	final static String SCAPPM_NOAPPROVESTATE_CANCELLATION = "5";// 作废
+
+	// 选聘管理审批状态
+	final static String SCAPTCS_STATE_ADD = "01";// 新增
+	final static String SCAPTCS_STATE_SAVED = "02";// 已保存
+	final static String SCAPTCS_STATE_SUBMIT = "03";// 已提交
+	final static String SCAPTCS_STATE_APPROVED = "04";// 已审批
+	final static String SCAPTCS_STATE_RECORD = "05";// 已备案
+	final static String SCAPTCS_STATE_EDITAPPLY = "06";// 修订中(已备案)
+	final static String SCAPTCS_STATE_EDITING = "07";// 修订中（已审批）
+
+	final static String SCAPTCS_TATE_CANCELLATION = "08";// 作废
+
+	// 选聘选拔方式
+	final static String SCAPTCS_XBFS_JZSG = "竞争上岗";
+	final static String SCAPTCS_XBFS_GKXB = "公开选拔";
+	final static String SCAPTCS_XBFS_GBTB = "个别提拔";
+
+	// 单据状态
+	final static String SCAPPM_BILLSTATE_NOTTSTART = "NottStart";// 自由态
+	final static String SCAPPM_BILLSTATE_RUN = "Run";// 运行
+	final static String SCAPPM_BILLSTATE_END = "End";// 结束
+	final static String SCAPPM_BILLSTATE_CANCELLATION = "Cancellation";// 废弃
+	final static String SCAPPM_BILLSTATE_SUSPENDED = "Suspended";// 挂起
+	// 人员状态
+	public static final String SCAPPM_PSNCONDITION_WORK = "01"; // 在职
+	public static final String SCAPPM_PSNCONDITION_RERIRED = "02"; // 离退休
+	public static final String SCAPPM_PSNCONDITION_RESIGNATION = "03"; // 离职
+	public static final String SCAPPM_PSNCONDITION_BORROW = "04"; // 借用
+	public static final String SCAPPM_PSNCONDITION_DIE = "05"; // 去世
+	// 启用/停用
+	public static final String STRAT = "02"; // 启用
+	public static final String STOP = "03"; // 停用
+	// 默认证件类型为身份证
+	public static final String SCAPPM_ZJTYPE = "0";
+
+	final static String NODE_TYPE = "node_type";// 节点参数
+	final static String METHOD_TYPE = "method_type";// 方法参数
+	final static String MODEL = "model";//
+
+	final static String NODE_TYPE_LEADER = "1";// 企业领导人
+	final static String NODE_TYPE_CADRE = "2";// 机关干部
+	final static String NODE_TYPE_CADRE_AUDIT = "cadre_audit";// 机关干部审核
+	final static String NODE_TYPE_APPLY = "apply";// 申请
+	final static String NODE_TYPE_AUDIT = "audit";// 审核
+
+	final static String RM_TYPE_XR = "1";// 续任
+	final static String RM_TYPE_NR = "2";// 拟任
+	final static String RM_TYPE_NM = "3";// 拟免
+	final static String RM_TYPE_BR = "4";// 不任
+
+	final static String CHINA = "0001Z010000000079UJJ";// 中国
+	final static String HANZU = "1001AA10000000000430";// 汉族
+	final static String DANGYUAN = "1001AA1000000000048O";// 党员
+	final static String TUANYUAN = "1001AA1000000000048P";// 团圆
+	final static String QUNZHONG = "1001AA1000000000048Q";// 群众
+	final static String QYLDRLX = "1001AA100000000004CX";// 企业领导人人员类型
+	final static String QRZJY = "1001AA1000000000049X";// 全日制教育(教育类型)
+	final static String ZZJY = "1001AA1000000000049Y";// 在职教育(教育类型)
+	final static String XL_QT = "1001AA100000000003YZ"; // 其它（学历）
+	// 企业领导人修改和查看按钮弹出窗体常量
+	public static final String COMLEADER_BTN_TYPE = "comleader_btn_type"; // 按钮类型
+	public static final String COMLEADER_EDIT = "edit";
+	public static final String COMLEADER_VIEW = "view";
+	public static final String PSNADU_AUDIT_ID = "E9A30209";
+	public static final String PSNADU_AUDIT_TYPECODE = "psnm_psnadu";
+	/**
+	 * 人事管理模块SCAP_WEBPM静态常量定义结束
+	 */
+
+	/**
+	 * 项目管理模块SCAP_WEBIPM静态常量定义开始
+	 */
+	public static final String BTN_IPM_YEAR_PLAN_ADJUST = "plan_adjust";// 年度计划申请
+	public static final String PROJECT_WHERESQL = "projectsql";// 年度计划申请
+
+	/**
+	 * 项目管理模块SCAP_WEBIPM静态常量定义结束
+	 */
+
+	/**
+	 * 财务分析模块SCAP_WEBFD静态常量定义开始
+	 */
+	public static final String PRO_SAC = ""; // 省国资委
+	public static final String PRO_COMPANY = ""; // 省属企业
+	public static final String PRO_SAC_COMPANY = ""; // 省国资委省级监管企业
+	public static final String PRO_SAC_OTHER_COMPANY = ""; // 省国资委其他监管企业
+	public static final String CITY_COUNTY_COMPANY = ""; // 市县监管企业
+	public static final String CITY_COMPANY = ""; // 地市级监管企业
+	public static final String COUNT_COMPANY = "";// 区县级监管企业
+
+	// 任务类型自定义档案
+	final static String TASK_NODE_TYPE = "GZ050_0xxx";
+	final static String TASK_COMMIT_STATUS = "GZ051_0xxx";
+	// 任务类型
+	final static String NODE_TYPE_YBS = "01";// 全面预算-预报数 年度
+	final static String NODE_TYPE_YSS = "02";// 全面预算-预算数 年度
+	final static String NODE_TYPE_YSTZS = "03";// 全面预算-预算调整数 年度
+	final static String NODE_TYPE_KBSJ = "04";// 快报数据 月度
+	final static String NODE_TYPE_JJYXXB = "05";// 经济运行旬报 旬
+	final static String NODE_TYPE_JSSJ = "06";// 决算数据 年度
+	final static String NODE_TYPE_GZTJSJ = "07";// 国有资产统计数据 年度
+	// 任务状态
+
+	final static String RW_ALL = "-1";// 全部
+	final static String RW_SUBMITED = "1";// 已提交
+	final static String RW_NOSUBMIT = "2";// 未提交
+	final static String RW_APPLY_BACK = "3";// 申请退回
+	final static String RW_NOSEND = "4";// 未下发
+	final static String RW_SENDED = "5";// 已下发
+	final static String RW_DOWNLOADED = "6";// 已下载
+
+	public static final String GZW_PK_ORG = "0001A110000000000JCX"; // 国资委pk_org
+	public static final String GZWZS_PK_ORG = "0001A31000000003S2CD"; // 安徽省国资委pk_org
+	public static final String GZJG_PK_ORG = "0001A11000000002A41P"; // 国资监管pk_org
+	public static final String GZW_PK_ORG_ZJ = "0001AZ10000000000CNQ";
+
+	public static final String HYDB = "1001AA100001100003YZ"; // //行业的主表根节点
+
+	// 指标类型
+	public static final String ZB_TYPE_SC = "1"; // 生存类
+	public static final String ZB_TYPE_FZ = "2"; // 发展类
+
+	// 预警类型(生成阈值配置)
+	public static final String SC_WARNING = "1"; // 生存预警
+	public static final String CD_WARNING = "2"; // 冲动预警
+	public static final String XJ_WARNING = "3"; // 消极预警
+	public static final String SF_WARNING = "4"; // 双防预警
+	public static final String CHENGDU_WARNING = "5";// 程度预警
+	public static final String QS_WARNING = "6"; // 趋势预警
+	public static final String BD_WARNING = "7"; // 波动预警
+
+	// 业务判断
+	public static final String YES = "0"; // 是
+	public static final String NO = "1"; // 否
+
+	// 项目类型
+	public static final String AH = "AH"; // 安徽
+	public static final String HN = "HN"; // 海南
+	public static final String XJ = "XJ"; // 新疆
+	public static final String SC = "SC"; // 四川
+	public static final String ZJ = "ZJ"; // 四川
+	public static final String FJ = "FJ"; // 福建
+
+	// 财务数据类型
+	public static final String KB = "1"; // 快报
+	public static final String YS = "2"; // 预算
+	public static final String Js = "3"; // 决算
+	public static final String GYZC = "4"; // 国有资产
+	public static final String JXPJ = "5"; // 绩效评价
+
+	/**
+	 * 财务分析模块SCAP_WEBFD静态常量定义结束
+	 */
+
+	/**
+	 * 财务分析模块SCAP_WEBAN静态常量定义开始
+	 */
+	public static String MG_PK = "150509144"; // 马钢
+	public static String WBMD_PK = "152388171"; // 皖北煤电
+	public static String HNKY_PK = "150230004"; // 淮南矿业
+	public static String HBKY_PK = "150820039"; // 淮北矿业
+	public static String HLJT_PK = "149492322"; // 海螺集团
+	public static String JQJT_PK = "148975605"; // 江汽集团
+	public static String CCJT_PK = "148943240"; // 叉车集团
+	public static String JGJT_PK = "148940170"; // 建工集团
+	public static String ZMKJJT_PK = "670904113"; // 中煤矿建集团
+	public static String TLJT_PK = "151105774"; // 铜陵有色集团
+	public static String WWJT_PK = "153580560"; // 皖维集团
+	public static String NYJT_PK = "148941608"; // 能源集团
+	public static String SMQY_PK = "444444444"; // 商贸企业
+	public static String TZJJRLQY_PK = "555555555"; // 投资及金融类企业
+	public static String GZW_PK = "HZQYB0014"; // 国资委汇总
+	public static String GZWSS_PK = "HZQYB0025"; // 国资委省属汇总
+	public static String GZWSX_PK = "C22222222"; // 国资委市县汇总
+	public static String GZW_PK_JS = "999999999"; // 国资委汇总
+	public static String GZW_PK_KB = "000000025"; // 国资委海南快报汇总
+	public static String GZW12_PK = "HZQYB00257"; // 海南12年省属pk
+	public static String GZW13_PK = "75436138X7"; // 海南13年省属pk
+	// 四川省组织树编码
+	public static String SCKB_GZW_PK = "000000028"; // 国资委汇总
+	public static String SCKB_GZWJG_PK = "SC0000001"; // 省级监管PK
+	public static String SCYS_GZWJG_PK = "SC00000167"; // 省级监管PK
+
+	/*
+	 * 海南公司pk
+	 */
+	public static String HNFZKG = "767474690";// 海南省发展控股有限公司
+	public static String HNHGJT = "201244001";// 海南海钢集团公司
+	public static String HNJSJT = "698925151";// 海南省建设集团有限公司
+	public static String HNGSGL = "284082887";// 海南高速公路股份有限公司
+	public static String HNSLDL = "760394356";// 海南省水利电力集团有限公司
+	public static String HNLQTZ = "780749062";// 海南省路桥投资建设有限公司
+	public static String HNHNJJ = "201486713";// 海南海宁经济发展总公司
+	public static String HNLHZC = "747784800";// 海南联合资产管理公司
+	public static String HNXHSD = "798747452";// 海南省新华书店集团有限公司
+	public static String HNWHTZ = "730046924";// 海南省文化投资管理有限公司
+	public static String HNHXWHTZ = "573051278";// 海南华厦文化投资管理有限公司
+	public static String HNHYTZ = "713809723";// 海南华盈投资控股有限公司
+	public static String HNNHYY = "793132408";// 海南省南海现代渔业集团有限公司
+	public static String HNCQJY = "767456441";// 海南产权交易所有限公司
+	public static String HNJYQY = "747761844";// 海南省监狱企业集团有限责任公司
+	public static String HNJLTZ = "573066402";// 海南省金林投资有限公司
+	public static String HNSJTTZ = "578725200";// 海南海汽投资控股有限公司
+	public static String HNHQTZ = "665137976";// 海南省交通投资控股有限公司
+	public static String HNXSMY = "56797982X";// 海南欣升贸易有限公司
+	public static String HNGJLYD = "562403880";// 海南国际旅游岛开发建设有限公司
+	public static String HNLSXT = "101010102";// 海南省粮食系统企业
+	/*
+	 * 福建公司pk
+	 */
+	public static String FJQY = "290000000";// 福建企业
+	public static String FJSYHG = "158166801";// 福建石油化工集团有限责任公司
+	public static String FJJTYS = "733600839";// 福建省交通运输集团有限责任公司
+	public static String FJYJKG = "158145023";// 福建省冶金(控股)有限责任公司(集团)
+	public static String FJCBGY = "158155897";// 福建省船舶工业集团公司（合并）
+	public static String FJQCGY = "158142690";// 福建省汽车工业集团有限公司（合并）
+	public static String FJXMJM = "260105714";// 福建厦门经贸集团有限公司（合并）
+	public static String FJJGJT = "158143183";// 福建建工集团总公司
+	public static String FJXMGJ = "612017727";// 厦门国际银行（模拟合并）
+	public static String FJWMZX = "158147643";// 中国（福建）外贸中心集团（合并 ）
+	public static String FJHMSY = "777544015";// 福建华闽实业（集团）有限公司（合并）
+	public static String FJGSGL = "158165606";// 福建省高速公路有限责任公司(合并)
+	public static String FJZLJT = "158142375";// 福建中旅集团公司－－汇总
+	public static String FJDZXX = "717397615";// 福建省电子信息(集团)有限责任公司（合并）
+	public static String FJJDSB = "158141735";// 福建省机电设备招标公司（合并）
+	public static String FJQFKG = "003591811";// 福建省轻纺(控股)有限责任公司
+	public static String FJNYJT = "003592267";// 福建省能源集团有限责任公司(合并)
+	public static String FJTZKF = "68753848X";// 福建省投资开发集团有限责任公司（合并）
+	public static String FJGYZC = "782188289";// 福建省国有资产管理有限公司（合并）
+	public static String FJJDKG = "72644687X";// 福建省机电（控股）有限责任公司
+	public static String FJDS = "888888888";// 福建省地市企业
+	/*
+	 * 福建地市pk
+	 */
+	public static String FJFZS = "003604934";// 福州市
+	public static String FJXMS = "000000016";// 厦门市
+	public static String FJZZS = "350600000";// 漳州市
+	public static String FJQZS = "784506762";// 泉州市
+	public static String FJSMS = "000000000";// 三明市
+	public static String FJPTS = "784528021";// 莆田市
+	public static String FJNPS = "350702000";// 南平市
+	public static String FJLYS = "350800000";// 龙岩市
+	public static String FJNDS = "111111111";// 宁德市
+	public static String FJPTZH = "PTSYCZJRJ";// 平潭综合实验区
+
+	/**
+	 * 财务分析模块SCAP_WEBAN静态常量定义结束
+	 */
+
+	/**
+	 * 审计模块SCAP_WEBAN静态常量定义开始
+	 */
+	public static final String PK_ORG = "pk_org";// 企业结构树主键参数
+	public static final String PK_ORG_NAME = "pk_org_name";// 企业结构树主键参数
+	public static final String AUDITYEAR = "audityear";// 年度结构树主键参数
+	public static final String PK_PARTNER = "pk_partner";// 中介结构树主键参数
+	public static final String CURRENTYEAR = "currentyear";// 当前年度结构树主键参数
+	public static final String ENTRUST_ID = "entrustID";// 审计委托主键
+	public static final int ISSUESTATE_USED = 1; // 已发布
+	public static final int ISSUESTATE_UNUSED = 0; // 未发布
+
+	/**
+	 * 审计模块SCAP_WEBAN静态常量定义结束
+	 */
+
+	/**
+	 * 财务平台SCAP_WEBFP静态常量定义开始
+	 */
+	public static final String PK_PARENT_MEASURE = "pk_parent_measure";
+	public static final String MEASURE_CODE = "measure_code";
+	public static final String MEASURE_CATEGORY = "measure_category";
+	public static final String MEASURE_TYPE = "measure_type";
+	/**
+	 * 财务平台SCAP_WEBFP静态常量定义结束
+	 */
+
+	public static final int RISK_QUOTA_MAX_VALUE = 33;
+
+	public static final int RISK_QUOTA_MIN_VALUE = 25;
+
+	/**
+	 * 监事会模块SCAP_WEBBOS静态常量定义开始
+	 */
+	public static final String DEP_TYPE_GZC = "1"; // 监事会工作处
+	public static final String DEP_TYPE_BSC = "0"; // 监事会办事处
+
+	public static final String NOTICESTATE_NO = "0"; // 未下发
+	public static final String NOTICESTATE_YES = "1"; // 已下发
+	public static final String REPORT_GZJHZJ = "0"; // 办事处工作计划,总结（办事处填报，工作处审核）
+	public static final String REPORT_JCFA = "1"; // 监督检查方案（办事处填报，工作处审核）
+	public static final String REPORT_JCBG = "2"; // 监督检查报告（办事处填报，工作处审核，是否委领导审核）
+	public static final String REPORT_ZGFA = "3"; // 企业整改方案（企业填报，办事处一审核，工作处二审核）
+	public static final String REPORT_ZGQK = "4"; // 企业整改情况的报告（办事处填报，工作处审核）
+	public static final String REPORT_GZBG = "5"; // 企业年度工作报告填报（企业填报，工作处审核）
+	public static final String REPORT_ZDSX = "6"; // 企业重大事项专报（办事处填报，工作处审核）
+	public static final String REPORT_ZGTZ = "7"; // 企业整改台账(安徽特有,同企业整改方案)
+	public static final String REPORT_JSHGZBG = "8"; // 监事会工作报告(浙江特有)（办事处填报，工作处审核）//走公共通知，已作废
+	public static final String REPORT_ZZJSBG = "9"; // 专职监事报告(浙江特有)（办事处填报，工作处审核）//走公共通知，已作废
+	public static final String REPORT_JDSB = "10"; // 监督报告上报(四川特有,办事处填报，工作处审核)
+	public static final String REPORT_GKZG = "11"; // 整改情况反馈(四川特有,办事处、企业填报，工作处审核)
+	public static final String REPORT_XXZB = "12"; // 信息专报(四川特有,办事处填报，工作处审核)
+
+	public static final String RISK_SAVE = "1"; //新增
+	public static final String RISK_SUBMITED = "2"; //待审核
+	public static final String RISK_AUDITED = "3"; //已审核
+	public static final String RISK_SUBTOLEADER = "4"; //待批示
+	public static final String RISK_INSTRUCTIONED = "5"; //待分配
+	public static final String RISK_ASSIGNED = "6"; //待处理
+	public static final String RISK_CLOSE = "7"; //已处理
+
+	public static final String RISKLEVEL_HIGH = "1"; //待分配
+	public static final String RISKLEVEL_MIDDLE = "2"; //待处理
+	public static final String RISKLEVEL_LOW = "3"; //已处理
+
+	public static final String RISKSTUTAS_DOING = "1"; //处理中
+	public static final String RISKSTUTAS_FINISH = "2"; //完成
+	public static final String RISKSTUTAS_NOTDO = "3"; //没处理
+
+	public static final String REPORT_SAVE = "0"; // 未提交
+	public static final String REPORT_SUBMIT = "1"; // 已提交
+	public static final String REPORT_SENDBACK = "2"; // 退回
+
+	public static final String NOCTCE_GZJHZJ = "0"; // 办事处工作计划总结（办事处）
+	public static final String NOCTCE_JDJC = "1"; // 企业监督检查（企业）
+	public static final String NOCTCE_GZBG = "2"; // 企业年度工作报告（企业）
+	public static final String NOCTCE_JSGZ = "3"; // 职工监事工作（企业）
+	public static final String NOCTCE_JCYJXF = "4"; // 监督检查意见下发（企业）
+	public static final String NOCTCE_HSCSTZ = "5"; // 企业会审初审通知（办事处）
+
+	public static final String NOTICE_UNSEND = "0"; // 未发送
+	public static final String NOTICE_SENDED = "1"; // 已发送
+	public static final String NOTICE_READED = "2"; // 已读
+	public static final String NOTICE_FKED = "3"; // 已反馈
+
+	/**
+	 * 监事会模块SCAP_WEBBOS静态常量定义结束
+	 */
+
+	/**
+	 * 央企合作 --项目状态
+	 */
+	public static final String CEP_PROSTATES_NEW = "0"; // 新签约
+	public static final String CEP_PROSTATES_EARLY = "1"; // 前期
+	public static final String CEP_PROSTATES_START = "2"; // 已开工
+	public static final String CEP_PROSTATES_END = "3"; // 已竣工
+
+	/**
+	 * 董事会模块SCAP_WEBBOD静态常量定义开始
+	 */
+	// 附件分类
+	public static final String ATTCHFILE_RESOLUTION = "_1"; // 决议附件
+	public static final String ATTCHFILE_ISSUES = "_2"; // 议题资料附件
+	public static final String ATTCHFILE_INFORMATION = "_3"; // 会议工作资料
+	/**
+	 * 董事会模块SCAP_WEBBOD静态常量定义结束
+	 */
+	/**
+	 * 通知模块静态常量定义开始(通知类型是相对于通知发送方，也就是报告审批方；报告类型是相对于通知接收方，也就是报告填报方)
+	 */
+	public static final String REPORT_BODY_QY = "1"; // 报告主体_企业
+	public static final String REPORT_BODY_VISORG = "2"; // 报告主体_组织
+	public static final String REPORT_BODY_MAN = "3"; // 报告主体_个人
+
+	public static final String NOTICE_STYLE_REPORT = "1"; // 通知类型_填报通知
+	public static final String NOTICE_STYLE_MESSAGE = "2"; // 通知类型_资料消息通知
+	public static final String NOTICE_STYLE_NORMAL_MESSAGE = "3"; // 通知类型_普通消息通知
+
+	public static final String REPORT_STATUS_SAVE = "0"; // 填报状态_已保存
+	public static final String REPORT_STATUS_UNCOMMIT = "1"; // 填报状态_未提交
+	public static final String REPORT_STATUS_COMMIT = "2"; // 填报状态_已提交
+	public static final String REPORT_STATUS_RECEIVED = "3"; // 填报状态_已接收
+	public static final String REPORT_STATUS_RETURN = "4"; // 填报状态_已退回
+	public static final String REPORT_STATUS_NOSAVE = "5"; // 填报状态_未保存
+
+	public static final String URGE_FREQUENCY_SINGLE = "1"; // 催报频率_单次催报
+	public static final String URGE_FREQUENCY_DAILY = "2"; // 催报频率_每天催报
+	public static final String URGE_FREQUENCY_GETIAN = "3"; // 催报频率_隔天催报
+
+	public static final String PARAMMAP_KEY_BUSINESS_TYPE = "PARAMMAP_KEY_BUSINESS_TYPE"; // 参数mapkey_业务类型
+	public static final String PARAMMAP_KEY_REPORT_TYPE= "PARAMMAP_KEY_REPORT_TYPE"; // 参数mapkey_报告类型
+	public static final String PARAMMAP_KEY_DATA_TYPE = "PARAMMAP_KEY_DATA_TYPE"; // 参数mapkey_资料类型
+	public static final String PARAMMAP_KEY_MESSAGE_TYPE = "PARAMMAP_KEY_MESSAGE_TYPE"; // 参数mapkey_消息类型
+	public static final String PARAMMAP_KEY_REPORTBODY = "PARAMMAP_KEY_REPORTBODY"; // 参数mapkey_资料类型
+	public static final String PARAMMAP_KEY_PK_NOTICE = "PARAMMAP_KEY_PK_NOTICE"; // 参数mapkey_通知主键
+
+	public static final String APPATTR_BUSINESS_TYPE = "business_type"; // 业务类型pk：传给公共view的session参数
+	public static final String APPATTR_REPORT_TYPE = "report_type"; // 报告类型pk：传给公共view的session参数
+	public static final String APPATTR_REPORT_CODE = "report_code"; // 报告类型code：传给公共view的session参数
+	public static final String APPATTR_REPORT_BODY = "report_body"; // 报告类型主体：传给公共view的session参数
+	public static final String APPATTR_DATA_TYPE = "data_type"; // 资料类型：传给公共view的session参数
+	public static final String APPATTR_MESSAGE_TYPE = "message_type";// 消息类型：传给公共view的session参数
+	public static final String APPATTR_BUSINESS_TYPE_FUNCNODE = "business_type_funcnode"; // 业务类型pk（功能节点注册）：传给公共view的session参数
+	public static final String APPATTR_BUSINESS_TYPE_LIANXIREN = "business_type_lianxiren"; // 业务类型pk（联系人功能中检索出来）：传给公共view的session参数
+	public static final String APPATTR_REPORT_TYPE_LIANXIREN = "report_type_lianxiren"; // 报告类型pk（联系人功能中检索出来）：传给公共view的session参数
+	public static final String APPATTR_DATA_TYPE_LIANXIREN = "data_type_lianxiren"; // 资料类型pk（联系人功能中检索出来）：传给公共view的session参数
+
+	public static final String APPATTR_SENDER_OR_RECEIVER = "senderOrReceiver"; // 是接收方还是发送方
+	// 业务类型
+	public static final String CONTENT_REPLACE_BUSINESS_TYPE = "业务类型";
+	// 报告类型
+	public static final String CONTENT_REPLACE_REPORT_TYPE = "报告类型";
+	// 资料类型
+	public static final String CONTENT_REPLACE_DATA_TYPE = "资料类型";
+	// 用户姓名
+	public static final String CONTENT_REPLACE_USERNAME = "用户姓名";
+	// 联系人类型——接收方
+	public static final String CONTENT_TYPE_RECEIVER = "1";
+	// 联系人类型——发送方
+	public static final String CONTENT_TYPE_SENDER = "2";
+	// 报送统计内容格式（国资委用户）
+	public static final String CONTENT_URGE_CONTENT_GZW = "截止到目前，【业务类型】-【报告类型】有【未填报企业个数】家企业未进行填报，【已填报企业个数】家企业完成填报。";
+	// 催报消息内容格式（企业用户）
+	public static final String CONTENT_URGE_CONTENT_QY = "【用户姓名】，您好。您尚未完成【业务类型】-【工作报告类型】填报，请登录系统进行填报。";
+	// 提醒内容(填报通知)
+	public static final String CONTENT_REMIND_INFO_REPORT = "【用户姓名】，您好。您尚未完成【业务类型】-【报告类型】填报，请登录系统进行填报。";
+	// 提醒内容(消息通知)
+	public static final String CONTENT_REMIND_INFO_MESSAGE = "【用户姓名】，您好。给您下发了【资料类型】的通知，请您查看。";
+	// 通知内容(填报通知)
+	public static final String CONTENT_NOTICE_CONTENT_REPORT = "【用户姓名】，您好。您尚未完成【业务类型】-【报告类型】填报，请登录系统进行填报。";
+	// 通知内容(消息通知)
+	public static final String CONTENT_NOTICE_CONTENT_MESSAGE = "【用户姓名】，您好。给您下发了【资料类型】的通知，请您查看。";
+	// 催报标题国资委
+	public static final String URGE_TITLE_GZW = "【业务类型】-【报告类型】相关通知的统计信息！";
+	// 催报标题企业
+	public static final String URGE_TITLE_QY = "请尽快填报【业务类型】-【报告类型】相关通知的报告！";
+
+	// 通知专用errormessage
+	public static final String NOTICE_ERROR_MESSAGE = "NOTICE_ERROR_MESSAGE";
+	
+	// 标准消息code
+	public static final String STANDARD_MESSAGE_TYPE_CODE = "standardMessage";	
+	public static final String STANDARD_MESSAGE_TYPE_NAME = "标准消息";	
+	
+	//通知模块相关功能节点的参数配置
+	// TZXF ：通知下发画面
+	// 通知类型 参数值
+	public static final String TZXF_NOTICE_STYLE = "tzxf_notice_style"; 
+	// 报告主体 参数值
+	public static final String TZXF_REPORTBODY = "tzxf_report_body"; 
+	// 消息类型 参数值
+	public static final String TZXF_MESSAGE_TYPE_CODE = "tzxf_message_type_code"; 
+	
+	/**
+	 * 通知模块静态常量定义结束
+	 */
+	/**
+	 * 币种常量
+	 */
+	public static final java.lang.String RMB_CODE = "CNY";
+
+	public static final java.lang.String DEM_CODE = "DEM";
+
+	public static final java.lang.String EURO_CODE = "EURO";
+
+	public static final java.lang.String GBP_CODE = "GBP";
+
+	public static final java.lang.String HKD_CODE = "HKD";
+
+	public static final java.lang.String JPY_CODE = "JPY";
+
+	public static final java.lang.String SF_CODE = "SF";
+
+	public static final java.lang.String USD_CODE = "USD";
+
+	public static final String ORG_TREE_ROOT = "all"; // 组织树根节点 pk_org默认值 （all替换
+														// null）
+
+	public static final String GZWORGCODE = "GzwOrgCode";
+	public static final String FUNC_TYPE = "func_type";
+	public static final String PROVINCE_ID = "provinceId";
+}

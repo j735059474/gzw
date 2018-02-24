@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+	<scapfd_testref>
+		<scapfd_testref.niandu1 uapDisplayName="2011"/>
+		<scapfd_testref.niandu uapDisplayName="2012"/>
+		<scapfd_testref.hnsssqycwy uapDisplayName="《海南省省属企业财务预算管理暂行办法》（琼国资〔2009〕191号）"/>		
+		<scapfd_testref.ysn1  uapDisplayName="预算年"/>
+		<scapfd_testref.nianyue uapDisplayName="2011年12月初"/>		
+		<scapfd_testref.ysn2 uapDisplayName="预算年"/>
+		<scapfd_testref.ssqyhs1 uapDisplayName="省属企业户数"/>
+		<scapfd_testref.ysn3 uapDisplayName="预算年"/>
+               	<scapfd_testref.ysn4 uapDisplayName="预算年"/>
+		<scapfd_testref.ssqyhs2 uapDisplayName="省属企业户数"/>
+		<scapfd_testref.ssqyysjcze uapDisplayName="省属企业预算资产总额（本年预算数）"/>
+		<scapfd_testref.ssqysnzcze1 uapDisplayName="省属企业上年资产总额"/>
+                <scapfd_testref.zzxj1 uapDisplayName="增长/下降"/>
+		<scapfd_testref.ssqysnzcze2 uapDisplayName="省属企业上年资产总额"/>
+
+		<scapfd_testref.ssqyysfzze uapDisplayName="省属企业预算负债总额"/>
+		<scapfd_testref.ssqysnfzze uapDisplayName="省属企业上年负债总额"/>         
+                <scapfd_testref.zz1 uapDisplayName="增长"/>
+		<scapfd_testref.ssqyysfzzebsn1 uapDisplayName="省属企业预算负债总额比上年数增长率"/>
+
+		<scapfd_testref.ssqyyssyzqyze uapDisplayName="省属企业预算所有者权益总额"/>
+		<scapfd_testref.ssqysnsyzqyze uapDisplayName="省属企业上年所有者权益总额"/>
+                <scapfd_testref.xj1 uapDisplayName="下降"/>
+		<scapfd_testref.ssqyyssyzqyzebsn1 uapDisplayName="省属企业预算所有者权益总额比上年数增长率"/>
+
+		<scapfd_testref.ssqyysyyzsr uapDisplayName="省属企业预算营业总收入"/>
+		<scapfd_testref.ssqysnysyyzsr uapDisplayName="省属企业上年预算营业总收入"/>
+                <scapfd_testref.zz2 uapDisplayName="增长"/>
+		<scapfd_testref.ssqyysyyzsrbsn uapDisplayName="省属企业预算营业总收入比上年数增长率"/>
+
+		<scapfd_testref.ssqyyslrze1 uapDisplayName="省属企业预算利润总额"/>
+		<scapfd_testref.lrysbhsbn uapDisplayName="利润预算表19行上年数，折算到亿"/>
+		<scapfd_testref.zz3 uapDisplayName="增长"/>                                 <scapfd_testref.lrysbhzjl uapDisplayName="利润预算表19行增减率，绝对值"/>
+
+		<scapfd_testref.ssqyyslrze2 uapDisplayName="省属企业预算利润总额"/>
+		<scapfd_testref.ssqysnlrze uapDisplayName="省属企业上年利润总额"/>
+                <scapfd_testref.zz4 uapDisplayName="增长"/>
+		<scapfd_testref.cbfyysbhzjl uapDisplayName="成本费用预算表28行增减率，绝对值"/>
+		<scapfd_testref.rgcbysbhbnysh1 uapDisplayName="人工成本预算表3行本年预算数，折算到亿"/>
+		<scapfd_testref.rgcbysbhsbn1 uapDisplayName="人工成本预算表3行上年数，折算到亿"/>
+                <scapfd_testref.zz5 uapDisplayName="增长"/>
+		<scapfd_testref.rgcbysbhzjl1 uapDisplayName="人工成本预算表3行增减率，绝对值"/>
+		<scapfd_testref.rgcbysbhbnysh2 uapDisplayName="人工成本预算表11行本年预算数，折算到亿"/>
+		<scapfd_testref.rgcbysbhsbn2 uapDisplayName="人工成本预算表11行上年数，折算到亿"/>
+                <scapfd_testref.zz6 uapDisplayName="增长"/>
+		<scapfd_testref.rgcbysbhzjl2 uapDisplayName="人工成本预算表11行增减率，绝对值"/>
+
+
+		<scapfd_testref.ssqyysjcfzl uapDisplayName="省属企业预算资产负债率(本年)"/>
+		<scapfd_testref.syndzyfxzb uapDisplayName="上一年的主要分析指标表27行本年预算数（上一年）%"/>		
+		<scapfd_testref.ssqyyszcfz uapDisplayName="省属企业预算资产负债率比上年预算数提高百分点"/>              
+		<scapfd_testref.ssqyyhlxbs uapDisplayName="省属企业已获利息倍数"/>               
+		<scapfd_testref.ssqyldbl uapDisplayName="省属企业流动比率"/>               
+		<scapfd_testref.ssqyzzcbcl uapDisplayName="省属企业总资产报酬率%"/>               
+		<scapfd_testref.ssqycbfyzy uapDisplayName="省属企业成本费用占营业总收入的比率%"/>               
+		           
+  
+		<scapfd_testref.ssqyhs3 uapDisplayName="省属企业户数"/>                     <scapfd_testref.xj2 uapDisplayName="下降"/>
+		<scapfd_testref.ssqysnzcze3 uapDisplayName="省属企业上年资产总额"/>    
+                <scapfd_testref.zz7 uapDisplayName="增长"/>    
+		<scapfd_testref.ssqyysfzzebsn2 uapDisplayName="省属企业预算负债总额比上年数增长率"/>       
+                <scapfd_testref.xj3 uapDisplayName="下降"/>         
+		<scapfd_testref.ssqyyssyzqyzebsn2 uapDisplayName="省属企业预算所有者权益总额比上年数增长率"/>
+                             
+		<scapfd_testref.cgssqyyssy uapDisplayName="超过“省属企业预算所有者权益总额”取整亿元"/>
+                <scapfd_testref.zz8 uapDisplayName="增长"/>                 
+		<scapfd_testref.ssqyysyyzs uapDisplayName="省属企业预算营业总收入比上年数增长率"/>              
+                <scapfd_testref.yyyyzsrzzl uapDisplayName="预算营业总收入增长率>100%的企业户数"/>                
+		<scapfd_testref.yyyyzsryyd uapDisplayName="预算营业总收入>1亿元的企业户数"/>               
+
+
+	       <scapfd_testref.yysr_hnsfz uapDisplayName="海南省发展控股有限公司营业收入（本年累计数）"/>                
+		<scapfd_testref.yyyyzsr_hnsfz uapDisplayName="海南省发展控股有限公司预算营业总收入"/>               
+		<scapfd_testref.yyzsrbsn_fz uapDisplayName="发展控股有限公司预算营业总收入比上年12月快报数增减率"/>    
+                    
+        
+		<scapfd_testref.yysr_hnhg uapDisplayName="海南海钢集团公司营业收入（本年累计数）"/>                
+		<scapfd_testref.yyyyzsr_hnhg uapDisplayName="海南海钢集团公司预算营业总收入"/>               
+		<scapfd_testref.yyzsrbsn_hg uapDisplayName="海钢集团公司预算营业总收入比上年12月快报数增减率"/> 
+
+		<scapfd_testref.yysr_hnsjs uapDisplayName="海南省建设集团有限公司营业收入（本年累计数）"/>                
+		<scapfd_testref.yyyyzsr_hnsjs uapDisplayName="海南省建设集团有限公司预算营业总收入"/>               
+		<scapfd_testref.yyzsrbsn_js uapDisplayName="建设集团有限公司预算营业总收入比上年12月快报数增减率"/>  
+
+		<scapfd_testref.yysr_hngs uapDisplayName="海南高速公路股份有限公司营业收入（本年累计数）"/>                
+		<scapfd_testref.yyyyzsr_hngs uapDisplayName="海南高速公路股份有限公司预算营业总收入"/>               
+		<scapfd_testref.yyzsrbsn_gs uapDisplayName="高速公路股份有限公司预算营业总收入比上年12月快报数增减率"/>  
+
+		<scapfd_testref.yysr_hnssl uapDisplayName="海南省水利电力集团有限公司营业收入（本年累计数）"/>                
+		<scapfd_testref.yyyyzsr_hsnsl uapDisplayName="海南省水利电力集团有限公司预算营业总收入"/>               
+		<scapfd_testref.yyzsrbsn_sl uapDisplayName="水利电力集团有限公司预算营业总收入比上年12月快报数增减率"/>  
+
+		<scapfd_testref.yysr_hnslq uapDisplayName="海南省路桥投资建设有限公司营业收入（本年累计数）"/>                
+		<scapfd_testref.yyyyzsr_hnslq uapDisplayName="海南省路桥投资建设有限公司预算营业总收入"/>               
+		<scapfd_testref.yyzsrbsn_lq uapDisplayName="路桥投资建设有限公司预算营业总收入比上年12月快报数增减率"/>  
+
+		<scapfd_testref.yysr_hnhn uapDisplayName="海南海宁经济发展总公司营业收入（本年累计数）"/>                
+		<scapfd_testref.yyyyzsr_hnhn uapDisplayName="海南海宁经济发展总公司预算营业总收入"/>               
+		<scapfd_testref.yyzsrbsn_hn uapDisplayName="海宁经济发展总公司预算营业总收入比上年12月快报数增减率"/>  
+
+		<scapfd_testref.yysr_hnlh uapDisplayName="海南联合资产管理公司营业收入（本年累计数）"/>                
+		<scapfd_testref.yyyyzsr_hnlh uapDisplayName="海南联合资产管理公司预算营业总收入"/>               
+		<scapfd_testref.yyzsrbsn_lh uapDisplayName="联合资产管理公司预算营业总收入比上年12月快报数增减率"/>  
+
+                <scapfd_testref.yysr_hnsxh uapDisplayName="海南省新华书店集团有限公司营业收入（本年累计数）"/>                
+		<scapfd_testref.yyyyzsr_hnsxh uapDisplayName="海南省新华书店集团有限公司预算营业总收入"/>               
+		<scapfd_testref.yyzsrbsn_xh uapDisplayName="新华书店集团有限公司预算营业总收入比上年12月快报数增减率"/>  
+
+                <scapfd_testref.yysr_hnswh uapDisplayName="海南省文化投资管理有限公司营业收入（本年累计数）"/>                
+		<scapfd_testref.yyyyzsr_hnswh uapDisplayName="海南省文化投资管理有限公司预算营业总收入"/>               
+		<scapfd_testref.yyzsrbsn_wh uapDisplayName="文化投资管理有限公司预算营业总收入比上年12月快报数增减率"/>  
+
+                <scapfd_testref.yysr_hnshy uapDisplayName="海南华盈投资控股有限公司营业收入（本年累计数）"/>                
+		<scapfd_testref.yyyyzsr_hnshy uapDisplayName="海南华盈投资控股有限公司预算营业总收入"/>               
+		<scapfd_testref.yyzsrbsn_hy uapDisplayName="华盈投资控股有限公司预算营业总收入比上年12月快报数增减率"/>  
+
+                <scapfd_testref.yysr_hnsnh uapDisplayName="海南省南海现代渔业集团有限公司营业收入（本年累计数）"/>                
+		<scapfd_testref.yyyyzsr_hnsnh uapDisplayName="海南省南海现代渔业集团有限公司预算营业总收入"/>               
+		<scapfd_testref.yyzsrbsn_nh uapDisplayName="南海现代渔业集团有限公司预算营业总收入比上年12月快报数增减率"/>  
+
+                <scapfd_testref.yysr_hncq uapDisplayName="海南产权交易所有限公司营业收入（本年累计数）"/>                
+		<scapfd_testref.yyyyzsr_hncq uapDisplayName="海南产权交易所有限公司预算营业总收入"/>               
+		<scapfd_testref.yyzsrbsn_cq uapDisplayName="产权交易所有限公司预算营业总收入比上年12月快报数增减率"/>  
+
+                <scapfd_testref.yysr_hnsjy uapDisplayName="海南省监狱企业集团有限责任公司营业收入（本年累计数）"/>                
+		<scapfd_testref.yyyyzsr_hnsjy uapDisplayName="海南省监狱企业集团有限责任公司预算营业总收入"/>               
+		<scapfd_testref.yyzsrbsn_jy uapDisplayName="监狱企业集团有限责任公司预算营业总收入比上年12月快报数增减率"/>  
+
+                <scapfd_testref.yysr_hnjl uapDisplayName="海南金林投资有限公司营业收入（本年累计数）"/>                
+		<scapfd_testref.yyyyzsr_hnjl uapDisplayName="海南金林投资有限公司预算营业总收入"/>               
+		<scapfd_testref.yyzsrbsn_jl uapDisplayName="金林投资有限公司预算营业总收入比上年12月快报数增减率"/>  
+
+                <scapfd_testref.yysr_hnhq uapDisplayName="海南海汽投资控股有限公司营业收入（本年累计数）"/>                
+		<scapfd_testref.yyyyzsr_hnhq uapDisplayName="海南海汽投资控股有限公司预算营业总收入"/>               
+		<scapfd_testref.yyzsrbsn_hq uapDisplayName="海汽投资控股有限公司预算营业总收入比上年12月快报数增减率"/>  
+
+                <scapfd_testref.yysr_hnsq uapDisplayName="海南属企业合计营业收入（本年累计数）"/>                
+		<scapfd_testref.yyyyzsr_hnsq uapDisplayName="海南属企业合计预算营业总收入"/>               
+		<scapfd_testref.yyzsrbsn_sq uapDisplayName="属企业合计预算营业总收入比上年12月快报数增减率"/>  
+                
+                <scapfd_testref.ssqyyslrze3 uapDisplayName="省属企业预算利润总额"/>             
+		<scapfd_testref.ssqysnlrze2 uapDisplayName="省属企业上年利润总额"/>
+               <scapfd_testref.zz9 uapDisplayName="增长"/> 
+		<scapfd_testref.xsqyyylrzebsn uapDisplayName="省属企业预算利润总额比上年数增长率%"/>
+
+		<scapfd_testref.yslrzeqwyd uapDisplayName="预算利润总额>1千万元的企业户数"/>		
+		<scapfd_testref.yslrzeyydq uapDisplayName="预算利润总额>1亿元的企业户数"/>
+		
+		<scapfd_testref.yrzesn_hnsfz uapDisplayName="海南省发展控股有限公司利润总额上年快报累计数"/>                
+		<scapfd_testref.yslrze_hnsfz uapDisplayName="海南省发展控股有限公司预算利润总额"/>               
+		<scapfd_testref.yslrzebsn_fz uapDisplayName="发展控股有限公司预算利润总额比上年12月快报数增减率"/>    
+                    
+        
+		<scapfd_testref.yrzesn_hnhg uapDisplayName="海南海钢集团公司利润总额上年快报累计数"/>                
+		<scapfd_testref.yslrze_hnhg uapDisplayName="海南海钢集团公司预算利润总额"/>               
+		<scapfd_testref.yslrzebsn_hg uapDisplayName="海钢集团公司预算营业总收入比上年12月快报数增减率"/> 
+
+		<scapfd_testref.yrzesn_hnsjs uapDisplayName="海南省建设集团有限公司利润总额上年快报累计数"/>                
+		<scapfd_testref.yslrze_hnsjs uapDisplayName="海南省建设集团有限公司预算利润总额"/>               
+		<scapfd_testref.yslrzebsn_js uapDisplayName="建设集团有限公司预算利润总额比上年12月快报数增减率"/>  
+
+		<scapfd_testref.yrzesn_hngs uapDisplayName="海南高速公路股份有限公司利润总额上年快报累计数"/>                
+		<scapfd_testref.yslrze_hngs uapDisplayName="海南高速公路股份有限公司预算利润总额"/>               
+		<scapfd_testref.yslrzebsn_gs uapDisplayName="高速公路股份有限公司预算利润总额比上年12月快报数增减率"/>  
+
+		<scapfd_testref.yrzesn_hnssl uapDisplayName="海南省水利电力集团有限公司利润总额上年快报累计数"/>                
+		<scapfd_testref.yslrze_hnssl uapDisplayName="海南省水利电力集团有限公司预算利润总额"/>               
+		<scapfd_testref.yslrzebsn_sl uapDisplayName="水利电力集团有限公司预算利润总额比上年12月快报数增减率"/>  
+
+		<scapfd_testref.yrzesn_hnslq uapDisplayName="海南省路桥投资建设有限公司利润总额上年快报累计数"/>                
+		<scapfd_testref.yslrze_hnslq uapDisplayName="海南省路桥投资建设有限公司预算利润总额"/>               
+		<scapfd_testref.yslrzebsn_lq uapDisplayName="路桥投资建设有限公司预算利润总额比上年12月快报数增减率"/>  
+
+		<scapfd_testref.yrzesn_hnhn uapDisplayName="海南海宁经济发展总公司利润总额上年快报累计数"/>                
+		<scapfd_testref.yslrze_hnhn uapDisplayName="海南海宁经济发展总公司预算利润总额"/>               
+		<scapfd_testref.yslrzebsn_hn uapDisplayName="海宁经济发展总公司预算利润总额比上年12月快报数增减率"/>  
+
+		<scapfd_testref.yrzesn_hnlh uapDisplayName="海南联合资产管理公司利润总额上年快报累计数"/>                
+		<scapfd_testref.yslrze_hnlh uapDisplayName="海南联合资产管理公司预算利润总额"/>               
+		<scapfd_testref.yslrzebsn_lh uapDisplayName="联合资产管理公司预算利润总额比上年12月快报数增减率"/>  
+
+                <scapfd_testref.yrzesn_hnsxh uapDisplayName="海南省新华书店集团有限公司利润总额上年快报累计数"/>                
+		<scapfd_testref.yslrze_hnsxh uapDisplayName="海南省新华书店集团有限公司预算利润总额"/>               
+		<scapfd_testref.yslrzebsn_xh uapDisplayName="新华书店集团有限公司预算利润总额比上年12月快报数增减率"/>  
+
+                <scapfd_testref.yrzesn_hnswh uapDisplayName="海南省文化投资管理有限公司利润总额上年快报累计数"/>                
+		<scapfd_testref.yslrze_hnswh uapDisplayName="海南省文化投资管理有限公司预算利润总额"/>               
+		<scapfd_testref.yslrzebsn_wh uapDisplayName="文化投资管理有限公司预算利润总额比上年12月快报数增减率"/>  
+
+                <scapfd_testref.yrzesn_hnhy uapDisplayName="海南华盈投资控股有限公司利润总额上年快报累计数"/>                
+		<scapfd_testref.yslrze_hnhy uapDisplayName="海南华盈投资控股有限公司预算利润总额"/>               
+		<scapfd_testref.yslrzebsn_hy uapDisplayName="华盈投资控股有限公司预算利润总额比上年12月快报数增减率"/>  
+
+                <scapfd_testref.yrzesn_hnsnh uapDisplayName="海南省南海现代渔业集团有限公司利润总额上年快报累计数"/>                
+		<scapfd_testref.yslrze_hnsnh uapDisplayName="海南省南海现代渔业集团有限公司预算利润总额"/>               
+		<scapfd_testref.yslrzebsn_nh uapDisplayName="南海现代渔业集团有限公司预算利润总额比上年12月快报数增减率"/>  
+
+                <scapfd_testref.yrzesn_hncq uapDisplayName="海南产权交易所有限公司利润总额上年快报累计数"/>                
+		<scapfd_testref.yslrze_hncq uapDisplayName="海南产权交易所有限公司预算利润总额"/>               
+		<scapfd_testref.yslrzebsn_cq uapDisplayName="产权交易所有限公司预算利润总额比上年12月快报数增减率"/>  
+
+                <scapfd_testref.yrzesn_hnsjy uapDisplayName="海南省监狱企业集团有限责任公司利润总额上年快报累计数"/>                
+		<scapfd_testref.yslrze_hnsjy uapDisplayName="监狱企业集团有限责任公司预算利润总额"/>               
+		<scapfd_testref.yslrzebsn_jy uapDisplayName="监狱企业集团有限责任公司预算利润总额比上年12月快报数增减率"/>  
+
+                <scapfd_testref.yrzesn_hnjl uapDisplayName="海南金林投资有限公司利润总额上年快报累计数"/>                
+		<scapfd_testref.yslrze_hnjl uapDisplayName="海南金林投资有限公司预算利润总额"/>               
+		<scapfd_testref.yslrzebsn_jl uapDisplayName="金林投资有限公司预算利润总额比上年12月快报数增减率"/>  
+
+                <scapfd_testref.yrzesn_hnhq uapDisplayName="海南海汽投资控股有限公司利润总额上年快报累计数"/>                
+		<scapfd_testref.yslrze_hnhq uapDisplayName="海南海汽投资控股有限公司预算利润总额"/>               
+		<scapfd_testref.yslrzebsn_hq uapDisplayName="海汽投资控股有限公司预算利润总额比上年12月快报数增减率"/>  
+
+                <scapfd_testref.yrzesn_hnsq uapDisplayName="海南属企业合计利润总额上年快报累计数"/>                
+		<scapfd_testref.yslrze_hnsq uapDisplayName="海南属企业合计预算营业总收入"/>               
+		<scapfd_testref.yslrzebsn_sq uapDisplayName="属企业合计预算营业总收入比上年12月快报数增减率"/>  
+
+               <scapfd_testref.zzassqyyyc uapDisplayName="增长（按“省属企业预算成本费用合计金额比上年数增长率”进行判断）"/>                
+		<scapfd_testref.ssqyyscbfy uapDisplayName="省属企业预算成本费用合计金额亿元"/>               
+		<scapfd_testref.ssqyyycbfyhj uapDisplayName="省属企业预算成本费用合计金额比上年数增长率%"/>  
+
+                <scapfd_testref.ssqyysyyzsryy uapDisplayName="省属企业预算营业总收入亿元"/>                
+		<scapfd_testref.cfssqyysyyzsr uapDisplayName="涨幅省属企业预算营业总收入比上年数增长率%"/>               
+		<scapfd_testref.zzcbfyxdyysr uapDisplayName="增长（成本费用相对营业收入增长趋势，结果来判断增长/下降）"/>  
+
+                <scapfd_testref.gccbfyxdyysr uapDisplayName="高出13.01（成本费用相对营业收入增长趋势）个百分点"/>                
+		
+                <scapfd_testref.cbfysn_hnsfz uapDisplayName="海南省发展控股有限公司成本费用上年快报累计数"/>   
+		<scapfd_testref.yscbfy_hnsfz uapDisplayName="海南省发展控股有限公司预算成本费用"/>               
+		<scapfd_testref.yscbfybsn_fz uapDisplayName="发展控股有限公司预算成本费用比上年12月快报数增减率"/>    
+                    
+        
+		<scapfd_testref.cbfysn_hnhg uapDisplayName="海南海钢集团公司成本费用上年快报累计数"/>                
+		<scapfd_testref.yscbfy_hnhg uapDisplayName="海南海钢集团公司预算成本费用"/>               
+		<scapfd_testref.yscbfybsn_hg uapDisplayName="海钢集团公司预算营业总收入比上年12月快报数增减率"/> 
+
+		<scapfd_testref.cbfysn_hnsjs uapDisplayName="海南省建设集团有限公司成本费用上年快报累计数"/>                
+		<scapfd_testref.yscbfy_hnsjs uapDisplayName="海南省建设集团有限公司预算成本费用"/>               
+		<scapfd_testref.yscbfybsn_js uapDisplayName="建设集团有限公司预算成本费用比上年12月快报数增减率"/>  
+
+		<scapfd_testref.cbfysn_hngs uapDisplayName="海南高速公路股份有限公司成本费用上年快报累计数"/>                
+		<scapfd_testref.yscbfy_hngs uapDisplayName="海南高速公路股份有限公司预算成本费用"/>               
+		<scapfd_testref.yscbfybsn_gs uapDisplayName="高速公路股份有限公司预算成本费用比上年12月快报数增减率"/>  
+
+		<scapfd_testref.cbfysn_hnssl uapDisplayName="海南省水利电力集团有限公司成本费用上年快报累计数"/>                
+		<scapfd_testref.yscbfy_hnssl uapDisplayName="海南省水利电力集团有限公司预算成本费用"/>               
+		<scapfd_testref.yscbfybsn_sl uapDisplayName="水利电力集团有限公司预算成本费用比上年12月快报数增减率"/>  
+
+		<scapfd_testref.cbfysn_hnslq uapDisplayName="海南省路桥投资建设有限公司成本费用上年快报累计数"/>                
+		<scapfd_testref.yscbfy_hnslq uapDisplayName="海南省路桥投资建设有限公司预算成本费用"/>               
+		<scapfd_testref.yscbfybsn_lq uapDisplayName="路桥投资建设有限公司预算成本费用比上年12月快报数增减率"/>  
+
+		<scapfd_testref.cbfysn_hnhn uapDisplayName="海南海宁经济发展总公司成本费用上年快报累计数"/>                
+		<scapfd_testref.yscbfy_hnhn uapDisplayName="海南海宁经济发展总公司预算成本费用"/>               
+		<scapfd_testref.yscbfybsn_hn uapDisplayName="海宁经济发展总公司预算成本费用比上年12月快报数增减率"/>  
+
+		<scapfd_testref.cbfysn_hnlh uapDisplayName="海南联合资产管理公司成本费用上年快报累计数"/>                
+		<scapfd_testref.yscbfy_hnlh uapDisplayName="海南联合资产管理公司预算成本费用"/>               
+		<scapfd_testref.yscbfybsn_lh uapDisplayName="联合资产管理公司预算成本费用比上年12月快报数增减率"/>  
+
+                <scapfd_testref.cbfysn_hnsxh uapDisplayName="海南省新华书店集团有限公司成本费用上年快报累计数"/>                
+		<scapfd_testref.yscbfy_hnsxh uapDisplayName="海南省新华书店集团有限公司预算成本费用"/>               
+		<scapfd_testref.yscbfybsn_xh uapDisplayName="新华书店集团有限公司预算成本费用比上年12月快报数增减率"/>  
+
+                <scapfd_testref.cbfysn_hnswh uapDisplayName="海南省文化投资管理有限公司成本费用上年快报累计数"/>                
+		<scapfd_testref.yscbfy_hnswh uapDisplayName="海南省文化投资管理有限公司预算成本费用"/>               
+		<scapfd_testref.yscbfybsn_wh uapDisplayName="文化投资管理有限公司预算成本费用比上年12月快报数增减率"/>  
+
+                <scapfd_testref.cbfysn_hnshy uapDisplayName="海南华盈投资控股有限公司成本费用上年快报累计数"/>                
+		<scapfd_testref.yscbfy_hnshy uapDisplayName="海南华盈投资控股有限公司预算成本费用"/>               
+		<scapfd_testref.yscbfybsn_hy uapDisplayName="华盈投资控股有限公司预算成本费用比上年12月快报数增减率"/>  
+
+                <scapfd_testref.cbfysn_hnsnh uapDisplayName="海南省南海现代渔业集团有限公司成本费用上年快报累计数"/>                
+		<scapfd_testref.yscbfy_hnsnh uapDisplayName="海南省南海现代渔业集团有限公司预算成本费用"/>               
+		<scapfd_testref.yscbfybsn_nh uapDisplayName="南海现代渔业集团有限公司预算成本费用比上年12月快报数增减率"/>  
+
+                <scapfd_testref.cbfysn_hncq uapDisplayName="海南产权交易所有限公司成本费用上年快报累计数"/>                
+		<scapfd_testref.yscbfy_hncq uapDisplayName="海南产权交易所有限公司预算成本费用"/>               
+		<scapfd_testref.yscbfybsn_cq uapDisplayName="产权交易所有限公司预算成本费用比上年12月快报数增减率"/>  
+
+                <scapfd_testref.cbfysn_hnsjy uapDisplayName="海南省监狱企业集团有限责任公司成本费用上年快报累计数"/>                
+		<scapfd_testref.yscbfy_hnsjy uapDisplayName="监狱企业集团有限责任公司预算成本费用"/>               
+		<scapfd_testref.yscbfybsn_jy uapDisplayName="监狱企业集团有限责任公司预算成本费用比上年12月快报数增减率"/>  
+
+                <scapfd_testref.cbfysn_hnjl uapDisplayName="海南金林投资有限公司成本费用上年快报累计数"/>                
+		<scapfd_testref.yscbfy_hnjl uapDisplayName="海南金林投资有限公司预算成本费用"/>               
+		<scapfd_testref.yscbfybsn_jl uapDisplayName="金林投资有限公司预算成本费用比上年12月快报数增减率"/>  
+
+                <scapfd_testref.cbfysn_hnhq uapDisplayName="海南海汽投资控股有限公司成本费用上年快报累计数"/>                
+		<scapfd_testref.yscbfy_hnhq uapDisplayName="海南海汽投资控股有限公司预算成本费用"/>               
+		<scapfd_testref.yscbfybsn_hq uapDisplayName="海汽投资控股有限公司预算成本费用比上年12月快报数增减率"/>  
+
+                <scapfd_testref.cbfysn_hnsq uapDisplayName="海南属企业合计成本费用上年快报累计数"/>                
+		<scapfd_testref.yscbfy_hnsq uapDisplayName="海南属企业合计预算营业总收入"/>               
+		<scapfd_testref.yscbfybsn_sq uapDisplayName="属企业合计预算营业总收入比上年12月快报数增减率"/>  
+
+	</scapfd_testref>
+</Root>

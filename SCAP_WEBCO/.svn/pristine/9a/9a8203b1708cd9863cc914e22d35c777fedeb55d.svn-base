@@ -1,0 +1,7 @@
+#
+#Fri Jan 10 11:35:10 GMT+08:00 2014
+module.name=scapco
+module.editorVersion=NEW_VERSION
+module.webContext=portal
+module.defConfig=module.xml
+pack.prefix=nc.scap

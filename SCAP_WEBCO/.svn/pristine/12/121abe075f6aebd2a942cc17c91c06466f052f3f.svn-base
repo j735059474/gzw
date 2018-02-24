@@ -1,0 +1,265 @@
+<link href="/portal/scap/css/index/index.css" rel="stylesheet" type="text/css">
+<script src="/portal/scap/js/index/index.js" type="text/javascript"></script>
+
+<div class="gzworks lczx">
+	<div class="gzcontent">
+		<div class="gztitle">
+			<div class="gzicon"></div>
+			<span style="width:100px;">我的工作</span>
+			<#if hfoa??>
+				<div class="gztab">OA消息<#if (hfoa.todoCount+hfoa.toreadCount+hfoa.noticeCount+hfoa.mailCount gt 0)><div class="new">新</div></#if></div>
+			</#if>
+			<div class="gztab">非涉密公文</div>
+			<div class="gztab">办结</div>
+			<div class="gztab">已办</div>
+			<div class="gztab gztab_selected">待办</div>
+		</div>
+		<div class="gzbody">
+			<#if sursen.TASK_LIST_UNREAD??>
+				<#list sursen.TASK_LIST_UNREAD as talist>
+					<div class="gzrow" onclick="javascript:getTaskUrl('${env().web}/pt/task/process',
+						'id=${talist.pk_task}&pluginid=<#if talist.sysext3 ??>${talist.sysext3}<#else>wfmtaskqry</#if>',
+						'<#if talist.humactname??>${talist.humactname}</#if>');">
+						<div class="gzicon1 gzicon_select"></div>
+						<div class="gzcaption">
+						    <#if talist.flowtypename??>
+							 	[${talist.flowtypename}]
+							</#if>
+							<#if talist.title??>
+								${talist.title}
+							<#else>
+								 <#if talist.humactname??>
+								 	${talist.humactname}
+								 </#if>
+							</#if>
+						</div>
+						<div class="gzdate">${talist.formatstartdate}</div>
+						<div class="gzicon2 gzicon_calendar"></div>
+					</div>
+				</#list>
+			<#else>
+				<div class="nodata">暂无数据</div>
+			</#if>
+		</div>
+		<div class="gzbody">
+			<#if sursen.TASK_LIST_READED??>
+				<#list sursen.TASK_LIST_READED as talist>
+					<div class="gzrow" onclick="javascript:getTaskUrl('${env().web}/pt/task/process',
+						'id=${talist.pk_task}&pluginid=<#if talist.sysext3 ??>${talist.sysext3}<#else>wfmtaskqry</#if>',
+						'<#if talist.humactname??>${talist.humactname}</#if>');">
+						<div class="gzicon1 gzicon_select"></div>
+						<div class="gzcaption">
+						    <#if talist.flowtypename??>
+							 	[${talist.flowtypename}]
+							</#if>
+							<#if talist.title??>
+								${talist.title}
+							<#else>
+								 <#if talist.humactname??>
+								 	${talist.humactname}
+								 </#if>
+							</#if>
+						</div>
+						<div class="gzdate">${talist.formatstartdate}</div>
+						<div class="gzicon2 gzicon_calendar"></div>
+					</div>
+				</#list>
+			<#else>
+				<div class="nodata">暂无数据</div>
+			</#if>
+		</div>
+		<div class="gzbody">
+			<#if sursen.TASK_LIST_END??>
+				<#list sursen.TASK_LIST_END as talist>
+					<div class="gzrow" onclick="javascript:getTaskUrl('${env().web}/pt/task/process',
+						'id=${talist.pk_task}&pluginid=<#if talist.sysext3 ??>${talist.sysext3}<#else>wfmtaskqry</#if>',
+						'<#if talist.humactname??>${talist.humactname}</#if>');">
+						<div class="gzicon1 gzicon_select"></div>
+						<div class="gzcaption">
+						    <#if talist.flowtypename??>
+							 	[${talist.flowtypename}]
+							</#if>
+							<#if talist.title??>
+								${talist.title}
+							<#else>
+								 <#if talist.humactname??>
+								 	${talist.humactname}
+								 </#if>
+							</#if>
+						</div>
+						<div class="gzdate">${talist.formatstartdate}</div>
+						<div class="gzicon2 gzicon_calendar"></div>
+					</div>
+				</#list>
+			<#else>
+				<div class="nodata">暂无数据</div>
+			</#if>
+		</div>
+		<div class="gzbody">
+			<div class="gzdoc">
+				<div class="gzdoccaption">本单位有 ${sursen.recvdocnum} 条收文待签收</div>
+				<div class="todo"><a href="http://www.baidu.com/" target="_blank">去处理 >></a></div>
+			</div>
+			<div class="gzdoclist">
+				<#if sursen.recvdoc??>
+                    <#list sursen.recvdoc as talist>
+                           <div class="gzdoclistrow">
+                                  <div class= "gzcaption"><${talist.yearNo}> [${talist.docNoPre}] ${talist.doctitle}</div>
+                                  <div class= "gzdate"> ${talist.sendTime} </div>
+                                  <div class= "gzcalendar"></div>
+                           </div>
+                    </#list>
+              	<#else>
+                    <div class= "nodata"> 暂无数据 </div>
+              	</#if>
+			</div>
+			<div class="gzdoc">
+				<div class="gzdoccaption">本单位有 ${sursen.senddocEncryptionnum} 条发文待盖章</div>
+				<div class="todo"><a href="http://www.baidu.com/" target="_blank">去处理 >></a></div>
+			</div>
+			<div class="gzdoclist">
+				<#if sursen.senddocEncryption??>
+                    <#list sursen.senddocEncryption as talist>
+                           <div class="gzdoclistrow">
+                                  <div class= "gzcaption"><${talist.yearNo}> [${talist.docNoPre}] ${talist.doctitle}</div>
+                                  <div class= "gzdate"> ${talist.createdate} </div>
+                                  <div class= "gzcalendar"></div>
+                           </div>
+                    </#list>
+              	<#else>
+                    <div class= "nodata"> 暂无数据 </div>
+              	</#if>
+              </div>
+			<div class="gzdoc">
+				<div class="gzdoccaption">本单位有 ${sursen.senddocnum} 条发文待发送</div>
+				<div class="todo"><a href="http://www.baidu.com/" target="_blank">去处理 >></a></div>
+			</div>
+			<div class="gzdoclist">
+				<#if sursen.senddoc??>
+                    <#list sursen.senddoc as talist>
+                           <div class="gzdoclistrow">
+                                  <div class= "gzcaption"><${talist.yearNo}> [${talist.docNoPre}] ${talist.doctitle}</div>
+                                  <div class= "gzdate"> ${talist.createdate} </div>
+                                  <div class= "gzcalendar"></div>
+                           </div>
+                    </#list>
+              	<#else>
+                    <div class= "nodata"> 暂无数据 </div>
+              	</#if>
+        	</div>
+		</div>
+		
+		<#if hfoa??>
+			<div class="gzbody">
+				<div class="gzdoc">
+					<div class="gzdoccaption">当前用户有 ${hfoa.toreadCount} 条阅件待处理</div>
+				</div>
+				<div class="gzdoclist" style="height:150px">
+					<#if (hfoa.toreadList?size gt 0)>
+						<ul style="text-align:left;padding-left:5px;">
+							<#list hfoa.toreadList as item>
+								<li><a href="${item.href}" target="_blank">${item.title}</a></li>
+							</#list>
+						</ul>
+					<#else>
+						<div class= "nodata"> 暂无数据 </div>
+					</#if>
+				</div>
+				
+				<div class="gzdoc">
+					<div class="gzdoccaption">当前用户有 ${hfoa.todoCount} 条事项待处理</div>
+				</div>
+				<div class="gzdoclist" style="height:150px">
+					<#if (hfoa.todoList?size gt 0)>
+						<ul style="text-align:left;padding-left:5px;">
+							<#list hfoa.todoList as item>
+								<li><a href="${item.href}" target="_blank">${item.title}</a></li>
+							</#list>
+						</ul>
+					<#else>
+						<div class= "nodata"> 暂无数据 </div>
+					</#if>
+				</div>
+				
+				<div class="gzdoc">
+					<div class="gzdoccaption">当前用户有 ${hfoa.noticeCount} 条公告待处理</div>
+				</div>
+				<div class="gzdoclist" style="height:150px">
+					<#if (hfoa.noticeList?size gt 0)>
+						<ul style="text-align:left;padding-left:5px;">
+							<#list hfoa.noticedList as item>
+								<li><a href="${item.href}" target="_blank">${item.title}</a></li>
+							</#list>
+						</ul>
+					<#else>
+						<div class= "nodata"> 暂无数据 </div>
+					</#if>
+				</div>
+				
+				<div class="gzdoc">
+					<div class="gzdoccaption">当前用户有 ${hfoa.mailCount} 条邮件待处理</div>
+				</div>
+				<div class="gzdoclist" style="height:150px">
+					<#if (hfoa.mailList?size gt 0)>
+						<ul style="text-align:left;padding-left:5px;">
+							<#list hfoa.mailList as item>
+								<li><a href="${item.href}" target="_blank">${item.title}</a></li>
+							</#list>
+						</ul>
+					<#else>
+						<div class= "nodata"> 暂无数据 </div>
+					</#if>
+				</div>
+			</div>
+		</#if>
+	</div>
+</div>
+
+<script>
+$(document).ready(function() {
+	$(".lczx .gztab").click(function() {
+		$(this).addClass("gztab_selected").siblings(".gztab_selected").removeClass("gztab_selected");
+		var index = $(".lczx .gztab").size() - $(".lczx .gztab").index(this) - 1;
+		$(".lczx .gzbody").eq(index).show().siblings(".gzbody").hide();
+	});
+	
+	$(".gzdoc").click(function() {
+		$(this).addClass("gzdoc_t").siblings(".gzdoc_t").removeClass("gzdoc_t");
+		var index = $(".gzdoc").index(this);
+		$(".gzdoclist").eq(index).slideDown(500).siblings(".gzdoclist").slideUp(500);
+	});
+	
+	$(".gzbody").each(function(){
+		$(this).find(".gzdoc:first").click()
+	});
+});
+function getTaskUrl(url, arg, titile){
+	$.ajax({
+		type: "post",                   
+		dataType: "json",               
+        url: url+"?",
+        data: arg,
+        complete :function(){},        
+        success: function(data){
+        	var msg = data[0];
+        	if(msg.msg && msg.msg != null){
+            	showErrorDialog(msg.msg);
+        	}
+            else{
+            	showDialog(msg.url, msg.title, msg.width, msg.height, 'wfl', null, {isShowLine:false}, null);
+        		var dialogName = "$modalDialog" + (showDialog.dialogCount -1);
+				var dls = new Listener("beforeClose");
+				//dls.source_id = dialogName;
+				//dls.listener_id = 'onBeforeClose_' + dialogName;
+				//dls.beforeClose = function (){
+				dls.func = function (){
+					getContainer("#${sursen.WINID}").doView();
+				};
+				window[dialogName].addListener(dls);
+            }
+        },
+        error:function(){
+		}
+		});
+}
+</script>

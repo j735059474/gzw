@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<ROOT>
+<items>
+
+<!--flag="0" 单独处理;flag="1" 查iufo表样;flag="2" 查事实表;flag="3" 默认值 公式中"XX,2"表示XX公式计算后保留两位小数-->
+<item key="vyear" dimension="" name="年">
+  <source flag="0" code="" measure="" row="" col="" id="" />
+  <formula>
+    2014
+  </formula>
+</item>
+
+<item key="sys_org" dimension="" name="组织标志">
+  <source flag="0" code="" measure="" row="" col="" id="" />
+  <formula>
+    HZQYB0014
+  </formula>
+</item>
+
+<!--dimension="hs"-->
+<item key="ysssqy" dimension="hs" name="省属企业户数">
+  <source flag="2" code="cp_orgs" measure="count(*)" row="" col="" id="$aa" condition=" and  pk_fatherorg=(select pk_org from cp_orgs where def12='HZQYB0014') "/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yslrzedyqwy" dimension="hs" name="预算利润总额>1千万元的企业户数">
+  <source flag="2" code="scapfd_ys_base" measure="count(*)" row="" col="" id="$aa" condition=" and vyear='2014' and sb_lrze/10000>1000 and sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014')"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yslrzedyyy" dimension="hs" name="预算利润总额>1亿元的企业户数">
+  <source flag="2" code="scapfd_ys_base" measure="count(*)" row="" col="" id="$aa" condition=" and vyear='2014' and sb_lrze/10000>10000 and sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014')"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ysyysourzzl" dimension="hs" name="预算营业总收入增长率>100%的企业户数">
+  <source flag="2" code="scapfd_ys_base" measure="count(*)" row="" col="" id="$aa" condition=" and vyear='2014' and zj_yyzsr/10000>100 and sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014')"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ysyyzsrdyyy" dimension="hs" name="预算营业总收入>1亿元的企业户数">
+  <source flag="2" code="scapfd_ys_base" measure="count(*)" row="" col="" id="$aa" condition=" and vyear='2014' and sb_yyzsr/10000>10000 and sys_fjd=(select pk_org from cp_orgs where def12='HZQYB0014')"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+</items>
+</ROOT>

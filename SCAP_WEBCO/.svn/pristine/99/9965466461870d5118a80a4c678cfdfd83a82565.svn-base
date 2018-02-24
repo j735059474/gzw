@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget controllerClazz="nc.scap.pub.entmatter.EntmatterListWinMainViewCtrl" id="main" refId="main" sourcePackage="pub/src/public/">
+    <Attributes>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+        <PlugoutDesc id="plugout_winpopattchlist">
+        </PlugoutDesc>
+    </PlugoutDescs>
+    <PluginDescs>
+        <PluginDesc id="simpleQuery_plugin" methodName="doQueryChange">
+        </PluginDesc>
+        <PluginDesc id="org_plugin" methodName="doOrgChange">
+        </PluginDesc>
+        <PluginDesc id="refresh_plugin" methodName="doRefresh">
+            <PluginDescItem clazztype="java.lang.String" id="OPERATE_ROW">
+            </PluginDescItem>
+        </PluginDesc>
+    </PluginDescs>
+    <Connectors>
+        <Connector connType="6" id="listViewConnID" pluginId="refresh_plugin" plugoutId="proxyAfterSavePlugout" source="entmatterComps.entmatter_listwin" sourceWindow="" target="main" targetWindow="">
+        </Connector>
+    </Connectors>
+    <Models>
+        <Datasets>
+            <RefMdDataset caption="事件影响类型(自定义档案)" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_Defdoc_scapco_0005" lazyLoad="true" notNullBody="false" objMeta="uap.Defdoc-scapco_0005" voMeta="nc.vo.bd.defdoc.DefdocVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_orgs" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_orgs" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="事项分类(自定义档案)" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_Defdoc_scapco_0006" lazyLoad="true" notNullBody="false" objMeta="uap.Defdoc-scapco_0006" voMeta="nc.vo.bd.defdoc.DefdocVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="协同用户" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_user" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_user" voMeta="nc.uap.cpb.org.vos.CpUserVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="企业事项" controlwidgetopeStatus="true" enabled="false" id="ent_matters" lazyLoad="false" notNullBody="false" objMeta="scapco.ent_matters" pageSize="15" voMeta="nc.scap.pub.entmatter.vos.EntmattersVO">
+                <FieldRelations>
+                    <FieldRelation id="office_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="office_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="office">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="fill_user_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="fill_user_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="fill_user">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_org_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_group_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_group_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_group">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="effect_type_rel" needProcess="true" refDataset="$refds_uap_Defdoc_scapco_0005" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="effect_type_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_defdoc" value="effect_type">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="matter_class_rel" needProcess="true" refDataset="$refds_uap_Defdoc_scapco_0006" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="matter_class_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_defdoc" value="matter_class">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="approve_user_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="approve_user_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="approve_user">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="billmaker_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="billmaker_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="billmaker">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="approver_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="approver_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="approver">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="modifier_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="modifier_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="modifier">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                    <ModifyField id="matter_score" precision="2">
+                    </ModifyField>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DatasetEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+        </Datasets>
+        <ComboDatas>
+            <StaticComboData id="evaluation_content">
+                <ComboItem text="好" value="good">
+                </ComboItem>
+                <ComboItem text="一般" value="simple">
+                </ComboItem>
+                <ComboItem text="差" value="bad">
+                </ComboItem>
+            </StaticComboData>
+            <MDComboDataConf caption="协同审批单据状态" fullclassName="7e41c775-c422-4077-9731-e49d16fc2ee4" id="combo_ent_matters_formstate">
+            </MDComboDataConf>
+            <MDComboDataConf caption="是否启用" fullclassName="b7f0bb32-8a96-47e6-bec1-71ca3fc86d6a" id="combo_ent_matters_enablestate">
+            </MDComboDataConf>
+            <DynamicComboData caption="保密级别" className="nc.scap.pub.entmatter.util.SecrecyLevelDynamicEnum" id="combo_secrecy_level">
+            </DynamicComboData>
+            <DynamicComboData caption="发布状态" className="nc.scap.pub.entmatter.util.ReleaseTypeDynamicEnum" id="combo_release_type">
+            </DynamicComboData>
+        </ComboDatas>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_ent_matters_effect_type_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_defdoc,name" refId="" refcode="事件影响类型(自定义档案)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="企业事项_事件影响类型(自定义档案)" usePower="false" writeDs="ent_matters" writeFields="effect_type,effect_type_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_ent_matters_billmaker_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="企业事项_协同用户" usePower="false" writeDs="ent_matters" writeFields="billmaker,billmaker_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_ent_matters_pk_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同集团+业务单元(所有)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="企业事项_协同集团+业务单元(所有)" usePower="false" writeDs="ent_matters" writeFields="pk_org,pk_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_ent_matters_fill_user_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="企业事项_协同用户" usePower="false" writeDs="ent_matters" writeFields="fill_user,fill_user_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_ent_matters_matter_class_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_defdoc,name" refId="" refcode="事项分类(自定义档案)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="企业事项_事项分类(自定义档案)" usePower="false" writeDs="ent_matters" writeFields="matter_class,matter_class_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_ent_matters_pk_group_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同集团(所有)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="企业事项_协同集团(所有)" usePower="false" writeDs="ent_matters" writeFields="pk_group,pk_group_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_ent_matters_approve_user_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="企业事项_协同用户" usePower="false" writeDs="ent_matters" writeFields="approve_user,approve_user_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_ent_matters_office_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="部门(协同)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="企业事项_部门(协同)" usePower="false" writeDs="ent_matters" writeFields="office,office_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_ent_matters_modifier_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="企业事项_协同用户" usePower="false" writeDs="ent_matters" writeFields="modifier,modifier_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_ent_matters_approver_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="企业事项_协同用户" usePower="false" writeDs="ent_matters" writeFields="approver,approver_user_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <GridComp autoRowHeight="false" canCopy="true" caption="企业事项" checkBoxModel="1" dataset="ent_matters" editable="true" enabled="true" expandTree="false" id="ent_matters_grid" multiSelect="true" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_matter" fixedHeader="false" id="pk_matter" imageOnly="false" langDir="biz_matters" nullAble="false" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="office" fixedHeader="false" id="office" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="相关处室" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="office_name" fixedHeader="false" id="office_name" imageOnly="false" nullAble="true" refNode="refnode_ent_matters_office_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="相关处室" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="fill_user" fixedHeader="false" id="fill_user" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="填报人" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="fill_user_user_name" fixedHeader="false" id="fill_user_user_name" imageOnly="false" nullAble="true" refNode="refnode_ent_matters_fill_user_user_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="填报人" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="def2" fixedHeader="false" id="def2" imageOnly="false" langDir="biz_matters" nullAble="true" refComboData="combo_release_type" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="发布状态" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="def3" fixedHeader="false" id="def3" imageOnly="false" langDir="biz_matters" nullAble="true" refComboData="combo_secrecy_level" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="保密级别" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_org" fixedHeader="false" id="pk_org" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="企业名称" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_org_name" fixedHeader="false" id="pk_org_name" imageOnly="false" nullAble="true" refNode="refnode_ent_matters_pk_org_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="企业名称" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_group" fixedHeader="false" id="pk_group" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="所属集团" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_group_name" fixedHeader="false" id="pk_group_name" imageOnly="false" nullAble="true" refNode="refnode_ent_matters_pk_group_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="所属集团" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="report_title" fixedHeader="false" id="report_title" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="报告标题" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="effect_type" fixedHeader="false" id="effect_type" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="事件影响类型" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="effect_type_name" fixedHeader="false" id="effect_type_name" imageOnly="false" nullAble="true" refNode="refnode_ent_matters_effect_type_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="事件影响类型" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="matter_class" fixedHeader="false" id="matter_class" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="事项分类" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="matter_class_name" fixedHeader="false" id="matter_class_name" imageOnly="false" nullAble="true" refNode="refnode_ent_matters_matter_class_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="事项分类" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="reserve1" fixedHeader="false" id="reserve1" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="事项备注" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="matter_content" fixedHeader="false" id="matter_content" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="事项内容描述" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDouble" editable="true" editorType="DecimalText" field="matter_score" fixedHeader="false" id="matter_score" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DecimalRender" showCheckBox="true" sortable="true" sumCol="false" text="事项得分" textAlign="right" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDate" editable="true" editorType="DateText" field="rep_date" fixedHeader="false" id="rep_date" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DateRender" showCheckBox="true" sortable="true" sumCol="false" text="上报日期" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="approve_user" fixedHeader="false" id="approve_user" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="审核负责人" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="approve_user_user_name" fixedHeader="false" id="approve_user_user_name" imageOnly="false" nullAble="true" refNode="refnode_ent_matters_approve_user_user_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="审核负责人" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="memo" fixedHeader="false" id="memo" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备注" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDateTime" editable="true" editorType="DateTimeText" field="billmakedate" fixedHeader="false" id="billmakedate" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="制单日期" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="billmaker" fixedHeader="false" id="billmaker" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="制单人" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="billmaker_user_name" fixedHeader="false" id="billmaker_user_name" imageOnly="false" nullAble="true" refNode="refnode_ent_matters_billmaker_user_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="制单人" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="billno" fixedHeader="false" id="billno" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="单据编号" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="approver" fixedHeader="false" id="approver" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="审批人" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="approver_user_name" fixedHeader="false" id="approver_user_name" imageOnly="false" nullAble="true" refNode="refnode_ent_matters_approver_user_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="审批人" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDateTime" editable="true" editorType="DateTimeText" field="approvedate" fixedHeader="false" id="approvedate" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="审批时间" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="formstate" fixedHeader="false" id="formstate" imageOnly="false" langDir="biz_matters" nullAble="true" refComboData="combo_ent_matters_formstate" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="单据状态" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="formtitle" fixedHeader="false" id="formtitle" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="单据标题" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="enablestate" fixedHeader="false" id="enablestate" imageOnly="false" langDir="biz_matters" nullAble="true" refComboData="combo_ent_matters_enablestate" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="是否启用" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="modifier" fixedHeader="false" id="modifier" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="修改人" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="modifier_user_name" fixedHeader="false" id="modifier_user_name" imageOnly="false" nullAble="true" refNode="refnode_ent_matters_modifier_user_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="修改人" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDateTime" editable="true" editorType="DateTimeText" field="modifiedtime" fixedHeader="false" id="modifiedtime" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="修改时间" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="func_type" fixedHeader="false" id="func_type" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="功能类型" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="def1" fixedHeader="false" id="def1" imageOnly="false" langDir="biz_matters" nullAble="true" refComboData="evaluation_content" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="评价内容" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def4" fixedHeader="false" id="def4" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义4" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def5" fixedHeader="false" id="def5" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义5" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def6" fixedHeader="false" id="def6" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义6" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def7" fixedHeader="false" id="def7" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义7" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def8" fixedHeader="false" id="def8" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义8" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def9" fixedHeader="false" id="def9" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义9" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def10" fixedHeader="false" id="def10" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义10" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDouble" editable="true" editorType="DecimalText" field="def11" fixedHeader="false" id="def11" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DecimalRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义11" textAlign="right" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDouble" editable="true" editorType="DecimalText" field="def12" fixedHeader="false" id="def12" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DecimalRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义12" textAlign="right" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDouble" editable="true" editorType="DecimalText" field="def13" fixedHeader="false" id="def13" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DecimalRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义13" textAlign="right" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDouble" editable="true" editorType="DecimalText" field="def14" fixedHeader="false" id="def14" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DecimalRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义14" textAlign="right" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDouble" editable="true" editorType="DecimalText" field="def15" fixedHeader="false" id="def15" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DecimalRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义15" textAlign="right" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="reserve2" fixedHeader="false" id="reserve2" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="预留2" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="reserve3" fixedHeader="false" id="reserve3" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="预留3" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="reserve4" fixedHeader="false" id="reserve4" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="预留4" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="reserve5" fixedHeader="false" id="reserve5" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="预留5" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="reserve6" fixedHeader="false" id="reserve6" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="预留6" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="reserve7" fixedHeader="false" id="reserve7" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="预留7" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="reserve8" fixedHeader="false" id="reserve8" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="预留8" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="reserve9" fixedHeader="false" id="reserve9" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="预留9" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="reserve10" fixedHeader="false" id="reserve10" imageOnly="false" langDir="biz_matters" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="预留10" textAlign="left" visible="false" width="120">
+            </Column>
+        </GridComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar">
+            <MenuItem id="add" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Init_Ss_Ms_StateManager" text="新增">
+                <Events>
+                    <Event async="true" methodName="onAdd" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="edit" modifiers="3" showModel="1" stateManager="nc.scap.pub.entmatter.util.EditStateManager" text="修改">
+                <Events>
+                    <Event async="true" methodName="onEdit" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="del" modifiers="3" showModel="1" stateManager="nc.scap.pub.entmatter.util.DeleteStateManager" text="删除">
+                <Events>
+                    <Event async="true" methodName="onDelete" name="onclick" onserver="true">
+                        <SubmitRule>
+                            <Widget id="main">
+                            </Widget>
+                        </SubmitRule>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem i18nName="approve" id="approve" langDir="lfwbuttons" modifiers="3" showModel="1" stateManager="nc.scap.pub.entmatter.util.ApproveStateManager" text="审核">
+                <Events>
+                    <Event async="true" methodName="onApprove" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="sep1" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem i18nName="detail" id="detail" langDir="lfwbuttons" modifiers="3" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="详细信息">
+                <Events>
+                    <Event async="true" methodName="onDetail" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="sep2" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="wf" modifiers="2" showModel="1" text="流程">
+                <MenuItem id="wflowing" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="流程进度">
+                    <Events>
+                        <Event async="true" methodName="onFlow" name="onclick" onserver="true">
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem id="sep3" langDir="lfwbuttons" modifiers="3" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem i18nName="release" id="release" langDir="lfwbuttons" modifiers="2" showModel="1" text="发布">
+                <Events>
+                    <Event async="true" methodName="onRelease" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value></Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem i18nName="unrelease" id="unrelease" langDir="lfwbuttons" modifiers="2" showModel="1" text="取消发布">
+                <Events>
+                    <Event async="true" methodName="onUnrelease" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value></Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

@@ -1,0 +1,803 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+<items>
+
+<!--flag="0" 单独处理;flag="1" 查iufo表样;flag="2" 查事实表; 公式中"XX,2"表示XX公式计算后保留两位小数-->
+<item key="vyear" dimension="" name="年">
+  <source flag="1" code="Z03" measure="year" row="" col="" id="$aa"/>
+  <formula>
+    '$aa'.substring(0,4)
+  </formula>
+</item>
+<item key="type" dimension="" name="类型">
+  <source flag="0" code="Z03" measure="type" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+<item key="sys_org" dimension="" name="组织标志">
+  <source flag="0" code="Z03" measure="sys_org" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sys_zdm" dimension="" name="外键">
+  <source flag="0" code="Z03" measure="sys_zdm" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--dimension="sq"-->
+<item key="fpgllrzfxj" dimension="sq" name="分配股利、利润或偿付利息所支付的现金">
+  <source flag="1" code="Z03" measure="fpgllrhcflxszfdxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zgszfgllr" dimension="sq" name="其中：子公司支付给少数股东的股利、利润">
+  <source flag="1" code="Z03" measure="qzzgszfjssgddgllrsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zfczhdygxj" dimension="sq" name="支付其他与筹资活动有关的现金">
+  <source flag="1" code="Z03" measure="zfqtyczhdygdxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="czhdxjlcxj" dimension="sq" name="筹资活动现金流出小计">
+  <source flag="1" code="Z03" measure="czhdxjlcxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="czhdcsje" dimension="sq" name="筹资活动产生的现金流量净额">
+  <source flag="1" code="Z03" measure="czhdcsdxjlljesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="hlbddxjyx" dimension="sq" name="四、汇率变动对现金及现金等价物的影响">
+  <source flag="1" code="Z03" measure="shlbddxjjxjdjwdyxsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="xjjzje" dimension="sq" name="五、现金及现金等价物净增加额">
+  <source flag="1" code="Z03" measure="wxjjxjdjwjzjesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="qcxjye" dimension="sq" name="加：期初现金及现金等价物余额">
+  <source flag="1" code="Z03" measure="jqcxjjxjdjwyesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="qmxjye" dimension="sq" name="六、期末现金及现金等价物余额">
+  <source flag="1" code="Z03" measure="lqmxjjxjdjwyesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="xssptglw" dimension="sq" name="销售商品、提供劳务收到的现金">
+  <source flag="1" code="Z03" measure="xssptglwsddxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="ckkxjzje" dimension="sq" name="客户存款和同业存放款项净增加额">
+  <source flag="1" code="Z03" measure="khckhtycfkxjzjesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="xzyyhjk" dimension="sq" name="向中央银行借款净增加额">
+  <source flag="1" code="Z03" measure="xzyyxjkjzjesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="xqtjrjgcr" dimension="sq" name="向其他金融机构拆入资金净增加额">
+  <source flag="1" code="Z03" measure="xqtjrjgcrzjjzjesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="sdbfqddxj" dimension="sq" name="收到原保险合同保费取得的现金">
+  <source flag="1" code="Z03" measure="sdybxhtbfqddxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="sdzbxywxj" dimension="sq" name="收到再保险业务现金净额">
+  <source flag="1" code="Z03" measure="sdzbxywxjjesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+
+<item key="bhcjjtzk" dimension="sq" name="保户储金及投资款净增加额">
+  <source flag="1" code="Z03" measure="bhcjjtzkjzjesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="czjyxjrzc" dimension="sq" name="处置交易性金融资产净增加额">
+  <source flag="1" code="Z03" measure="czjyxjrzcjzjesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="sqlxsxfyj" dimension="sq" name="收取利息、手续费及佣金的现金">
+  <source flag="1" code="Z03" measure="sqlxsxfjyjdxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="crzjjzje" dimension="sq" name="拆入资金净增加额">
+  <source flag="1" code="Z03" measure="crzjjzjesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="hgywzjjzje" dimension="sq" name="回购业务资金净增加额">
+  <source flag="1" code="Z03" measure="hgywzjjzjesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="sddsffh" dimension="sq" name="收到的税费返还">
+  <source flag="1" code="Z03" measure="sddsffhsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="sdjyhdygxj" dimension="sq" name="收到其他与经营活动有关的现金">
+  <source flag="1" code="Z03" measure="sdqtyjyhdygdxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="jyhdxjlrxj" dimension="sq" name="经营活动现金流入小计">
+  <source flag="1" code="Z03" measure="jyhdxjlrxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="gmspjslw" dimension="sq" name="购买商品、接受劳务支付的现金">
+  <source flag="1" code="Z03" measure="gmspjslwzfdxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="khdkjdk" dimension="sq" name="客户贷款及垫款净增加额">
+  <source flag="1" code="Z03" measure="khdkjdkjzjesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="cfzyyhhty" dimension="sq" name="存放中央银行和同业款项净增加额">
+  <source flag="1" code="Z03" measure="cfzyyxhtykxjzjesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zfybxhtpfk" dimension="sq" name="支付原保险合同赔付款项的现金">
+  <source flag="1" code="Z03" measure="zfybxhtpfkxdxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zflxsxfjyj" dimension="sq" name="支付利息、手续费及佣金的现金">
+  <source flag="1" code="Z03" measure="zflxsxfjyjdxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zfbdhl" dimension="sq" name="支付保单红利的现金">
+  <source flag="1" code="Z03" measure="zfbdhldxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zfgzg" dimension="sq" name="支付给职工以及为职工支付的现金">
+  <source flag="1" code="Z03" measure="zfjzgyjwzgzfdxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zfdgxsf" dimension="sq" name="支付的各项税费">
+  <source flag="1" code="Z03" measure="zfdgxsfsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zfqtjyhdyg" dimension="sq" name="支付其他与经营活动有关的现金">
+  <source flag="1" code="Z03" measure="zfqtyjyhdygdxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="jyhdxjlcxj" dimension="sq" name="经营活动现金流出小计">
+  <source flag="1" code="Z03" measure="jyhdxjlcxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="jyhdcsje" dimension="sq" name="经营活动产生的现金流量净额">
+  <source flag="1" code="Z03" measure="jyhdcsdxjlljesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+
+
+<item key="shtzsddxj" dimension="sq" name="收回投资收到的现金">
+  <source flag="1" code="Z03" measure="shtzsddxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="qdtzsy" dimension="sq" name="取得投资收益收到的现金">
+  <source flag="1" code="Z03" measure="qdtzsysddxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="czzcshxjje" dimension="sq" name="处置固定资产、无形资产和其他长期资产所收回的现金净额">
+  <source flag="1" code="Z03" measure="czgdzcwxzchqtzqzcsshdxjjesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="czgsshxjje" dimension="sq" name="处置子公司及其他营业单位收回的现金净额">
+  <source flag="1" code="Z03" measure="czzgsjqtyydwshdxjjesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="sdtzhdygxj" dimension="sq" name="收到其他与投资活动有关的现金">
+  <source flag="1" code="Z03" measure="sdqtytzhdygdxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="tzhdxjlrxj" dimension="sq" name="投资活动现金流入小计">
+  <source flag="1" code="Z03" measure="tzhdxjlrxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="gjzcszfxj" dimension="sq" name="购建固定资产、无形资产和其他长期资产所支付的现金">
+  <source flag="1" code="Z03" measure="gjgdzcwxzchqtzqzcszfdxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="tzzfdxj" dimension="sq" name="投资支付的现金">
+  <source flag="1" code="Z03" measure="tzzfdxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zydkjzje" dimension="sq" name="质押贷款净增加额">
+  <source flag="1" code="Z03" measure="zydkjzjesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="qdgszfxjje" dimension="sq" name="取得子公司及其他营业单位支付的现金净额">
+  <source flag="1" code="Z03" measure="qdzgsjqtyydwzfdxjjesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zftzhdygxj" dimension="sq" name="支付其他与投资活动有关的现金">
+  <source flag="1" code="Z03" measure="zfqtytzhdygdxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="tzhdxjlcxj" dimension="sq" name="投资活动现金流出小计">
+  <source flag="1" code="Z03" measure="tzhdxjlcxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="tzhdcsje" dimension="sq" name="投资活动产生的现金流量净额">
+  <source flag="1" code="Z03" measure="tzhdcsdxjlljesqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+
+
+<item key="xstzsddxj" dimension="sq" name="吸收投资收到的现金">
+  <source flag="1" code="Z03" measure="xstzsddxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zgsxsxj" dimension="sq" name="其中：子公司吸收少数股东投资收到的现金">
+  <source flag="1" code="Z03" measure="qzzgsxsssgdtzsddxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="qdjksddxj" dimension="sq" name="取得借款所收到的现金">
+  <source flag="1" code="Z03" measure="qdjkssddxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="fxzqsddxj" dimension="sq" name="发行债券收到的现金">
+  <source flag="1" code="Z03" measure="fxzqsddxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="sdczhdygxj" dimension="sq" name="收到其他与筹资活动有关的现金">
+  <source flag="1" code="Z03" measure="sdqtyczhdygdxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="czhdxjlrxj" dimension="sq" name="筹资活动现金流入小计">
+  <source flag="1" code="Z03" measure="czhdxjlrxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="chzwszfxj" dimension="sq" name="偿还债务所支付的现金">
+  <source flag="1" code="Z03" measure="chzwszfdxjsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+
+<!--dimension="bq"-->
+<item key="fpgllrzfxj" dimension="bq" name="分配股利、利润或偿付利息所支付的现金">
+  <source flag="1" code="Z03" measure="fpgllrhcflxszfdxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zgszfgllr" dimension="bq" name="其中：子公司支付给少数股东的股利、利润">
+  <source flag="1" code="Z03" measure="qzzgszfjssgddgllrbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zfczhdygxj" dimension="bq" name="支付其他与筹资活动有关的现金">
+  <source flag="1" code="Z03" measure="zfqtyczhdygdxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="czhdxjlcxj" dimension="bq" name="筹资活动现金流出小计">
+  <source flag="1" code="Z03" measure="czhdxjlcxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="czhdcsje" dimension="bq" name="筹资活动产生的现金流量净额">
+  <source flag="1" code="Z03" measure="czhdcsdxjlljebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="hlbddxjyx" dimension="bq" name="四、汇率变动对现金及现金等价物的影响">
+  <source flag="1" code="Z03" measure="shlbddxjjxjdjwdyxbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="xjjzje" dimension="bq" name="五、现金及现金等价物净增加额">
+  <source flag="1" code="Z03" measure="wxjjxjdjwjzjebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="qcxjye" dimension="bq" name="加：期初现金及现金等价物余额">
+  <source flag="1" code="Z03" measure="jqcxjjxjdjwyebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="qmxjye" dimension="bq" name="六、期末现金及现金等价物余额">
+  <source flag="1" code="Z03" measure="lqmxjjxjdjwyebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+
+
+<item key="xssptglw" dimension="bq" name="销售商品、提供劳务收到的现金">
+  <source flag="1" code="Z03" measure="xssptglwsddxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="ckkxjzje" dimension="bq" name="客户存款和同业存放款项净增加额">
+  <source flag="1" code="Z03" measure="khckhtycfkxjzjebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="xzyyhjk" dimension="bq" name="向中央银行借款净增加额">
+  <source flag="1" code="Z03" measure="xzyyxjkjzjebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="xqtjrjgcr" dimension="bq" name="向其他金融机构拆入资金净增加额">
+  <source flag="1" code="Z03" measure="xqtjrjgcrzjjzjebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="sdbfqddxj" dimension="bq" name="收到原保险合同保费取得的现金">
+  <source flag="1" code="Z03" measure="sdybxhtbfqddxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="sdzbxywxj" dimension="bq" name="收到再保险业务现金净额">
+  <source flag="1" code="Z03" measure="sdzbxywxjjebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+
+<item key="bhcjjtzk" dimension="bq" name="保户储金及投资款净增加额">
+  <source flag="1" code="Z03" measure="bhcjjtzkjzjebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="czjyxjrzc" dimension="bq" name="处置交易性金融资产净增加额">
+  <source flag="1" code="Z03" measure="czjyxjrzcjzjebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="sqlxsxfyj" dimension="bq" name="收取利息、手续费及佣金的现金">
+  <source flag="1" code="Z03" measure="sqlxsxfjyjdxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="crzjjzje" dimension="bq" name="拆入资金净增加额">
+  <source flag="1" code="Z03" measure="crzjjzjebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="hgywzjjzje" dimension="bq" name="回购业务资金净增加额">
+  <source flag="1" code="Z03" measure="hgywzjjzjebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="sddsffh" dimension="bq" name="收到的税费返还">
+  <source flag="1" code="Z03" measure="sddsffhbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="sdjyhdygxj" dimension="bq" name="收到其他与经营活动有关的现金">
+  <source flag="1" code="Z03" measure="sdqtyjyhdygdxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="jyhdxjlrxj" dimension="bq" name="经营活动现金流入小计">
+  <source flag="1" code="Z03" measure="jyhdxjlrxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="gmspjslw" dimension="bq" name="购买商品、接受劳务支付的现金">
+  <source flag="1" code="Z03" measure="gmspjslwzfdxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="khdkjdk" dimension="bq" name="客户贷款及垫款净增加额">
+  <source flag="1" code="Z03" measure="khdkjdkjzjebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="cfzyyhhty" dimension="bq" name="存放中央银行和同业款项净增加额">
+  <source flag="1" code="Z03" measure="cfzyyxhtykxjzjebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zfybxhtpfk" dimension="bq" name="支付原保险合同赔付款项的现金">
+  <source flag="1" code="Z03" measure="zfybxhtpfkxdxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zflxsxfjyj" dimension="bq" name="支付利息、手续费及佣金的现金">
+  <source flag="1" code="Z03" measure="zflxsxfjyjdxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zfbdhl" dimension="bq" name="支付保单红利的现金">
+  <source flag="1" code="Z03" measure="zfbdhldxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zfgzg" dimension="bq" name="支付给职工以及为职工支付的现金">
+  <source flag="1" code="Z03" measure="zfjzgyjwzgzfdxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zfdgxsf" dimension="bq" name="支付的各项税费">
+  <source flag="1" code="Z03" measure="zfdgxsfbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zfqtjyhdyg" dimension="bq" name="支付其他与经营活动有关的现金">
+  <source flag="1" code="Z03" measure="zfqtyjyhdygdxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="jyhdxjlcxj" dimension="bq" name="经营活动现金流出小计">
+  <source flag="1" code="Z03" measure="jyhdxjlcxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="jyhdcsje" dimension="bq" name="经营活动产生的现金流量净额">
+  <source flag="1" code="Z03" measure="jyhdcsdxjlljebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+
+<item key="shtzsddxj" dimension="bq" name="收回投资收到的现金">
+  <source flag="1" code="Z03" measure="shtzsddxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="qdtzsy" dimension="bq" name="取得投资收益收到的现金">
+  <source flag="1" code="Z03" measure="qdtzsysddxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="czzcshxjje" dimension="bq" name="处置固定资产、无形资产和其他长期资产所收回的现金净额">
+  <source flag="1" code="Z03" measure="czgdzcwxzchqtzqzcsshdxjjebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="czgsshxjje" dimension="bq" name="处置子公司及其他营业单位收回的现金净额">
+  <source flag="1" code="Z03" measure="czzgsjqtyydwshdxjjebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="sdtzhdygxj" dimension="bq" name="收到其他与投资活动有关的现金">
+  <source flag="1" code="Z03" measure="sdqtytzhdygdxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="tzhdxjlrxj" dimension="bq" name="投资活动现金流入小计">
+  <source flag="1" code="Z03" measure="tzhdxjlrxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="gjzcszfxj" dimension="bq" name="购建固定资产、无形资产和其他长期资产所支付的现金">
+  <source flag="1" code="Z03" measure="gjgdzcwxzchqtzqzcszfdxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="tzzfdxj" dimension="bq" name="投资支付的现金">
+  <source flag="1" code="Z03" measure="tzzfdxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zydkjzje" dimension="bq" name="质押贷款净增加额">
+  <source flag="1" code="Z03" measure="zydkjzjebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="qdgszfxjje" dimension="bq" name="取得子公司及其他营业单位支付的现金净额">
+  <source flag="1" code="Z03" measure="qdzgsjqtyydwzfdxjjebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zftzhdygxj" dimension="bq" name="支付其他与投资活动有关的现金">
+  <source flag="1" code="Z03" measure="zfqtytzhdygdxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="tzhdxjlcxj" dimension="bq" name="投资活动现金流出小计">
+  <source flag="1" code="Z03" measure="tzhdxjlcxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="tzhdcsje" dimension="bq" name="投资活动产生的现金流量净额">
+  <source flag="1" code="Z03" measure="tzhdcsdxjlljebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+
+
+<item key="xstzsddxj" dimension="bq" name="吸收投资收到的现金">
+  <source flag="1" code="Z03" measure="xstzsddxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="zgsxsxj" dimension="bq" name="其中：子公司吸收少数股东投资收到的现金">
+  <source flag="1" code="Z03" measure="qzzgsxsssgdtzsddxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="qdjksddxj" dimension="bq" name="取得借款所收到的现金">
+  <source flag="1" code="Z03" measure="qdjkssddxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="fxzqsddxj" dimension="bq" name="发行债券收到的现金">
+  <source flag="1" code="Z03" measure="fxzqsddxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="sdczhdygxj" dimension="bq" name="收到其他与筹资活动有关的现金">
+  <source flag="1" code="Z03" measure="sdqtyczhdygdxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="czhdxjlrxj" dimension="bq" name="筹资活动现金流入小计">
+  <source flag="1" code="Z03" measure="czhdxjlrxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+<item key="chzwszfxj" dimension="bq" name="偿还债务所支付的现金">
+  <source flag="1" code="Z03" measure="chzwszfdxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa/10000
+  </formula>
+</item>
+
+</items>
+</Root>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget caption="列表画面企业树" controllerClazz="nc.scap.pub.listPageCompTree.ListPageCompTreeViewController" id="listPageCompTree" refId="listPageCompTree" sourcePackage="pub/src/public/">
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+        <PlugoutDesc id="orgtreeout">
+            <PlugoutDescItem clazztype="java.lang.String" name="afterselected" source="org_ds" type="Dataset.TYPE_DATASET_SEL_ROW">
+            </PlugoutDescItem>
+            <PlugoutEmitItem id="afterselect" source="org_ds" type="Dataset.onAfterRowSelect">
+            </PlugoutEmitItem>
+        </PlugoutDesc>
+    </PlugoutDescs>
+    <PluginDescs>
+    </PluginDescs>
+    <Models>
+        <Datasets>
+            <MdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="org_ds" lazyLoad="false" notNullBody="false" objMeta="uapcp.cp_orgs" pageSize="10" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad_cp_orgs_ds" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DataLoadEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onAfterRowSelect_orgds" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DatasetEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onAfterRowUnSelect" name="onAfterRowUnSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DatasetEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+        </Datasets>
+    </Models>
+    <Components>
+        <TreeViewComp canEdit="false" checkBoxModel="0" dragEnable="false" enabled="true" id="org_tree" openLevel="1" rootOpen="true" selectRoot="false" visible="true" withCheckBox="true" withRoot="false">
+            <RecursiveTreeLevel dataset="org_ds" id="level1" labelFields="name" loadField="" masterKeyField="pk_org" recursiveKeyField="pk_org" recursivePKeyField="pk_fatherorg">
+            </RecursiveTreeLevel>
+            <Events>
+                <Event async="true" methodName="onTreeNodeClick" name="onclick" onserver="true">
+                    <SubmitRule>
+                    </SubmitRule>
+                    <Params>
+                        <Param>
+                            <Name>treeNodeEvent</Name>
+                            <Value>
+                            </Value>
+                            <Desc>                                <![CDATA[nc.uap.lfw.core.event.TreeNodeEvent]]>
+                            </Desc>
+                        </Param>
+                    </Params>
+                    <Action>
+                    </Action>
+                </Event>
+                <Event async="true" methodName="afterSelNodeChange" name="afterSelNodeChange" onserver="true">
+                    <SubmitRule>
+                    </SubmitRule>
+                    <Params>
+                        <Param>
+                            <Name>treeNodeEvent</Name>
+                            <Value>
+                            </Value>
+                            <Desc>                                <![CDATA[nc.uap.lfw.core.event.TreeNodeEvent]]>
+                            </Desc>
+                        </Param>
+                    </Params>
+                    <Action>
+                    </Action>
+                </Event>
+            </Events>
+        </TreeViewComp>
+        <CheckBoxComp checked="false" dataType="UFBoolean" editorType="CheckBox" enabled="true" focus="false" i18nName="是否包含下级企业" text="是否包含下级企业" id="ifsubcomp" textAlign="left" textWidth="0" visible="true">
+            <Events>
+                <Event async="true" methodName="SelectSubCompChanged" name="valueChanged" onserver="true">
+                    <SubmitRule>
+                    </SubmitRule>
+                    <Params>
+                        <Param>
+                            <Name>textEvent</Name>
+                            <Value></Value>
+                            <Desc>                                <![CDATA[nc.uap.lfw.core.event.TextEvent]]>
+                            </Desc>
+                        </Param>
+                    </Params>
+                    <Action>
+                    </Action>
+                </Event>
+            </Events>
+        </CheckBoxComp>
+        <CheckBoxComp checked="false" dataType="UFBoolean" editorType="CheckBox" enabled="true" focus="false" i18nName="是否全选" text="是否全选" id="ifallcomp" textAlign="left" textWidth="0" visible="true">
+            <Events>
+                <Event async="true" methodName="SelectAllCompChanged" name="valueChanged" onserver="true">
+                    <SubmitRule>
+                            <Widget id="main">
+                                <Dataset id="org_ds" type="ds_all_line">
+                                </Dataset>
+                            </Widget>
+                    </SubmitRule>
+                    <Params>
+                        <Param>
+                            <Name>textEvent</Name>
+                            <Value></Value>
+                            <Desc>                                <![CDATA[nc.uap.lfw.core.event.TextEvent]]>
+                            </Desc>
+                        </Param>
+                    </Params>
+                    <Action>
+                    </Action>
+                </Event>
+            </Events>
+        </CheckBoxComp>
+    </Components>
+    <Menus>
+    </Menus>
+</Widget>

@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+<items>
+<item key="sys_zdm" dimension="" name="组织标志">
+<source flag="0" code="Z011" measure="sys_zdm" row="" col="" id="$aa"/>
+<formula>
+$aa
+</formula>
+</item>
+<item key="sys_org" dimension="" name="组织标志">
+<source flag="0" code="Z011" measure="sys_org" row="" col="" id="$aa"/>
+<formula>
+$aa
+</formula>
+</item>
+<item key="vyear" dimension="" name="年月">
+<source flag="1" code="Z011" measure="year" row="" col="" id="$aa"/>
+<formula>	
+    '$aa'.substring(0,4)
+</formula>
+</item>
+<!--
+<item key="ldzc" dimension="qm" name="流动资产">
+<source flag="1" code="Z011" measure="ldzcqmye" row="" col="" id="$aa"/>
+<formula>
+$aa
+</formula>
+</item>-->
+<item key="hbzj" dimension="qm" name="货币资金">
+<source flag="1" code="Z011" measure="hbzjqmye" row="" col="" id="$aa"/>
+<formula>
+$aa/10000
+</formula>
+</item>
+<item key="jsbfj" dimension="qm" name="结算备付金">
+<source flag="1" code="Z011" measure="jsbfjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="cczj" dimension="qm" name="拆出资金">
+<source flag="1" code="Z011" measure="cczjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="jyxjrzc" dimension="qm" name="交易性金融资产">
+<source flag="1" code="Z011" measure="jyxjrzcqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yspj" dimension="qm" name="应收票据">
+<source flag="1" code="Z011" measure="yspjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yszk" dimension="qm" name="应收账款">
+<source flag="1" code="Z011" measure="yszkqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yfkx" dimension="qm" name="预付款项">
+<source flag="1" code="Z011" measure="yfkxqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ysbf" dimension="qm" name="应收保费">
+<source flag="1" code="Z011" measure="ysbfqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ysfbzk" dimension="qm" name="应收分保账款">
+<source flag="1" code="Z011" measure="ysfbzkqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ysfbhtzbj" dimension="qm" name="应收分保合同准备金">
+<source flag="1" code="Z011" measure="ysfbhtzbjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yslx" dimension="qm" name="应收利息">
+<source flag="1" code="Z011" measure="yslxqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ysgl" dimension="qm" name="应收股利">
+<source flag="1" code="Z011" measure="ysglqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="qtysk" dimension="qm" name="其他应收款">
+<source flag="1" code="Z011" measure="qtyskqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="mrfsjrzc" dimension="qm" name="买入返售金融资产">
+<source flag="1" code="Z011" measure="mrfsjrzcqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ch" dimension="qm" name="存货">
+<source flag="1" code="Z011" measure="chqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ycl" dimension="qm" name="其中：原材料">
+<source flag="1" code="Z011" measure="qzyclqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="kcsp" dimension="qm" name="库存商品(产成品)">
+<source flag="1" code="Z011" measure="kcspccpqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ynndqfldzc" dimension="qm" name="一年内到期的非流动资产">
+<source flag="1" code="Z011" measure="ynndqdfldzcqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="qtldzc" dimension="qm" name="其他流动资产">
+<source flag="1" code="Z011" measure="qtldzcqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ldzchj" dimension="qm" name="流动资产合计">
+<source flag="1" code="Z011" measure="ldzchjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<!--
+<item key="fldzc" dimension="qm" name="非流动资产：">
+<source flag="1" code="Z011" measure="fldzcqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>-->
+<item key="ffdkjdk" dimension="qm" name="发放贷款及垫款">
+<source flag="1" code="Z011" measure="ffdkjdkqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="kgcsjrzc" dimension="qm" name="可供出售金融资产">
+<source flag="1" code="Z011" measure="kgcsjrzcqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="cyzdqtz" dimension="qm" name="持有至到期投资">
+<source flag="1" code="Z011" measure="cyzdqtzqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="cqysk" dimension="qm" name="长期应收款">
+<source flag="1" code="Z011" measure="zqyskqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="cqgqtz" dimension="qm" name="长期股权投资">
+<source flag="1" code="Z011" measure="zqgqtzqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="tzxfdc" dimension="qm" name="投资性房地产">
+<source flag="1" code="Z011" measure="tzxfdcqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="gdzcyj" dimension="qm" name="固定资产原价">
+<source flag="1" code="Z011" measure="gdzcyjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ljzj" dimension="qm" name="减：累计折旧">
+<source flag="1" code="Z011" measure="jljzjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="gdzcjz" dimension="qm" name="固定资产净值">
+<source flag="1" code="Z011" measure="gdzcjzqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="gdzcjzzb" dimension="qm" name="减：固定资产减值准备">
+<source flag="1" code="Z011" measure="jgdzcjzzbqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="gdzcje" dimension="qm" name="固定资产净额">
+<source flag="1" code="Z011" measure="gdzcjeqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="zjgc" dimension="qm" name="在建工程">
+<source flag="1" code="Z011" measure="zjgcqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="gcwz" dimension="qm" name="工程物资">
+<source flag="1" code="Z011" measure="gcwzqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="gdzcql" dimension="qm" name="固定资产清理">
+<source flag="1" code="Z011" measure="gdzcqlqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="scxswzc" dimension="qm" name="生产性生物资产">
+<source flag="1" code="Z011" measure="scxswzcqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yqzc" dimension="qm" name="油气资产">
+<source flag="1" code="Z011" measure="yqzcqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="wxzc" dimension="qm" name="无形资产">
+<source flag="1" code="Z011" measure="wxzcqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="kfzc" dimension="qm" name="开发支出">
+<source flag="1" code="Z011" measure="kfzcqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="sy" dimension="qm" name="商誉">
+<source flag="1" code="Z011" measure="syqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="cqdtfy" dimension="qm" name="长期待摊费用">
+<source flag="1" code="Z011" measure="zqdtfyqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="dysdszc" dimension="qm" name="递延所得税资产">
+<source flag="1" code="Z011" measure="dysdszcqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="qtfldzc" dimension="qm" name="其他非流动资产">
+<source flag="1" code="Z011" measure="qtfldzcqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="tzcbwz" dimension="qm" name="其中：特准储备物资">
+<source flag="1" code="Z011" measure="qztzcbwzqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="fldzchj" dimension="qm" name="非流动资产合计">
+<source flag="1" code="Z011" measure="fldzchjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="zczj" dimension="qm" name="资产总计">
+<source flag="1" code="Z011" measure="zczjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<!--
+<item key="ldfz" dimension="qm" name="流动负债：">
+<source flag="1" code="Z011" measure="ldfzqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>-->
+<item key="dqjk" dimension="qm" name="短期借款">
+<source flag="1" code="Z011" measure="dqjkqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="xzyyhjk" dimension="qm" name="向中央银行借款">
+<source flag="1" code="Z011" measure="xzyyxjkqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="xsckjtycf" dimension="qm" name="吸收存款及同业存放">
+<source flag="1" code="Z011" measure="xsckjtycfqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="crzj" dimension="qm" name="拆入资金">
+<source flag="1" code="Z011" measure="crzjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="jyxjrfz" dimension="qm" name="交易性金融负债">
+<source flag="1" code="Z011" measure="jyxjrfzqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yfpj" dimension="qm" name="应付票据">
+<source flag="1" code="Z011" measure="yfpjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yfzk" dimension="qm" name="应付账款">
+<source flag="1" code="Z011" measure="yfzkqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yskx" dimension="qm" name="预收款项">
+<source flag="1" code="Z011" measure="yskxqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="mchgjrzc" dimension="qm" name="卖出回购金融资产款">
+<source flag="1" code="Z011" measure="mchgjrzckqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yfsxfjyj" dimension="qm" name="应付手续费及佣金">
+<source flag="1" code="Z011" measure="yfsxfjyjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yfzgxc" dimension="qm" name="应付职工薪酬">
+<source flag="1" code="Z011" measure="yfzgxcqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yfgz" dimension="qm" name="其中：应付工资">
+<source flag="1" code="Z011" measure="qzyfgzqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yfflf" dimension="qm" name="应付福利费">
+<source flag="1" code="Z011" measure="yfflfqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="zgjljfljj" dimension="qm" name="#其中：职工奖励及福利基金">
+<source flag="1" code="Z011" measure="qzzgjljfljjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yjsf" dimension="qm" name="应交税费">
+<source flag="1" code="Z011" measure="yjsfqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yjsj" dimension="qm" name="其中：应交税金">
+<source flag="1" code="Z011" measure="qzyjsjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yflx" dimension="qm" name="应付利息">
+<source flag="1" code="Z011" measure="yflxqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yfgl" dimension="qm" name="应付股利">
+<source flag="1" code="Z011" measure="yfglqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="qtyfk" dimension="qm" name="其他应付款">
+<source flag="1" code="Z011" measure="qtyfkqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yffbzk" dimension="qm" name="应付分保账款">
+<source flag="1" code="Z011" measure="yffbzkqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="bxhtzbj" dimension="qm" name="保险合同准备金">
+<source flag="1" code="Z011" measure="bxhtzbjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="dlmmzqk" dimension="qm" name="代理买卖证券款">
+<source flag="1" code="Z011" measure="dlmmzqkqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="dlcxzqk" dimension="qm" name="代理承销证券款">
+<source flag="1" code="Z011" measure="dlcxzqkqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ynndqfldfz" dimension="qm" name="一年内到期的非流动负债">
+<source flag="1" code="Z011" measure="ynndqdfldfzqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="qtldfz" dimension="qm" name="其他流动负债">
+<source flag="1" code="Z011" measure="qtldfzqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ldfzhj" dimension="qm" name="流动负债合计">
+<source flag="1" code="Z011" measure="ldfzhjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<!--
+<item key="fldfz" dimension="qm" name="非流动负债：">
+<source flag="1" code="Z011" measure="fldfzqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>-->
+<item key="cqjk" dimension="qm" name="长期借款">
+<source flag="1" code="Z011" measure="zqjkqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yfzq" dimension="qm" name="应付债券">
+<source flag="1" code="Z011" measure="yfzqqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="cqyfk" dimension="qm" name="长期应付款">
+<source flag="1" code="Z011" measure="zqyfkqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="zxyfk" dimension="qm" name="专项应付款">
+<source flag="1" code="Z011" measure="zxyfkqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yjfz" dimension="qm" name="预计负债">
+<source flag="1" code="Z011" measure="yjfzqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="dysdsfz" dimension="qm" name="递延所得税负债">
+<source flag="1" code="Z011" measure="dysdsfzqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="qtfldfz" dimension="qm" name="其他非流动负债">
+<source flag="1" code="Z011" measure="qtfldfzqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="tzcbjj" dimension="qm" name="其中：特准储备基金">
+<source flag="1" code="Z011" measure="qztzcbjjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="fldfzhj" dimension="qm" name="非流动负债合计">
+<source flag="1" code="Z011" measure="fldfzhjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="fzhj" dimension="qm" name="负 债 合 计">
+<source flag="1" code="Z011" measure="fzhjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<!--
+<item key="syzqy" dimension="qm" name="所有者权益（或股东权益）：">
+<source flag="1" code="Z011" measure="syzqyhgdqyqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>-->
+<item key="qm_sszb" dimension="qm" name="实收资本（股本）">
+<source flag="1" code="Z011" measure="sszbgbqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="gjzb" dimension="qm" name="国家资本">
+<source flag="1" code="Z011" measure="gyzbqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="jtzb" dimension="qm" name="集体资本">
+<source flag="1" code="Z011" measure="jtzbqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<!--
+<item key="frzb" dimension="qm" name="法人资本">
+<source flag="1" code="Z011" measure="frzbqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>-->
+<item key="gyfrzb" dimension="qm" name="其中：国有法人资本">
+<source flag="1" code="Z011" measure="qzgyfrzbqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<!--
+<item key="jtfrzb" dimension="qm" name="集体法人资本">
+<source flag="1" code="Z011" measure="jtfrzbqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>-->
+<item key="grzb" dimension="qm" name="个人资本">
+<source flag="1" code="Z011" measure="qzgrzbqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="wszb" dimension="qm" name="外商资本">
+<source flag="1" code="Z011" measure="wszbqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yghtz" dimension="qm" name="#减：已归还投资">
+<source flag="1" code="Z011" measure="jyghtzqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="sszbje" dimension="qm" name="实收资本（或股本）净额">
+<source flag="1" code="Z011" measure="sszbhgbjeqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="zbgj" dimension="qm" name="资本公积">
+<source flag="1" code="Z011" measure="zbgjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="kcg" dimension="qm" name="减：库存股">
+<source flag="1" code="Z011" measure="jkcgqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="zxcb" dimension="qm" name="专项储备">
+<source flag="1" code="Z011" measure="zxcbqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yygj" dimension="qm" name="盈余公积">
+<source flag="1" code="Z011" measure="yygjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="fdgjj" dimension="qm" name="其中：法定公积金">
+<source flag="1" code="Z011" measure="qzfdgjjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="rygjj" dimension="qm" name="任意公积金">
+<source flag="1" code="Z011" measure="rygjjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="cbjj" dimension="qm" name="储备基金">
+<source flag="1" code="Z011" measure="cbjjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="qyfzjj" dimension="qm" name="企业发展基金">
+<source flag="1" code="Z011" measure="qyfzjjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="lrghtz" dimension="qm" name="利润归还投资">
+<source flag="1" code="Z011" measure="lrghtzqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ybfxzb" dimension="qm" name="一般风险准备">
+<source flag="1" code="Z011" measure="ybfxzbqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="wfplr" dimension="qm" name="未分配利润">
+<source flag="1" code="Z011" measure="wfplrqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="wbbbzsce" dimension="qm" name="外币报表折算差额">
+<source flag="1" code="Z011" measure="wbbbzsceqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="gsymgsqyhj" dimension="qm" name="归属于母公司所有者权益合计">
+<source flag="1" code="Z011" measure="gsymgssyzqyhjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ssgdqy" dimension="qm" name="少数股东权益">
+<source flag="1" code="Z011" measure="ssgdqyqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="syzqyhj" dimension="qm" name="所有者权益合计">
+<source flag="1" code="Z011" measure="syzqyhjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="fzhsyzqyhj" dimension="qm" name="负债和所有者权益总计">
+<source flag="1" code="Z011" measure="fzhsyzqyzjqmye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<!--
+<item key="ldzc" dimension="qc" name="流动资产">
+<source flag="1" code="Z011" measure="ldzcncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>-->
+<item key="hbzj" dimension="qc" name="货币资金">
+<source flag="1" code="Z011" measure="hbzjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="jsbfj" dimension="qc" name="结算备付金">
+<source flag="1" code="Z011" measure="jsbfjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="cczj" dimension="qc" name="拆出资金">
+<source flag="1" code="Z011" measure="cczjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="jyxjrzc" dimension="qc" name="交易性金融资产">
+<source flag="1" code="Z011" measure="jyxjrzcncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yspj" dimension="qc" name="应收票据">
+<source flag="1" code="Z011" measure="yspjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yszk" dimension="qc" name="应收账款">
+<source flag="1" code="Z011" measure="yszkncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yfkx" dimension="qc" name="预付款项">
+<source flag="1" code="Z011" measure="yfkxncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ysbf" dimension="qc" name="应收保费">
+<source flag="1" code="Z011" measure="ysbfncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ysfbzk" dimension="qc" name="应收分保账款">
+<source flag="1" code="Z011" measure="ysfbzkncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ysfbhtzbj" dimension="qc" name="应收分保合同准备金">
+<source flag="1" code="Z011" measure="ysfbhtzbjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yslx" dimension="qc" name="应收利息">
+<source flag="1" code="Z011" measure="yslxncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ysgl" dimension="qc" name="应收股利">
+<source flag="1" code="Z011" measure="ysglncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="qtysk" dimension="qc" name="其他应收款">
+<source flag="1" code="Z011" measure="qtyskncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="mrfsjrzc" dimension="qc" name="买入返售金融资产">
+<source flag="1" code="Z011" measure="mrfsjrzcncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ch" dimension="qc" name="存货">
+<source flag="1" code="Z011" measure="chncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ycl" dimension="qc" name="其中：原材料">
+<source flag="1" code="Z011" measure="qzyclncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="kcsp" dimension="qc" name="库存商品(产成品)">
+<source flag="1" code="Z011" measure="kcspccpncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ynndqfldzc" dimension="qc" name="一年内到期的非流动资产">
+<source flag="1" code="Z011" measure="ynndqdfldzcncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="qtldzc" dimension="qc" name="其他流动资产">
+<source flag="1" code="Z011" measure="qtldzcncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ldzchj" dimension="qc" name="流动资产合计">
+<source flag="1" code="Z011" measure="ldzchjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<!--
+<item key="fldzc" dimension="qc" name="非流动资产：">
+<source flag="1" code="Z011" measure="fldzcncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>-->
+<item key="ffdkjdk" dimension="qc" name="发放贷款及垫款">
+<source flag="1" code="Z011" measure="ffdkjdkncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="kgcsjrzc" dimension="qc" name="可供出售金融资产">
+<source flag="1" code="Z011" measure="kgcsjrzcncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="cyzdqtz" dimension="qc" name="持有至到期投资">
+<source flag="1" code="Z011" measure="cyzdqtzncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="cqysk" dimension="qc" name="长期应收款">
+<source flag="1" code="Z011" measure="zqyskncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="cqgqtz" dimension="qc" name="长期股权投资">
+<source flag="1" code="Z011" measure="zqgqtzncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="tzxfdc" dimension="qc" name="投资性房地产">
+<source flag="1" code="Z011" measure="tzxfdcncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="gdzcyj" dimension="qc" name="固定资产原价">
+<source flag="1" code="Z011" measure="gdzcyjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ljzj" dimension="qc" name="减：累计折旧">
+<source flag="1" code="Z011" measure="jljzjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="gdzcjz" dimension="qc" name="固定资产净值">
+<source flag="1" code="Z011" measure="gdzcjzncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="gdzcjzzb" dimension="qc" name="减：固定资产减值准备">
+<source flag="1" code="Z011" measure="jgdzcjzzbncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="gdzcje" dimension="qc" name="固定资产净额">
+<source flag="1" code="Z011" measure="gdzcjencye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="zjgc" dimension="qc" name="在建工程">
+<source flag="1" code="Z011" measure="zjgcncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="gcwz" dimension="qc" name="工程物资">
+<source flag="1" code="Z011" measure="gcwzncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="gdzcql" dimension="qc" name="固定资产清理">
+<source flag="1" code="Z011" measure="gdzcqlncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="scxswzc" dimension="qc" name="生产性生物资产">
+<source flag="1" code="Z011" measure="scxswzcncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yqzc" dimension="qc" name="油气资产">
+<source flag="1" code="Z011" measure="yqzcncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="wxzc" dimension="qc" name="无形资产">
+<source flag="1" code="Z011" measure="wxzcncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="kfzc" dimension="qc" name="开发支出">
+<source flag="1" code="Z011" measure="kfzcncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="sy" dimension="qc" name="商誉">
+<source flag="1" code="Z011" measure="syncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="cqdtfy" dimension="qc" name="长期待摊费用">
+<source flag="1" code="Z011" measure="zqdtfyncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="dysdszc" dimension="qc" name="递延所得税资产">
+<source flag="1" code="Z011" measure="dysdszcncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="qtfldzc" dimension="qc" name="其他非流动资产">
+<source flag="1" code="Z011" measure="qtfldzcncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="tzcbwz" dimension="qc" name="其中：特准储备物资">
+<source flag="1" code="Z011" measure="qztzcbwzncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="fldzchj" dimension="qc" name="非流动资产合计">
+<source flag="1" code="Z011" measure="fldzchjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="zczj" dimension="qc" name="资产总计">
+<source flag="1" code="Z011" measure="zczjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<!--
+<item key="ldfz" dimension="qc" name="流动负债：">
+<source flag="1" code="Z011" measure="ldfzncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>-->
+<item key="dqjk" dimension="qc" name="短期借款">
+<source flag="1" code="Z011" measure="dqjkncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="xzyyhjk" dimension="qc" name="向中央银行借款">
+<source flag="1" code="Z011" measure="xzyyxjkncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="xsckjtycf" dimension="qc" name="吸收存款及同业存放">
+<source flag="1" code="Z011" measure="xsckjtycfncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="crzj" dimension="qc" name="拆入资金">
+<source flag="1" code="Z011" measure="crzjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="jyxjrfz" dimension="qc" name="交易性金融负债">
+<source flag="1" code="Z011" measure="jyxjrfzncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yfpj" dimension="qc" name="应付票据">
+<source flag="1" code="Z011" measure="yfpjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yfzk" dimension="qc" name="应付账款">
+<source flag="1" code="Z011" measure="yfzkncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yskx" dimension="qc" name="预收款项">
+<source flag="1" code="Z011" measure="yskxncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="mchgjrzc" dimension="qc" name="卖出回购金融资产款">
+<source flag="1" code="Z011" measure="mchgjrzckncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yfsxfjyj" dimension="qc" name="应付手续费及佣金">
+<source flag="1" code="Z011" measure="yfsxfjyjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yfzgxc" dimension="qc" name="应付职工薪酬">
+<source flag="1" code="Z011" measure="yfzgxcncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yfgz" dimension="qc" name="其中：应付工资">
+<source flag="1" code="Z011" measure="qzyfgzncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yfflf" dimension="qc" name="应付福利费">
+<source flag="1" code="Z011" measure="yfflfncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="zgjljfljj" dimension="qc" name="#其中：职工奖励及福利基金">
+<source flag="1" code="Z011" measure="qzzgjljfljjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yjsf" dimension="qc" name="应交税费">
+<source flag="1" code="Z011" measure="yjsfncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yjsj" dimension="qc" name="其中：应交税金">
+<source flag="1" code="Z011" measure="qzyjsjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yflx" dimension="qc" name="应付利息">
+<source flag="1" code="Z011" measure="yflxncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yfgl" dimension="qc" name="应付股利">
+<source flag="1" code="Z011" measure="yfglncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="qtyfk" dimension="qc" name="其他应付款">
+<source flag="1" code="Z011" measure="qtyfkncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yffbzk" dimension="qc" name="应付分保账款">
+<source flag="1" code="Z011" measure="yffbzkncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="bxhtzbj" dimension="qc" name="保险合同准备金">
+<source flag="1" code="Z011" measure="bxhtzbjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="dlmmzqk" dimension="qc" name="代理买卖证券款">
+<source flag="1" code="Z011" measure="dlmmzqkncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="dlcxzqk" dimension="qc" name="代理承销证券款">
+<source flag="1" code="Z011" measure="dlcxzqkncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ynndqfldfz" dimension="qc" name="一年内到期的非流动负债">
+<source flag="1" code="Z011" measure="ynndqdfldfzncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="qtldfz" dimension="qc" name="其他流动负债">
+<source flag="1" code="Z011" measure="qtldfzncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ldfzhj" dimension="qc" name="流动负债合计">
+<source flag="1" code="Z011" measure="ldfzhjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<!--
+<item key="fldfz" dimension="qc" name="非流动负债：">
+<source flag="1" code="Z011" measure="fldfzncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>-->
+<item key="cqjk" dimension="qc" name="长期借款">
+<source flag="1" code="Z011" measure="zqjkncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yfzq" dimension="qc" name="应付债券">
+<source flag="1" code="Z011" measure="yfzqncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="cqyfk" dimension="qc" name="长期应付款">
+<source flag="1" code="Z011" measure="zqyfkncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="zxyfk" dimension="qc" name="专项应付款">
+<source flag="1" code="Z011" measure="zxyfkncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yjfz" dimension="qc" name="预计负债">
+<source flag="1" code="Z011" measure="yjfzncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="dysdsfz" dimension="qc" name="递延所得税负债">
+<source flag="1" code="Z011" measure="dysdsfzncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="qtfldfz" dimension="qc" name="其他非流动负债">
+<source flag="1" code="Z011" measure="qtfldfzncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="tzcbjj" dimension="qc" name="其中：特准储备基金">
+<source flag="1" code="Z011" measure="qztzcbjjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="fldfzhj" dimension="qc" name="非流动负债合计">
+<source flag="1" code="Z011" measure="fldfzhjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="fzhj" dimension="qc" name="负 债 合 计">
+<source flag="1" code="Z011" measure="fzhjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<!--
+<item key="syzqy" dimension="qc" name="所有者权益（或股东权益）：">
+<source flag="1" code="Z011" measure="syzqyhgdqyncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>-->
+<item key="qc_sszb" dimension="qc" name="实收资本（股本）">
+<source flag="1" code="Z011" measure="sszbgbncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="gjzb" dimension="qc" name="国有资本">
+<source flag="1" code="Z011" measure="gyzbncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="jtzb" dimension="qc" name="集体资本">
+<source flag="1" code="Z011" measure="jtzbncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<!--
+<item key="frzb" dimension="qc" name="法人资本">
+<source flag="1" code="Z011" measure="frzbncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>-->
+<item key="gyfrzb" dimension="qc" name="其中：国有法人资本">
+<source flag="1" code="Z011" measure="qzgyfrzbncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<!--
+<item key="jtfrzb" dimension="qc" name="集体法人资本">
+<source flag="1" code="Z011" measure="jtfrzbncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>-->
+<item key="grzb" dimension="qc" name="个人资本">
+<source flag="1" code="Z011" measure="qzgrzbncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="wszb" dimension="qc" name="外商资本">
+<source flag="1" code="Z011" measure="wszbncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yghtz" dimension="qc" name="#减：已归还投资">
+<source flag="1" code="Z011" measure="jyghtzncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="sszbje" dimension="qc" name="实收资本（或股本）净额">
+<source flag="1" code="Z011" measure="sszbhgbjencye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="zbgj" dimension="qc" name="资本公积">
+<source flag="1" code="Z011" measure="zbgjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="kcg" dimension="qc" name="减：库存股">
+<source flag="1" code="Z011" measure="jkcgncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="zxcb" dimension="qc" name="专项储备">
+<source flag="1" code="Z011" measure="zxcbncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="yygj" dimension="qc" name="盈余公积">
+<source flag="1" code="Z011" measure="yygjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="fdgjj" dimension="qc" name="其中：法定公积金">
+<source flag="1" code="Z011" measure="qzfdgjjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="rygjj" dimension="qc" name="任意公积金">
+<source flag="1" code="Z011" measure="rygjjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="cbjj" dimension="qc" name="储备基金">
+<source flag="1" code="Z011" measure="cbjjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="qyfzjj" dimension="qc" name="企业发展基金">
+<source flag="1" code="Z011" measure="qyfzjjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="lrghtz" dimension="qc" name="利润归还投资">
+<source flag="1" code="Z011" measure="lrghtzncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ybfxzb" dimension="qc" name="一般风险准备">
+<source flag="1" code="Z011" measure="ybfxzbncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="wfplr" dimension="qc" name="未分配利润">
+<source flag="1" code="Z011" measure="wfplrncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="wbbbzsce" dimension="qc" name="外币报表折算差额">
+<source flag="1" code="Z011" measure="wbbbzscencye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="gsymgsqyhj" dimension="qc" name="归属于母公司所有者权益合计">
+<source flag="1" code="Z011" measure="gsymgssyzqyhjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="ssgdqy" dimension="qc" name="少数股东权益">
+<source flag="1" code="Z011" measure="ssgdqyncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="syzqyhj" dimension="qc" name="所有者权益合计">
+<source flag="1" code="Z011" measure="syzqyhjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+<item key="fzhsyzqyhj" dimension="qc" name="负债和所有者权益总计">
+<source flag="1" code="Z011" measure="fzhsyzqyzjncye" row="" col="" id="$aa"/><formula>$aa/10000</formula></item>
+
+<item key="type" dimension="" name="类型">
+<source flag="0" code="Z011" measure="type" row="" col="" id="$aa"/>
+<formula>
+$aa
+</formula>
+</item>
+</items>
+</Root>

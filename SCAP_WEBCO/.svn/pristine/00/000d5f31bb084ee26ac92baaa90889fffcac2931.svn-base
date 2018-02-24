@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<Root>
+<items>
+
+<!--flag="0" 单独处理;flag="1" 查iufo表样;flag="2" 查事实表; 公式中"XX,2"表示XX公式计算后保留两位小数-->
+<item key="vyear" dimension="" name="年">
+  <source flag="1" code="Z011" measure="year" row="" col="" id="$aa"/>
+  <formula>
+    '$aa'.substring(0,4)
+  </formula>
+</item>
+
+<item key="sys_org" dimension="" name="组织标志">
+  <source flag="0" code="Z011" measure="sys_org" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sys_zdm" dimension="" name="外键">
+  <source flag="0" code="Z011" measure="sys_zdm" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sys_fjd" dimension="" name="父节点">
+  <source flag="0" code="Z011" measure="sys_fjd" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jq_level" dimension="" name="组织级别">
+  <source flag="0" code="Z011" measure="level" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--<item key="zzsx" dimension="" name="组织形式">
+  <source flag="0" code="Z011" measure="level" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jygm" dimension="" name="经营规模">
+  <source flag="0" code="Z011" measure="level" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>-->
+
+<!--问号进行判断，true=1，false=0-->
+<item key="yl" dimension="" name="是否盈利">
+  <source flag="1" code="Z021" measure="slrzekszeyhtlsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa>0?1:0
+  </formula>
+</item>
+
+<item key="type" dimension="" name="类型">
+  <source flag="0" code="Z011" measure="type" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--dimension="bn"-->
+<item key="syzqyze" dimension="bn" name="所有者权益总额(本年决算数)">
+  <source flag="1" code="Z011" measure="syzqyhjqmye" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gsmgsqyze" dimension="bn" name="归属于母公司的所有者权益总额(本年决算数)">
+  <source flag="1" code="Z011" measure="gsymgssyzqyhjqmye" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yjseze" dimension="bn" name="应交税费总额(本年决算数)">
+  <source flag="1" code="Z071" measure="ybnyjsfzeje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="sjsjsfze" dimension="bn" name="实际上交税费总额(本年决算数)">
+  <source flag="1" code="Z071" measure="ebnsjsjsfzeje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gyzczl" dimension="bn" name="国有资产总量(本年决算数)">
+  <source flag="1" code="Z051" measure="lnmhjgyzczlje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="nmcyryrs" dimension="bn" name="年末从业人员人数(本年决算数)">
+  <source flag="1" code="Z081" measure="ynmcyryrsbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qnpjcyzgrs" dimension="bn" name="全年平均从业人员人数(本年决算数)">
+  <source flag="1" code="Z081" measure="eqnpjcyryrsbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qnpjzgzgrs" dimension="bn" name="全年平均在岗职工人数(本年决算数)">
+  <source flag="1" code="Z081" measure="qzqnpjzgzgrsbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zgzggzze" dimension="bn" name="在岗职工工资总额(本年决算数)">
+  <source flag="1" code="Z081" measure="qzqnsjffzgzggzzebns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zcfzl" dimension="bn" name="资产负债率(本年决算数)">
+  <source flag="1" code="Z011" measure="fzhjqmye" row="" col="" id="$z01.c37"/>
+  <source flag="1" code="Z011" measure="zczjqmye" row="" col="" id="$z01.a63"/>
+  <formula>
+    $z01.c37/$z01.a63*100
+  </formula>
+</item>
+
+<item key="yyzsr" dimension="bn" name="营业总收入(本年决算数)">
+  <source flag="1" code="Z021" measure="yyyzsrbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="lrze" dimension="bn" name="利润总额(本年决算数)">
+  <source flag="1" code="Z021" measure="slrzekszeyhtlbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jlr" dimension="bn" name="净利润(本年决算数)">
+  <source flag="1" code="Z021" measure="wjlrjksyhtlbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gsymgsjlr" dimension="bn" name="归属于母公司所有者的净利润(本年决算数)">
+  <source flag="1" code="Z021" measure="gsymgssyzdjlrbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="qnzgzgrjgz" dimension="bn" name="全年在岗职工人均工资(本年决算数)">
+  <source flag="1" code="Z081" measure="qzqnsjffzgzggzzebns" row="" col="" id="$z08.a31"/>
+  <source flag="1" code="Z081" measure="qzqnpjzgzgrsbns" row="" col="" id="$z08.a07"/>
+  <formula>
+    $z08.a31/$z08.a07
+  </formula>
+</item>
+
+<item key="ldfz" dimension="bn" name="流动负债(本年决算数)">
+  <source flag="1" code="Z011" measure="ldfzhjqmye" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="jyhdcsdxjllje" dimension="bn" name="经营活动产生的现金流量净额(本年决算数)">
+  <source flag="1" code="Z031" measure="jyhdcsdxjlljebqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="tzhdxjlcxj" dimension="bn" name="投资活动现金流出小计(本年决算数)">
+  <source flag="1" code="Z031" measure="tzhdxjlcxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="czhdxjldxj" dimension="bn" name="筹资活动现金流出小计(本年决算数)">
+  <source flag="1" code="Z031" measure="czhdxjlcxjbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gyzbzzzl" dimension="bn" name="国有资本保值增值率(本年决算数)">
+  <source flag="1" code="Z051" measure="snmgyzbjqyzeje" row="" col="" id="$z05.b14"/>
+  <source flag="1" code="Z051" measure="yjgjzxpzhxje" row="" col="" id="$z05.b02"/>
+  <source flag="1" code="Z051" measure="ewchcje" row="" col="" id="$z05.b03"/>
+  <source flag="1" code="Z051" measure="szcpgjsje" row="" col="" id="$z05.b04"/>
+  <source flag="1" code="Z051" measure="sqchzjsje" row="" col="" id="$z05.b05"/>
+  <source flag="1" code="Z051" measure="wcqjdjsje" row="" col="" id="$z05.b06"/>
+  <source flag="1" code="Z051" measure="lxhyqndqkhgzejsje" row="" col="" id="$z05.b07"/>
+  <source flag="1" code="Z051" measure="qyzrzhdbkkjysjsje" row="" col="" id="$z05.b08"/>
+  <source flag="1" code="Z051" measure="byzffljsje" row="" col="" id="$z05.b09"/>
+  <source flag="1" code="Z051" measure="jqyagdysjlrje" row="" col="" id="$z05.b10"/>
+  <source flag="1" code="Z051" measure="szbgbzjje" row="" col="" id="$z05.b11"/>
+  <source flag="1" code="Z051" measure="syzyhdfzfqddqtysje" row="" col="" id="$z05.b12"/>
+  <source flag="1" code="Z051" measure="ygjgydwzjhzjtzje" row="" col="" id="$z05.a03"/>
+  <source flag="1" code="Z051" measure="ewchrje" row="" col="" id="$z05.a04"/>
+  <source flag="1" code="Z051" measure="szcpgzjje" row="" col="" id="$z05.a05"/>
+  <source flag="1" code="Z051" measure="sqchzzjje" row="" col="" id="$z05.a06"/>
+  <source flag="1" code="Z051" measure="wcqjdzjje" row="" col="" id="$z05.a07"/>
+  <source flag="1" code="Z051" measure="lzbgbyjje" row="" col="" id="$z05.a08"/>
+  <source flag="1" code="Z051" measure="qjsjzje" row="" col="" id="$z05.a09"/>
+  <source flag="1" code="Z051" measure="bzqzgqje" row="" col="" id="$z05.a10"/>
+  <source flag="1" code="Z051" measure="jssfhje" row="" col="" id="$z05.a11"/>
+  <source flag="1" code="Z051" measure="sbcldzbje" row="" col="" id="$z05.a12"/>
+  <source flag="1" code="Z051" measure="syjzzbzhje" row="" col="" id="$z05.a13"/>
+  <source flag="1" code="Z051" measure="sehjdzje" row="" col="" id="$z05.a14"/>
+  <source flag="1" code="Z051" measure="sszyhdfzfqddqtysje" row="" col="" id="$z05.a15"/>
+  <source flag="1" code="Z051" measure="yncgyzbjqyzeje" row="" col="" id="$z05.a01"/>
+  <formula>
+    ($z05.b14+$z05.b02+$z05.b03+$z05.b04+$z05.b05+$z05.b06+$z05.b07+$z05.b08+$z05.b09+$z05.b10+$z05.b11+$z05.b12-($z05.a03+$z05.a04+$z05.a05+$z05.a06+$z05.a07+$z05.a08+$z05.a09+$z05.a10+$z05.a11+$z05.a12+$z05.a13+$z05.a14+$z05.a15))/$z05.a01*100
+  </formula>
+</item>
+
+<item key="bngyzbjqyzjz" dimension="" name="本年国有资本及权益增加值(本年决算数)">
+  <source flag="1" code="Z051" measure="ebngyzbjqyzjje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yszk" dimension="bn" name="应收账款(本年决算数)">
+  <source flag="1" code="Z011" measure="yszkqmye" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ch" dimension="bn" name="存货(本年决算数)">
+  <source flag="1" code="Z011" measure="chqmye" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ldsczz" dimension="bn" name="劳动生产总值(本年决算数)">
+  <source flag="1" code="Z081" measure="eldsczzbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="nmgyzcjqyze" dimension="" name="年末国有资产及权益总额">
+  <source flag="1" code="Z051" measure="snmgyzbjqyzeje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zjtz" dimension="bn" name="追加投资">
+  <source flag="1" code="Z051" measure="ygjgydwzjhzjtzje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="wchr" dimension="bn" name="无偿划入">
+  <source flag="1" code="Z051" measure="ewchrje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ldzc" dimension="bn" name="流动资产">
+  <source flag="1" code="Z011" measure="ldzchjqmye" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ssgdqy" dimension="bn" name="少数股东权益(年末余额)">
+  <source flag="1" code="Z011" measure="ssgdqyqmye" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="chzzl" dimension="bn" name="存货增长率">
+  <source flag="1" code="Z011" measure="chqmye" row="" col="" id="$z1.a15"/>
+  <source flag="1" code="Z061" measure="echdjzbqmzmye" row="" col="" id="$z6.k02"/>
+  <source flag="1" code="Z011" measure="chncye" row="" col="" id="$z1.b15"/>
+  <source flag="1" code="Z061" measure="echdjzbnczmye" row="" col="" id="$z6.a02"/>
+  <formula>
+    ($z1.a15+$z6.k02-$z1.b15-$z6.a02)/($z1.b15+$z6.a02)*100
+  </formula>
+</item>
+
+<item key="yyzcb" dimension="bn" name="营业总成本(本年决算数)">
+  <source flag="1" code="Z021" measure="eyyzcbbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="nmzgzgrs" dimension="bn" name="年末在岗职工人数">
+  <source flag="1" code="Z081" measure="qznmzgzgrsbns" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="zcze" dimension="bn" name="资产总额(本年决算数)">
+  <source flag="1" code="Z011" measure="zczjqmye" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="fzze" dimension="bn" name="负债总额(本年决算数)">
+  <source flag="1" code="Z011" measure="fzhjqmye" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="lxzc" dimension="bn" name="利息支出(本年决算数)">
+  <source flag="1" code="Z021" measure="qzlxzcbqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<!--dimension="qc"-->
+<item key="yszk" dimension="qc" name="应收账款(年初余额)">
+  <source flag="1" code="Z011" measure="yszkncye" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="yyzcb" dimension="qc" name="营业总成本(上期金额)">
+  <source flag="1" code="Z021" measure="eyyzcbsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+  
+<item key="zcze" dimension="qc" name="资产总额(年初余额)">
+  <source flag="1" code="Z011" measure="zczjncye" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="syzqyze" dimension="qc" name="所有者权益总额(年初余额)">
+  <source flag="1" code="Z011" measure="syzqyhjncye" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="ssgdqy" dimension="qc" name="少数股东权益(年初余额)">
+  <source flag="1" code="Z011" measure="ssgdqyncye" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gsymgsqyze" dimension="qc" name="归属于母公司的所有者权益总额(年初余额)">
+  <source flag="1" code="Z011" measure="gsymgssyzqyhjncye" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+  
+<item key="yyzsr" dimension="qc" name="营业总收入(上期金额)">
+  <source flag="1" code="Z021" measure="yyyzsrsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="lrze" dimension="qc" name="利润总额(上期金额)">
+  <source flag="1" code="Z021" measure="slrzekszeyhtlsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+    
+<item key="jlr" dimension="qc" name="净利润(上期金额)">
+  <source flag="1" code="Z021" measure="wjlrjksyhtlsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="gsmgsjlr" dimension="qc" name="归属于母公司所有者的净利润(上期金额)">
+  <source flag="1" code="Z021" measure="gsymgssyzdjlrsqje" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+<item key="fzze" dimension="qc" name="负债总额(年初余额)">
+  <source flag="1" code="Z011" measure="fzhjncye" row="" col="" id="$aa"/>
+  <formula>
+    $aa
+  </formula>
+</item>
+
+</items>
+</Root>

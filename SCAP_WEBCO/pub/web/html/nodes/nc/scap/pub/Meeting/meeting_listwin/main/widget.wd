@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget controllerClazz="nc.scap.pub.meeting.MeetingListWinMainViewCtrl" id="main" refId="main" sourcePackage="pub/src/public/">
+    <Attributes>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+    </PlugoutDescs>
+    <PluginDescs>
+        <PluginDesc id="simpleQuery_plugin" methodName="doQueryChange">
+        </PluginDesc>
+        <PluginDesc id="org_plugin" methodName="doOrgChange">
+        </PluginDesc>
+        <PluginDesc id="refresh_plugin" methodName="doRefresh">
+            <PluginDescItem clazztype="java.lang.String" id="OPERATE_ROW">
+            </PluginDescItem>
+        </PluginDesc>
+    </PluginDescs>
+    <Connectors>
+        <Connector connType="6" id="listViewConnID" pluginId="refresh_plugin" plugoutId="proxyAfterSavePlugout" source="nc.scap.pub.Meeting.meeting_listwin" sourceWindow="" target="main" targetWindow="">
+        </Connector>
+    </Connectors>
+    <Events>
+        <Event async="true" methodName="beforeShow" name="beforeShow" onserver="true">
+            <SubmitRule>
+            </SubmitRule>
+            <Params>
+                <Param>
+                    <Name>dialogEvent</Name>
+                    <Value>
+                    </Value>
+                    <Desc>                        <![CDATA[nc.uap.lfw.core.event.DialogEvent]]>
+                    </Desc>
+                </Param>
+            </Params>
+            <Action>
+            </Action>
+        </Event>
+    </Events>
+    <Models>
+        <Datasets>
+            <DatasetRelations>
+                <DatasetRelation detailDataset="scapco_meetingreport" detailForeignKey="pk_meeting" id="scapco_meetingreport_scapco_meeting" masterDataset="scapco_meeting" masterKeyField="pk_meeting">
+                </DatasetRelation>
+                <DatasetRelation detailDataset="scapco_meetinguser" detailForeignKey="pk_meetingreport" id="scapco_meetinguser_scapco_meetingreport" masterDataset="scapco_meetingreport" masterKeyField="pk_meetingreport">
+                </DatasetRelation>
+                <DatasetRelation detailDataset="scapco_meetingstaff" detailForeignKey="pk_meetingreport" id="scapco_meetingstaff_scapco_meetingreport" masterDataset="scapco_meetingreport" masterKeyField="pk_meetingreport">
+                </DatasetRelation>
+            </DatasetRelations>
+            <RefMdDataset caption="协同用户" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_user" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_user" voMeta="nc.uap.cpb.org.vos.CpUserVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="会议员工" controlwidgetopeStatus="false" enabled="false" id="scapco_meetingstaff" lazyLoad="true" notNullBody="false" objMeta="scapco.scapco_meetingstaff" pageSize="15" voMeta="nc.scap.pub.vos.ScapMeetingStaffVO">
+                <FieldRelations>
+                    <FieldRelation id="pk_org_rel" needProcess="true" refDataset="$refds_uap_org" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_group_rel" needProcess="true" refDataset="$refds_uap_group" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_group_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_group" value="pk_group">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="staff_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="staff_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="staff">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+            </MdDataset>
+            <RefMdDataset caption="组织_集团" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_group" lazyLoad="true" notNullBody="false" objMeta="uap.group" voMeta="nc.vo.org.GroupVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="会议上报" controlwidgetopeStatus="false" enabled="false" id="scapco_meetingreport" lazyLoad="true" notNullBody="false" objMeta="scapco.scapco_meetingreport" pageSize="10" voMeta="nc.scap.pub.vos.ScapMeetingReportVO">
+                <FieldRelations>
+                    <FieldRelation id="acceptorg_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="acceptorg_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="acceptorg">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onAfterRowSelectReport" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DatasetEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <MdDataset caption="会议管理" controlwidgetopeStatus="false" enabled="false" id="scapco_meeting" lazyLoad="false" notNullBody="false" objMeta="scapco.scapco_meeting" pageSize="15" voMeta="nc.scap.pub.vos.ScapMeetingVO">
+                <FieldRelations>
+                    <FieldRelation id="pk_org_rel" needProcess="true" refDataset="$refds_uap_org" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_group_rel" needProcess="true" refDataset="$refds_uap_group" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_group_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_group" value="pk_group">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad_scapco_meeting" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DataLoadEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onAfterRowSelectMeeting" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DatasetEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <RefMdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_orgs" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_orgs" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_org" lazyLoad="true" notNullBody="false" objMeta="uap.org" voMeta="nc.vo.org.OrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="会议人员" controlwidgetopeStatus="false" enabled="false" id="scapco_meetinguser" lazyLoad="true" notNullBody="false" objMeta="scapco.scapco_meetinguser" pageSize="15" voMeta="nc.scap.pub.vos.ScapMeetingUserVO">
+                <Fields>
+                </Fields>
+            </MdDataset>
+        </Datasets>
+        <ComboDatas>
+            <MDComboDataConf caption="参会与否" fullclassName="a4af48d8-359b-41a6-bbd6-54a477a447a6" id="combo_scapco_meetingreport_ismeeting">
+            </MDComboDataConf>
+        </ComboDatas>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scapco_meeting_pk_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="业务单元+集团" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="会议管理_业务单元+集团" usePower="false" writeDs="scapco_meeting" writeFields="pk_org,pk_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scapco_meeting_pk_group_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_group,name" refId="" refcode="集团(所有)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="会议管理_集团(所有)" usePower="false" writeDs="scapco_meeting" writeFields="pk_group,pk_group_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scapco_meetingstaff_pk_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="业务单元+集团" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="会议员工_业务单元+集团" usePower="false" writeDs="scapco_meetingstaff" writeFields="pk_org,pk_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scapco_meetingreport_acceptorg_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="会议上报_协同当前集团+业务单元" usePower="false" writeDs="scapco_meetingreport" writeFields="acceptorg,acceptorg_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scapco_meetingstaff_staff_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="会议员工_协同用户" usePower="false" writeDs="scapco_meetingstaff" writeFields="staff,staff_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scapco_meetingstaff_pk_group_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_group,name" refId="" refcode="集团(所有)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="会议员工_集团(所有)" usePower="false" writeDs="scapco_meetingstaff" writeFields="pk_group,pk_group_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <GridComp autoRowHeight="false" canCopy="true" caption="会议上报" checkBoxModel="1" dataset="scapco_meetingreport" editable="true" enabled="true" expandTree="false" id="scapco_meetingreport_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_meetingreport" fixedHeader="false" id="pk_meetingreport" imageOnly="false" langDir="pub_meetingreport" nullAble="false" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="reportperson" fixedHeader="false" id="reportperson" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上报人" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDateTime" editable="true" editorType="DateTimeText" field="reportdate" fixedHeader="false" id="reportdate" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="上报时间" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="reporttel" fixedHeader="false" id="reporttel" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="联系电话" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="acceptorg" fixedHeader="false" id="acceptorg" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="接收机构" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="acceptorg_name" fixedHeader="false" id="acceptorg_name" imageOnly="false" nullAble="true" refNode="refnode_scapco_meetingreport_acceptorg_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="接收机构" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDateTime" editable="true" editorType="DateTimeText" field="acceptdate" fixedHeader="false" id="acceptdate" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="接收时间" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="ismeeting" fixedHeader="false" id="ismeeting" imageOnly="false" langDir="pub_meetingreport" nullAble="true" refComboData="combo_scapco_meetingreport_ismeeting" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="参会与否" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef1" fixedHeader="false" id="vbdef1" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备注" textAlign="left" visible="true" width="240">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef2" fixedHeader="false" id="vbdef2" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项2" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef3" fixedHeader="false" id="vbdef3" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项3" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef4" fixedHeader="false" id="vbdef4" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项4" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef5" fixedHeader="false" id="vbdef5" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项5" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDateTime" editable="true" editorType="DateTimeText" field="vbdef6" fixedHeader="false" id="vbdef6" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项6" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFBoolean" editable="true" editorType="CheckBox" field="vbdef7" fixedHeader="false" id="vbdef7" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="BooleanRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项7" textAlign="center" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Integer" editable="true" editorType="IntegerText" field="vbdef8" fixedHeader="false" id="vbdef8" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="IntegerRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项8" textAlign="right" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDouble" editable="true" editorType="DecimalText" field="vbdef9" fixedHeader="false" id="vbdef9" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DecimalRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项9" textAlign="right" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDouble" editable="true" editorType="DecimalText" field="vbdef10" fixedHeader="false" id="vbdef10" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DecimalRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项10" textAlign="right" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_meeting" fixedHeader="false" id="pk_meeting" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上层单据主键" textAlign="left" visible="false" width="120">
+            </Column>
+        </GridComp>
+        <GridComp autoRowHeight="false" canCopy="true" caption="会议员工" checkBoxModel="1" dataset="scapco_meetingstaff" editable="true" enabled="true" expandTree="false" id="scapco_meetingstaff_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_org" fixedHeader="false" id="pk_org" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="组织" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_org_name" fixedHeader="false" id="pk_org_name" imageOnly="false" nullAble="true" refNode="refnode_scapco_meetingstaff_pk_org_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="组织" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_group" fixedHeader="false" id="pk_group" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="所属集团" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_group_name" fixedHeader="false" id="pk_group_name" imageOnly="false" nullAble="true" refNode="refnode_scapco_meetingstaff_pk_group_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="所属集团" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="staff" fixedHeader="false" id="staff" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="员工" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="staff_user_name" fixedHeader="false" id="staff_user_name" imageOnly="false" nullAble="true" refNode="refnode_scapco_meetingstaff_staff_user_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="员工" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef1" fixedHeader="false" id="vbdef1" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项1" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef2" fixedHeader="false" id="vbdef2" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项2" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef3" fixedHeader="false" id="vbdef3" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项3" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef4" fixedHeader="false" id="vbdef4" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项4" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef5" fixedHeader="false" id="vbdef5" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项5" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDateTime" editable="true" editorType="DateTimeText" field="vbdef6" fixedHeader="false" id="vbdef6" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项6" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFBoolean" editable="true" editorType="CheckBox" field="vbdef7" fixedHeader="false" id="vbdef7" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="BooleanRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项7" textAlign="center" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Integer" editable="true" editorType="IntegerText" field="vbdef8" fixedHeader="false" id="vbdef8" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="IntegerRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项8" textAlign="right" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDouble" editable="true" editorType="DecimalText" field="vbdef9" fixedHeader="false" id="vbdef9" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DecimalRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项9" textAlign="right" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDouble" editable="true" editorType="DecimalText" field="vbdef10" fixedHeader="false" id="vbdef10" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DecimalRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项10" textAlign="right" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_meetingreport" fixedHeader="false" id="pk_meetingreport" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上层单据主键" textAlign="left" visible="true" width="120">
+            </Column>
+        </GridComp>
+        <GridComp autoRowHeight="false" canCopy="true" caption="会议管理" checkBoxModel="1" dataset="scapco_meeting" editable="false" enabled="true" expandTree="false" id="scapco_meeting_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_org" fixedHeader="false" id="pk_org" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="组织" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_org_name" fixedHeader="false" id="pk_org_name" imageOnly="false" nullAble="true" refNode="refnode_scapco_meeting_pk_org_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="组织" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_group" fixedHeader="false" id="pk_group" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="所属集团" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_group_name" fixedHeader="false" id="pk_group_name" imageOnly="false" nullAble="true" refNode="refnode_scapco_meeting_pk_group_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="所属集团" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="meetingname" fixedHeader="false" id="meetingname" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="会议名称" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="meetingorganizer" fixedHeader="false" id="meetingorganizer" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="承办单位" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="meetingplace" fixedHeader="false" id="meetingplace" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="会议地点" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDateTime" editable="true" editorType="DateTimeText" field="meetingdate" fixedHeader="false" id="meetingdate" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="会议时间" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Integer" editable="true" editorType="IntegerText" field="meetingdays" fixedHeader="false" id="meetingdays" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="IntegerRender" showCheckBox="true" sortable="true" sumCol="false" text="会期" textAlign="right" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="meetingreleaseorg" fixedHeader="false" id="meetingreleaseorg" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="发文机关" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDateTime" editable="true" editorType="DateTimeText" field="meetingreleasedate" fixedHeader="false" id="meetingreleasedate" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="发文日期" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="memo" fixedHeader="false" id="memo" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备注" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="linkman" fixedHeader="false" id="linkman" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="联系人" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="linkmantel" fixedHeader="false" id="linkmantel" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="联系电话" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="true" dataType="String" editable="true" editorType="StringText" field="state" fixedHeader="false" id="state" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="会议状态" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef1" fixedHeader="false" id="vbdef1" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项1" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef2" fixedHeader="false" id="vbdef2" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项2" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef3" fixedHeader="false" id="vbdef3" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项3" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef4" fixedHeader="false" id="vbdef4" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项4" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef5" fixedHeader="false" id="vbdef5" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项5" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDateTime" editable="true" editorType="DateTimeText" field="vbdef6" fixedHeader="false" id="vbdef6" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项6" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFBoolean" editable="true" editorType="CheckBox" field="vbdef7" fixedHeader="false" id="vbdef7" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="BooleanRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项7" textAlign="center" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Integer" editable="true" editorType="IntegerText" field="vbdef8" fixedHeader="false" id="vbdef8" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="IntegerRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项8" textAlign="right" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDouble" editable="true" editorType="DecimalText" field="vbdef9" fixedHeader="false" id="vbdef9" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DecimalRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项9" textAlign="right" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDouble" editable="true" editorType="DecimalText" field="vbdef10" fixedHeader="false" id="vbdef10" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DecimalRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项10" textAlign="right" visible="false" width="120">
+            </Column>
+        </GridComp>
+        <GridComp autoRowHeight="false" canCopy="true" caption="会议人员" checkBoxModel="1" dataset="scapco_meetinguser" editable="true" enabled="true" expandTree="false" id="scapco_meetinguser_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_meetinguser" fixedHeader="false" id="pk_meetinguser" imageOnly="false" langDir="pub_meetingreport" nullAble="false" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="username" fixedHeader="false" id="username" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="姓名" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="gender" fixedHeader="false" id="gender" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="性别" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="nation" fixedHeader="false" id="nation" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="民族" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="usergroup" fixedHeader="false" id="usergroup" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="所在单位" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="duty" fixedHeader="false" id="duty" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="职务" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="tel" fixedHeader="false" id="tel" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="电话" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="memo" fixedHeader="false" id="memo" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备注" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef1" fixedHeader="false" id="vbdef1" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项1" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef2" fixedHeader="false" id="vbdef2" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项2" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef3" fixedHeader="false" id="vbdef3" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项3" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef4" fixedHeader="false" id="vbdef4" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项4" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef5" fixedHeader="false" id="vbdef5" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项5" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDateTime" editable="true" editorType="DateTimeText" field="vbdef6" fixedHeader="false" id="vbdef6" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项6" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFBoolean" editable="true" editorType="CheckBox" field="vbdef7" fixedHeader="false" id="vbdef7" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="BooleanRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项7" textAlign="center" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Integer" editable="true" editorType="IntegerText" field="vbdef8" fixedHeader="false" id="vbdef8" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="IntegerRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项8" textAlign="right" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDouble" editable="true" editorType="DecimalText" field="vbdef9" fixedHeader="false" id="vbdef9" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DecimalRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项9" textAlign="right" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDouble" editable="true" editorType="DecimalText" field="vbdef10" fixedHeader="false" id="vbdef10" imageOnly="false" langDir="pub_meetingreport" nullAble="true" renderType="DecimalRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义项10" textAlign="right" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_meetingreport" fixedHeader="false" id="pk_meetingreport" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上层单据主键" textAlign="left" visible="false" width="120">
+            </Column>
+        </GridComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar">
+            <MenuItem id="add" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Init_Ss_Ms_StateManager" text="新增">
+                <Events>
+                    <Event async="true" methodName="onAdd" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="edit" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="修改">
+                <Events>
+                    <Event async="true" methodName="onEdit" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem i18nName="showdetail" id="showdetail" langDir="lfwbuttons" modifiers="2" showModel="1" text="查看">
+                <Events>
+                    <Event async="true" methodName="onshowdetail" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="del" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="删除">
+                <Events>
+                    <Event async="true" methodName="onDelete" name="onclick" onserver="true">
+                        <SubmitRule>
+                            <Widget id="main">
+                                <Dataset id="scapco_meeting" type="ds_all_line">
+                                </Dataset>
+                                <Dataset id="scapco_meetingstaff" type="ds_all_line">
+                                </Dataset>
+                                <Dataset id="scapco_meetinguser" type="ds_all_line">
+                                </Dataset>
+                            </Widget>
+                        </SubmitRule>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem i18nName="sendout" id="sendout" langDir="lfwbuttons" modifiers="2" showModel="1" text="下发">
+                <Events>
+                    <Event async="true" methodName="onsendout" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem i18nName="feedback" id="feedback" langDir="lfwbuttons" modifiers="2" showModel="1" text="反馈">
+                <Events>
+                    <Event async="true" methodName="onfeedback" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="sep1" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="attachfile" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="附件">
+                <Events>
+                    <Event async="true" methodName="onAttchFile" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>
