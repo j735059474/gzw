@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget controllerClazz="nc.scap.transfer.land.LandCardWinMainViewCtrl" id="main" refId="main" sourcePackage="transfer/src/public/">
+    <Attributes>
+        <Attribute>
+            <Key>$QueryTemplate</Key>
+            <Value>
+            </Value>
+        </Attribute>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+        <PlugoutDesc id="afterSavePlugout">
+            <PlugoutDescItem clazztype="java.lang.String" name="OPERATE_ROW" source="scappt_land" type="Dataset.TYPE_DATASET_SEL_ROW">
+            </PlugoutDescItem>
+        </PlugoutDesc>
+    </PlugoutDescs>
+    <PluginDescs>
+        <PluginDesc id="plugin_exetask" methodName="doTaskExecute">
+            <SubmitRule>
+                <Widget id="main">
+                    <Dataset id="testflowsub" type="ds_all_line">
+                    </Dataset>
+                </Widget>
+            </SubmitRule>
+        </PluginDesc>
+    </PluginDescs>
+    <Connectors>
+        <Connector connType="4" id="cardViewConnID" pluginId="proxyAfterSavePlugout" plugoutId="afterSavePlugout" source="main" sourceWindow="" target="popwin" targetWindow="">
+        </Connector>
+    </Connectors>
+    <Events>
+        <Event async="true" methodName="beforeShow" name="beforeShow" onserver="true">
+            <Action>
+            </Action>
+        </Event>
+    </Events>
+    <Models>
+        <Datasets>
+            <MdDataset caption="土地占有简况" controlwidgetopeStatus="true" enabled="false" id="scappt_land" lazyLoad="true" notNullBody="false" objMeta="scappt.scappt_land" pageSize="15" voMeta="nc.scap.pt.vos.LandVO">
+                <FieldRelations>
+                    <FieldRelation id="pk_group_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_group_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_group">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_org_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="billmaker_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="billmaker_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="billmaker">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="approver_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="approver_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="approver">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_firmtree_rel" needProcess="true" refDataset="$refds_scappr_firmtree" useCache="true">
+                        <MatchFields>
+                            <Field readField="vname" writeField="pk_firmtree_vname">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_firmtree" value="pk_firmtree">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_czfirmtree_rel" needProcess="true" refDataset="$refds_scappr_firmtree" useCache="true">
+                        <MatchFields>
+                            <Field readField="vname" writeField="pk_czfirmtree_vname">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_firmtree" value="pk_czfirmtree">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_czorg_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_czorg_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_czorg">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_agency_rel" needProcess="true" refDataset="$refds_uap_Defdoc_scappr_0004" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_agency_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_defdoc" value="pk_agency">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                    <ModifyField id="dregcapital" precision="2">
+                    </ModifyField>
+                    <ModifyField id="darea" precision="2">
+                    </ModifyField>
+                    <ModifyField id="dmarketvalue" precision="2">
+                    </ModifyField>
+                    <ModifyField id="dwtransprice" precision="2">
+                    </ModifyField>
+                    <ModifyField id="dincreaseprice" precision="2">
+                    </ModifyField>
+                    <ModifyField id="dtransferprice" precision="2">
+                    </ModifyField>
+                    <ModifyField id="dsellprice" precision="2">
+                    </ModifyField>
+                    <ModifyField id="vbook1" precision="2">
+                    </ModifyField>
+                    <ModifyField id="vassess1" precision="2">
+                    </ModifyField>
+                    <ModifyField id="vbook2" precision="2">
+                    </ModifyField>
+                    <ModifyField id="vassess2" precision="2">
+                    </ModifyField>
+                    <ModifyField id="def11" precision="2">
+                    </ModifyField>
+                    <ModifyField id="def12" precision="2">
+                    </ModifyField>
+                    <ModifyField id="def13" precision="2">
+                    </ModifyField>
+                    <ModifyField id="def14" precision="2">
+                    </ModifyField>
+                    <ModifyField id="def15" precision="2">
+                    </ModifyField>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <RefMdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_orgs" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_orgs" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="国资监管机构(产权)(自定义档案)" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_Defdoc_scappr_0004" lazyLoad="true" notNullBody="false" objMeta="uap.Defdoc-scappr_0004" voMeta="nc.vo.bd.defdoc.DefdocVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="协同用户" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_user" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_user" voMeta="nc.uap.cpb.org.vos.CpUserVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="firmtree" controlwidgetopeStatus="false" enabled="false" id="$refds_scappr_firmtree" lazyLoad="true" notNullBody="false" objMeta="scappr.firmtree" voMeta="nc.scap.vos.prabs.FirmtreeVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+        </Datasets>
+        <ComboDatas>
+            <MDComboDataConf caption="审批状态" fullclassName="be62d39e-39ac-47cd-ae73-efd3b3ba9407" id="combo_scappt_land_approvestatus">
+            </MDComboDataConf>
+            <MDComboDataConf caption="是否办证" fullclassName="aca41d4f-708f-4621-9462-f7bd7382d59d" id="combo_scappt_land_ccertificateflag">
+            </MDComboDataConf>
+            <MDComboDataConf caption="性质" fullclassName="a7b22276-1a12-4716-8fb5-511b10ff7a72" id="combo_scappt_land_inature">
+            </MDComboDataConf>
+            <MDComboDataConf caption="是否含有国有划拨土地" fullclassName="b9d9895b-c90d-4e58-b235-3e58d383cedd" id="combo_scappt_land_cbtransferflag">
+            </MDComboDataConf>
+            <MDComboDataConf caption="协同审批单据状态" fullclassName="7e41c775-c422-4077-9731-e49d16fc2ee4" id="combo_scappt_land_formstate">
+            </MDComboDataConf>
+            <MDComboDataConf caption="用途" fullclassName="3eba6c17-201c-484c-9d7b-96778341aa80" id="combo_scappt_land_iuse">
+            </MDComboDataConf>
+            <MDComboDataConf caption="是否抵押" fullclassName="9b7b4e03-ddbf-4d02-9976-113c2d98f806" id="combo_scappt_land_cmortgageflag">
+            </MDComboDataConf>
+        </ComboDatas>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_land_pk_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="土地占有简况_协同当前集团+业务单元" usePower="false" writeDs="scappt_land" writeFields="pk_org,pk_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_land_pk_agency_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_defdoc,name" refId="" refcode="国资监管机构(产权)(自定义档案)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="土地占有简况_国资监管机构(产权)(自定义档案)" usePower="false" writeDs="scappt_land" writeFields="pk_agency,pk_agency_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_land_pk_firmtree_vname" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_firmtree,vname" refId="" refcode="产权树参照" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="土地占有简况_产权树参照" usePower="false" writeDs="scappt_land" writeFields="pk_firmtree,pk_firmtree_vname">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_land_billmaker_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="土地占有简况_协同用户" usePower="false" writeDs="scappt_land" writeFields="billmaker,billmaker_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_land_pk_group_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同集团(所有)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="土地占有简况_协同集团(所有)" usePower="false" writeDs="scappt_land" writeFields="pk_group,pk_group_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_land_pk_czfirmtree_vname" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_firmtree,vname" refId="" refcode="产权树参照" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="土地占有简况_产权树参照" usePower="false" writeDs="scappt_land" writeFields="pk_czfirmtree,pk_czfirmtree_vname">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_land_pk_czorg_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="土地占有简况_协同当前集团+业务单元" usePower="false" writeDs="scappt_land" writeFields="pk_czorg,pk_czorg_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_land_approver_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="土地占有简况_协同用户" usePower="false" writeDs="scappt_land" writeFields="approver,approver_user_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <FormComp caption="scappt_land_form" columnCount="3" dataset="scappt_land" eleWidth="250" ellipsis="false" enabled="true" id="scappt_land_form" labelMinWidth="0" renderType="1" rowHeight="22" visible="true">
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="pk_org" height="" id="pk_org" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="组织" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="3" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="false" field="pk_org_name" height="" id="pk_org_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_scappt_land_pk_org_name" rowSpan="1" selectOnly="true" showLabel="false" text="组织" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="pk_group" height="" id="pk_group" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="集团" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="pk_group_name" height="" id="pk_group_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_scappt_land_pk_group_name" rowSpan="1" selectOnly="true" showLabel="false" text="集团" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="false" field="billmaker" height="" id="billmaker" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="制单人" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="billmaker_user_name" height="" id="billmaker_user_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_scappt_land_billmaker_user_name" rowSpan="1" selectOnly="true" showLabel="false" text="制单人" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DateTimeText" enabled="false" field="billmakedate" height="" id="billmakedate" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="制单日期" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="false" field="billno" height="" id="billno" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="单据号" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="false" field="approver" height="" id="approver" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="审批人" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="approver_user_name" height="" id="approver_user_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_scappt_land_approver_user_name" rowSpan="1" selectOnly="true" showLabel="false" text="审批人" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DateTimeText" enabled="false" field="approvedate" height="" id="approvedate" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="审批时间" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="ComboBox" enabled="false" field="formstate" height="" id="formstate" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" refComboData="combo_scappt_land_formstate" rowSpan="1" selectOnly="true" showLabel="false" text="单据状态" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="false" field="formtitle" height="" id="formtitle" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="单据标题" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="approvememo" height="" id="approvememo" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="审核说明" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="ComboBox" enabled="true" field="approvestatus" height="" id="approvestatus" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" refComboData="combo_scappt_land_approvestatus" rowSpan="1" selectOnly="true" showLabel="false" text="审批状态" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="pk_firmtree" height="" id="pk_firmtree" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="土地占有企业名称" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="pk_firmtree_vname" height="" id="pk_firmtree_vname" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_scappt_land_pk_firmtree_vname" rowSpan="1" selectOnly="true" showLabel="false" text="土地占有企业名称" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vname" height="" id="vname" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="土地占有企业" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vcode" height="" id="vcode" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="组织机构代码" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="pk_czfirmtree" height="" id="pk_czfirmtree" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="所出资企业名称" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="pk_czfirmtree_vname" height="" id="pk_czfirmtree_vname" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_scappt_land_pk_czfirmtree_vname" rowSpan="1" selectOnly="true" showLabel="false" text="所出资企业名称" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="pk_czorg" height="" id="pk_czorg" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="所出资企业名" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="pk_czorg_name" height="" id="pk_czorg_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_scappt_land_pk_czorg_name" rowSpan="1" selectOnly="true" showLabel="false" text="所出资企业名" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="czname" height="" id="czname" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="所出资企业" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vregistry" height="" id="vregistry" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="注册地（住所）" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DateText" enabled="true" field="cjoindate" height="" id="cjoindate" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="成立时间" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DecimalText" enabled="true" field="dregcapital" height="" id="dregcapital" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" precision="8" rowSpan="1" selectOnly="true" showLabel="false" text="注册资本（万元）" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="pk_firmtype" height="" id="pk_firmtype" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="企业类别" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="pk_agency" height="" id="pk_agency" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="国资监管机构" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="pk_agency_name" height="" id="pk_agency_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_scappt_land_pk_agency_name" rowSpan="1" selectOnly="true" showLabel="false" text="国资监管机构" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="ComboBox" enabled="true" field="cbtransferflag" height="" id="cbtransferflag" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" refComboData="combo_scappt_land_cbtransferflag" rowSpan="1" selectOnly="true" showLabel="false" text="是否含有国有划拨土地" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="IntegerText" enabled="true" field="ibinpost" height="" id="ibinpost" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="职工人数" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="ccity" height="" id="ccity" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="所在城市" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vfname" height="" id="vfname" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="宗地名称" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vposition" height="" id="vposition" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="宗地位置" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DecimalText" enabled="true" field="darea" height="" id="darea" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" precision="8" rowSpan="1" selectOnly="true" showLabel="false" text="面积" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vlevel" height="" id="vlevel" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="土地级别" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="ComboBox" enabled="true" field="inature" height="" id="inature" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" refComboData="combo_scappt_land_inature" rowSpan="1" selectOnly="true" showLabel="false" text="性质" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="ComboBox" enabled="true" field="iuse" height="" id="iuse" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" refComboData="combo_scappt_land_iuse" rowSpan="1" selectOnly="true" showLabel="false" text="用途" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="ComboBox" enabled="true" field="cmortgageflag" height="" id="cmortgageflag" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" refComboData="combo_scappt_land_cmortgageflag" rowSpan="1" selectOnly="true" showLabel="false" text="是否抵押" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="ComboBox" enabled="true" field="ccertificateflag" height="" id="ccertificateflag" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" refComboData="combo_scappt_land_ccertificateflag" rowSpan="1" selectOnly="true" showLabel="false" text="是否办证" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DecimalText" enabled="true" field="dmarketvalue" height="" id="dmarketvalue" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" precision="8" rowSpan="1" selectOnly="true" showLabel="false" text="评估价格" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DecimalText" enabled="true" field="dwtransprice" height="" id="dwtransprice" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" precision="8" rowSpan="1" selectOnly="true" showLabel="false" text="交易价格" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DateText" enabled="true" field="cwctdate" height="" id="cwctdate" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="交易时间" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DecimalText" enabled="true" field="dincreaseprice" height="" id="dincreaseprice" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" precision="8" rowSpan="1" selectOnly="true" showLabel="false" text="转增金额" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DecimalText" enabled="true" field="dtransferprice" height="" id="dtransferprice" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" precision="8" rowSpan="1" selectOnly="true" showLabel="false" text="划拨土地性质评估价格" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DecimalText" enabled="true" field="dsellprice" height="" id="dsellprice" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" precision="8" rowSpan="1" selectOnly="true" showLabel="false" text="出让土地性质评估价格" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DateText" enabled="true" field="cincreasedate" height="" id="cincreasedate" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="转增时间" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vacceptno" height="" id="vacceptno" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="批准文号" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vreplace1" height="" id="vreplace1" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="置换方1" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DecimalText" enabled="true" field="vbook1" height="" id="vbook1" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" precision="8" rowSpan="1" selectOnly="true" showLabel="false" text="标的1账面值" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DecimalText" enabled="true" field="vassess1" height="" id="vassess1" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" precision="8" rowSpan="1" selectOnly="true" showLabel="false" text="标的1评估值" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vreplace2" height="" id="vreplace2" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="置换方2" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DecimalText" enabled="true" field="vbook2" height="" id="vbook2" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" precision="8" rowSpan="1" selectOnly="true" showLabel="false" text="标的2账面值" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DecimalText" enabled="true" field="vassess2" height="" id="vassess2" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" precision="8" rowSpan="1" selectOnly="true" showLabel="false" text="标的2评估值" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vpricediff" height="" id="vpricediff" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="现金补差价情况" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="def1" height="" id="def1" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="自定义项1" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="def2" height="" id="def2" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="自定义项2" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="def3" height="" id="def3" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="自定义项3" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="def4" height="" id="def4" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="自定义项4" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="def5" height="" id="def5" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="自定义项5" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="def6" height="" id="def6" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="自定义项6" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="def7" height="" id="def7" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="自定义项7" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="def8" height="" id="def8" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="自定义项8" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="def9" height="" id="def9" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="自定义项9" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="def10" height="" id="def10" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="自定义项10" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DecimalText" enabled="true" field="def11" height="" id="def11" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" precision="8" rowSpan="1" selectOnly="true" showLabel="false" text="自定义项11" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DecimalText" enabled="true" field="def12" height="" id="def12" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" precision="8" rowSpan="1" selectOnly="true" showLabel="false" text="自定义项12" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DecimalText" enabled="true" field="def13" height="" id="def13" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" precision="8" rowSpan="1" selectOnly="true" showLabel="false" text="自定义项13" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DecimalText" enabled="true" field="def14" height="" id="def14" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" precision="8" rowSpan="1" selectOnly="true" showLabel="false" text="自定义项14" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DecimalText" enabled="true" field="def15" height="" id="def15" imageOnly="false" langDir="scappt_land" needNullOption="false" nextLine="false" nullAble="true" precision="8" rowSpan="1" selectOnly="true" showLabel="false" text="自定义项15" toolbarType="Custom" visible="true" width="">
+            </Element>
+        </FormComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar">
+            <MenuItem id="add" modifiers="2" showModel="1" stateManager="nc.uap.wfm.exetask.statemanager.WfmEnabledStateManager" text="新增">
+                <Events>
+                    <Event async="true" methodName="onAdd" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="copy" modifiers="2" showModel="1" stateManager="nc.uap.wfm.exetask.statemanager.WfmEnabledStateManager" text="复制">
+                <Events>
+                    <Event async="true" methodName="onCopy" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="del" modifiers="2" showModel="1" stateManager="nc.uap.wfm.exetask.statemanager.WfmEnabledStateManager" text="删除">
+                <Events>
+                    <Event async="true" methodName="onDelete" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem i18nName="save" id="save" langDir="lfwbuttons" modifiers="2" showModel="1" text="保存">
+                <Events>
+                    <Event async="true" methodName="onSave" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="sep1" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="print" modifiers="2" showModel="1" stateManager="nc.uap.wfm.exetask.statemanager.WfmPrintStateManager" text="打印">
+                <Events>
+                    <Event async="true" methodName="onPrint" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="sep3" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem id="back" modifiers="2" showModel="1" text="返回">
+                <Events>
+                    <Event async="true" methodName="onBack" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Manifest>
+  <BusinessComponet name="library" dispname="产权交易机构库">
+    <public/>
+    <client/>
+    <private/>
+    <test/>
+    <resource/>
+  </BusinessComponet>
+  <BusinessComponet name="transfer" dispname="产权转让">
+    <public/>
+    <client/>
+    <private/>
+    <test/>
+    <resource/>
+  </BusinessComponet>
+  <BusinessComponet name="major_asset_list" dispname="重大资产挂牌转让">
+    <public/>
+    <client/>
+    <private/>
+    <test/>
+    <resource/>
+  </BusinessComponet>
+    <BusinessComponet name="ptpub" dispname="公共组件">
+    <public/>
+    <client/>
+    <private/>
+    <test/>
+    <resource/>
+  </BusinessComponet>
+</Manifest>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="transfer/src/public"/>
+	<classpathentry kind="src" path="transfer/src/client"/>
+	<classpathentry kind="src" path="transfer/src/private"/>
+	<classpathentry kind="src" path="transfer/src/portalspec"/>
+	<classpathentry kind="src" path="transfer/resources"/>
+	<classpathentry kind="src" path="ptpub/src/public"/>
+	<classpathentry kind="src" path="ptpub/src/client"/>
+	<classpathentry kind="src" path="ptpub/src/private"/>
+	<classpathentry kind="src" path="ptpub/src/test"/>
+	<classpathentry kind="src" path="ptpub/src/portalspec"/>
+	<classpathentry kind="src" path="ptpub/resources"/>
+	<classpathentry kind="src" path="library/src/public"/>
+	<classpathentry kind="src" path="library/src/client"/>
+	<classpathentry kind="src" path="library/src/private"/>
+	<classpathentry kind="src" path="library/src/test"/>
+	<classpathentry kind="src" path="library/src/portalspec"/>
+	<classpathentry kind="src" path="library/resources"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/SCAP_WEBCO"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/SCAP_WEBPAB"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/SCAP_WEBPR"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="nc.uap.lfw.library.container/Ant_Library"/>
+	<classpathentry kind="con" path="nc.uap.lfw.library.container/Product_LIB_Library"/>
+	<classpathentry kind="con" path="nc.uap.lfw.library.container/Product_Common_Library"/>
+	<classpathentry kind="con" path="nc.uap.lfw.library.container/Middleware_Library"/>
+	<classpathentry kind="con" path="nc.uap.lfw.library.container/Framework_Library"/>
+	<classpathentry kind="con" path="nc.uap.lfw.library.container/Module_Public_Library"/>
+	<classpathentry kind="con" path="nc.uap.lfw.library.container/Module_Client_Library"/>
+	<classpathentry kind="con" path="nc.uap.lfw.library.container/Module_Private_Library"/>
+	<classpathentry kind="con" path="nc.uap.lfw.library.container/Module_Lang_Library"/>
+	<classpathentry kind="lib" path="D:/yonyou/Gzw/GZtesthome/external/lib/excelutil.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

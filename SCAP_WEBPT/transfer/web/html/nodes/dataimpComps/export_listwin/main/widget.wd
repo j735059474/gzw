@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget controllerClazz="nc.scap.library.transfer.export.ExportListWinMainViewCtrl" id="main" refId="main" sourcePackage="transfer/src/public/">
+    <Attributes>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+    </PlugoutDescs>
+    <PluginDescs>
+        <PluginDesc id="simpleQuery_plugin" methodName="doQueryChange">
+        </PluginDesc>
+        <PluginDesc id="org_plugin" methodName="doOrgChange">
+        </PluginDesc>
+        <PluginDesc id="refresh_plugin" methodName="doRefresh">
+            <PluginDescItem clazztype="java.lang.String" id="OPERATE_ROW">
+            </PluginDescItem>
+        </PluginDesc>
+    </PluginDescs>
+    <Connectors>
+        <Connector connType="6" id="listViewConnID" pluginId="refresh_plugin" plugoutId="proxyAfterSavePlugout" source="dataimpComps.export_listwin" sourceWindow="" target="main" targetWindow="">
+        </Connector>
+    </Connectors>
+    <Models>
+        <Datasets>
+	        <RefMdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_orgs" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_orgs" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="产权交易方式(自定义档案)" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_Defdoc_scappt_0003" lazyLoad="true" notNullBody="false" objMeta="uap.Defdoc-scappt_0003" voMeta="nc.vo.bd.defdoc.DefdocVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="产权变动类型(自定义档案)" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_Defdoc_scappt_0002" lazyLoad="true" notNullBody="false" objMeta="uap.Defdoc-scappt_0002" voMeta="nc.vo.bd.defdoc.DefdocVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="省交易数据导入" controlwidgetopeStatus="true" enabled="false" id="scappt_export_trans" lazyLoad="false" notNullBody="false" objMeta="scappt.scappt_export_trans" pageSize="15" voMeta="nc.scap.pt.vos.ScapptExportTransHVO">
+                <FieldRelations>
+                    <FieldRelation id="cchangetype_rel" needProcess="true" refDataset="$refds_uap_Defdoc_scappt_0002" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="cchangetype_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_defdoc" value="cchangetype">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="ctradetype_rel" needProcess="true" refDataset="$refds_uap_Defdoc_scappt_0003" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="ctradetype_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_defdoc" value="ctradetype">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_sgroup_rel" needProcess="true" refDataset="$refds_scappr_firmtree" useCache="true">
+                        <MatchFields>
+                            <Field readField="vname" writeField="pk_sgroup_vname">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_firmtree" value="pk_sgroup">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_zgroup_rel" needProcess="true" refDataset="$refds_scappr_firmtree" useCache="true">
+                        <MatchFields>
+                            <Field readField="vname" writeField="pk_zgroup_vname">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_firmtree" value="pk_zgroup">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_borg_rel" needProcess="true" refDataset="$refds_scappr_firmtree" useCache="true">
+                        <MatchFields>
+                            <Field readField="vname" writeField="pk_borg_vname">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_firmtree" value="pk_borg">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_org_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                    <ModifyField id="dbcapital" precision="2">
+                    </ModifyField>
+                    <ModifyField id="vbdetail" precision="2">
+                    </ModifyField>
+                    <ModifyField id="drcapital" precision="2">
+                    </ModifyField>
+                    <ModifyField id="dwprice" precision="2">
+                    </ModifyField>
+                    <ModifyField id="dwtransprice" precision="2">
+                    </ModifyField>
+                    <ModifyField id="listvalue" precision="2">
+                    </ModifyField>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onAfterRowUnSelect" name="onAfterRowUnSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DatasetEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <RefMdDataset caption="firmtree" controlwidgetopeStatus="false" enabled="false" id="$refds_scappr_firmtree" lazyLoad="true" notNullBody="false" objMeta="scappr.firmtree" voMeta="nc.scap.vos.prabs.FirmtreeVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+        </Datasets>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_export_trans_cchangetype_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_defdoc,name" refId="" refcode="产权变动类型(自定义档案)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="省交易数据导入_产权变动类型(自定义档案)" usePower="false" writeDs="scappt_export_trans" writeFields="cchangetype,cchangetype_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_export_trans_pk_borg_vname" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_firmtree,vname" refId="" refcode="产权树参照" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="省交易数据导入_产权树参照" usePower="false" writeDs="scappt_export_trans" writeFields="pk_borg,pk_borg_vname">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_export_trans_ctradetype_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_defdoc,name" refId="" refcode="产权交易方式(自定义档案)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="省交易数据导入_产权交易方式(自定义档案)" usePower="false" writeDs="scappt_export_trans" writeFields="ctradetype,ctradetype_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_export_trans_pk_zgroup_vname" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_firmtree,vname" refId="" refcode="产权树参照" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="省交易数据导入_产权树参照" usePower="false" writeDs="scappt_export_trans" writeFields="pk_zgroup,pk_zgroup_vname">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_export_trans_pk_sgroup_vname" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_firmtree,vname" refId="" refcode="产权树参照" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="省交易数据导入_产权树参照" usePower="false" writeDs="scappt_export_trans" writeFields="pk_sgroup,pk_sgroup_vname">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_export_trans_pk_group_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同集团(所有)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="产权交易申请主表_协同集团(所有)" usePower="false" writeDs="scappt_export_trans" writeFields="pk_group,pk_group_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <GridComp autoRowHeight="false" canCopy="true" caption="scappt_export_trans_grid" checkBoxModel="1" dataset="scappt_export_trans" editable="true" enabled="true" expandTree="false" id="scappt_export_trans_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_group" fixedHeader="false" id="pk_group" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="集团主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="billmaker" fixedHeader="false" id="billmaker" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="制单人" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDate" editable="true" editorType="DateText" field="billmakedate" fixedHeader="false" id="billmakedate" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DateRender" showCheckBox="true" sortable="true" sumCol="false" text="制单日期" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="billno" fixedHeader="false" id="billno" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="单据号" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="cchangetype" fixedHeader="false" id="cchangetype" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="产权变动类型" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="cchangetype_name" fixedHeader="false" id="cchangetype_name" imageOnly="false" nullAble="true" refNode="refnode_scappt_export_trans_cchangetype_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="产权变动类型" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="ctradetype" fixedHeader="false" id="ctradetype" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="产权交易方式" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="ctradetype_name" fixedHeader="false" id="ctradetype_name" imageOnly="false" nullAble="true" refNode="refnode_scappt_export_trans_ctradetype_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="产权交易方式" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vlevel" fixedHeader="false" id="vlevel" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="企业级次" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_sgroup" fixedHeader="false" id="pk_sgroup" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="委托单位" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_sgroup_vname" fixedHeader="false" id="pk_sgroup_vname" imageOnly="false" nullAble="true" refNode="refnode_scappt_export_trans_pk_sgroup_vname" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="委托单位" textAlign="left" visible="true" width="240">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_org" fixedHeader="false" id="pk_org" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="组织主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_org_name" fixedHeader="false" id="pk_org_name" imageOnly="false" nullAble="true" refNode="refnode_scappt_export_trans_pk_org_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="省属企业集团" textAlign="left" visible="true" width="240">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_zgroup" fixedHeader="false" id="pk_zgroup" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="省属企业集团" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_zgroup_vname" fixedHeader="false" id="pk_zgroup_vname" imageOnly="false" nullAble="true" refNode="refnode_scappt_export_trans_pk_zgroup_vname" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="省属企业集团" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_borg" fixedHeader="false" id="pk_borg" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="标的企业" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_borg_vname" fixedHeader="false" id="pk_borg_vname" imageOnly="false" nullAble="true" refNode="refnode_scappt_export_trans_pk_borg_vname" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="标的企业" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Memo" editable="true" editorType="TextArea" field="def1" fixedHeader="false" id="def1" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="标的物" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="dbpercent" fixedHeader="false" id="dbpercent" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="业务性质" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbaddress" fixedHeader="false" id="vbaddress" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="注册地（住所）" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDate" editable="true" editorType="DateText" field="cbsetupdate" fixedHeader="false" id="cbsetupdate" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DateRender" showCheckBox="true" sortable="true" sumCol="false" text="成立时间" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDouble" editable="true" editorType="DecimalText" field="dbcapital" fixedHeader="false" id="dbcapital" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DecimalRender" showCheckBox="true" sortable="true" sumCol="false" text="注册资本（万元）" textAlign="right" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbfactype" fixedHeader="false" id="vbfactype" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="企业类别" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Integer" editable="true" editorType="IntegerText" field="ibinpost" fixedHeader="false" id="ibinpost" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="IntegerRender" showCheckBox="true" sortable="true" sumCol="false" text="公告次数" textAlign="right" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Integer" editable="true" editorType="IntegerText" field="ibretired" fixedHeader="false" id="ibretired" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="IntegerRender" showCheckBox="true" sortable="true" sumCol="false" text="竞买人数" textAlign="right" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFBoolean" editable="true" editorType="CheckBox" field="cbtransferflag" fixedHeader="false" id="cbtransferflag" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="BooleanRender" showCheckBox="true" sortable="true" sumCol="false" text="是否有国有划拨土地" textAlign="center" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFBoolean" editable="true" editorType="CheckBox" field="if_sus" fixedHeader="false" id="if_sus" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="BooleanRender" showCheckBox="true" sortable="true" sumCol="false" text="是否交易成功" textAlign="center" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDouble" editable="true" editorType="DecimalText" field="vbdetail" fixedHeader="false" id="vbdetail" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DecimalRender" showCheckBox="true" sortable="true" sumCol="false" text="评估价/原租价（万元）" textAlign="right" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vrname" fixedHeader="false" id="vrname" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="转让方名称" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_rorg" fixedHeader="false" id="pk_rorg" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="组织机构代码" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDouble" editable="true" editorType="DecimalText" field="drcapital" fixedHeader="false" id="drcapital" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DecimalRender" showCheckBox="true" sortable="true" sumCol="false" text="转让方注册资本（万元）" textAlign="right" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vrfactype" fixedHeader="false" id="vrfactype" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="转让方企业类别" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_rgroup" fixedHeader="false" id="pk_rgroup" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="转让方所属集团" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Memo" editable="true" editorType="TextArea" field="vacceptno" fixedHeader="false" id="vacceptno" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="批准文号" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Memo" editable="true" editorType="TextArea" field="vwperiod" fixedHeader="false" id="vwperiod" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="地址" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="atrdata" fixedHeader="false" id="atrdata" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="面积/数量" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDouble" editable="true" editorType="DecimalText" field="dwprice" fixedHeader="false" id="dwprice" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DecimalRender" showCheckBox="true" sortable="true" sumCol="false" text="挂牌价格(万元)" textAlign="right" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFBoolean" editable="true" editorType="CheckBox" field="cwtransflag" fixedHeader="false" id="cwtransflag" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="BooleanRender" showCheckBox="true" sortable="true" sumCol="false" text="是否成交" textAlign="center" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vwtranstype" fixedHeader="false" id="vwtranstype" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="交易方式" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDouble" editable="true" editorType="DecimalText" field="dwtransprice" fixedHeader="false" id="dwtransprice" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DecimalRender" showCheckBox="true" sortable="true" sumCol="false" text="成交价(万元)" textAlign="right" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vwassignname" fixedHeader="false" id="vwassignname" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="产权交易受让方名称" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDate" editable="true" editorType="DateText" field="cwctdate" fixedHeader="false" id="cwctdate" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DateRender" showCheckBox="true" sortable="true" sumCol="false" text="交易时间" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vwpayment" fixedHeader="false" id="vwpayment" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="付款方式" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vsname" fixedHeader="false" id="vsname" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="受让方名称" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_sorg" fixedHeader="false" id="pk_sorg" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="受让方组织机构代码" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="dscapital" fixedHeader="false" id="dscapital" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="联系电话" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="address" fixedHeader="false" id="address" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="住址" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_slgroup" fixedHeader="false" id="pk_slgroup" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="受让方所属集团" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_gorg" fixedHeader="false" id="pk_gorg" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="标的企业名称" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vcassesstype" fixedHeader="false" id="vcassesstype" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="资产处置方式" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="tramethod" fixedHeader="false" id="tramethod" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="成交方式" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="memo" fixedHeader="false" id="memo" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="备注" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="traname" fixedHeader="false" id="traname" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="转让标的名称" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Memo" editable="true" editorType="TextArea" field="def2" fixedHeader="false" id="def2" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段2" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Memo" editable="true" editorType="TextArea" field="def3" fixedHeader="false" id="def3" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段3" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Memo" editable="true" editorType="TextArea" field="def4" fixedHeader="false" id="def4" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段4" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Memo" editable="true" editorType="TextArea" field="def5" fixedHeader="false" id="def5" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段5" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Memo" editable="true" editorType="TextArea" field="def6" fixedHeader="false" id="def6" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段6" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Memo" editable="true" editorType="TextArea" field="def7" fixedHeader="false" id="def7" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段7" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Memo" editable="true" editorType="TextArea" field="def8" fixedHeader="false" id="def8" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段8" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Memo" editable="true" editorType="TextArea" field="def9" fixedHeader="false" id="def9" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段9" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Memo" editable="true" editorType="TextArea" field="def10" fixedHeader="false" id="def10" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段10" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDouble" editable="true" editorType="DecimalText" field="listvalue" fixedHeader="false" id="listvalue" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DecimalRender" showCheckBox="true" sortable="true" sumCol="false" text="申请挂牌价格" textAlign="right" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_bfirmbase_h" fixedHeader="false" id="pk_bfirmbase_h" imageOnly="false" langDir="scappt_export_trans" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="产权登记主键" textAlign="left" visible="false" width="120">
+            </Column>
+        </GridComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar">
+            <MenuItem id="add" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Init_Ss_Ms_StateManager" text="新增">
+                <Events>
+                    <Event async="true" methodName="onAdd" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="edit" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="修改">
+                <Events>
+                    <Event async="true" methodName="onEdit" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="del" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="删除">
+                <Events>
+                    <Event async="true" methodName="onDelete" name="onclick" onserver="true">
+                        <SubmitRule>
+                            <Widget id="main">
+                            </Widget>
+                        </SubmitRule>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="sep1" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem i18nName="导入" id="export" langDir="lfwbuttons" modifiers="3" showModel="1" text="导入">
+                <Events>
+                    <Event async="true" methodName="onExport" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem i18nName="compare" id="compare" langDir="lfwbuttons" modifiers="2" showModel="1" text="对比查看">
+                <Events>
+                    <Event async="true" methodName="onCompare" name="onclick" onserver="true">
+                        <SubmitRule>
+                            <Widget id="main">
+                                <Dataset id="scappt_export_trans" type="ds_all_line">
+                                </Dataset>
+                                <Grid id="scappt_export_trans_grid" type="grid_all_row">
+                                </Grid>
+                            </Widget>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="startorstrop" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="启用/停用">
+                <MenuItem id="start" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.StartStopStateManager" text="启用">
+                    <Events>
+                        <Event async="true" methodName="onStart" name="onclick" onserver="true">
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+                <MenuItem id="stop" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.StartStopStateManager" text="停用">
+                    <Events>
+                        <Event async="true" methodName="onStop" name="onclick" onserver="true">
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem id="sep2" modifiers="2" sep="true" showModel="1">
+            </MenuItem>
+            <MenuItem i18nName="view" id="view" langDir="lfwbuttons" modifiers="2" showModel="1" text="查看">
+                <Events>
+                    <Event async="true" methodName="onView" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="attachfile" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="附件">
+                <Events>
+                    <Event async="true" methodName="onAttchFile" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="print" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="打印">
+                <Events>
+                    <Event async="true" methodName="onPrint" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem i18nName="refresh" id="refresh" langDir="lfwbuttons" modifiers="2" showModel="1" text="刷新">
+                <Events>
+                    <Event async="true" methodName="onRefresh" name="onclick" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>mouseEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

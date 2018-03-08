@@ -1,0 +1,7 @@
+#
+#Thu May 22 10:30:41 GMT+08:00 2014
+module.name=scappt
+module.editorVersion=NEW_VERSION
+module.webContext=portal
+module.defConfig=module.xml
+pack.prefix=nc.scap.library

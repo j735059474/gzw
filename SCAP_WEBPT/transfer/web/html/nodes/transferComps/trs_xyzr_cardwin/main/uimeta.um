@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE UIMeta PUBLIC "-//Yonyou Co., Ltd.//UAP LFW UIMeta 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_um_6_3.dtd">
+<UIMeta flowmode="true" id="main_um" jquery="0" preferredHeight="" preferredWidth="">
+    <FlowvLayout id="mainFlowvLayout" widgetId="main">
+        <FlowvPanel id="g_p_1" widgetId="main">
+            <CanvasLayout className="rightcanvas" id="menubarcanvas" widgetId="main">
+                <CanvasPanel id="canvasp" widgetId="main">
+                    <FlowhLayout autoFill="false" id="mainFlowhLayout" widgetId="main">
+                        <FlowhPanel id="g_p_1" widgetId="main">
+                            <Menubar height="100%" id="menubar" left="0" position="relative" top="0" widgetId="main" width="100%">
+                            </Menubar>
+                        </FlowhPanel>
+                        <FlowhPanel id="g_p_2" widgetId="main">
+                            <Widget id="pubview_simpleexetask">
+                            </Widget>
+                        </FlowhPanel>
+                    </FlowhLayout>
+                </CanvasPanel>
+            </CanvasLayout>
+        </FlowvPanel>
+        <FlowvPanel id="g_p_3" leftPadding="20" rightPadding="20" widgetId="main">
+            <PanelLayout expand="true" id="srfxx" title="受让方基本信息" widgetId="main" >
+         		 <PanelPanel bottomPadding="10" id="panel6" topPadding="20" widgetId="main" template="xysq_srfxx.html">
+                </PanelPanel>
+            </PanelLayout>
+        </FlowvPanel>
+        <FlowvPanel id="scappt_transfer_transferee_flowvpane2" leftPadding="20" rightPadding="20">
+            <PanelLayout className="small_panel_div" expand="true" id="scappt_transfer_transferee_panel" title="受让方股权结构">
+                <PanelPanel bottomPadding="10" id="scappt_transfer_transferee_panelPanel" topPadding="20">
+                    <GridComp autoExpand="0" height="100%" id="scappt_transfer_transferee_grid" left="0" position="relative" top="0" width="100%">
+                    </GridComp>
+                </PanelPanel>
+            </PanelLayout>
+        </FlowvPanel>
+        <FlowvPanel id="g_p_4" leftPadding="20" rightPadding="20" widgetId="main">
+            <PanelLayout expand="true" id="xywcqk" title="产权协议转让成交情况" widgetId="main" >
+         		 <PanelPanel bottomPadding="10" id="panel7" topPadding="20" widgetId="main" template="xysq_wcqk.html">
+                </PanelPanel>
+            </PanelLayout>
+        </FlowvPanel>
+        <FlowvPanel id="g_p_11" leftPadding="20" rightPadding="20">
+            <PanelLayout className="small_panel_div" expand="true" id="apply_attach" title="附件管理">
+                <PanelPanel bottomPadding="10" id="apply_attach_at" topPadding="20">
+                    <GridComp autoExpand="0" height="100%" id="scappt_attach_grid" left="0" position="relative" top="0" width="100%">
+                    </GridComp>
+                </PanelPanel>
+            </PanelLayout>
+        </FlowvPanel>
+    </FlowvLayout>
+</UIMeta>

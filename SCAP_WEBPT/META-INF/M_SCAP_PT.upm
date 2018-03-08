@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module name="scappt">
+   <public>
+	<component singleton="true" tx="CMT" remote="true">
+		<interface>nc.scap.pub.alert.IAlertDeal</interface>
+		<implementation>nc.scap.pub.alert.AlertDealImp</implementation>
+	</component>
+	<component singleton="true" tx="CMT" remote="true">
+		<interface>nc.scap.transfer.itf.ScapptImportitf</interface>
+		<implementation>nc.scap.transfer.imp.ScapptImportImp</implementation>
+	</component>
+   </public>
+   <private>
+   </private>
+</module>
+

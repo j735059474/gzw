@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget controllerClazz="nc.scap.transfer.infocount.InfocountListWinMainViewCtrl" id="main" refId="main" sourcePackage="transfer/src/public/">
+    <Attributes>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+    </PlugoutDescs>
+    <PluginDescs>
+        <PluginDesc id="simpleQuery_plugin" methodName="doQueryChange">
+        </PluginDesc>
+        <PluginDesc id="org_plugin" methodName="doOrgChange">
+        </PluginDesc>
+        <PluginDesc id="refresh_plugin" methodName="doRefresh">
+            <PluginDescItem clazztype="java.lang.String" id="OPERATE_ROW">
+            </PluginDescItem>
+        </PluginDesc>
+    </PluginDescs>
+    <Connectors>
+        <Connector connType="6" id="listViewConnID" pluginId="refresh_plugin" plugoutId="proxyAfterSavePlugout" source="infoComps.infocount_listwin" sourceWindow="" target="main" targetWindow="">
+        </Connector>
+    </Connectors>
+    <Models>
+        <Datasets>
+            <DatasetRelations>
+                <DatasetRelation detailDataset="scappt_infocount_b" detailForeignKey="pk_infocount" id="scappt_infocount_b_scappt_infocount" masterDataset="scappt_infocount" masterKeyField="pk_infocount">
+                </DatasetRelation>
+            </DatasetRelations>
+            <RefMdDataset caption="协同用户" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_user" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_user" voMeta="nc.uap.cpb.org.vos.CpUserVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="国有产权信息统计" controlwidgetopeStatus="true" enabled="false" id="scappt_infocount" lazyLoad="true" notNullBody="false" objMeta="scappt.scappt_infocount" pageSize="15" voMeta="nc.scap.pt.vos.ScapptInfoCountHVO">
+                <FieldRelations>
+                    <FieldRelation id="biller_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="biller_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="biller">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onDataLoad" name="onDataLoad" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>dataLoadEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <MdDataset caption="国有产权信息统计详细信息" controlwidgetopeStatus="false" enabled="false" id="scappt_infocount_b" lazyLoad="true" notNullBody="false" objMeta="scappt.scappt_infocount_b" pageSize="15" voMeta="nc.scap.pt.vos.ScapptInfoCountBVO">
+                <Fields>
+                </Fields>
+            </MdDataset>
+        </Datasets>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_infocount_biller_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="" usePower="false" writeDs="scappt_infocount" writeFields="biller,biller_user_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <GridComp autoRowHeight="false" canCopy="true" caption="scappt_infocount_grid" checkBoxModel="1" dataset="scappt_infocount" editable="true" enabled="true" expandTree="false" id="scappt_infocount_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="true" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="UFDate" editable="true" editorType="DateText" field="begindate" fixedHeader="false" id="begindate" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DateRender" showCheckBox="true" sortable="true" sumCol="false" text="开始日期" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDate" editable="true" editorType="DateText" field="enddate" fixedHeader="false" id="enddate" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DateRender" showCheckBox="true" sortable="true" sumCol="false" text="结束日期" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="transjg" fixedHeader="false" id="transjg" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="交易机构" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="jgtype" fixedHeader="false" id="jgtype" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="监管分类" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vunit" fixedHeader="false" id="vunit" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="金额单位" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="biller" fixedHeader="false" id="biller" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="制单人" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="biller_user_name" fixedHeader="false" id="biller_user_name" imageOnly="false" nullAble="true" refNode="refnode_scappt_infocount_biller_user_name" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="制单人" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="UFDateTime" editable="true" editorType="DateTimeText" field="billdate" fixedHeader="false" id="billdate" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DateTimeRender" showCheckBox="true" sortable="true" sumCol="false" text="制单日期" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def1" fixedHeader="false" id="def1" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义1" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def2" fixedHeader="false" id="def2" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义2" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def3" fixedHeader="false" id="def3" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义3" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def4" fixedHeader="false" id="def4" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义4" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def5" fixedHeader="false" id="def5" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义5" textAlign="left" visible="false" width="120">
+            </Column>
+        </GridComp>
+        <GridComp autoRowHeight="false" canCopy="true" checkBoxModel="1" dataset="scappt_infocount_b" editable="true" enabled="true" expandTree="false" id="scappt_infocount_b_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="project" fixedHeader="false" id="project" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="项目" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="rowcount" fixedHeader="false" id="rowcount" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="行次" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="jezs" fixedHeader="false" id="jezs" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="交易宗数" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="cjje" fixedHeader="false" id="cjje" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="成交金额" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="sj_zcze" fixedHeader="false" id="sj_zcze" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="审计(资产总额)" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="sj_jzc" fixedHeader="false" id="sj_jzc" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="审计(净资产)" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pg_zcze" fixedHeader="false" id="pg_zcze" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="评估(资产总额)" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pg_jzc" fixedHeader="false" id="pg_jzc" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="评估(净资产)" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="zrbdgpz" fixedHeader="false" id="zrbdgpz" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="转让标的评估值" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="jyzjz" fixedHeader="false" id="jyzjz" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="交易增(减)值" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="jyzjl" fixedHeader="false" id="jyzjl" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="交易增(减)率" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vlevle" fixedHeader="false" id="vlevle" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="级次" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def1" fixedHeader="false" id="def1" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义1" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def2" fixedHeader="false" id="def2" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义2" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def3" fixedHeader="false" id="def3" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义3" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def4" fixedHeader="false" id="def4" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义4" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def5" fixedHeader="false" id="def5" imageOnly="false" langDir="scappt_infocount" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义5" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_infocount" fixedHeader="false" id="pk_infocount" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上层单据主键" textAlign="left" visible="true" width="120">
+            </Column>
+        </GridComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar">
+            <MenuItem id="add" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Init_Ss_Ms_StateManager" text="新增">
+                <Events>
+                    <Event async="true" methodName="onAdd" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="edit" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="修改">
+                <Events>
+                    <Event async="true" methodName="onEdit" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="del" modifiers="2" showModel="1" stateManager="nc.uap.lfw.core.bm.dft.Ss_StateManager" text="删除">
+                <Events>
+                    <Event async="true" methodName="onDelete" name="onclick" onserver="true">
+                        <SubmitRule>
+                            <Widget id="main">
+                                <Dataset id="scappt_infocount_b" type="ds_all_line">
+                                </Dataset>
+                            </Widget>
+                        </SubmitRule>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem id="look" modifiers="2" showModel="1"  text="统计查询">
+                <Events>
+                    <Event async="true" methodName="onLook" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

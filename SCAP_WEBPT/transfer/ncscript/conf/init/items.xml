@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<items docType="SDP_SCRIPT_ITEM">
+	<item>
+		<itemKey>0001</itemKey>
+		<itemName>功能分类</itemName>
+		<itemRule>cp_appscategory</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>id like 'E9AI02%'</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0002</itemKey>
+		<itemName>功能节点</itemName>
+		<itemRule>cp_appsnode</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>id like 'E9AI02%'</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0003</itemKey>
+		<itemName>菜单分类</itemName>
+		<itemRule>cp_menucategory</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>id in ('0098')</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0004</itemKey>
+		<itemName>菜单项</itemName>
+		<itemRule>cp_menuitem</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>code like '009802%' or code like '009805%'</fixedWhere>
+	</item>
+	<item>
+		<itemKey>005</itemKey>
+		<itemName>参照</itemName>
+		<itemRule>bd_refinfo</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>modulename like '%scappt%' or metadatatypename like '%Defdoc-scappt%'</fixedWhere>
+	</item>
+	<item>
+		<itemKey>006</itemKey>
+		<itemName>自定义档案定义</itemName>
+		<itemRule>bd_defdoclist</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>code like '%scappt%'</fixedWhere>
+	</item>
+	<item>
+		<itemKey>007</itemKey>
+		<itemName>自定义内容</itemName>
+		<itemRule>BD_DEFDOC</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>pk_defdoclist in (select PK_DEFDOCLIST from bd_defdoclist b where B.CODE like '%scappt%')</fixedWhere>
+	</item>
+	<item>
+		<itemKey>008</itemKey>
+		<itemName>资源管理</itemName>
+		<itemRule>cp_res</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>SOURCEPK in (select c.pk_appsnode from  CP_APPSNODE c where c.id like 'E9AI02%')</fixedWhere>
+	</item>
+	<item>
+		<itemKey>009</itemKey>
+		<itemName>流程大类</itemName>
+		<itemRule>WFM_FLWCAT</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>DEVMODULE='scappt'</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0010</itemKey>
+		<itemName>流程类型</itemName>
+		<itemRule>WFM_FLWTYPE</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>PK_FLWCAT in (select W.PK_FLWCAT from WFM_FLWCAT w where W.DEVMODULE='scappt')</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0011</itemKey>
+		<itemName>自定义档案管控模式</itemName>
+		<itemRule>BD_MODE_SELECTED</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>MDCLASSID in (select M.ID from md_class m where M.NAME like '%Defdoc-scappt%')</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0012</itemKey>
+		<itemName>查询模板</itemName>
+		<itemRule>cp_query_template</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>pk_query_template in (SELECT distinct c.pk_query_template FROM cp_query_template c ,md_class d WHERE d.defaulttablename LIKE '%scappt_%' AND c.dr=0 AND d.id=c.metaclass)</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0013</itemKey>
+		<itemName>查询条件</itemName>
+		<itemRule>cp_query_condition</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere>pk_query_template in (SELECT distinct c.pk_query_template FROM cp_query_template c ,md_class d WHERE d.defaulttablename LIKE '%scappt_%' AND c.dr=0 AND d.id=c.metaclass)</fixedWhere>
+	</item>
+	<item>
+		<itemKey>0014</itemKey>
+		<itemName>附件类型定义</itemName>
+		<itemRule>scappt_attachmgr</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere></fixedWhere>
+	</item>
+	<item>
+		<itemKey>0015</itemKey>
+		<itemName>附件类型定义子表</itemName>
+		<itemRule>scappt_attachent</itemRule>
+		<sysField></sysField>
+		<corpField></corpField>
+		<grpField></grpField>
+		<fixedWhere></fixedWhere>
+	</item>
+	
+</items>

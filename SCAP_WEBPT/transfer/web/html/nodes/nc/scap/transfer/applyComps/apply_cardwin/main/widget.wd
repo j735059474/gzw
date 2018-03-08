@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE Widget PUBLIC "-//Yonyou Co., Ltd.//UAP LFW VIEW 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_view_6_3.dtd">
+<Widget controllerClazz="nc.scap.transfer.apply.ApplyCardWinMainViewCtrl" id="main" refId="main" sourcePackage="transfer/src/public/">
+    <Attributes>
+        <Attribute>
+            <Key>$QueryTemplate</Key>
+            <Value>
+            </Value>
+        </Attribute>
+    </Attributes>
+    <PageMetas>
+    </PageMetas>
+    <PlugoutDescs>
+        <PlugoutDesc id="afterSavePlugout">
+            <PlugoutDescItem clazztype="java.lang.String" name="OPERATE_ROW" source="scappt_apply_h" type="Dataset.TYPE_DATASET_SEL_ROW">
+            </PlugoutDescItem>
+        </PlugoutDesc>
+    </PlugoutDescs>
+    <PluginDescs>
+        <PluginDesc id="plugin_exetask" methodName="doTaskExecute">
+            <SubmitRule>
+                <Widget id="main">
+                    <Dataset id="scappt_apply_h" type="ds_all_line">
+                    </Dataset>
+                    <Dataset id="scappt_apply_b" type="ds_all_line">
+                    </Dataset>
+                    <Dataset id="apply_attach" type="ds_all_line">
+                    </Dataset>
+                </Widget>
+            </SubmitRule>
+        </PluginDesc>
+    </PluginDescs>
+    <Connectors>
+        <Connector connType="4" id="cardViewConnID" pluginId="proxyAfterSavePlugout" plugoutId="afterSavePlugout" source="main" sourceWindow="" target="popwin" targetWindow="">
+        </Connector>
+    </Connectors>
+    <Events>
+        <Event async="true" methodName="pluginplugin_exetask" onserver="true">
+            <SubmitRule>
+                <Widget id="main">
+                    <Dataset id="scappt_apply_h" type="ds_all_line">
+                    </Dataset>
+                    <Dataset id="scappt_apply_b" type="ds_all_line">
+                    </Dataset>
+                    <Dataset id="apply_attach" type="ds_all_line">
+                    </Dataset>
+                </Widget>
+            </SubmitRule>
+            <Params>
+                <Param>
+                    <Name>keys</Name>
+                    <Value>
+                    </Value>
+                    <Desc>                        <![CDATA[java.util.Map]]>
+                    </Desc>
+                </Param>
+            </Params>
+            <Action>
+            </Action>
+        </Event>
+        <Event async="true" methodName="beforeShow" name="beforeShow" onserver="true">
+            <Action>
+            </Action>
+        </Event>
+    </Events>
+    <Models>
+        <Datasets>
+            <DatasetRelations>
+                <DatasetRelation detailDataset="scappt_apply_b" detailForeignKey="pk_apply_h" id="scappt_apply_b_scappt_apply_h" masterDataset="scappt_apply_h" masterKeyField="pk_apply_h">
+                </DatasetRelation>
+                <DatasetRelation detailDataset="apply_attach" detailForeignKey="pk_apply_h" id="scappt_apply_h_apply_attach" masterDataset="scappt_apply_h" masterKeyField="pk_apply_h">
+                </DatasetRelation>
+            </DatasetRelations>
+            <RefMdDataset caption="产权交易方式(自定义档案)" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_Defdoc_scappt_0003" lazyLoad="true" notNullBody="false" objMeta="uap.Defdoc-scappt_0003" voMeta="nc.vo.bd.defdoc.DefdocVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="产权变动类型(自定义档案)" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_Defdoc_scappt_0002" lazyLoad="true" notNullBody="false" objMeta="uap.Defdoc-scappt_0002" voMeta="nc.vo.bd.defdoc.DefdocVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="审批流程类型(自定义档案)" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_Defdoc_scappt_0001" lazyLoad="true" notNullBody="false" objMeta="uap.Defdoc-scappt_0001" voMeta="nc.vo.bd.defdoc.DefdocVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="产权交易申请子表" controlwidgetopeStatus="false" enabled="false" id="scappt_apply_b" lazyLoad="true" notNullBody="false" objMeta="scappt.scappt_apply_b" pageSize="15" voMeta="nc.scap.pt.vos.ScapptApplyBVO">
+                <FieldRelations>
+                    <FieldRelation id="pk_borg_rel" needProcess="true" refDataset="$refds_scappr_firmtree" useCache="true">
+                        <MatchFields>
+                            <Field readField="vname" writeField="pk_borg_vname">
+                            </Field>
+							<Field readField="treelevel" writeField="treelevel_b">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_firmtree" value="pk_borg">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                    <ModifyField editFormular="sum%28dbpercent%29%3C%3D100" id="dbpercent" maxValue="100" minValue="1" precision="2">
+                    </ModifyField>
+					<Field dataType="Integer" defaultValue="" id="treelevel_b" nullAble="true" primaryKey="false" text="treelevel_b">
+                    </Field>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onAfterDetailDataChange" name="onAfterDataChange" onserver="true">
+                        <SubmitRule>
+                            <Widget id="main">
+                                <Dataset id="approveds" type="ds_all_line">
+                                </Dataset>
+                                <Dataset id="scappt_apply_b" type="ds_all_line">
+                                </Dataset>
+                                <Dataset id="apply_attach" type="ds_all_line">
+                                </Dataset>
+                                <Dataset id="scappt_apply_h" type="ds_all_line">
+                                </Dataset>
+                                <Grid id="apply_attach_grid" type="grid_all_row">
+                                </Grid>
+                                <Grid id="scappt_apply_b_grid" type="grid_all_row">
+                                </Grid>
+                                <Grid id="approveds_grid" type="grid_all_row">
+                                </Grid>
+                                <Form id="scappt_apply_h_form" type="all_child">
+                                </Form>
+                            </Widget>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetCellEvent</Name>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DatasetCellEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <RefMdDataset caption="协同用户" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_user" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_user" voMeta="nc.uap.cpb.org.vos.CpUserVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="firmtree" controlwidgetopeStatus="false" enabled="false" id="$refds_scappr_firmtree" lazyLoad="true" notNullBody="false" objMeta="scappr.firmtree" voMeta="nc.scap.vos.prabs.FirmtreeVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="协同组织" controlwidgetopeStatus="false" enabled="false" id="$refds_uapcp_cp_orgs" lazyLoad="true" notNullBody="false" objMeta="uapcp.cp_orgs" voMeta="nc.uap.cpb.org.orgs.CpOrgVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <MdDataset caption="附件" controlwidgetopeStatus="false" enabled="false" id="apply_attach" lazyLoad="true" notNullBody="false" objMeta="scappt.scappt_apply_attach" pageSize="10" voMeta="nc.scap.pt.vos.ScapptApplyAttachVO">
+                <FieldRelations>
+                    <FieldRelation id="attach_name_rel" needProcess="true" refDataset="$refds_scappt_scappt_attachent_src" useCache="true">
+                        <MatchFields>
+                            <Field readField="vname" writeField="attach_name_vname">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_attchfile" value="attach_name">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                </Fields>
+            </MdDataset>
+            <Dataset controlwidgetopeStatus="false" enabled="false" id="approveds" lazyLoad="true" notNullBody="false">
+                <Fields>
+                    <Field dataType="String" id="pk_user" nullAble="true" primaryKey="false" text="pk_user">
+                    </Field>
+                    <Field dataType="String" id="pk_user_name" nullAble="true" primaryKey="false" text="pk_user_name">
+                    </Field>
+                    <Field dataType="Date" defaultValue="" id="use_date" nullAble="true" primaryKey="false" text="use_date">
+                    </Field>
+                    <Field dataType="String" id="suggest" nullAble="true" primaryKey="false" text="suggest">
+                    </Field>
+                    <Field dataType="String" id="result" nullAble="true" primaryKey="false" text="result">
+                    </Field>
+                    <Field dataType="String" id="info" nullAble="true" primaryKey="false" text="info">
+                    </Field>
+                </Fields>
+            </Dataset>
+            <MdDataset caption="产权交易申请主表" controlwidgetopeStatus="false" enabled="false" id="scappt_apply_h" lazyLoad="true" notNullBody="false" objMeta="scappt.scappt_apply_h" pageSize="10" voMeta="nc.scap.pt.vos.ScapptApplyHVO">
+                <FieldRelations>
+                    <FieldRelation id="pk_org_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_org_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_org">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_rorg_rel" needProcess="true" refDataset="$refds_scappr_firmtree" useCache="true">
+                        <MatchFields>
+                            <Field readField="vname" writeField="pk_rorg_vname">
+                            </Field>
+                            <Field readField="treelevel" writeField="treelevel">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_firmtree" value="pk_rorg">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="pk_group_rel" needProcess="true" refDataset="$refds_uapcp_cp_orgs" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="pk_group_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_org" value="pk_group">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="billmaker_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="billmaker_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="billmaker">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="approver_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="approver_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="approver">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="cprocesstype_rel" needProcess="true" refDataset="$refds_uap_Defdoc_scappt_0001" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="cprocesstype_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_defdoc" value="cprocesstype">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="cchangetype_rel" needProcess="true" refDataset="$refds_uap_Defdoc_scappt_0002" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="cchangetype_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_defdoc" value="cchangetype">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="ctradetype_rel" needProcess="true" refDataset="$refds_uap_Defdoc_scappt_0003" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="ctradetype_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_defdoc" value="ctradetype">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="cgreattype_rel" needProcess="true" refDataset="$refds_uap_Defdoc_scappt_0004" useCache="true">
+                        <MatchFields>
+                            <Field readField="name" writeField="cgreattype_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="pk_defdoc" value="cgreattype">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                    <FieldRelation id="capplicant_rel" needProcess="true" refDataset="$refds_uapcp_cp_user" useCache="true">
+                        <MatchFields>
+                            <Field readField="user_name" writeField="capplicant_user_name">
+                            </Field>
+                        </MatchFields>
+                        <WhereField>
+                            <Field key="cuserid" value="capplicant">
+                            </Field>
+                        </WhereField>
+                    </FieldRelation>
+                </FieldRelations>
+                <Fields>
+                    <Field dataType="Integer" defaultValue="" id="treelevel" nullAble="true" primaryKey="false" text="treelevel">
+                    </Field>
+                </Fields>
+                <Events>
+                    <Event async="true" methodName="onAfterRowSelect" name="onAfterRowSelect" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                    <Event async="true" methodName="onAfterDataChange" name="onAfterDataChange" onserver="true">
+                        <SubmitRule>
+                        </SubmitRule>
+                        <Params>
+                            <Param>
+                                <Name>datasetCellEvent</Name>
+                                <Value>
+                                </Value>
+                                <Desc>                                    <![CDATA[nc.uap.lfw.core.event.DatasetCellEvent]]>
+                                </Desc>
+                            </Param>
+                        </Params>
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MdDataset>
+            <RefMdDataset caption="产权附件规则实例" controlwidgetopeStatus="false" enabled="false" id="$refds_scappt_scappt_attachent_src" lazyLoad="true" notNullBody="false" objMeta="scappt.scappt_attachent_src" voMeta="nc.scap.library.vos.AttachEntVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+            <RefMdDataset caption="重大资产处置方式(自定义档案)" controlwidgetopeStatus="false" enabled="false" id="$refds_uap_Defdoc_scappt_0004" lazyLoad="true" notNullBody="false" objMeta="uap.Defdoc-scappt_0004" voMeta="nc.vo.bd.defdoc.DefdocVO">
+                <Fields>
+                </Fields>
+            </RefMdDataset>
+        </Datasets>
+        <ComboDatas>
+            <MDComboDataConf caption="审核流程枚举" fullclassName="3ac98154-4b58-4e4e-b4ad-aad9827f9622" id="combo_scappt_apply_h_formstate">
+            </MDComboDataConf>
+            <MDComboDataConf caption="报送状态" fullclassName="8a567e9e-27d6-4c42-a807-89a93baa1813" id="combo_apply_attach_submitstate">
+            </MDComboDataConf>
+            <StaticComboData id="level_enum">
+                <ComboItem text="一级" value="1">
+                </ComboItem>
+                <ComboItem text="二级" value="2">
+                </ComboItem>
+                <ComboItem text="三级" value="3">
+                </ComboItem>
+                <ComboItem text="四级" value="4">
+                </ComboItem>
+                <ComboItem text="五级" value="5">
+                </ComboItem>
+                <ComboItem text="六级" value="6">
+                </ComboItem>
+                <ComboItem text="七级" value="7">
+                </ComboItem>
+                <ComboItem text="八级" value="8">
+                </ComboItem>
+                <ComboItem text="九级" value="9">
+                </ComboItem>
+                <ComboItem text="十级" value="10">
+                </ComboItem>
+            </StaticComboData>
+            <StaticComboData id="yewu_enum">
+                <ComboItem text="股权" value="1">
+                </ComboItem>
+                <ComboItem text="实物资产" value="2">
+                </ComboItem>
+                <ComboItem text="土地资产" value="3">
+                </ComboItem>
+                <ComboItem text="金融" value="4">
+                </ComboItem>
+                <ComboItem text="环境权益" value="5">
+                </ComboItem>
+                <ComboItem text="公共资源" value="6">
+                </ComboItem>
+                <ComboItem text="技术产权" value="7">
+                </ComboItem>
+                <ComboItem text="融资服务" value="8">
+                </ComboItem>
+                <ComboItem text="文化产权" value="9">
+                </ComboItem>
+            </StaticComboData>
+        </ComboDatas>
+        <RefNodes>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_apply_h_pk_rorg_vname" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_firmtree,vname,treelevel" refId="" refcode="产权树参照" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="产权交易申请_产权树参照" usePower="false" writeDs="scappt_apply_h" writeFields="pk_rorg,pk_rorg_vname,treelevel">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_apply_h_ctradetype_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_defdoc,name" refId="" refcode="产权交易方式(自定义档案)" refnodeDelegator="" relationRefNodeId="refnode_scappt_apply_h_cchangetype_name" selLeafOnly="false" text="产权交易申请主表_产权交易方式(自定义档案)" usePower="false" writeDs="scappt_apply_h" writeFields="ctradetype,ctradetype_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_apply_b_pk_borg_vname" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_firmtree,vname" refId="" refcode="产权树参照" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="产权交易申请子表_产权树参照" usePower="false" writeDs="scappt_apply_b" writeFields="pk_borg,pk_borg_vname">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_apply_h_cgreattype_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_defdoc,name" refId="" refcode="重大资产处置方式(自定义档案)" refnodeDelegator="" relationRefNodeId="refnode_scappt_apply_h_cchangetype_name" selLeafOnly="false" text="产权交易申请主表_重大资产处置方式(自定义档案)" usePower="false" writeDs="scappt_apply_h" writeFields="cgreattype,cgreattype_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_apply_h_capplicant_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="产权交易申请主表_协同用户" usePower="false" writeDs="scappt_apply_h" writeFields="capplicant,capplicant_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_apply_attach_attach_name_vname" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_attchfile,vname" refId="" refcode="产权附件表型参照" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="附件_产权附件表型参照" usePower="false" writeDs="apply_attach" writeFields="attach_name,attach_name_vname">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_apply_h_approver_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="产权交易申请主表_协同用户" usePower="false" writeDs="scappt_apply_h" writeFields="approver,approver_user_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_apply_h_pk_org_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同当前集团+业务单元" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="产权交易申请主表_协同当前集团+业务单元" usePower="false" writeDs="scappt_apply_h" writeFields="pk_org,pk_org_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_apply_h_pk_group_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_org,name" refId="" refcode="协同集团(所有)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="产权交易申请主表_协同集团(所有)" usePower="false" writeDs="scappt_apply_h" writeFields="pk_group,pk_group_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_apply_h_cchangetype_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_defdoc,name" refId="" refcode="产权变动类型(自定义档案)" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="产权交易申请主表_产权变动类型(自定义档案)" usePower="false" writeDs="scappt_apply_h" writeFields="cchangetype,cchangetype_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_apply_h_cprocesstype_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="pk_defdoc,name" refId="" refcode="审批流程类型(自定义档案)" refnodeDelegator="" relationRefNodeId="refnode_scappt_apply_h_cchangetype_name" selLeafOnly="false" text="产权交易申请主表_审批流程类型(自定义档案)" usePower="false" writeDs="scappt_apply_h" writeFields="cprocesstype,cprocesstype_name">
+            </NCRefNode>
+            <NCRefNode allowInput="false" dataListener="" dialogHeight="" dialogWidth="" filterRefNodeNames="false" hrOrgs="false" i18nName="" id="refnode_scappt_apply_h_billmaker_user_name" langDir="" multiSel="false" orgs="false" pagemeta="reference" pagemodel="" read="false" readDs="masterDs" readFields="cuserid,user_name" refId="" refcode="协同用户" refnodeDelegator="" relationRefNodeId="" selLeafOnly="false" text="产权交易申请主表_协同用户" usePower="false" writeDs="scappt_apply_h" writeFields="billmaker,billmaker_user_name">
+            </NCRefNode>
+        </RefNodes>
+    </Models>
+    <Components>
+        <FormComp caption="产权交易申请主表" columnCount="3" dataset="scappt_apply_h" eleWidth="250" ellipsis="false" enabled="true" id="scappt_apply_h_form" labelMinWidth="0" renderType="1" rowHeight="22" visible="true" >
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="pk_apply_h" height="" id="pk_apply_h" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="false" rowSpan="1" selectOnly="true" showLabel="true" text="主键" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="pk_org" height="" id="pk_org" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="组织主键" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="pk_org_name" height="" id="pk_org_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_scappt_apply_h_pk_org_name" rowSpan="1" selectOnly="true" showLabel="true" text="组织主键" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="pk_group" height="" id="pk_group" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="集团主键" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="billmaker" height="" id="billmaker" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="制单人" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="billmaker_user_name" height="" id="billmaker_user_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_scappt_apply_h_billmaker_user_name" rowSpan="1" selectOnly="true" showLabel="true" text="制单人" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DateText" enabled="true" field="billmakedate" height="" id="billmakedate" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="制单日期" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="billno" height="" id="billno" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="false" rowSpan="1" selectOnly="true" showLabel="false" text="交易单号" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="approver" height="" id="approver" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="审核人" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="approver_user_name" height="" id="approver_user_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_scappt_apply_h_approver_user_name" rowSpan="1" selectOnly="true" showLabel="true" text="审核人" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DateText" enabled="true" field="approvedate" height="" id="approvedate" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="审核日期" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="ComboBox" enabled="true" field="formstate" height="" id="formstate" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" refComboData="combo_scappt_apply_h_formstate" rowSpan="1" selectOnly="true" showLabel="true" text="单据状态" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="formtitle" height="" id="formtitle" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="单据标题" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vrequestno" height="" id="vrequestno" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="申请单号" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="cprocesstype" height="" id="cprocesstype" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="审批流程类型" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="cprocesstype_name" height="" id="cprocesstype_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="false" refNode="refnode_scappt_apply_h_cprocesstype_name" rowSpan="1" selectOnly="true" showLabel="false" text="审批流程类型" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="cchangetype" height="" id="cchangetype" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="产权变动类型" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="cchangetype_name" height="" id="cchangetype_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="false" refNode="refnode_scappt_apply_h_cchangetype_name" rowSpan="1" selectOnly="true" showLabel="false" text="产权变动类型" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="ctradetype" height="" id="ctradetype" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="产权交易方式" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="ctradetype_name" height="" id="ctradetype_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="false" refNode="refnode_scappt_apply_h_ctradetype_name" rowSpan="1" selectOnly="true" showLabel="false" text="产权交易方式" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="cgreattype" height="" id="cgreattype" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="重大资产处置方式" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="false" editorType="Reference" enabled="true" field="cgreattype_name" height="" id="cgreattype_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_scappt_apply_h_cgreattype_name" rowSpan="1" selectOnly="true" showLabel="false" text="重大资产处置方式" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="pk_rorg" height="" id="pk_rorg" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="转让方" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vapproveno" height="" id="vapproveno" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="批准文号" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="capplicant" height="" id="capplicant" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="申请人" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="capplicant_user_name" height="" id="capplicant_user_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_scappt_apply_h_capplicant_user_name" rowSpan="1" selectOnly="true" showLabel="true" text="申请人" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="DateText" enabled="true" field="capplicantdate" height="" id="capplicantdate" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="申请日期" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vdef1" height="" id="vdef1" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义字段1" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vdef2" height="" id="vdef2" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义字段2" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vdef3" height="" id="vdef3" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义字段3" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vdef4" height="" id="vdef4" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义字段4" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="ComboBox" refComboData="yewu_enum" enabled="true" field="vdef5" height="" id="vdef5" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="false" text="业务性质" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vdef6" height="" id="vdef6" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义字段6" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vdef7" height="" id="vdef7" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义字段7" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vdef8" height="" id="vdef8" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义字段8" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vdef9" height="" id="vdef9" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义字段9" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="StringText" enabled="true" field="vdef10" height="" id="vdef10" imageOnly="false" langDir="scappt_apply" needNullOption="false" nextLine="false" nullAble="true" rowSpan="1" selectOnly="true" showLabel="true" text="自定义字段10" toolbarType="Custom" visible="false" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="true" editorType="Reference" enabled="true" field="pk_rorg_vname" height="" id="pk_rorg_vname" imageOnly="false" needNullOption="false" nextLine="false" nullAble="false" refNode="refnode_scappt_apply_h_pk_rorg_vname" rowSpan="1" selectOnly="true" showLabel="false" text="转让方" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="false" editorType="ComboBox" enabled="true" field="treelevel" height="" id="treelevel" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refComboData="level_enum" rowSpan="1" selectOnly="true" showLabel="true" text="企业级次" toolbarType="Custom" visible="true" width="">
+            </Element>
+            <Element allowExtendValue="false" attachNext="false" canUpload="false" colSpan="1" editMin="true" editSec="true" editable="false" editorType="Reference" enabled="true" field="pk_group_name" height="" id="pk_group_name" imageOnly="false" needNullOption="false" nextLine="false" nullAble="true" refNode="refnode_scappt_apply_h_pk_group_name" rowSpan="1" selectOnly="true" showLabel="false" text="所属集团企业" toolbarType="Custom" visible="true" width="">
+            </Element>
+        </FormComp>
+        <GridComp autoRowHeight="false" canCopy="true" checkBoxModel="1" dataset="approveds" editable="true" enabled="true" expandTree="false" id="approveds_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="false" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" fixedHeader="false" id="info" imageOnly="false" nullAble="true" showCheckBox="true" sortable="true" sumCol="false" text="信息" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_user" fixedHeader="false" id="pk_user" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="审核人" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_user_name" fixedHeader="false" id="pk_user_name" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="审核人" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="Date" editable="true" editorType="DateText" field="use_date" fixedHeader="false" id="use_date" imageOnly="false" nullAble="true" renderType="DateRender" showCheckBox="true" sortable="true" sumCol="false" text="日期" textAlign="right" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="result" fixedHeader="false" id="result" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="审核结果" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="suggest" fixedHeader="false" id="suggest" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="审核意见" textAlign="left" visible="true" width="120">
+            </Column>
+        </GridComp>
+        <GridComp autoRowHeight="false" canCopy="true" caption="附件" checkBoxModel="1" dataset="apply_attach" editable="true" enabled="true" expandTree="false" id="apply_attach_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="true" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_apply_attach" fixedHeader="false" id="pk_apply_attach" imageOnly="false" langDir="scappt_apply" nullAble="false" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="attach_name" fixedHeader="false" id="attach_name" imageOnly="false" langDir="scappt_apply" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="名称" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="attach_name_vname" fixedHeader="false" id="attach_name_vname" imageOnly="false" nullAble="true" refNode="refnode_apply_attach_attach_name_vname" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="名称" textAlign="left" visible="true" width="400">
+            </Column>
+            <Column autoExpand="false" dataType="Integer" editable="true" editorType="IntegerText" field="num" fixedHeader="false" id="num" imageOnly="false" langDir="scappt_apply" nullAble="true" renderType="IntegerRender" showCheckBox="true" sortable="true" sumCol="false" text="数量" textAlign="right" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="ComboBox" field="submitstate" fixedHeader="false" id="submitstate" imageOnly="false" langDir="scappt_apply" nullAble="true" refComboData="combo_apply_attach_submitstate" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="是否报送" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def1" fixedHeader="false" id="def1" imageOnly="false" langDir="scappt_apply" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段1" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def2" fixedHeader="false" id="def2" imageOnly="false" langDir="scappt_apply" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段2" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def3" fixedHeader="false" id="def3" imageOnly="false" langDir="scappt_apply" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段3" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def4" fixedHeader="false" id="def4" imageOnly="false" langDir="scappt_apply" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段4" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="def5" fixedHeader="false" id="def5" imageOnly="false" langDir="scappt_apply" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段5" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_apply_h" fixedHeader="false" id="pk_apply_h" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上层单据主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <MenuBarComp id="btn_attach">
+                <MenuItem i18nName="attach" id="attach" langDir="lfwbuttons" modifiers="2" showModel="1" text="附件">
+                    <Events>
+                        <Event async="true" methodName="onAttach" name="onclick" onserver="true">
+                            <SubmitRule>
+                                <Widget id="main">
+                                    <Dataset id="apply_attach" type="ds_all_line">
+                                    </Dataset>
+                                </Widget>
+                            </SubmitRule>
+                            <Params>
+                                <Param>
+                                    <Name>mouseEvent</Name>
+                                    <Value>
+                                    </Value>
+                                    <Desc>                                        <![CDATA[nc.uap.lfw.core.event.MouseEvent]]>
+                                    </Desc>
+                                </Param>
+                            </Params>
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+            </MenuBarComp>
+        </GridComp>
+        <GridComp autoRowHeight="false" canCopy="true" caption="产权交易申请子表" checkBoxModel="1" dataset="scappt_apply_b" editable="true" enabled="true" expandTree="false" id="scappt_apply_b_grid" multiSelect="false" multiSelectShow="true" onPaste="" pagenationTop="false" reference="false" selfDefImageBtnRender="" showColInfo="false" showForm="false" showHeader="true" showImageBtn="true" showNumCol="false" showSumRow="false" showTree="true" sortable="true" visible="true">
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_borg" fixedHeader="false" id="pk_borg" imageOnly="false" langDir="scappt_apply" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="标的企业" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="Reference" field="pk_borg_vname" fixedHeader="false" id="pk_borg_vname" imageOnly="false" nullAble="false" refNode="refnode_scappt_apply_b_pk_borg_vname" renderType="OperateRenderPT" showCheckBox="true" sortable="true" sumCol="false" text="标的企业" textAlign="left" visible="true" width="300">
+            </Column>
+			<Column autoExpand="false" dataType="String" editable="false" editorType="ComboBox" field="treelevel_b" fixedHeader="false" id="treelevel_b" imageOnly="false" nullAble="true" refComboData="level_enum" renderType="ComboRender" showCheckBox="true" sortable="true" sumCol="false" text="企业级次" textAlign="left" visible="false" width="80">
+            </Column>
+            <Column autoExpand="false" dataType="UFDouble" editable="true" editorType="DecimalText" field="dbpercent" fixedHeader="false" id="dbpercent" imageOnly="false" langDir="scappt_apply" nullAble="false" renderType="DecimalRender" showCheckBox="true" sortable="true" sumCol="false" text="拟转让股比(%)" textAlign="right" visible="true" width="80" >
+            </Column>
+              <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef1" fixedHeader="false" id="vbdef1" imageOnly="false" langDir="scappt_apply" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="编号" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="true" dataType="String" editable="true" editorType="StringText" field="vcassessname" fixedHeader="false" id="vcassessname" imageOnly="false" langDir="scappt_apply" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="标的物(实物资产)" textAlign="left" visible="true" width="200">
+            </Column>
+            <Column autoExpand="true" dataType="String" editable="true" editorType="StringText" field="vcdetail" fixedHeader="false" id="vcdetail" imageOnly="false" langDir="scappt_apply" nullAble="true" renderType="IntegerRender" showCheckBox="true" sortable="true" sumCol="false" text="数量" textAlign="left" visible="true" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef2" fixedHeader="false" id="vbdef2" imageOnly="false" langDir="scappt_apply" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段2" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef3" fixedHeader="false" id="vbdef3" imageOnly="false" langDir="scappt_apply" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段3" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef4" fixedHeader="false" id="vbdef4" imageOnly="false" langDir="scappt_apply" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段4" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="vbdef5" fixedHeader="false" id="vbdef5" imageOnly="false" langDir="scappt_apply" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="自定义字段5" textAlign="left" visible="false" width="120">
+            </Column>
+            <Column autoExpand="false" dataType="String" editable="true" editorType="StringText" field="pk_apply_h" fixedHeader="false" id="pk_apply_h" imageOnly="false" nullAble="true" renderType="DefaultRender" showCheckBox="true" sortable="true" sumCol="false" text="上层单据主键" textAlign="left" visible="false" width="120">
+            </Column>
+            <MenuBarComp id="scappt_apply_b_grid$MenuBar">
+                <MenuItem i18nName="GridComp-000005" id="scappt_apply_b_grid$HeaderBtn_Add" imgIcon="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/new_row.png" imgIconDisable="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/new_row_disable.png" imgIconOn="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/new_row_higlight.png" langDir="bc" modifiers="2" showModel="1" text="新建">
+                    <Events>
+                        <Event async="true" methodName="onGridAddClick" name="onclick" onserver="true">
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+                <MenuItem i18nName="GridComp-000006" id="scappt_apply_b_grid$HeaderBtn_Edit" imgIcon="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/edit.png" imgIconDisable="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/edit_disable.png" imgIconOn="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/edit_higlight.png" langDir="bc" modifiers="2" showModel="1" text="编辑">
+                    <Events>
+                        <Event async="true" methodName="onGridEditClick" name="onclick" onserver="true">
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+                <MenuItem i18nName="GridComp-000007" id="scappt_apply_b_grid$HeaderBtn_Delete" imgIcon="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/delete_row.png" imgIconDisable="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/delete_row_disable.png" imgIconOn="frame/device_pc/themes/${theme}/ui/ctrl/menu/images/menu_icons/delete_row_higlight.png" langDir="bc" modifiers="2" showModel="1" text="删除">
+                    <Events>
+                        <Event async="true" methodName="onGridDeleteClick" name="onclick" onserver="true">
+                            <Action>
+                            </Action>
+                        </Event>
+                    </Events>
+                </MenuItem>
+            </MenuBarComp>
+        </GridComp>
+    </Components>
+    <Menus>
+        <MenuBarComp id="menubar">
+            <MenuItem id="back" modifiers="2" showModel="1" text="返回">
+                <Events>
+                    <Event async="true" methodName="onBack" name="onclick" onserver="true">
+                        <Action>
+                        </Action>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBarComp>
+    </Menus>
+</Widget>

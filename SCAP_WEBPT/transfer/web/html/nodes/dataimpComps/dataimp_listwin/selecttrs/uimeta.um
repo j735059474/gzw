@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE UIMeta PUBLIC "-//Yonyou Co., Ltd.//UAP LFW UIMeta 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_um_6_3.dtd">
+<UIMeta flowmode="true" id="selecttrs_um" jquery="0" preferredHeight="0" preferredWidth="0">
+    <FlowvLayout id="flowvlayout0192" widgetId="selecttrs">
+        <FlowvPanel height="210" id="panelv10192" widgetId="selecttrs">
+            <GridComp autoExpand="1" height="100%" id="selecttrs_grid" left="0" position="relative" top="0" widgetId="selecttrs" width="100%">
+            </GridComp>
+        </FlowvPanel>
+        <FlowvPanel height="30" id="panelv20192" widgetId="selecttrs">
+            <FlowhLayout autoFill="false" id="flowhlayout3028" widgetId="selecttrs">
+                <FlowhPanel id="panelh03028" widgetId="selecttrs">
+                </FlowhPanel>
+                <FlowhPanel id="flowhpanel16414" widgetId="selecttrs">
+                </FlowhPanel>
+                <FlowhPanel id="flowhpanel17537" widgetId="selecttrs">
+                </FlowhPanel>
+                <FlowhPanel id="flowhpanel18551" widgetId="selecttrs">
+                </FlowhPanel>
+                <FlowhPanel id="panelh13028" widgetId="selecttrs">
+                    <Button height="23" id="ok" left="0" position="relative" top="0" widgetId="selecttrs" width="64">
+                    </Button>
+                </FlowhPanel>
+                <FlowhPanel id="panelh23028" widgetId="selecttrs">
+                    <Button height="23" id="cancle" left="0" position="relative" top="0" widgetId="selecttrs" width="64">
+                    </Button>
+                </FlowhPanel>
+            </FlowhLayout>
+        </FlowvPanel>
+    </FlowvLayout>
+</UIMeta>

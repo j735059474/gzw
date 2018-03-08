@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE UIMeta PUBLIC "-//Yonyou Co., Ltd.//UAP LFW UIMeta 6.3//EN" "http://uap.yonyou.com/dtd/uap_lfw_um_6_3.dtd">
+<UIMeta flowmode="true" id="main_um" jquery="0" preferredHeight="" preferredWidth="">
+    <FlowvLayout id="flowvLayout" widgetId="main">
+        <FlowvPanel id="g_p_1" widgetId="main">
+            <CanvasLayout className="rightcanvas" id="listmenubarCanvas" widgetId="main">
+                <CanvasPanel id="canvasp" widgetId="main">
+                    <Menubar height="100%" id="menubar" left="0" position="relative" top="0" widgetId="main" width="100%">
+                    </Menubar>
+                </CanvasPanel>
+            </CanvasLayout>
+        </FlowvPanel>
+        <FlowvPanel id="g_p_2" widgetId="main">
+            <GridComp autoExpand="0" height="100%" id="scappt_transfer_h_grid" left="0" position="relative" top="0" widgetId="main" width="100%">
+            </GridComp>
+        </FlowvPanel>
+        <FlowvPanel id="flowvpaneltab" widgetId="main">
+            <TabLayout currentItem="0" id="tabLayout" oneTabHide="true" tabType="top" widgetId="main">
+                <TabItems>
+                    <TabItem active="0" i18nName="" id="tabitem_scappt_transfer_target" langDir="" showCloseIcon="false" text="标的企业股权结构">
+                        <GridComp autoExpand="0" height="100%" id="scappt_transfer_target_grid" left="0" position="relative" top="0" width="100%">
+                        </GridComp>
+                    </TabItem>
+                    <TabItem active="0" i18nName="" id="tabitem_scappt_transfer_transferor" langDir="" showCloseIcon="false" text="转让方股权结构">
+                        <GridComp autoExpand="0" height="100%" id="scappt_transfer_transferor_grid" left="0" position="relative" top="0" width="100%">
+                        </GridComp>
+                    </TabItem>
+                     <TabItem active="0" i18nName="" id="tabitem_scappt_transfer_assess" langDir="" showCloseIcon="false" text="资产评估项目">
+                        <GridComp autoExpand="0" height="100%" id="scappt_transfer_assess_grid" left="0" position="relative" top="0" width="100%">
+                        </GridComp>
+                    </TabItem>
+                    <TabItem active="0" i18nName="" id="tabitem_scappt_transfer_transferee" langDir="" showCloseIcon="false" text="受让方股权结构">
+                        <GridComp autoExpand="0" height="100%" id="scappt_transfer_transferee_grid" left="0" position="relative" top="0" width="100%">
+                        </GridComp>
+                    </TabItem>
+                   <!-- <TabItem active="0" i18nName="" id="tabitem_scappt_attach" langDir="" showCloseIcon="false" text="附件列表">
+                        <GridComp autoExpand="0" height="100%" id="scappt_attach_grid" left="0" position="relative" top="0" width="100%">
+                        </GridComp>
+                    </TabItem>-->
+                </TabItems>
+            </TabLayout>
+        </FlowvPanel>
+    </FlowvLayout>
+</UIMeta>
